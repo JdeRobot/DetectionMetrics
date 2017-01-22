@@ -15,7 +15,7 @@ public:
 
     std::vector<cv::Point> getPoints();
     void move(const cv::Point& from, const cv::Point& to);
-    cv::Rect getRect();
+    cv::Rect getRect(const double scale=1);
 
 
 private:

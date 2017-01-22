@@ -77,7 +77,7 @@ bool BoundingRect::isVertical(const cv::Point &from, const cv::Point &to) {
     return abs(from.x-to.x) <  abs(from.y-to.y);
 }
 
-cv::Rect BoundingRect::getRect() {
-    return cv::Rect(points[0].x, points[0].y,points[1].x - points[0].x,points[2].y - points[1].y);
+cv::Rect BoundingRect::getRect(const double scale) {
+    return cv::Rect(points[0].x/scale, points[0].y/scale,(points[1].x - points[0].x)/scale,(points[2].y - points[1].y)/scale);
 }
 

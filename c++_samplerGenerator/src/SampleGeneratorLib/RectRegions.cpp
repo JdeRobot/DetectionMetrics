@@ -66,3 +66,7 @@ void RectRegion::drawRegion(cv::Mat &image) {
     cv::rectangle(image,this->region,cv::Scalar(255,0,0),2);
 
 }
+
+RectRegion::RectRegion() {
+
+}

@@ -1,0 +1,14 @@
+//
+// Created by frivas on 22/01/17.
+//
+
+#ifndef SAMPLERGENERATOR_DATASETREADER_H
+#define SAMPLERGENERATOR_DATASETREADER_H
+
+
+class DatasetReader {
+
+};
+
+
+#endif //SAMPLERGENERATOR_DATASETREADER_H

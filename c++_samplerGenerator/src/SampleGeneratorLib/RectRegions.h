@@ -9,10 +9,14 @@
 #include "Region.h"
 
 struct RectRegion:Region {
+    RectRegion(const std::string& jsonPath);
+    RectRegion();
+
     RectRegion(const cv::Rect rect);
     RectRegion(const std::vector<cv::Point>& detections);
     RectRegion(int x, int y, int w, int h);
-    RectRegion(const std::string& jsonPath);
+
+
     void saveJson(const std::string& outPath);
     cv::Rect getRegion();
     void drawRegion(cv::Mat& image);
@@ -20,7 +24,7 @@ struct RectRegion:Region {
 
 
 private:
-    cv::Rect region;
+    std::vector<cv::Rect> regions;
 };
 
 
