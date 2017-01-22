@@ -11,8 +11,9 @@
 #include <boost/filesystem/path.hpp>
 #include <SampleGeneratorLib/Logger.h>
 #include <highgui.h>
-#include <SampleGeneratorLib/RectRegion.h>
-#include <SampleGeneratorLib/ContourRegion.h>
+#include <SampleGeneratorLib/RectRegions.h>
+#include <SampleGeneratorLib/ContourRegions.h>
+#include <SampleGeneratorLib/Sample.h>
 
 
 
@@ -25,7 +26,18 @@ namespace
 } // namespace
 
 
-int parse_arguments(const int argc, char* argv[], std::string& path){
+
+
+
+struct ViewerAguments{
+    std::string path;
+    bool depthEnabled;
+
+    ViewerAguments():depthEnabled(false){};
+};
+
+
+int parse_arguments(const int argc, char* argv[], ViewerAguments& args){
     try
     {
         /** Define and parse the program options
@@ -34,7 +46,9 @@ int parse_arguments(const int argc, char* argv[], std::string& path){
         po::options_description desc("Options");
         desc.add_options()
                 ("help", "Print help messages")
-                ("word,w", po::value<std::string>(&path)->required());
+                ("word,w", po::value<std::string>(&args.path)->required())
+                ("depth,d", po::value<bool>(&args.depthEnabled)->default_value(false));
+
         po::variables_map vm;
         try
         {
@@ -78,22 +92,22 @@ int parse_arguments(const int argc, char* argv[], std::string& path){
 
 int main (int argc, char* argv[]) {
 
-    std::string path;
-    parse_arguments(argc,argv,path);
+    ViewerAguments args;
+    parse_arguments(argc,argv,args);
 
 
     Logger::getInstance()->setLevel(Logger::INFO);
-    Logger::getInstance()->info("Reviewing " + path);
+    Logger::getInstance()->info("Reviewing " + args.path);
 
     boost::filesystem::directory_iterator end_itr;
-    boost::filesystem::path boostPath(path);
+    boost::filesystem::path boostPath(args.path);
 
 
     std::vector<std::string> filesID;
 
     for (boost::filesystem::directory_iterator itr(boostPath); itr!=end_itr; ++itr)
     {
-        if (is_regular_file(itr->status()) && itr->path().extension()==".png") {
+        if ((is_regular_file(itr->status()) && itr->path().extension()==".png") && (itr->path().string().find("-depth") == std::string::npos)) {
             filesID.push_back(itr->path().filename().stem().string());
         }
 
@@ -102,17 +116,12 @@ int main (int argc, char* argv[]) {
     std::sort(filesID.begin(),filesID.end());
 
     for (auto it = filesID.begin(), end=filesID.end(); it != end; ++it){
-        std::cout << *it << std::endl;
-        cv::Mat image = cv::imread(path + "/" + *it + ".png");
+        Sample sample(args.path,*it,args.depthEnabled);
+        cv::imshow("color", sample.getSampledColorImage());
+        if (args.depthEnabled) {
+            cv::imshow("depth", sample.getSampledDepthImage());
+        }
 
-        RectRegion rectRegion(path + "/" + *it + ".json");
-        ContourRegion cRegion(path + "/" + *it + "-region.json");
-
-        rectRegion.drawRegion(image);
-        cRegion.drawRegion(image);
-
-
-        cv::imshow("test", image);
         cv::waitKey(0);
     }
 

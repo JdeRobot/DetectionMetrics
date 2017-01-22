@@ -2,7 +2,7 @@
 // Created by frivas on 21/01/17.
 //
 
-#include "RectRegion.h"
+#include "RectRegions.h"
 #include <rapidjson/rapidjson.h>
 #include <rapidjson/document.h>
 #include <rapidjson/stringbuffer.h>
@@ -11,20 +11,44 @@
 #include "rapidjson/filereadstream.h"
 
 
-void RectRegion::saveJson(const std::string &outPath) {
+
+RectRegions::RectRegions(const std::string &jsonPath) {
+    FILE* fp = fopen(jsonPath.c_str(), "rb"); // non-Windows use "r"
+    char readBuffer[65536];
+    rapidjson::FileReadStream is(fp, readBuffer, sizeof(readBuffer));
     rapidjson::Document d;
-    d.SetObject();
-    rapidjson::Value xValue(region.x);
-    d.AddMember("x",xValue,d.GetAllocator());
+    d.ParseStream(is);
+    fclose(fp);
+    for (auto it=d.Begin(), end = d.End(); it != end; ++it){
+        regions.push_back(cv::Rect((*it)["x"].GetInt(),(*it)["y"].GetInt(),(*it)["w"].GetInt(),(*it)["h"].GetInt()));
+    }
+}
+RectRegions::RectRegions() {
 
-    rapidjson::Value yValue(region.y);
-    d.AddMember("y",yValue,d.GetAllocator());
+}
 
-    rapidjson::Value wValue(region.width);
-    d.AddMember("w",wValue,d.GetAllocator());
 
-    rapidjson::Value hValue(region.height);
-    d.AddMember("h",hValue,d.GetAllocator());
+void RectRegions::saveJson(const std::string &outPath) {
+    rapidjson::Document d;
+    d.SetArray();
+    for (auto it = regions.begin(), end= regions.end(); it != end; ++it){
+        rapidjson::Value node;
+        node.SetObject();
+        rapidjson::Value xValue(it->x);
+        node.AddMember("x",xValue,d.GetAllocator());
+
+        rapidjson::Value yValue(it->y);
+        node.AddMember("y",yValue,d.GetAllocator());
+
+        rapidjson::Value wValue(it->width);
+        node.AddMember("w",wValue,d.GetAllocator());
+
+        rapidjson::Value hValue(it->height);
+        node.AddMember("h",hValue,d.GetAllocator());
+        d.PushBack(node,d.GetAllocator());
+    }
+
+
 
     rapidjson::StringBuffer buffer;
 
@@ -38,35 +62,33 @@ void RectRegion::saveJson(const std::string &outPath) {
     outFile.close();
 }
 
-RectRegion::RectRegion(const cv::Rect rect):region(rect){}
-
-RectRegion::RectRegion(const std::vector<cv::Point> &detections) {
-    region = cv::boundingRect(detections);
+void RectRegions::add(const cv::Rect rect){
+    regions.push_back(rect);
 }
 
-RectRegion::RectRegion(int x, int y, int w, int h) {
-    region =cv::Rect(x,y,w,h);
+void RectRegions::add(const std::vector<cv::Point> &detections) {
+    regions.push_back(cv::boundingRect(detections));
 }
 
-RectRegion::RectRegion(const std::string &jsonPath) {
-    FILE* fp = fopen(jsonPath.c_str(), "rb"); // non-Windows use "r"
-    char readBuffer[65536];
-    rapidjson::FileReadStream is(fp, readBuffer, sizeof(readBuffer));
-    rapidjson::Document d;
-    d.ParseStream(is);
-    fclose(fp);
-    region = cv::Rect(d["x"].GetInt(),d["y"].GetInt(),d["w"].GetInt(),d["h"].GetInt());
+void RectRegions::add(int x, int y, int w, int h) {
+    regions.push_back(cv::Rect(x,y,w,h));
 }
 
-cv::Rect RectRegion::getRegion() {
-    return this->region;
+cv::Rect RectRegions::getRegion(int id) {
+    if (this->regions.size() -1 >= id)
+        return this->regions[id];
+    else
+        return cv::Rect();
 }
 
-void RectRegion::drawRegion(cv::Mat &image) {
-    cv::rectangle(image,this->region,cv::Scalar(255,0,0),2);
+void RectRegions::drawRegions(cv::Mat &image) {
+    for (auto it = regions.begin(), end=regions.end(); it != end; ++it) {
+        cv::rectangle(image, *it, cv::Scalar(255, 0, 0), 2);
+    }
 
 }
 
-RectRegion::RectRegion() {
-
+std::vector<cv::Rect> RectRegions::getRegions() {
+    return this->regions;
 }
+

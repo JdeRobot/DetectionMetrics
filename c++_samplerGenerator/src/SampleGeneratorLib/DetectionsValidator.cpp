@@ -10,8 +10,7 @@
 #include <rapidjson/document.h>
 #include <rapidjson/writer.h>
 #include <fstream>
-#include <RectRegion.h>
-#include <ContourRegion.h>
+#include <Sample.h>
 
 
 
@@ -29,9 +28,9 @@ DetectionsValidator::~DetectionsValidator() {
 
 
 
-void DetectionsValidator::validate(const cv::Mat&image, std::vector<std::vector<cv::Point>>& detections){
+void DetectionsValidator::validate(const cv::Mat& colorImage,const cv::Mat& depthImage, std::vector<std::vector<cv::Point>>& detections){
 
-    cv::Mat mask=cv::Mat(image.size(), CV_8UC1,cv::Scalar(0));
+    cv::Mat mask=cv::Mat(colorImage.size(), CV_8UC1,cv::Scalar(0));
 
     for (auto it= detections.begin(), end = detections.end(); it != end; ++it){
         int idx= std::distance(detections.begin(),it);
@@ -41,44 +40,33 @@ void DetectionsValidator::validate(const cv::Mat&image, std::vector<std::vector<
 
 
     std::vector<cv::Mat> channels;
-    cv::split(image,channels);
-    cv::Mat colorMask(image.size(),CV_8UC1,cv::Scalar(255));
+    cv::split(colorImage,channels);
+    cv::Mat colorMask(colorImage.size(),CV_8UC1,cv::Scalar(255));
     colorMask.copyTo(channels[0],mask);
     cv::Mat image2show;
     cv::merge(channels,image2show);
 
 
+
+    RectRegions regions;
+    ContourRegions cRegions;
+
     BoundingValidator validator(image2show);
     for (auto it= detections.begin(), end=detections.end(); it != end; ++it){
-
-        if (validator.validate(*it)){
+        cv::Rect validatedRect;
+        if (validator.validate(*it,validatedRect)){
             Logger::getInstance()->info("Validated");
-            saveDetection(image,*it);
+            regions.add(validatedRect);
+            cRegions.add(*it);
         }
         else{
             Logger::getInstance()->info("Discarded");
         }
     }
-}
 
-
-
-
-void DetectionsValidator::saveDetection(const cv::Mat&image, std::vector<cv::Point>& detections){
-
-    RectRegion region(detections);
-    ContourRegion cRegion(detections);
-
-
-    std::cout << "Saving: " << region.getRegion()  << " [" << this->validationCounter << "]" << std::endl;
-    std::stringstream ss ;
-    ss << std::setfill('0') << std::setw(5) << this->validationCounter;
-    cv::Mat imageRGB;
-    cv::cvtColor(image,imageRGB,CV_RGB2BGR);
-    cv::imwrite(this->path + "/" + ss.str() + ".png",imageRGB);
-    region.saveJson(this->path + "/" + ss.str() + ".json");
-    cRegion.saveJson(this->path + "/" + ss.str() + "-region.json");
-
-
-    this->validationCounter++;
+    if (regions.getRegions().size()){
+        Sample sample(colorImage,depthImage,regions,cRegions);
+        sample.save(this->path,this->validationCounter);
+        this->validationCounter++;
+    }
 }

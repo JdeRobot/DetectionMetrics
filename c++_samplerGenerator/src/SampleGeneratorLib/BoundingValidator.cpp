@@ -3,7 +3,7 @@
 //
 
 #include "BoundingValidator.h"
-#include "BoundingRect.h"
+#include "BoundingRectGuiMover.h"
 
 BoundingValidator::BoundingValidator(const cv::Mat &image_in) {
     this->image=image_in.clone();
@@ -14,16 +14,18 @@ BoundingValidator::BoundingValidator(const cv::Mat &image_in) {
 
 }
 
-bool BoundingValidator::validate(std::vector<cv::Point> &bounding) {
+bool BoundingValidator::validate(std::vector<cv::Point> &bounding, cv::Rect& validatedBound) {
 
+    char validationKey=' ';
+    char rejectionKey='n';
     std::vector<cv::Point> scaledBounding;
     for (auto it = bounding.begin(), end = bounding.end(); it != end; ++it){
         scaledBounding.push_back((*it) * this->scale);
     }
     cv::Rect boundingRectangle = cv::boundingRect(scaledBounding);
-    BoundingRect rect(boundingRectangle);
+    BoundingRectGuiMover rect(boundingRectangle);
     int key='0';
-    while (char(key) != 'n' and char(key) != ' ') {
+    while (char(key) != rejectionKey and char(key) != validationKey) {
         cv::Mat image2show= this->image.clone();
         cv::rectangle(image2show, rect.getRect(), cv::Scalar(255, 0, 0), 3);
         std::string windowName="Validation window";
@@ -33,21 +35,26 @@ bool BoundingValidator::validate(std::vector<cv::Point> &bounding) {
         key=cv::waitKey(1);
         //std::cout << "key: " << char(key) << std::endl;
     }
+    validatedBound=rect.getRect(this->scale);
 
-    return (char(key)==' ');
+
+    return (char(key)==validationKey);
 }
 
 bool clicked=false;
 cv::Point from, to;
 cv::Point tempFrom;
+BoundingRectGuiMover::MovementType movementType = BoundingRectGuiMover::NONE;
+
 
 
 void BoundingValidator::CallBackFunc(int event, int x, int y, int flags, void* userdata)
 {
-    BoundingRect* rect = (BoundingRect*)userdata;
+    BoundingRectGuiMover* rect = (BoundingRectGuiMover*)userdata;
     if  ( event == cv::EVENT_LBUTTONDOWN )
     {
         if (!clicked) {
+            movementType = BoundingRectGuiMover::LOCAL_MOVEMENT;
             clicked = true;
             from=cv::Point(x,y);
             tempFrom=cv::Point(x,y);
@@ -57,6 +64,7 @@ void BoundingValidator::CallBackFunc(int event, int x, int y, int flags, void* u
     else if  ( event == cv::EVENT_LBUTTONUP )
     {
         if (clicked) {
+            movementType = BoundingRectGuiMover::NONE;
             clicked = false;
             /*to=cv::Point(x,y);
             std::cout << "moving from: " << from << ", to: " << to << std::endl;
@@ -68,10 +76,25 @@ void BoundingValidator::CallBackFunc(int event, int x, int y, int flags, void* u
         if (clicked) {
             to=cv::Point(x,y);
 //            std::cout << "moving from: " << from << ", to: " << to << std::endl;
-            rect->move(tempFrom,to);
+            rect->move(tempFrom,to,movementType);
             tempFrom=cv::Point(x,y);
 
 
+        }
+    }
+    else if (event == cv::EVENT_MBUTTONDOWN){
+        if (!clicked) {
+            movementType = BoundingRectGuiMover::GLOBAL_MOVEMENT;
+            clicked = true;
+            from=cv::Point(x,y);
+            tempFrom=cv::Point(x,y);
+
+        }
+    }
+    else if (event == cv::EVENT_MBUTTONUP){
+        movementType = BoundingRectGuiMover::NONE;
+        if (clicked) {
+            clicked = false;
         }
     }
 }

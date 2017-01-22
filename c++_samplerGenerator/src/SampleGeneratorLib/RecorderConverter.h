@@ -12,6 +12,7 @@ class RecorderConverter {
 public:
     RecorderConverter(const std::string& colorImagesPath, const std::string& depthImagesPath);
     bool getNext(std::string& colorImagePath, std::string& depthImagePath);
+    int getNumSamples();
 
 private:
     const  std::string depthPath;

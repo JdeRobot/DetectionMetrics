@@ -65,3 +65,7 @@ bool RecorderConverter::getNext(std::string &colorImagePath, std::string &depthI
         return false;
     }
 }
+
+int RecorderConverter::getNumSamples() {
+    return this->depthIndexes.size();
+}

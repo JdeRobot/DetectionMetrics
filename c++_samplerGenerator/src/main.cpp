@@ -93,8 +93,12 @@ int main (int argc, char* argv[])
 
     DetectionsValidator validator(outputPath);
     cv::Mat previousImage;
+    int counter=0;
+    int maxElements= converter.getNumSamples();
     while (converter.getNext(colorImagePath,depthImagePath)){
-        Logger::getInstance()->info( "Processing: " + colorImagePath + ", " + depthImagePath );
+        std::stringstream ss ;
+        ss << counter << "/" << maxElements;
+        Logger::getInstance()->info( "Processing [" +  ss.str() + "] : " + colorImagePath + ", " + depthImagePath );
         cv::Mat colorImage= cv::imread(colorImagePath);
         if (!previousImage.empty()){
             cv::Mat diff;
@@ -108,7 +112,8 @@ int main (int argc, char* argv[])
         cv::Mat depthImage = cv::imread(depthImagePath);
         std::vector<std::vector<cv::Point>> detections = segmentator.process(depthImage);
 
-        validator.validate(colorImage,detections);
+        validator.validate(colorImage,depthImage,detections);
+        counter++;
     }
 
     return 0;

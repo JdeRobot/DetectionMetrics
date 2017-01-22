@@ -12,12 +12,11 @@ class DetectionsValidator {
 public:
     DetectionsValidator(const std::string& pathToSave);
     ~DetectionsValidator();
-    void validate(const cv::Mat& image, std::vector<std::vector<cv::Point>>& detections);
+    void validate(const cv::Mat& colorImage,const cv::Mat& depthImage, std::vector<std::vector<cv::Point>>& detections);
 
 private:
     int validationCounter;
     std::string path;
-    void saveDetection(const cv::Mat&image, std::vector<cv::Point>& detections);
 };
 
 

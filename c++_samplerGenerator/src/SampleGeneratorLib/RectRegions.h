@@ -8,18 +8,19 @@
 #include <opencv2/opencv.hpp>
 #include "Region.h"
 
-struct RectRegion:Region {
-    RectRegion(const std::string& jsonPath);
-    RectRegion();
+struct RectRegions:Region {
+    RectRegions(const std::string& jsonPath);
+    RectRegions();
 
-    RectRegion(const cv::Rect rect);
-    RectRegion(const std::vector<cv::Point>& detections);
-    RectRegion(int x, int y, int w, int h);
+    void add(const cv::Rect rect);
+    void add(const std::vector<cv::Point>& detections);
+    void add(int x, int y, int w, int h);
 
 
     void saveJson(const std::string& outPath);
-    cv::Rect getRegion();
-    void drawRegion(cv::Mat& image);
+    cv::Rect getRegion(int id);
+    std::vector<cv::Rect> getRegions();
+    void drawRegions(cv::Mat& image);
 
 
 

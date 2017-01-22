@@ -6,6 +6,13 @@ import cv2
 import numpy as np
 import copy
 
+
+def checkRange(data_in):
+	d=data_in
+	if d <= 0.1:
+		d=0.1
+	return d
+
 class sample:
     def __init__(self,image,roi):
         self.image = image
@@ -110,5 +117,15 @@ class sample:
         print self.getResultStr()
 
 
+
     def getResultStr(self):
-        return str(0) + ' ' +  str(float(self.x)/float(self.getImageWidth())) + ' ' + str(float(self.y)/float(self.getImageHeight())) + ' ,' +  str(float(self.w)/float(self.getImageWidth())) +  ' ' +  str(float(self.h)/float(self.getImageHeight()))
+		tempX=checkRange(float(self.x)/float(self.getImageWidth()))
+		tempY=checkRange(float(self.y)/float(self.getImageHeight()))
+
+
+		if self.w + self.x >= self.getImageWidth():
+			self.w= self.getImageWidth() - 1 - self.x
+		if self.h + self.y >= self.getImageHeight():
+			self.h= self.getImageHeight() - 1 - self.y
+
+		return str(0) + ' ' +  str(tempX) + ' ' + str(tempY) + ' ' +  str(float(self.w)/float(self.getImageWidth())) +  ' ' +  str(float(self.h)/float(self.getImageHeight()))

@@ -2,13 +2,13 @@
 // Created by frivas on 22/11/16.
 //
 
-#include "BoundingRect.h"
+#include "BoundingRectGuiMover.h"
 
-BoundingRect::BoundingRect(const std::vector<cv::Point> &points):points(points) {
+BoundingRectGuiMover::BoundingRectGuiMover(const std::vector<cv::Point> &points):points(points) {
 
 }
 
-BoundingRect::BoundingRect(const cv::Rect &rectangle) {
+BoundingRectGuiMover::BoundingRectGuiMover(const cv::Rect &rectangle) {
     points.push_back(cv::Point(rectangle.x,rectangle.y));
     points.push_back(cv::Point(rectangle.x + rectangle.width,rectangle.y));
     points.push_back(cv::Point(rectangle.x + rectangle.width,rectangle.y + rectangle.height));
@@ -18,37 +18,45 @@ BoundingRect::BoundingRect(const cv::Rect &rectangle) {
 
 
 
-std::vector<cv::Point> BoundingRect::getPoints() {
+std::vector<cv::Point> BoundingRectGuiMover::getPoints() {
     return points;
 }
 
-void BoundingRect::move(const cv::Point &from, const cv::Point &to) {
-    unsigned int idx1,idx2;
+void BoundingRectGuiMover::move(const cv::Point &from, const cv::Point &to,const  MovementType& type) {
+    if (type == LOCAL_MOVEMENT) {
+        unsigned int idx1, idx2;
 
-    getClosestsLinePoints(from,idx1,idx2);
+        getClosestsLinePoints(from, idx1, idx2);
 
-    cv::Point& p1 = points[idx1];
-    cv::Point& p2 = points[idx2];
+        cv::Point &p1 = points[idx1];
+        cv::Point &p2 = points[idx2];
 
 
-//    std::cout << "closest points: " << p1 << ", " << p2<< std::endl;
-    cv::Point movement;
-    if (isVertical(p1,p2)){
-        movement = cv::Point(to.x-from.x,0);
+        //    std::cout << "closest points: " << p1 << ", " << p2<< std::endl;
+        cv::Point movement;
+        if (isVertical(p1, p2)) {
+            movement = cv::Point(to.x - from.x, 0);
+        } else {
+            movement = cv::Point(0, to.y - from.y);
+        }
+
+        //    std::cout << "Vertical: " << isVertical(p1,p2) << "  Movement: " << movement << std::endl;
+        //    std::cout << "Previous : " << p1 << ", " << p2 << std::endl;
+        p1 = p1 + movement;
+        p2 = p2 + movement;
     }
-    else{
-        movement = cv::Point(0,to.y-from.y);
+    else if (type == GLOBAL_MOVEMENT){
+        cv::Point movement= to - from;
+        for (auto it = points.begin(), end= points.end(); it != end; ++it){
+            cv::Point &point = *it;
+            point= point + movement;
+        }
     }
-
-//    std::cout << "Vertical: " << isVertical(p1,p2) << "  Movement: " << movement << std::endl;
-//    std::cout << "Previous : " << p1 << ", " << p2 << std::endl;
-    p1= p1 + movement;
-    p2 = p2 + movement;
 
 
 }
 
-void BoundingRect::getClosestsLinePoints(const cv::Point &from, unsigned int &p1, unsigned int &p2) {
+void BoundingRectGuiMover::getClosestsLinePoints(const cv::Point &from, unsigned int &p1, unsigned int &p2) {
 
     double minDistance=999999999;
 
@@ -70,14 +78,14 @@ void BoundingRect::getClosestsLinePoints(const cv::Point &from, unsigned int &p1
     }
 }
 
-bool BoundingRect::isVertical(const cv::Point &from, const cv::Point &to) {
+bool BoundingRectGuiMover::isVertical(const cv::Point &from, const cv::Point &to) {
     int xMovement = abs(from.x-to.x);
     int yMovement = abs(from.y-to.y);
 //    std::cout << "Xmov: " << xMovement << ", ymov: " << yMovement << std::endl;
     return abs(from.x-to.x) <  abs(from.y-to.y);
 }
 
-cv::Rect BoundingRect::getRect(const double scale) {
+cv::Rect BoundingRectGuiMover::getRect(const double scale) {
     return cv::Rect(points[0].x/scale, points[0].y/scale,(points[1].x - points[0].x)/scale,(points[2].y - points[1].y)/scale);
 }
 

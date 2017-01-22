@@ -7,15 +7,17 @@
 
 #include <opencv2/opencv.hpp>
 #include "Region.h"
-struct ContourRegion:Region {
-    ContourRegion(const std::vector<cv::Point>& detections);
-    ContourRegion(const std::string& jsonPath);
+struct ContourRegions:Region {
+    ContourRegions(const std::string& jsonPath);
+    ContourRegions();
     void saveJson(const std::string& outPath);
-    std::vector<cv::Point> getRegion();
-    void drawRegion(cv::Mat& image);
+    void add(const std::vector<cv::Point>& detections);
+    std::vector<cv::Point> getRegion(int idx);
+    std::vector<std::vector<cv::Point>> getRegions();
+    void drawRegions(cv::Mat& image);
 
 private:
-    std::vector<cv::Point> regions;
+    std::vector<std::vector<cv::Point>> regions;
 };
 
 

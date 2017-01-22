@@ -11,7 +11,7 @@
 class BoundingValidator {
 public:
     BoundingValidator(const cv::Mat& image_in);
-    bool validate(std::vector<cv::Point>& bounding);
+    bool validate(std::vector<cv::Point>& bounding,cv::Rect& validatedBound);
 
 private:
     double scale;

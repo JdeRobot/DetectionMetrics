@@ -7,14 +7,14 @@
 
 #include <opencv2/opencv.hpp>
 
-struct BoundingRect {
+struct BoundingRectGuiMover {
 public:
-
-    BoundingRect(const std::vector<cv::Point>& points);
-    BoundingRect(const cv::Rect& rectangle);
+    enum MovementType{ LOCAL_MOVEMENT, GLOBAL_MOVEMENT, NONE};
+    BoundingRectGuiMover(const std::vector<cv::Point>& points);
+    BoundingRectGuiMover(const cv::Rect& rectangle);
 
     std::vector<cv::Point> getPoints();
-    void move(const cv::Point& from, const cv::Point& to);
+    void move(const cv::Point& from, const cv::Point& to, const  MovementType& type);
     cv::Rect getRect(const double scale=1);
 
 

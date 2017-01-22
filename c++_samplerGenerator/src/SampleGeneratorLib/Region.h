@@ -11,7 +11,7 @@
 struct Region{
     Region(){};
     virtual void saveJson(const std::string& outPath)=0;
-    virtual void drawRegion(cv::Mat& image)=0;
+    virtual void drawRegions(cv::Mat& image)=0;
 
 };
 
