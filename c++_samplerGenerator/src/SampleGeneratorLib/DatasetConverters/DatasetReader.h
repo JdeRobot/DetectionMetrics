@@ -6,15 +6,21 @@
 #define SAMPLERGENERATOR_DATASETREADER_H
 
 #include <string>
-enum DatasetType{ DST_OWN};
-
+#include <Sample.h>
+enum DatasetType{ DST_OWN, DST_YOLO};
 
 class DatasetReader {
 public:
-    DatasetReader(const std::string& path);
+    DatasetReader();
+    bool getNetxSample(Sample& sample);
+    void filterSamplesByID(std::vector<int> filteredIDS);
+    int getNumberOfElements();
+    void resetReaderCounter();
 
-private:
-
+protected:
+    std::vector<Sample> samples;
+    std::string datasetPath;
+    int readerCounter;
 };
 
 

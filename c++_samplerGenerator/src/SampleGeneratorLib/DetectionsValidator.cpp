@@ -46,7 +46,7 @@ void DetectionsValidator::validate(const cv::Mat& colorImage,const cv::Mat& dept
     cv::Mat image2show;
     cv::merge(channels,image2show);
 
-
+    int validationID=14; //todo configure anywhere
 
     RectRegions regions;
     ContourRegions cRegions;
@@ -56,8 +56,8 @@ void DetectionsValidator::validate(const cv::Mat& colorImage,const cv::Mat& dept
         cv::Rect validatedRect;
         if (validator.validate(*it,validatedRect)){
             Logger::getInstance()->info("Validated");
-            regions.add(validatedRect);
-            cRegions.add(*it);
+            regions.add(validatedRect,validationID);
+            cRegions.add(*it,validationID);
         }
         else{
             Logger::getInstance()->info("Discarded");

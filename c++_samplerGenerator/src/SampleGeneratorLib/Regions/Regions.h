@@ -8,10 +8,12 @@
 
 #include <opencv2/opencv.hpp>
 
-struct Region{
-    Region(){};
+struct Regions{
+    Regions(){};
     virtual void saveJson(const std::string& outPath)=0;
     virtual void drawRegions(cv::Mat& image)=0;
+    virtual void filterSamplesByID(std::vector<int> filteredIDS)=0;
+    virtual bool empty()=0;
 
 };
 

@@ -76,12 +76,21 @@ ContourRegions Sample::getContourRegions() {
 }
 
 cv::Mat Sample::getColorImage() {
-    return this->colorImage;
+    if (this->colorImage.empty()) {
+        cv::Mat image = cv::imread(this->colorImagePath);
+        return image;
+    }
+    else
+        return this->colorImage;
 }
 
 cv::Mat Sample::getDepthImage() {
-    return this->depthImage;
-}
+    if (this->depthImage.empty()) {
+        cv::Mat image = cv::imread(this->depthImagePath);
+        return image;
+    }
+    else
+        return this->depthImage;}
 
 Sample::Sample(const std::string &path, const std::string &id,bool loadDepth) {
     this->colorImage=cv::imread(path + "/"  + id + ".png");
@@ -95,16 +104,14 @@ Sample::Sample(const std::string &path, const std::string &id,bool loadDepth) {
 }
 
 cv::Mat Sample::getSampledColorImage() {
-    cv::Mat image;
-    this->colorImage.copyTo(image);
+    cv::Mat image = this->getColorImage();
     this->rectRegions.drawRegions(image);
     this->contourRegions.drawRegions(image);
     return image;
 }
 
 cv::Mat Sample::getSampledDepthImage() {
-    cv::Mat image;
-    this->depthImage.copyTo(image);
+    cv::Mat image =this->getDepthImage();
     this->rectRegions.drawRegions(image);
     this->contourRegions.drawRegions(image);
     return image;
@@ -119,6 +126,23 @@ void Sample::save(const std::string &outPath, int id) {
     cv::imwrite(outPath + "/" + ss.str() + "-depth.png",depthImage);
     rectRegions.saveJson(outPath + "/" + ss.str() + ".json");
     contourRegions.saveJson(outPath + "/" + ss.str() + "-region.json");
+}
+
+bool Sample::isValid() {
+    return !this->colorImage.empty();
+}
+
+void Sample::filterSamplesByID(std::vector<int> filteredIDS) {
+    this->rectRegions.filterSamplesByID(filteredIDS);
+    this->contourRegions.filterSamplesByID(filteredIDS);
+}
+
+void Sample::setColorImage(const std::string &imagePath) {
+    this->colorImagePath=imagePath;
+}
+
+void Sample::setDepthImage(const std::string &imagePath) {
+    this->depthImagePath=imagePath;
 }
 
 

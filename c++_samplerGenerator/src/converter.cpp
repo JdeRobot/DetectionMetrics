@@ -12,7 +12,7 @@
 #include <SampleGeneratorLib/Logger.h>
 #include <highgui.h>
 #include <SampleGeneratorLib/DatasetConverters/OwnDatasetReader.h>
-#include <SampleGeneratorLib/DatasetConverters/YoloDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/YoloDatasetConverter.h>
 
 
 namespace
@@ -98,26 +98,7 @@ int main (int argc, char* argv[]) {
     Logger::getInstance()->info("Reviewing " + args.path);
 
 
-//    OwnDatasetReader reader(args.path);
-    YoloDatasetReader reader(args.path);
-
-    std::vector<int> idsToFilter;
-    idsToFilter.push_back(14);
-
-
-    std::cout << "Samples before: " << reader.getNumberOfElements() << std::endl;
-    reader.filterSamplesByID(idsToFilter);
-    std::cout << "Samples after: " << reader.getNumberOfElements() << std::endl;
-
-
-
-    Sample sample;
-    while (reader.getNetxSample(sample)){
-        std::cout << "number of elements: " << sample.getRectRegions().getRegions().size() << std::endl;
-        cv::Mat image =sample.getSampledColorImage();
-        cv::imshow("Viewer", image);
-        cv::waitKey(0);
-    }
-
-
+    OwnDatasetReader ownDatasetReader(args.path);
+    YoloDatasetConverter converter("salida", ownDatasetReader);
+    converter.process(true);
 }

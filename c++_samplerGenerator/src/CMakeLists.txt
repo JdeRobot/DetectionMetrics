@@ -31,3 +31,13 @@ TARGET_LINK_LIBRARIES(viewer
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
         )
+
+
+add_executable (converter  converter.cpp)
+
+TARGET_LINK_LIBRARIES(converter
+        SampleGenerator
+        ${JdeRobot_LIBRARIES}
+        ${OpenCV_LIBRARIES}
+        ${Boost_LIBRARIES}
+        )

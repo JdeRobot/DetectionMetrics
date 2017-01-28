@@ -20,13 +20,14 @@ ContourRegions::ContourRegions(const std::string &jsonPath) {
     this->regions.clear();
     for (auto it = d.Begin(), end= d.End(); it != end; ++it){
         std::vector<cv::Point> detection;
-        for (auto it2= it->Begin(), end2=it->End(); it2!= end2; ++it2) {
+        for (auto it2= (*it)["region"].Begin(), end2=(*it)["region"].End(); it2!= end2; ++it2) {
             cv::Point point;
             point.x = (*it2)["x"].GetInt();
             point.y = (*it2)["y"].GetInt();
             detection.push_back(point);
         }
-        this->regions.push_back(detection);
+        int id = (*it)["id"].GetInt();
+        this->regions.push_back(ContourRegion(detection,id));
     }
 }
 
@@ -34,8 +35,8 @@ ContourRegions::ContourRegions(){
 
 }
 
-void ContourRegions::add(const std::vector<cv::Point> &detections) {
-    this->regions.push_back(std::vector<cv::Point>(detections));
+void ContourRegions::add(const std::vector<cv::Point> &detections, int classId) {
+    this->regions.push_back(ContourRegion(std::vector<cv::Point>(detections),classId));
 }
 
 
@@ -46,8 +47,14 @@ void ContourRegions::saveJson(const std::string &outPath) {
     d.SetArray();
     for (auto it = this->regions.begin(), end=this->regions.end(); it != end; it++){
         rapidjson::Value detection;
-        detection.SetArray();
-        for (auto it2=it->begin(), end2= it->end(); it2 != end2; ++it2) {
+        detection.SetObject();
+        rapidjson::Value idValue(it->id);
+        detection.AddMember("id",idValue,d.GetAllocator());
+
+        rapidjson::Value regionValue;
+        regionValue.SetArray();
+
+        for (auto it2=it->region.begin(), end2= it->region.end(); it2 != end2; ++it2) {
             rapidjson::Value point;
             point.SetObject();
             rapidjson::Value xValue(it2->x);
@@ -56,8 +63,9 @@ void ContourRegions::saveJson(const std::string &outPath) {
             rapidjson::Value yValue(it2->y);
             point.AddMember("y", yValue, d.GetAllocator());
 
-            detection.PushBack(point, d.GetAllocator());
+            regionValue.PushBack(point, d.GetAllocator());
         }
+        detection.AddMember("region",regionValue,d.GetAllocator());
         d.PushBack(detection,d.GetAllocator());
     }
 
@@ -76,11 +84,11 @@ void ContourRegions::saveJson(const std::string &outPath) {
 
 
 
-std::vector<cv::Point> ContourRegions::getRegion(int idx) {
+ContourRegion ContourRegions::getRegion(int idx) {
     if (this->regions.size() -1 >= idx)
         return this->regions[idx];
     else
-        return std::vector<cv::Point>();
+        return ContourRegion();
 }
 
 void ContourRegions::drawRegions(cv::Mat &image) {
@@ -88,7 +96,7 @@ void ContourRegions::drawRegions(cv::Mat &image) {
         cv::Mat mask = cv::Mat(image.size(), CV_8UC1, cv::Scalar(0));
         cv::Scalar color(255);
         std::vector<std::vector<cv::Point>> contours;
-        contours.push_back(*it);
+        contours.push_back(it->region);
         cv::drawContours(mask, contours, 0, color, CV_FILLED, 8);
         std::vector<cv::Mat> channels;
         cv::split(image, channels);
@@ -103,8 +111,22 @@ void ContourRegions::drawRegions(cv::Mat &image) {
 
 }
 
-std::vector<std::vector<cv::Point>> ContourRegions::getRegions() {
+std::vector<ContourRegion> ContourRegions::getRegions() {
     return this->regions;
+}
+
+void ContourRegions::filterSamplesByID(std::vector<int> filteredIDS) {
+    std::vector<ContourRegion> oldRegions(this->regions);
+    this->regions.clear();
+    for(auto it = oldRegions.begin(), end=oldRegions.end(); it != end; ++it) {
+        if (std::find(filteredIDS.begin(), filteredIDS.end(), it->id) != filteredIDS.end()) {
+            this->regions.push_back(*it);
+        }
+    }
+}
+
+bool ContourRegions::empty() {
+    return (this->regions.size()==0);
 }
 
 
