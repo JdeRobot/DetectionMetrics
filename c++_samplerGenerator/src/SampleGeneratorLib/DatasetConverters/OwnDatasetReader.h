@@ -16,4 +16,7 @@ private:
 };
 
 
+typedef boost::shared_ptr<OwnDatasetReader> OwnDatasetReaderPtr;
+
+
 #endif //SAMPLERGENERATOR_OWNDATASETREADER_H

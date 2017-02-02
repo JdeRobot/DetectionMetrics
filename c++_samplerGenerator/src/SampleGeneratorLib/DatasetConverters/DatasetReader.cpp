@@ -47,3 +47,15 @@ bool DatasetReader::getNetxSample(Sample &sample) {
 
 }
 
+
+
+bool DatasetReader::getSampleBySampleID(Sample** sample, const std::string& sampleID){
+    for (auto it=this->samples.begin(), end= this->samples.end(); it != end; ++it){
+        if (it->getSampleID().compare(sampleID)==0){
+            *sample=&(*it);
+            return true;
+        }
+    }
+    return false;
+}
+

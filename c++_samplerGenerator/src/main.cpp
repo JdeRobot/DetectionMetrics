@@ -100,6 +100,7 @@ int main (int argc, char* argv[])
         ss << counter << "/" << maxElements;
         Logger::getInstance()->info( "Processing [" +  ss.str() + "] : " + colorImagePath + ", " + depthImagePath );
         cv::Mat colorImage= cv::imread(colorImagePath);
+        cv::cvtColor(colorImage,colorImage,CV_RGB2BGR);
         if (!previousImage.empty()){
             cv::Mat diff;
             cv::absdiff(colorImage,previousImage,diff);

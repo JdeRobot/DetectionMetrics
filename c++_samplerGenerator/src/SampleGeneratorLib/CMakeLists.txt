@@ -1,4 +1,37 @@
-SET( SOURCE_FILES RecorderConverter.cpp RecorderConverter.h DepthForegroundSegmentator.cpp DepthForegroundSegmentator.h BoundingValidator.cpp BoundingValidator.h BoundingRectGuiMover.cpp BoundingRectGuiMover.h DetectionsValidator.cpp DetectionsValidator.h Logger.cpp Logger.h Regions/RectRegions.cpp Regions/RectRegions.h Regions/ContourRegions.cpp Regions/ContourRegions.h Regions/Regions.h DatasetConverters/DatasetConverter.cpp DatasetConverters/DatasetConverter.h DatasetConverters/DatasetReader.cpp DatasetConverters/DatasetReader.h Sample.cpp Sample.h DatasetConverters/OwnDatasetReader.cpp DatasetConverters/OwnDatasetReader.h DatasetConverters/YoloDatasetConverter.cpp DatasetConverters/YoloDatasetConverter.h DatasetConverters/YoloDatasetReader.cpp DatasetConverters/YoloDatasetReader.h DatasetConverters/ClassType.h DatasetConverters/ClassType.cpp Regions/Region.h Regions/RectRegion.cpp Regions/RectRegion.h Regions/ContourRegion.cpp Regions/ContourRegion.h Detectors/Detector.h)
+SET( SOURCE_FILES RecorderConverter
+       DepthForegroundSegmentator
+        BoundingValidator
+        BoundingRectGuiMover
+        DetectionsValidator
+        Logger
+        Regions/RectRegions
+        Regions/ContourRegions
+        Regions/Regions.h
+        DatasetConverters/DatasetConverter
+        DatasetConverters/DatasetReader
+        Sample
+        DatasetConverters/OwnDatasetReader
+        DatasetConverters/YoloDatasetWriter
+        DatasetConverters/YoloDatasetReader
+        DatasetConverters/ClassTypeVoc
+        Regions/Region
+        Regions/RectRegion
+        Regions/ContourRegion
+        Detectors/Detector.h
+        DatasetConverters/SpinelloDatasetReader
+        FrameworkEvaluator/FrameworkInferencer
+        Utils/StringHandler.h
+        Utils/Normalizations
+        FrameworkEvaluator/Statistics
+        DatasetConverters/ClassTypeCoco
+        FrameworkEvaluator/DetectionsEvaluator
+        )
+
+
+IF(DARKNET_ACTIVE)
+    SET( SOURCE_FILES ${SOURCE_FILES} FrameworkEvaluator/DarknetInferencer FrameworkEvaluator/MassInferencer.cpp FrameworkEvaluator/MassInferencer.h)
+    include_directories(${DARKNET_INCLUDE_DIR})
+ENDIF()
 
 
 include_directories(

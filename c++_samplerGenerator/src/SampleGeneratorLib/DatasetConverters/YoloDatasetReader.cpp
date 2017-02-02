@@ -4,6 +4,7 @@
 
 #include <fstream>
 #include <Logger.h>
+#include <boost/filesystem/path.hpp>
 #include "YoloDatasetReader.h"
 
 
@@ -22,6 +23,7 @@ YoloDatasetReader::YoloDatasetReader(const std::string &path) {
     std::string line;
     while (getline(inFile,line)){
         Sample sample;
+        sample.setSampleID(boost::filesystem::path(line).filename().stem().string());
         sample.setColorImage(line);
         Logger::getInstance()->info("Loading sample: " + line);
         cv::Mat image = cv::imread(line);

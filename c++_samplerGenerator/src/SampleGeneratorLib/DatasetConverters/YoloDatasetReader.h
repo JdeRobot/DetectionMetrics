@@ -13,5 +13,6 @@ public:
     YoloDatasetReader(const std::string& path);
 };
 
+typedef boost::shared_ptr<YoloDatasetReader> YoloDatasetReaderPtr;
 
 #endif //SAMPLERGENERATOR_YOLODATASETREADER_H

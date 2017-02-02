@@ -11,13 +11,26 @@
 #include <rapidjson/writer.h>
 #include <fstream>
 #include <Sample.h>
-
+#include <boost/lexical_cast.hpp>
 
 
 DetectionsValidator::DetectionsValidator(const std::string& pathToSave):validationCounter(0), path(pathToSave) {
     auto boostPath= boost::filesystem::path(this->path);
     if (!boost::filesystem::exists(boostPath)){
         boost::filesystem::create_directories(boostPath);
+    }
+    else{
+        boost::filesystem::directory_iterator end_itr;
+
+        for (boost::filesystem::directory_iterator itr(boostPath); itr!=end_itr; ++itr)
+        {
+            if ((is_regular_file(itr->status()) && itr->path().extension()==".png") && (itr->path().string().find("-depth") == std::string::npos)) {
+                validationCounter++;
+            }
+
+        }
+        Logger::getInstance()->warning("Including samples to an existing dataset, starting with: " + boost::lexical_cast<std::string>(this->validationCounter));
+
     }
 
 }

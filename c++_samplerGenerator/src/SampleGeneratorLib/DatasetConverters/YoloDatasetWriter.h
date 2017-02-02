@@ -8,15 +8,16 @@
 #include <string>
 #include "DatasetReader.h"
 
-class YoloDatasetConverter {
+class YoloDatasetWriter {
 public:
-    YoloDatasetConverter(const std::string& outPath, DatasetReader& reader);
+    YoloDatasetWriter(const std::string& outPath, DatasetReader& reader);
     void process(bool overWriteclassWithZero);
-    void finishConversion();
 
 private:
     std::string outPath;
     DatasetReader& reader;
+    std::string fullImagesPath;
+    std::string fullLabelsPath;
 };
 
 

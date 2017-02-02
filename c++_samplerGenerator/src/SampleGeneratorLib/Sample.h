@@ -24,6 +24,7 @@ struct Sample {
     void setDepthImage(const std::string& imagePath);
     void setRectRegions(const RectRegions& regions);
     void setContourRegions(const ContourRegions& regions);
+    void setSampleID(const std::string& sampleID);
 
     RectRegions getRectRegions();
     ContourRegions getContourRegions();
@@ -32,8 +33,12 @@ struct Sample {
     cv::Mat getSampledColorImage();
     cv::Mat getSampledDepthImage();
     void save(const std::string& outPath, int id);
+    void save(const std::string& outPath, const std::string& filename);
+    void save(const std::string& outPath);
+
     bool isValid();
     void filterSamplesByID(std::vector<int> filteredIDS);
+    std::string getSampleID();
 
 
 
@@ -44,6 +49,7 @@ private:
     std::string colorImagePath;
     cv::Mat depthImage;
     std::string depthImagePath;
+    std::string sampleID;
 };
 
 

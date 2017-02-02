@@ -1,5 +1,5 @@
 //
-// Created by frivas on 21/01/17.
+// Created by frivas on 1/02/17.
 //
 
 
@@ -12,8 +12,11 @@
 #include <SampleGeneratorLib/Logger.h>
 #include <highgui.h>
 #include <SampleGeneratorLib/DatasetConverters/OwnDatasetReader.h>
-#include <SampleGeneratorLib/DatasetConverters/YoloDatasetWriter.h>
 #include <SampleGeneratorLib/DatasetConverters/YoloDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/SpinelloDatasetReader.h>
+#include <SampleGeneratorLib/FrameworkEvaluator/DarknetInferencer.h>
+#include <FrameworkEvaluator/MassInferencer.h>
+#include <SampleGeneratorLib/FrameworkEvaluator/DetectionsEvaluator.h>
 
 
 namespace
@@ -28,15 +31,14 @@ namespace
 
 
 
-struct ViewerAguments{
-    std::string path;
-    bool depthEnabled;
+struct EvaluatorArguments{
+    std::string inputPathGT;
+    std::string inputPathDectection;
 
-    ViewerAguments():depthEnabled(false){};
 };
 
 
-int parse_arguments(const int argc, char* argv[], ViewerAguments& args){
+int parse_arguments(const int argc, char* argv[], EvaluatorArguments& args){
     try
     {
         /** Define and parse the program options
@@ -45,8 +47,8 @@ int parse_arguments(const int argc, char* argv[], ViewerAguments& args){
         po::options_description desc("Options");
         desc.add_options()
                 ("help", "Print help messages")
-                ("word,w", po::value<std::string>(&args.path)->required())
-                ("depth,d", po::value<bool>(&args.depthEnabled)->default_value(false));
+                ("groundTruth,t", po::value<std::string>(&args.inputPathGT)->required())
+                ("detection,d", po::value<std::string>(&args.inputPathDectection)->required());
 
         po::variables_map vm;
         try
@@ -83,38 +85,33 @@ int parse_arguments(const int argc, char* argv[], ViewerAguments& args){
         return ERROR_UNHANDLED_EXCEPTION;
 
     }
+    return SUCCESS;
+
 }
 
-void extractPersonsFromYolo(const std::string& dataSetPath){
-    YoloDatasetReader reader(dataSetPath);
 
-    std::vector<int> idsToFilter;
-    idsToFilter.push_back(14);
-
-
-    std::cout << "Samples before: " << reader.getNumberOfElements() << std::endl;
-    reader.filterSamplesByID(idsToFilter);
-    std::cout << "Samples after: " << reader.getNumberOfElements() << std::endl;
-    YoloDatasetWriter converter("converter_output", reader);
-    converter.process(true);
-}
 
 
 
 int main (int argc, char* argv[]) {
 
-    ViewerAguments args;
-    parse_arguments(argc,argv,args);
+    EvaluatorArguments args;
+    if (parse_arguments(argc,argv,args) != SUCCESS){
+        std::cout << "error" << std::endl;
+        return(1);
+    }
 
 
     Logger::getInstance()->setLevel(Logger::INFO);
-    Logger::getInstance()->info("Reviewing " + args.path);
 
 
-    extractPersonsFromYolo(args.path);
+    OwnDatasetReaderPtr readerGT( new OwnDatasetReader(args.inputPathGT));
+    OwnDatasetReaderPtr readerDetection( new OwnDatasetReader(args.inputPathDectection));
 
-//    OwnDatasetReader reader(args.path);
-//
-//    YoloDatasetWriter converter("converter_output", reader);
-//    converter.process(true);
+//    YoloDatasetReader reader(args.path);
+//    YoloDatasetReader reader(args.inputPath);
+
+    DetectionsEvaluatorPtr evaluator(new DetectionsEvaluator(readerGT,readerDetection,true));
+
+    evaluator->evaluate();
 }

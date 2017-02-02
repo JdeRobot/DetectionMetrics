@@ -13,6 +13,7 @@
 #include <highgui.h>
 #include <SampleGeneratorLib/DatasetConverters/OwnDatasetReader.h>
 #include <SampleGeneratorLib/DatasetConverters/YoloDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/SpinelloDatasetReader.h>
 
 
 namespace
@@ -98,18 +99,9 @@ int main (int argc, char* argv[]) {
     Logger::getInstance()->info("Reviewing " + args.path);
 
 
-//    OwnDatasetReader reader(args.path);
-    YoloDatasetReader reader(args.path);
-
-    std::vector<int> idsToFilter;
-    idsToFilter.push_back(14);
-
-
-    std::cout << "Samples before: " << reader.getNumberOfElements() << std::endl;
-    reader.filterSamplesByID(idsToFilter);
-    std::cout << "Samples after: " << reader.getNumberOfElements() << std::endl;
-
-
+    OwnDatasetReader reader(args.path);
+//    YoloDatasetReader reader(args.path);
+//    SpinelloDatasetReader reader(args.path);
 
     Sample sample;
     while (reader.getNetxSample(sample)){

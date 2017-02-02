@@ -28,6 +28,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated -fPIC")
 include(FindPkgConfig)
 
 FIND_PACKAGE(OpenCV REQUIRED)
+FIND_PACKAGE(CUDA REQUIRED)
 FIND_PACKAGE(JdeRobot REQUIRED)
 FIND_PACKAGE(Boost REQUIRED program_options filesystem)
 
@@ -55,5 +56,21 @@ ENDIF()
 
 
 
-add_subdirectory(src)
+ #darknet
+ SET(DARKNET_PATH /home/frivas/devel/external/ownDarknet/darknet/code/)
+
+FIND_PATH( DARKNET_INCLUDE_DIR NAMES DarknetAPI/DarknetAPI.h  PATHS ${DARKNET_PATH}/src )
+FIND_LIBRARY( DARKNET_LIBRARIES NAMES darknetLib PATHS ${DARKNET_PATH}/build/src/ )
+
+
+
+
+if (DARKNET_INCLUDE_DIR AND DARKNET_LIBRARIES)
+	message("DARKNET_INCLUDE_DIR: ${DARKNET_INCLUDE_DIR}")
+	message("DARKNET_LIBRARIES: ${DARKNET_LIBRARIES}")
+	SET(DARKNET_ACTIVE ON)
+endif()
+
+
+ add_subdirectory(src)
 

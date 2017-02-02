@@ -28,6 +28,7 @@ OwnDatasetReader::OwnDatasetReader(const std::string &path):currentIndex(0) {
 
     for (auto it = filesID.begin(), end=filesID.end(); it != end; ++it){
         Sample sample(this->datasetPath,*it);
+        sample.setSampleID(boost::filesystem::path(*it).filename().stem().string());
         this->samples.push_back(sample);
     }
 

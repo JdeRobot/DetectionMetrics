@@ -3,11 +3,11 @@
 //
 
 
-#include "ClassType.h"
+#include "ClassTypeVoc.h"
 
-float colors[6][3] = { {1,0,1}, {0,0,1},{0,1,1},{0,1,0},{1,1,0},{1,0,0} };
+float colorsClass[6][3] = { {1,0,1}, {0,0,1},{0,1,1},{0,1,0},{1,1,0},{1,0,0} };
 
-cv::Scalar ClassType::getColor() {
+cv::Scalar ClassTypeVoc::getColor() {
 
     int offset = classType*123457 % numClases;
     float red = _get_color(2,offset,numClases);
@@ -16,28 +16,28 @@ cv::Scalar ClassType::getColor() {
     return cv::Scalar(red*255, green*255,blue*255);
 }
 
-float ClassType::_get_color(int c, int x, int max) {
+float ClassTypeVoc::_get_color(int c, int x, int max) {
 
     float ratio = ((float)x/max)*5;
     int i = floor(ratio);
     int j = ceil(ratio);
     ratio -= i;
-    float r = (1-ratio) * colors[i][c] + ratio*colors[j][c];
+    float r = (1-ratio) * colorsClass[i][c] + ratio*colorsClass[j][c];
     //printf("%f\n", r);
     return r;
 }
 
-ClassType::ClassType(ClassTypeEnum classType):classType(classType) {
+ClassTypeVoc::ClassTypeVoc(ClassTypeEnum classType):classType(classType) {
     numClases=20;
 }
 
-ClassType::ClassType(int id){
+ClassTypeVoc::ClassTypeVoc(int id){
     classType =ClassTypeEnum (id);
     numClases=20;
 }
 
 
-std::string ClassType::getName() {
+std::string ClassTypeVoc::getName() {
     switch (classType){
         case AEROPLANE:
             return "AEROPLANE";

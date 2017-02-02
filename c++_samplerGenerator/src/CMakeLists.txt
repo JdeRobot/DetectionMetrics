@@ -1,7 +1,15 @@
 add_subdirectory(SampleGeneratorLib)
 
 
-SET( SOURCE_FILES main.cpp)
+SET(EXTRA_LIBS "")
+IF (DARKNET_ACTIVE)
+    SET(EXTRA_LIBS ${EXTRA_LIBS} ${DARKNET_LIBRARIES} ${CUDA_LIBRARIES} -L/usr/local/cuda/lib64 cudart cublas curand)
+    include_directories(${DARKNET_INCLUDE_DIR})
+endif()
+
+
+
+SET( SOURCE_FILES main.cpp SampleGeneratorLib/FrameworkEvaluator/DarknetInferencer)
 
 add_executable (sampler  ${SOURCE_FILES})
 
@@ -15,6 +23,7 @@ include_directories(
 
 TARGET_LINK_LIBRARIES(sampler
     SampleGenerator
+        ${EXTRA_LIBS}
     ${JdeRobot_LIBRARIES}
     ${OpenCV_LIBRARIES}
     ${Boost_LIBRARIES}
@@ -27,6 +36,8 @@ add_executable (viewer  viewer.cpp)
 
 TARGET_LINK_LIBRARIES(viewer
         SampleGenerator
+        ${EXTRA_LIBS}
+
         ${JdeRobot_LIBRARIES}
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
@@ -37,6 +48,30 @@ add_executable (converter  converter.cpp)
 
 TARGET_LINK_LIBRARIES(converter
         SampleGenerator
+        ${EXTRA_LIBS}
+
+        ${JdeRobot_LIBRARIES}
+        ${OpenCV_LIBRARIES}
+        ${Boost_LIBRARIES}
+        )
+
+
+add_executable (detector detector.cpp)
+
+TARGET_LINK_LIBRARIES(detector
+        SampleGenerator
+        ${EXTRA_LIBS}
+        ${JdeRobot_LIBRARIES}
+        ${OpenCV_LIBRARIES}
+        ${Boost_LIBRARIES}
+        )
+
+
+add_executable (evaluator evaluator.cpp)
+
+TARGET_LINK_LIBRARIES(evaluator
+        SampleGenerator
+        ${EXTRA_LIBS}
         ${JdeRobot_LIBRARIES}
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}

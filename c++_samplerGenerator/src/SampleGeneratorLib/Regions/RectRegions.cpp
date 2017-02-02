@@ -9,7 +9,7 @@
 #include <rapidjson/writer.h>
 #include <fstream>
 #include "rapidjson/filereadstream.h"
-#include <DatasetConverters/ClassType.h>
+#include <DatasetConverters/ClassTypeVoc.h>
 
 
 
@@ -51,7 +51,7 @@ void RectRegions::saveJson(const std::string &outPath) {
         node.AddMember("h",hValue,d.GetAllocator());
 
         rapidjson::Value idValue(it->id);
-        node.AddMember("id",hValue,d.GetAllocator());
+        node.AddMember("id",idValue,d.GetAllocator());
 
         d.PushBack(node,d.GetAllocator());
     }
@@ -91,9 +91,8 @@ RectRegion RectRegions::getRegion(int id) {
 
 void RectRegions::drawRegions(cv::Mat &image) {
     for (auto it = regions.begin(), end=regions.end(); it != end; ++it) {
-        ClassType classType(it->id);
+        ClassTypeVoc classType(it->id);
         cv::rectangle(image, it->region, classType.getColor(), 2);
-        std::cout << "Drawing : " << it->region << ", " << classType.getColor() << std::endl;
     }
 
 }

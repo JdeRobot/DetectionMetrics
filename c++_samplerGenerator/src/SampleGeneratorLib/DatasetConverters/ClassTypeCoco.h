@@ -1,14 +1,14 @@
 //
-// Created by frivas on 25/01/17.
+// Created by frivas on 1/02/17.
 //
 
-#ifndef SAMPLERGENERATOR_CLASSTYPE_H
-#define SAMPLERGENERATOR_CLASSTYPE_H
+#ifndef SAMPLERGENERATOR_CLASSTYPECOCO_H
+#define SAMPLERGENERATOR_CLASSTYPECOCO_H
 
 
 #include <opencv2/opencv.hpp>
 
-enum ClassTypeEnum{
+enum ClassTypeCocoEnum{
     AEROPLANE,
     BICYCLE,
     BIRD,
@@ -32,17 +32,18 @@ enum ClassTypeEnum{
 };
 
 
-struct ClassType{
-    ClassType(ClassTypeEnum classType);
-    ClassType(int id);
+struct ClassTypeCoco{
+    ClassTypeCoco(ClassTypeCocoEnum classType);
+    ClassTypeCoco(int id);
     cv::Scalar getColor();
     std::string getName();
 private:
     int numClases;
 
     float _get_color(int c, int x, int max);
-    ClassTypeEnum classType;
+    ClassTypeCocoEnum classType;
 
 };
 
-#endif //SAMPLERGENERATOR_CLASSTYPE_H
+
+#endif //SAMPLERGENERATOR_CLASSTYPECOCO_H

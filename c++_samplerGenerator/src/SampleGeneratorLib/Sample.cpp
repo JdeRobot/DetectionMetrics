@@ -3,6 +3,7 @@
 //
 
 #include "Sample.h"
+#include "Logger.h"
 #include <iomanip>
 
 
@@ -81,7 +82,7 @@ cv::Mat Sample::getColorImage() {
         return image;
     }
     else
-        return this->colorImage;
+        return this->colorImage.clone();
 }
 
 cv::Mat Sample::getDepthImage() {
@@ -90,16 +91,17 @@ cv::Mat Sample::getDepthImage() {
         return image;
     }
     else
-        return this->depthImage;}
+        return this->depthImage.clone();
+}
 
 Sample::Sample(const std::string &path, const std::string &id,bool loadDepth) {
-    this->colorImage=cv::imread(path + "/"  + id + ".png");
+    this->colorImagePath=path + "/"  + id + ".png";
 
     this->rectRegions= RectRegions(path + "/" + id + ".json");
     this->contourRegions=ContourRegions(path + "/" + id + "-region.json");
 
     if (loadDepth) {
-        this->depthImage=cv::imread(path + "/" + id + "-depth.png");
+        this->depthImagePath=path + "/" + id + "-depth.png";
     }
 }
 
@@ -120,13 +122,32 @@ cv::Mat Sample::getSampledDepthImage() {
 void Sample::save(const std::string &outPath, int id) {
     std::stringstream ss ;
     ss << std::setfill('0') << std::setw(5) << id;
-    cv::Mat imageRGB;
-    cv::cvtColor(colorImage,imageRGB,CV_RGB2BGR);
-    cv::imwrite(outPath + "/" + ss.str() + ".png",imageRGB);
-    cv::imwrite(outPath + "/" + ss.str() + "-depth.png",depthImage);
-    rectRegions.saveJson(outPath + "/" + ss.str() + ".json");
-    contourRegions.saveJson(outPath + "/" + ss.str() + "-region.json");
+    this->save(outPath,ss.str());
+
 }
+
+void Sample::save(const std::string &outPath, const std::string &filename) {
+
+    cv::imwrite(outPath + "/" + filename + ".png",this->colorImage);
+    if (! this->depthImage.empty()) {
+        cv::imwrite(outPath + "/" + filename + "-depth.png", depthImage);
+    }
+    rectRegions.saveJson(outPath + "/" + filename + ".json");
+    contourRegions.saveJson(outPath + "/" + filename + "-region.json");
+}
+
+void Sample::save(const std::string &outPath) {
+    if (this->sampleID.size() != 0 ){
+        this->save(outPath,this->sampleID);
+    }
+    else{
+        Logger::getInstance()->error("No sample id is defined, this sample will not be saved");
+    }
+
+}
+
+
+
 
 bool Sample::isValid() {
     return !this->colorImage.empty();
@@ -144,5 +165,14 @@ void Sample::setColorImage(const std::string &imagePath) {
 void Sample::setDepthImage(const std::string &imagePath) {
     this->depthImagePath=imagePath;
 }
+
+void Sample::setSampleID(const std::string &sampleID) {
+    this->sampleID=sampleID;
+}
+
+std::string Sample::getSampleID() {
+    return this->sampleID;
+}
+
 
 

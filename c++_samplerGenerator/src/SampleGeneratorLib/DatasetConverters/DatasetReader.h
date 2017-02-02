@@ -7,6 +7,8 @@
 
 #include <string>
 #include <Sample.h>
+#include <boost/shared_ptr.hpp>
+
 enum DatasetType{ DST_OWN, DST_YOLO};
 
 class DatasetReader {
@@ -16,6 +18,7 @@ public:
     void filterSamplesByID(std::vector<int> filteredIDS);
     int getNumberOfElements();
     void resetReaderCounter();
+    bool getSampleBySampleID(Sample** sample, const std::string& sampleID);
 
 protected:
     std::vector<Sample> samples;
@@ -23,5 +26,7 @@ protected:
     int readerCounter;
 };
 
+
+typedef boost::shared_ptr<DatasetReader> DatasetReaderPtr;
 
 #endif //SAMPLERGENERATOR_DATASETREADER_H
