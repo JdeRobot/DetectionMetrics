@@ -18,6 +18,7 @@ private:
     FrameworkInferencerPtr inferencer;
     std::string resultsPath;
     bool debug;
+    int alreadyProcessed;
 
 };
 
