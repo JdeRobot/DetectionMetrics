@@ -5,100 +5,37 @@
 
 #include "ClassTypeVoc.h"
 
-float colorsClass[6][3] = { {1,0,1}, {0,0,1},{0,1,1},{0,1,0},{1,1,0},{1,0,0} };
+ClassTypeVoc::ClassTypeVoc(int id) {
+    fillStringClassesVector();
+    this->classID=this->classes[id];
 
-cv::Scalar ClassTypeVoc::getColor() {
-
-    int offset = classType*123457 % numClases;
-    float red = _get_color(2,offset,numClases);
-    float green = _get_color(1,offset,numClases);
-    float blue = _get_color(0,offset,numClases);
-    return cv::Scalar(red*255, green*255,blue*255);
 }
 
-float ClassTypeVoc::_get_color(int c, int x, int max) {
+ClassTypeVoc::ClassTypeVoc(const std::string &classID) {
+    fillStringClassesVector();
+    this->classID=classID;
 
-    float ratio = ((float)x/max)*5;
-    int i = floor(ratio);
-    int j = ceil(ratio);
-    ratio -= i;
-    float r = (1-ratio) * colorsClass[i][c] + ratio*colorsClass[j][c];
-    //printf("%f\n", r);
-    return r;
 }
 
-ClassTypeVoc::ClassTypeVoc(ClassTypeEnum classType):classType(classType) {
-    numClases=20;
+void ClassTypeVoc::fillStringClassesVector() {
+    classes.push_back("aeroplane");
+    classes.push_back("bicycle");
+    classes.push_back("bird");
+    classes.push_back("boat");
+    classes.push_back("bottle");
+    classes.push_back("bus");
+    classes.push_back("car");
+    classes.push_back("cat");
+    classes.push_back("chair");
+    classes.push_back("cow");
+    classes.push_back("diningtable");
+    classes.push_back("dog");
+    classes.push_back("horse");
+    classes.push_back("motorbike");
+    classes.push_back("person");
+    classes.push_back("pottedplant");
+    classes.push_back("sheep");
+    classes.push_back("sofa");
+    classes.push_back("train");
+    classes.push_back("tvmonitor");
 }
-
-ClassTypeVoc::ClassTypeVoc(int id){
-    classType =ClassTypeEnum (id);
-    numClases=20;
-}
-
-
-std::string ClassTypeVoc::getName() {
-    switch (classType){
-        case AEROPLANE:
-            return "AEROPLANE";
-            break;
-        case BICYCLE:
-            return "BICYCLE";
-            break;
-        case BIRD:
-            return "BIRD";
-            break;
-        case BOAT:
-            return "BOAT";
-            break;
-        case BOTTLE:
-            return "BOTTLE";
-            break;
-        case BUS:
-            return "BUS";
-            break;
-        case CAR:
-            return "CAR";
-            break;
-        case CAT:
-            return "CAT";
-            break;
-        case CHAIR:
-            return "CHAIR";
-            break;
-        case COW:
-            return "COW";
-            break;
-        case DININGTABLE:
-            return "DININGTABLE";
-            break;
-        case DOG:
-            return "DOG";
-            break;
-        case HORSE:
-            return "HORSE";
-            break;
-        case MOTORBIKE:
-            return "MOTORBIKE";
-            break;
-        case PERSON:
-            return "PERSON";
-            break;
-        case POTTEDPLANT:
-            return "POTTEDPLANT";
-            break;
-        case SHEEP:
-            return "SHEEP";
-            break;
-        case SOFA:
-            return "SOFA";
-            break;
-        case TRAIN:
-            return "TRAIN";
-            break;
-        case TVMONITOR:
-            return "TVMONITOR";
-            break;
-    }
-}
-

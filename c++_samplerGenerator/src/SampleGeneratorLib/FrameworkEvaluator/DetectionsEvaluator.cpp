@@ -52,11 +52,11 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
 
     auto detectionRegions = detection.getRectRegions().getRegions();
     for (auto itDetection = detectionRegions.begin(), end = detectionRegions.end(); itDetection != end; ++itDetection) {
-        if (itDetection->id == 14) {
+        if (itDetection->classID.compare("person")== 0) {
             bool matched = false;
             auto gtRegions = gt.getRectRegions().getRegions();
             for (auto itGT = gtRegions.begin(), endGT = gtRegions.end(); itGT != endGT; ++itGT) {
-                if (itDetection->id == 14 && itDetection->id == itGT->id) {
+                if (itDetection->classID.compare("person")== 0 && itDetection->classID.compare(itGT->classID) == 0) {
 
                     double iouValue = getIOU(itGT->region, itDetection->region, gt.getColorImage().size());
 
@@ -84,11 +84,11 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
 
     auto gtRegions = gt.getRectRegions().getRegions();
     for (auto itGT = gtRegions.begin(), endGT = gtRegions.end(); itGT != endGT; ++itGT) {
-        if (itGT->id == 14) {
+        if (itGT->classID.compare("person")== 0) {
             bool matched = false;
             for (auto itDetection = detectionRegions.begin(), end = detectionRegions.end();
                  itDetection != end; ++itDetection) {
-                if (itGT->id == 14 && itDetection->id == itGT->id) {
+                if (itGT->classID.compare("person")== 0 && itDetection->classID.compare(itGT->classID) == 0) {
 
                     double iouValue = getIOU(itGT->region, itDetection->region, gt.getColorImage().size());
 

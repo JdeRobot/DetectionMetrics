@@ -9,7 +9,7 @@
 #include <rapidjson/writer.h>
 #include <fstream>
 #include "rapidjson/filereadstream.h"
-#include <DatasetConverters/ClassTypeVoc.h>
+#include <DatasetConverters/ClassTypeOwn.h>
 
 
 
@@ -22,8 +22,8 @@ RectRegions::RectRegions(const std::string &jsonPath) {
     fclose(fp);
     for (auto it=d.Begin(), end = d.End(); it != end; ++it){
         cv::Rect reg((*it)["x"].GetInt(),(*it)["y"].GetInt(),(*it)["w"].GetInt(),(*it)["h"].GetInt());
-        int id;
-        id= (*it)["id"].GetInt();
+        std::string id;
+        id= (*it)["id"].GetString();
         regions.push_back(RectRegion(reg,id));
     }
 }
@@ -50,7 +50,7 @@ void RectRegions::saveJson(const std::string &outPath) {
         rapidjson::Value hValue(it->region.height);
         node.AddMember("h",hValue,d.GetAllocator());
 
-        rapidjson::Value idValue(it->id);
+        rapidjson::Value idValue(it->classID.c_str(), d.GetAllocator());
         node.AddMember("id",idValue,d.GetAllocator());
 
         d.PushBack(node,d.GetAllocator());
@@ -70,15 +70,15 @@ void RectRegions::saveJson(const std::string &outPath) {
     outFile.close();
 }
 
-void RectRegions::add(const cv::Rect rect,int classId){
+void RectRegions::add(const cv::Rect rect,const std::string& classId){
     regions.push_back(RectRegion(rect,classId));
 }
 
-void RectRegions::add(const std::vector<cv::Point> &detections,int classId) {
+void RectRegions::add(const std::vector<cv::Point> &detections,const std::string& classId) {
     regions.push_back(RectRegion(cv::boundingRect(detections),classId));
 }
 
-void RectRegions::add(int x, int y, int w, int h,int classId) {
+void RectRegions::add(int x, int y, int w, int h,const std::string& classId) {
     regions.push_back(RectRegion(cv::Rect(x,y,w,h),classId));
 }
 
@@ -91,7 +91,7 @@ RectRegion RectRegions::getRegion(int id) {
 
 void RectRegions::drawRegions(cv::Mat &image) {
     for (auto it = regions.begin(), end=regions.end(); it != end; ++it) {
-        ClassTypeVoc classType(it->id);
+        ClassTypeOwn classType(it->classID);
         cv::rectangle(image, it->region, classType.getColor(), 2);
     }
 
@@ -101,11 +101,11 @@ std::vector<RectRegion> RectRegions::getRegions() {
     return this->regions;
 }
 
-void RectRegions::filterSamplesByID(std::vector<int> filteredIDS) {
+void RectRegions::filterSamplesByID(std::vector<std::string> filteredIDS) {
     std::vector<RectRegion> oldRegions(this->regions);
     this->regions.clear();
     for(auto it = oldRegions.begin(), end=oldRegions.end(); it != end; ++it) {
-        if (std::find(filteredIDS.begin(), filteredIDS.end(), it->id) != filteredIDS.end()) {
+        if (std::find(filteredIDS.begin(), filteredIDS.end(), it->classID) != filteredIDS.end()) {
             this->regions.push_back(*it);
         }
     }

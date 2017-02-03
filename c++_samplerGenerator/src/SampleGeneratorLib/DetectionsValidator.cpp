@@ -59,7 +59,7 @@ void DetectionsValidator::validate(const cv::Mat& colorImage,const cv::Mat& dept
     cv::Mat image2show;
     cv::merge(channels,image2show);
 
-    int validationID=14; //todo configure anywhere
+    std::string validationID="person"; //todo configure anywhere
 
     RectRegions regions;
     ContourRegions cRegions;

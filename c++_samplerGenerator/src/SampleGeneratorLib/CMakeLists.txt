@@ -25,11 +25,14 @@ SET( SOURCE_FILES RecorderConverter
         FrameworkEvaluator/Statistics
         DatasetConverters/ClassTypeCoco
         FrameworkEvaluator/DetectionsEvaluator
+        FrameworkEvaluator/MassInferencer
+        DatasetConverters/ClassTypeOwn
+        DatasetConverters/ClassType
         )
 
 
 IF(DARKNET_ACTIVE)
-    SET( SOURCE_FILES ${SOURCE_FILES} FrameworkEvaluator/DarknetInferencer FrameworkEvaluator/MassInferencer.cpp FrameworkEvaluator/MassInferencer.h)
+    SET( SOURCE_FILES ${SOURCE_FILES} FrameworkEvaluator/DarknetInferencer )
     include_directories(${DARKNET_INCLUDE_DIR})
 ENDIF()
 

@@ -3,6 +3,7 @@
 //
 
 #include "YoloDatasetWriter.h"
+#include "ClassTypeOwn.h"
 #include <iomanip>
 #include <fstream>
 #include <boost/filesystem/path.hpp>
@@ -71,8 +72,10 @@ void YoloDatasetWriter::process(bool overWriteclassWithZero) {
             int classId;
             if (overWriteclassWithZero)
                 classId=0;
-            else
-                classId=it->id;
+            else {
+                ClassTypeOwn typeConverter(it->classID);
+                classId = typeConverter.getClassID();
+            }
             std::stringstream boundSrt;
             boundSrt << classId <<" " <<  (it->region.x + w/2.0) / (double)image.size().width << " " << (it->region.y + h/2.0) / (double)image.size().height << " " << w / image.size().width << " " << h / image.size().height;
 //            std::cout << boundSrt.str() << std::endl;

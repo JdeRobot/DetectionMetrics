@@ -9,10 +9,10 @@
 
 struct ContourRegion {
     ContourRegion():valid(false){};
-    ContourRegion(const std::vector<cv::Point>& region, int id):region(region),id(id),valid(true){}; //person by default
+    ContourRegion(const std::vector<cv::Point>& region, std::string id):region(region),id(id),valid(true){}; //person by default
 
     std::vector<cv::Point>region;
-    int id;
+    std::string id;
     bool valid;
 
 };

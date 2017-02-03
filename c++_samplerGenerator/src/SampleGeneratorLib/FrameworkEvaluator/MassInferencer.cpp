@@ -10,18 +10,18 @@
 MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer,
                                const std::string &resultsPath,bool debug): reader(reader), inferencer(inferencer), resultsPath(resultsPath),debug(debug)
 {
-
-}
-
-void MassInferencer::process() {
     auto boostPath= boost::filesystem::path(this->resultsPath);
     if (!boost::filesystem::exists(boostPath)){
         boost::filesystem::create_directories(boostPath);
     }
     else{
         Logger::getInstance()->error("Output directory already exists");
-        exit(-1);
+        //exit(-1);
     }
+}
+
+void MassInferencer::process() {
+
 
     Sample sample;
     int counter=0;

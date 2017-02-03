@@ -153,7 +153,7 @@ bool Sample::isValid() {
     return !this->colorImage.empty();
 }
 
-void Sample::filterSamplesByID(std::vector<int> filteredIDS) {
+void Sample::filterSamplesByID(std::vector<std::string> filteredIDS) {
     this->rectRegions.filterSamplesByID(filteredIDS);
     this->contourRegions.filterSamplesByID(filteredIDS);
 }
@@ -172,6 +172,16 @@ void Sample::setSampleID(const std::string &sampleID) {
 
 std::string Sample::getSampleID() {
     return this->sampleID;
+}
+
+Sample::~Sample() {
+    if (!this->colorImage.empty()){
+        this->colorImage.release();
+    }
+    if (this->depthImage.empty()){
+        this->depthImage.release();
+    }
+
 }
 
 

@@ -88,8 +88,8 @@ int parse_arguments(const int argc, char* argv[], ViewerAguments& args){
 void extractPersonsFromYolo(const std::string& dataSetPath){
     YoloDatasetReader reader(dataSetPath);
 
-    std::vector<int> idsToFilter;
-    idsToFilter.push_back(14);
+    std::vector<std::string> idsToFilter;
+    idsToFilter.push_back("person");
 
 
     std::cout << "Samples before: " << reader.getNumberOfElements() << std::endl;

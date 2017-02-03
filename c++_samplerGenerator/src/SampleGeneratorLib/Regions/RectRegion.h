@@ -10,10 +10,10 @@
 struct RectRegion {
 
     RectRegion():valid(false){};
-    RectRegion(const cv::Rect& region, int id):region(region),id(id),valid(true){};
+    RectRegion(const cv::Rect& region, const std::string& classID):region(region),classID(classID),valid(true){};
 
     cv::Rect region;
-    int id;
+    std::string classID;
     bool valid;
 
 };

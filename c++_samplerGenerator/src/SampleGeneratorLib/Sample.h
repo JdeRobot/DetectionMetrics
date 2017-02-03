@@ -18,6 +18,7 @@ struct Sample {
     Sample(const cv::Mat& colorImage, const cv::Mat& depthImage, const RectRegions& rectRegions);
     Sample(const cv::Mat& colorImage, const cv::Mat& depthImage, const ContourRegions& contourRegions);
     Sample(const cv::Mat& colorImage, const cv::Mat& depthImage, const RectRegions& rectRegions, const ContourRegions& contourRegions);
+    ~Sample();
     void setColorImage(const std::string& imagePath);
     void setColorImage(const cv::Mat& image);
     void setDepthImage(const cv::Mat& image);
@@ -37,7 +38,7 @@ struct Sample {
     void save(const std::string& outPath);
 
     bool isValid();
-    void filterSamplesByID(std::vector<int> filteredIDS);
+    void filterSamplesByID(std::vector<std::string> filteredIDS);
     std::string getSampleID();
 
 

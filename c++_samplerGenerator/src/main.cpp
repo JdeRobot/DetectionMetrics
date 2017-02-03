@@ -23,7 +23,15 @@ namespace
 } // namespace
 
 
-int parse_arguments(const int argc, char* argv[], std::string& path){
+struct GeneratorArguments{
+    std::string depthPath;
+    std::string colorPath;
+    std::string outPath;
+
+};
+
+
+int parse_arguments(const int argc, char* argv[], GeneratorArguments& args){
     try
     {
         /** Define and parse the program options
@@ -32,8 +40,11 @@ int parse_arguments(const int argc, char* argv[], std::string& path){
         po::options_description desc("Options");
         desc.add_options()
                 ("help", "Print help messages")
-                ("word,w", po::value<std::string>(&path)->required());
-                 po::variables_map vm;
+                ("depth,d", po::value<std::string>(&args.depthPath)->required())
+                ("color,c", po::value<std::string>(&args.colorPath)->required())
+                ("outPath,o", po::value<std::string>(&args.outPath)->required());
+
+        po::variables_map vm;
         try
         {
             po::store(po::parse_command_line(argc, argv, desc),
@@ -68,7 +79,10 @@ int parse_arguments(const int argc, char* argv[], std::string& path){
         return ERROR_UNHANDLED_EXCEPTION;
 
     }
+    return SUCCESS;
+
 }
+
 
 
 int main (int argc, char* argv[])
@@ -76,22 +90,19 @@ int main (int argc, char* argv[])
 
     Logger::getInstance()->setLevel(Logger::INFO);
 
-    std::string path; // /mnt/large/pentalo/sample/data/images/
-    parse_arguments(argc,argv,path);
+    GeneratorArguments args; // /mnt/large/pentalo/sample/data/images/
+    if (parse_arguments(argc,argv,args) != SUCCESS){
+        return 1;
+    }
 
 
-    std::string depthImagesPath= path + "/" + "/camera2/";
-    std::string colorImagesPath= path + "/" + "/camera1/";
-    std::string outputPath= "./out";
-
-
-    RecorderConverter converter(colorImagesPath,depthImagesPath);
+    RecorderConverter converter(args.colorPath,args.depthPath);
     DepthForegroundSegmentator segmentator;
 
     std::string colorImagePath;
     std::string depthImagePath;
 
-    DetectionsValidator validator(outputPath);
+    DetectionsValidator validator(args.outPath);
     cv::Mat previousImage;
     int counter=0;
     int maxElements= converter.getNumSamples();

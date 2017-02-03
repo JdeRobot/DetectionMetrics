@@ -13,11 +13,11 @@ struct ContourRegions:Regions {
     ContourRegions(const std::string& jsonPath);
     ContourRegions();
     void saveJson(const std::string& outPath);
-    void add(const std::vector<cv::Point>& detections, int classId);
+    void add(const std::vector<cv::Point>& detections, const std::string& classId);
     ContourRegion getRegion(int idx);
     std::vector<ContourRegion> getRegions();
     void drawRegions(cv::Mat& image);
-    void filterSamplesByID(std::vector<int> filteredIDS);
+    void filterSamplesByID(std::vector<std::string> filteredIDS);
     bool empty();
 
 

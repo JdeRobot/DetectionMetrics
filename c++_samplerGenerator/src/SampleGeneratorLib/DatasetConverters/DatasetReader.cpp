@@ -9,7 +9,7 @@ DatasetReader::DatasetReader():readerCounter(0) {
 
 }
 
-void DatasetReader::filterSamplesByID(std::vector<int> filteredIDS) {
+void DatasetReader::filterSamplesByID(std::vector<std::string> filteredIDS) {
     std::vector<Sample> old_samples(this->samples);
     this->samples.clear();
 

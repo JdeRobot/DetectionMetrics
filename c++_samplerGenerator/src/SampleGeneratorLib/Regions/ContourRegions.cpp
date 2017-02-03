@@ -26,7 +26,7 @@ ContourRegions::ContourRegions(const std::string &jsonPath) {
             point.y = (*it2)["y"].GetInt();
             detection.push_back(point);
         }
-        int id = (*it)["id"].GetInt();
+        std::string id = (*it)["id"].GetString();
         this->regions.push_back(ContourRegion(detection,id));
     }
 }
@@ -35,7 +35,7 @@ ContourRegions::ContourRegions(){
 
 }
 
-void ContourRegions::add(const std::vector<cv::Point> &detections, int classId) {
+void ContourRegions::add(const std::vector<cv::Point> &detections, const std::string& classId) {
     this->regions.push_back(ContourRegion(std::vector<cv::Point>(detections),classId));
 }
 
@@ -48,7 +48,7 @@ void ContourRegions::saveJson(const std::string &outPath) {
     for (auto it = this->regions.begin(), end=this->regions.end(); it != end; it++){
         rapidjson::Value detection;
         detection.SetObject();
-        rapidjson::Value idValue(it->id);
+        rapidjson::Value idValue(it->id.c_str(),d.GetAllocator());
         detection.AddMember("id",idValue,d.GetAllocator());
 
         rapidjson::Value regionValue;
@@ -115,7 +115,7 @@ std::vector<ContourRegion> ContourRegions::getRegions() {
     return this->regions;
 }
 
-void ContourRegions::filterSamplesByID(std::vector<int> filteredIDS) {
+void ContourRegions::filterSamplesByID(std::vector<std::string> filteredIDS) {
     std::vector<ContourRegion> oldRegions(this->regions);
     this->regions.clear();
     for(auto it = oldRegions.begin(), end=oldRegions.end(); it != end; ++it) {

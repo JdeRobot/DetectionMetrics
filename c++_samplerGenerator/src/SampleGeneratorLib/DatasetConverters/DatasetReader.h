@@ -15,7 +15,7 @@ class DatasetReader {
 public:
     DatasetReader();
     bool getNetxSample(Sample& sample);
-    void filterSamplesByID(std::vector<int> filteredIDS);
+    void filterSamplesByID(std::vector<std::string> filteredIDS);
     int getNumberOfElements();
     void resetReaderCounter();
     bool getSampleBySampleID(Sample** sample, const std::string& sampleID);

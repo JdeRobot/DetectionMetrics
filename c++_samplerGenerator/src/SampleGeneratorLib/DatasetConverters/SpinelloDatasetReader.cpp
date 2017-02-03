@@ -87,7 +87,7 @@ SpinelloDatasetReader::SpinelloDatasetReader(const std::string &path):path(path)
             if (this->getSampleBySampleID(&samplePointer,imageID)){
                 std::cout << "Image already exits" << std::endl;
                 RectRegions regions=samplePointer->getRectRegions();
-                regions.add(colorRect,PERSON);
+                regions.add(colorRect,"person");
                 samplePointer->setRectRegions(regions);
             }
             else{
@@ -96,7 +96,7 @@ SpinelloDatasetReader::SpinelloDatasetReader(const std::string &path):path(path)
                 sample.setColorImage(colorImagePath);
                 sample.setDepthImage(depthImagePath);
                 RectRegions colorRegions;
-                colorRegions.add(colorRect,PERSON);
+                colorRegions.add(colorRect,"person");
                 sample.setRectRegions(colorRegions);
                 samples.push_back(sample);
             }

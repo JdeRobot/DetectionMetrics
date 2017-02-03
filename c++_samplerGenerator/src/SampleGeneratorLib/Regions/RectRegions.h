@@ -13,16 +13,16 @@ struct RectRegions:Regions {
     RectRegions(const std::string& jsonPath);
     RectRegions();
 
-    void add(const cv::Rect rect, int classId);
-    void add(const std::vector<cv::Point>& detections, int classId);
-    void add(int x, int y, int w, int h, int classId);
+    void add(const cv::Rect rect, const std::string& classId);
+    void add(const std::vector<cv::Point>& detections, const std::string& classId);
+    void add(int x, int y, int w, int h, const std::string& classId);
 
 
     void saveJson(const std::string& outPath);
     RectRegion getRegion(int id);
     std::vector<RectRegion> getRegions();
     void drawRegions(cv::Mat& image);
-    void filterSamplesByID(std::vector<int> filteredIDS);
+    void filterSamplesByID(std::vector<std::string> filteredIDS);
     bool empty();
 
 

@@ -6,7 +6,7 @@
 #include <Logger.h>
 #include <boost/filesystem/path.hpp>
 #include "YoloDatasetReader.h"
-
+#include "ClassTypeVoc.h"
 
 
 bool replace(std::string& str, const std::string& from, const std::string& to) {
@@ -38,7 +38,9 @@ YoloDatasetReader::YoloDatasetReader(const std::string &path) {
             double x, y, w,h;
             iss >> class_id >> x >> y >> w >> h;
             cv::Rect bounding(x * image.size().width - (w * image.size().width)/2, y * image.size().height - (h * image.size().height)/2, w * image.size().width, h * image.size().height);
-            rectRegions.add(bounding,class_id);
+
+            ClassTypeVoc typeConverter(class_id);
+            rectRegions.add(bounding,typeConverter.getClassString());
         }
         labelFile.close();
         sample.setRectRegions(rectRegions);

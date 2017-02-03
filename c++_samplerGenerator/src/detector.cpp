@@ -107,9 +107,9 @@ int main (int argc, char* argv[]) {
 
     OwnDatasetReaderPtr reader( new OwnDatasetReader(args.inputPath));
 //    YoloDatasetReader reader(args.path);
-//    YoloDatasetReader reader(args.inputPath);
-
+//    YoloDatasetReaderPtr reader( new YoloDatasetReader(args.inputPath));
     DarknetInferencerPtr evaluator(new DarknetInferencer("/home/frivas/devel/external/darknet/cfg/yolo-voc.cfg", "/home/frivas/devel/external/darknet/yolo-voc.weights"));
 
     MassInferencer inferencer(reader,evaluator,args.outputPath, true);
+    inferencer.process();
 }
