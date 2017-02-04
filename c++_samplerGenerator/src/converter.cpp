@@ -9,7 +9,7 @@
 #include <boost/program_options.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/path.hpp>
-#include <SampleGeneratorLib/Logger.h>
+#include <SampleGeneratorLib/Utils/Logger.h>
 #include <highgui.h>
 #include <SampleGeneratorLib/DatasetConverters/OwnDatasetReader.h>
 #include <SampleGeneratorLib/DatasetConverters/YoloDatasetWriter.h>

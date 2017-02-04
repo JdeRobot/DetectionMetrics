@@ -1,20 +1,13 @@
 //
-// Created by frivas on 21/01/17.
+// Created by frivas on 4/02/17.
 //
 
-
-#include <iostream>
-#include <string>
+#include "SampleGenerationApp.h"
+#include "Logger.h"
 
 #include <boost/program_options.hpp>
 #include <boost/filesystem.hpp>
-#include <boost/filesystem/path.hpp>
-#include <SampleGeneratorLib/Utils/Logger.h>
-#include <highgui.h>
-#include <SampleGeneratorLib/DatasetConverters/OwnDatasetReader.h>
-#include <SampleGeneratorLib/DatasetConverters/YoloDatasetReader.h>
-#include <SampleGeneratorLib/DatasetConverters/SpinelloDatasetReader.h>
-
+#include <iostream>
 
 namespace
 {
@@ -26,17 +19,18 @@ namespace
 
 
 
+SampleGenerationApp::SampleGenerationApp(int argc, char **argv) {
+
+    if (parse_arguments(argc,argv,configFilePath) != SUCCESS){
+        exit(1);
+    }
+
+    config=Configuration(configFilePath);
+}
 
 
-struct ViewerAguments{
-    std::string path;
-    bool depthEnabled;
 
-    ViewerAguments():depthEnabled(false){};
-};
-
-
-int parse_arguments(const int argc, char* argv[], ViewerAguments& args){
+int SampleGenerationApp::parse_arguments(const int argc, char* argv[], std::string& configFile){
     try
     {
         /** Define and parse the program options
@@ -45,9 +39,7 @@ int parse_arguments(const int argc, char* argv[], ViewerAguments& args){
         po::options_description desc("Options");
         desc.add_options()
                 ("help", "Print help messages")
-                ("word,w", po::value<std::string>(&args.path)->required())
-                ("depth,d", po::value<bool>(&args.depthEnabled)->default_value(false));
-
+                ("configFile,c", po::value<std::string>(&configFile)->required());
         po::variables_map vm;
         try
         {
@@ -83,33 +75,23 @@ int parse_arguments(const int argc, char* argv[], ViewerAguments& args){
         return ERROR_UNHANDLED_EXCEPTION;
 
     }
+    return SUCCESS;
+
 }
 
+void SampleGenerationApp::process() {
+    if (verifyRequirements())
+        (*this)();
+}
 
+bool SampleGenerationApp::verifyRequirements() {
+    bool success=true;
+    for (auto it = this->requiredArguments.begin(), end =this->requiredArguments.end(); it != end; ++it){
+        if (!this->config.keyExists(*it)){
+            Logger::getInstance()->error("Key: " + (*it) + " is not defined in the configuration file");
+            success=false;
+        }
 
-
-
-int main (int argc, char* argv[]) {
-
-    ViewerAguments args;
-    parse_arguments(argc,argv,args);
-
-
-    Logger::getInstance()->setLevel(Logger::INFO);
-    Logger::getInstance()->info("Reviewing " + args.path);
-
-
-    OwnDatasetReader reader(args.path);
-//    YoloDatasetReader reader(args.path);
-//    SpinelloDatasetReader reader(args.path);
-
-    Sample sample;
-    while (reader.getNetxSample(sample)){
-        std::cout << "number of elements: " << sample.getRectRegions().getRegions().size() << std::endl;
-        cv::Mat image =sample.getSampledColorImage();
-        cv::imshow("Viewer", image);
-        cv::waitKey(0);
     }
-
-
+    return success;
 }

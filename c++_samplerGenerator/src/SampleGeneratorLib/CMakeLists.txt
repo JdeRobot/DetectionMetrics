@@ -1,9 +1,10 @@
-SET( SOURCE_FILES RecorderConverter
-       DepthForegroundSegmentator
-        BoundingValidator
-        BoundingRectGuiMover
-        DetectionsValidator
-        Logger
+SET( SOURCE_FILES
+        GenerationUtils/RecorderConverter
+        GenerationUtils/DepthForegroundSegmentator
+        GenerationUtils/BoundingValidator
+        GenerationUtils/BoundingRectGuiMover
+        GenerationUtils/DetectionsValidator
+        Utils/Logger
         Regions/RectRegions
         Regions/ContourRegions
         Regions/Regions.h
@@ -32,7 +33,7 @@ SET( SOURCE_FILES RecorderConverter
 
 
 IF(DARKNET_ACTIVE)
-    SET( SOURCE_FILES ${SOURCE_FILES} FrameworkEvaluator/DarknetInferencer )
+    SET( SOURCE_FILES ${SOURCE_FILES} FrameworkEvaluator/DarknetInferencer Utils/Configuration.cpp Utils/Configuration.h Utils/Key.cpp Utils/Key.h Utils/SampleGenerationApp.cpp Utils/SampleGenerationApp.h DatasetConverters/GenericDatasetReader.cpp DatasetConverters/GenericDatasetReader.h FrameworkEvaluator/GenericInferencer.cpp FrameworkEvaluator/GenericInferencer.h)
     include_directories(${DARKNET_INCLUDE_DIR})
 ENDIF()
 

@@ -7,6 +7,7 @@
 
 #include <cv.h>
 #include <boost/shared_ptr.hpp>
+#include <Sample.h>
 
 
 class FrameworkInferencer{

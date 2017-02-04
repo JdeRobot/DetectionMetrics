@@ -2,7 +2,7 @@
 // Created by frivas on 1/02/17.
 //
 
-#include <Logger.h>
+#include <Utils/Logger.h>
 #include "DetectionsEvaluator.h"
 
 DetectionsEvaluator::DetectionsEvaluator(DatasetReaderPtr gt, DatasetReaderPtr detections,bool debug):gt(gt),detections(detections),debug(debug) {

@@ -6,7 +6,7 @@
 #include <iomanip>
 #include "DetectionsValidator.h"
 #include "BoundingValidator.h"
-#include "Logger.h"
+#include "Utils/Logger.h"
 #include <rapidjson/document.h>
 #include <rapidjson/writer.h>
 #include <fstream>

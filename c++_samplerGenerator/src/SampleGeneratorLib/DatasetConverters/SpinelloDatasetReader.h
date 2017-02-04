@@ -16,4 +16,7 @@ private:
 };
 
 
+typedef boost::shared_ptr<SpinelloDatasetReader> SpinelloDatasetReaderPtr;
+
+
 #endif //SAMPLERGENERATOR_SPINELLODATASETREADER_H

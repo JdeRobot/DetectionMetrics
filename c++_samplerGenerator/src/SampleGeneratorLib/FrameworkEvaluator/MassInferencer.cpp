@@ -4,7 +4,7 @@
 
 #include <boost/filesystem/path.hpp>
 #include <boost/filesystem/operations.hpp>
-#include <Logger.h>
+#include <Utils/Logger.h>
 #include "MassInferencer.h"
 
 MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer,

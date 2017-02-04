@@ -97,4 +97,7 @@ void ClassTypeOwn::fillStringClassesVector() {
     classes.push_back("vase");
     classes.push_back("wine glass");
     classes.push_back("zebra");
+    classes.push_back("person-falling");
+    classes.push_back("person-falled");
+
 }

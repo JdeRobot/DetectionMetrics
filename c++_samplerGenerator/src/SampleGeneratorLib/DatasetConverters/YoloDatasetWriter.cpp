@@ -8,7 +8,7 @@
 #include <fstream>
 #include <boost/filesystem/path.hpp>
 #include <boost/filesystem/operations.hpp>
-#include <Logger.h>
+#include <Utils/Logger.h>
 
 
 YoloDatasetWriter::YoloDatasetWriter(const std::string &outPath, DatasetReader &reader):outPath(outPath),reader(reader) {

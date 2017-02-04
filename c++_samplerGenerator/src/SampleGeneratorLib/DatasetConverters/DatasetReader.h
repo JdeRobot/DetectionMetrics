@@ -9,7 +9,6 @@
 #include <Sample.h>
 #include <boost/shared_ptr.hpp>
 
-enum DatasetType{ DST_OWN, DST_YOLO};
 
 class DatasetReader {
 public:
