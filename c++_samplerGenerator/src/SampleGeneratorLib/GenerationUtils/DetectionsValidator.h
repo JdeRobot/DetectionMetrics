@@ -17,6 +17,8 @@ public:
 private:
     int validationCounter;
     std::string path;
+
+    void fillRectIntoImageDimensions(cv::Rect& rect, const cv::Size size);
 };
 
 

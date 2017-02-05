@@ -18,10 +18,12 @@ public:
     int getNumberOfElements();
     void resetReaderCounter();
     bool getSampleBySampleID(Sample** sample, const std::string& sampleID);
+    void printDatasetStats();
+    virtual bool appendDataset(const std::string& datasetPath, const std::string& datasetPrefix="")=0;
 
 protected:
     std::vector<Sample> samples;
-    std::string datasetPath;
+    //std::string datasetPath;
     int readerCounter;
 };
 

@@ -11,6 +11,9 @@
 class YoloDatasetReader: public DatasetReader {
 public:
     YoloDatasetReader(const std::string& path);
+    YoloDatasetReader();
+    bool appendDataset(const std::string& datasetPath, const std::string& datasetPrefix="");
+
 };
 
 typedef boost::shared_ptr<YoloDatasetReader> YoloDatasetReaderPtr;

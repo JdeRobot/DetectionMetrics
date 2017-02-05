@@ -9,7 +9,7 @@ endif()
 
 
 
-SET( SOURCE_FILES main.cpp SampleGeneratorLib/FrameworkEvaluator/DarknetInferencer)
+SET( SOURCE_FILES generator.cpp SampleGeneratorLib/FrameworkEvaluator/DarknetInferencer)
 
 add_executable (sampler  ${SOURCE_FILES})
 
@@ -70,6 +70,16 @@ TARGET_LINK_LIBRARIES(detector
 add_executable (evaluator evaluator.cpp)
 
 TARGET_LINK_LIBRARIES(evaluator
+        SampleGenerator
+        ${EXTRA_LIBS}
+        ${JdeRobot_LIBRARIES}
+        ${OpenCV_LIBRARIES}
+        ${Boost_LIBRARIES}
+        )
+
+add_executable (splitter splitter.cpp)
+
+TARGET_LINK_LIBRARIES(splitter
         SampleGenerator
         ${EXTRA_LIBS}
         ${JdeRobot_LIBRARIES}

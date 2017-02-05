@@ -129,5 +129,10 @@ bool ContourRegions::empty() {
     return (this->regions.size()==0);
 }
 
+void ContourRegions::print() {
+    //todo
+    std::cout << "Not yet implemented" << std::endl;
+}
+
 
 

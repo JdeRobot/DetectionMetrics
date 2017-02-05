@@ -17,6 +17,8 @@ enum READER_IMPLEMENTATIONS{OWN, SPINELLO, YOLO};
 class GenericDatasetReader {
 public:
     GenericDatasetReader(const std::string& path, const std::string& readerImplementation);
+    GenericDatasetReader(const std::vector<std::string>& paths, const std::string& readerImplementation);
+
     DatasetReaderPtr getReader();
 
 private:

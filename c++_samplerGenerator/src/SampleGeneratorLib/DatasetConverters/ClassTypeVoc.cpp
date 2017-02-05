@@ -3,10 +3,16 @@
 //
 
 
+#include <Utils/Logger.h>
+#include <boost/lexical_cast.hpp>
 #include "ClassTypeVoc.h"
 
 ClassTypeVoc::ClassTypeVoc(int id) {
     fillStringClassesVector();
+    if (id > this->classes.size() -1){
+        Logger::getInstance()->error("unknown type: " + boost::lexical_cast<std::string>(id));
+        exit(1);
+    }
     this->classID=this->classes[id];
 
 }

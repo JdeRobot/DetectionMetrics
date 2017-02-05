@@ -9,9 +9,16 @@
 #include <Utils/StringHandler.h>
 #include <Utils/Normalizations.h>
 
-SpinelloDatasetReader::SpinelloDatasetReader(const std::string &path):path(path) {
+SpinelloDatasetReader::SpinelloDatasetReader(const std::string &path) {
+    appendDataset(path);
+}
 
-    auto boostPath= boost::filesystem::path(this->path + "/track_annotations/");
+SpinelloDatasetReader::SpinelloDatasetReader() {
+
+}
+
+bool SpinelloDatasetReader::appendDataset(const std::string &datasetPath, const std::string &datasetPrefix) {
+    auto boostPath= boost::filesystem::path(datasetPath + "/track_annotations/");
 
 
 
@@ -36,7 +43,6 @@ SpinelloDatasetReader::SpinelloDatasetReader(const std::string &path):path(path)
         std::string data;
         while(getline(labelFile,data)) {
             Sample sample;
-            std::cout << "----------------------------------" << std::endl;
             if (data[0] == '#')
                 continue;
             std::vector<std::string> tokens = split(data, ' ');
@@ -45,16 +51,10 @@ SpinelloDatasetReader::SpinelloDatasetReader(const std::string &path):path(path)
             std::string imageID=tokens[0];
 
             for (auto it=tokens.begin(), end=tokens.end(); it != end; ++it){
-                std::cout << "aaa: " <<  *it << std::endl;
             }
 
-            std::string colorImagePath=this->path + "/"  + "rgb" + "/" + imageID + ".ppm";
-            std::string depthImagePath=this->path + "/"  + "depth" + "/" + imageID + ".pgm";
-
-
-            std::cout << "Image path: " << colorImagePath << std::endl;
-            std::cout << "Image path: " << depthImagePath << std::endl;
-
+            std::string colorImagePath=datasetPath + "/"  + "rgb" + "/" + imageID + ".ppm";
+            std::string depthImagePath=datasetPath + "/"  + "depth" + "/" + imageID + ".pgm";
             cv::Mat colorImage= cv::imread(colorImagePath);
             cv::Mat depthImage= cv::imread(depthImagePath);
 
@@ -85,33 +85,22 @@ SpinelloDatasetReader::SpinelloDatasetReader(const std::string &path):path(path)
 
             Sample* samplePointer;
             if (this->getSampleBySampleID(&samplePointer,imageID)){
-                std::cout << "Image already exits" << std::endl;
-                RectRegions regions=samplePointer->getRectRegions();
-                regions.add(colorRect,"person");
+//                std::cout << "Image already exits" << std::endl;
+                RectRegionsPtr regions=samplePointer->getRectRegions();
+                regions->add(colorRect,"person");
                 samplePointer->setRectRegions(regions);
             }
             else{
-                std::cout << "Image does not exits" << std::endl;
-                sample.setSampleID(imageID);
+//                std::cout << "Image does not exits" << std::endl;
+                sample.setSampleID(datasetPrefix + imageID);
                 sample.setColorImage(colorImagePath);
                 sample.setDepthImage(depthImagePath);
-                RectRegions colorRegions;
-                colorRegions.add(colorRect,"person");
+                RectRegionsPtr colorRegions(new RectRegions());
+                colorRegions->add(colorRect,"person");
                 sample.setRectRegions(colorRegions);
                 samples.push_back(sample);
             }
-
-
-
-            std::cout << "Number of samples: " << this->getNumberOfElements() << std::endl;
-
-//            std::istringstream iss(data);
-//            std::cout << "DAta: " << data << std::endl;
-//            std::string n1, imageName;
-//            double timeStamp, X_tl_dpt, Y_tl_dpt, WDT_dpt, HGT_dpt, X_tl_rgb, Y_tl_rgb, WDT_rgb, HGT_rgb;
-//            int VSB;
-//            iss >> n1 >> imageName >> timeStamp >> X_tl_dpt >> Y_tl_dpt >> WDT_dpt >> HGT_dpt >> X_tl_rgb >> Y_tl_rgb >> WDT_rgb >> HGT_rgb >> VSB;
-//            std::cout << "Image path: " << this->path + "/"  + "rgb" + "/" + imageName + ".ppm";
         }
     }
+    printDatasetStats();
 }

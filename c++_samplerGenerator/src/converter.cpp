@@ -16,76 +16,57 @@
 #include <SampleGeneratorLib/DatasetConverters/YoloDatasetReader.h>
 
 
-namespace
-{
-    const size_t ERROR_IN_COMMAND_LINE = 1;
-    const size_t SUCCESS = 0;
-    const size_t ERROR_UNHANDLED_EXCEPTION = 2;
-
-} // namespace
+#include <iostream>
+#include <string>
+#include <SampleGeneratorLib/Utils/SampleGenerationApp.h>
+#include <SampleGeneratorLib/DatasetConverters/GenericDatasetReader.h>
+#include <SampleGeneratorLib/FrameworkEvaluator/DetectionsEvaluator.h>
 
 
+class MyApp:public SampleGenerationApp{
+public:
+    MyApp(int argc, char* argv[]):SampleGenerationApp(argc,argv){
+        this->requiredArguments.push_back("inputPath");
+        this->requiredArguments.push_back("readerImplementation");
+
+
+    };
+    void operator()(){
+        Key inputPathKey=this->config.getKey("inputPath");
+        Key readerImplementationKey = this->config.getKey("readerImplementation");
+
+
+        GenericDatasetReaderPtr reader;
+        if (inputPathKey.isVector()) {
+            reader = GenericDatasetReaderPtr(
+                    new GenericDatasetReader(inputPathKey.getValues(), readerImplementationKey.getValue()));
+        }
+        else {
+            reader = GenericDatasetReaderPtr(
+                    new GenericDatasetReader(inputPathKey.getValue(), readerImplementationKey.getValue()));
+        }
 
 
 
-struct ViewerAguments{
-    std::string path;
-    bool depthEnabled;
+        Sample sample;
+        while (reader->getReader()->getNetxSample(sample)){
+            std::cout << "number of elements: " << sample.getRectRegions()->getRegions().size() << std::endl;
+            cv::Mat image =sample.getSampledColorImage();
+            cv::imshow("Viewer", image);
+            cv::waitKey(0);
+        }
 
-    ViewerAguments():depthEnabled(false){};
+    };
 };
 
+int main (int argc, char* argv[])
+{
 
-int parse_arguments(const int argc, char* argv[], ViewerAguments& args){
-    try
-    {
-        /** Define and parse the program options
-         */
-        namespace po = boost::program_options;
-        po::options_description desc("Options");
-        desc.add_options()
-                ("help", "Print help messages")
-                ("word,w", po::value<std::string>(&args.path)->required())
-                ("depth,d", po::value<bool>(&args.depthEnabled)->default_value(false));
-
-        po::variables_map vm;
-        try
-        {
-            po::store(po::parse_command_line(argc, argv, desc),
-                      vm); // can throw
-
-            /** --help option
-             */
-            if ( vm.count("help")  )
-            {
-                std::cout << "Basic Command Line Parameter App" << std::endl
-                          << desc << std::endl;
-                return SUCCESS;
-            }
-
-            po::notify(vm); // throws on error, so do after help in case
-            // there are any problems
-        }
-        catch(po::error& e)
-        {
-            std::cerr << "ERROR: " << e.what() << std::endl << std::endl;
-            std::cerr << desc << std::endl;
-            return ERROR_IN_COMMAND_LINE;
-        }
-
-        // application code here //
-
-    }
-    catch(std::exception& e)
-    {
-        std::cerr << "Unhandled Exception reached the top of main: "
-                  << e.what() << ", application will now exit" << std::endl;
-        return ERROR_UNHANDLED_EXCEPTION;
-
-    }
+    MyApp myApp(argc,argv);
+    myApp.process();
 }
 
-void extractPersonsFromYolo(const std::string& dataSetPath){
+/*void extractPersonsFromYolo(const std::string& dataSetPath){
     YoloDatasetReader reader(dataSetPath);
 
     std::vector<std::string> idsToFilter;
@@ -113,8 +94,9 @@ int main (int argc, char* argv[]) {
 
     extractPersonsFromYolo(args.path);
 
-//    OwnDatasetReader reader(args.path);
-//
-//    YoloDatasetWriter converter("converter_output", reader);
-//    converter.process(true);
+    OwnDatasetReader reader(args.path);
+
+    YoloDatasetWriter converter("converter_output", reader);
+    converter.process(true);
 }
+*/

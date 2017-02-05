@@ -6,6 +6,7 @@
 #define SAMPLERGENERATOR_RECTREGIONS_H
 
 #include <opencv2/opencv.hpp>
+#include <boost/shared_ptr.hpp>
 #include "Regions.h"
 #include "RectRegion.h"
 
@@ -13,9 +14,9 @@ struct RectRegions:Regions {
     RectRegions(const std::string& jsonPath);
     RectRegions();
 
-    void add(const cv::Rect rect, const std::string& classId);
-    void add(const std::vector<cv::Point>& detections, const std::string& classId);
-    void add(int x, int y, int w, int h, const std::string& classId);
+    void add(const cv::Rect rect, const std::string classId);
+    void add(const std::vector<cv::Point>& detections, const std::string classId);
+    void add(int x, int y, int w, int h, const std::string classId);
 
 
     void saveJson(const std::string& outPath);
@@ -24,6 +25,7 @@ struct RectRegions:Regions {
     void drawRegions(cv::Mat& image);
     void filterSamplesByID(std::vector<std::string> filteredIDS);
     bool empty();
+    void print();
 
 
 
@@ -31,6 +33,8 @@ struct RectRegions:Regions {
 private:
     std::vector<RectRegion> regions;
 };
+
+typedef boost::shared_ptr<RectRegions> RectRegionsPtr;
 
 
 #endif //SAMPLERGENERATOR_RECTREGIONS_H

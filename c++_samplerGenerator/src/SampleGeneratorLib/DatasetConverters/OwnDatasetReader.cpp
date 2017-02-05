@@ -7,11 +7,13 @@
 #include <boost/lexical_cast.hpp>
 #include "OwnDatasetReader.h"
 
-OwnDatasetReader::OwnDatasetReader(const std::string &path):currentIndex(0) {
-    this->datasetPath=path;
+OwnDatasetReader::OwnDatasetReader(const std::string &path) {
+    appendDataset(path);
+}
 
+bool OwnDatasetReader::appendDataset(const std::string &datasetPath, const std::string &datasetPrefix) {
     boost::filesystem::directory_iterator end_itr;
-    boost::filesystem::path boostPath(this->datasetPath);
+    boost::filesystem::path boostPath(datasetPath);
 
 
     std::vector<std::string> filesID;
@@ -27,20 +29,16 @@ OwnDatasetReader::OwnDatasetReader(const std::string &path):currentIndex(0) {
     std::sort(filesID.begin(),filesID.end());
 
     for (auto it = filesID.begin(), end=filesID.end(); it != end; ++it){
-        Sample sample(this->datasetPath,*it);
-        sample.setSampleID(boost::filesystem::path(*it).filename().stem().string());
+        Sample sample(datasetPath,*it);
+        sample.setSampleID(datasetPrefix + boost::filesystem::path(*it).filename().stem().string());
         this->samples.push_back(sample);
     }
 
     Logger::getInstance()->info("Loaded: " + boost::lexical_cast<std::string>(this->samples.size()) + " samples");
+    printDatasetStats();
+    return true;
 }
 
-bool OwnDatasetReader::getNetxSample(Sample& sample) {
-    if (currentIndex < this->samples.size()) {
-        sample = this->samples[this->currentIndex];
-        this->currentIndex++;
-        return true;
-    }
-    else
-        return false;
+OwnDatasetReader::OwnDatasetReader() {
+
 }

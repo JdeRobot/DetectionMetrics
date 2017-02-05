@@ -14,6 +14,7 @@ struct Regions{
     virtual void drawRegions(cv::Mat& image)=0;
     virtual void filterSamplesByID(std::vector<std::string> filteredIDS)=0;
     virtual bool empty()=0;
+    virtual void print()=0;
 
 };
 

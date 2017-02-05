@@ -2,11 +2,12 @@
 // Created by frivas on 22/01/17.
 //
 
+#include <unordered_map>
 #include "DatasetReader.h"
+#include "ClassTypeOwn.h"
 
 
 DatasetReader::DatasetReader():readerCounter(0) {
-
 }
 
 void DatasetReader::filterSamplesByID(std::vector<std::string> filteredIDS) {
@@ -16,7 +17,7 @@ void DatasetReader::filterSamplesByID(std::vector<std::string> filteredIDS) {
     for (auto it=old_samples.begin(), end=old_samples.end(); it != end; ++it){
         Sample& sample =*it;
         sample.filterSamplesByID(filteredIDS);
-        if (sample.getContourRegions().empty() && sample.getRectRegions().empty()){
+        if (sample.getContourRegions()->empty() && sample.getRectRegions()->empty()){
 
         }
         else{
@@ -57,5 +58,36 @@ bool DatasetReader::getSampleBySampleID(Sample** sample, const std::string& samp
         }
     }
     return false;
+}
+
+void DatasetReader::printDatasetStats() {
+    std::unordered_map<int, int> classStats;
+
+    for (auto it=samples.begin(), end=samples.end(); it != end; ++it){
+        RectRegionsPtr regions = it->getRectRegions();
+        std::vector<RectRegion> regionsVector = regions->getRegions();
+        for (std::vector<RectRegion>::iterator itRegion= regionsVector.begin(), endRegion =regionsVector.end(); itRegion != endRegion; ++itRegion){
+            std::string test = itRegion->classID;
+            ClassTypeOwn typeconv(test);
+            if (classStats.count(typeconv.getClassID())){
+                classStats[typeconv.getClassID()]++;
+            }
+            else{
+                classStats.insert(std::make_pair(typeconv.getClassID(),1));
+            }
+        }
+    }
+
+    std::cout << "------------------------------------------" << std::endl;
+    std::cout << "------------------------------------------" << std::endl;
+    for (auto it = classStats.begin(), end = classStats.end(); it != end; ++it){
+        ClassTypeOwn typeconv(it->first);
+
+        std::cout << "["<< typeconv.getClassString() <<  "]: " << it->second << std::endl;
+    }
+    std::cout << "------------------------------------------" << std::endl;
+    std::cout << "------------------------------------------" << std::endl;
+
+
 }
 

@@ -3,3 +3,12 @@
 //
 
 #include "ContourRegion.h"
+
+ContourRegion::ContourRegion(const ContourRegion &other) {
+    this->id=other.id;
+    if (other.region.size()) {
+        this->region.resize(other.region.size());
+        std::copy(other.region.begin(), other.region.end(), this->region.begin());
+    }
+    this->valid=other.valid;
+}

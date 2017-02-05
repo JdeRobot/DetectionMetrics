@@ -12,23 +12,23 @@ struct Sample {
     Sample(const std::string& path, const std::string& id, bool loadDepth=true);
     Sample();
     Sample(const cv::Mat& colorImage);
-    Sample(const cv::Mat& colorImage, const RectRegions& rectRegions);
-    Sample(const cv::Mat& colorImage, const ContourRegions& contourRegions);
-    Sample(const cv::Mat& colorImage, const RectRegions& rectRegions, const ContourRegions& contourRegions);
-    Sample(const cv::Mat& colorImage, const cv::Mat& depthImage, const RectRegions& rectRegions);
-    Sample(const cv::Mat& colorImage, const cv::Mat& depthImage, const ContourRegions& contourRegions);
-    Sample(const cv::Mat& colorImage, const cv::Mat& depthImage, const RectRegions& rectRegions, const ContourRegions& contourRegions);
+    Sample(const cv::Mat& colorImage, const RectRegionsPtr& rectRegions);
+    Sample(const cv::Mat& colorImage, const ContourRegionsPtr& contourRegions);
+    Sample(const cv::Mat& colorImage, const RectRegionsPtr& rectRegions, const ContourRegionsPtr& contourRegions);
+    Sample(const cv::Mat& colorImage, const cv::Mat& depthImage, const RectRegionsPtr& rectRegions);
+    Sample(const cv::Mat& colorImage, const cv::Mat& depthImage, const ContourRegionsPtr& contourRegions);
+    Sample(const cv::Mat& colorImage, const cv::Mat& depthImage, const RectRegionsPtr& rectRegions, const ContourRegionsPtr& contourRegions);
     ~Sample();
     void setColorImage(const std::string& imagePath);
     void setColorImage(const cv::Mat& image);
     void setDepthImage(const cv::Mat& image);
     void setDepthImage(const std::string& imagePath);
-    void setRectRegions(const RectRegions& regions);
-    void setContourRegions(const ContourRegions& regions);
+    void setRectRegions(const RectRegionsPtr& regions);
+    void setContourRegions(const ContourRegionsPtr& regions);
     void setSampleID(const std::string& sampleID);
 
-    RectRegions getRectRegions();
-    ContourRegions getContourRegions();
+    RectRegionsPtr getRectRegions();
+    ContourRegionsPtr getContourRegions();
     cv::Mat getColorImage();
     cv::Mat getDepthImage();
     cv::Mat getSampledColorImage();
@@ -44,8 +44,8 @@ struct Sample {
 
 
 private:
-    RectRegions rectRegions;
-    ContourRegions contourRegions;
+    RectRegionsPtr rectRegions;
+    ContourRegionsPtr contourRegions;
     cv::Mat colorImage;
     std::string colorImagePath;
     cv::Mat depthImage;

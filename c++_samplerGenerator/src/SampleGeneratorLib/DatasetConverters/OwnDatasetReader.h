@@ -10,9 +10,10 @@
 class OwnDatasetReader:public DatasetReader {
 public:
     OwnDatasetReader(const std::string& path);
-    virtual bool getNetxSample(Sample& sample);
+    OwnDatasetReader();
+    bool appendDataset(const std::string& datasetPath, const std::string& datasetPrefix="");
 private:
-    int currentIndex;
+
 };
 
 

@@ -16,8 +16,8 @@ MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr i
         boost::filesystem::create_directories(boostPath);
     }
     else{
-        Logger::getInstance()->error("Output directory already exists");
-        Logger::getInstance()->error("Continuing detecting");
+        Logger::getInstance()->warning("Output directory already exists");
+        Logger::getInstance()->warning("Continuing detecting");
         boost::filesystem::directory_iterator end_itr;
 
         for (boost::filesystem::directory_iterator itr(boostPath); itr!=end_itr; ++itr)
@@ -45,6 +45,7 @@ void MassInferencer::process() {
 
 
     while (this->reader->getNetxSample(sample)){
+        std::cout << "Evaluating : " << sample.getSampleID() << "(" << counter << "/" << nsamples << ")" << std::endl;
         counter++;
         cv::Mat image =sample.getSampledColorImage();
         Sample detection=this->inferencer->detect(sample.getColorImage());

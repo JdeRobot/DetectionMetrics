@@ -11,7 +11,7 @@ Key::Key(const std::string &key):key(key) {
 
 
 bool Key::isVector() {
-    return this->values.size()==1;
+    return this->values.size()>1;
 }
 
 void Key::addValue(const std::string &value) {

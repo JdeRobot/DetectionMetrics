@@ -8,7 +8,7 @@
 
 ClassTypeOwn::ClassTypeOwn(const std::string& classID) {
     fillStringClassesVector();
-    this->classID = classID;
+    this->classID = std::string(classID);
 }
 
 ClassTypeOwn::ClassTypeOwn(int id){
@@ -98,6 +98,6 @@ void ClassTypeOwn::fillStringClassesVector() {
     classes.push_back("wine glass");
     classes.push_back("zebra");
     classes.push_back("person-falling");
-    classes.push_back("person-falled");
+    classes.push_back("person-fall");
 
 }

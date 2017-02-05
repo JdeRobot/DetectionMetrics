@@ -9,6 +9,7 @@
 #include "Regions.h"
 #include "ContourRegion.h"
 
+
 struct ContourRegions:Regions {
     ContourRegions(const std::string& jsonPath);
     ContourRegions();
@@ -19,12 +20,15 @@ struct ContourRegions:Regions {
     void drawRegions(cv::Mat& image);
     void filterSamplesByID(std::vector<std::string> filteredIDS);
     bool empty();
+    void print();
 
 
 
 private:
     std::vector<ContourRegion> regions;
 };
+
+typedef boost::shared_ptr<ContourRegions> ContourRegionsPtr;
 
 
 #endif //SAMPLERGENERATOR_CONTOURREGIONS_H

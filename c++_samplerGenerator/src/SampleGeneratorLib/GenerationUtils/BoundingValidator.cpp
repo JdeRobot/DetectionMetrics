@@ -14,9 +14,15 @@ BoundingValidator::BoundingValidator(const cv::Mat &image_in) {
 
 }
 
-bool BoundingValidator::validate(std::vector<cv::Point> &bounding, cv::Rect& validatedBound) {
+bool BoundingValidator::validate(std::vector<cv::Point> &bounding, cv::Rect& validatedBound, int& key) {
 
-    char validationKey=' ';
+
+    std::vector<char> validationKeys;
+    validationKeys.push_back('1');
+    validationKeys.push_back('2');
+    validationKeys.push_back('3');
+
+
     char rejectionKey='n';
     std::vector<cv::Point> scaledBounding;
     for (auto it = bounding.begin(), end = bounding.end(); it != end; ++it){
@@ -24,8 +30,8 @@ bool BoundingValidator::validate(std::vector<cv::Point> &bounding, cv::Rect& val
     }
     cv::Rect boundingRectangle = cv::boundingRect(scaledBounding);
     BoundingRectGuiMover rect(boundingRectangle);
-    int key='0';
-    while (char(key) != rejectionKey and char(key) != validationKey) {
+    key='0';
+    while (char(key) != rejectionKey and (std::find(validationKeys.begin(), validationKeys.end(), char(key))== validationKeys.end() )) {
         cv::Mat image2show= this->image.clone();
         cv::rectangle(image2show, rect.getRect(), cv::Scalar(255, 0, 0), 3);
         std::string windowName="Validation window";
@@ -38,7 +44,7 @@ bool BoundingValidator::validate(std::vector<cv::Point> &bounding, cv::Rect& val
     validatedBound=rect.getRect(this->scale);
 
 
-    return (char(key)==validationKey);
+    return std::find(validationKeys.begin(), validationKeys.end(), char(key))!= validationKeys.end();
 }
 
 bool clicked=false;

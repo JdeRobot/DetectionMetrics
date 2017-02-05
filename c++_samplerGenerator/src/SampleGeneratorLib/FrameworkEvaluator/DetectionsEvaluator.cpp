@@ -50,11 +50,11 @@ void DetectionsEvaluator::evaluate() {
 void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
     double thIOU = 0.5;
 
-    auto detectionRegions = detection.getRectRegions().getRegions();
+    auto detectionRegions = detection.getRectRegions()->getRegions();
     for (auto itDetection = detectionRegions.begin(), end = detectionRegions.end(); itDetection != end; ++itDetection) {
         if (itDetection->classID.compare("person")== 0) {
             bool matched = false;
-            auto gtRegions = gt.getRectRegions().getRegions();
+            auto gtRegions = gt.getRectRegions()->getRegions();
             for (auto itGT = gtRegions.begin(), endGT = gtRegions.end(); itGT != endGT; ++itGT) {
                 if (itDetection->classID.compare("person")== 0 && itDetection->classID.compare(itGT->classID) == 0) {
 
@@ -82,7 +82,7 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
         }
     }
 
-    auto gtRegions = gt.getRectRegions().getRegions();
+    auto gtRegions = gt.getRectRegions()->getRegions();
     for (auto itGT = gtRegions.begin(), endGT = gtRegions.end(); itGT != endGT; ++itGT) {
         if (itGT->classID.compare("person")== 0) {
             bool matched = false;

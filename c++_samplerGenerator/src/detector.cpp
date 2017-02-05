@@ -35,7 +35,17 @@ public:
         Key inferencerConfigKey = this->config.getKey("inferencerConfig");
         Key inferencerWeightsKey = this->config.getKey("inferencerWeights");
 
-        GenericDatasetReaderPtr reader(new GenericDatasetReader(inputPath.getValue(), readerImplementationKey.getValue()));
+        GenericDatasetReaderPtr reader;
+        if (inputPath.isVector()) {
+            reader = GenericDatasetReaderPtr(
+                    new GenericDatasetReader(inputPath.getValues(), readerImplementationKey.getValue()));
+        }
+        else {
+            reader = GenericDatasetReaderPtr(
+                    new GenericDatasetReader(inputPath.getValue(), readerImplementationKey.getValue()));
+        }
+
+
         GenericInferencerPtr inferencer(new GenericInferencer(inferencerConfigKey.getValue(),inferencerWeightsKey.getValue(),infererImplementationKey.getValue()));
         MassInferencer massInferencer(reader->getReader(),inferencer->getInferencer(),outputPath.getValue(), true);
         massInferencer.process();

@@ -47,7 +47,7 @@ void YoloDatasetWriter::process(bool overWriteclassWithZero) {
     std::ofstream sampleFile(this->outPath + "/sample.txt");
 
     while (reader.getNetxSample(sample)){
-        auto boundingBoxes = sample.getRectRegions().getRegions();
+        auto boundingBoxes = sample.getRectRegions()->getRegions();
         std::stringstream ssID ;
         ssID << std::setfill('0') << std::setw(5) << id;
         std::string imageFilePath= this->fullImagesPath + "/" + ssID.str() + ".jpg";

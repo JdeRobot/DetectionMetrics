@@ -70,15 +70,15 @@ void RectRegions::saveJson(const std::string &outPath) {
     outFile.close();
 }
 
-void RectRegions::add(const cv::Rect rect,const std::string& classId){
+void RectRegions::add(const cv::Rect rect,const std::string classId){
     regions.push_back(RectRegion(rect,classId));
 }
 
-void RectRegions::add(const std::vector<cv::Point> &detections,const std::string& classId) {
+void RectRegions::add(const std::vector<cv::Point> &detections,const std::string classId) {
     regions.push_back(RectRegion(cv::boundingRect(detections),classId));
 }
 
-void RectRegions::add(int x, int y, int w, int h,const std::string& classId) {
+void RectRegions::add(int x, int y, int w, int h,const std::string classId) {
     regions.push_back(RectRegion(cv::Rect(x,y,w,h),classId));
 }
 
@@ -113,5 +113,14 @@ void RectRegions::filterSamplesByID(std::vector<std::string> filteredIDS) {
 
 bool RectRegions::empty() {
     return (this->regions.size()==0);
+}
+
+void RectRegions::print() {
+    std::cout << "-------------------" << std::endl;
+    for (auto it = this->regions.begin(), end = this->regions.end(); it != end; ++it){
+        int idx = std::distance(this->regions.begin(),it);
+        std::cout << "[" << idx << "]: " << it->region << " (" << it->classID << ")" << std::endl;
+    }
+    std::cout << "-------------------" << std::endl;
 }
 

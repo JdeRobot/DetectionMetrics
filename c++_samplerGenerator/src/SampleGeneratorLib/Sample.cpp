@@ -15,36 +15,36 @@ Sample::Sample(const cv::Mat &colorImage) {
     colorImage.copyTo(this->colorImage);
 }
 
-Sample::Sample(const cv::Mat &colorImage, const RectRegions &rectRegions) {
+Sample::Sample(const cv::Mat &colorImage, const RectRegionsPtr &rectRegions) {
     this->setColorImage(colorImage);
     this->setRectRegions(rectRegions);
 }
 
-Sample::Sample(const cv::Mat &colorImage, const ContourRegions &contourRegions) {
+Sample::Sample(const cv::Mat &colorImage, const ContourRegionsPtr &contourRegions) {
     this->setColorImage(colorImage);
     this->setContourRegions(contourRegions);
 }
 
-Sample::Sample(const cv::Mat &colorImage, const RectRegions &rectRegions, const ContourRegions &contourRegions) {
+Sample::Sample(const cv::Mat &colorImage, const RectRegionsPtr &rectRegions, const ContourRegionsPtr &contourRegions) {
     this->setColorImage(colorImage);
     this->setRectRegions(rectRegions);
     this->setContourRegions(contourRegions);
 }
 
-Sample::Sample(const cv::Mat &colorImage, const cv::Mat &depthImage, const RectRegions &rectRegions) {
+Sample::Sample(const cv::Mat &colorImage, const cv::Mat &depthImage, const RectRegionsPtr &rectRegions) {
     this->setColorImage(colorImage);
     this->setDepthImage(depthImage);
     this->setRectRegions(rectRegions);
 }
 
-Sample::Sample(const cv::Mat &colorImage, const cv::Mat &depthImage, const ContourRegions &contourRegions) {
+Sample::Sample(const cv::Mat &colorImage, const cv::Mat &depthImage, const ContourRegionsPtr &contourRegions) {
     this->setColorImage(colorImage);
     this->setDepthImage(depthImage);
     this->setContourRegions(contourRegions);
 }
 
-Sample::Sample(const cv::Mat &colorImage, const cv::Mat &depthImage, const RectRegions &rectRegions,
-               const ContourRegions &contourRegions) {
+Sample::Sample(const cv::Mat &colorImage, const cv::Mat &depthImage, const RectRegionsPtr &rectRegions,
+               const ContourRegionsPtr &contourRegions) {
     this->setColorImage(colorImage);
     this->setDepthImage(depthImage);
     this->setRectRegions(rectRegions);
@@ -60,19 +60,19 @@ void Sample::setDepthImage(const cv::Mat &image) {
     image.copyTo(this->depthImage);
 }
 
-void Sample::setRectRegions(const RectRegions &regions) {
+void Sample::setRectRegions(const RectRegionsPtr &regions) {
     this->rectRegions=regions;
 }
 
-void Sample::setContourRegions(const ContourRegions &regions) {
+void Sample::setContourRegions(const ContourRegionsPtr &regions) {
     this->contourRegions=regions;
 }
 
-RectRegions Sample::getRectRegions() {
+RectRegionsPtr Sample::getRectRegions() {
     return this->rectRegions;
 }
 
-ContourRegions Sample::getContourRegions() {
+ContourRegionsPtr Sample::getContourRegions() {
     return this->contourRegions;
 }
 
@@ -97,8 +97,8 @@ cv::Mat Sample::getDepthImage() {
 Sample::Sample(const std::string &path, const std::string &id,bool loadDepth) {
     this->colorImagePath=path + "/"  + id + ".png";
 
-    this->rectRegions= RectRegions(path + "/" + id + ".json");
-    this->contourRegions=ContourRegions(path + "/" + id + "-region.json");
+    this->rectRegions=RectRegionsPtr(new RectRegions(path + "/" + id + ".json"));
+    this->contourRegions=ContourRegionsPtr(new ContourRegions(path + "/" + id + "-region.json"));
 
     if (loadDepth) {
         this->depthImagePath=path + "/" + id + "-depth.png";
@@ -107,15 +107,19 @@ Sample::Sample(const std::string &path, const std::string &id,bool loadDepth) {
 
 cv::Mat Sample::getSampledColorImage() {
     cv::Mat image = this->getColorImage();
-    this->rectRegions.drawRegions(image);
-    this->contourRegions.drawRegions(image);
+    if (this->rectRegions)
+        this->rectRegions->drawRegions(image);
+    if (this->contourRegions)
+        this->contourRegions->drawRegions(image);
     return image;
 }
 
 cv::Mat Sample::getSampledDepthImage() {
     cv::Mat image =this->getDepthImage();
-    this->rectRegions.drawRegions(image);
-    this->contourRegions.drawRegions(image);
+    if (this->rectRegions)
+        this->rectRegions->drawRegions(image);
+    if (this->contourRegions)
+        this->contourRegions->drawRegions(image);
     return image;
 }
 
@@ -132,8 +136,10 @@ void Sample::save(const std::string &outPath, const std::string &filename) {
     if (! this->depthImage.empty()) {
         cv::imwrite(outPath + "/" + filename + "-depth.png", depthImage);
     }
-    rectRegions.saveJson(outPath + "/" + filename + ".json");
-    contourRegions.saveJson(outPath + "/" + filename + "-region.json");
+    if(rectRegions)
+        rectRegions->saveJson(outPath + "/" + filename + ".json");
+    if (contourRegions)
+        contourRegions->saveJson(outPath + "/" + filename + "-region.json");
 }
 
 void Sample::save(const std::string &outPath) {
@@ -154,8 +160,10 @@ bool Sample::isValid() {
 }
 
 void Sample::filterSamplesByID(std::vector<std::string> filteredIDS) {
-    this->rectRegions.filterSamplesByID(filteredIDS);
-    this->contourRegions.filterSamplesByID(filteredIDS);
+    if (this->rectRegions)
+        this->rectRegions->filterSamplesByID(filteredIDS);
+    if (contourRegions)
+        this->contourRegions->filterSamplesByID(filteredIDS);
 }
 
 void Sample::setColorImage(const std::string &imagePath) {

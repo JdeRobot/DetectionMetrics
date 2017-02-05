@@ -30,6 +30,15 @@ DetectionsValidator::DetectionsValidator(const std::string& pathToSave):validati
 
         }
         Logger::getInstance()->warning("Including samples to an existing dataset, starting with: " + boost::lexical_cast<std::string>(this->validationCounter));
+        char confirmation='a';
+        while (confirmation != 'y' && confirmation != 'n'){
+            std::cout << "Do you want to continue? (y/n)" << std::endl;
+            std::cin >> confirmation;
+        }
+        if (confirmation=='n'){
+            Logger::getInstance()->warning("Exiting");
+            exit(1);
+        }
 
     }
 
@@ -59,27 +68,58 @@ void DetectionsValidator::validate(const cv::Mat& colorImage,const cv::Mat& dept
     cv::Mat image2show;
     cv::merge(channels,image2show);
 
-    std::string validationID="person"; //todo configure anywhere
 
-    RectRegions regions;
-    ContourRegions cRegions;
+    RectRegionsPtr regions(new RectRegions());
+    ContourRegionsPtr cRegions(new ContourRegions());
 
+    cv::cvtColor(image2show,image2show,CV_RGB2BGR);
     BoundingValidator validator(image2show);
     for (auto it= detections.begin(), end=detections.end(); it != end; ++it){
         cv::Rect validatedRect;
-        if (validator.validate(*it,validatedRect)){
+        int classVal;
+        if (validator.validate(*it,validatedRect,classVal)){
+            std::string validationID;
+            if (char(classVal)=='1') {
+                validationID = "person";
+            }
+            else if (char(classVal)=='2')
+                validationID="person-falling";
+            else if (char(classVal)=='3')
+                validationID="person-fall";
+
+
+            fillRectIntoImageDimensions(validatedRect,colorImage.size());
             Logger::getInstance()->info("Validated");
-            regions.add(validatedRect,validationID);
-            cRegions.add(*it,validationID);
+            regions->add(validatedRect,validationID);
+            cRegions->add(*it,validationID);
         }
         else{
             Logger::getInstance()->info("Discarded");
         }
     }
 
-    if (regions.getRegions().size()){
+    if (regions->getRegions().size()){
         Sample sample(colorImage,depthImage,regions,cRegions);
         sample.save(this->path,this->validationCounter);
         this->validationCounter++;
     }
+}
+
+void DetectionsValidator::fillRectIntoImageDimensions(cv::Rect &rect, const cv::Size size) {
+    if (rect.x + rect.width > size.width){
+        rect.width = size.width - rect.x - 1;
+    }
+    if (rect.y + rect.height > size.height){
+        rect.height = size.height - rect.y -1;
+    }
+
+    if (rect.x < 0){
+        rect.width=rect.width + rect.x;
+        rect.x=0;
+    }
+    if (rect.y <0){
+        rect.height = rect.height + rect.y;
+        rect.y=0;
+    }
+
 }

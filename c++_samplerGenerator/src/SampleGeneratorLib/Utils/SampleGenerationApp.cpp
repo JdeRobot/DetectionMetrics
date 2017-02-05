@@ -31,6 +31,8 @@ SampleGenerationApp::SampleGenerationApp(int argc, char **argv) {
 
 
 int SampleGenerationApp::parse_arguments(const int argc, char* argv[], std::string& configFile){
+
+    Logger::getInstance()->setLevel(Logger::DEBUG);
     try
     {
         /** Define and parse the program options

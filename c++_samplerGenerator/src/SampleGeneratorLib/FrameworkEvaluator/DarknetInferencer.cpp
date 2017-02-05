@@ -16,10 +16,10 @@ Sample DarknetInferencer::detect(const cv::Mat &image) {
     DarknetDetections detections = this->cnn->process(rgbImage);
 
     Sample sample;
-    RectRegions regions;
+    RectRegionsPtr regions(new RectRegions());
     for (auto it = detections.data.begin(), end=detections.data.end(); it !=end; ++it){
         ClassTypeVoc typeConverter(it->classId);
-        regions.add(it->detectionBox,typeConverter.getClassString());
+        regions->add(it->detectionBox,typeConverter.getClassString());
         std::cout<< typeConverter.getClassString() << ": " << it->probability << std::endl;
     }
     sample.setColorImage(image);
