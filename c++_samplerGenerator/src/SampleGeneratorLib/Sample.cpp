@@ -5,6 +5,7 @@
 #include "Sample.h"
 #include "Utils/Logger.h"
 #include <iomanip>
+#include <boost/filesystem/operations.hpp>
 
 
 Sample::Sample() {
@@ -97,8 +98,14 @@ cv::Mat Sample::getDepthImage() {
 Sample::Sample(const std::string &path, const std::string &id,bool loadDepth) {
     this->colorImagePath=path + "/"  + id + ".png";
 
-    this->rectRegions=RectRegionsPtr(new RectRegions(path + "/" + id + ".json"));
-    this->contourRegions=ContourRegionsPtr(new ContourRegions(path + "/" + id + "-region.json"));
+    if (boost::filesystem::exists(boost::filesystem::path(path + "/" + id + ".json")))
+        this->rectRegions=RectRegionsPtr(new RectRegions(path + "/" + id + ".json"));
+    else{
+        Logger::getInstance()->error("Error " + id + " sample has not associated detection");
+    }
+
+    if (boost::filesystem::exists(boost::filesystem::path(path + "/" + id + "-region.json")))
+        this->contourRegions=ContourRegionsPtr(new ContourRegions(path + "/" + id + "-region.json"));
 
     if (loadDepth) {
         this->depthImagePath=path + "/" + id + "-depth.png";
@@ -132,7 +139,12 @@ void Sample::save(const std::string &outPath, int id) {
 
 void Sample::save(const std::string &outPath, const std::string &filename) {
 
-    cv::imwrite(outPath + "/" + filename + ".png",this->colorImage);
+    if (this->colorImage.empty()){
+        cv::Mat image = cv::imread(this->colorImagePath);
+        cv::imwrite(outPath + "/" + filename + ".png",image);
+    }
+    else
+        cv::imwrite(outPath + "/" + filename + ".png",this->colorImage);
     if (! this->depthImage.empty()) {
         cv::imwrite(outPath + "/" + filename + "-depth.png", depthImage);
     }

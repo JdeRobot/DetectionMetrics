@@ -3,14 +3,11 @@
 //
 
 #include <Utils/Logger.h>
+#include <Utils/StatsUtils.h>
 #include "DetectionsEvaluator.h"
 
 DetectionsEvaluator::DetectionsEvaluator(DatasetReaderPtr gt, DatasetReaderPtr detections,bool debug):gt(gt),detections(detections),debug(debug) {
-    nSamples=0;
-    truePositives=0;
-    falsePositives=0;
-    falseNegatives=0;
-    trueNegatives=0;
+
 }
 
 void DetectionsEvaluator::evaluate() {
@@ -52,92 +49,130 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
 
     auto detectionRegions = detection.getRectRegions()->getRegions();
     for (auto itDetection = detectionRegions.begin(), end = detectionRegions.end(); itDetection != end; ++itDetection) {
-        if (itDetection->classID.compare("person")== 0) {
-            bool matched = false;
-            auto gtRegions = gt.getRectRegions()->getRegions();
-            for (auto itGT = gtRegions.begin(), endGT = gtRegions.end(); itGT != endGT; ++itGT) {
-                if (itDetection->classID.compare("person")== 0 && itDetection->classID.compare(itGT->classID) == 0) {
-
-                    double iouValue = getIOU(itGT->region, itDetection->region, gt.getColorImage().size());
-
-                    if (iouValue > thIOU) {
-                        truePositives++;
-                        this->iou.push_back(iouValue);
-                        matched = true;
-                        break;
+        bool matched = false;
+        auto gtRegions = gt.getRectRegions()->getRegions();
+        for (auto itGT = gtRegions.begin(), endGT = gtRegions.end(); itGT != endGT; ++itGT) {
+            if (sameClass(itDetection->classID,itGT->classID )){
+                double iouValue = StatsUtils::getIOU(itGT->region, itDetection->region, gt.getColorImage().size());
+                if (iouValue > thIOU) {
+                    if (itDetection->classID.compare(itGT->classID) ==0) {
+                        addTruePositive(itDetection->classID);
+                        addIOU(itDetection->classID, iouValue);
                     }
-//                std::cout << "Intersection: " << interSectionArea << std::endl;
-//                std::cout << "Union: " << unionArea << std::endl;
-//                std::cout << "IOU: " << iouValue << std::endl;
-//                cv::imshow("maskGT",maskGT);
-//                cv::imshow("maskDetection",maskDetection);
-//                cv::imshow("unionMask",unionMask);
-//                cv::imshow("interSection",interSection);
-//                cv::waitKey(0);
+                    else{
+                        addTruePositive(itGT->classID);
+                        addIOU(itGT->classID,iouValue );
+                    }
+                    matched = true;
+                    break;
                 }
             }
-            if (!matched) {
-                this->falsePositives++;
-            }
         }
+        if (!matched) {
+            addFalsePositive(itDetection->classID);
+        }
+
     }
 
     auto gtRegions = gt.getRectRegions()->getRegions();
     for (auto itGT = gtRegions.begin(), endGT = gtRegions.end(); itGT != endGT; ++itGT) {
-        if (itGT->classID.compare("person")== 0) {
-            bool matched = false;
-            for (auto itDetection = detectionRegions.begin(), end = detectionRegions.end();
-                 itDetection != end; ++itDetection) {
-                if (itGT->classID.compare("person")== 0 && itDetection->classID.compare(itGT->classID) == 0) {
+        bool matched = false;
+        for (auto itDetection = detectionRegions.begin(), end = detectionRegions.end();
+             itDetection != end; ++itDetection) {
+                if (sameClass(itGT->classID,itDetection->classID )){
+                double iouValue = StatsUtils::getIOU(itGT->region, itDetection->region, gt.getColorImage().size());
 
-                    double iouValue = getIOU(itGT->region, itDetection->region, gt.getColorImage().size());
-
-                    if (iouValue > thIOU) {
-                        matched = true;
-                        break;
-                    }
+                if (iouValue > thIOU) {
+                    matched = true;
+                    break;
                 }
             }
-            if (!matched) {
-                this->falseNegatives++;
-            }
+        }
+        if (!matched) {
+            addFalseNegative(itGT->classID);
         }
     }
 }
 
 void DetectionsEvaluator::printStats() {
-    std::cout << "------------------------------" << std::endl;
-    std::cout << "------------------------------" << std::endl;
-    std::cout << "TP: " << this->truePositives  << std::endl;
-    std::cout << "FP: " << this->falsePositives << std::endl;
-    std::cout << "FN: " << this->falseNegatives << std::endl;
-    double average = std::accumulate( this->iou.begin(), this->iou.end(), 0.0)/this->iou.size();
-    std::cout << "Mean IOU: " << average << std::endl;
-    double precision = (double)this->truePositives/ (double)(this->truePositives + this->falsePositives);
-    std::cout << "Precision: " <<precision << std::endl;
-    double recall = (double)this->truePositives/ (double)(this->truePositives + this->falseNegatives);
-    std::cout << "Recall: " <<recall << std::endl;
-    std::cout << "------------------------------" << std::endl;
-    std::cout << "------------------------------" << std::endl;
-
+    if (classesToDisplay.size()==0) {
+        for (auto it = this->statsMap.begin(), end = this->statsMap.end(); it != end; ++it) {
+            it->second.printStats();
+        }
+    }
+    else{
+        for (auto it =this->classesToDisplay.begin(),end= this->classesToDisplay.end(); it != end; ++it){
+            if (this->statsMap.count(*it))
+                this->statsMap[*it].printStats();
+        }
+    }
 }
 
-double DetectionsEvaluator::getIOU(const cv::Rect &gt, const cv::Rect &detection, const cv::Size& imageSize) {
-    //compute iou
-    cv::Mat maskGT(imageSize, CV_8UC1, cv::Scalar(0));
-    cv::Mat maskDetection(imageSize, CV_8UC1, cv::Scalar(0));
+bool DetectionsEvaluator::sameClass(const std::string class1, const std::string class2) {
 
-    cv::rectangle(maskGT, gt, cv::Scalar(255), -1);
-    cv::rectangle(maskDetection, detection, cv::Scalar(255), -1);
+    if (class1.compare(class2)==0)
+        return true;
+    else{
+        if (std::find(validMixClass.begin(), validMixClass.end(), std::make_pair(class1,class2)) != validMixClass.end())
+            return true;
+        if (std::find(validMixClass.begin(), validMixClass.end(), std::make_pair(class2,class1)) != validMixClass.end())
+            return true;
+    }
+    return false;
+}
 
-    cv::Mat unionMask(imageSize, CV_8UC1, cv::Scalar(0));
-    cv::rectangle(unionMask, gt, cv::Scalar(150), -1);
-    cv::rectangle(unionMask, detection, cv::Scalar(255), -1);
+void DetectionsEvaluator::addTruePositive(const std::string &classID) {
+    if (this->statsMap.count(classID)){
+        this->statsMap[classID].truePositives = this->statsMap[classID].truePositives+1;
+    }
+    else{
+        ClassStatistics s(classID);
+        s.truePositives = s.truePositives+1;
+        this->statsMap[classID]=s;
+    }
+}
 
-    cv::Mat interSection = maskGT & maskDetection;
+void DetectionsEvaluator::addFalsePositive(const std::string &classID) {
+    if (this->statsMap.count(classID)){
+        this->statsMap[classID].falsePositives = this->statsMap[classID].falsePositives+1;
+    }
+    else{
+        ClassStatistics s(classID);
+        s.falsePositives = s.falsePositives+1;
+        this->statsMap[classID]=s;
+    }
+}
 
-    int interSectionArea = cv::countNonZero(interSection);
-    int unionArea = cv::countNonZero(unionMask);
-    double iouValue = double(interSectionArea) / double(unionArea);
-    return iouValue;
+void DetectionsEvaluator::addFalseNegative(const std::string &classID) {
+    if (this->statsMap.count(classID)){
+        this->statsMap[classID].falseNegatives = this->statsMap[classID].falseNegatives+1;
+    }
+    else{
+        ClassStatistics s(classID);
+        s.falseNegatives = s.falseNegatives+1;
+        this->statsMap[classID]=s;
+    }
+}
+
+
+
+
+void DetectionsEvaluator::addIOU(const std::string &classID, double value) {
+    if (this->statsMap.count(classID)){
+        this->statsMap[classID].iou.push_back(value);
+    }
+    else{
+        ClassStatistics s(classID);
+        s.iou.push_back(value);
+        this->statsMap[classID]=s;
+    }
+}
+
+
+void DetectionsEvaluator::addValidMixClass(const std::string classA, const std::string classB){
+    this->validMixClass.push_back(std::make_pair(classA,classB));
+}
+
+void DetectionsEvaluator::addClassToDisplay(const std::string &classID) {
+    this->classesToDisplay.push_back(classID);
 }

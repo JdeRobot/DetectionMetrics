@@ -19,6 +19,8 @@ struct Key {
     std::string getKey();
     std::string getValue(int id);
     std::vector<std::string> getValues();
+    int getValueAsInt();
+
     int getNValues();
 
 private:

@@ -19,7 +19,8 @@ public:
     void resetReaderCounter();
     bool getSampleBySampleID(Sample** sample, const std::string& sampleID);
     void printDatasetStats();
-    virtual bool appendDataset(const std::string& datasetPath, const std::string& datasetPrefix="")=0;
+    virtual bool appendDataset(const std::string& datasetPath, const std::string& datasetPrefix="");
+    void addSample(Sample sample);
 
 protected:
     std::vector<Sample> samples;

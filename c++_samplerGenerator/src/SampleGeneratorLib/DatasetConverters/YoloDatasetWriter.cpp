@@ -11,15 +11,7 @@
 #include <Utils/Logger.h>
 
 
-YoloDatasetWriter::YoloDatasetWriter(const std::string &outPath, DatasetReader &reader):outPath(outPath),reader(reader) {
-    auto boostPath= boost::filesystem::path(outPath);
-    if (!boost::filesystem::exists(boostPath)){
-        boost::filesystem::create_directories(boostPath);
-    }
-    else{
-        Logger::getInstance()->error("Output directory already exists");
-        exit(-1);
-    }
+YoloDatasetWriter::YoloDatasetWriter(const std::string &outPath, DatasetReaderPtr &reader,bool overWriteclassWithZero):DatasetWriter(outPath,reader),overWriteclassWithZero(overWriteclassWithZero){
 
     this->fullImagesPath=boost::filesystem::absolute(boost::filesystem::path(outPath + "/JPEGImages")).string();
     this->fullLabelsPath=boost::filesystem::absolute(boost::filesystem::path(outPath + "/labels")).string();
@@ -40,13 +32,13 @@ YoloDatasetWriter::YoloDatasetWriter(const std::string &outPath, DatasetReader &
 
 }
 
-void YoloDatasetWriter::process(bool overWriteclassWithZero) {
+void YoloDatasetWriter::process() {
     Sample sample;
     int id=0;
 
     std::ofstream sampleFile(this->outPath + "/sample.txt");
 
-    while (reader.getNetxSample(sample)){
+    while (reader->getNetxSample(sample)){
         auto boundingBoxes = sample.getRectRegions()->getRegions();
         std::stringstream ssID ;
         ssID << std::setfill('0') << std::setw(5) << id;

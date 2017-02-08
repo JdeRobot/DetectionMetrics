@@ -7,28 +7,33 @@
 
 #include <DatasetConverters/DatasetReader.h>
 #include <boost/shared_ptr.hpp>
+#include "ClassStatistics.h"
 
 class DetectionsEvaluator {
 public:
     DetectionsEvaluator(DatasetReaderPtr gt, DatasetReaderPtr detections, bool debug=true);
     void evaluate();
+    void addValidMixClass(const std::string classA, const std::string classB);
+    void addClassToDisplay(const std::string& classID);
 
 private:
     DatasetReaderPtr gt;
     DatasetReaderPtr detections;
     bool debug;
-
-    std::vector<double> iou;
-    int nSamples;
-    int truePositives;
-    int falsePositives;
-    int falseNegatives;
-    int trueNegatives;
-
+    std::map<std::string,ClassStatistics> statsMap;
+    std::vector<std::pair<std::string, std::string>> validMixClass;
 
     void evaluateSamples(Sample gt, Sample detection);
     void printStats();
-    double getIOU(const cv::Rect& gt, const cv::Rect& detection,const cv::Size& imageSize);
+
+    bool sameClass(const std::string class1, const std::string class2);
+
+    void addTruePositive(const std::string& classID);
+    void addFalsePositive(const std::string& classID);
+    void addFalseNegative(const std::string& classID);
+    void addIOU(const std::string& classID, double value);
+
+    std::vector<std::string> classesToDisplay;
 };
 
 

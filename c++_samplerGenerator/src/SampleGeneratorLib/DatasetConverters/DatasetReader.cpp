@@ -17,7 +17,7 @@ void DatasetReader::filterSamplesByID(std::vector<std::string> filteredIDS) {
     for (auto it=old_samples.begin(), end=old_samples.end(); it != end; ++it){
         Sample& sample =*it;
         sample.filterSamplesByID(filteredIDS);
-        if (sample.getContourRegions()->empty() && sample.getRectRegions()->empty()){
+        if (sample.getContourRegions() && sample.getContourRegions()->empty() && sample.getRectRegions()->empty()){
 
         }
         else{
@@ -89,5 +89,13 @@ void DatasetReader::printDatasetStats() {
     std::cout << "------------------------------------------" << std::endl;
 
 
+}
+
+void DatasetReader::addSample(Sample sample) {
+    this->samples.push_back(sample);
+}
+
+bool DatasetReader::appendDataset(const std::string &datasetPath, const std::string &datasetPrefix) {
+    return false;
 }
 

@@ -7,17 +7,26 @@
 
 
 #include <vector>
+#include <string>
 
-class Statistics {
-public:
-    Statistics();
-private:
+struct ClassStatistics {
+    ClassStatistics();
+    ClassStatistics(const std::string& classID);
+    double getMeanIOU();
+    double getPrecision();
+    double getRecall();
+    void printStats();
+
+
+    std::string classID;
     std::vector<double> iou;
     int nSamples;
     int truePositives;
     int falsePositives;
     int falseNegatives;
     int trueNegatives; //???? evaluar muestra negativa??
+
+
 };
 
 

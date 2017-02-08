@@ -23,17 +23,26 @@ SET( SOURCE_FILES
         FrameworkEvaluator/FrameworkInferencer
         Utils/StringHandler.h
         Utils/Normalizations
-        FrameworkEvaluator/Statistics
+        FrameworkEvaluator/ClassStatistics
         DatasetConverters/ClassTypeCoco
         FrameworkEvaluator/DetectionsEvaluator
         FrameworkEvaluator/MassInferencer
         DatasetConverters/ClassTypeOwn
         DatasetConverters/ClassType
+        Utils/Configuration
+        Utils/Key
+        Utils/SampleGenerationApp
+        DatasetConverters/GenericDatasetReader
+        FrameworkEvaluator/GenericInferencer
+        DatasetConverters/DatasetWriter
+        DatasetConverters/OwnDatasetWriter
+        DatasetConverters/GenericDatasetWriter
+        Utils/StatsUtils
         )
 
 
 IF(DARKNET_ACTIVE)
-    SET( SOURCE_FILES ${SOURCE_FILES} FrameworkEvaluator/DarknetInferencer Utils/Configuration.cpp Utils/Configuration.h Utils/Key.cpp Utils/Key.h Utils/SampleGenerationApp.cpp Utils/SampleGenerationApp.h DatasetConverters/GenericDatasetReader.cpp DatasetConverters/GenericDatasetReader.h FrameworkEvaluator/GenericInferencer.cpp FrameworkEvaluator/GenericInferencer.h)
+    SET( SOURCE_FILES ${SOURCE_FILES} FrameworkEvaluator/DarknetInferencer)
     include_directories(${DARKNET_INCLUDE_DIR})
 ENDIF()
 

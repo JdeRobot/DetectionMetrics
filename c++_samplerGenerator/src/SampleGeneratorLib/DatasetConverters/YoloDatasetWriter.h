@@ -7,18 +7,20 @@
 
 #include <string>
 #include "DatasetReader.h"
+#include "DatasetWriter.h"
 
-class YoloDatasetWriter {
+class YoloDatasetWriter: public DatasetWriter {
 public:
-    YoloDatasetWriter(const std::string& outPath, DatasetReader& reader);
-    void process(bool overWriteclassWithZero);
+    YoloDatasetWriter(const std::string& outPath, DatasetReaderPtr& reader, bool overWriteclassWithZero=true);
+    void process();
 
 private:
-    std::string outPath;
-    DatasetReader& reader;
     std::string fullImagesPath;
     std::string fullLabelsPath;
+    bool overWriteclassWithZero;
 };
+
+typedef  boost::shared_ptr<YoloDatasetWriter> YoloDatasetWriterPtr;
 
 
 #endif //SAMPLERGENERATOR_YOLODATASETCONVERTER_H

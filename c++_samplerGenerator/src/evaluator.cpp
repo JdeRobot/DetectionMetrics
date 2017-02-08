@@ -34,6 +34,11 @@ public:
 
 
         DetectionsEvaluatorPtr evaluator(new DetectionsEvaluator(readerGT->getReader(),readerDetection->getReader(),true));
+        evaluator->addValidMixClass("person", "person-falling");
+        evaluator->addValidMixClass("person", "person-fall");
+        evaluator->addClassToDisplay("person");
+        evaluator->addClassToDisplay("person-falling");
+        evaluator->addClassToDisplay("person-fall");
         evaluator->evaluate();
 
 

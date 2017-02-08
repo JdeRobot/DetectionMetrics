@@ -2,6 +2,7 @@
 // Created by frivas on 4/02/17.
 //
 
+#include <sstream>
 #include "Key.h"
 #include "Logger.h"
 
@@ -49,5 +50,18 @@ Key::Key() {
 
 int Key::getNValues() {
     return this->values.size();
+}
+
+int Key::getValueAsInt() {
+    if (this->values.size() != 1) {
+        Logger::getInstance()->error("Cannot extract int from array type. Key=" + this->key);
+        exit(1);
+    }
+    else{
+        int value;
+        std::istringstream iss(this->values[0]);
+        iss >> value;
+        return value;
+    }
 }
 

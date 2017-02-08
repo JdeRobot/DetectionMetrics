@@ -20,20 +20,25 @@
 #include <string>
 #include <SampleGeneratorLib/Utils/SampleGenerationApp.h>
 #include <SampleGeneratorLib/DatasetConverters/GenericDatasetReader.h>
-#include <SampleGeneratorLib/FrameworkEvaluator/DetectionsEvaluator.h>
+#include <SampleGeneratorLib/DatasetConverters/GenericDatasetWriter.h>
 
 
 class MyApp:public SampleGenerationApp{
 public:
     MyApp(int argc, char* argv[]):SampleGenerationApp(argc,argv){
         this->requiredArguments.push_back("inputPath");
+        this->requiredArguments.push_back("outputPath");
         this->requiredArguments.push_back("readerImplementation");
+        this->requiredArguments.push_back("writerImplementation");
 
 
     };
     void operator()(){
         Key inputPathKey=this->config.getKey("inputPath");
         Key readerImplementationKey = this->config.getKey("readerImplementation");
+        Key writerImplementationKey = this->config.getKey("writerImplementation");
+        Key outputPathKey = this->config.getKey("outputPath");
+
 
 
         GenericDatasetReaderPtr reader;
@@ -46,16 +51,18 @@ public:
                     new GenericDatasetReader(inputPathKey.getValue(), readerImplementationKey.getValue()));
         }
 
+        auto readerPtr = reader->getReader();
+
+        std::vector<std::string> idsToFilter;
+        idsToFilter.push_back("person");
+        idsToFilter.push_back("person-falling");
+        idsToFilter.push_back("person-fall");
+        readerPtr->filterSamplesByID(idsToFilter);
+        readerPtr->printDatasetStats();
 
 
-        Sample sample;
-        while (reader->getReader()->getNetxSample(sample)){
-            std::cout << "number of elements: " << sample.getRectRegions()->getRegions().size() << std::endl;
-            cv::Mat image =sample.getSampledColorImage();
-            cv::imshow("Viewer", image);
-            cv::waitKey(0);
-        }
-
+        GenericDatasetWriterPtr writer( new GenericDatasetWriter(outputPathKey.getValue(),readerPtr,writerImplementationKey.getValue()));
+        writer->getWriter()->process();
     };
 };
 
