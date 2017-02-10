@@ -11,7 +11,7 @@
 
 class DarknetInferencer: public FrameworkInferencer {
 public:
-    DarknetInferencer(const std::string& netConfig, const std::string& netWeights);
+    DarknetInferencer(const std::string& netConfig, const std::string& netWeights, const std::string& classNamesFile);
     Sample detect(const cv::Mat& image);
 
 private:

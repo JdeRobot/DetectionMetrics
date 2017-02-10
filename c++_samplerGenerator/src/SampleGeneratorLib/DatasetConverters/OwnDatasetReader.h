@@ -9,7 +9,7 @@
 
 class OwnDatasetReader:public DatasetReader {
 public:
-    OwnDatasetReader(const std::string& path);
+    OwnDatasetReader(const std::string& path,const std::string& classNamesFile);
     OwnDatasetReader();
     bool appendDataset(const std::string& datasetPath, const std::string& datasetPrefix="");
 private:

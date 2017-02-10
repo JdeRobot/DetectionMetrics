@@ -7,7 +7,8 @@
 #include <boost/lexical_cast.hpp>
 #include "OwnDatasetReader.h"
 
-OwnDatasetReader::OwnDatasetReader(const std::string &path) {
+OwnDatasetReader::OwnDatasetReader(const std::string &path,const std::string& classNamesFile){
+    this->classNamesFile=classNamesFile;
     appendDataset(path);
 }
 

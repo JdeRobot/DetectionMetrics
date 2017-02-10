@@ -5,11 +5,11 @@
 #include <boost/filesystem/operations.hpp>
 #include <fstream>
 #include "SpinelloDatasetReader.h"
-#include "ClassTypeVoc.h"
 #include <Utils/StringHandler.h>
 #include <Utils/Normalizations.h>
 
-SpinelloDatasetReader::SpinelloDatasetReader(const std::string &path) {
+SpinelloDatasetReader::SpinelloDatasetReader(const std::string &path,const std::string& classNamesFile) {
+    this->classNamesFile=classNamesFile;
     appendDataset(path);
 }
 
@@ -50,8 +50,8 @@ bool SpinelloDatasetReader::appendDataset(const std::string &datasetPath, const 
 
             std::string imageID=tokens[0];
 
-            for (auto it=tokens.begin(), end=tokens.end(); it != end; ++it){
-            }
+//            for (auto it=tokens.begin(), end=tokens.end(); it != end; ++it){
+//            }
 
             std::string colorImagePath=datasetPath + "/"  + "rgb" + "/" + imageID + ".ppm";
             std::string depthImagePath=datasetPath + "/"  + "depth" + "/" + imageID + ".pgm";

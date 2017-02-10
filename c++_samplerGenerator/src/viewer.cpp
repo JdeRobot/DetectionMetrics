@@ -15,22 +15,24 @@ public:
     MyApp(int argc, char* argv[]):SampleGenerationApp(argc,argv){
         this->requiredArguments.push_back("inputPath");
         this->requiredArguments.push_back("readerImplementation");
+        this->requiredArguments.push_back("readerNames");
 
 
     };
     void operator()(){
         Key inputPathKey=this->config.getKey("inputPath");
         Key readerImplementationKey = this->config.getKey("readerImplementation");
+        Key readerNamesKey = this->config.getKey("readerNames");
 
 
         GenericDatasetReaderPtr reader;
         if (inputPathKey.isVector()) {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPathKey.getValues(), readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPathKey.getValues(),readerNamesKey.getValue(), readerImplementationKey.getValue()));
         }
         else {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPathKey.getValue(), readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPathKey.getValue(),readerNamesKey.getValue(), readerImplementationKey.getValue()));
         }
 
 

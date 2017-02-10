@@ -6,19 +6,19 @@
 #include "GenericDatasetReader.h"
 
 
-GenericDatasetReader::GenericDatasetReader(const std::string &path, const std::string &readerImplementation) {
+GenericDatasetReader::GenericDatasetReader(const std::string &path, const std::string& classNamesFile, const std::string &readerImplementation) {
     configureAvailablesImplementations();
     if (std::find(this->availableImplementations.begin(), this->availableImplementations.end(), readerImplementation) != this->availableImplementations.end()){
         imp = getImplementation(readerImplementation);
         switch (imp) {
             case YOLO:
-                this->yoloDatasetReaderPtr = YoloDatasetReaderPtr( new YoloDatasetReader(path));
+                this->yoloDatasetReaderPtr = YoloDatasetReaderPtr( new YoloDatasetReader(path,classNamesFile));
                 break;
             case SPINELLO:
-                this->spinelloDatasetReaderPtr = SpinelloDatasetReaderPtr( new SpinelloDatasetReader(path));
+                this->spinelloDatasetReaderPtr = SpinelloDatasetReaderPtr( new SpinelloDatasetReader(path,classNamesFile));
                 break;
             case OWN:
-                this->ownDatasetReaderPtr = OwnDatasetReaderPtr( new OwnDatasetReader(path));
+                this->ownDatasetReaderPtr = OwnDatasetReaderPtr( new OwnDatasetReader(path,classNamesFile));
                 break;
             default:
                 Logger::getInstance()->error(readerImplementation + " is not a valid reader implementation");
@@ -31,7 +31,7 @@ GenericDatasetReader::GenericDatasetReader(const std::string &path, const std::s
 }
 
 
-GenericDatasetReader::GenericDatasetReader(const std::vector<std::string> &paths,
+GenericDatasetReader::GenericDatasetReader(const std::vector<std::string> &paths, const std::string& classNamesFile,
                                            const std::string &readerImplementation) {
     configureAvailablesImplementations();
     if (std::find(this->availableImplementations.begin(), this->availableImplementations.end(), readerImplementation) != this->availableImplementations.end()){

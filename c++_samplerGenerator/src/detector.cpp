@@ -21,10 +21,8 @@ public:
         this->requiredArguments.push_back("inferencerImplementation");
         this->requiredArguments.push_back("inferencerConfig");
         this->requiredArguments.push_back("inferencerWeights");
-
-
-
-
+        this->requiredArguments.push_back("inferencerNames");
+        this->requiredArguments.push_back("readerNames");
     };
     void operator()(){
         Key inputPath=this->config.getKey("inputPath");
@@ -34,19 +32,21 @@ public:
         Key infererImplementationKey = this->config.getKey("inferencerImplementation");
         Key inferencerConfigKey = this->config.getKey("inferencerConfig");
         Key inferencerWeightsKey = this->config.getKey("inferencerWeights");
+        Key inferencerNamesKey = this->config.getKey("inferencerNames");
+        Key readerNamesKey = this->config.getKey("readerNames");
 
         GenericDatasetReaderPtr reader;
         if (inputPath.isVector()) {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPath.getValues(), readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPath.getValues(),readerNamesKey.getValue(), readerImplementationKey.getValue()));
         }
         else {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPath.getValue(), readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPath.getValue(),readerNamesKey.getValue(), readerImplementationKey.getValue()));
         }
 
 
-        GenericInferencerPtr inferencer(new GenericInferencer(inferencerConfigKey.getValue(),inferencerWeightsKey.getValue(),infererImplementationKey.getValue()));
+        GenericInferencerPtr inferencer(new GenericInferencer(inferencerConfigKey.getValue(),inferencerWeightsKey.getValue(),inferencerNamesKey.getValue(),infererImplementationKey.getValue()));
         MassInferencer massInferencer(reader->getReader(),inferencer->getInferencer(),outputPath.getValue(), true);
         massInferencer.process();
 

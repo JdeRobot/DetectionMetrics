@@ -10,7 +10,6 @@
 struct ClassType {
 
     cv::Scalar getColor();
-    virtual void fillStringClassesVector()=0;
     std::string getClassString();
     int getClassID();
 protected:

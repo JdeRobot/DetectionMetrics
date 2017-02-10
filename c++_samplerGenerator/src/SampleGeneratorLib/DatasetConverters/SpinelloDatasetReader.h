@@ -10,7 +10,7 @@
 
 class SpinelloDatasetReader: public DatasetReader {
 public:
-    SpinelloDatasetReader(const std::string& path);
+    SpinelloDatasetReader(const std::string& path,const std::string& classNamesFile);
     SpinelloDatasetReader();
     bool appendDataset(const std::string& datasetPath, const std::string& datasetPrefix="");
 

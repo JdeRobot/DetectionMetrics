@@ -26,6 +26,7 @@ protected:
     std::vector<Sample> samples;
     //std::string datasetPath;
     int readerCounter;
+    std::string classNamesFile;
 };
 
 

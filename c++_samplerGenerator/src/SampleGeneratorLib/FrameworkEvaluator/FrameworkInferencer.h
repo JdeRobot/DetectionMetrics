@@ -13,6 +13,9 @@
 class FrameworkInferencer{
 public:
     virtual Sample detect(const cv::Mat& image) =0;
+
+protected:
+    std::string classNamesFile;
 };
 
 

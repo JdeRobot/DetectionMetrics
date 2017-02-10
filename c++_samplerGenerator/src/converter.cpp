@@ -30,6 +30,7 @@ public:
         this->requiredArguments.push_back("outputPath");
         this->requiredArguments.push_back("readerImplementation");
         this->requiredArguments.push_back("writerImplementation");
+        this->requiredArguments.push_back("readerNames");
 
 
     };
@@ -38,17 +39,17 @@ public:
         Key readerImplementationKey = this->config.getKey("readerImplementation");
         Key writerImplementationKey = this->config.getKey("writerImplementation");
         Key outputPathKey = this->config.getKey("outputPath");
-
+        Key readerNamesKey = this->config.getKey("readerNames");
 
 
         GenericDatasetReaderPtr reader;
         if (inputPathKey.isVector()) {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPathKey.getValues(), readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPathKey.getValues(), readerNamesKey.getValue(), readerImplementationKey.getValue()));
         }
         else {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPathKey.getValue(), readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPathKey.getValue(),readerNamesKey.getValue(), readerImplementationKey.getValue()));
         }
 
         auto readerPtr = reader->getReader();

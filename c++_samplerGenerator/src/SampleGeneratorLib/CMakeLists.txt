@@ -14,7 +14,7 @@ SET( SOURCE_FILES
         DatasetConverters/OwnDatasetReader
         DatasetConverters/YoloDatasetWriter
         DatasetConverters/YoloDatasetReader
-        DatasetConverters/ClassTypeVoc
+        DatasetConverters/ClassTypeGeneric
         Regions/Region
         Regions/RectRegion
         Regions/ContourRegion
@@ -24,7 +24,6 @@ SET( SOURCE_FILES
         Utils/StringHandler.h
         Utils/Normalizations
         FrameworkEvaluator/ClassStatistics
-        DatasetConverters/ClassTypeCoco
         FrameworkEvaluator/DetectionsEvaluator
         FrameworkEvaluator/MassInferencer
         DatasetConverters/ClassTypeOwn

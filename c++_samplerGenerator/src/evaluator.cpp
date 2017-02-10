@@ -18,6 +18,8 @@ public:
         this->requiredArguments.push_back("inputPathDetection");
         this->requiredArguments.push_back("readerImplementationGT");
         this->requiredArguments.push_back("readerImplementationDetection");
+        this->requiredArguments.push_back("readerNames");
+
 
     };
     void operator()(){
@@ -26,11 +28,12 @@ public:
         Key inputPathDetection=this->config.getKey("inputPathDetection");
         Key readerImplementationGTKey=this->config.getKey("readerImplementationGT");
         Key readerImplementationDetectionKey=this->config.getKey("readerImplementationDetection");
+        Key readerNamesKey=this->config.getKey("readerNames");
 
 
 
-        GenericDatasetReaderPtr readerGT(new GenericDatasetReader(inputPathGT.getValue(), readerImplementationGTKey.getValue()));
-        GenericDatasetReaderPtr readerDetection(new GenericDatasetReader(inputPathDetection.getValue(), readerImplementationDetectionKey.getValue()));
+        GenericDatasetReaderPtr readerGT(new GenericDatasetReader(inputPathGT.getValue(),readerNamesKey.getValue(), readerImplementationGTKey.getValue()));
+        GenericDatasetReaderPtr readerDetection(new GenericDatasetReader(inputPathDetection.getValue(),readerNamesKey.getValue(), readerImplementationDetectionKey.getValue()));
 
 
         DetectionsEvaluatorPtr evaluator(new DetectionsEvaluator(readerGT->getReader(),readerDetection->getReader(),true));

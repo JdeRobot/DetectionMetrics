@@ -12,7 +12,7 @@ enum INFERENCER_IMPLEMENTATIONS{INF_YOLO};
 
 class GenericInferencer {
 public:
-    GenericInferencer(const std::string& netConfig, const std::string& netWeights, const std::string& implementation);
+    GenericInferencer(const std::string& netConfig, const std::string& netWeights, const std::string& classNames, const std::string& implementation);
     FrameworkInferencerPtr getInferencer();
 
 private:

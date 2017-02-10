@@ -56,14 +56,14 @@ void DetectionsValidator::validate(const cv::Mat& colorImage,const cv::Mat& dept
 
     for (auto it= detections.begin(), end = detections.end(); it != end; ++it){
         int idx= std::distance(detections.begin(),it);
-        cv::Scalar color( 255);
+        cv::Scalar color( 150);
         cv::drawContours( mask, detections, idx, color, CV_FILLED, 8);
     }
 
 
     std::vector<cv::Mat> channels;
     cv::split(colorImage,channels);
-    cv::Mat colorMask(colorImage.size(),CV_8UC1,cv::Scalar(255));
+    cv::Mat colorMask(colorImage.size(),CV_8UC1,cv::Scalar(150));
     colorMask.copyTo(channels[0],mask);
     cv::Mat image2show;
     cv::merge(channels,image2show);

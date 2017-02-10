@@ -5,7 +5,7 @@
 #include <Utils/Logger.h>
 #include "GenericInferencer.h"
 
-GenericInferencer::GenericInferencer(const std::string &netConfig, const std::string &netWeights,
+GenericInferencer::GenericInferencer(const std::string &netConfig, const std::string &netWeights,const std::string& classNames,
                                      const std::string &implementation) {
 
     configureAvailablesImplementations();
@@ -13,7 +13,7 @@ GenericInferencer::GenericInferencer(const std::string &netConfig, const std::st
         imp = getImplementation(implementation);
         switch (imp) {
             case INF_YOLO:
-                this->darknetInferencerPtr = DarknetInferencerPtr( new DarknetInferencer(netConfig, netWeights));
+                this->darknetInferencerPtr = DarknetInferencerPtr( new DarknetInferencer(netConfig, netWeights,classNames));
                 break;
             default:
                 Logger::getInstance()->error(implementation + " is not a valid inferencer implementation");
