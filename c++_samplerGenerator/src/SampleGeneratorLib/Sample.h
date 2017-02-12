@@ -27,12 +27,12 @@ struct Sample {
     void setContourRegions(const ContourRegionsPtr& regions);
     void setSampleID(const std::string& sampleID);
 
-    RectRegionsPtr getRectRegions();
+    RectRegionsPtr getRectRegions()const;
     ContourRegionsPtr getContourRegions();
-    cv::Mat getColorImage();
-    cv::Mat getDepthImage();
-    cv::Mat getSampledColorImage();
-    cv::Mat getSampledDepthImage();
+    cv::Mat getColorImage() const;
+    cv::Mat getDepthImage() const;
+    cv::Mat getSampledColorImage() const;
+    cv::Mat getSampledDepthImage() const;
     void save(const std::string& outPath, int id);
     void save(const std::string& outPath, const std::string& filename);
     void save(const std::string& outPath);

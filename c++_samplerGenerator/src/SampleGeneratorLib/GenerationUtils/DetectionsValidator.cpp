@@ -72,7 +72,6 @@ void DetectionsValidator::validate(const cv::Mat& colorImage,const cv::Mat& dept
     RectRegionsPtr regions(new RectRegions());
     ContourRegionsPtr cRegions(new ContourRegions());
 
-    cv::cvtColor(image2show,image2show,CV_RGB2BGR);
     BoundingValidator validator(image2show);
     for (auto it= detections.begin(), end=detections.end(); it != end; ++it){
         cv::Rect validatedRect;
@@ -122,4 +121,41 @@ void DetectionsValidator::fillRectIntoImageDimensions(cv::Rect &rect, const cv::
         rect.y=0;
     }
 
+}
+
+void DetectionsValidator::validate(const Sample &inputSample) {
+    BoundingValidator validator(inputSample.getColorImage());
+    auto rectDetections = inputSample.getRectRegions()->getRegions();
+    RectRegionsPtr validatedRegions(new RectRegions());
+    cv::imshow("Source Image", inputSample.getColorImage());
+    cv::waitKey(100);
+    std::cout << "Number of detections: " << rectDetections.size() << std::endl;
+    for (auto it= rectDetections.begin(), end=rectDetections.end(); it != end; ++it){
+        cv::Rect validatedRect;
+        int classVal;
+        if (validator.validate(it->region,validatedRect,classVal)){
+            std::string validationID;
+            if (char(classVal)=='1') {
+                validationID = "person";
+            }
+            else if (char(classVal)=='2')
+                validationID="person-falling";
+            else if (char(classVal)=='3')
+                validationID="person-fall";
+
+
+            fillRectIntoImageDimensions(validatedRect,inputSample.getColorImage().size());
+            Logger::getInstance()->info("Validated");
+            validatedRegions->add(validatedRect,validationID);
+        }
+        else{
+            Logger::getInstance()->info("Discarded");
+        }
+    }
+
+    if (validatedRegions->getRegions().size()){
+        Sample sample(inputSample.getColorImage(),inputSample.getDepthImage(),validatedRegions);
+        sample.save(this->path,this->validationCounter);
+        this->validationCounter++;
+    }
 }

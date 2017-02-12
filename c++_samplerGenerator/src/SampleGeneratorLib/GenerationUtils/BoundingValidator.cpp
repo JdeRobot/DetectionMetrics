@@ -16,35 +16,10 @@ BoundingValidator::BoundingValidator(const cv::Mat &image_in) {
 
 bool BoundingValidator::validate(std::vector<cv::Point> &bounding, cv::Rect& validatedBound, int& key) {
 
-
-    std::vector<char> validationKeys;
-    validationKeys.push_back('1');
-    validationKeys.push_back('2');
-    validationKeys.push_back('3');
+    cv::Rect boundingRectangle = cv::boundingRect(bounding);
+    validate(boundingRectangle,validatedBound,key);
 
 
-    char rejectionKey='n';
-    std::vector<cv::Point> scaledBounding;
-    for (auto it = bounding.begin(), end = bounding.end(); it != end; ++it){
-        scaledBounding.push_back((*it) * this->scale);
-    }
-    cv::Rect boundingRectangle = cv::boundingRect(scaledBounding);
-    BoundingRectGuiMover rect(boundingRectangle);
-    key='0';
-    while (char(key) != rejectionKey and (std::find(validationKeys.begin(), validationKeys.end(), char(key))== validationKeys.end() )) {
-        cv::Mat image2show= this->image.clone();
-        cv::rectangle(image2show, rect.getRect(), cv::Scalar(255, 0, 0), 3);
-        std::string windowName="Validation window";
-        cv::namedWindow(windowName, 1);
-        cv::setMouseCallback(windowName, CallBackFunc, &rect);
-        cv::imshow(windowName, image2show);
-        key=cv::waitKey(1);
-        //std::cout << "key: " << char(key) << std::endl;
-    }
-    validatedBound=rect.getRect(this->scale);
-
-
-    return std::find(validationKeys.begin(), validationKeys.end(), char(key))!= validationKeys.end();
 }
 
 bool clicked=false;
@@ -103,4 +78,32 @@ void BoundingValidator::CallBackFunc(int event, int x, int y, int flags, void* u
             clicked = false;
         }
     }
+}
+
+bool BoundingValidator::validate(const cv::Rect &bounding, cv::Rect &validatedBound, int &key) {
+
+
+    cv::Rect scaledBounding(bounding.x * this->scale,bounding.y*this->scale,bounding.width * this->scale, bounding.height*this->scale);
+
+    BoundingRectGuiMover rect(scaledBounding);
+    std::vector<char> validationKeys;
+    validationKeys.push_back('1');
+    validationKeys.push_back('2');
+    validationKeys.push_back('3');
+    char rejectionKey='n';
+    key='0';
+    while (char(key) != rejectionKey and (std::find(validationKeys.begin(), validationKeys.end(), char(key))== validationKeys.end() )) {
+        cv::Mat image2show= this->image.clone();
+        cv::rectangle(image2show, rect.getRect(), cv::Scalar(255, 0, 0), 3);
+        std::string windowName="Validation window";
+        cv::namedWindow(windowName, 1);
+        cv::setMouseCallback(windowName, CallBackFunc, &rect);
+        cv::imshow(windowName, image2show);
+        key=cv::waitKey(1);
+        //std::cout << "key: " << char(key) << std::endl;
+    }
+    validatedBound=rect.getRect(this->scale);
+
+
+    return std::find(validationKeys.begin(), validationKeys.end(), char(key))!= validationKeys.end();
 }

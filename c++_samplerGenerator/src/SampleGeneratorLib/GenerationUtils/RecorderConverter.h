@@ -6,12 +6,13 @@
 
 #include <string>
 #include <vector>
+#include <Sample.h>
 
 
 class RecorderConverter {
 public:
     RecorderConverter(const std::string& colorImagesPath, const std::string& depthImagesPath);
-    bool getNext(std::string& colorImagePath, std::string& depthImagePath);
+    bool getNext(Sample& sample);
     int getNumSamples();
 
 private:

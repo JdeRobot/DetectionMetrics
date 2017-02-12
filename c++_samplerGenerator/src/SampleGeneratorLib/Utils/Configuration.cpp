@@ -69,8 +69,10 @@ Configuration::Configuration() {
 }
 
 Key Configuration::getKey(const std::string &key) {
-    if (this->config.count(key)==0)
-        Logger::getInstance()->error("Key: " + key + "does not exists inside the configuration");
+    if (this->config.count(key)==0) {
+        Logger::getInstance()->error("Key: " + key + " does not exists inside the configuration");
+        exit(1);
+    }
     else
         return this->config[key];
 }

@@ -52,12 +52,16 @@ int RecorderConverter::closest(std::vector<int> const& vec, int value) {
     return *it;
 }
 
-bool RecorderConverter::getNext(std::string &colorImagePath, std::string &depthImagePath) {
+bool RecorderConverter::getNext(Sample& sample) {
     if (this->currentIndex < this->depthIndexes.size()){
         int indexValue = this->depthIndexes[currentIndex];
         Logger::getInstance()->info("Time stamp: " + boost::lexical_cast<std::string>(indexValue));
-        colorImagePath=getPathByIndex(this->colorPath,closest(colorIndexes,indexValue));
-        depthImagePath=getPathByIndex(this->depthPath,indexValue);
+
+        cv::Mat colorImage= cv::imread(getPathByIndex(this->colorPath,closest(colorIndexes,indexValue)));
+        cv::cvtColor(colorImage,colorImage,CV_RGB2BGR);
+
+        sample.setColorImage(colorImage);
+        sample.setDepthImage(getPathByIndex(this->depthPath,indexValue));
         this->currentIndex++;
         return true;
     }

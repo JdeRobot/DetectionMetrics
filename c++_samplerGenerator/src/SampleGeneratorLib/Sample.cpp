@@ -69,7 +69,7 @@ void Sample::setContourRegions(const ContourRegionsPtr &regions) {
     this->contourRegions=regions;
 }
 
-RectRegionsPtr Sample::getRectRegions() {
+RectRegionsPtr Sample::getRectRegions() const{
     return this->rectRegions;
 }
 
@@ -77,7 +77,7 @@ ContourRegionsPtr Sample::getContourRegions() {
     return this->contourRegions;
 }
 
-cv::Mat Sample::getColorImage() {
+cv::Mat Sample::getColorImage() const{
     if (this->colorImage.empty()) {
         cv::Mat image = cv::imread(this->colorImagePath);
         return image;
@@ -86,7 +86,7 @@ cv::Mat Sample::getColorImage() {
         return this->colorImage.clone();
 }
 
-cv::Mat Sample::getDepthImage() {
+cv::Mat Sample::getDepthImage() const{
     if (this->depthImage.empty()) {
         cv::Mat image = cv::imread(this->depthImagePath);
         return image;
@@ -112,7 +112,7 @@ Sample::Sample(const std::string &path, const std::string &id,bool loadDepth) {
     }
 }
 
-cv::Mat Sample::getSampledColorImage() {
+cv::Mat Sample::getSampledColorImage() const{
     cv::Mat image = this->getColorImage();
     if (this->rectRegions)
         this->rectRegions->drawRegions(image);
@@ -121,7 +121,7 @@ cv::Mat Sample::getSampledColorImage() {
     return image;
 }
 
-cv::Mat Sample::getSampledDepthImage() {
+cv::Mat Sample::getSampledDepthImage() const{
     cv::Mat image =this->getDepthImage();
     if (this->rectRegions)
         this->rectRegions->drawRegions(image);
