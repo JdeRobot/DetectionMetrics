@@ -9,7 +9,7 @@ OwnDatasetWriter::OwnDatasetWriter(const std::string &outPath, DatasetReaderPtr 
 
 }
 
-void OwnDatasetWriter::process() {
+void OwnDatasetWriter::process(bool usedColorImage) {
     Sample sample;
     while (reader->getNetxSample(sample)){
         sample.save(outPath);

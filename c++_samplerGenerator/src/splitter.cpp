@@ -26,12 +26,12 @@ public:
 
     };
     void operator()(){
-        Key inputPathKey=this->config.getKey("inputPath");
-        Key outputPathKey=this->config.getKey("outputPath");
-        Key readerImplementationKey = this->config.getKey("readerImplementation");
-        Key writerImplementationKey = this->config.getKey("writerImplementation");
-        Key trainRatioKey = this->config.getKey("trainRatio");
-        Key readerNamesKey = this->config.getKey("readerNames");
+        Key inputPathKey=this->config->getKey("inputPath");
+        Key outputPathKey=this->config->getKey("outputPath");
+        Key readerImplementationKey = this->config->getKey("readerImplementation");
+        Key writerImplementationKey = this->config->getKey("writerImplementation");
+        Key trainRatioKey = this->config->getKey("trainRatio");
+        Key readerNamesKey = this->config->getKey("readerNames");
 
 
 
@@ -46,7 +46,8 @@ public:
         }
         else {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPathKey.getValue(),readerNamesKey.getValue(), readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPathKey.getValue(),readerNamesKey.getValue(),
+                                             readerImplementationKey.getValue()));
         }
 
 

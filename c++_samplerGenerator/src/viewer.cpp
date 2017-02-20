@@ -20,9 +20,9 @@ public:
 
     };
     void operator()(){
-        Key inputPathKey=this->config.getKey("inputPath");
-        Key readerImplementationKey = this->config.getKey("readerImplementation");
-        Key readerNamesKey = this->config.getKey("readerNames");
+        Key inputPathKey=this->config->getKey("inputPath");
+        Key readerImplementationKey = this->config->getKey("readerImplementation");
+        Key readerNamesKey = this->config->getKey("readerNames");
 
 
         GenericDatasetReaderPtr reader;

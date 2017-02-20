@@ -25,7 +25,6 @@ Sample DarknetInferencer::detect(const cv::Mat &image) {
         regions->add(it->detectionBox,typeConverter.getClassString());
         std::cout<< typeConverter.getClassString() << ": " << it->probability << std::endl;
     }
-    sample.setColorImage(image);
     sample.setRectRegions(regions);
     return sample;
 }

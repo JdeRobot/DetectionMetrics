@@ -32,7 +32,7 @@ YoloDatasetWriter::YoloDatasetWriter(const std::string &outPath, DatasetReaderPt
 
 }
 
-void YoloDatasetWriter::process() {
+void YoloDatasetWriter::process(bool usedColorImage) {
     Sample sample;
     int id=0;
 
@@ -48,7 +48,14 @@ void YoloDatasetWriter::process() {
         std::string labelFilePath= this->fullLabelsPath + "/" + ssID.str() + ".txt";
         std::ofstream out(labelFilePath);
 
-        cv::Mat image = sample.getColorImage();
+        cv::Mat image;
+        if (usedColorImage)
+            image= sample.getColorImage();
+        else {
+            image = sample.getDepthImage();
+        }
+
+
         for (auto it = boundingBoxes.begin(), end=boundingBoxes.end(); it != end; ++it){
             double x = it->region.x;
             double y = it->region.y;

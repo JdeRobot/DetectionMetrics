@@ -8,7 +8,7 @@
 GenericInferencer::GenericInferencer(const std::string &netConfig, const std::string &netWeights,const std::string& classNames,
                                      const std::string &implementation) {
 
-    configureAvailablesImplementations();
+    configureAvailablesImplementations(this->availableImplementations);
     if (std::find(this->availableImplementations.begin(), this->availableImplementations.end(), implementation) != this->availableImplementations.end()){
         imp = getImplementation(implementation);
         switch (imp) {
@@ -26,8 +26,8 @@ GenericInferencer::GenericInferencer(const std::string &netConfig, const std::st
 
 }
 
-void GenericInferencer::configureAvailablesImplementations() {
-    this->availableImplementations.push_back("yolo");
+void GenericInferencer::configureAvailablesImplementations(std::vector<std::string>& data) {
+    data.push_back("yolo");
 }
 
 INFERENCER_IMPLEMENTATIONS GenericInferencer::getImplementation(const std::string &inferencerImplementation) {
@@ -44,5 +44,13 @@ FrameworkInferencerPtr GenericInferencer::getInferencer() {
 //            Logger::getInstance()->error(imp + " is not a valid reader implementation");
             break;
     }
+}
+
+std::vector<std::string> GenericInferencer::getAvailableImplementations() {
+    std::vector<std::string> data;
+    configureAvailablesImplementations(data);
+    return data;
+
+
 }
 

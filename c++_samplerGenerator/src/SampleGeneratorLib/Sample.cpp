@@ -139,15 +139,25 @@ void Sample::save(const std::string &outPath, int id) {
 
 void Sample::save(const std::string &outPath, const std::string &filename) {
 
+
     if (this->colorImage.empty()){
-        cv::Mat image = cv::imread(this->colorImagePath);
-        cv::imwrite(outPath + "/" + filename + ".png",image);
+        if (boost::filesystem::exists(boost::filesystem::path(this->colorImagePath))) {
+            cv::Mat image = cv::imread(this->colorImagePath);
+            cv::imwrite(outPath + "/" + filename + ".png", image);
+        }
     }
     else
         cv::imwrite(outPath + "/" + filename + ".png",this->colorImage);
-    if (! this->depthImage.empty()) {
-        cv::imwrite(outPath + "/" + filename + "-depth.png", depthImage);
+
+    if (this->depthImage.empty()){
+        if (boost::filesystem::exists(boost::filesystem::path(this->depthImagePath))) {
+            cv::Mat image = cv::imread(this->depthImagePath);
+            cv::imwrite(outPath + "/" + filename + "-depth.png", image);
+        }
     }
+    else
+        cv::imwrite(outPath + "/" + filename + "-depth.png", depthImage);
+
     if(rectRegions)
         rectRegions->saveJson(outPath + "/" + filename + ".json");
     if (contourRegions)
@@ -201,6 +211,22 @@ Sample::~Sample() {
     if (this->depthImage.empty()){
         this->depthImage.release();
     }
+
+}
+
+cv::Mat Sample::getDeptImageGrayRGB() const {
+    cv::Mat image = this->getDepthImage();
+    std::vector<cv::Mat> imageVector;
+    cv::split(image,imageVector);
+
+    std::vector<cv::Mat> grayRGB_vector;
+    grayRGB_vector.push_back(imageVector[0]);
+    grayRGB_vector.push_back(imageVector[0]);
+    grayRGB_vector.push_back(imageVector[0]);
+
+    cv::Mat grayRGB;
+    cv::merge(grayRGB_vector,grayRGB);
+    return grayRGB;
 
 }
 

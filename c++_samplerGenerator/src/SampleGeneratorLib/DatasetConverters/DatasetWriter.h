@@ -11,7 +11,7 @@
 class DatasetWriter {
 public:
     DatasetWriter(const std::string& outPath, DatasetReaderPtr& reader);
-    virtual void process()=0;
+    virtual void process(bool usedColorImage=true)=0;
 
 protected:
     std::string outPath;

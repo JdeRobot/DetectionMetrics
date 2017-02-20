@@ -93,6 +93,19 @@ void RectRegions::drawRegions(cv::Mat &image) {
     for (auto it = regions.begin(), end=regions.end(); it != end; ++it) {
         ClassTypeOwn classType(it->classID);
         cv::rectangle(image, it->region, classType.getColor(), 2);
+        cv::Size rectSize(80,20);
+        cv::Rect nameRectangle(it->region.x, it->region.y - rectSize.height, rectSize.width,rectSize.height);
+        if (nameRectangle.y < 0){
+            nameRectangle.y=it->region.y;
+        }
+        if (nameRectangle.x + nameRectangle.width > image.size().width){
+            nameRectangle.x = image.size().width - nameRectangle.width -1;
+        }
+        if (nameRectangle.y + nameRectangle.height > image.size().height){
+            nameRectangle.y = image.size().height - nameRectangle.height -1;
+        }
+        image(nameRectangle)=cv::Scalar(classType.getColor());
+        cv::putText(image, classType.getClassString(),cv::Point(nameRectangle.x - nameRectangle.height/4 + 5 ,nameRectangle.y + nameRectangle.height - 5),cv::FONT_HERSHEY_TRIPLEX,0.4,cv::Scalar(0,0,0),1);
     }
 
 }

@@ -7,7 +7,7 @@
 
 
 GenericDatasetWriter::GenericDatasetWriter(const std::string &path,DatasetReaderPtr &reader, const std::string &writerImplementation) {
-    configureAvailablesImplementations();
+    configureAvailableImplementations(this->availableImplementations);
     if (std::find(this->availableImplementations.begin(), this->availableImplementations.end(), writerImplementation) != this->availableImplementations.end()){
         imp = getImplementation(writerImplementation);
         switch (imp) {
@@ -29,9 +29,9 @@ GenericDatasetWriter::GenericDatasetWriter(const std::string &path,DatasetReader
 
 
 
-void GenericDatasetWriter::configureAvailablesImplementations() {
-    this->availableImplementations.push_back("own");
-    this->availableImplementations.push_back("yolo");
+void GenericDatasetWriter::configureAvailableImplementations(std::vector<std::string> &data) {
+    data.push_back("own");
+    data.push_back("yolo");
 }
 
 WRITER_IMPLEMENTATIONS GenericDatasetWriter::getImplementation(const std::string &writerImplementation) {
@@ -52,6 +52,12 @@ DatasetWriterPtr GenericDatasetWriter::getWriter() {
         default:
             break;
     }
+}
+
+std::vector<std::string> GenericDatasetWriter::getAvailableImplementations() {
+    std::vector<std::string> data;
+    configureAvailableImplementations(data);
+    return data;
 }
 
 

@@ -7,7 +7,7 @@
 
 
 GenericDatasetReader::GenericDatasetReader(const std::string &path, const std::string& classNamesFile, const std::string &readerImplementation) {
-    configureAvailablesImplementations();
+    configureAvailablesImplementations(this->availableImplementations);
     if (std::find(this->availableImplementations.begin(), this->availableImplementations.end(), readerImplementation) != this->availableImplementations.end()){
         imp = getImplementation(readerImplementation);
         switch (imp) {
@@ -33,7 +33,7 @@ GenericDatasetReader::GenericDatasetReader(const std::string &path, const std::s
 
 GenericDatasetReader::GenericDatasetReader(const std::vector<std::string> &paths, const std::string& classNamesFile,
                                            const std::string &readerImplementation) {
-    configureAvailablesImplementations();
+    configureAvailablesImplementations(this->availableImplementations);
     if (std::find(this->availableImplementations.begin(), this->availableImplementations.end(), readerImplementation) != this->availableImplementations.end()){
         imp = getImplementation(readerImplementation);
         switch (imp) {
@@ -77,10 +77,10 @@ GenericDatasetReader::GenericDatasetReader(const std::vector<std::string> &paths
 }
 
 
-void GenericDatasetReader::configureAvailablesImplementations() {
-    this->availableImplementations.push_back("yolo");
-    this->availableImplementations.push_back("spinello");
-    this->availableImplementations.push_back("own");
+void GenericDatasetReader::configureAvailablesImplementations(std::vector<std::string>& data) {
+    data.push_back("yolo");
+    data.push_back("spinello");
+    data.push_back("own");
 }
 
 READER_IMPLEMENTATIONS GenericDatasetReader::getImplementation(const std::string& readerImplementation) {
@@ -107,5 +107,12 @@ DatasetReaderPtr GenericDatasetReader::getReader() {
 //            Logger::getInstance()->error(imp + " is not a valid reader implementation");
             break;
     }
+}
+
+std::vector<std::string> GenericDatasetReader::getAvailableImplementations() {
+    std::vector<std::string> data;
+
+    configureAvailablesImplementations(data);
+    return data;
 }
 

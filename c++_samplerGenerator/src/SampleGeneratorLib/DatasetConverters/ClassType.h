@@ -12,6 +12,7 @@ struct ClassType {
     cv::Scalar getColor();
     std::string getClassString();
     int getClassID();
+    std::vector<std::string> getAllAvailableClasses();
 protected:
     float _get_color(int c, int x, int max);
     std::vector<std::string> classes;

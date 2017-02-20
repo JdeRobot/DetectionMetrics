@@ -13,7 +13,11 @@ DatasetWriter::DatasetWriter(const std::string &outPath, DatasetReaderPtr &reade
         boost::filesystem::create_directories(boostPath);
     }
     else{
-        Logger::getInstance()->error("Output directory already exists");
-        exit(-1);
+        boost::filesystem::directory_iterator end_it;
+        boost::filesystem::directory_iterator it(boostPath);
+        if(it != end_it) {
+            Logger::getInstance()->error("Output directory already exists and is not empty");
+            exit(-1);
+        }
     }
 }

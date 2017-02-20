@@ -21,6 +21,8 @@ public:
 
     DatasetReaderPtr getReader();
 
+    static std::vector<std::string> getAvailableImplementations();
+
 private:
     READER_IMPLEMENTATIONS imp;
     OwnDatasetReaderPtr ownDatasetReaderPtr;
@@ -29,7 +31,7 @@ private:
 
     std::vector<std::string> availableImplementations;
 
-    void configureAvailablesImplementations();
+    static void configureAvailablesImplementations(std::vector<std::string>& data);
     READER_IMPLEMENTATIONS getImplementation(const std::string& readerImplementation);
 };
 

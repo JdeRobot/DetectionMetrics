@@ -19,13 +19,13 @@ namespace
 
 
 
-SampleGenerationApp::SampleGenerationApp(int argc, char **argv) {
+SampleGenerationApp::SampleGenerationApp(int argc, char **argv):argc(argc),argv(argv) {
 
     if (parse_arguments(argc,argv,configFilePath) != SUCCESS){
         exit(1);
     }
 
-    config=Configuration(configFilePath);
+    config=ConfigurationPtr( new Configuration(configFilePath));
 }
 
 
@@ -89,11 +89,15 @@ void SampleGenerationApp::process() {
 bool SampleGenerationApp::verifyRequirements() {
     bool success=true;
     for (auto it = this->requiredArguments.begin(), end =this->requiredArguments.end(); it != end; ++it){
-        if (!this->config.keyExists(*it)){
+        if (!this->config->keyExists(*it)){
             Logger::getInstance()->error("Key: " + (*it) + " is not defined in the configuration file");
             success=false;
         }
 
     }
     return success;
+}
+
+ConfigurationPtr SampleGenerationApp::getConfig() {
+    return config;
 }

@@ -14,6 +14,7 @@ class GenericInferencer {
 public:
     GenericInferencer(const std::string& netConfig, const std::string& netWeights, const std::string& classNames, const std::string& implementation);
     FrameworkInferencerPtr getInferencer();
+    static std::vector<std::string> getAvailableImplementations();
 
 private:
     INFERENCER_IMPLEMENTATIONS imp;
@@ -21,7 +22,7 @@ private:
     DarknetInferencerPtr darknetInferencerPtr;
     std::vector<std::string> availableImplementations;
 
-    void configureAvailablesImplementations();
+    static void configureAvailablesImplementations(std::vector<std::string>& data);
     INFERENCER_IMPLEMENTATIONS getImplementation(const std::string& inferencerImplementation);
 };
 

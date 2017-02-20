@@ -7,6 +7,7 @@
 
 #include <string>
 #include <map>
+#include <boost/shared_ptr.hpp>
 #include "Key.h"
 
 class Configuration {
@@ -22,5 +23,6 @@ private:
     std::map<std::string, Key> config;
 };
 
+typedef  boost::shared_ptr<Configuration> ConfigurationPtr;
 
 #endif //SAMPLERGENERATOR_CONFIGURATION_H

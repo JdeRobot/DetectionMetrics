@@ -23,12 +23,12 @@ public:
 
     };
     void operator()(){
-        Key outputPath=this->config.getKey("outputPath");
-        Key inputPathGT=this->config.getKey("inputPathGT");
-        Key inputPathDetection=this->config.getKey("inputPathDetection");
-        Key readerImplementationGTKey=this->config.getKey("readerImplementationGT");
-        Key readerImplementationDetectionKey=this->config.getKey("readerImplementationDetection");
-        Key readerNamesKey=this->config.getKey("readerNames");
+        Key outputPath=this->config->getKey("outputPath");
+        Key inputPathGT=this->config->getKey("inputPathGT");
+        Key inputPathDetection=this->config->getKey("inputPathDetection");
+        Key readerImplementationGTKey=this->config->getKey("readerImplementationGT");
+        Key readerImplementationDetectionKey=this->config->getKey("readerImplementationDetection");
+        Key readerNamesKey=this->config->getKey("readerNames");
 
 
 
@@ -37,6 +37,7 @@ public:
 
 
         DetectionsEvaluatorPtr evaluator(new DetectionsEvaluator(readerGT->getReader(),readerDetection->getReader(),true));
+        //todo ñapa
         evaluator->addValidMixClass("person", "person-falling");
         evaluator->addValidMixClass("person", "person-fall");
         evaluator->addClassToDisplay("person");

@@ -12,7 +12,7 @@
 class OwnDatasetWriter: public DatasetWriter {
 public:
     OwnDatasetWriter(const std::string &outPath, DatasetReaderPtr &reader);
-    void process();
+    void process(bool usedColorImage=true);
 
 private:
 

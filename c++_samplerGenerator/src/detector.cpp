@@ -25,15 +25,15 @@ public:
         this->requiredArguments.push_back("readerNames");
     };
     void operator()(){
-        Key inputPath=this->config.getKey("inputPath");
-        Key outputPath=this->config.getKey("outputPath");
+        Key inputPath=this->config->getKey("inputPath");
+        Key outputPath=this->config->getKey("outputPath");
 
-        Key readerImplementationKey = this->config.getKey("readerImplementation");
-        Key infererImplementationKey = this->config.getKey("inferencerImplementation");
-        Key inferencerConfigKey = this->config.getKey("inferencerConfig");
-        Key inferencerWeightsKey = this->config.getKey("inferencerWeights");
-        Key inferencerNamesKey = this->config.getKey("inferencerNames");
-        Key readerNamesKey = this->config.getKey("readerNames");
+        Key readerImplementationKey = this->config->getKey("readerImplementation");
+        Key infererImplementationKey = this->config->getKey("inferencerImplementation");
+        Key inferencerConfigKey = this->config->getKey("inferencerConfig");
+        Key inferencerWeightsKey = this->config->getKey("inferencerWeights");
+        Key inferencerNamesKey = this->config->getKey("inferencerNames");
+        Key readerNamesKey = this->config->getKey("readerNames");
 
         GenericDatasetReaderPtr reader;
         if (inputPath.isVector()) {
@@ -48,7 +48,7 @@ public:
 
         GenericInferencerPtr inferencer(new GenericInferencer(inferencerConfigKey.getValue(),inferencerWeightsKey.getValue(),inferencerNamesKey.getValue(),infererImplementationKey.getValue()));
         MassInferencer massInferencer(reader->getReader(),inferencer->getInferencer(),outputPath.getValue(), true);
-        massInferencer.process();
+        massInferencer.process(false);
 
     };
 };

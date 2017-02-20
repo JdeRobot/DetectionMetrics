@@ -35,11 +35,11 @@ public:
 
     };
     void operator()(){
-        Key inputPathKey=this->config.getKey("inputPath");
-        Key readerImplementationKey = this->config.getKey("readerImplementation");
-        Key writerImplementationKey = this->config.getKey("writerImplementation");
-        Key outputPathKey = this->config.getKey("outputPath");
-        Key readerNamesKey = this->config.getKey("readerNames");
+        Key inputPathKey=this->config->getKey("inputPath");
+        Key readerImplementationKey = this->config->getKey("readerImplementation");
+        Key writerImplementationKey = this->config->getKey("writerImplementation");
+        Key outputPathKey = this->config->getKey("outputPath");
+        Key readerNamesKey = this->config->getKey("readerNames");
 
 
         GenericDatasetReaderPtr reader;
@@ -54,12 +54,12 @@ public:
 
         auto readerPtr = reader->getReader();
 
-        std::vector<std::string> idsToFilter;
-        idsToFilter.push_back("person");
-        idsToFilter.push_back("person-falling");
-        idsToFilter.push_back("person-fall");
-        readerPtr->filterSamplesByID(idsToFilter);
-        readerPtr->printDatasetStats();
+//        std::vector<std::string> idsToFilter;
+//        idsToFilter.push_back("person");
+//        idsToFilter.push_back("person-falling");
+//        idsToFilter.push_back("person-fall");
+//        readerPtr->filterSamplesByID(idsToFilter);
+//        readerPtr->printDatasetStats();
 
 
         GenericDatasetWriterPtr writer( new GenericDatasetWriter(outputPathKey.getValue(),readerPtr,writerImplementationKey.getValue()));

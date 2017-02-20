@@ -11,7 +11,7 @@
 class MassInferencer {
 public:
     MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, const std::string& resultsPath, bool debug=true);
-    void process();
+    void process(bool useDepthImages);
 
 private:
     DatasetReaderPtr reader;

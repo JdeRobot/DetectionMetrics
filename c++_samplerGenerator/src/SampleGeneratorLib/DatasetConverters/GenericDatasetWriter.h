@@ -16,6 +16,7 @@ class GenericDatasetWriter {
 public:
     GenericDatasetWriter(const std::string& path,DatasetReaderPtr &reader, const std::string& writerImplementation);
     DatasetWriterPtr getWriter();
+    static std::vector<std::string> getAvailableImplementations();
 
 private:
     WRITER_IMPLEMENTATIONS imp;
@@ -26,7 +27,7 @@ private:
 
     std::vector<std::string> availableImplementations;
 
-    void configureAvailablesImplementations();
+    static void configureAvailableImplementations(std::vector<std::string>& data);
     WRITER_IMPLEMENTATIONS getImplementation(const std::string& writerImplementation);
 
 };

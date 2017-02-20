@@ -31,6 +31,7 @@ struct Sample {
     ContourRegionsPtr getContourRegions();
     cv::Mat getColorImage() const;
     cv::Mat getDepthImage() const;
+    cv::Mat getDeptImageGrayRGB() const;
     cv::Mat getSampledColorImage() const;
     cv::Mat getSampledDepthImage() const;
     void save(const std::string& outPath, int id);

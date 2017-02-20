@@ -21,7 +21,7 @@ bool OwnDatasetReader::appendDataset(const std::string &datasetPath, const std::
 
     for (boost::filesystem::directory_iterator itr(boostPath); itr!=end_itr; ++itr)
     {
-        if ((is_regular_file(itr->status()) && itr->path().extension()==".png") && (itr->path().string().find("-depth") == std::string::npos)) {
+        if ((is_regular_file(itr->status()) && itr->path().extension()==".json") && (itr->path().string().find("-region") == std::string::npos)) {
             filesID.push_back(itr->path().filename().stem().string());
         }
 

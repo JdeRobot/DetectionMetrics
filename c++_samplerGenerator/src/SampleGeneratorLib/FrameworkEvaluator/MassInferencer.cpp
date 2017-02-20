@@ -31,7 +31,7 @@ MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr i
     }
 }
 
-void MassInferencer::process() {
+void MassInferencer::process(bool useDepthImages) {
 
     Sample sample;
     int counter=0;
@@ -48,12 +48,24 @@ void MassInferencer::process() {
         std::cout << "Evaluating : " << sample.getSampleID() << "(" << counter << "/" << nsamples << ")" << std::endl;
         counter++;
         cv::Mat image =sample.getSampledColorImage();
-        Sample detection=this->inferencer->detect(sample.getColorImage());
+        cv::Mat image2detect;
+        if (useDepthImages)
+            image2detect = sample.getColorImage();
+        else
+            image2detect=sample.getDepthImage();
+
+        Sample detection=this->inferencer->detect(image2detect);
         detection.setSampleID(sample.getSampleID());
         detection.save(this->resultsPath);
         if (this->debug) {
+            Sample detectionWithImage;
+            detectionWithImage=detection;
+            if (useDepthImages)
+                detectionWithImage.setColorImage(sample.getDepthImage());
+            else
+                detectionWithImage.setColorImage(sample.getColorImage());
             cv::imshow("Viewer", image);
-            cv::imshow("Detection", detection.getSampledColorImage());
+            cv::imshow("Detection", detectionWithImage.getSampledColorImage());
             cv::waitKey(100);
         }
     }

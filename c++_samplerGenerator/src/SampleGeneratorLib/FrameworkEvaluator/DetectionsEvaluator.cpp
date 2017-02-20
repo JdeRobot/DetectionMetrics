@@ -37,7 +37,9 @@ void DetectionsEvaluator::evaluate() {
 
         if (this->debug){
             cv::imshow("GT", gtSample.getSampledColorImage());
-            cv::imshow("Detection", detectionSample.getSampledColorImage());
+            Sample detectionWithImage=detectionSample;
+            detectionWithImage.setColorImage(gtSample.getColorImage());
+            cv::imshow("Detection", detectionWithImage.getSampledColorImage());
             cv::waitKey(100);
         }
 

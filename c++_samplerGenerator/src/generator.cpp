@@ -27,10 +27,10 @@ public:
 
     };
     void operator()(){
-        Key outputPath=this->config.getKey("outputPath");
-        Key colorImagesPathKey=this->config.getKey("colorImagesPath");
-        Key depthImagesPathKey=this->config.getKey("depthImagesPath");
-        Key detectorKey=this->config.getKey("detector");
+        Key outputPath=this->config->getKey("outputPath");
+        Key colorImagesPathKey=this->config->getKey("colorImagesPath");
+        Key depthImagesPathKey=this->config->getKey("depthImagesPath");
+        Key detectorKey=this->config->getKey("detector");
 
 
         if (detectorKey.getValue().compare("pentalo-bg")==0) {
@@ -67,10 +67,10 @@ public:
             }
         }
         else{
-            Key inferencerImplementationKey=this->config.getKey("inferencerImplementation");
-            Key inferencerNamesKey=this->config.getKey("inferencerNames");
-            Key inferencerConfigKey=this->config.getKey("inferencerConfig");
-            Key inferencerWeightsKey=this->config.getKey("inferencerWeights");
+            Key inferencerImplementationKey=this->config->getKey("inferencerImplementation");
+            Key inferencerNamesKey=this->config->getKey("inferencerNames");
+            Key inferencerConfigKey=this->config->getKey("inferencerConfig");
+            Key inferencerWeightsKey=this->config->getKey("inferencerWeights");
 
             RecorderConverter converter(colorImagesPathKey.getValue(), depthImagesPathKey.getValue());
 

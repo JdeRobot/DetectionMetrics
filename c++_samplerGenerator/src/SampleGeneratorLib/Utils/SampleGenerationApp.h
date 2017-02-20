@@ -13,16 +13,18 @@ public:
     SampleGenerationApp(int argc, char* argv[]);
     virtual void operator()() =0;
     void process();
+    ConfigurationPtr getConfig();
 
 
 protected:
-    Configuration config;
+    ConfigurationPtr config;
     std::string configFilePath;
     std::vector<std::string> requiredArguments;
 
     bool verifyRequirements();
     int parse_arguments(const int argc, char* argv[], std::string& configFile);
-
+    int argc;
+    char** argv;
 
 
 };

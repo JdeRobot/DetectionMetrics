@@ -80,12 +80,15 @@ void DatasetReader::printDatasetStats() {
 
     std::cout << "------------------------------------------" << std::endl;
     std::cout << "------------------------------------------" << std::endl;
+    int totalSamples=0;
     for (auto it = classStats.begin(), end = classStats.end(); it != end; ++it){
         ClassTypeOwn typeconv(it->first);
-
         std::cout << "["<< typeconv.getClassString() <<  "]: " << it->second << std::endl;
+        totalSamples+=it->second;
     }
     std::cout << "------------------------------------------" << std::endl;
+    std::cout << "-- Total samples: " << totalSamples << std::endl;
+    std::cout << "-- Total images: " << this->getNumberOfElements() << std::endl;
     std::cout << "------------------------------------------" << std::endl;
 
 
