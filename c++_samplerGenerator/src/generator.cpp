@@ -8,7 +8,7 @@
 #include <boost/filesystem/path.hpp>
 
 #include <opencv2/highgui/highgui.hpp>
-#include "SampleGeneratorLib/GenerationUtils/RecorderConverter.h"
+#include "SampleGeneratorLib/DatasetConverters/RecorderReader.h"
 #include "SampleGeneratorLib/GenerationUtils/DepthForegroundSegmentator.h"
 #include "SampleGeneratorLib/GenerationUtils/BoundingValidator.h"
 #include "SampleGeneratorLib/GenerationUtils/DetectionsValidator.h"
@@ -35,7 +35,7 @@ public:
 
         if (detectorKey.getValue().compare("pentalo-bg")==0) {
 
-            RecorderConverter converter(colorImagesPathKey.getValue(), depthImagesPathKey.getValue());
+            RecorderReader converter(colorImagesPathKey.getValue(), depthImagesPathKey.getValue());
             DepthForegroundSegmentator segmentator;
 
 
@@ -72,7 +72,7 @@ public:
             Key inferencerConfigKey=this->config->getKey("inferencerConfig");
             Key inferencerWeightsKey=this->config->getKey("inferencerWeights");
 
-            RecorderConverter converter(colorImagesPathKey.getValue(), depthImagesPathKey.getValue());
+            RecorderReader converter(colorImagesPathKey.getValue(), depthImagesPathKey.getValue());
 
             FrameworkInferencerPtr inferencer;
 

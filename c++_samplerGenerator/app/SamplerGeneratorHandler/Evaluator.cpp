@@ -11,19 +11,26 @@ SampleGeneratorHandler::Evaluator::process(QListView *datasetListGT, QListView *
                                            QListView *datasetListDetect, QListView *namesListDetect,
                                            QListView *readerImpListDetect, QListView *filterClasses,
                                            const std::string &datasetPath, const std::string &namesGTPath,
-                                           const std::string &inferencesPath, const std::string &inferencesNamesPath) {
+                                           const std::string &inferencesPath, const std::string &inferencesNamesPath,bool overWriterPersonClasses,bool enableMixEvaluation,bool showEval) {
 
-    GenericDatasetReaderPtr readerGT = SamplerGenerationHandler::createReaderPtr(datasetListGT,namesListGT,readerImpListGT,filterClasses,datasetPath,datasetPath);
-    GenericDatasetReaderPtr readerDetection = SamplerGenerationHandler::createReaderPtr(datasetListDetect,namesListDetect,readerImpListDetect,filterClasses,datasetPath,inferencesNamesPath);
+    GenericDatasetReaderPtr readerGT = SamplerGenerationHandler::createReaderPtr(datasetListGT,namesListGT,readerImpListGT,filterClasses,datasetPath,inferencesNamesPath);
+    GenericDatasetReaderPtr readerDetection = SamplerGenerationHandler::createReaderPtr(datasetListDetect,namesListDetect,readerImpListDetect,filterClasses,inferencesPath,inferencesNamesPath);
 
 
 
-    DetectionsEvaluatorPtr evaluator(new DetectionsEvaluator(readerGT->getReader(),readerDetection->getReader(),true));
+    DetectionsEvaluatorPtr evaluator(new DetectionsEvaluator(readerGT->getReader(),readerDetection->getReader(),showEval));
 
-    //todo ñapa
-    evaluator->addClassToDisplay("person");
-    evaluator->addClassToDisplay("person-falling");
-    evaluator->addClassToDisplay("person-fall");
+
+    if (overWriterPersonClasses){
+        readerGT->getReader()->overWriteClasses("person-falling","person");
+        readerGT->getReader()->overWriteClasses("person-fall","person");
+        readerGT->getReader()->printDatasetStats();
+    }
+
+    if(enableMixEvaluation) {
+        evaluator->addValidMixClass("person", "person-falling");
+        evaluator->addValidMixClass("person", "person-fall");
+    }
     evaluator->evaluate();
 
 

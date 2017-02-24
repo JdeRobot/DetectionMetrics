@@ -230,5 +230,23 @@ cv::Mat Sample::getDeptImageGrayRGB() const {
 
 }
 
+cv::Mat Sample::getDepthColorMapImage() const {
+    cv::Mat image = getDepthImage();
+    std::vector<cv::Mat> depthVector;
+    cv::split(image,depthVector);
+    cv::Mat colorMappedDepth;
+    cv::applyColorMap(depthVector[0], colorMappedDepth, cv::COLORMAP_RAINBOW);
+    return colorMappedDepth;
+}
+
+cv::Mat Sample::getSampledDepthColorMapImage() const {
+    cv::Mat image = getDepthColorMapImage();
+    if (this->rectRegions)
+        this->rectRegions->drawRegions(image);
+    if (this->contourRegions)
+        this->contourRegions->drawRegions(image);
+    return image;
+}
+
 
 

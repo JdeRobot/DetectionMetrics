@@ -177,7 +177,8 @@ void MainWindow::handleEvaluateButton() {
     SampleGeneratorHandler::Evaluator::process(ui->listView_evaluator_gt_dataset,ui->listView_evaluator_gt_names,ui->listView_evaluator_gt_imp,
                                                ui->listView_evaluator_dectection_dataset,ui->listView_evaluator_detection_names, ui->listView_evaluator_detection_imp,
                                                ui->listView_evaluator_classFilter,app->getConfig()->getKey("datasetPath").getValue(),app->getConfig()->getKey("namesPath").getValue(),
-                                               app->getConfig()->getKey("inferencesPath").getValue(),app->getConfig()->getKey("namesPath").getValue());
+                                               app->getConfig()->getKey("inferencesPath").getValue(),app->getConfig()->getKey("namesPath").getValue(),ui->checkBox_evaluator_merge->isChecked(),
+                                               ui->checkBox_evaluator_mix->isChecked(),ui->checkBox_evaluator_show_eval->isChecked());
 }
 
 void MainWindow::handleDetectButton() {

@@ -1,5 +1,5 @@
 SET( SOURCE_FILES
-        GenerationUtils/RecorderConverter
+        DatasetConverters/RecorderReader
         GenerationUtils/DepthForegroundSegmentator
         GenerationUtils/BoundingValidator
         GenerationUtils/BoundingRectGuiMover

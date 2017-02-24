@@ -52,7 +52,8 @@ void YoloDatasetWriter::process(bool usedColorImage) {
         if (usedColorImage)
             image= sample.getColorImage();
         else {
-            image = sample.getDepthImage();
+            image = sample.getDepthColorMapImage();
+
         }
 
 

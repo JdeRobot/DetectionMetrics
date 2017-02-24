@@ -50,9 +50,11 @@ void MassInferencer::process(bool useDepthImages) {
         cv::Mat image =sample.getSampledColorImage();
         cv::Mat image2detect;
         if (useDepthImages)
+            image2detect = sample.getDepthColorMapImage();
+        else {
             image2detect = sample.getColorImage();
-        else
-            image2detect=sample.getDepthImage();
+        }
+
 
         Sample detection=this->inferencer->detect(image2detect);
         detection.setSampleID(sample.getSampleID());
@@ -61,10 +63,14 @@ void MassInferencer::process(bool useDepthImages) {
             Sample detectionWithImage;
             detectionWithImage=detection;
             if (useDepthImages)
-                detectionWithImage.setColorImage(sample.getDepthImage());
+                detectionWithImage.setColorImage(sample.getDepthColorMapImage());
             else
                 detectionWithImage.setColorImage(sample.getColorImage());
-            cv::imshow("Viewer", image);
+            cv::imshow("GT on RGB", image);
+            if (useDepthImages){
+                cv::imshow("GT on Depth", sample.getSampledDepthColorMapImage());
+                cv::imshow("Input", image2detect);
+            }
             cv::imshow("Detection", detectionWithImage.getSampledColorImage());
             cv::waitKey(100);
         }

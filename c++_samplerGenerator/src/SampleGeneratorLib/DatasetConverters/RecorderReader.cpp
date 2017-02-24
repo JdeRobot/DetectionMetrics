@@ -2,14 +2,14 @@
 // Created by frivas on 16/11/16.
 //
 
-#include "RecorderConverter.h"
+#include "RecorderReader.h"
 #include "Utils/Logger.h"
 #include <boost/program_options.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/path.hpp>
 #include <iostream>
 
-RecorderConverter::RecorderConverter(const std::string &colorImagesPath, const std::string &depthImagesPath):colorPath(colorImagesPath), depthPath(depthImagesPath) {
+RecorderReader::RecorderReader(const std::string &colorImagesPath, const std::string &depthImagesPath):colorPath(colorImagesPath), depthPath(depthImagesPath) {
     currentIndex=0;
 
     getImagesByIndexes(depthPath,depthIndexes);
@@ -17,7 +17,7 @@ RecorderConverter::RecorderConverter(const std::string &colorImagesPath, const s
 }
 
 
-void RecorderConverter::getImagesByIndexes(const std::string& path, std::vector<int>& indexes){
+void RecorderReader::getImagesByIndexes(const std::string& path, std::vector<int>& indexes){
     indexes.clear();
     if(boost::filesystem::is_directory(path)) {
 
@@ -37,7 +37,7 @@ void RecorderConverter::getImagesByIndexes(const std::string& path, std::vector<
 }
 
 
-std::string RecorderConverter::getPathByIndex(const std::string& path, const int id){
+std::string RecorderReader::getPathByIndex(const std::string& path, const int id){
     std::stringstream ss;
     ss << id << ".png";
     return path + ss.str();
@@ -45,14 +45,14 @@ std::string RecorderConverter::getPathByIndex(const std::string& path, const int
 
 
 
-int RecorderConverter::closest(std::vector<int> const& vec, int value) {
+int RecorderReader::closest(std::vector<int> const& vec, int value) {
     auto const it = std::lower_bound(vec.begin(), vec.end(), value);
     if (it == vec.end()) { return -1; }
 
     return *it;
 }
 
-bool RecorderConverter::getNext(Sample& sample) {
+bool RecorderReader::getNext(Sample& sample) {
     if (this->currentIndex < this->depthIndexes.size()){
         int indexValue = this->depthIndexes[currentIndex];
         Logger::getInstance()->info("Time stamp: " + boost::lexical_cast<std::string>(indexValue));
@@ -70,6 +70,6 @@ bool RecorderConverter::getNext(Sample& sample) {
     }
 }
 
-int RecorderConverter::getNumSamples() {
+int RecorderReader::getNumSamples() {
     return this->depthIndexes.size();
 }

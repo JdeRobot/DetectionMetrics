@@ -102,3 +102,26 @@ bool DatasetReader::appendDataset(const std::string &datasetPath, const std::str
     return false;
 }
 
+void DatasetReader::overWriteClasses(const std::string &from, const std::string &to) {
+    for (auto it = samples.begin(), end= samples.end(); it != end; ++it){
+        Sample& s= *it;
+
+        if (s.getContourRegions()) {
+            for (auto it2 = s.getContourRegions()->regions.begin(), end2 = s.getContourRegions()->regions.end();
+                 it2 != end2; ++it2) {
+                ContourRegion &cr = *it2;
+                if (cr.id.compare(from) == 0) {
+                    cr.id = to;
+                }
+            }
+        }
+        for (auto it2 = s.getRectRegions()->regions.begin(), end2 = s.getRectRegions()->regions.end(); it2 != end2; ++it2){
+            RectRegion& r = *it2;
+            if (r.classID.compare(from)==0){
+                r.classID=to;
+            }
+        }
+
+    }
+}
+

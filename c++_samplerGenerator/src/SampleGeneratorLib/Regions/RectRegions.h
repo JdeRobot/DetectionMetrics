@@ -27,10 +27,6 @@ struct RectRegions:Regions {
     bool empty();
     void print();
 
-
-
-
-private:
     std::vector<RectRegion> regions;
 };
 

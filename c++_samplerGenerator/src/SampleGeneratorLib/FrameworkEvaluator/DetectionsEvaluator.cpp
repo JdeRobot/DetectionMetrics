@@ -172,6 +172,7 @@ void DetectionsEvaluator::addIOU(const std::string &classID, double value) {
 
 
 void DetectionsEvaluator::addValidMixClass(const std::string classA, const std::string classB){
+    //B is valid by detecting object as A
     this->validMixClass.push_back(std::make_pair(classA,classB));
 }
 

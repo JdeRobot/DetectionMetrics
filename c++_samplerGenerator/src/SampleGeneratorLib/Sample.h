@@ -34,6 +34,8 @@ struct Sample {
     cv::Mat getDeptImageGrayRGB() const;
     cv::Mat getSampledColorImage() const;
     cv::Mat getSampledDepthImage() const;
+    cv::Mat getSampledDepthColorMapImage() const;
+    cv::Mat getDepthColorMapImage() const;
     void save(const std::string& outPath, int id);
     void save(const std::string& outPath, const std::string& filename);
     void save(const std::string& outPath);

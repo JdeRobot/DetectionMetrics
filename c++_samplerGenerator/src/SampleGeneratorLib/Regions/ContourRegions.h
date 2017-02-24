@@ -21,10 +21,6 @@ struct ContourRegions:Regions {
     void filterSamplesByID(std::vector<std::string> filteredIDS);
     bool empty();
     void print();
-
-
-
-private:
     std::vector<ContourRegion> regions;
 };
 

@@ -9,9 +9,9 @@
 #include <Sample.h>
 
 
-class RecorderConverter {
+class RecorderReader {
 public:
-    RecorderConverter(const std::string& colorImagesPath, const std::string& depthImagesPath);
+    RecorderReader(const std::string& colorImagesPath, const std::string& depthImagesPath);
     bool getNext(Sample& sample);
     int getNumSamples();
 
