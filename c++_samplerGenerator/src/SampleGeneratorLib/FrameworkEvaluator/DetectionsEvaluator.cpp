@@ -23,10 +23,10 @@ void DetectionsEvaluator::evaluate() {
     Sample gtSample;
     Sample detectionSample;
 
-    while (this->gt->getNetxSample(gtSample)){
+    while (this->gt->getNextSample(gtSample)){
         counter++;
         std::cout << "Evaluating: " << gtSample.getSampleID() << "(" << counter << "/" << gtSamples << ")" << std::endl;
-        this->detections->getNetxSample(detectionSample);
+        this->detections->getNextSample(detectionSample);
         if (gtSample.getSampleID().compare(detectionSample.getSampleID()) != 0){
             Logger::getInstance()->error("Both dataset has not the same structure ids mismatch");
             exit(1);

@@ -5,10 +5,9 @@
 
 #include <iostream>
 #include <Utils/SampleGenerationApp.h>
-#include <SampleGeneratorLib/DatasetConverters/OwnDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/readers/OwnDatasetReader.h>
 #include <SampleGeneratorLib/FrameworkEvaluator/MassInferencer.h>
-#include <SampleGeneratorLib/DatasetConverters/GenericDatasetReader.h>
-#include <SampleGeneratorLib/FrameworkEvaluator/DarknetInferencer.h>
+#include <SampleGeneratorLib/DatasetConverters/readers/GenericDatasetReader.h>
 #include <SampleGeneratorLib/FrameworkEvaluator/GenericInferencer.h>
 
 

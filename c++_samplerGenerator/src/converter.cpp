@@ -11,16 +11,16 @@
 #include <boost/filesystem/path.hpp>
 #include <SampleGeneratorLib/Utils/Logger.h>
 #include <highgui.h>
-#include <SampleGeneratorLib/DatasetConverters/OwnDatasetReader.h>
-#include <SampleGeneratorLib/DatasetConverters/YoloDatasetWriter.h>
-#include <SampleGeneratorLib/DatasetConverters/YoloDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/readers/OwnDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/writers/YoloDatasetWriter.h>
+#include <SampleGeneratorLib/DatasetConverters/readers/YoloDatasetReader.h>
 
 
 #include <iostream>
 #include <string>
 #include <SampleGeneratorLib/Utils/SampleGenerationApp.h>
-#include <SampleGeneratorLib/DatasetConverters/GenericDatasetReader.h>
-#include <SampleGeneratorLib/DatasetConverters/GenericDatasetWriter.h>
+#include <SampleGeneratorLib/DatasetConverters/readers/GenericDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/writers/GenericDatasetWriter.h>
 
 
 class MyApp:public SampleGenerationApp{

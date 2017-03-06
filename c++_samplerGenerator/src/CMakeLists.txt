@@ -9,7 +9,8 @@ endif()
 
 
 
-SET( SOURCE_FILES generator.cpp SampleGeneratorLib/FrameworkEvaluator/DarknetInferencer)
+SET( SOURCE_FILES generator.cpp)
+
 
 add_executable (sampler  ${SOURCE_FILES})
 

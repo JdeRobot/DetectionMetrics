@@ -7,6 +7,7 @@
 #include <opencv2/opencv.hpp>
 #include <boost/shared_ptr.hpp>
 #include <jderobot/depthLib/DepthFilter.h>
+#include <opencv2/core/version.hpp>
 
 class DepthForegroundSegmentator {
 public:
@@ -17,8 +18,11 @@ public:
 
 
 private:
+#if  CV_MAJOR_VERSION == 3
+    cv::BackgroundSubtractorMOG2* bg;
+#else
     cv::Ptr<cv::BackgroundSubtractor> bg;
-    //cv::BackgroundSubtractorMOG2* bg;
+#endif
     cv::Mat fore;
     bool filterActive;
     boost::shared_ptr<jderobot::DepthFilter> filter;

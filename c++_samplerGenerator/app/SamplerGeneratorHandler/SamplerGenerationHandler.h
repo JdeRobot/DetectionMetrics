@@ -5,7 +5,7 @@
 #ifndef SAMPLERGENERATOR_SAMPLERGENERATIONHANDLER_H
 #define SAMPLERGENERATOR_SAMPLERGENERATIONHANDLER_H
 
-#include <SampleGeneratorLib/DatasetConverters/GenericDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/readers/GenericDatasetReader.h>
 #include <QtWidgets/QListView>
 
 namespace SampleGeneratorHandler {

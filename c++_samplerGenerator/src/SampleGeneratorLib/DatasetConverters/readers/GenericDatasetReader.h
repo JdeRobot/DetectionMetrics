@@ -8,10 +8,10 @@
 #include <string>
 #include "SpinelloDatasetReader.h"
 #include "YoloDatasetReader.h"
-#include "DatasetReader.h"
+#include <DatasetConverters/readers/DatasetReader.h>
 #include "OwnDatasetReader.h"
 
-enum READER_IMPLEMENTATIONS{OWN, SPINELLO, YOLO};
+enum READER_IMPLEMENTATIONS{OWN, SPINELLO, YOLO, RECORDER, JDEROBOT};
 
 
 class GenericDatasetReader {

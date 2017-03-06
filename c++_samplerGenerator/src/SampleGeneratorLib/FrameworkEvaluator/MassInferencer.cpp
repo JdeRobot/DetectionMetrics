@@ -38,13 +38,13 @@ void MassInferencer::process(bool useDepthImages) {
     int nsamples = this->reader->getNumberOfElements();
     while (alreadyProcessed>0){
         std::cout << "Already evaluated: " << sample.getSampleID() << "(" << counter << "/" << nsamples << ")" << std::endl;
-        this->reader->getNetxSample(sample);
+        this->reader->getNextSample(sample);
         counter++;
         alreadyProcessed--;
     }
 
 
-    while (this->reader->getNetxSample(sample)){
+    while (this->reader->getNextSample(sample)){
         std::cout << "Evaluating : " << sample.getSampleID() << "(" << counter << "/" << nsamples << ")" << std::endl;
         counter++;
         cv::Mat image =sample.getSampledColorImage();

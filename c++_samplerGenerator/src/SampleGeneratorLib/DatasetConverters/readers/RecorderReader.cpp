@@ -52,7 +52,7 @@ int RecorderReader::closest(std::vector<int> const& vec, int value) {
     return *it;
 }
 
-bool RecorderReader::getNext(Sample& sample) {
+bool RecorderReader::getNextSample(Sample &sample) {
     if (this->currentIndex < this->depthIndexes.size()){
         int indexValue = this->depthIndexes[currentIndex];
         Logger::getInstance()->info("Time stamp: " + boost::lexical_cast<std::string>(indexValue));

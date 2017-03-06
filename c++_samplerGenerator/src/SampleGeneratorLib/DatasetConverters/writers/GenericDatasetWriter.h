@@ -9,7 +9,7 @@ enum WRITER_IMPLEMENTATIONS{WR_OWN, WR_YOLO};
 
 #include <string>
 #include "DatasetWriter.h"
-#include "OwnDatasetWriter.h"
+#include <DatasetConverters/writers/OwnDatasetWriter.h>
 #include "YoloDatasetWriter.h"
 
 class GenericDatasetWriter {

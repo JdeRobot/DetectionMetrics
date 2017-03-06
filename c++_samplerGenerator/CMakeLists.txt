@@ -36,6 +36,9 @@ include(FindPkgConfig)
 FIND_PACKAGE(OpenCV REQUIRED)
 FIND_PACKAGE(CUDA REQUIRED)
 FIND_PACKAGE(JdeRobot REQUIRED)
+
+message("JdeRobot" ${JdeRobot_INCLUDE_DIRS})
+message("JdeRobot" ${JdeRobot_LIBRARIES})
 FIND_PACKAGE(Boost REQUIRED program_options filesystem)
 FIND_PACKAGE(Qt5Widgets REQUIRED)
 FIND_PACKAGE(Qt5Core REQUIRED)
@@ -85,7 +88,7 @@ ENDIF()
 
 
  #darknet
- SET(DARKNET_PATH /home/frivas/devel/external/ownDarknet/darknet/code/)
+ SET(DARKNET_PATH /home/frivas/devel/external/ownDarknet/darknet/code/fake)
 
 FIND_PATH( DARKNET_INCLUDE_DIR NAMES DarknetAPI/DarknetAPI.h  PATHS ${DARKNET_PATH}/src )
 FIND_LIBRARY( DARKNET_LIBRARIES NAMES darknetLib PATHS ${DARKNET_PATH}/build/src/ )
@@ -97,6 +100,7 @@ if (DARKNET_INCLUDE_DIR AND DARKNET_LIBRARIES)
 	message("DARKNET_INCLUDE_DIR: ${DARKNET_INCLUDE_DIR}")
 	message("DARKNET_LIBRARIES: ${DARKNET_LIBRARIES}")
 	SET(DARKNET_ACTIVE ON)
+	ADD_DEFINITIONS(DDARKNET_ACTIVE)
 endif()
 
 

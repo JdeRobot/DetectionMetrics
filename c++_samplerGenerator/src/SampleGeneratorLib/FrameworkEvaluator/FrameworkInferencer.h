@@ -8,15 +8,24 @@
 #include <cv.h>
 #include <boost/shared_ptr.hpp>
 #include <Sample.h>
-
+#include <boost/date_time/posix_time/posix_time.hpp>
 
 class FrameworkInferencer{
 public:
-    virtual Sample detect(const cv::Mat& image) =0;
+    FrameworkInferencer();
+    ~   FrameworkInferencer();
+    Sample detect(const cv::Mat& image);
+    int getMeanDurationTime();
+    virtual Sample detectImp(const cv::Mat& image) =0;
 
 protected:
     std::string classNamesFile;
+
+private:
+    std::vector<long> durationVector;
 };
+
+
 
 
 typedef boost::shared_ptr<FrameworkInferencer> FrameworkInferencerPtr;

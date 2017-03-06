@@ -6,7 +6,7 @@
 #include <iostream>
 #include <string>
 #include <SampleGeneratorLib/Utils/SampleGenerationApp.h>
-#include <SampleGeneratorLib/DatasetConverters/GenericDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/readers/GenericDatasetReader.h>
 #include <SampleGeneratorLib/FrameworkEvaluator/DetectionsEvaluator.h>
 
 

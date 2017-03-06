@@ -5,7 +5,7 @@
 #ifndef SAMPLERGENERATOR_MASSINFERENCER_H
 #define SAMPLERGENERATOR_MASSINFERENCER_H
 
-#include <DatasetConverters/DatasetReader.h>
+#include <DatasetConverters/readers/DatasetReader.h>
 #include <FrameworkEvaluator/FrameworkInferencer.h>
 
 class MassInferencer {

@@ -1,5 +1,5 @@
 SET( SOURCE_FILES
-        DatasetConverters/RecorderReader
+        DatasetConverters/readers/RecorderReader
         GenerationUtils/DepthForegroundSegmentator
         GenerationUtils/BoundingValidator
         GenerationUtils/BoundingRectGuiMover
@@ -9,17 +9,17 @@ SET( SOURCE_FILES
         Regions/ContourRegions
         Regions/Regions.h
         DatasetConverters/DatasetConverter
-        DatasetConverters/DatasetReader
+        DatasetConverters/readers/DatasetReader
         Sample
-        DatasetConverters/OwnDatasetReader
-        DatasetConverters/YoloDatasetWriter
-        DatasetConverters/YoloDatasetReader
+        DatasetConverters/readers/OwnDatasetReader
+        DatasetConverters/writers/YoloDatasetWriter
+        DatasetConverters/readers/YoloDatasetReader
         DatasetConverters/ClassTypeGeneric
         Regions/Region
         Regions/RectRegion
         Regions/ContourRegion
         Detectors/Detector.h
-        DatasetConverters/SpinelloDatasetReader
+        DatasetConverters/readers/SpinelloDatasetReader
         FrameworkEvaluator/FrameworkInferencer
         Utils/StringHandler.h
         Utils/Normalizations
@@ -31,12 +31,13 @@ SET( SOURCE_FILES
         Utils/Configuration
         Utils/Key
         Utils/SampleGenerationApp
-        DatasetConverters/GenericDatasetReader
+        DatasetConverters/readers/GenericDatasetReader
         FrameworkEvaluator/GenericInferencer
-        DatasetConverters/DatasetWriter
-        DatasetConverters/OwnDatasetWriter
-        DatasetConverters/GenericDatasetWriter
+        DatasetConverters/writers/DatasetWriter
+        DatasetConverters/writers/OwnDatasetWriter
+        DatasetConverters/writers/GenericDatasetWriter
         Utils/StatsUtils
+        DatasetConverters/readers/JderobotReader
         )
 
 

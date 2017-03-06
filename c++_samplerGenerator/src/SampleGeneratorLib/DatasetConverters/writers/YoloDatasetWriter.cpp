@@ -3,7 +3,7 @@
 //
 
 #include "YoloDatasetWriter.h"
-#include "ClassTypeOwn.h"
+#include "DatasetConverters/ClassTypeOwn.h"
 #include <iomanip>
 #include <fstream>
 #include <boost/filesystem/path.hpp>
@@ -38,7 +38,7 @@ void YoloDatasetWriter::process(bool usedColorImage) {
 
     std::ofstream sampleFile(this->outPath + "/sample.txt");
 
-    while (reader->getNetxSample(sample)){
+    while (reader->getNextSample(sample)){
         auto boundingBoxes = sample.getRectRegions()->getRegions();
         std::stringstream ssID ;
         ssID << std::setfill('0') << std::setw(5) << id;

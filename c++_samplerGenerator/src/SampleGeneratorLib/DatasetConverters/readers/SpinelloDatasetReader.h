@@ -6,7 +6,7 @@
 #define SAMPLERGENERATOR_SPINELLODATASETREADER_H
 
 
-#include "DatasetReader.h"
+#include <DatasetConverters/readers/DatasetReader.h>
 
 class SpinelloDatasetReader: public DatasetReader {
 public:

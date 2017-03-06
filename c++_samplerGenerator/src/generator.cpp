@@ -8,13 +8,17 @@
 #include <boost/filesystem/path.hpp>
 
 #include <opencv2/highgui/highgui.hpp>
-#include "SampleGeneratorLib/DatasetConverters/RecorderReader.h"
+#include "SampleGeneratorLib/DatasetConverters/readers/RecorderReader.h"
 #include "SampleGeneratorLib/GenerationUtils/DepthForegroundSegmentator.h"
 #include "SampleGeneratorLib/GenerationUtils/BoundingValidator.h"
 #include "SampleGeneratorLib/GenerationUtils/DetectionsValidator.h"
 #include <SampleGeneratorLib/Utils/Logger.h>
 #include <SampleGeneratorLib/Utils/SampleGenerationApp.h>
+#include <SampleGeneratorLib/FrameworkEvaluator/FrameworkInferencer.h>
+
+#ifdef DARKNET_ACTIVE
 #include <SampleGeneratorLib/FrameworkEvaluator/DarknetInferencer.h>
+#endif
 
 class MyApp:public SampleGenerationApp{
 public:
@@ -44,7 +48,7 @@ public:
             int counter = 0;
             int maxElements = converter.getNumSamples();
             Sample sample;
-            while (converter.getNext(sample)) {
+            while (converter.getNextSample(sample)) {
                 counter++;
                 std::stringstream ss;
                 ss << counter << "/" << maxElements;
@@ -77,7 +81,11 @@ public:
             FrameworkInferencerPtr inferencer;
 
             if (inferencerImplementationKey.getValue().compare("yolo")==0) {
+#ifdef DARKNET_ACTIVE
                 inferencer = DarknetInferencerPtr( new DarknetInferencer(inferencerConfigKey.getValue(), inferencerWeightsKey.getValue(), inferencerNamesKey.getValue()));
+#else
+                Logger::getInstance()->error("Darknet inferencer is not available");
+#endif
             }
             else{
                 Logger::getInstance()->error(inferencerImplementationKey.getValue() + " is not a valid inferencer implementation");
@@ -87,7 +95,7 @@ public:
             int maxElements = converter.getNumSamples();
             Sample sample;
             int counter=0;
-            while (converter.getNext(sample)) {
+            while (converter.getNextSample(sample)) {
                 counter++;
                 std::stringstream ss;
                 ss << counter << "/" << maxElements;

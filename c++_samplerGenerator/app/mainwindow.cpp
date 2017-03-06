@@ -3,12 +3,12 @@
 #include <gui/ListViewConfig.h>
 #include <SamplerGeneratorHandler/Viewer.h>
 #include <SamplerGeneratorHandler/Converter.h>
-#include <SampleGeneratorLib/DatasetConverters/GenericDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/readers/GenericDatasetReader.h>
 #include <SampleGeneratorLib/DatasetConverters/ClassTypeGeneric.h>
 #include <SampleGeneratorLib/Utils/Logger.h>
 #include <QtWidgets/QFileDialog>
 #include <QtWidgets/QTreeView>
-#include <SampleGeneratorLib/DatasetConverters/GenericDatasetWriter.h>
+#include <SampleGeneratorLib/DatasetConverters/writers/GenericDatasetWriter.h>
 #include <gui/Utils.h>
 #include <SamplerGeneratorHandler/Evaluator.h>
 #include <SamplerGeneratorHandler/Detector.h>
@@ -169,16 +169,37 @@ void MainWindow::handleConvertButton() {
     bool splitActive = this->ui->checkBox_splitActive->isChecked();
     bool colorImage = !(this->ui->checkBox_yolo_depth->isChecked());
 
-    SampleGeneratorHandler::Converter::process(ui->listView_converter_dataset, ui->listView_converter_names,ui->listView_converter_reader_imp,ui->listView_converter_classFilter,
-            ui->listView_converter_outImp, app->getConfig()->getKey("datasetPath").getValue(),app->getConfig()->getKey("namesPath").getValue(),outputPath,splitActive,ratio, colorImage);
+    try {
+        SampleGeneratorHandler::Converter::process(ui->listView_converter_dataset, ui->listView_converter_names,
+                                                   ui->listView_converter_reader_imp,
+                                                   ui->listView_converter_classFilter,
+                                                   ui->listView_converter_outImp,
+                                                   app->getConfig()->getKey("datasetPath").getValue(),
+                                                   app->getConfig()->getKey("namesPath").getValue(), outputPath,
+                                                   splitActive, ratio, colorImage);
+    }
+    catch (const std::string& msg){
+        std::cout << "Exception detected: " << msg << std::endl;
+    }
+    catch (...){
+        std::cout << "Uknown exectip type" << std::endl;
+    }
 }
 
 void MainWindow::handleEvaluateButton() {
+    try{
     SampleGeneratorHandler::Evaluator::process(ui->listView_evaluator_gt_dataset,ui->listView_evaluator_gt_names,ui->listView_evaluator_gt_imp,
                                                ui->listView_evaluator_dectection_dataset,ui->listView_evaluator_detection_names, ui->listView_evaluator_detection_imp,
                                                ui->listView_evaluator_classFilter,app->getConfig()->getKey("datasetPath").getValue(),app->getConfig()->getKey("namesPath").getValue(),
                                                app->getConfig()->getKey("inferencesPath").getValue(),app->getConfig()->getKey("namesPath").getValue(),ui->checkBox_evaluator_merge->isChecked(),
                                                ui->checkBox_evaluator_mix->isChecked(),ui->checkBox_evaluator_show_eval->isChecked());
+    }
+    catch (const std::string& msg){
+        std::cout << "Exception detected: " << msg << std::endl;
+    }
+    catch (...){
+        std::cout << "Uknown exectip type" << std::endl;
+    }
 }
 
 void MainWindow::handleDetectButton() {
@@ -187,10 +208,18 @@ void MainWindow::handleDetectButton() {
     bool singleEvaluation = this->ui->checkBox_detector_single->isChecked();
 
 
+    try{
     SampleGeneratorHandler::Detector::process(ui->listView_detector_dataset, ui->listView_detector_names,ui->listView_detector_reader_imp,app->getConfig()->getKey("datasetPath").getValue(),
                                               ui->listView_detector_weights,ui->listView_detector_net_config,ui->listView_detector_imp,ui->listView_detector_names_inferencer,
                                               app->getConfig()->getKey("weightsPath").getValue(),app->getConfig()->getKey("netCfgPath").getValue(),outputPath,app->getConfig()->getKey("namesPath").getValue(),
                                               useDepth,singleEvaluation);
+    }
+    catch (const std::string& msg){
+        std::cout << "Exception detected: " << msg << std::endl;
+    }
+    catch (...){
+        std::cout << "Uknown exectip type" << std::endl;
+    }
 }
 
 void MainWindow::handleSelectOutputFolderButtonDetector() {

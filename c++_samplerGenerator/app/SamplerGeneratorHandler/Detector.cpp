@@ -2,7 +2,7 @@
 // Created by frivas on 20/02/17.
 //
 
-#include <SampleGeneratorLib/DatasetConverters/GenericDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/readers/GenericDatasetReader.h>
 #include <gui/Utils.h>
 #include <SampleGeneratorLib/Utils/Logger.h>
 #include <SampleGeneratorLib/FrameworkEvaluator/GenericInferencer.h>

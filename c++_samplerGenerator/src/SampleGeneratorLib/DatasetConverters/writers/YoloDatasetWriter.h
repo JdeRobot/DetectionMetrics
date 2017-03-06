@@ -6,7 +6,6 @@
 #define SAMPLERGENERATOR_YOLODATASETCONVERTER_H
 
 #include <string>
-#include "DatasetReader.h"
 #include "DatasetWriter.h"
 
 class YoloDatasetWriter: public DatasetWriter {

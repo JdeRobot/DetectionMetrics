@@ -5,7 +5,7 @@
 #ifndef SAMPLERGENERATOR_DETECTIONSEVALUATOR_H
 #define SAMPLERGENERATOR_DETECTIONSEVALUATOR_H
 
-#include <DatasetConverters/DatasetReader.h>
+#include <DatasetConverters/readers/DatasetReader.h>
 #include <boost/shared_ptr.hpp>
 #include "ClassStatistics.h"
 

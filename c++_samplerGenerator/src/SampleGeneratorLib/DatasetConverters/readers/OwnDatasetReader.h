@@ -5,7 +5,7 @@
 #ifndef SAMPLERGENERATOR_OWNDATASETREADER_H
 #define SAMPLERGENERATOR_OWNDATASETREADER_H
 
-#include "DatasetReader.h"
+#include <DatasetConverters/readers/DatasetReader.h>
 
 class OwnDatasetReader:public DatasetReader {
 public:

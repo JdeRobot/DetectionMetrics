@@ -5,12 +5,12 @@
 #include <iostream>
 #include <string>
 #include <SampleGeneratorLib/Utils/SampleGenerationApp.h>
-#include <SampleGeneratorLib/DatasetConverters/GenericDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/readers/GenericDatasetReader.h>
 #include <SampleGeneratorLib/FrameworkEvaluator/DetectionsEvaluator.h>
 #include <boost/filesystem/path.hpp>
 #include <boost/filesystem/operations.hpp>
 #include <SampleGeneratorLib/Utils/Logger.h>
-#include <SampleGeneratorLib/DatasetConverters/GenericDatasetWriter.h>
+#include <SampleGeneratorLib/DatasetConverters/writers/GenericDatasetWriter.h>
 
 
 class MyApp:public SampleGenerationApp{
@@ -71,7 +71,7 @@ public:
 
         Sample sample;
         int counter=0;
-        while (readerPtr->getNetxSample(sample)){
+        while (readerPtr->getNextSample(sample)){
             if (counter <ratio){
                 readerTrain->addSample(sample);
             }

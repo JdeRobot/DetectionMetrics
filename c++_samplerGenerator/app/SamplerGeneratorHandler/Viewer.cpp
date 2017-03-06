@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include <SampleGeneratorLib/DatasetConverters/GenericDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/readers/GenericDatasetReader.h>
 #include <SampleGeneratorLib/Sample.h>
 #include "Viewer.h"
 #include "SamplerGenerationHandler.h"
@@ -21,7 +21,7 @@ namespace SampleGeneratorHandler {
 
         std::string windowName="viewer";
         Sample sample;
-        while (reader->getReader()->getNetxSample(sample)){
+        while (reader->getReader()->getNextSample(sample)){
             std::cout << "number of elements: " << sample.getRectRegions()->getRegions().size() << std::endl;
             cv::Mat image =sample.getSampledColorImage();
             cv::imshow(windowName, image);

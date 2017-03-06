@@ -4,7 +4,7 @@
 
 #include <unordered_map>
 #include "DatasetReader.h"
-#include "ClassTypeOwn.h"
+#include "DatasetConverters/ClassTypeOwn.h"
 
 
 DatasetReader::DatasetReader():readerCounter(0) {
@@ -35,7 +35,7 @@ void DatasetReader::resetReaderCounter() {
 
 }
 
-bool DatasetReader::getNetxSample(Sample &sample) {
+bool DatasetReader::getNextSample(Sample &sample) {
     std::cout << "readCounter: " << this->readerCounter << ", size: " << this->samples.size() << std::endl;
     if (this->readerCounter < this->samples.size()){
         sample=this->samples[this->readerCounter];

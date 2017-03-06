@@ -12,9 +12,11 @@ GenericInferencer::GenericInferencer(const std::string &netConfig, const std::st
     if (std::find(this->availableImplementations.begin(), this->availableImplementations.end(), implementation) != this->availableImplementations.end()){
         imp = getImplementation(implementation);
         switch (imp) {
+#ifdef DARKNET_ACTIVE
             case INF_YOLO:
                 this->darknetInferencerPtr = DarknetInferencerPtr( new DarknetInferencer(netConfig, netWeights,classNames));
                 break;
+#endif
             default:
                 Logger::getInstance()->error(implementation + " is not a valid inferencer implementation");
                 break;
@@ -27,7 +29,9 @@ GenericInferencer::GenericInferencer(const std::string &netConfig, const std::st
 }
 
 void GenericInferencer::configureAvailablesImplementations(std::vector<std::string>& data) {
+#ifdef DARKNET_ACTIVE
     data.push_back("yolo");
+#endif
 }
 
 INFERENCER_IMPLEMENTATIONS GenericInferencer::getImplementation(const std::string &inferencerImplementation) {
@@ -38,10 +42,12 @@ INFERENCER_IMPLEMENTATIONS GenericInferencer::getImplementation(const std::strin
 
 FrameworkInferencerPtr GenericInferencer::getInferencer() {
     switch (imp) {
+#ifdef DARKNET_ACTIVE
         case INF_YOLO:
             return this->darknetInferencerPtr;
+#endif
         default:
-//            Logger::getInstance()->error(imp + " is not a valid reader implementation");
+            Logger::getInstance()->error(imp + " is not a valid reader implementation");
             break;
     }
 }

@@ -6,7 +6,7 @@
 #define SAMPLERGENERATOR_OWNDATASETWRITER_H
 
 #include <string>
-#include "DatasetReader.h"
+#include <DatasetConverters/readers/DatasetReader.h>
 #include "DatasetWriter.h"
 
 class OwnDatasetWriter: public DatasetWriter {

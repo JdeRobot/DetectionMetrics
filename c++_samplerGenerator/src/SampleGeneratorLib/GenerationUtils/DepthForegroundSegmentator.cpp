@@ -7,6 +7,13 @@
 
 
 DepthForegroundSegmentator::DepthForegroundSegmentator(bool filterActive):filterActive(filterActive) {
+
+#if  CV_MAJOR_VERSION == 3
+    std::cerr << "OpenCV 3 is not working with doubles foreground segmentation" << std::endl;
+    throw "Opencv v3 is not supported";
+#else
+#endif
+
     if (this->filterActive){
         this->filter= boost::shared_ptr<jderobot::DepthFilter>(new jderobot::DepthFilter());
     }
@@ -60,14 +67,21 @@ std::vector<std::vector<cv::Point>> DepthForegroundSegmentator::process(const cv
 
 
     if (!this->bg){
-        //this->bg= cv::createBackgroundSubtractorMOG2();
+#if  CV_MAJOR_VERSION == 3
+        this->bg= cv::createBackgroundSubtractorMOG2();
+//        this->bg= cv::createBackgroundSubtractorKNN(500,20000);
+        bg->apply(distance,fore,defaultLearningRate);
+#else
         this->bg=new cv::BackgroundSubtractorMOG2();
-        //this->bg= cv::createBackgroundSubtractorKNN(500,20000);
-        //bg->apply(distance,fore,defaultLearningRate);
         bg->operator()(distance,fore,defaultLearningRate);
+#endif
+
     }
-    //bg->apply(distance,fore,defaultLearningRate);
+#if  CV_MAJOR_VERSION == 3
+    bg->apply(distance,fore,defaultLearningRate);
+#else
     bg->operator()(distance,fore,defaultLearningRate);
+#endif
 
 
     cv::imshow("fore",fore);

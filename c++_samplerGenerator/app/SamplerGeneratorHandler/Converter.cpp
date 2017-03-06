@@ -2,7 +2,7 @@
 // Created by frivas on 19/02/17.
 //
 
-#include <SampleGeneratorLib/DatasetConverters/GenericDatasetWriter.h>
+#include <SampleGeneratorLib/DatasetConverters/writers/GenericDatasetWriter.h>
 #include <gui/Utils.h>
 #include "Converter.h"
 #include "SamplerGenerationHandler.h"
@@ -31,7 +31,7 @@ void SampleGeneratorHandler::Converter::process(QListView *datasetList, QListVie
         Sample sample;
         auto readerPtr = reader->getReader();
         int counter=0;
-        while (readerPtr->getNetxSample(sample)){
+        while (readerPtr->getNextSample(sample)){
             if (counter <ratio){
                 readerTrain->addSample(sample);
             }

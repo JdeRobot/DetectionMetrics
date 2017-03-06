@@ -6,7 +6,7 @@
 #include <iostream>
 #include <string>
 #include <SampleGeneratorLib/Utils/SampleGenerationApp.h>
-#include <SampleGeneratorLib/DatasetConverters/GenericDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/readers/GenericDatasetReader.h>
 #include <SampleGeneratorLib/FrameworkEvaluator/DetectionsEvaluator.h>
 
 
@@ -38,7 +38,7 @@ public:
 
 
         Sample sample;
-        while (reader->getReader()->getNetxSample(sample)){
+        while (reader->getReader()->getNextSample(sample)){
             std::cout << "number of elements: " << sample.getRectRegions()->getRegions().size() << std::endl;
             cv::Mat image =sample.getSampledColorImage();
             cv::imshow("Viewer", image);

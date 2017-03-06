@@ -5,7 +5,11 @@
 #ifndef SAMPLERGENERATOR_GENERICINFERENCER_H
 #define SAMPLERGENERATOR_GENERICINFERENCER_H
 
+#include "FrameworkInferencer.h"
+
+#ifdef DARKNET_ACTIVE
 #include <FrameworkEvaluator/DarknetInferencer.h>
+#endif
 
 enum INFERENCER_IMPLEMENTATIONS{INF_YOLO};
 
@@ -18,8 +22,9 @@ public:
 
 private:
     INFERENCER_IMPLEMENTATIONS imp;
-
+#ifdef DARKNET_ACTIVE
     DarknetInferencerPtr darknetInferencerPtr;
+#endif
     std::vector<std::string> availableImplementations;
 
     static void configureAvailablesImplementations(std::vector<std::string>& data);

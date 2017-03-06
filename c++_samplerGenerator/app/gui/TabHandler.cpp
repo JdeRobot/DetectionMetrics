@@ -3,7 +3,7 @@
 //
 
 #include <SampleGeneratorLib/Utils/Logger.h>
-#include <SampleGeneratorLib/DatasetConverters/GenericDatasetReader.h>
+#include <SampleGeneratorLib/DatasetConverters/readers/GenericDatasetReader.h>
 #include "TabHandler.h"
 #include "ListViewConfig.h"
 

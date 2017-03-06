@@ -7,13 +7,16 @@
 #include <string>
 #include <vector>
 #include <Sample.h>
+#include "DatasetConverters/readers/DatasetReader.h"
 
 
-class RecorderReader {
+class RecorderReader: public DatasetReader {
 public:
     RecorderReader(const std::string& colorImagesPath, const std::string& depthImagesPath);
-    bool getNext(Sample& sample);
+    bool getNextSample(Sample &sample);
     int getNumSamples();
+//    virtual bool getNextSample(Sample &sample);
+
 
 private:
     const  std::string depthPath;

@@ -3,9 +3,10 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 
-
-SET(EXTRA_LIBS ${EXTRA_LIBS} ${DARKNET_LIBRARIES} ${CUDA_LIBRARIES} -L/usr/local/cuda/lib64 cudart cublas curand)
-
+IF (DARKNET_ACTIVE)
+    SET(EXTRA_LIBS ${EXTRA_LIBS} ${DARKNET_LIBRARIES} ${CUDA_LIBRARIES} -L/usr/local/cuda/lib64 cudart cublas curand)
+    include_directories(${DARKNET_INCLUDE_DIR})
+ENDIF()
 
 
 set (SOURCES main.cpp
@@ -14,7 +15,6 @@ set (SOURCES main.cpp
 
 
 include_directories(
-        include_directories(${DARKNET_INCLUDE_DIR})
         ${JdeRobot_INCLUDE_DIRS}
         ${OpenCV_INCLUDE_DIRS}
         ${Boost_INCLUDE_DIR}

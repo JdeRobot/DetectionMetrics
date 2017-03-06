@@ -6,7 +6,7 @@
 #include <Utils/Logger.h>
 #include <boost/filesystem/path.hpp>
 #include "YoloDatasetReader.h"
-#include "ClassTypeGeneric.h"
+#include "DatasetConverters/ClassTypeGeneric.h"
 
 
 bool replace(std::string& str, const std::string& from, const std::string& to) {

@@ -6,7 +6,7 @@
 #define SAMPLERGENERATOR_YOLODATASETREADER_H
 
 
-#include "DatasetReader.h"
+#include <DatasetConverters/readers/DatasetReader.h>
 
 class YoloDatasetReader: public DatasetReader {
 public:

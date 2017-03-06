@@ -5,7 +5,7 @@
 #include <boost/filesystem.hpp>
 #include <Utils/Logger.h>
 #include <boost/lexical_cast.hpp>
-#include "OwnDatasetReader.h"
+#include "DatasetConverters/readers/OwnDatasetReader.h"
 
 OwnDatasetReader::OwnDatasetReader(const std::string &path,const std::string& classNamesFile){
     this->classNamesFile=classNamesFile;
