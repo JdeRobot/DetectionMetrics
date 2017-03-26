@@ -3,7 +3,7 @@
 //
 
 #include <fstream>
-#include <Utils/Logger.h>
+#include <glog/logging.h>
 #include <boost/filesystem/path.hpp>
 #include "YoloDatasetReader.h"
 #include "DatasetConverters/ClassTypeGeneric.h"
@@ -34,7 +34,7 @@ bool YoloDatasetReader::appendDataset(const std::string &datasetPath, const std:
         Sample sample;
         sample.setSampleID(datasetPrefix + boost::filesystem::path(line).filename().stem().string());
         sample.setColorImage(line);
-        Logger::getInstance()->info("Loading sample: " + line);
+        LOG(INFO) << "Loading sample: " + line;
         cv::Mat image = cv::imread(line);
         replace(line,"JPEGImages", "labels");
         replace(line,".jpg", ".txt");

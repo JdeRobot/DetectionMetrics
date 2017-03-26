@@ -12,7 +12,7 @@
 #include "SampleGeneratorLib/GenerationUtils/DepthForegroundSegmentator.h"
 #include "SampleGeneratorLib/GenerationUtils/BoundingValidator.h"
 #include "SampleGeneratorLib/GenerationUtils/DetectionsValidator.h"
-#include <SampleGeneratorLib/Utils/Logger.h>
+#include <glog/logging.h>
 #include <SampleGeneratorLib/Utils/SampleGenerationApp.h>
 #include <SampleGeneratorLib/FrameworkEvaluator/FrameworkInferencer.h>
 
@@ -52,7 +52,7 @@ public:
                 counter++;
                 std::stringstream ss;
                 ss << counter << "/" << maxElements;
-                Logger::getInstance()->info( "Processing [" + ss.str() + "]");
+                LOG(INFO) << "Processing [" + ss.str() + "]";
                 cv::Mat colorImage = sample.getColorImage().clone();
                 cv::cvtColor(colorImage, colorImage, CV_RGB2BGR);
                 if (!previousImage.empty()) {
@@ -84,11 +84,11 @@ public:
 #ifdef DARKNET_ACTIVE
                 inferencer = DarknetInferencerPtr( new DarknetInferencer(inferencerConfigKey.getValue(), inferencerWeightsKey.getValue(), inferencerNamesKey.getValue()));
 #else
-                Logger::getInstance()->error("Darknet inferencer is not available");
+                LOG(WARNING) << "Darknet inferencer is not available";
 #endif
             }
             else{
-                Logger::getInstance()->error(inferencerImplementationKey.getValue() + " is not a valid inferencer implementation");
+                LOG(WARNING) << inferencerImplementationKey.getValue() + " is not a valid inferencer implementation";
             }
 
             DetectionsValidator validator(outputPath.getValue());
@@ -99,7 +99,7 @@ public:
                 counter++;
                 std::stringstream ss;
                 ss << counter << "/" << maxElements;
-                Logger::getInstance()->info("Processing [" + ss.str() + "]");
+                LOG(INFO) << "Processing [" + ss.str() + "]";
 
                 Sample detectedSample = inferencer->detect(sample.getColorImage());
 

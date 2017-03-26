@@ -2,9 +2,10 @@
 // Created by frivas on 1/02/17.
 //
 
-#include <Utils/Logger.h>
+#include <glog/logging.h>
 #include <Utils/StatsUtils.h>
 #include "DetectionsEvaluator.h"
+
 
 DetectionsEvaluator::DetectionsEvaluator(DatasetReaderPtr gt, DatasetReaderPtr detections,bool debug):gt(gt),detections(detections),debug(debug) {
 
@@ -16,8 +17,7 @@ void DetectionsEvaluator::evaluate() {
     int detectionSamples = this->detections->getNumberOfElements();
 
     if (gtSamples != detectionSamples){
-        Logger::getInstance()->error("Both dataset has not the same number of elements");
-        //exit(1);
+        LOG(WARNING) << "Both dataset has not the same number of elements";
     }
 
     Sample gtSample;
@@ -28,8 +28,9 @@ void DetectionsEvaluator::evaluate() {
         std::cout << "Evaluating: " << gtSample.getSampleID() << "(" << counter << "/" << gtSamples << ")" << std::endl;
         this->detections->getNextSample(detectionSample);
         if (gtSample.getSampleID().compare(detectionSample.getSampleID()) != 0){
-            Logger::getInstance()->error("Both dataset has not the same structure ids mismatch");
-            exit(1);
+            const std::string error="Both dataset has not the same structure ids mismatch from:" + gtSample.getSampleID() + " to " + detectionSample.getSampleID();
+            LOG(WARNING) << error;
+            throw error;
         }
 
         evaluateSamples(gtSample,detectionSample);
@@ -45,6 +46,7 @@ void DetectionsEvaluator::evaluate() {
 
     }
 }
+
 
 void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
     double thIOU = 0.5;
@@ -94,6 +96,7 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
             addFalseNegative(itGT->classID);
         }
     }
+
 }
 
 void DetectionsEvaluator::printStats() {

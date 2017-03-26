@@ -2,7 +2,7 @@
 // Created by frivas on 19/02/17.
 //
 
-#include <SampleGeneratorLib/Utils/Logger.h>
+#include <glog/logging.h>
 #include <SampleGeneratorLib/DatasetConverters/readers/GenericDatasetReader.h>
 #include "TabHandler.h"
 #include "ListViewConfig.h"

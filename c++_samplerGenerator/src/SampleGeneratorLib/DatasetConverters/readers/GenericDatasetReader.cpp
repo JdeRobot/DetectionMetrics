@@ -2,7 +2,7 @@
 // Created by frivas on 4/02/17.
 //
 
-#include <Utils/Logger.h>
+#include <glog/logging.h>
 #include "GenericDatasetReader.h"
 
 
@@ -21,12 +21,12 @@ GenericDatasetReader::GenericDatasetReader(const std::string &path, const std::s
                 this->ownDatasetReaderPtr = OwnDatasetReaderPtr( new OwnDatasetReader(path,classNamesFile));
                 break;
             default:
-                Logger::getInstance()->error(readerImplementation + " is not a valid reader implementation");
+                LOG(WARNING)<<readerImplementation + " is not a valid reader implementation";
                 break;
         }
     }
     else{
-        Logger::getInstance()->error(readerImplementation + " is not a valid reader implementation");
+        LOG(WARNING)<<readerImplementation + " is not a valid reader implementation";
     }
 }
 
@@ -65,12 +65,12 @@ GenericDatasetReader::GenericDatasetReader(const std::vector<std::string> &paths
                 }
                 break;
             default:
-                Logger::getInstance()->error(readerImplementation + " is not a valid reader implementation");
+                LOG(WARNING)<< readerImplementation + " is not a valid reader implementation";
                 break;
         }
     }
     else{
-        Logger::getInstance()->error(readerImplementation + " is not a valid reader implementation");
+        LOG(WARNING) << readerImplementation + " is not a valid reader implementation";
     }
 
 
@@ -107,7 +107,7 @@ DatasetReaderPtr GenericDatasetReader::getReader() {
         case OWN:
             return this->ownDatasetReaderPtr;
         default:
-//            Logger::getInstance()->error(imp + " is not a valid reader implementation");
+//            LOG(WARNING)<<imp + " is not a valid reader implementation");
             break;
     }
 }

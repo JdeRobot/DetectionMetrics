@@ -5,14 +5,14 @@
 #include <QtCore/QStringListModel>
 #include <boost/filesystem/path.hpp>
 #include <boost/filesystem/operations.hpp>
-#include <SampleGeneratorLib/Utils/Logger.h>
+#include <glog/logging.h>
 #include <iostream>
 #include "ListViewConfig.h"
 
 bool ListViewConfig::configureDatasetInput(QMainWindow* mainWindow, QListView *qlistView, const std::string &path,bool multipleSelection) {
 
     if (!boost::filesystem::exists(boost::filesystem::path(path))){
-        Logger::getInstance()->error("path: " + path  + " does not exist");
+        LOG(WARNING)<< "path: " + path  + " does not exist";
         return false;
     }
 
@@ -86,7 +86,7 @@ void ListViewConfig::getPathContentDatasetInput(const std::string &path, std::ve
 
 bool ListViewConfig::configureInputByFile(QMainWindow *mainWindow, QListView *qlistView, const std::string &path,bool multipleSelection) {
     if (!boost::filesystem::exists(boost::filesystem::path(path))){
-        Logger::getInstance()->error("path: " + path  + " does not exist");
+        LOG(WARNING) << "path: " + path  + " does not exist";
         return false;
     }
 

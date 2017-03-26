@@ -28,7 +28,9 @@ TARGET_LINK_LIBRARIES(sampler
     ${JdeRobot_LIBRARIES}
     ${OpenCV_LIBRARIES}
     ${Boost_LIBRARIES}
-)
+        ${GLOG_LIBRARIES}
+
+        )
 
 
 
@@ -42,6 +44,8 @@ TARGET_LINK_LIBRARIES(viewer
         ${JdeRobot_LIBRARIES}
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
+        ${GLOG_LIBRARIES}
+
         )
 
 
@@ -54,6 +58,8 @@ TARGET_LINK_LIBRARIES(converter
         ${JdeRobot_LIBRARIES}
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
+        ${GLOG_LIBRARIES}
+
         )
 
 
@@ -65,6 +71,8 @@ TARGET_LINK_LIBRARIES(detector
         ${JdeRobot_LIBRARIES}
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
+        ${GLOG_LIBRARIES}
+
         )
 
 
@@ -76,6 +84,8 @@ TARGET_LINK_LIBRARIES(evaluator
         ${JdeRobot_LIBRARIES}
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
+        ${GLOG_LIBRARIES}
+
         )
 
 add_executable (splitter splitter.cpp)
@@ -86,4 +96,6 @@ TARGET_LINK_LIBRARIES(splitter
         ${JdeRobot_LIBRARIES}
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
+        ${GLOG_LIBRARIES}
+
         )

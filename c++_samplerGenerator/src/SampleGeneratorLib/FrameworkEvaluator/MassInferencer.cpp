@@ -4,7 +4,7 @@
 
 #include <boost/filesystem/path.hpp>
 #include <boost/filesystem/operations.hpp>
-#include <Utils/Logger.h>
+#include <glog/logging.h>
 #include "MassInferencer.h"
 
 MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer,
@@ -16,8 +16,8 @@ MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr i
         boost::filesystem::create_directories(boostPath);
     }
     else{
-        Logger::getInstance()->warning("Output directory already exists");
-        Logger::getInstance()->warning("Continuing detecting");
+        LOG(WARNING)<<"Output directory already exists";
+        LOG(WARNING)<<"Continuing detecting";
         boost::filesystem::directory_iterator end_itr;
 
         for (boost::filesystem::directory_iterator itr(boostPath); itr!=end_itr; ++itr)
@@ -75,4 +75,8 @@ void MassInferencer::process(bool useDepthImages) {
             cv::waitKey(100);
         }
     }
+
+    std::cout << "Mean inference time: " << this->inferencer->getMeanDurationTime() << "(ms)" <<  std::endl;
+
+
 }

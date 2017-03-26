@@ -2,7 +2,7 @@
 // Created by frivas on 5/02/17.
 //
 
-#include <Utils/Logger.h>
+#include <glog/logging.h>
 #include "GenericDatasetWriter.h"
 
 
@@ -18,12 +18,12 @@ GenericDatasetWriter::GenericDatasetWriter(const std::string &path,DatasetReader
                 this->ownDatasetWriterPtr = OwnDatasetWriterPtr( new OwnDatasetWriter(path,reader));
                 break;
             default:
-                Logger::getInstance()->error(writerImplementation + " is not a valid writer implementation");
+                LOG(WARNING)<<writerImplementation + " is not a valid writer implementation";
                 break;
         }
     }
     else{
-        Logger::getInstance()->error(writerImplementation + " is not a valid writer implementation");
+        LOG(WARNING)<<writerImplementation + " is not a valid writer implementation";
     }
 }
 

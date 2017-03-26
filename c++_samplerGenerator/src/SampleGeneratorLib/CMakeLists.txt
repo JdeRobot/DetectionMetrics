@@ -4,7 +4,6 @@ SET( SOURCE_FILES
         GenerationUtils/BoundingValidator
         GenerationUtils/BoundingRectGuiMover
         GenerationUtils/DetectionsValidator
-        Utils/Logger
         Regions/RectRegions
         Regions/ContourRegions
         Regions/Regions.h

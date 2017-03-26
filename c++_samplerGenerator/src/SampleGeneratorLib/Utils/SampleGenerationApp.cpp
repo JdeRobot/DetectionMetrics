@@ -3,7 +3,7 @@
 //
 
 #include "SampleGenerationApp.h"
-#include "Logger.h"
+#include <glog/logging.h>
 
 #include <boost/program_options.hpp>
 #include <boost/filesystem.hpp>
@@ -32,7 +32,12 @@ SampleGenerationApp::SampleGenerationApp(int argc, char **argv):argc(argc),argv(
 
 int SampleGenerationApp::parse_arguments(const int argc, char* argv[], std::string& configFile){
 
-    Logger::getInstance()->setLevel(Logger::DEBUG);
+    for (google::LogSeverity s = google::WARNING; s < google::NUM_SEVERITIES; s++)
+        google::SetLogDestination(s, "");
+    google::SetLogDestination(google::INFO, "log.log");
+    FLAGS_alsologtostderr = 1;
+    fLI::FLAGS_max_log_size=10;
+
     try
     {
         /** Define and parse the program options
@@ -90,7 +95,7 @@ bool SampleGenerationApp::verifyRequirements() {
     bool success=true;
     for (auto it = this->requiredArguments.begin(), end =this->requiredArguments.end(); it != end; ++it){
         if (!this->config->keyExists(*it)){
-            Logger::getInstance()->error("Key: " + (*it) + " is not defined in the configuration file");
+            LOG(WARNING)<< "Key: " + (*it) + " is not defined in the configuration file";
             success=false;
         }
 

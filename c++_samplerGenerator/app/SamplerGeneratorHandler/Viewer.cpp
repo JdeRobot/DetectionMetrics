@@ -8,7 +8,7 @@
 #include "Viewer.h"
 #include "SamplerGenerationHandler.h"
 #include <opencv2/opencv.hpp>
-#include <SampleGeneratorLib/Utils/Logger.h>
+#include <glog/logging.h>
 
 namespace SampleGeneratorHandler {
 

@@ -3,7 +3,7 @@
 //
 
 #include <boost/filesystem.hpp>
-#include <Utils/Logger.h>
+#include <glog/logging.h>
 #include <boost/lexical_cast.hpp>
 #include "DatasetConverters/readers/OwnDatasetReader.h"
 
@@ -35,7 +35,7 @@ bool OwnDatasetReader::appendDataset(const std::string &datasetPath, const std::
         this->samples.push_back(sample);
     }
 
-    Logger::getInstance()->info("Loaded: " + boost::lexical_cast<std::string>(this->samples.size()) + " samples");
+    LOG(INFO) << "Loaded: " + boost::lexical_cast<std::string>(this->samples.size()) + " samples";
     printDatasetStats();
     return true;
 }

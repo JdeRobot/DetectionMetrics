@@ -37,4 +37,6 @@ TARGET_LINK_LIBRARIES(samplerGeneratorApp
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
         ${QT_LIBRARIES}
+        ${GLOG_LIBRARIES}
+
         )

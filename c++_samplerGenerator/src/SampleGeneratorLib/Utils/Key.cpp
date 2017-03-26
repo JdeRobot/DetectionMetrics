@@ -4,7 +4,7 @@
 
 #include <sstream>
 #include "Key.h"
-#include "Logger.h"
+#include <glog/logging.h>
 
 Key::Key(const std::string &key):key(key) {
 
@@ -24,7 +24,7 @@ std::string Key::getValue() {
         return this->values[0];
     else {
         const std::string ErrorMsg="Key [" + this->key + "] is an array not value";
-        Logger::getInstance()->error(ErrorMsg);
+        LOG(WARNING)<<ErrorMsg;
         throw ErrorMsg;
     }
 }
@@ -54,7 +54,7 @@ int Key::getNValues() {
 
 int Key::getValueAsInt() {
     if (this->values.size() != 1) {
-        Logger::getInstance()->error("Cannot extract int from array type. Key=" + this->key);
+        LOG(ERROR)<<"Cannot extract int from array type. Key=" + this->key;
         exit(1);
     }
     else{

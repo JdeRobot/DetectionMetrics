@@ -5,7 +5,7 @@
 #include <SamplerGeneratorHandler/Converter.h>
 #include <SampleGeneratorLib/DatasetConverters/readers/GenericDatasetReader.h>
 #include <SampleGeneratorLib/DatasetConverters/ClassTypeGeneric.h>
-#include <SampleGeneratorLib/Utils/Logger.h>
+#include <glog/logging.h>
 #include <QtWidgets/QFileDialog>
 #include <QtWidgets/QTreeView>
 #include <SampleGeneratorLib/DatasetConverters/writers/GenericDatasetWriter.h>
@@ -77,7 +77,7 @@ void MainWindow::handleSelectionNamesChanged() {
             break;
     }
         default:
-            Logger::getInstance()->error("Unkown tab index");
+            LOG(WARNING) << "Unkown tab index";
     }
 }
 
@@ -140,7 +140,7 @@ void MainWindow::setupTabsInformation() {
             connect(ui->listView_evaluator_detection_names->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this, SLOT(handleSelectionNamesChanged()));
             break;
         default:
-            Logger::getInstance()->error("Unkown tab index");
+            LOG(WARNING) << "Unkown tab index";
     }
 }
 

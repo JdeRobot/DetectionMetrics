@@ -3,11 +3,12 @@
 //
 
 #include "RecorderReader.h"
-#include "Utils/Logger.h"
 #include <boost/program_options.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/path.hpp>
 #include <iostream>
+#include <glog/logging.h>
+
 
 RecorderReader::RecorderReader(const std::string &colorImagesPath, const std::string &depthImagesPath):colorPath(colorImagesPath), depthPath(depthImagesPath) {
     currentIndex=0;
@@ -55,7 +56,7 @@ int RecorderReader::closest(std::vector<int> const& vec, int value) {
 bool RecorderReader::getNextSample(Sample &sample) {
     if (this->currentIndex < this->depthIndexes.size()){
         int indexValue = this->depthIndexes[currentIndex];
-        Logger::getInstance()->info("Time stamp: " + boost::lexical_cast<std::string>(indexValue));
+        LOG(INFO)<<"Time stamp: " + boost::lexical_cast<std::string>(indexValue);
 
         cv::Mat colorImage= cv::imread(getPathByIndex(this->colorPath,closest(colorIndexes,indexValue)));
         cv::cvtColor(colorImage,colorImage,CV_RGB2BGR);

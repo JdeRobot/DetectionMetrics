@@ -37,8 +37,7 @@ FIND_PACKAGE(OpenCV REQUIRED)
 FIND_PACKAGE(CUDA REQUIRED)
 FIND_PACKAGE(JdeRobot REQUIRED)
 
-message("JdeRobot" ${JdeRobot_INCLUDE_DIRS})
-message("JdeRobot" ${JdeRobot_LIBRARIES})
+ include(Deps/glog/CMakeLists.txt)
 FIND_PACKAGE(Boost REQUIRED program_options filesystem)
 FIND_PACKAGE(Qt5Widgets REQUIRED)
 FIND_PACKAGE(Qt5Core REQUIRED)
@@ -100,10 +99,53 @@ if (DARKNET_INCLUDE_DIR AND DARKNET_LIBRARIES)
 	message("DARKNET_INCLUDE_DIR: ${DARKNET_INCLUDE_DIR}")
 	message("DARKNET_LIBRARIES: ${DARKNET_LIBRARIES}")
 	SET(DARKNET_ACTIVE ON)
-	ADD_DEFINITIONS(DDARKNET_ACTIVE)
+	ADD_DEFINITIONS(-DDARKNET_ACTIVE)
 endif()
+
+
+ #glog
+ include(FindPackageHandleStandardArgs)
+
+ set(GLOG_ROOT_DIR "" CACHE PATH "Folder contains Google glog")
+
+ if(WIN32)
+	 find_path(GLOG_INCLUDE_DIR glog/logging.h
+			 PATHS ${GLOG_ROOT_DIR}/src/windows)
+ else()
+	 find_path(GLOG_INCLUDE_DIR glog/logging.h
+			 PATHS ${GLOG_ROOT_DIR})
+ endif()
+
+ if(MSVC)
+	 find_library(GLOG_LIBRARY_RELEASE libglog_static
+			 PATHS ${GLOG_ROOT_DIR}
+			 PATH_SUFFIXES Release)
+
+	 find_library(GLOG_LIBRARY_DEBUG libglog_static
+			 PATHS ${GLOG_ROOT_DIR}
+			 PATH_SUFFIXES Debug)
+
+	 set(GLOG_LIBRARY optimized ${GLOG_LIBRARY_RELEASE} debug ${GLOG_LIBRARY_DEBUG})
+ else()
+	 find_library(GLOG_LIBRARY glog
+			 PATHS ${GLOG_ROOT_DIR}
+			 PATH_SUFFIXES lib lib64)
+ endif()
+
+ find_package_handle_standard_args(Glog DEFAULT_MSG GLOG_INCLUDE_DIR GLOG_LIBRARY)
+
+ if(GLOG_FOUND)
+	 set(GLOG_INCLUDE_DIRS ${GLOG_INCLUDE_DIR})
+	 set(GLOG_LIBRARIES ${GLOG_LIBRARY})
+	 message(STATUS "Found glog    (include: ${GLOG_INCLUDE_DIR}, library: ${GLOG_LIBRARY})")
+	 mark_as_advanced(GLOG_ROOT_DIR GLOG_LIBRARY_RELEASE GLOG_LIBRARY_DEBUG
+			 GLOG_LIBRARY GLOG_INCLUDE_DIR)
+ endif()
 
 
  add_subdirectory(src)
  add_subdirectory(app)
 
+IF (BUILD_TEST)
+	add_subdirectory(test)
+ENDIF()

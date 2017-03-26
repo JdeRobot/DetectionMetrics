@@ -2,7 +2,7 @@
 // Created by frivas on 4/02/17.
 //
 
-#include <Utils/Logger.h>
+#include <glog/logging.h>
 #include "GenericInferencer.h"
 
 GenericInferencer::GenericInferencer(const std::string &netConfig, const std::string &netWeights,const std::string& classNames,
@@ -18,12 +18,12 @@ GenericInferencer::GenericInferencer(const std::string &netConfig, const std::st
                 break;
 #endif
             default:
-                Logger::getInstance()->error(implementation + " is not a valid inferencer implementation");
+                LOG(WARNING)<<implementation + " is not a valid inferencer implementation";
                 break;
         }
     }
     else{
-        Logger::getInstance()->error(implementation + " is not a valid inferencer implementation");
+        LOG(WARNING)<<implementation + " is not a valid inferencer implementation";
     }
 
 }
@@ -47,7 +47,7 @@ FrameworkInferencerPtr GenericInferencer::getInferencer() {
             return this->darknetInferencerPtr;
 #endif
         default:
-            Logger::getInstance()->error(imp + " is not a valid reader implementation");
+            LOG(WARNING)<<imp + " is not a valid reader implementation";
             break;
     }
 }

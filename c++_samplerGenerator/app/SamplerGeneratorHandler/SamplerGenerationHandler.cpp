@@ -2,7 +2,7 @@
 // Created by frivas on 19/02/17.
 //
 
-#include <SampleGeneratorLib/Utils/Logger.h>
+#include <glog/logging.h>
 #include <gui/Utils.h>
 #include "SamplerGenerationHandler.h"
 
@@ -14,19 +14,19 @@ GenericDatasetReaderPtr SampleGeneratorHandler::SamplerGenerationHandler::create
     std::vector<std::string> datasetsToShow;
 
     if (! Utils::getListViewContent(datasetList,datasetsToShow,datasetPath + "/")){
-        Logger::getInstance()->error("Select at least one dataset to read");
+        LOG(WARNING)<<"Select at least one dataset to read";
         return GenericDatasetReaderPtr();
     }
 
     std::vector<std::string> names;
     if (! Utils::getListViewContent(namesList,names,namesPath+"/")){
-        Logger::getInstance()->error("Select the dataset names related to the input dataset");
+        LOG(WARNING)<<"Select the dataset names related to the input dataset";
         return GenericDatasetReaderPtr();
     }
 
     std::vector<std::string> readerImplementation;
     if (! Utils::getListViewContent(readerImpList,readerImplementation,"")){
-        Logger::getInstance()->error("Select the reader implementation");
+        LOG(WARNING)<<"Select the reader implementation";
         return GenericDatasetReaderPtr();
     }
 

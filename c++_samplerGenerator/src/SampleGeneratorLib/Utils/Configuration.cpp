@@ -8,7 +8,7 @@
 #include <sstream>
 #include <iostream>
 #include "Configuration.h"
-#include "Logger.h"
+#include <glog/logging.h>
 #include <boost/algorithm/string/predicate.hpp>
 
 Configuration::Configuration(const std::string &configFilePath):configFilePath(configFilePath) {
@@ -26,7 +26,7 @@ Configuration::Configuration(const std::string &configFilePath):configFilePath(c
             if (boost::starts_with(line, "--")){
                 key = line.erase(0,2);
                 if (this->config.count(key)){
-                    Logger::getInstance()->error("Duplicated key in configuration file: " + key);
+                    LOG(ERROR) << "Duplicated key in configuration file: " + key;
                     exit(1);
                 }
                 else {
@@ -36,7 +36,7 @@ Configuration::Configuration(const std::string &configFilePath):configFilePath(c
             }
             else{
                 if (key.empty()){
-                    Logger::getInstance()->warning("Error no key detected for " + line + " value");
+                    LOG(WARNING) << "Error no key detected for " + line + " value";
                 }
                 else{
                     this->config[key].addValue(line);
@@ -70,7 +70,7 @@ Configuration::Configuration() {
 
 Key Configuration::getKey(const std::string &key) {
     if (this->config.count(key)==0) {
-        Logger::getInstance()->error("Key: " + key + " does not exists inside the configuration");
+        LOG(ERROR) << "Key: " + key + " does not exists inside the configuration";
         exit(1);
     }
     else

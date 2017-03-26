@@ -6,12 +6,13 @@
 #include <iomanip>
 #include "DetectionsValidator.h"
 #include "BoundingValidator.h"
-#include "Utils/Logger.h"
 #include <rapidjson/document.h>
 #include <rapidjson/writer.h>
 #include <fstream>
 #include <Sample.h>
 #include <boost/lexical_cast.hpp>
+#include <glog/logging.h>
+
 
 
 DetectionsValidator::DetectionsValidator(const std::string& pathToSave):validationCounter(0), path(pathToSave) {
@@ -29,14 +30,14 @@ DetectionsValidator::DetectionsValidator(const std::string& pathToSave):validati
             }
 
         }
-        Logger::getInstance()->warning("Including samples to an existing dataset, starting with: " + boost::lexical_cast<std::string>(this->validationCounter));
+        LOG(WARNING)<<"Including samples to an existing dataset, starting with: " + boost::lexical_cast<std::string>(this->validationCounter);
         char confirmation='a';
         while (confirmation != 'y' && confirmation != 'n'){
             std::cout << "Do you want to continue? (y/n)" << std::endl;
             std::cin >> confirmation;
         }
         if (confirmation=='n'){
-            Logger::getInstance()->warning("Exiting");
+            LOG(WARNING)<<"Exiting";
             exit(1);
         }
 
@@ -88,12 +89,12 @@ void DetectionsValidator::validate(const cv::Mat& colorImage,const cv::Mat& dept
 
 
             fillRectIntoImageDimensions(validatedRect,colorImage.size());
-            Logger::getInstance()->info("Validated");
+            LOG(INFO)<<"Validated";
             regions->add(validatedRect,validationID);
             cRegions->add(*it,validationID);
         }
         else{
-            Logger::getInstance()->info("Discarded");
+            LOG(INFO)<<"Discarded";
         }
     }
 
@@ -145,11 +146,11 @@ void DetectionsValidator::validate(const Sample &inputSample) {
 
 
             fillRectIntoImageDimensions(validatedRect,inputSample.getColorImage().size());
-            Logger::getInstance()->info("Validated");
+            LOG(INFO)<<"Validated";
             validatedRegions->add(validatedRect,validationID);
         }
         else{
-            Logger::getInstance()->info("Discarded");
+            LOG(INFO)<<"Discarded";
         }
     }
 

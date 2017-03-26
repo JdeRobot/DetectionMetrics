@@ -17,12 +17,12 @@ void DatasetReader::filterSamplesByID(std::vector<std::string> filteredIDS) {
     for (auto it=old_samples.begin(), end=old_samples.end(); it != end; ++it){
         Sample& sample =*it;
         sample.filterSamplesByID(filteredIDS);
-        if (sample.getContourRegions() && sample.getContourRegions()->empty() && sample.getRectRegions()->empty()){
-
-        }
-        else{
-            this->samples.push_back(sample);
-        }
+        this->samples.push_back(sample);
+//        if (sample.getContourRegions() && sample.getContourRegions()->empty() && sample.getRectRegions()->empty()){
+//
+//        }
+//        else{
+//        }
     }
 }
 

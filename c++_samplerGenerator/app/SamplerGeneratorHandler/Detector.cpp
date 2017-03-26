@@ -4,7 +4,7 @@
 
 #include <SampleGeneratorLib/DatasetConverters/readers/GenericDatasetReader.h>
 #include <gui/Utils.h>
-#include <SampleGeneratorLib/Utils/Logger.h>
+#include <glog/logging.h>
 #include <SampleGeneratorLib/FrameworkEvaluator/GenericInferencer.h>
 #include <SampleGeneratorLib/FrameworkEvaluator/MassInferencer.h>
 #include "Detector.h"
@@ -19,25 +19,25 @@ void SampleGeneratorHandler::Detector::process(QListView* datasetList,QListView*
 
     std::vector<std::string> weights;
     if (! Utils::getListViewContent(weightsList,weights,weightsPath+ "/")){
-        Logger::getInstance()->error("Select the weightsList");
+        LOG(WARNING)<<"Select the weightsList";
         return;
     }
 
     std::vector<std::string> netConfiguration;
     if (! Utils::getListViewContent(netConfigList,netConfiguration,cfgPath+ "/")){
-        Logger::getInstance()->error("Select the netConfiguration");
+        LOG(WARNING)<<"Select the netConfiguration";
         return;
     }
 
     std::vector<std::string> inferencerImp;
     if (! Utils::getListViewContent(inferencerImpList,inferencerImp,"")){
-        Logger::getInstance()->error("Select the inferencer type");
+        LOG(WARNING)<<"Select the inferencer type";
         return;
     }
 
     std::vector<std::string> inferencerNames;
     if (! Utils::getListViewContent(inferencerNamesList,inferencerNames,inferencerNamesPath + "/")){
-        Logger::getInstance()->error("Select the inferencer type");
+        LOG(WARNING)<<"Select the inferencer type";
         return;
     }
 

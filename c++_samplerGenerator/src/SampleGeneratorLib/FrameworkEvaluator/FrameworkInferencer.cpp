@@ -14,7 +14,7 @@ Sample FrameworkInferencer::detect(const cv::Mat &image) {
     boost::posix_time::time_duration duration = endTime-startTime;
     long elapsedTime = duration.total_milliseconds();
     durationVector.push_back(elapsedTime);
-
+    return s;
 }
 
 int FrameworkInferencer::getMeanDurationTime() {

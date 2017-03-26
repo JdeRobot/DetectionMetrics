@@ -9,7 +9,7 @@
 #include <SampleGeneratorLib/FrameworkEvaluator/DetectionsEvaluator.h>
 #include <boost/filesystem/path.hpp>
 #include <boost/filesystem/operations.hpp>
-#include <SampleGeneratorLib/Utils/Logger.h>
+#include <glog/logging.h>
 #include <SampleGeneratorLib/DatasetConverters/writers/GenericDatasetWriter.h>
 
 

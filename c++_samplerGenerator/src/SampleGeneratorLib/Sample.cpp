@@ -3,13 +3,14 @@
 //
 
 #include "Sample.h"
-#include "Utils/Logger.h"
+#include <glog/logging.h>
 #include <iomanip>
 #include <boost/filesystem/operations.hpp>
 
 
 Sample::Sample() {
-
+    this->colorImagePath="";
+    this->depthImagePath="";
 }
 
 Sample::Sample(const cv::Mat &colorImage) {
@@ -101,7 +102,7 @@ Sample::Sample(const std::string &path, const std::string &id,bool loadDepth) {
     if (boost::filesystem::exists(boost::filesystem::path(path + "/" + id + ".json")))
         this->rectRegions=RectRegionsPtr(new RectRegions(path + "/" + id + ".json"));
     else{
-        Logger::getInstance()->error("Error " + id + " sample has not associated detection");
+        LOG(ERROR) << "Error " + id + " sample has not associated detection";
     }
 
     if (boost::filesystem::exists(boost::filesystem::path(path + "/" + id + "-region.json")))
@@ -141,10 +142,11 @@ void Sample::save(const std::string &outPath, const std::string &filename) {
 
 
     if (this->colorImage.empty()){
-        if (boost::filesystem::exists(boost::filesystem::path(this->colorImagePath))) {
-            cv::Mat image = cv::imread(this->colorImagePath);
-            cv::imwrite(outPath + "/" + filename + ".png", image);
-        }
+        if (!this->colorImagePath.empty())
+            if (boost::filesystem::exists(boost::filesystem::path(this->colorImagePath))) {
+                cv::Mat image = cv::imread(this->colorImagePath);
+                cv::imwrite(outPath + "/" + filename + ".png", image);
+            }
     }
     else
         cv::imwrite(outPath + "/" + filename + ".png",this->colorImage);
@@ -169,7 +171,7 @@ void Sample::save(const std::string &outPath) {
         this->save(outPath,this->sampleID);
     }
     else{
-        Logger::getInstance()->error("No sample id is defined, this sample will not be saved");
+        LOG(ERROR) << "No sample id is defined, this sample will not be saved";
     }
 
 }
