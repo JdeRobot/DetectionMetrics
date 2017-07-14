@@ -1,5 +1,4 @@
 SET( SOURCE_FILES
-        DatasetConverters/readers/RecorderReader
         GenerationUtils/DepthForegroundSegmentator
         GenerationUtils/BoundingValidator
         GenerationUtils/BoundingRectGuiMover
@@ -36,12 +35,15 @@ SET( SOURCE_FILES
         DatasetConverters/writers/OwnDatasetWriter
         DatasetConverters/writers/GenericDatasetWriter
         Utils/StatsUtils
-        DatasetConverters/readers/JderobotReader
+        DatasetConverters/liveReaders/GenericLiveReader
+        DatasetConverters/liveReaders/JderobotReader
+        DatasetConverters/liveReaders/RecorderReader
+        DatasetConverters/liveReaders/VideoReader
         )
 
 
 IF(DARKNET_ACTIVE)
-    SET( SOURCE_FILES ${SOURCE_FILES} FrameworkEvaluator/DarknetInferencer)
+    SET( SOURCE_FILES ${SOURCE_FILES} FrameworkEvaluator/DarknetInferencer DatasetConverters/liveReaders/VideoReader.cpp DatasetConverters/liveReaders/VideoReader.h)
     include_directories(${DARKNET_INCLUDE_DIR})
 ENDIF()
 

@@ -11,7 +11,7 @@
 #include <DatasetConverters/readers/DatasetReader.h>
 #include "OwnDatasetReader.h"
 
-enum READER_IMPLEMENTATIONS{OWN, SPINELLO, YOLO, RECORDER, JDEROBOT};
+enum READER_IMPLEMENTATIONS{OWN, SPINELLO, YOLO};
 
 
 class GenericDatasetReader {

@@ -11,7 +11,7 @@ ENDIF()
 
 set (SOURCES main.cpp
         mainwindow
-        gui/ListViewConfig SamplerGeneratorHandler/Viewer.cpp SamplerGeneratorHandler/Viewer.h gui/TabHandler.cpp gui/TabHandler.h SamplerGeneratorHandler/Converter.cpp SamplerGeneratorHandler/Converter.h SamplerGeneratorHandler/SamplerGenerationHandler.cpp SamplerGeneratorHandler/SamplerGenerationHandler.h gui/Utils.cpp gui/Utils.h SamplerGeneratorHandler/Detector.cpp SamplerGeneratorHandler/Detector.h SamplerGeneratorHandler/Evaluator.cpp SamplerGeneratorHandler/Evaluator.h)
+        gui/ListViewConfig SamplerGeneratorHandler/Viewer.cpp SamplerGeneratorHandler/Viewer.h gui/TabHandler.cpp gui/TabHandler.h SamplerGeneratorHandler/Converter.cpp SamplerGeneratorHandler/Converter.h SamplerGeneratorHandler/SamplerGenerationHandler.cpp SamplerGeneratorHandler/SamplerGenerationHandler.h gui/Utils.cpp gui/Utils.h SamplerGeneratorHandler/Detector.cpp SamplerGeneratorHandler/Detector.h SamplerGeneratorHandler/Evaluator.cpp SamplerGeneratorHandler/Evaluator.h SamplerGeneratorHandler/Deployer.cpp SamplerGeneratorHandler/Deployer.h)
 
 
 include_directories(
@@ -38,5 +38,5 @@ TARGET_LINK_LIBRARIES(samplerGeneratorApp
         ${Boost_LIBRARIES}
         ${QT_LIBRARIES}
         ${GLOG_LIBRARIES}
-
+        ${Ice_LIBRARIES}
         )

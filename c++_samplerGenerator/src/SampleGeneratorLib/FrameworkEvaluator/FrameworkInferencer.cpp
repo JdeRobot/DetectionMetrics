@@ -21,7 +21,10 @@ int FrameworkInferencer::getMeanDurationTime() {
     int accumulate=0;
     for (auto it = this->durationVector.begin(), end = this->durationVector.end(); it != end; ++it)
         accumulate+=(int)(*it);
-    return accumulate/(int)this->durationVector.size();
+    if (this->durationVector.size() ==0)
+        return 0;
+    else
+        return accumulate/(int)this->durationVector.size();
 }
 
 FrameworkInferencer::FrameworkInferencer() {

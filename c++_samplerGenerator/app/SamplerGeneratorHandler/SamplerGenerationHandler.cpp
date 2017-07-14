@@ -6,11 +6,12 @@
 #include <gui/Utils.h>
 #include "SamplerGenerationHandler.h"
 
-GenericDatasetReaderPtr SampleGeneratorHandler::SamplerGenerationHandler::createReaderPtr(const QListView *datasetList,
-                                                                                          const QListView *namesList,
-                                                                                          const QListView *readerImpList,
-                                                                                          const QListView *filterClasses,
-                                                                                          const std::string& datasetPath, const std::string& namesPath) {
+GenericDatasetReaderPtr SampleGeneratorHandler::SamplerGenerationHandler::createDatasetReaderPtr(
+        const QListView *datasetList,
+        const QListView *namesList,
+        const QListView *readerImpList,
+        const QListView *filterClasses,
+        const std::string &datasetPath, const std::string &namesPath) {
     std::vector<std::string> datasetsToShow;
 
     if (! Utils::getListViewContent(datasetList,datasetsToShow,datasetPath + "/")){
@@ -49,6 +50,33 @@ GenericDatasetReaderPtr SampleGeneratorHandler::SamplerGenerationHandler::create
     if (classesToFilter.size()){
         reader->getReader()->filterSamplesByID(classesToFilter);
     }
+
+    return reader;
+}
+
+GenericLiveReaderPtr SampleGeneratorHandler::SamplerGenerationHandler::createLiveReaderPtr(const QListView *namesList,
+                                                                                           const QListView *readerImpList,
+                                                                                           const std::string &infoPath,
+                                                                                           const std::string &namesPath) {
+
+    std::vector<std::string> names;
+    if (! Utils::getListViewContent(namesList,names,namesPath+"/")){
+        LOG(WARNING)<<"Select the dataset names related to the input dataset";
+        return GenericLiveReaderPtr();
+    }
+
+    std::vector<std::string> readerImplementation;
+    if (! Utils::getListViewContent(readerImpList,readerImplementation,"")){
+        LOG(WARNING)<<"Select the reader implementation";
+        return GenericLiveReaderPtr();
+    }
+
+
+    GenericLiveReaderPtr reader;
+
+    reader = GenericLiveReaderPtr(
+            new GenericLiveReader(infoPath,names[0], readerImplementation[0]));
+
 
     return reader;
 }

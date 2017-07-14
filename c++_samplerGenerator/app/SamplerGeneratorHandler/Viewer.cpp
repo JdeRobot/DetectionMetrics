@@ -14,7 +14,9 @@ namespace SampleGeneratorHandler {
 
     void Viewer::process(QListView* datasetList,QListView* namesList,QListView* readerImpList,QListView* filterClasses, const std::string& datasetPath, const std::string& namesPath) {
 
-        GenericDatasetReaderPtr reader = SamplerGenerationHandler::createReaderPtr(datasetList,namesList,readerImpList,filterClasses,datasetPath,namesPath);
+        GenericDatasetReaderPtr reader = SamplerGenerationHandler::createDatasetReaderPtr(datasetList, namesList,
+                                                                                          readerImpList, filterClasses,
+                                                                                          datasetPath, namesPath);
         if (!reader){
             return;
         }

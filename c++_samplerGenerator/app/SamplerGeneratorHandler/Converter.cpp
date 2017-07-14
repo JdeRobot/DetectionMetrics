@@ -13,7 +13,9 @@ void SampleGeneratorHandler::Converter::process(QListView *datasetList, QListVie
                                                 bool splitActive, double splitRatio,bool useColorImage) {
 
 
-    GenericDatasetReaderPtr reader = SamplerGenerationHandler::createReaderPtr(datasetList,namesList,readerImpList,filterClasses,datasetPath,namesPath);
+    GenericDatasetReaderPtr reader = SamplerGenerationHandler::createDatasetReaderPtr(datasetList, namesList,
+                                                                                      readerImpList, filterClasses,
+                                                                                      datasetPath, namesPath);
     std::vector<std::string> writerImp;
     Utils::getListViewContent(writerImpList,writerImp,"");
 

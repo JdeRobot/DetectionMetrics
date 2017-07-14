@@ -13,8 +13,16 @@ SampleGeneratorHandler::Evaluator::process(QListView *datasetListGT, QListView *
                                            const std::string &datasetPath, const std::string &namesGTPath,
                                            const std::string &inferencesPath, const std::string &inferencesNamesPath,bool overWriterPersonClasses,bool enableMixEvaluation,bool showEval) {
 
-    GenericDatasetReaderPtr readerGT = SamplerGenerationHandler::createReaderPtr(datasetListGT,namesListGT,readerImpListGT,filterClasses,datasetPath,inferencesNamesPath);
-    GenericDatasetReaderPtr readerDetection = SamplerGenerationHandler::createReaderPtr(datasetListDetect,namesListDetect,readerImpListDetect,filterClasses,inferencesPath,inferencesNamesPath);
+    GenericDatasetReaderPtr readerGT = SamplerGenerationHandler::createDatasetReaderPtr(datasetListGT, namesListGT,
+                                                                                        readerImpListGT, filterClasses,
+                                                                                        datasetPath,
+                                                                                        inferencesNamesPath);
+    GenericDatasetReaderPtr readerDetection = SamplerGenerationHandler::createDatasetReaderPtr(datasetListDetect,
+                                                                                               namesListDetect,
+                                                                                               readerImpListDetect,
+                                                                                               filterClasses,
+                                                                                               inferencesPath,
+                                                                                               inferencesNamesPath);
 
 
 

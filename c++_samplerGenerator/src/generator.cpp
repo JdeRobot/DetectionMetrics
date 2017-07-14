@@ -8,7 +8,7 @@
 #include <boost/filesystem/path.hpp>
 
 #include <opencv2/highgui/highgui.hpp>
-#include "SampleGeneratorLib/DatasetConverters/readers/RecorderReader.h"
+#include "SampleGeneratorLib/DatasetConverters/liveReaders/RecorderReader.h"
 #include "SampleGeneratorLib/GenerationUtils/DepthForegroundSegmentator.h"
 #include "SampleGeneratorLib/GenerationUtils/BoundingValidator.h"
 #include "SampleGeneratorLib/GenerationUtils/DetectionsValidator.h"

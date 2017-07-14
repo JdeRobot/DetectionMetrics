@@ -6,8 +6,8 @@
 #define SAMPLERGENERATOR_JDEROBOTREADER_H
 
 
-#include "DatasetReader.h"
 #include <jderobot/parallelIce/cameraClient.h>
+#include <DatasetConverters/readers/DatasetReader.h>
 
 
 class JderobotReader: public DatasetReader {

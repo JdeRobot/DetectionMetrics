@@ -31,6 +31,8 @@ private slots:
     void handleEvaluateButton();
     void handleDetectButton();
     void handleSelectOutputFolderButtonDetector();
+    void handleSelectDeployInputSource();
+    void handleProcessDeploy();
 
 };
 

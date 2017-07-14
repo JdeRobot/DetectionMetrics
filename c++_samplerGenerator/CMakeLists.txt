@@ -87,7 +87,7 @@ ENDIF()
 
 
  #darknet
- SET(DARKNET_PATH /home/frivas/devel/external/ownDarknet/darknet/code/fake)
+ SET(DARKNET_PATH /home/frivas/devel/external/ownDarknet/darknet/code/)
 
 FIND_PATH( DARKNET_INCLUDE_DIR NAMES DarknetAPI/DarknetAPI.h  PATHS ${DARKNET_PATH}/src )
 FIND_LIBRARY( DARKNET_LIBRARIES NAMES darknetLib PATHS ${DARKNET_PATH}/build/src/ )

@@ -15,7 +15,9 @@ void SampleGeneratorHandler::Detector::process(QListView* datasetList,QListView*
                                                const std::string& weightsPath, const std::string& cfgPath, const std::string& outputPath,
                                                const std::string& inferencerNamesPath, bool useDepth, bool singleEvaluation) {
 
-    GenericDatasetReaderPtr reader = SamplerGenerationHandler::createReaderPtr(datasetList,namesList,readerImpList,NULL,datasetPath,inferencerNamesPath);
+    GenericDatasetReaderPtr reader = SamplerGenerationHandler::createDatasetReaderPtr(datasetList, namesList,
+                                                                                      readerImpList, NULL, datasetPath,
+                                                                                      inferencerNamesPath);
 
     std::vector<std::string> weights;
     if (! Utils::getListViewContent(weightsList,weights,weightsPath+ "/")){

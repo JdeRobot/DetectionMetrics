@@ -13,6 +13,8 @@
 #include <SamplerGeneratorHandler/Evaluator.h>
 #include <SamplerGeneratorHandler/Detector.h>
 #include <SampleGeneratorLib/FrameworkEvaluator/GenericInferencer.h>
+#include <SampleGeneratorLib/DatasetConverters/liveReaders/GenericLiveReader.h>
+#include <SamplerGeneratorHandler/Deployer.h>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -35,6 +37,10 @@ MainWindow::MainWindow(SampleGenerationApp* app,QWidget *parent) :
     connect(ui->pushButton_convert, SIGNAL (released()),this, SLOT (handleConvertButton()));
     connect(ui->pushButton_evaluate, SIGNAL (released()),this, SLOT (handleEvaluateButton()));
     connect(ui->pushButton_detect, SIGNAL (released()),this, SLOT (handleDetectButton()));
+    connect(ui->pushButton_deploy_input, SIGNAL (released()),this, SLOT (handleSelectDeployInputSource()));
+    connect(ui->pushButton_deploy_process, SIGNAL (released()),this, SLOT (handleProcessDeploy()));
+
+
 
 
 }
@@ -51,6 +57,7 @@ void MainWindow::handleViewButton() {
 
 void MainWindow::handleSelectionNamesChanged() {
     std::string classNameFilePath;
+    std::cout << ui->tabWidget->currentIndex() << std::endl;
     switch(ui->tabWidget->currentIndex()) {
         case 0: {
             std::vector<std::string> dataSelected;
@@ -68,14 +75,19 @@ void MainWindow::handleSelectionNamesChanged() {
                                                  typeConverter.getAllAvailableClasses(), true);
             }
             break;
-        case 3:{
+        case 3: {
             std::vector<std::string> dataSelected;
-            Utils::getListViewContent(ui->listView_evaluator_detection_names,dataSelected,app->getConfig()->getKey("namesPath").getValue() + "/");
+            Utils::getListViewContent(ui->listView_evaluator_detection_names, dataSelected,
+                                      app->getConfig()->getKey("namesPath").getValue() + "/");
             ClassTypeGeneric typeConverter(dataSelected[0]);
             ListViewConfig::configureInputByData(this, ui->listView_evaluator_classFilter,
                                                  typeConverter.getAllAvailableClasses(), true);
             break;
-    }
+        }
+        case 4:{
+
+            break;
+            }
         default:
             LOG(WARNING) << "Unkown tab index";
     }
@@ -90,7 +102,7 @@ void MainWindow::setupTabsInformation() {
             ListViewConfig::configureInputByFile(this, ui->listView_viewer_names,
                                              app->getConfig()->getKey("namesPath").getValue(), false);
             ListViewConfig::configureInputByData(this, ui->listView_viewer_reader_imp,
-                                             GenericDatasetReader::getAvailableImplementations(), false);
+                                                 GenericDatasetReader::getAvailableImplementations(), false);
             connect(ui->listView_viewer_names->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this, SLOT(handleSelectionNamesChanged()));
 
             break;
@@ -138,6 +150,18 @@ void MainWindow::setupTabsInformation() {
             ListViewConfig::configureInputByData(this, ui->listView_evaluator_detection_imp,
                                                  GenericDatasetReader::getAvailableImplementations(), false);
             connect(ui->listView_evaluator_detection_names->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this, SLOT(handleSelectionNamesChanged()));
+            break;
+        case 4:
+            ListViewConfig::configureInputByFile(this, ui->listView_deploy_weights,
+                                                 app->getConfig()->getKey("weightsPath").getValue(), false);
+            ListViewConfig::configureInputByFile(this, ui->listView_deploy_net_config,
+                                                 app->getConfig()->getKey("netCfgPath").getValue(), false);
+            ListViewConfig::configureInputByData(this, ui->listView_deploy_impl,
+                                                 GenericInferencer::getAvailableImplementations(), false);
+            ListViewConfig::configureInputByFile(this, ui->listView_deploy_names_inferencer,
+                                                 app->getConfig()->getKey("namesPath").getValue(), false);
+            ListViewConfig::configureInputByData(this, ui->listView_deploy_input_imp,
+                                                 GenericLiveReader::getAvailableImplementations(), false);
             break;
         default:
             LOG(WARNING) << "Unkown tab index";
@@ -237,6 +261,42 @@ void MainWindow::handleSelectOutputFolderButtonDetector() {
     {
         directory = fd->selectedFiles()[0];
         this->ui->textEdit_detectorOutPath->setText(directory);
+    }
+}
+
+void MainWindow::handleSelectDeployInputSource() {
+    QFileDialog *fd = new QFileDialog;
+    QTreeView *tree = fd->findChild <QTreeView*>();
+    tree->setRootIsDecorated(true);
+    tree->setItemsExpandable(false);
+    fd->setFileMode(QFileDialog::AnyFile);
+//    fd->setOption(QFileDialog::Show);
+    fd->setViewMode(QFileDialog::Detail);
+    fd->setDirectory("/mnt/large/Temporal/Series");
+    int result = fd->exec();
+    QString directory;
+    if (result)
+    {
+        directory = fd->selectedFiles()[0];
+        this->ui->textEdit_deployInputPath->setText(directory);
+    }
+}
+
+void MainWindow::handleProcessDeploy() {
+    std::string inputInfo = this->ui->textEdit_deployInputPath->toPlainText().toStdString();
+
+
+
+    try{
+        SampleGeneratorHandler::Deployer::process(ui->listView_deploy_input_imp,ui->listView_deploy_weights,
+                                                  ui->listView_deploy_net_config,ui->listView_deploy_impl,ui->listView_deploy_names_inferencer,app->getConfig()->getKey("weightsPath").getValue(),
+                                                  app->getConfig()->getKey("netCfgPath").getValue(),app->getConfig()->getKey("namesPath").getValue(),inputInfo);
+    }
+    catch (const std::string& msg){
+        std::cout << "Exception detected: " << msg << std::endl;
+    }
+    catch (...){
+        std::cout << "Uknown exectip type" << std::endl;
     }
 }
 

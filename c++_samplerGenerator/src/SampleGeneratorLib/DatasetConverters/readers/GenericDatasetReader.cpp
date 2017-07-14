@@ -81,9 +81,6 @@ void GenericDatasetReader::configureAvailablesImplementations(std::vector<std::s
     data.push_back("yolo");
     data.push_back("spinello");
     data.push_back("own");
-    data.push_back("recorder");
-    data.push_back("jderobot");
-
 }
 
 READER_IMPLEMENTATIONS GenericDatasetReader::getImplementation(const std::string& readerImplementation) {
