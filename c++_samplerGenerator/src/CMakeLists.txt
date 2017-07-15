@@ -29,7 +29,9 @@ TARGET_LINK_LIBRARIES(sampler
     ${OpenCV_LIBRARIES}
     ${Boost_LIBRARIES}
         ${GLOG_LIBRARIES}
-
+        ${Ice_LIBRARIES}
+        ssl
+        crypto
         )
 
 
@@ -45,7 +47,9 @@ TARGET_LINK_LIBRARIES(viewer
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
         ${GLOG_LIBRARIES}
-
+        ${Ice_LIBRARIES}
+        ssl
+        crypto
         )
 
 
@@ -59,7 +63,9 @@ TARGET_LINK_LIBRARIES(converter
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
         ${GLOG_LIBRARIES}
-
+        ${Ice_LIBRARIES}
+        ssl
+        crypto
         )
 
 
@@ -72,7 +78,9 @@ TARGET_LINK_LIBRARIES(detector
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
         ${GLOG_LIBRARIES}
-
+        ${Ice_LIBRARIES}
+        ssl
+        crypto
         )
 
 
@@ -85,7 +93,9 @@ TARGET_LINK_LIBRARIES(evaluator
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
         ${GLOG_LIBRARIES}
-
+        ${Ice_LIBRARIES}
+        ssl
+        crypto
         )
 
 add_executable (splitter splitter.cpp)
@@ -97,5 +107,7 @@ TARGET_LINK_LIBRARIES(splitter
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
         ${GLOG_LIBRARIES}
-
+        ${Ice_LIBRARIES}
+        ssl
+        crypto
         )

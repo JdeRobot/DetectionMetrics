@@ -4,7 +4,7 @@
 
 #include <Ice/CommunicatorF.h>
 #include "JderobotReader.h"
-#include <jderobot/easyiceconfig/EasyIce.h>
+#include <easyiceconfig/EasyIce.h>
 
 JderobotReader::JderobotReader(const std::string &IceConfigFile) {
     Ice::CommunicatorPtr ic;

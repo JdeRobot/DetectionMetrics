@@ -206,7 +206,7 @@ void MainWindow::handleConvertButton() {
         std::cout << "Exception detected: " << msg << std::endl;
     }
     catch (...){
-        std::cout << "Uknown exectip type" << std::endl;
+        std::cout << "Uknown exception type" << std::endl;
     }
 }
 

@@ -39,4 +39,6 @@ TARGET_LINK_LIBRARIES(samplerGeneratorApp
         ${QT_LIBRARIES}
         ${GLOG_LIBRARIES}
         ${Ice_LIBRARIES}
+        ssl
+        crypto
         )
