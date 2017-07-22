@@ -1,0 +1,5 @@
+add_subdirectory(Converter)
+add_subdirectory(Detector)
+add_subdirectory(Evaluator)
+add_subdirectory(Splitter)
+add_subdirectory(Viewer)
