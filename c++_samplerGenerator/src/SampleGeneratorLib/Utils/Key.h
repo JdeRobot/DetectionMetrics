@@ -10,7 +10,8 @@
 
 struct Key {
     Key();
-    Key(const std::string& key);
+    explicit Key(const std::string& key);
+
 
 
     bool isVector();
@@ -26,6 +27,7 @@ struct Key {
 private:
     std::string key;
     std::vector<std::string> values;
+    bool valid;
 };
 
 

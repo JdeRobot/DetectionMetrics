@@ -5,20 +5,30 @@
 #include "RecorderReader.h"
 #include <boost/program_options.hpp>
 #include <boost/filesystem.hpp>
-#include <boost/filesystem/path.hpp>
-#include <iostream>
+#include <boost/algorithm/string/predicate.hpp>
+#include <Utils/PathHelper.h>
+#include <boost/algorithm/string/erase.hpp>
 #include <glog/logging.h>
+
 
 
 RecorderReader::RecorderReader(const std::string &colorImagesPath, const std::string &depthImagesPath):colorPath(colorImagesPath), depthPath(depthImagesPath) {
     currentIndex=0;
-
+    syncedData=false;
     getImagesByIndexes(depthPath,depthIndexes);
     getImagesByIndexes(colorPath,colorIndexes);
 }
 
 
-void RecorderReader::getImagesByIndexes(const std::string& path, std::vector<int>& indexes){
+RecorderReader::RecorderReader(const std::string &dataPath):colorPath(dataPath), depthPath(dataPath) {
+    currentIndex=0;
+    syncedData=true;
+    getImagesByIndexes(dataPath,depthIndexes,"-depth");
+    getImagesByIndexes(dataPath,colorIndexes,"-rgb");
+}
+
+
+void RecorderReader::getImagesByIndexes(const std::string& path, std::vector<int>& indexes,std::string sufix){
     indexes.clear();
     if(boost::filesystem::is_directory(path)) {
 
@@ -29,8 +39,22 @@ void RecorderReader::getImagesByIndexes(const std::string& path, std::vector<int
              dir_itr != end_iter; dir_itr++) {
 
             if (boost::filesystem::is_regular_file(*dir_itr) && dir_itr->path().extension() == ".png") {
-                boost::filesystem::path filePath;
-                indexes.push_back(std::stoi(dir_itr->path().filename().stem().string()));
+                std::string onlyIndexFilename;
+                if (not sufix.empty()) {
+                    std::string filename=dir_itr->path().stem().string();
+                    if ( ! boost::algorithm::ends_with(filename, sufix)){
+                        continue;
+                    }
+                    onlyIndexFilename=dir_itr->path().filename().stem().string();
+                    boost::erase_all(onlyIndexFilename,sufix);
+                }
+                else{
+                    onlyIndexFilename=dir_itr->path().filename().stem().string();
+                }
+                std::cout << dir_itr->path().string() << std::endl;
+                std::cout << onlyIndexFilename << std::endl;
+
+                indexes.push_back(std::stoi(onlyIndexFilename));
             }
         }
     }
@@ -38,10 +62,11 @@ void RecorderReader::getImagesByIndexes(const std::string& path, std::vector<int
 }
 
 
-std::string RecorderReader::getPathByIndex(const std::string& path, const int id){
+std::string RecorderReader::getPathByIndex(const std::string& path, int id,std::string sufix){
     std::stringstream ss;
-    ss << id << ".png";
-    return path + ss.str();
+    ss << id << sufix << ".png";
+    std::string pathCompleted = PathHelper::concatPaths(path, ss.str());
+    return pathCompleted;
 }
 
 
@@ -56,21 +81,23 @@ int RecorderReader::closest(std::vector<int> const& vec, int value) {
 bool RecorderReader::getNextSample(Sample &sample) {
     if (this->currentIndex < this->depthIndexes.size()){
         int indexValue = this->depthIndexes[currentIndex];
-        LOG(INFO)<<"Time stamp: " + boost::lexical_cast<std::string>(indexValue);
+        LOG(INFO)<<"Time stamp: " + std::to_string(indexValue);
 
-        cv::Mat colorImage= cv::imread(getPathByIndex(this->colorPath,closest(colorIndexes,indexValue)));
-        cv::cvtColor(colorImage,colorImage,CV_RGB2BGR);
+
+        cv::Mat colorImage= cv::imread(getPathByIndex(this->colorPath,closest(colorIndexes,indexValue),this->syncedData?"-rgb":""));
+//        if (!this->syncedData)
+            cv::cvtColor(colorImage,colorImage,CV_RGB2BGR);
 
         sample.setColorImage(colorImage);
-        sample.setDepthImage(getPathByIndex(this->depthPath,indexValue));
+        sample.setDepthImage(getPathByIndex(this->depthPath,indexValue,this->syncedData?"-depth":""));
         this->currentIndex++;
         return true;
     }
-    else{
-        return false;
-    }
+    return false;
 }
 
 int RecorderReader::getNumSamples() {
-    return this->depthIndexes.size();
+    return (int)this->depthIndexes.size();
 }
+
+

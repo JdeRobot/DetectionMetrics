@@ -39,11 +39,14 @@ SET( SOURCE_FILES
         DatasetConverters/liveReaders/JderobotReader
         DatasetConverters/liveReaders/RecorderReader
         DatasetConverters/liveReaders/VideoReader
+        FrameworkEvaluator/DarknetInferencer
+        DatasetConverters/liveReaders/VideoReader
+        Utils/PathHelper
         )
 
 
 IF(DARKNET_ACTIVE)
-    SET( SOURCE_FILES ${SOURCE_FILES} FrameworkEvaluator/DarknetInferencer DatasetConverters/liveReaders/VideoReader.cpp DatasetConverters/liveReaders/VideoReader.h)
+    SET( SOURCE_FILES ${SOURCE_FILES} )
     include_directories(${DARKNET_INCLUDE_DIR})
 ENDIF()
 

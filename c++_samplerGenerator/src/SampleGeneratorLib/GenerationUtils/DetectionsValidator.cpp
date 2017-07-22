@@ -6,10 +6,7 @@
 #include <iomanip>
 #include "DetectionsValidator.h"
 #include "BoundingValidator.h"
-#include <rapidjson/document.h>
-#include <rapidjson/writer.h>
 #include <fstream>
-#include <Sample.h>
 #include <boost/lexical_cast.hpp>
 #include <glog/logging.h>
 
@@ -30,7 +27,7 @@ DetectionsValidator::DetectionsValidator(const std::string& pathToSave):validati
             }
 
         }
-        LOG(WARNING)<<"Including samples to an existing dataset, starting with: " + boost::lexical_cast<std::string>(this->validationCounter);
+        LOG(WARNING)<<"Including samples to an existing dataset, starting with: " + std::to_string(this->validationCounter);
         char confirmation='a';
         while (confirmation != 'y' && confirmation != 'n'){
             std::cout << "Do you want to continue? (y/n)" << std::endl;
@@ -45,9 +42,7 @@ DetectionsValidator::DetectionsValidator(const std::string& pathToSave):validati
 
 }
 
-DetectionsValidator::~DetectionsValidator() {
-
-}
+DetectionsValidator::~DetectionsValidator()=default;
 
 
 
@@ -56,7 +51,7 @@ void DetectionsValidator::validate(const cv::Mat& colorImage,const cv::Mat& dept
     cv::Mat mask=cv::Mat(colorImage.size(), CV_8UC1,cv::Scalar(0));
 
     for (auto it= detections.begin(), end = detections.end(); it != end; ++it){
-        int idx= std::distance(detections.begin(),it);
+        int idx= (int)std::distance(detections.begin(),it);
         cv::Scalar color( 150);
         cv::drawContours( mask, detections, idx, color, CV_FILLED, 8);
     }
@@ -74,10 +69,10 @@ void DetectionsValidator::validate(const cv::Mat& colorImage,const cv::Mat& dept
     ContourRegionsPtr cRegions(new ContourRegions());
 
     BoundingValidator validator(image2show);
-    for (auto it= detections.begin(), end=detections.end(); it != end; ++it){
+    for (auto it : detections){
         cv::Rect validatedRect;
         int classVal;
-        if (validator.validate(*it,validatedRect,classVal)){
+        if (validator.validate(it,validatedRect,classVal)){
             std::string validationID;
             if (char(classVal)=='1') {
                 validationID = "person";
@@ -91,14 +86,14 @@ void DetectionsValidator::validate(const cv::Mat& colorImage,const cv::Mat& dept
             fillRectIntoImageDimensions(validatedRect,colorImage.size());
             LOG(INFO)<<"Validated";
             regions->add(validatedRect,validationID);
-            cRegions->add(*it,validationID);
+            cRegions->add(it,validationID);
         }
         else{
             LOG(INFO)<<"Discarded";
         }
     }
 
-    if (regions->getRegions().size()){
+    if (not regions->getRegions().empty()){
         Sample sample(colorImage,depthImage,regions,cRegions);
         sample.save(this->path,this->validationCounter);
         this->validationCounter++;
@@ -125,13 +120,35 @@ void DetectionsValidator::fillRectIntoImageDimensions(cv::Rect &rect, const cv::
 }
 
 void DetectionsValidator::validate(const Sample &inputSample) {
-    BoundingValidator validator(inputSample.getColorImage());
     auto rectDetections = inputSample.getRectRegions()->getRegions();
     RectRegionsPtr validatedRegions(new RectRegions());
-    cv::imshow("Source Image", inputSample.getColorImage());
+    cv::Mat initialImage=inputSample.getColorImage().clone();
+    cv::imshow("Source Image", initialImage);
     cv::waitKey(100);
     std::cout << "Number of detections: " << rectDetections.size() << std::endl;
+
+    BoundingValidator validatorNumber(initialImage);
+
+
+    validatorNumber.validateNDetections(rectDetections);
+
+
     for (auto it= rectDetections.begin(), end=rectDetections.end(); it != end; ++it){
+        //draw all detections
+        cv::Mat currentTestImage=initialImage.clone();
+
+        for (auto it2= rectDetections.begin(), end2=rectDetections.end(); it2 != end2; ++it2) {
+            if (it2== it)
+                continue;
+            cv::rectangle(currentTestImage,it2->region,cv::Scalar(255,255,0));
+            cv::imshow("Source Image", currentTestImage);
+            cv::waitKey(100);
+
+        }
+        BoundingValidator validator(currentTestImage);
+
+
+
         cv::Rect validatedRect;
         int classVal;
         if (validator.validate(it->region,validatedRect,classVal)){
@@ -154,7 +171,7 @@ void DetectionsValidator::validate(const Sample &inputSample) {
         }
     }
 
-    if (validatedRegions->getRegions().size()){
+    if (not validatedRegions->getRegions().empty()){
         Sample sample(inputSample.getColorImage(),inputSample.getDepthImage(),validatedRegions);
         sample.save(this->path,this->validationCounter);
         this->validationCounter++;

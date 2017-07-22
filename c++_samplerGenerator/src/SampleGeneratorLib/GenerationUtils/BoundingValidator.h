@@ -7,12 +7,20 @@
 
 
 #include <opencv2/opencv.hpp>
+#include <Regions/RectRegion.h>
+#include "BoundingRectGuiMover.h"
+
+static bool clicked;
+static cv::Point from, to;
+static cv::Point tempFrom;
+static BoundingRectGuiMover::MovementType movementType;
 
 class BoundingValidator {
 public:
-    BoundingValidator(const cv::Mat& image_in);
+    explicit BoundingValidator(const cv::Mat& image_in);
     bool validate(std::vector<cv::Point>& bounding,cv::Rect& validatedBound, int& key);
     bool validate(const cv::Rect& bounding,cv::Rect& validatedBound, int& key);
+    bool validateNDetections(std::vector<RectRegion>& regions);
 
 
 private:
@@ -21,6 +29,14 @@ private:
 
 
     static void CallBackFunc(int event, int x, int y, int flags, void* userdata);
+    static void CallBackFuncNumberDetections(int event, int x, int y, int flags, void* userdata);
+
+
+
+
+
+    cv::Mat updateRegionsImage(const std::vector<RectRegion>& regions);
+
 
 };
 

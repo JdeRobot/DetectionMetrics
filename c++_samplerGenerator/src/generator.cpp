@@ -1,16 +1,12 @@
 
 
 #include <iostream>
-#include <string>
-
 #include <boost/program_options.hpp>
 #include <boost/filesystem.hpp>
-#include <boost/filesystem/path.hpp>
 
 #include <opencv2/highgui/highgui.hpp>
 #include "SampleGeneratorLib/DatasetConverters/liveReaders/RecorderReader.h"
 #include "SampleGeneratorLib/GenerationUtils/DepthForegroundSegmentator.h"
-#include "SampleGeneratorLib/GenerationUtils/BoundingValidator.h"
 #include "SampleGeneratorLib/GenerationUtils/DetectionsValidator.h"
 #include <glog/logging.h>
 #include <SampleGeneratorLib/Utils/SampleGenerationApp.h>
@@ -23,21 +19,31 @@
 class MyApp:public SampleGenerationApp{
 public:
     MyApp(int argc, char* argv[]):SampleGenerationApp(argc,argv){
-        this->requiredArguments.push_back("outputPath");
-        this->requiredArguments.push_back("colorImagesPath");
-        this->requiredArguments.push_back("depthImagesPath");
-        this->requiredArguments.push_back("detector");
+        this->requiredArguments.emplace_back("outputPath");
+        this->requiredArguments.emplace_back("reader");
+        this->requiredArguments.emplace_back("detector");
 
 
     };
-    void operator()(){
+    virtual void operator()(){
         Key outputPath=this->config->getKey("outputPath");
-        Key colorImagesPathKey=this->config->getKey("colorImagesPath");
-        Key depthImagesPathKey=this->config->getKey("depthImagesPath");
-        Key detectorKey=this->config->getKey("detector");
+        Key reader=this->config->getKey("reader");
+        Key detectorKey = this->config->getKey("detector");
+        Key colorImagesPathKey;
+        Key depthImagesPathKey;
+        Key dataPath;
 
 
-        if (detectorKey.getValue().compare("pentalo-bg")==0) {
+        if (reader.getValue() == "recorder-rgbd") {
+            dataPath = this->config->getKey("dataPath");
+        }
+        else {
+            colorImagesPathKey = this->config->getKey("colorImagesPath");
+            depthImagesPathKey = this->config->getKey("depthImagesPath");
+        }
+
+
+        if (detectorKey.getValue()=="pentalo-bg") {
 
             RecorderReader converter(colorImagesPathKey.getValue(), depthImagesPathKey.getValue());
             DepthForegroundSegmentator segmentator;
@@ -76,11 +82,18 @@ public:
             Key inferencerConfigKey=this->config->getKey("inferencerConfig");
             Key inferencerWeightsKey=this->config->getKey("inferencerWeights");
 
-            RecorderReader converter(colorImagesPathKey.getValue(), depthImagesPathKey.getValue());
+
+            RecorderReaderPtr converter;
+            if (reader.getValue() == "recorder-rgbd") {
+                converter=RecorderReaderPtr( new RecorderReader(dataPath.getValue()));
+            }
+            else{
+                converter=RecorderReaderPtr( new RecorderReader(colorImagesPathKey.getValue(), depthImagesPathKey.getValue()));
+            }
 
             FrameworkInferencerPtr inferencer;
 
-            if (inferencerImplementationKey.getValue().compare("yolo")==0) {
+            if (inferencerImplementationKey.getValue()=="yolo") {
 #ifdef DARKNET_ACTIVE
                 inferencer = DarknetInferencerPtr( new DarknetInferencer(inferencerConfigKey.getValue(), inferencerWeightsKey.getValue(), inferencerNamesKey.getValue()));
 #else
@@ -92,16 +105,34 @@ public:
             }
 
             DetectionsValidator validator(outputPath.getValue());
-            int maxElements = converter.getNumSamples();
+            int maxElements = converter->getNumSamples();
             Sample sample;
             int counter=0;
-            while (converter.getNextSample(sample)) {
+            int skipSamples=10;
+            std::random_device rd; // obtain a random number from hardware
+            std::mt19937 eng(rd()); // seed the generator
+            std::uniform_int_distribution<> distr(5, skipSamples);
+
+            while (converter->getNextSample(sample)) {
+                int samples_to_skip=distr(eng);
+                std::cout << "Skipping. " << samples_to_skip << std::endl;
+                bool validSample=false;
+                for (size_t i = 0; i < samples_to_skip; i++){
+                    validSample=converter->getNextSample(sample);
+                }
+                if (!validSample)
+                    break;
+
+
                 counter++;
                 std::stringstream ss;
                 ss << counter << "/" << maxElements;
                 LOG(INFO) << "Processing [" + ss.str() + "]";
 
                 Sample detectedSample = inferencer->detect(sample.getColorImage());
+                detectedSample.setColorImage(sample.getColorImage());
+                detectedSample.setDepthImage(sample.getDepthImage());
+
 
                 validator.validate(detectedSample);
 
