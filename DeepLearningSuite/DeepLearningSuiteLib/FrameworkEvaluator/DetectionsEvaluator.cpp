@@ -7,7 +7,9 @@
 #include "DetectionsEvaluator.h"
 
 
-DetectionsEvaluator::DetectionsEvaluator(DatasetReaderPtr gt, DatasetReaderPtr detections,bool debug):gt(gt),detections(detections),debug(debug) {
+DetectionsEvaluator::DetectionsEvaluator(DatasetReaderPtr gt, DatasetReaderPtr detections,bool debug):
+        gt(gt),detections(detections),debug(debug) {
+    thIOU = 0.5;
 
 }
 
@@ -49,7 +51,7 @@ void DetectionsEvaluator::evaluate() {
 
 
 void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
-    double thIOU = 0.5;
+    GlobalStats currentStats;
 
     auto detectionRegions = detection.getRectRegions()->getRegions();
     for (auto itDetection = detectionRegions.begin(), end = detectionRegions.end(); itDetection != end; ++itDetection) {
@@ -60,12 +62,17 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
                 double iouValue = StatsUtils::getIOU(itGT->region, itDetection->region, gt.getColorImage().size());
                 if (iouValue > thIOU) {
                     if (itDetection->classID.compare(itGT->classID) ==0) {
-                        addTruePositive(itDetection->classID);
-                        addIOU(itDetection->classID, iouValue);
+                        stats.addTruePositive(itDetection->classID);
+                        currentStats.addTruePositive(itDetection->classID);
+                        stats.addIOU(itDetection->classID, iouValue);
+                        currentStats.addIOU(itDetection->classID, iouValue);
                     }
                     else{
-                        addTruePositive(itGT->classID);
-                        addIOU(itGT->classID,iouValue );
+                        stats.addTruePositive(itGT->classID);
+                        currentStats.addTruePositive(itGT->classID);
+                        stats.addIOU(itGT->classID,iouValue );
+                        currentStats.addIOU(itGT->classID,iouValue );
+
                     }
                     matched = true;
                     break;
@@ -73,7 +80,8 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
             }
         }
         if (!matched) {
-            addFalsePositive(itDetection->classID);
+            stats.addFalsePositive(itDetection->classID);
+            currentStats.addFalsePositive(itDetection->classID);
         }
 
     }
@@ -93,24 +101,15 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
             }
         }
         if (!matched) {
-            addFalseNegative(itGT->classID);
+            stats.addFalseNegative(itGT->classID);
+            currentStats.addFalseNegative(itGT->classID);
         }
     }
 
 }
 
 void DetectionsEvaluator::printStats() {
-    if (classesToDisplay.size()==0) {
-        for (auto it = this->statsMap.begin(), end = this->statsMap.end(); it != end; ++it) {
-            it->second.printStats();
-        }
-    }
-    else{
-        for (auto it =this->classesToDisplay.begin(),end= this->classesToDisplay.end(); it != end; ++it){
-            if (this->statsMap.count(*it))
-                this->statsMap[*it].printStats();
-        }
-    }
+    this->stats.printStats(classesToDisplay);
 }
 
 bool DetectionsEvaluator::sameClass(const std::string class1, const std::string class2) {
@@ -124,53 +123,6 @@ bool DetectionsEvaluator::sameClass(const std::string class1, const std::string 
             return true;
     }
     return false;
-}
-
-void DetectionsEvaluator::addTruePositive(const std::string &classID) {
-    if (this->statsMap.count(classID)){
-        this->statsMap[classID].truePositives = this->statsMap[classID].truePositives+1;
-    }
-    else{
-        ClassStatistics s(classID);
-        s.truePositives = s.truePositives+1;
-        this->statsMap[classID]=s;
-    }
-}
-
-void DetectionsEvaluator::addFalsePositive(const std::string &classID) {
-    if (this->statsMap.count(classID)){
-        this->statsMap[classID].falsePositives = this->statsMap[classID].falsePositives+1;
-    }
-    else{
-        ClassStatistics s(classID);
-        s.falsePositives = s.falsePositives+1;
-        this->statsMap[classID]=s;
-    }
-}
-
-void DetectionsEvaluator::addFalseNegative(const std::string &classID) {
-    if (this->statsMap.count(classID)){
-        this->statsMap[classID].falseNegatives = this->statsMap[classID].falseNegatives+1;
-    }
-    else{
-        ClassStatistics s(classID);
-        s.falseNegatives = s.falseNegatives+1;
-        this->statsMap[classID]=s;
-    }
-}
-
-
-
-
-void DetectionsEvaluator::addIOU(const std::string &classID, double value) {
-    if (this->statsMap.count(classID)){
-        this->statsMap[classID].iou.push_back(value);
-    }
-    else{
-        ClassStatistics s(classID);
-        s.iou.push_back(value);
-        this->statsMap[classID]=s;
-    }
 }
 
 

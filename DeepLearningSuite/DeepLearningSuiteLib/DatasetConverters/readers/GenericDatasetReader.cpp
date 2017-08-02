@@ -20,6 +20,9 @@ GenericDatasetReader::GenericDatasetReader(const std::string &path, const std::s
             case OWN:
                 this->ownDatasetReaderPtr = OwnDatasetReaderPtr( new OwnDatasetReader(path,classNamesFile));
                 break;
+            case PRINCETON:
+                this->princetonDatasetReaderPtr = PrincetonDatasetReaderPtr( new PrincetonDatasetReader(path,classNamesFile));
+                break;
             default:
                 LOG(WARNING)<<readerImplementation + " is not a valid reader implementation";
                 break;
@@ -81,17 +84,22 @@ void GenericDatasetReader::configureAvailablesImplementations(std::vector<std::s
     data.push_back("yolo");
     data.push_back("spinello");
     data.push_back("own");
+    data.push_back("princeton");
+
 }
 
 READER_IMPLEMENTATIONS GenericDatasetReader::getImplementation(const std::string& readerImplementation) {
-    if (readerImplementation.compare("yolo")==0){
+    if (readerImplementation == "yolo"){
         return YOLO;
     }
-    if (readerImplementation.compare("spinello")==0){
+    if (readerImplementation == "spinello"){
         return SPINELLO;
     }
-    if (readerImplementation.compare("own")==0){
+    if (readerImplementation == "own"){
         return OWN;
+    }
+    if (readerImplementation == "princeton"){
+        return PRINCETON;
     }
 }
 
@@ -103,8 +111,10 @@ DatasetReaderPtr GenericDatasetReader::getReader() {
             return this->spinelloDatasetReaderPtr;
         case OWN:
             return this->ownDatasetReaderPtr;
+        case PRINCETON:
+            return this->princetonDatasetReaderPtr;
         default:
-//            LOG(WARNING)<<imp + " is not a valid reader implementation");
+            LOG(WARNING)<<imp + " is not a valid reader implementation";
             break;
     }
 }

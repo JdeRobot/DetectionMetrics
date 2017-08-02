@@ -93,6 +93,7 @@ void SampleGenerationApp::process() {
 
 bool SampleGenerationApp::verifyRequirements() {
     bool success=true;
+    this->config->showConfig();
     for (auto it = this->requiredArguments.begin(), end =this->requiredArguments.end(); it != end; ++it){
         if (!this->config->keyExists(*it)){
             LOG(WARNING)<< "Key: " + (*it) + " is not defined in the configuration file";

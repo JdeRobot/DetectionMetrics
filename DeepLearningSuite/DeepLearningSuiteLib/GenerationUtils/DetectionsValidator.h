@@ -11,7 +11,7 @@
 
 class DetectionsValidator {
 public:
-    DetectionsValidator(const std::string& pathToSave);
+    DetectionsValidator(const std::string& pathToSave, double scale=3);
     ~DetectionsValidator();
     void validate(const cv::Mat& colorImage,const cv::Mat& depthImage, std::vector<std::vector<cv::Point>>& detections);
     void validate(const Sample& inputSample);
@@ -19,6 +19,7 @@ public:
 private:
     int validationCounter;
     std::string path;
+    double scale;
 
     void fillRectIntoImageDimensions(cv::Rect& rect, const cv::Size size);
 };

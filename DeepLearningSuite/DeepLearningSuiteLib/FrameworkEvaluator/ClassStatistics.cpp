@@ -14,19 +14,19 @@ ClassStatistics::ClassStatistics():classID(""),nSamples(0),truePositives(0),fals
 }
 
 
-double ClassStatistics::getMeanIOU() {
+double ClassStatistics::getMeanIOU() const{
    return std::accumulate( this->iou.begin(), this->iou.end(), 0.0)/this->iou.size();
 }
 
-double ClassStatistics::getPrecision() {
+double ClassStatistics::getPrecision() const{
     return (double)this->truePositives/ (double)(this->truePositives + this->falsePositives);
 }
 
-double ClassStatistics::getRecall() {
+double ClassStatistics::getRecall() const{
     return  (double)this->truePositives/ (double)(this->truePositives + this->falseNegatives);
 }
 
-void ClassStatistics::printStats() {
+void ClassStatistics::printStats() const{
     std::cout << "------------------------------" << std::endl;
     std::cout << "------------------------------" << std::endl;
     std::cout << "  Class id: " << classID << std::endl;

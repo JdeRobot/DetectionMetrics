@@ -4,9 +4,9 @@
 
 #include "BoundingValidator.h"
 
-BoundingValidator::BoundingValidator(const cv::Mat &image_in) {
+BoundingValidator::BoundingValidator(const cv::Mat &image_in,double scale) {
     this->image=image_in.clone();
-    this->scale=3;
+    this->scale=scale;
 //    cv::cvtColor(this->image, this->image, CV_RGB2BGR);
     cv::resize(this->image,this->image,cv::Size(), scale,scale);
     clicked=false;

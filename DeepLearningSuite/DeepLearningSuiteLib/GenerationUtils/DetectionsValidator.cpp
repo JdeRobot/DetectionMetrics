@@ -12,7 +12,7 @@
 
 
 
-DetectionsValidator::DetectionsValidator(const std::string& pathToSave):validationCounter(0), path(pathToSave) {
+DetectionsValidator::DetectionsValidator(const std::string& pathToSave,double scale):validationCounter(0), path(pathToSave),scale(scale) {
     auto boostPath= boost::filesystem::path(this->path);
     if (!boost::filesystem::exists(boostPath)){
         boost::filesystem::create_directories(boostPath);
@@ -27,17 +27,19 @@ DetectionsValidator::DetectionsValidator(const std::string& pathToSave):validati
             }
 
         }
-        LOG(WARNING)<<"Including samples to an existing dataset, starting with: " + std::to_string(this->validationCounter);
-        char confirmation='a';
-        while (confirmation != 'y' && confirmation != 'n'){
-            std::cout << "Do you want to continue? (y/n)" << std::endl;
-            std::cin >> confirmation;
+        if (this->validationCounter != 0) {
+            LOG(WARNING) << "Including samples to an existing dataset, starting with: " +
+                            std::to_string(this->validationCounter);
+            char confirmation = 'a';
+            while (confirmation != 'y' && confirmation != 'n') {
+                std::cout << "Do you want to continue? (y/n)" << std::endl;
+                std::cin >> confirmation;
+            }
+            if (confirmation == 'n') {
+                LOG(WARNING) << "Exiting";
+                exit(1);
+            }
         }
-        if (confirmation=='n'){
-            LOG(WARNING)<<"Exiting";
-            exit(1);
-        }
-
     }
 
 }
@@ -68,7 +70,7 @@ void DetectionsValidator::validate(const cv::Mat& colorImage,const cv::Mat& dept
     RectRegionsPtr regions(new RectRegions());
     ContourRegionsPtr cRegions(new ContourRegions());
 
-    BoundingValidator validator(image2show);
+    BoundingValidator validator(image2show,scale);
     for (auto it : detections){
         cv::Rect validatedRect;
         int classVal;
@@ -101,6 +103,17 @@ void DetectionsValidator::validate(const cv::Mat& colorImage,const cv::Mat& dept
 }
 
 void DetectionsValidator::fillRectIntoImageDimensions(cv::Rect &rect, const cv::Size size) {
+    //check the format x,y -> w.h
+
+    if (rect.width < 0){
+        rect.x=rect.x-rect.width;
+        rect.width*=-1;
+    }
+    if (rect.height < 0){
+        rect.y=rect.y-rect.height;
+        rect.height*=-1;
+    }
+
     if (rect.x + rect.width > size.width){
         rect.width = size.width - rect.x - 1;
     }
@@ -127,7 +140,7 @@ void DetectionsValidator::validate(const Sample &inputSample) {
     cv::waitKey(100);
     std::cout << "Number of detections: " << rectDetections.size() << std::endl;
 
-    BoundingValidator validatorNumber(initialImage);
+    BoundingValidator validatorNumber(initialImage, this->scale);
 
 
     validatorNumber.validateNDetections(rectDetections);
@@ -145,7 +158,7 @@ void DetectionsValidator::validate(const Sample &inputSample) {
             cv::waitKey(100);
 
         }
-        BoundingValidator validator(currentTestImage);
+        BoundingValidator validator(currentTestImage, this->scale);
 
 
 

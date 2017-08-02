@@ -7,6 +7,9 @@
 #include "SpinelloDatasetReader.h"
 #include <Utils/StringHandler.h>
 #include <Utils/Normalizations.h>
+#include <bitset>
+#include <Utils/DepthUtils.h>
+#include <glog/logging.h>
 
 SpinelloDatasetReader::SpinelloDatasetReader(const std::string &path,const std::string& classNamesFile) {
     this->classNamesFile=classNamesFile;
@@ -39,13 +42,14 @@ bool SpinelloDatasetReader::appendDataset(const std::string &datasetPath, const 
     std::sort(labelFileNames.begin(), labelFileNames.end());
 
     for (auto it = labelFileNames.begin(), end=labelFileNames.end(); it != end; ++it){
+        LOG(INFO) << "Loading: " << std::distance(labelFileNames.begin(),it) << " of " << labelFileNames.size();
         std::ifstream labelFile(*it);
         std::string data;
         while(getline(labelFile,data)) {
             Sample sample;
             if (data[0] == '#')
                 continue;
-            std::vector<std::string> tokens = split(data, ' ');
+            std::vector<std::string> tokens = StringHandler::split(data, ' ');
 
 
             std::string imageID=tokens[0];
@@ -56,8 +60,11 @@ bool SpinelloDatasetReader::appendDataset(const std::string &datasetPath, const 
             std::string colorImagePath=datasetPath + "/"  + "rgb" + "/" + imageID + ".ppm";
             std::string depthImagePath=datasetPath + "/"  + "depth" + "/" + imageID + ".pgm";
             cv::Mat colorImage= cv::imread(colorImagePath);
-            cv::Mat depthImage= cv::imread(depthImagePath);
+            cv::Mat depthImage= cv::imread(depthImagePath, CV_LOAD_IMAGE_ANYDEPTH);
 
+            cv::Mat ownDepthImage;
+            DepthUtils::mat16_to_ownFormat(depthImage,ownDepthImage);
+            cv::cvtColor(ownDepthImage,ownDepthImage,CV_RGB2BGR);
 
 
             cv::Rect colorRect;
@@ -85,16 +92,14 @@ bool SpinelloDatasetReader::appendDataset(const std::string &datasetPath, const 
 
             Sample* samplePointer;
             if (this->getSampleBySampleID(&samplePointer,imageID)){
-//                std::cout << "Image already exits" << std::endl;
                 RectRegionsPtr regions=samplePointer->getRectRegions();
                 regions->add(colorRect,"person");
                 samplePointer->setRectRegions(regions);
             }
             else{
-//                std::cout << "Image does not exits" << std::endl;
                 sample.setSampleID(datasetPrefix + imageID);
                 sample.setColorImage(colorImagePath);
-                sample.setDepthImage(depthImagePath);
+                sample.setDepthImage(ownDepthImage);
                 RectRegionsPtr colorRegions(new RectRegions());
                 colorRegions->add(colorRect,"person");
                 sample.setRectRegions(colorRegions);

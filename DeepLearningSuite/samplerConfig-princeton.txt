@@ -1,11 +1,13 @@
 --outputPath
-/mnt/large/pentalo/deep/datasets/synced/URJC/labRobotics
+/mnt/large/pentalo/deep/datasets/synced/princeton
 
 --dataPath
-/mnt/large/pentalo/samples/synced/URJC/labRobotics/rgbd/rgbd1
+/mnt/large/pentalo/deep/external_datasets/princeton/EvaluationSet/bag1
+
+
 --detector
-#datasetReader
-deepLearning
+datasetReader
+#deepLearning
 #pentalo-bg
 
 --inferencerImplementation
@@ -21,8 +23,10 @@ yolo
 /mnt/large/pentalo/deep/weights/fused_trained.weights
 
 --reader
+princeton
 #spinello
-recorder-rgbd
+#recorder-rgbd
+#recorder
 
 --readerNames
 none

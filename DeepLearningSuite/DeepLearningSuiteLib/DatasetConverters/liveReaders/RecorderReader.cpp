@@ -58,6 +58,9 @@ void RecorderReader::getImagesByIndexes(const std::string& path, std::vector<int
             }
         }
     }
+    if (indexes.empty()){
+        DLOG(WARNING) << "No images found in input sample path";
+    }
     std::sort(indexes.begin(), indexes.end());
 }
 

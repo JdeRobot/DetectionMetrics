@@ -46,7 +46,7 @@ SET( SOURCE_FILES
 
 
 IF(DARKNET_ACTIVE)
-    SET( SOURCE_FILES ${SOURCE_FILES} )
+    SET( SOURCE_FILES ${SOURCE_FILES} FrameworkEvaluator/GlobalStats.cpp FrameworkEvaluator/GlobalStats.h DatasetConverters/readers/PrincetonDatasetReader.cpp DatasetConverters/readers/PrincetonDatasetReader.h Utils/JsonHelper.h Utils/DepthUtils.cpp Utils/DepthUtils.h)
     include_directories(${DARKNET_INCLUDE_DIR})
 ENDIF()
 

@@ -10,8 +10,9 @@
 #include "YoloDatasetReader.h"
 #include <DatasetConverters/readers/DatasetReader.h>
 #include "OwnDatasetReader.h"
+#include "PrincetonDatasetReader.h"
 
-enum READER_IMPLEMENTATIONS{OWN, SPINELLO, YOLO};
+enum READER_IMPLEMENTATIONS{OWN, SPINELLO, YOLO, PRINCETON};
 
 
 class GenericDatasetReader {
@@ -28,6 +29,7 @@ private:
     OwnDatasetReaderPtr ownDatasetReaderPtr;
     YoloDatasetReaderPtr yoloDatasetReaderPtr;
     SpinelloDatasetReaderPtr spinelloDatasetReaderPtr;
+    PrincetonDatasetReaderPtr princetonDatasetReaderPtr;
 
     std::vector<std::string> availableImplementations;
 

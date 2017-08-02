@@ -12,10 +12,10 @@
 struct ClassStatistics {
     ClassStatistics();
     ClassStatistics(const std::string& classID);
-    double getMeanIOU();
-    double getPrecision();
-    double getRecall();
-    void printStats();
+    double getMeanIOU() const;
+    double getPrecision() const;
+    double getRecall() const;
+    void printStats() const;
 
 
     std::string classID;

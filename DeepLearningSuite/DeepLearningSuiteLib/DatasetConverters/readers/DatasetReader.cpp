@@ -65,15 +65,17 @@ void DatasetReader::printDatasetStats() {
 
     for (auto it=samples.begin(), end=samples.end(); it != end; ++it){
         RectRegionsPtr regions = it->getRectRegions();
-        std::vector<RectRegion> regionsVector = regions->getRegions();
-        for (std::vector<RectRegion>::iterator itRegion= regionsVector.begin(), endRegion =regionsVector.end(); itRegion != endRegion; ++itRegion){
-            std::string test = itRegion->classID;
-            ClassTypeOwn typeconv(test);
-            if (classStats.count(typeconv.getClassID())){
-                classStats[typeconv.getClassID()]++;
-            }
-            else{
-                classStats.insert(std::make_pair(typeconv.getClassID(),1));
+        if (regions) {
+            std::vector<RectRegion> regionsVector = regions->getRegions();
+            for (std::vector<RectRegion>::iterator itRegion = regionsVector.begin(), endRegion = regionsVector.end();
+                 itRegion != endRegion; ++itRegion) {
+                std::string test = itRegion->classID;
+                ClassTypeOwn typeconv(test);
+                if (classStats.count(typeconv.getClassID())) {
+                    classStats[typeconv.getClassID()]++;
+                } else {
+                    classStats.insert(std::make_pair(typeconv.getClassID(), 1));
+                }
             }
         }
     }

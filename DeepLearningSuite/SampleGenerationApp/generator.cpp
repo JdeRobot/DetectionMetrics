@@ -14,6 +14,8 @@
 
 #ifdef DARKNET_ACTIVE
 #include <FrameworkEvaluator/DarknetInferencer.h>
+#include <DatasetConverters/readers/GenericDatasetReader.h>
+
 #endif
 
 class MyApp:public SampleGenerationApp{
@@ -34,12 +36,29 @@ public:
         Key dataPath;
 
 
-        if (reader.getValue() == "recorder-rgbd") {
-            dataPath = this->config->getKey("dataPath");
-        }
-        else {
+
+        if  (reader.getValue() == "recorder"){
             colorImagesPathKey = this->config->getKey("colorImagesPath");
             depthImagesPathKey = this->config->getKey("depthImagesPath");
+        }
+        else{
+            dataPath = this->config->getKey("dataPath");
+        }
+
+
+
+
+        //todo include in upper class
+        std::vector<std::string> detectorOptions;
+        detectorOptions.push_back("pentalo-bg");
+        detectorOptions.push_back("deepLearning");
+        detectorOptions.push_back("datasetReader");
+
+
+
+        if (std::find(detectorOptions.begin(),detectorOptions.end(),detectorKey.getValue())== detectorOptions.end()){
+            LOG(ERROR) << detectorKey.getValue() << " is nor supported";
+            exit(1);
         }
 
 
@@ -76,7 +95,7 @@ public:
                 validator.validate(colorImage, depthImage, detections);
             }
         }
-        else{
+        else if (detectorKey.getValue()=="deepLearning") {
             Key inferencerImplementationKey=this->config->getKey("inferencerImplementation");
             Key inferencerNamesKey=this->config->getKey("inferencerNames");
             Key inferencerConfigKey=this->config->getKey("inferencerConfig");
@@ -113,6 +132,11 @@ public:
             std::mt19937 eng(rd()); // seed the generator
             std::uniform_int_distribution<> distr(5, skipSamples);
 
+            if (maxElements==0){
+                LOG(ERROR) << "Empty sample data";
+                exit(1);
+            }
+
             while (converter->getNextSample(sample)) {
                 int samples_to_skip=distr(eng);
                 std::cout << "Skipping. " << samples_to_skip << std::endl;
@@ -139,7 +163,47 @@ public:
 
             }
         }
+        else if(detectorKey.getValue()=="datasetReader"){
+            Key readerNamesKey=this->config->getKey("readerNames");
+            //readerImplementationGT
+            GenericDatasetReaderPtr readerImp(new GenericDatasetReader(dataPath.getValue(),readerNamesKey.getValue(), reader.getValue()));
 
+
+            DetectionsValidator validator(outputPath.getValue(),1.5);
+
+            int maxElements = -1;
+            Sample sample;
+            int counter=0;
+            int skipSamples=10;
+            std::random_device rd; // obtain a random number from hardware
+            std::mt19937 eng(rd()); // seed the generator
+            std::uniform_int_distribution<> distr(5, skipSamples);
+
+            while (readerImp->getReader()->getNextSample(sample)) {
+                int samples_to_skip=distr(eng);
+                std::cout << "Skipping. " << samples_to_skip << std::endl;
+                bool validSample=false;
+                for (size_t i = 0; i < samples_to_skip; i++){
+                    validSample=readerImp->getReader()->getNextSample(sample);
+                }
+                if (!validSample)
+                    break;
+
+
+                counter++;
+                std::stringstream ss;
+                ss << counter << "/" << maxElements;
+                LOG(INFO) << "Processing [" + ss.str() + "]";
+
+
+
+
+                validator.validate(sample);
+
+
+            }
+
+        }
     };
 };
 

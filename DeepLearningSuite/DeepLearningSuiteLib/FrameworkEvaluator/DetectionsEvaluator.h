@@ -8,6 +8,7 @@
 #include <DatasetConverters/readers/DatasetReader.h>
 #include <boost/shared_ptr.hpp>
 #include "ClassStatistics.h"
+#include "GlobalStats.h"
 
 class DetectionsEvaluator {
 public:
@@ -20,7 +21,6 @@ private:
     DatasetReaderPtr gt;
     DatasetReaderPtr detections;
     bool debug;
-    std::map<std::string,ClassStatistics> statsMap;
     std::vector<std::pair<std::string, std::string>> validMixClass;
 
     void evaluateSamples(Sample gt, Sample detection);
@@ -28,12 +28,9 @@ private:
 
     bool sameClass(const std::string class1, const std::string class2);
 
-    void addTruePositive(const std::string& classID);
-    void addFalsePositive(const std::string& classID);
-    void addFalseNegative(const std::string& classID);
-    void addIOU(const std::string& classID, double value);
-
     std::vector<std::string> classesToDisplay;
+    double thIOU;
+    GlobalStats stats;
 };
 
 

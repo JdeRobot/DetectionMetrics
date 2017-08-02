@@ -11,6 +11,9 @@
 Sample::Sample() {
     this->colorImagePath="";
     this->depthImagePath="";
+    this->rectRegions=RectRegionsPtr(new RectRegions());
+    this->contourRegions=ContourRegionsPtr(new ContourRegions());
+
 }
 
 Sample::Sample(const cv::Mat &colorImage) {
