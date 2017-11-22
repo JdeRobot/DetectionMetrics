@@ -87,7 +87,6 @@ ENDIF()
 
 
 #darknet
-SET(DARKNET_PATH /home/frivas/devel/mio/darknet)
 
 IF (NOT DARKNET_PATH)
 	MESSAGE("Please to use darknet please define DARKNET_PATH to the root installation")
