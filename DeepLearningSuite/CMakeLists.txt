@@ -89,9 +89,14 @@ ENDIF()
 #darknet
 SET(DARKNET_PATH /home/frivas/devel/mio/darknet)
 
+IF (NOT DARKNET_PATH)
+	MESSAGE("Please to use darknet please define DARKNET_PATH to the root installation")
+	MESSAGE(WARNING "DARKNET DISABLE")
+ENDIF()
+
 FIND_PATH( DARKNET_INCLUDE_DIR NAMES DarknetAPI/DarknetAPI.h  PATHS ${DARKNET_PATH}/install/include )
-#SET(DARKNET_NAMES darknetAPILib darknetExamplesLib darknetLib)
-SET(DARKNET_NAMES darknetLib)
+SET(DARKNET_NAMES darknetAPILib darknetExamplesLib darknetLib)
+#SET(DARKNET_NAMES darknetLib)
 
  FOREACH(N ${DARKNET_NAMES})
 	FIND_LIBRARY( DARKNET_LIBRARIES_${N} NAMES ${N} PATHS ${DARKNET_PATH}/install/lib )
