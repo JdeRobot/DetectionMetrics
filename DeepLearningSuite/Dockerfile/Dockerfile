@@ -60,9 +60,14 @@ RUN   mkdir -p devel && cd devel && mkdir install && \
         git clone https://github.com/JdeRobot/darknet && \
         cd darknet && \
         cmake . -DCMAKE_INSTALL_PREFIX=$DARKNET_DIR && \
-        make && \
-        cmake. && \
-        sudo make install
+        make -j4 && \
+        sudo make -j4 install && \
+        cmake . && \
+        rm -rf * && \
+        cmake . -DCMAKE_INSTALL_PREFIX=$DARKNET_DIR && \
+        make -j4 && \
+        sudo make -j4 install
+
 
 
 RUN   cd devel && \
