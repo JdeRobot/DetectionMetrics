@@ -33,8 +33,11 @@ RUN cd /opt/ && mkdir devel && cd devel && \
     cd qflightinstruments && \
     qmake  qfi.pro && \
     make -j4 && \
+    make install
 
 RUN useradd -ms /bin/bash docker
+RUN 	echo "docker ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
 USER docker
 WORKDIR /home/docker
 
@@ -42,7 +45,10 @@ WORKDIR /home/docker
 RUN mkdir -p devel && cd devel && \
     git clone https://github.com/JdeRobot/JdeRobot && \
     cd JdeRobot && \
-    cmake . -DENABLE_ROS=OFF
+    cmake . -DENABLE_ROS=OFF &&\
+    make -j4 && \
+    cmake . && \
+    sudo make install
 
 
 ENV DARKNET_DIR=/home/docker/install/darknet
@@ -55,7 +61,8 @@ RUN   mkdir -p devel && cd devel && mkdir install && \
         cd darknet && \
         cmake . -DCMAKE_INSTALL_PREFIX=$DARKNET_DIR && \
         make && \
-        make install
+        cmake. && \
+        sudo make install
 
 
 RUN   cd devel && \
