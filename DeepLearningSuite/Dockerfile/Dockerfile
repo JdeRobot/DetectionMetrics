@@ -45,15 +45,18 @@ WORKDIR /home/docker
 RUN mkdir -p devel && cd devel && \
     git clone https://github.com/JdeRobot/JdeRobot && \
     cd JdeRobot && \
+    git checkout frivas_cmakeConfigWrappers && \
     cmake . -DENABLE_ROS=OFF &&\
     make -j4 && \
-    cmake . && \
-    sudo make install
+    sudo make -j4 install
 
+USER root
+RUN apt-get install -y libboost-program-options-dev
+USER docker
 
 ENV DARKNET_DIR=/home/docker/install/darknet
-ENV LIBRARY_PATH=/usr/local/cuda/lib64/
-ENV LD_LIBRAR_PATH=/usr/local/cuda/lib64/
+ENV LIBRARY_PATH=/usr/local/cuda/lib64/:usr/local/cuda/targets/x86_64-linux/lib/
+ENV LD_LIBRAR_PATH=/usr/local/cuda/lib64/:usr/local/cuda/targets/x86_64-linux/lib/
 
 
 RUN   mkdir -p devel && cd devel && mkdir install && \
@@ -61,12 +64,7 @@ RUN   mkdir -p devel && cd devel && mkdir install && \
         cd darknet && \
         cmake . -DCMAKE_INSTALL_PREFIX=$DARKNET_DIR && \
         make -j4 && \
-        sudo make -j4 install && \
-        cmake . && \
-        rm -rf * && \
-        cmake . -DCMAKE_INSTALL_PREFIX=$DARKNET_DIR && \
-        make -j4 && \
-        sudo make -j4 install
+        make -j4 install
 
 
 
@@ -74,6 +72,7 @@ RUN   cd devel && \
         git clone https://github.com/JdeRobot/DeepLearningSuite && \
         cd DeepLearningSuite && \
         cd DeepLearningSuite/ && \
-        cmake . -DDARKNET_PATH=$DARKNET_DIR
+        cmake . -DDARKNET_PATH=$DARKNET_DIR -DJdeRobot_DIR=/opt/jderobot/share/jderobot/ && \
+	make -j4
 
 
