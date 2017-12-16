@@ -93,12 +93,12 @@ IF (NOT DARKNET_PATH)
 	MESSAGE(WARNING "DARKNET DISABLE")
 ENDIF()
 
-FIND_PATH( DARKNET_INCLUDE_DIR NAMES DarknetAPI/DarknetAPI.h  PATHS ${DARKNET_PATH}/install/include )
+FIND_PATH( DARKNET_INCLUDE_DIR NAMES DarknetAPI/DarknetAPI.h  PATHS ${DARKNET_PATH}/include )
 SET(DARKNET_NAMES darknetAPILib darknetExamplesLib darknetLib)
 #SET(DARKNET_NAMES darknetLib)
 
  FOREACH(N ${DARKNET_NAMES})
-	FIND_LIBRARY( DARKNET_LIBRARIES_${N} NAMES ${N} PATHS ${DARKNET_PATH}/install/lib )
+	FIND_LIBRARY( DARKNET_LIBRARIES_${N} NAMES ${N} PATHS ${DARKNET_PATH}/lib )
 	SET(DARKNET_LIBRARIES ${DARKNET_LIBRARIES} ${DARKNET_LIBRARIES_${N}})
 
 ENDFOREACH()
@@ -117,49 +117,6 @@ else()
 	message("DARKNET_LIBRARIES: ${DARKNET_LIBRARIES}")
 	MESSAGE(WARNING "DARKNET DISABLE")
 endif()
-
-
- #glog
- include(FindPackageHandleStandardArgs)
-
- set(GLOG_ROOT_DIR "" CACHE PATH "Folder contains Google glog")
-
- if(WIN32)
-	 find_path(GLOG_INCLUDE_DIR glog/logging.h
-			 PATHS ${GLOG_ROOT_DIR}/src/windows)
- else()
-	 find_path(GLOG_INCLUDE_DIR glog/logging.h
-			 PATHS ${GLOG_ROOT_DIR})
- endif()
-
- if(MSVC)
-	 find_library(GLOG_LIBRARY_RELEASE libglog_static
-			 PATHS ${GLOG_ROOT_DIR}
-			 PATH_SUFFIXES Release)
-
-	 find_library(GLOG_LIBRARY_DEBUG libglog_static
-			 PATHS ${GLOG_ROOT_DIR}
-			 PATH_SUFFIXES Debug)
-
-	 set(GLOG_LIBRARY optimized ${GLOG_LIBRARY_RELEASE} debug ${GLOG_LIBRARY_DEBUG})
- else()
-	 find_library(GLOG_LIBRARY glog
-			 PATHS ${GLOG_ROOT_DIR}
-			 PATH_SUFFIXES lib lib64)
- endif()
-
- find_package_handle_standard_args(Glog DEFAULT_MSG GLOG_INCLUDE_DIR GLOG_LIBRARY)
-
- if(GLOG_FOUND)
-	 set(GLOG_INCLUDE_DIRS ${GLOG_INCLUDE_DIR})
-	 set(GLOG_LIBRARIES ${GLOG_LIBRARY})
-	 message(STATUS "Found glog    (include: ${GLOG_INCLUDE_DIR}, library: ${GLOG_LIBRARY})")
-	 mark_as_advanced(GLOG_ROOT_DIR GLOG_LIBRARY_RELEASE GLOG_LIBRARY_DEBUG
-			 GLOG_LIBRARY GLOG_INCLUDE_DIR)
- endif()
-
-
-
 
  set(DeepLearningSuite_INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/DeepLearningSuiteLib)
 
