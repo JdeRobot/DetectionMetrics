@@ -45,7 +45,6 @@ WORKDIR /home/docker
 RUN mkdir -p devel && cd devel && \
     git clone https://github.com/JdeRobot/JdeRobot && \
     cd JdeRobot && \
-    git checkout frivas_cmakeConfigWrappers && \
     cmake . -DENABLE_ROS=OFF &&\
     make -j4 && \
     sudo make -j4 install
