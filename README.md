@@ -104,8 +104,31 @@ Once you have all the deps installed just:
     cmake . -DDARKNET_PATH=<DARKNET_DIR>
 ```
 
+
+# Testing detectionsuite
+As an example you can use Pascal VOC dataset on darknet format using the following instructions to convert to the desired format:
+```
+wget https://pjreddie.com/media/files/VOCtrainval_11-May-2012.tar
+wget https://pjreddie.com/media/files/VOCtrainval_06-Nov-2007.tar
+wget https://pjreddie.com/media/files/VOCtest_06-Nov-2007.tar
+tar xf VOCtrainval_11-May-2012.tar
+tar xf VOCtrainval_06-Nov-2007.tar
+tar xf VOCtest_06-Nov-2007.tar
+
+wget https://pjreddie.com/media/files/voc_label.py
+python voc_label.py
+cat 2007_train.txt 2007_val.txt 2012_*.txt > train.txt
+```
+
+In order to use darknet to detect objectd over the images you have to download the network configuration and the network weights [5] and [6]. Then set the corresponding paths into DeepLearningSuite/appConfig.txt. You have also to create a file with the corresponding name for each class detection for darknet, you can download the file directly from [7]
+
+Once you have your custom appConfig.txt you can run the DatasetEvaluationApp.
+
 # References.
 [1] http://tracking.cs.princeton.edu/dataset.html \
 [2] http://www2.informatik.uni-freiburg.de/~spinello/RGBD-dataset.html \
 [3] YOLO: https://pjreddie.com/darknet/yolo/ \
 [4] YOLO with c++ API: https://github.com/jderobot/darknet
+[5] https://pjreddie.com/media/files/yolo-voc.weights
+[6] https://github.com/pjreddie/darknet/blob/master/cfg/yolo-voc.cfg
+[7] https://github.com/pjreddie/darknet/blob/master/data/voc.names
