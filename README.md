@@ -128,7 +128,7 @@ Once you have your custom appConfig.txt you can run the DatasetEvaluationApp.
 [1] http://tracking.cs.princeton.edu/dataset.html \
 [2] http://www2.informatik.uni-freiburg.de/~spinello/RGBD-dataset.html \
 [3] YOLO: https://pjreddie.com/darknet/yolo/ \
-[4] YOLO with c++ API: https://github.com/jderobot/darknet
-[5] https://pjreddie.com/media/files/yolo-voc.weights
-[6] https://github.com/pjreddie/darknet/blob/master/cfg/yolo-voc.cfg
+[4] YOLO with c++ API: https://github.com/jderobot/darknet \
+[5] https://pjreddie.com/media/files/yolo-voc.weights \
+[6] https://github.com/pjreddie/darknet/blob/master/cfg/yolo-voc.cfg \
 [7] https://github.com/pjreddie/darknet/blob/master/data/voc.names
