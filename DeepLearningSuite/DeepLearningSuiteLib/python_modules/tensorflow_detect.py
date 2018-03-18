@@ -1,4 +1,11 @@
 import numpy as np
+import sys
+
+if not hasattr(sys, 'argv'):
+    sys.argv  = ['']
+
+
+
 import tensorflow as tf
 import time
 
