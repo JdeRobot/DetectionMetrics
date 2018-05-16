@@ -130,6 +130,7 @@ Once you have all the deps installed just:
     cd DeepLearningSuite/
 
     cmake . -DDARKNET_PATH=<DARKNET_DIR>
+    make
 ```
 
 
