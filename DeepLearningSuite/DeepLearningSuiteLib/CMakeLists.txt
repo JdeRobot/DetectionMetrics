@@ -17,6 +17,7 @@ SET( SOURCE_FILES
         DatasetConverters/readers/PascalVOCDatasetReader
         DatasetConverters/writers/PascalVOCDatasetWriter
         DatasetConverters/readers/ImageNetDatasetReader
+        DatasetConverters/readers/SamplesReader
         DatasetConverters/ClassTypeGeneric
         Regions/Region
         Regions/RectRegion

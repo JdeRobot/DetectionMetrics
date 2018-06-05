@@ -42,6 +42,11 @@ GenericDatasetReader::GenericDatasetReader(const std::string &path, const std::s
     }
 }
 
+GenericDatasetReader::GenericDatasetReader(std::vector<Sample> & samples) {
+    imp = SAMPLES_READER;
+    this->samplesReaderPtr = SamplesReaderPtr( new SamplesReader(samples) );
+
+}
 
 GenericDatasetReader::GenericDatasetReader(const std::vector<std::string> &paths, const std::string& classNamesFile,
                                            const std::string &readerImplementation) {
@@ -126,6 +131,8 @@ READER_IMPLEMENTATIONS GenericDatasetReader::getImplementation(const std::string
 
 DatasetReaderPtr GenericDatasetReader::getReader() {
     switch (imp) {
+        case SAMPLES_READER:
+            return this->samplesReaderPtr;
         case IMAGENET:
             return this->imagenetDatasetReaderPtr;
         case COCO:
