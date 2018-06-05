@@ -47,10 +47,7 @@ void MassInferencer::process(bool useDepthImages, std::vector<Sample>* samples) 
 
     while (this->reader->getNextSample(sample)){
         std::cout << "Evaluating : " << sample.getSampleID() << "(" << counter << "/" << nsamples << ")" << std::endl;
-        counter++;
-        if (counter == 10) {
-            break;
-        }
+        
         cv::Mat image =sample.getSampledColorImage();
         cv::Mat image2detect;
         if (useDepthImages)
