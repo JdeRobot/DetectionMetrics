@@ -55,10 +55,15 @@ bool PascalVOCDatasetReader::appendDataset(const std::string &datasetPath, const
         std::cout << "Corresponding Image Directory, can't be located, Skipping" << '\n';
     }
 
+    int count = 0;
+
     boost::filesystem::directory_iterator end_itr;
     for (boost::filesystem::directory_iterator itr(boostDatasetPath); itr!=end_itr; ++itr)
     {
         if (!boost::filesystem::is_directory(*itr)){
+            count++;
+            if (count == 500)
+                break;
 
             LOG(INFO) << itr->path().string() << '\n';
             boost::property_tree::ptree tree;

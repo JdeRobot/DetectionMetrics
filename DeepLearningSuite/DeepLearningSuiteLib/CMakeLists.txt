@@ -30,6 +30,7 @@ SET( SOURCE_FILES
         FrameworkEvaluator/ClassStatistics
         FrameworkEvaluator/DetectionsEvaluator
         FrameworkEvaluator/MassInferencer
+        FrameworkEvaluator/StatsWriter
         DatasetConverters/ClassTypeOwn
         DatasetConverters/ClassTypeMapper
         DatasetConverters/ClassType

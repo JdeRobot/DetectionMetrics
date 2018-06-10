@@ -9,6 +9,7 @@
 #include <boost/shared_ptr.hpp>
 #include "ClassStatistics.h"
 #include "GlobalStats.h"
+#include <DatasetConverters/ClassTypeMapper.h>
 
 class DetectionsEvaluator {
 public:
@@ -16,12 +17,14 @@ public:
     void evaluate();
     void addValidMixClass(const std::string classA, const std::string classB);
     void addClassToDisplay(const std::string& classID);
+    GlobalStats getStats();
 
 private:
     DatasetReaderPtr gt;
     DatasetReaderPtr detections;
     bool debug;
     std::vector<std::pair<std::string, std::string>> validMixClass;
+    std::unordered_map<std::string, std::string> classMapping;
 
     void evaluateSamples(Sample gt, Sample detection);
     void printStats();

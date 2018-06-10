@@ -42,9 +42,9 @@ GenericDatasetReader::GenericDatasetReader(const std::string &path, const std::s
     }
 }
 
-GenericDatasetReader::GenericDatasetReader(std::vector<Sample> & samples) {
+GenericDatasetReader::GenericDatasetReader(std::vector<Sample> & samples, std::string classNamesFile) {
     imp = SAMPLES_READER;
-    this->samplesReaderPtr = SamplesReaderPtr( new SamplesReader(samples) );
+    this->samplesReaderPtr = SamplesReaderPtr( new SamplesReader(samples, classNamesFile) );
 
 }
 

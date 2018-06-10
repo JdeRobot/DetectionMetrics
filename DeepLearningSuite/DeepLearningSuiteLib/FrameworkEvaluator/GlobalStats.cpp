@@ -60,10 +60,14 @@ void GlobalStats::printStats(const std::vector<std::string>& classesToDisplay) c
     }
     else{
         for (const std::string& it : classesToDisplay){
-            if (this->statsMap.count(it))
+            if (this->statsMap.count(it)) {
                 auto data =this->statsMap.at(it);
+                data.printStats();
+            }
         }
     }
 }
 
-
+std::map<std::string,ClassStatistics> GlobalStats::getStats() const{
+    return statsMap;
+}

@@ -24,7 +24,7 @@ class GenericDatasetReader {
 public:
     GenericDatasetReader(const std::string& path, const std::string& classNamesFile, const std::string& readerImplementation);
     GenericDatasetReader(const std::vector<std::string>& paths,const std::string& classNamesFile, const std::string& readerImplementation);
-    GenericDatasetReader(std::vector<Sample> & samples);
+    GenericDatasetReader(std::vector<Sample> & samples, std::string classNamesFile);
     DatasetReaderPtr getReader();
 
     static std::vector<std::string> getAvailableImplementations();

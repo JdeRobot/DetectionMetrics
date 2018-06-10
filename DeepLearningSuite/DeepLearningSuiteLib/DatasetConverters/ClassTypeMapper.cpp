@@ -21,7 +21,7 @@ void ClassTypeMapper::fillStringClassesVector(const std::string &classesFile) {
     }
 }
 
-bool ClassTypeMapper::mapString(std::string className) {
+bool ClassTypeMapper::mapString(std::string &className) {
     std::vector<std::string>::iterator it;
 
     it = find (this->classes.begin(), this->classes.end(), className);
@@ -46,4 +46,30 @@ bool ClassTypeMapper::mapString(std::string className) {
     }
 
     return false;
+}
+
+std::unordered_map<std::string, std::string> ClassTypeMapper::mapFile(std::string classNamesFile) {
+
+    std::unordered_map<std::string, std::string> classMap;
+
+    std::ifstream myReadFile;
+    myReadFile.open(classNamesFile);
+    std::string output;
+
+    if (myReadFile.is_open()) {
+        while (getline(myReadFile, output)) {
+            if (mapString(output))
+                classMap.insert(std::pair<std::string,std::string>(output, this->classID));
+            else
+                classMap.insert(std::pair<std::string,std::string>(output, ""));
+             //std::cout << output << '\n'; // Prints our STRING.
+
+        }
+
+    }
+
+    myReadFile.close();
+
+    return classMap;
+
 }

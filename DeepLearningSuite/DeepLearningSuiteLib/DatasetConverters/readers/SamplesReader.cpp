@@ -3,6 +3,7 @@
 
 
 
-SamplesReader::SamplesReader(std::vector<Sample> & samples) {
+SamplesReader::SamplesReader(std::vector<Sample> & samples, std::string &classNamesFile) {
     this->samples = samples;
+    this->classNamesFile = classNamesFile;
 }
