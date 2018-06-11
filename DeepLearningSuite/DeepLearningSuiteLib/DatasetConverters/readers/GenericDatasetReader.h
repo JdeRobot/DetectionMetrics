@@ -14,14 +14,17 @@
 #include <DatasetConverters/readers/DatasetReader.h>
 #include "OwnDatasetReader.h"
 #include "PrincetonDatasetReader.h"
+#include "SamplesReader.h"
 
-enum READER_IMPLEMENTATIONS{OWN, SPINELLO, COCO, IMAGENET, PASCALVOC, YOLO, PRINCETON};
+
+enum READER_IMPLEMENTATIONS{OWN, SPINELLO, SAMPLES_READER, PASCALVOC, COCO, IMAGENET, YOLO, PRINCETON};
 
 
 class GenericDatasetReader {
 public:
     GenericDatasetReader(const std::string& path, const std::string& classNamesFile, const std::string& readerImplementation);
     GenericDatasetReader(const std::vector<std::string>& paths,const std::string& classNamesFile, const std::string& readerImplementation);
+    GenericDatasetReader(std::vector<Sample> & samples);
     DatasetReaderPtr getReader();
 
     static std::vector<std::string> getAvailableImplementations();
@@ -35,6 +38,7 @@ private:
     PascalVOCDatasetReaderPtr pascalvocDatasetReaderPtr;
     COCODatasetReaderPtr cocoDatasetReaderPtr;
     ImageNetDatasetReaderPtr imagenetDatasetReaderPtr;
+    SamplesReaderPtr samplesReaderPtr;
 
     std::vector<std::string> availableImplementations;
 

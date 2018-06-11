@@ -72,7 +72,6 @@ bool PascalVOCDatasetReader::appendDataset(const std::string &datasetPath, const
             std::string m_height = tree.get<std::string>("annotation.size.height");
 
 
-            std::cout << m_id << '\n';
 
             Sample sample;
             sample.setSampleID(m_id);
