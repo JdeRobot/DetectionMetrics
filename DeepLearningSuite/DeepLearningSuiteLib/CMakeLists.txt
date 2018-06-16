@@ -1,3 +1,19 @@
+
+include_directories(
+    ${OpenCV_INCLUDE_DIRS}
+    ${Boost_INCLUDE_DIR}
+    ${config_INCLUDE_DIRS}
+    ${depthLib_INCLUDE_DIRS}
+    ${comm_INCLUDE_DIRS}
+    ${roscpp_INCLUDE_DIRS}
+    ${utils_INCLUDE_DIRS}
+    ${INTERFACES_CPP_DIR}
+    ${jderobottypes_INCLUDE_DIRS}
+    ${CMAKE_CURRENT_LIST_DIR}
+    ${QT_INCLUDE_DIRS}
+    ${DeepLearningSuite_INCLUDE_DIR}
+)
+
 SET( SOURCE_FILES
         GenerationUtils/DepthForegroundSegmentator
         GenerationUtils/BoundingValidator
@@ -47,6 +63,7 @@ SET( SOURCE_FILES
         DatasetConverters/liveReaders/GenericLiveReader
         DatasetConverters/liveReaders/JderobotReader
         DatasetConverters/liveReaders/RecorderReader
+        DatasetConverters/liveReaders/CameraReader
         DatasetConverters/liveReaders/VideoReader
         FrameworkEvaluator/DarknetInferencer
         FrameworkEvaluator/TensorFlowInferencer
@@ -62,15 +79,10 @@ IF(DARKNET_ACTIVE)
 ENDIF()
 
 
-include_directories(
-    ${JdeRobot_INCLUDE_DIRS}
-    ${OpenCV_INCLUDE_DIRS}
-    ${Boost_INCLUDE_DIR}
-    ${CMAKE_CURRENT_LIST_DIR}
-    ${DeepLearningSuite_INCLUDE_DIR}
-)
 
 message("WARNING: DeepLearningSuite_INCLUDE_DIR ${DeepLearningSuite_INCLUDE_DIR}")
 
 
-add_library (DeepLearningSuite  ${SOURCE_FILES})
+add_library (DeepLearningSuite SHARED ${SOURCE_FILES})
+
+TARGET_LINK_LIBRARIES(DeepLearningSuite ${depthLib_LIBRARIES} ${JderobotInterfaces_LIBRARIES} ${comm_LIBRARIES} ${config_LIBRARIES})
