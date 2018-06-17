@@ -11,7 +11,6 @@ add_executable (evaluator evaluator.cpp)
 TARGET_LINK_LIBRARIES(evaluator
         DeepLearningSuite
         ${EXTRA_LIBS}
-        ${DARKNET_LIBRARIES}
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
         ${GLOG_LIBRARIES}

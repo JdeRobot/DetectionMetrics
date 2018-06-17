@@ -11,7 +11,6 @@ add_executable (viewer viewer.cpp)
 TARGET_LINK_LIBRARIES(viewer
         DeepLearningSuite
         ${EXTRA_LIBS}
-        ${DARKNET_LIBRARIES}
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
         ${GLOG_LIBRARIES}

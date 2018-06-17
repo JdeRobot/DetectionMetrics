@@ -26,6 +26,7 @@ SET( SOURCE_FILES
         DatasetConverters/readers/DatasetReader
         Common/Sample
         DatasetConverters/readers/OwnDatasetReader
+	DatasetConverters/readers/PrincetonDatasetReader
         DatasetConverters/writers/YoloDatasetWriter
         DatasetConverters/readers/YoloDatasetReader
         DatasetConverters/writers/COCODatasetWriter
@@ -65,16 +66,17 @@ SET( SOURCE_FILES
         DatasetConverters/liveReaders/RecorderReader
         DatasetConverters/liveReaders/CameraReader
         DatasetConverters/liveReaders/VideoReader
-        FrameworkEvaluator/DarknetInferencer
+	FrameworkEvaluator/GlobalStats
         FrameworkEvaluator/TensorFlowInferencer
         FrameworkEvaluator/KerasInferencer
         DatasetConverters/liveReaders/VideoReader
         Utils/PathHelper
+	Utils/DepthUtils
         )
 
 
 IF(DARKNET_ACTIVE)
-    SET( SOURCE_FILES ${SOURCE_FILES} FrameworkEvaluator/GlobalStats.cpp FrameworkEvaluator/GlobalStats.h DatasetConverters/readers/PrincetonDatasetReader.cpp DatasetConverters/readers/PrincetonDatasetReader.h Utils/JsonHelper.h Utils/DepthUtils.cpp Utils/DepthUtils.h)
+    SET( SOURCE_FILES ${SOURCE_FILES} FrameworkEvaluator/DarknetInferencer Utils/JsonHelper.h)
     include_directories(${DARKNET_INCLUDE_DIR})
 ENDIF()
 

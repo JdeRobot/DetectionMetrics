@@ -11,7 +11,6 @@ add_executable (splitter splitter.cpp)
 TARGET_LINK_LIBRARIES(splitter
         DeepLearningSuite
         ${EXTRA_LIBS}
-        ${DARKNET_LIBRARIES}
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
         ${GLOG_LIBRARIES}

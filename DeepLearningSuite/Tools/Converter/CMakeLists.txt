@@ -11,7 +11,6 @@ add_executable (converter  converter.cpp)
 TARGET_LINK_LIBRARIES(converter
         DeepLearningSuite
         ${EXTRA_LIBS}
-        ${DARKNET_LIBRARIES}
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
         ${GLOG_LIBRARIES}
