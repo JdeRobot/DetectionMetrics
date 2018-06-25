@@ -98,6 +98,10 @@ void DatasetReader::printDatasetStats() {
 
 }
 
+std::string DatasetReader::getClassNamesFile() {
+    return this->classNamesFile;
+}
+
 void DatasetReader::addSample(Sample sample) {
     this->samples.push_back(sample);
 }

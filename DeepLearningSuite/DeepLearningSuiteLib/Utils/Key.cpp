@@ -40,6 +40,11 @@ std::string Key::getValue(int id) {
     }
 }
 
+std::string Key::getValueOrLast(int id) {
+    return this->values[  this->values.size()> id ? id : this->values.size() - 1 ];
+    // if id overflows return the last element of the array
+}
+
 std::vector<std::string> Key::getValues() {
     return this->values;
 }
@@ -64,4 +69,3 @@ int Key::getValueAsInt() {
         return value;
     }
 }
-

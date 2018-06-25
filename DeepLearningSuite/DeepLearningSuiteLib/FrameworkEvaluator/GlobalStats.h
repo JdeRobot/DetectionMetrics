@@ -21,6 +21,8 @@ public:
 
     void printStats(const std::vector<std::string>& classesToDisplay) const;
 
+    std::map<std::string,ClassStatistics> getStats() const;
+
 private:
     std::map<std::string,ClassStatistics> statsMap;
 

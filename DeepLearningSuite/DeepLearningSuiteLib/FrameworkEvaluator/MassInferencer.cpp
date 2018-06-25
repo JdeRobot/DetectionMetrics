@@ -10,6 +10,7 @@
 MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer,
                                const std::string &resultsPath,bool debug): reader(reader), inferencer(inferencer), resultsPath(resultsPath),debug(debug)
 {
+    saveOutput = true;
     alreadyProcessed=0;
     auto boostPath= boost::filesystem::path(this->resultsPath);
     if (!boost::filesystem::exists(boostPath)){
@@ -31,6 +32,12 @@ MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr i
     }
 }
 
+MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, bool debug): reader(reader), inferencer(inferencer), debug(debug)
+{
+        //Constructor to avoid writing results to outputPath
+        saveOutput = false;
+}
+
 void MassInferencer::process(bool useDepthImages, std::vector<Sample>* samples) {
 
     Sample sample;
@@ -46,8 +53,9 @@ void MassInferencer::process(bool useDepthImages, std::vector<Sample>* samples) 
 
 
     while (this->reader->getNextSample(sample)){
+        counter++;
         std::cout << "Evaluating : " << sample.getSampleID() << "(" << counter << "/" << nsamples << ")" << std::endl;
-        
+
         cv::Mat image =sample.getSampledColorImage();
         cv::Mat image2detect;
         if (useDepthImages)
@@ -68,7 +76,10 @@ void MassInferencer::process(bool useDepthImages, std::vector<Sample>* samples) 
         }
 
         detection.setSampleID(sample.getSampleID());
-        detection.save(this->resultsPath);
+
+        if (saveOutput)
+            detection.save(this->resultsPath);
+
         if (samples != NULL) {
             samples->push_back(detection);
         }

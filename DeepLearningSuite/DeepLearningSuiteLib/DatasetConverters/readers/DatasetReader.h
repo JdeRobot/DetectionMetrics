@@ -22,12 +22,14 @@ public:
     void printDatasetStats();
     virtual bool appendDataset(const std::string& datasetPath, const std::string& datasetPrefix="");
     void addSample(Sample sample);
+    std::string getClassNamesFile();
 
 protected:
     std::vector<Sample> samples;
     //std::string datasetPath;
     int readerCounter;
     std::string classNamesFile;
+    std::vector<std::string> classNames;
 };
 
 

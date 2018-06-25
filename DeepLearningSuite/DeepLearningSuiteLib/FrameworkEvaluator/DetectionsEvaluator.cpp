@@ -22,6 +22,10 @@ void DetectionsEvaluator::evaluate() {
         LOG(WARNING) << "Both dataset has not the same number of elements";
     }
 
+    ClassTypeMapper classMapper(this->gt->getClassNamesFile());
+    this->classMapping = classMapper.mapFile(this->detections->getClassNamesFile());
+
+
     Sample gtSample;
     Sample detectionSample;
 
@@ -47,6 +51,8 @@ void DetectionsEvaluator::evaluate() {
         }
 
     }
+
+    cv::destroyAllWindows();
 }
 
 
@@ -55,17 +61,21 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
 
     auto detectionRegions = detection.getRectRegions()->getRegions();
     for (auto itDetection = detectionRegions.begin(), end = detectionRegions.end(); itDetection != end; ++itDetection) {
+        std::string detectionClass = this->classMapping[itDetection->classID];
+        if (detectionClass.empty())
+            continue;
+
         bool matched = false;
         auto gtRegions = gt.getRectRegions()->getRegions();
         for (auto itGT = gtRegions.begin(), endGT = gtRegions.end(); itGT != endGT; ++itGT) {
-            if (sameClass(itDetection->classID,itGT->classID )){
+            if (sameClass(detectionClass,itGT->classID )){
                 double iouValue = StatsUtils::getIOU(itGT->region, itDetection->region, gt.getColorImage().size());
                 if (iouValue > thIOU) {
-                    if (itDetection->classID.compare(itGT->classID) ==0) {
-                        stats.addTruePositive(itDetection->classID);
-                        currentStats.addTruePositive(itDetection->classID);
-                        stats.addIOU(itDetection->classID, iouValue);
-                        currentStats.addIOU(itDetection->classID, iouValue);
+                    if (detectionClass.compare(itGT->classID) ==0) {
+                        stats.addTruePositive(detectionClass);
+                        currentStats.addTruePositive(detectionClass);
+                        stats.addIOU(detectionClass, iouValue);
+                        currentStats.addIOU(detectionClass, iouValue);
                     }
                     else{
                         stats.addTruePositive(itGT->classID);
@@ -80,8 +90,8 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
             }
         }
         if (!matched) {
-            stats.addFalsePositive(itDetection->classID);
-            currentStats.addFalsePositive(itDetection->classID);
+            stats.addFalsePositive(detectionClass);
+            currentStats.addFalsePositive(detectionClass);
         }
 
     }
@@ -91,6 +101,8 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
         bool matched = false;
         for (auto itDetection = detectionRegions.begin(), end = detectionRegions.end();
              itDetection != end; ++itDetection) {
+                std::string detectionClass = this->classMapping[itDetection->classID];
+
                 if (sameClass(itGT->classID,itDetection->classID )){
                 double iouValue = StatsUtils::getIOU(itGT->region, itDetection->region, gt.getColorImage().size());
 
@@ -110,6 +122,10 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
 
 void DetectionsEvaluator::printStats() {
     this->stats.printStats(classesToDisplay);
+}
+
+GlobalStats DetectionsEvaluator::getStats() {
+    return this->stats;
 }
 
 bool DetectionsEvaluator::sameClass(const std::string class1, const std::string class2) {

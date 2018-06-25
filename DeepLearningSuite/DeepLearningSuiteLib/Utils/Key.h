@@ -19,6 +19,7 @@ struct Key {
     std::string getValue();
     std::string getKey();
     std::string getValue(int id);
+    std::string getValueOrLast(int id);           //return last value if id overflows
     std::vector<std::string> getValues();
     int getValueAsInt();
 
