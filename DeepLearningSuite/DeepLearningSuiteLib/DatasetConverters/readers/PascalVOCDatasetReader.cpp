@@ -43,8 +43,12 @@ bool PascalVOCDatasetReader::appendDataset(const std::string &datasetPath, const
 
     boost::filesystem::path boostDatasetPath(datasetPath);
 
-    if (!boost::filesystem::is_directory(boostDatasetPath)) {
-        throw std::invalid_argument("Please Provide a folder containing all the annotation files, not just a single file");
+    if (boost::filesystem::exists(boostDatasetPath)) {
+        if (!boost::filesystem::is_directory(boostDatasetPath)) {
+            throw std::invalid_argument("Please Provide a folder containing all the annotation files, not just a single file");
+        }
+    } else {
+        throw std::invalid_argument("Provided Directory Path doesn't exist");
     }
 
     path img_dir;
@@ -62,7 +66,7 @@ bool PascalVOCDatasetReader::appendDataset(const std::string &datasetPath, const
     {
         if (!boost::filesystem::is_directory(*itr)){
             count++;
-            
+
             LOG(INFO) << itr->path().string() << '\n';
             boost::property_tree::ptree tree;
 

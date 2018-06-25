@@ -7,6 +7,7 @@ ENDIF()
 include_directories(
         ${JdeRobot_INCLUDE_DIRS}
         ${OpenCV_INCLUDE_DIRS}
+        ${config_INCLUDE_DIRS}
         ${Boost_INCLUDE_DIR}
         ${CMAKE_CURRENT_LIST_DIR}
         ${DeepLearningSuite_INCLUDE_DIR}

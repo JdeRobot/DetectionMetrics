@@ -92,7 +92,7 @@ Sample KerasInferencer::detectImp(const cv::Mat &image) {
 	for (auto it = detections.begin(), end=detections.end(); it !=end; ++it){
 
 		typeConverter.setId(it->classId);
-		regions->add(it->boundingBox,typeConverter.getClassString());
+		regions->add(it->boundingBox,typeConverter.getClassString(), it->probability);
 		//std::cout<< it->boundingBox.x << " " << it->boundingBox.y << " " << it->boundingBox.height << " " << it->boundingBox.width << std::endl;
 		std::cout<< typeConverter.getClassString() << ": " << it->probability << std::endl;
 	}

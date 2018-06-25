@@ -9,15 +9,17 @@
 #include <boost/shared_ptr.hpp>
 #include "Regions.h"
 #include "RectRegion.h"
+#include <algorithm>
 
 struct RectRegions:Regions {
     RectRegions(const std::string& jsonPath);
     RectRegions();
 
     void add(const cv::Rect rect, const std::string classId);
+    void add(const cv::Rect rect, const std::string classId, const double confidence_score);
     void add(const std::vector<cv::Point>& detections, const std::string classId);
     void add(int x, int y, int w, int h, const std::string classId);
-
+    void add(int x, int y, int w, int h, const std::string classId, const double confidence_score);
 
     void saveJson(const std::string& outPath);
     RectRegion getRegion(int id);

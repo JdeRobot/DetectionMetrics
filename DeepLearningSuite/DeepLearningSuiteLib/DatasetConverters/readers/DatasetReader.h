@@ -8,7 +8,7 @@
 #include <string>
 #include <Common/Sample.h>
 #include <boost/shared_ptr.hpp>
-
+#include <Common/EvalMatrix.h>
 
 class DatasetReader {
 public:

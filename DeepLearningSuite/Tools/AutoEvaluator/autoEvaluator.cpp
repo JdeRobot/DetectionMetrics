@@ -41,10 +41,11 @@ public:
             throw std::invalid_argument("Provided 'outputCSVPath' must be a single Directory, not multiple");
 
         auto boostPath= boost::filesystem::path(outputCSVKey.getValue());
-        if (!boost::filesystem::is_directory(boostPath)) {
-            throw std::invalid_argument("Provided 'outputCSVPath' must be a Directory, not a file");
-        }
-        if (!boost::filesystem::exists(boostPath)){
+        if (boost::filesystem::exists(boostPath)) {
+            if (!boost::filesystem::is_directory(boostPath)) {
+                throw std::invalid_argument("Provided 'outputCSVPath' must be a Directory, not a file");
+            }
+        } else {
             boost::filesystem::create_directories(boostPath);
         }
 
@@ -128,7 +129,7 @@ public:
                 count2++;
 
             }
-            
+
             writer.saveFile();
 
             count++;

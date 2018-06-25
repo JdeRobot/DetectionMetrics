@@ -24,6 +24,8 @@ SET( SOURCE_FILES
         Regions/Regions.h
         DatasetConverters/DatasetConverter
         DatasetConverters/readers/DatasetReader
+        Common/Matrix.h
+        Common/EvalMatrix
         Common/Sample
         DatasetConverters/readers/OwnDatasetReader
         DatasetConverters/writers/YoloDatasetWriter

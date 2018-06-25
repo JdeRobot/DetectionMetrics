@@ -18,6 +18,20 @@ void DetectionsEvaluator::evaluate() {
     int gtSamples = this->gt->getNumberOfElements();
     int detectionSamples = this->detections->getNumberOfElements();
 
+    Sample testSample;
+    int count = 0;
+    while (this->gt->getNextSample(testSample)){
+        testSample.print();
+        if (count == 500) {
+            break;
+        }
+        count++;
+    }
+
+    /*while (this->detections->getNextSample(testSample)){
+        testSample.print();
+    }*/
+
     if (gtSamples != detectionSamples){
         LOG(WARNING) << "Both dataset has not the same number of elements";
     }
@@ -28,19 +42,33 @@ void DetectionsEvaluator::evaluate() {
 
     Sample gtSample;
     Sample detectionSample;
+    Sample* gtSamplePtr;
 
-    while (this->gt->getNextSample(gtSample)){
+    Eval::EvalMatrix evalmatrix;
+
+    while (this->detections->getNextSample(detectionSample)){
         counter++;
-        std::cout << "Evaluating: " << gtSample.getSampleID() << "(" << counter << "/" << gtSamples << ")" << std::endl;
-        this->detections->getNextSample(detectionSample);
-        if (gtSample.getSampleID().compare(detectionSample.getSampleID()) != 0){
+        std::cout << "Evaluating: " << detectionSample.getSampleID() << "(" << counter << "/" << gtSamples << ")" << std::endl;
+
+
+        //this->detections->getNextSample(detectionSample);
+        if(!this->gt->getSampleBySampleID(&gtSamplePtr, detectionSample.getSampleID())) {
+            std::cout << "Can't Find Sample" << '\n';
+            continue;
+        }
+
+        if (gtSamplePtr->getSampleID().compare(detectionSample.getSampleID()) != 0){
             const std::string error="Both dataset has not the same structure ids mismatch from:" + gtSample.getSampleID() + " to " + detectionSample.getSampleID();
             LOG(WARNING) << error;
             throw error;
         }
 
-        evaluateSamples(gtSample,detectionSample);
-        printStats();
+        detectionSample.print();
+
+        evaluateSample(*gtSamplePtr,detectionSample, evalmatrix);
+        std::cout << "Size: " << gtSamplePtr->getColorImage().size() << '\n';
+        //Eval::printMatrix(evalmatrix);
+        //printStats();
 
         if (this->debug){
             cv::imshow("GT", gtSample.getSampledColorImage());
@@ -51,6 +79,8 @@ void DetectionsEvaluator::evaluate() {
         }
 
     }
+
+
 
     cv::destroyAllWindows();
     std::cout << "Evaluated Successfully" << '\n';
@@ -70,7 +100,7 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
         auto gtRegions = gt.getRectRegions()->getRegions();
         for (auto itGT = gtRegions.begin(), endGT = gtRegions.end(); itGT != endGT; ++itGT) {
             if (sameClass(detectionClass,itGT->classID )){
-                double iouValue = StatsUtils::getIOU(itGT->region, itDetection->region, gt.getColorImage().size());
+                double iouValue = StatsUtils::getIOU(itGT->region, itDetection->region);
                 if (iouValue > thIOU) {
                     if (detectionClass.compare(itGT->classID) ==0) {
                         stats.addTruePositive(detectionClass);
@@ -105,7 +135,7 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
                 std::string detectionClass = this->classMapping[itDetection->classID];
 
                 if (sameClass(itGT->classID,itDetection->classID )){
-                double iouValue = StatsUtils::getIOU(itGT->region, itDetection->region, gt.getColorImage().size());
+                double iouValue = StatsUtils::getIOU(itGT->region, itDetection->region);
 
                 if (iouValue > thIOU) {
                     matched = true;
@@ -116,6 +146,37 @@ void DetectionsEvaluator::evaluateSamples(Sample gt, Sample detection) {
         if (!matched) {
             stats.addFalseNegative(itGT->classID);
             currentStats.addFalseNegative(itGT->classID);
+        }
+    }
+
+}
+
+void DetectionsEvaluator::evaluateSample(Sample gt, Sample detection, Eval::EvalMatrix& evalmatrix) {
+
+    StatsUtils::computeIOUMatrix(gt, detection, evalmatrix);
+
+    std::string sampleID = gt.getSampleID();
+
+    auto detectionRegions = detection.getRectRegions()->getRegions();
+
+    /*for (auto itDetection = detectionRegions.begin(); itDetection != detectionRegions.end(); itDetection++) {
+
+
+    }*/
+    for (int i = 0; i < 10; i++) {
+        std::string current_class, previous_class;
+        int count = 0;
+        for (auto itDetection = detectionRegions.begin(); itDetection != detectionRegions.end(); itDetection++) {
+            previous_class = current_class;
+            current_class = itDetection->classID;
+            if (!previous_class.empty()) {
+                if (current_class != previous_class) {
+                    count++;
+                }
+            }
+
+            evalmatrix[sampleID][classID]
+
         }
     }
 

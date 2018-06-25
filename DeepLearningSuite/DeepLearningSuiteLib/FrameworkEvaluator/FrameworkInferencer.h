@@ -9,6 +9,7 @@
 #include <boost/shared_ptr.hpp>
 #include <Common/Sample.h>
 #include <boost/date_time/posix_time/posix_time.hpp>
+#include <algorithm>
 
 class FrameworkInferencer{
 public:

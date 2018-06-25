@@ -22,7 +22,7 @@ Sample DarknetInferencer::detectImp(const cv::Mat &image) {
 
     for (auto it = detections.data.begin(), end=detections.data.end(); it !=end; ++it){
         typeConverter.setId(it->classId);
-        regions->add(it->detectionBox,typeConverter.getClassString());
+        regions->add(it->detectionBox,typeConverter.getClassString(), it->probability);
         std::cout<< typeConverter.getClassString() << ": " << it->probability << std::endl;
     }
     sample.setRectRegions(regions);
