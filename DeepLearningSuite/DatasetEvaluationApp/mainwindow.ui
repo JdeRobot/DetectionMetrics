@@ -54,7 +54,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="label_1111 ">
          <property name="text">
           <string>Input Dataset</string>
          </property>
@@ -76,7 +76,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="label_27">
          <property name="text">
           <string>Dataset Names</string>
          </property>
@@ -98,7 +98,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="label_31">
          <property name="text">
           <string>Dataset implementation</string>
          </property>
@@ -120,7 +120,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
        <item>
-        <widget class="QLabel" name="label_4">
+        <widget class="QLabel" name="label_41">
          <property name="text">
           <string>Filter by class</string>
          </property>
@@ -649,6 +649,172 @@
        </item>
       </layout>
      </widget>
+     <widget class="QGroupBox" name="detector_groupBox_inferencer_params">
+      <property name="geometry">
+       <rect>
+        <x>810</x>
+        <y>150</y>
+        <width>321</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Inferencer Parameters:</string>
+      </property>
+      <widget class="QCheckBox" name="detector_checkBox_use_rgb">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>160</y>
+         <width>97</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Use RGB</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="detector_lineEdit_confidence_thresh">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>26</y>
+         <width>61</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>161</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Confidence Threshold:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_211">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>60</y>
+         <width>141</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Scaling Factor:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="detector_lineEdit_inferencer_scaling_factor">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>55</y>
+         <width>61</width>
+         <height>27</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="detector_lineEdit_mean_sub_blue">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>120</y>
+         <width>51</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>B</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="detector_lineEdit_mean_sub_green">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>120</y>
+         <width>51</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>G</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="detector_lineEdit_mean_sub_red">
+       <property name="geometry">
+        <rect>
+         <x>260</x>
+         <y>120</y>
+         <width>51</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>R</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_33">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>130</y>
+         <width>131</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Mean Subtraction:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_43">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>90</y>
+         <width>161</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Inferencer Input Size:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="detector_lineEdit_inferencer_input_width">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>88</y>
+         <width>61</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>WIdth</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="detector_lineEdit_inferencer_input_height">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>88</y>
+         <width>61</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Height</string>
+       </property>
+      </widget>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
@@ -882,7 +1048,7 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_25">
        <item>
-        <widget class="QLabel" name="label_27">
+        <widget class="QLabel" name="label_271">
          <property name="text">
           <string>Inferencer Implementation</string>
          </property>
@@ -959,7 +1125,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QLabel" name="label_31">
+     <widget class="QLabel" name="label_311">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -1008,7 +1174,7 @@
       <property name="title">
        <string>Camera Parameters:</string>
       </property>
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="label21">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -1181,7 +1347,7 @@
         <string>ICE</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_5">
+      <widget class="QLabel" name="label_51">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -1283,23 +1449,23 @@
        <string>Stop</string>
       </property>
      </widget>
-     <widget class="QGroupBox" name="groupBox">
+     <widget class="QGroupBox" name="deployer_groupBox_inferencer_params">
       <property name="geometry">
        <rect>
-        <x>740</x>
-        <y>480</y>
+        <x>710</x>
+        <y>470</y>
         <width>321</width>
-        <height>141</height>
+        <height>191</height>
        </rect>
       </property>
       <property name="title">
        <string>Inferencer Parameters</string>
       </property>
-      <widget class="QCheckBox" name="checkBox">
+      <widget class="QCheckBox" name="deployer_checkBox_use_rgb">
        <property name="geometry">
         <rect>
          <x>160</x>
-         <y>120</y>
+         <y>160</y>
          <width>97</width>
          <height>22</height>
         </rect>
@@ -1308,7 +1474,7 @@
         <string>Use RGB</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="deployer_lineEdit_confidence_thresh">
        <property name="geometry">
         <rect>
          <x>160</x>
@@ -1318,7 +1484,7 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLabel" name="label">
+      <widget class="QLabel" name="label3">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -1331,7 +1497,7 @@
         <string>Confidence Threshold:</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLabel" name="label_210">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -1344,7 +1510,7 @@
         <string>Scaling Factor:</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_2">
+      <widget class="QLineEdit" name="deployer_lineEdit_inferencer_scaling_factor">
        <property name="geometry">
         <rect>
          <x>160</x>
@@ -1354,47 +1520,98 @@
         </rect>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_3">
+      <widget class="QLineEdit" name="deployer_lineEdit_mean_sub_blue">
        <property name="geometry">
         <rect>
          <x>160</x>
-         <y>85</y>
+         <y>120</y>
          <width>51</width>
          <height>27</height>
         </rect>
        </property>
+       <property name="placeholderText">
+        <string>B</string>
+       </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_4">
+      <widget class="QLineEdit" name="deployer_lineEdit_mean_sub_green">
        <property name="geometry">
         <rect>
          <x>210</x>
-         <y>85</y>
+         <y>120</y>
          <width>51</width>
          <height>27</height>
         </rect>
        </property>
+       <property name="placeholderText">
+        <string>G</string>
+       </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit_5">
+      <widget class="QLineEdit" name="deployer_lineEdit_mean_sub_red">
        <property name="geometry">
         <rect>
          <x>260</x>
-         <y>85</y>
+         <y>120</y>
          <width>51</width>
          <height>27</height>
         </rect>
        </property>
+       <property name="placeholderText">
+        <string>R</string>
+       </property>
       </widget>
-      <widget class="QLabel" name="label_3">
+      <widget class="QLabel" name="label_32">
        <property name="geometry">
         <rect>
          <x>0</x>
-         <y>90</y>
+         <y>130</y>
          <width>131</width>
          <height>17</height>
         </rect>
        </property>
        <property name="text">
         <string>Mean Subtraction:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_42">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>90</y>
+         <width>161</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Inferencer Input Size:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="deployer_lineEdit_inferencer_input_width">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>88</y>
+         <width>61</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="inputMask">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>Width</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="deployer_lineEdit_inferencer_input_height">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>88</y>
+         <width>61</width>
+         <height>27</height>
+        </rect>
+       </property>
+       <property name="placeholderText">
+        <string>Height</string>
        </property>
       </widget>
      </widget>

@@ -36,7 +36,8 @@ private slots:
     void handleMappingCheckBoxChange();
     void handleDeployerImpListViewChange(const QModelIndex& selected, const QModelIndex& deselected);
     void handleDeployerConfigFileOptionChange(bool checked);
-
+    void handleDeployerInferencerImpListViewChange(const QModelIndex& selected, const QModelIndex& deselected);
+    void handleDetectorInferencerImpListViewChange(const QModelIndex& selected, const QModelIndex& deselected);
 };
 
 #endif // MAINWINDOW_H
