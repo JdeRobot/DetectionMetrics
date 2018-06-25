@@ -21,9 +21,15 @@ The idea is to offer a generic infrastructure to evaluates object detection algo
 * YOLO (darknet)
 * TensorFlow
 * Keras
+* Caffe
 * Background substraction
 
-
+##### Supported Inputs for Deploying Networks
+* WebCamera/ USB Camera
+* Videos
+* Streams from ROS
+* Streams from ICE
+* JdeRobot Recorder Logs
 
 # Sample generation Tool
 Sample Generation Tool has been developed in order to simply the process of generation samples for datasets focused on object detection. The tools provides some features to reduce the time on labeling objects as rectangles.
@@ -60,8 +66,7 @@ sudo apt-get install -y cuda
 sudo apt-get install libopencv-dev
 ```
 
-### JDEROBOT
-#### Deps
+### Dependencies (Currently being refined and reduced)
 
 ```
     sudo apt-get install -y libboost-filesystem-dev libboost-system-dev libboost-thread-dev libeigen3-dev libgoogle-glog-dev \
@@ -70,54 +75,55 @@ sudo apt-get install libopencv-dev
           catkin libssl-dev
 ```
 
-#### Jderobot ThirdParty libraries:
-```
-    git clone https://github.com/JdeRobot/ThirdParty
-    cd ThirdParty
-    cd qflightinstruments
-    qmake  qfi.pro
-    make -j4
-    make install
+## Optional Dependencies
+Below is a list of Optional Dependencies you may require depending on your Usage.
 
-```
+* ### Camera Streaming Support
+Detectionsuite can currently read ROS and ICE Camera Streams. So, to enable Streaming support install any one of them.
 
-#### Jderobot
+* ### Inferencing FrameWorks
+DetectionSuite currently supports many Inferencing FrameWorks namely Darknet, TensorFlow, Keras and Caffe.
+Each one of them has some Dependencies, and are mentioned below.
 
-```bash
-    git clone https://github.com/JdeRobot/JdeRobot
-    cd JdeRobot
-    cmake . -DENABLE_ROS=OFF
-    make -j4
-    cmake .
-    sudo make install
-```
+   Choose your Favourite one and go ahead.
 
-### Darknet (jderobot fork)
-Darknet supports both GPU and CPU builds, and GPU build is enabled by default.
-If your Computer doesn't have a NVIDIA Graphics card, then it is necessary to turn of GPU build in cmake by passing ```-DUSE_GPU=OFF``` as an option in cmake.
+   * #### Darknet (jderobot fork)
+      Darknet supports both GPU and CPU builds, and GPU build is enabled by default.
+      If your Computer doesn't have a NVIDIA Graphics card, then it is necessary to turn of GPU build in cmake by passing ```-DUSE_GPU=OFF``` as an option in cmake.
 
-```
-    git clone https://github.com/JdeRobot/darknet
-    cd darknet
-    mkdir build && cd build
+   ```
+       git clone https://github.com/JdeRobot/darknet
+       cd darknet
+       mkdir build && cd build
 
-```
+   ```
 
-For **GPU** users:<br>
-```
-cmake -DCMAKE_INSTALL_PREFIX=<DARKNET_DIR> ..
-```
-For **Non-GPU** users (CPU build):
-```
-cmake -DCMAKE_INSTALL_PREFIX=<DARKNET_DIR> -DUSE_GPU=OFF ..
-```
+   For **GPU** users:<br>
+   ```
+   cmake -DCMAKE_INSTALL_PREFIX=<DARKNET_DIR> ..
+   ```
+   For **Non-GPU** users (CPU build):
 
-``` make -j4 ``` <br>
-``` sudo make -j4 install ```
+   ```
+   cmake -DCMAKE_INSTALL_PREFIX=<DARKNET_DIR> -DUSE_GPU=OFF ..
+   ```
+   Change ```<DARKNET_DIR>``` to your custom installation path.
+
+   ``` make -j4 ``` <br>
+   ``` sudo make -j4 install ```
 
 
+   * #### TensorFlow
+   Only depedency for using TensorFlow as an Inferencing framework is TensorFlow.
+   So, just install TensorFlow. Though it should be 1.4.1 or greater.
 
-Change <DARKNET_DIR> to your custom installation path.
+   * #### Keras
+   Similarly, only dependency for using  Keras as an Inferencing is Keras only.
+
+   * #### Caffe
+   For using Caffe as an inferencing framework, it is necessary to install OpenCV 3.4 or greater.
+
+**Note: ** Be Sure to checkout the Wiki Pages for tutorials on how to use the above mentioned functionalities and frameworks.  
 
 # How to compile DL_DetectionSuite:
 Once you have all the deps installed just:
