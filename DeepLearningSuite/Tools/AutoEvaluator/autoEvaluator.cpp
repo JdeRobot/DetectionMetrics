@@ -12,13 +12,13 @@
 class MyApp:public SampleGenerationApp{
 public:
     MyApp(int argc, char* argv[]):SampleGenerationApp(argc,argv){
-        this->requiredArguments.push_back("inputPath");
-        this->requiredArguments.push_back("readerImplementation");
-        this->requiredArguments.push_back("inferencerImplementation");
-        this->requiredArguments.push_back("inferencerConfig");
-        this->requiredArguments.push_back("inferencerWeights");
-        this->requiredArguments.push_back("inferencerNames");
-        this->requiredArguments.push_back("readerNames");
+        this->requiredArguments.push_back("Datasets.inputPath");
+        this->requiredArguments.push_back("Datasets.readerImplementation");
+        this->requiredArguments.push_back("Datasets.readerNames");
+        this->requiredArguments.push_back("Inferencers.inferencerImplementation");
+        this->requiredArguments.push_back("Inferencers.inferencerConfig");
+        this->requiredArguments.push_back("Inferencers.inferencerWeights");
+        this->requiredArguments.push_back("Inferencers.inferencerNames");
         this->requiredArguments.push_back("outputCSVPath");
 
 
@@ -28,19 +28,21 @@ public:
     };
 
     void operator()(){
-        Key inputPathsKey=this->config->getKey("inputPath");
-        Key readerImplementationKey = this->config->getKey("readerImplementation");
-        Key infererImplementationKey = this->config->getKey("inferencerImplementation");
-        Key inferencerConfigKey = this->config->getKey("inferencerConfig");
-        Key inferencerWeightsKey = this->config->getKey("inferencerWeights");
-        Key inferencerNamesKey = this->config->getKey("inferencerNames");
-        Key readerNamesKey = this->config->getKey("readerNames");
-        Key outputCSVKey = this->config->getKey("outputCSVPath");
+        YAML::Node datasetsNode=this->config.getNode("Datasets");
+        YAML::Node inferencersNode=this->config.getNode("Inferencers");
+        /*YAML::Node readerImplementationNode = this->config.getNode("readerImplementation");
+        YAML::Node infererImplementationNode = this->config.getNode("inferencerImplementation");
+        YAML::Node inferencerConfigNode = this->config.getNode("inferencerConfig");
+        YAML::Node inferencerWeightsNode = this->config.getNode("inferencerWeights");
+        YAML::Node inferencerNamesNode = this->config.getNode("inferencerNames");
+        YAML::Node readerNamesNode = this->config.getNode("readerNames");
+        */
+        YAML::Node outputCSVNode = this->config.getNode("outputCSVPath");
 
-        if (outputCSVKey.isVector())
+        if (outputCSVNode.IsSequence())
             throw std::invalid_argument("Provided 'outputCSVPath' must be a single Directory, not multiple");
 
-        auto boostPath= boost::filesystem::path(outputCSVKey.getValue());
+        auto boostPath= boost::filesystem::path(outputCSVNode.as<std::string>());
         if (boost::filesystem::exists(boostPath)) {
             if (!boost::filesystem::is_directory(boostPath)) {
                 throw std::invalid_argument("Provided 'outputCSVPath' must be a Directory, not a file");
@@ -50,44 +52,64 @@ public:
         }
 
 
-        std::vector<std::string> inputPaths = inputPathsKey.getValues();
-        std::vector<std::string> inferencerWeights = inferencerWeightsKey.getValues();
+        /*std::vector<std::string> inputPaths = inputPathsNode.IsSequence()
+                                             ? inputPathsNode.as<std::vector<std::string>>()
+                                             : std::vector<std::string>(1, inputPathsNode.as<std::string>());
 
+        std::vector<std::string> inferencerWeights = inferencerWeightsNode.IsSequence()
+                                                     ? inferencerWeightsNode.as<std::vector<std::string>>()
+                                                     : std::vector<std::string>(1, inferencerWeightsNode.as<std::string>());
 
+        */
         GenericDatasetReaderPtr reader;
 
         int count = 0;
 
-        for (auto it = inputPaths.begin(); it != inputPaths.end(); it++) {
+        for (auto it = datasetsNode.begin(); it != datasetsNode.end(); it++) {
 
 
-            std::string readerNames = readerNamesKey.getValueOrLast(count);
-            std::string readerImplementation = readerImplementationKey.getValueOrLast(count);
+            if(!((*it)["inputPath"] && (*it)["readerNames"] && (*it)["readerImplementation"]))
+                throw std::invalid_argument("Invalid Config file, Error Detected in Datasets Configuration");
+
+
+            std::string inputPath = (*it)["inputPath"].as<std::string>();
+
+            std::string readerNames = (*it)["readerNames"].as<std::string>();
+
+            std::string readerImplementation = (*it)["readerImplementation"].as<std::string>();
+
 
             reader = GenericDatasetReaderPtr(
-                        new GenericDatasetReader(*it, readerNames, readerImplementation));
+                        new GenericDatasetReader(inputPath, readerNames, readerImplementation));
 
 
             int count2 = 0;
 
-            std::string mywriterFile(outputCSVKey.getValue() + "/Dataset" + std::to_string(++count) + ".csv" );
+            std::string mywriterFile(outputCSVNode.as<std::string>() + "/Dataset" + std::to_string(++count) + ".csv" );
 
             StatsWriter writer(reader->getReader(), mywriterFile);
 
 
-            for (auto iter = inferencerWeights.begin(); iter != inferencerWeights.end(); iter++) {
+            for (auto iter = inferencersNode.begin(); iter != inferencersNode.end(); iter++) {
 
 
 
                 std::vector<Sample> samples;
-                std::string inferencerConfig = inferencerConfigKey.getValueOrLast(count2);
-                std::string inferencerNames = inferencerNamesKey.getValueOrLast(count2);
-                std::string inferencerImplementation = infererImplementationKey.getValueOrLast(count2);
 
+                if(!((*iter)["inferencerConfig"] && (*iter)["inferencerNames"] && (*iter)["inferencerImplementation"]))
+                    throw std::invalid_argument("Invalid Config file, Error Detected in Datasets Configuration");
+
+                std::string inferencerConfig = (*iter)["inferencerConfig"].as<std::string>();
+
+                std::string inferencerNames = (*iter)["inferencerNames"].as<std::string>();
+
+                std::string inferencerWeights = (*iter)["inferencerWeights"].as<std::string>();
+
+                std::string inferencerImplementation = (*iter)["inferencerImplementation"].as<std::string>();
 
                 reader->getReader()->resetReaderCounter();
 
-                GenericInferencerPtr inferencer(new GenericInferencer(inferencerConfig, *iter, inferencerNames,inferencerImplementation));
+                GenericInferencerPtr inferencer(new GenericInferencer(inferencerConfig, inferencerWeights, inferencerNames, inferencerImplementation));
                 MassInferencer massInferencer(reader->getReader(),inferencer->getInferencer(), true);
                 massInferencer.process(false, &samples);
 
@@ -107,21 +129,21 @@ public:
 
                 reader->getReader()->resetReaderCounter();
 
-                //GenericDatasetReaderPtr readerGT(new GenericDatasetReader(inputPathGT.getValue(),readerNamesKey.getValue(), readerImplementationGTKey.getValue()));
-                GenericDatasetReaderPtr readerDetection(new GenericDatasetReader(samples, inferencerNamesKey.getValue()));
+                //GenericDatasetReaderPtr readerGT(new GenericDatasetReader(inputPathGT.as<std::string>(),readerNamesNode.as<std::string>(), readerImplementationGTNode.as<std::string>()));
+                GenericDatasetReaderPtr readerDetection(new GenericDatasetReader(samples, inferencerNames));
 
 
                 DetectionsEvaluatorPtr evaluator(new DetectionsEvaluator(reader->getReader(),readerDetection->getReader(),true));
 
                 evaluator->evaluate();
-
+                evaluator->accumulateResults();
                 /*Extract weights name with folder*/
-                std::string path = *iter;
+                std::string path = inferencerWeights;
                 std::size_t a =  path.find_last_of("/");
                 std::size_t b =  path.substr(0, a).find_last_of("/");
                 a =  path.find_last_of(".");
 
-                writer.writeInferencerResults(path.substr(b + 1, a - (b+1)), evaluator->getStats());
+                writer.writeInferencerResults(path.substr(b + 1, a - (b+1)), evaluator);
 
 
                 count2++;

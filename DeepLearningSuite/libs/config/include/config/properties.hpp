@@ -30,6 +30,8 @@
  */
 
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 #include <string>
 #include <vector>
 #include <yaml-cpp/yaml.h>
@@ -45,9 +47,11 @@ public:
 
 	void showConfig();
 
-	void printNode(YAML::Node node);
+	void printNode(YAML::Node node, int nesting_level);
 
 	bool keyExists(std::string element);
+
+	bool NodeExists(YAML::Node n, std::vector<std::string> names);
 
 	YAML::Node getNode(std::string element);
 	/**

@@ -60,7 +60,7 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
     rapidjson::Document doc;
 
     if (doc.Parse<0>(ss.str().c_str()).HasParseError())
-        throw std::invalid_argument("json parse error");
+        throw std::invalid_argument(std::string("JSON Parse Error: ") +  rapidjson::GetParseError_En(doc.GetParseError()));
 
     if( !doc.HasMember("annotations") )
         throw std::invalid_argument("Invalid Annotations file Passed");

@@ -21,7 +21,8 @@ public:
     void accumulateResults();
     void addValidMixClass(const std::string classA, const std::string classB);
     void addClassToDisplay(const std::string& classID);
-    GlobalStats getStats();
+    std::map<std::string, double> getClassWiseAP();
+    std::map<std::string, double> getClassWiseAR();
 
 private:
     DatasetReaderPtr gt;
@@ -42,6 +43,9 @@ private:
     std::map<double, GlobalStats> sampleStats;
 
     GlobalStats stats;
+
+    std::map<std::string, double> classWiseMeanAP;
+    std::map<std::string, double> classWiseMeanAR;
 
     std::map<std::string, std::tuple <unsigned int, unsigned int>> areaRng = { {"all", std::make_tuple(0, 10000000000) },
                                                                 {"small", std::make_tuple(0, 1024) },

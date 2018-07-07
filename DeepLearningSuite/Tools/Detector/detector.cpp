@@ -24,29 +24,29 @@ public:
         this->requiredArguments.push_back("readerNames");
     };
     void operator()(){
-        Key inputPath=this->config->getKey("inputPath");
-        Key outputPath=this->config->getKey("outputPath");
+        YAML::Node inputPath=this->config.getNode("inputPath");
+        YAML::Node outputPath=this->config.getNode("outputPath");
 
-        Key readerImplementationKey = this->config->getKey("readerImplementation");
-        Key infererImplementationKey = this->config->getKey("inferencerImplementation");
-        Key inferencerConfigKey = this->config->getKey("inferencerConfig");
-        Key inferencerWeightsKey = this->config->getKey("inferencerWeights");
-        Key inferencerNamesKey = this->config->getKey("inferencerNames");
-        Key readerNamesKey = this->config->getKey("readerNames");
+        YAML::Node readerImplementationKey = this->config.getNode("readerImplementation");
+        YAML::Node infererImplementationKey = this->config.getNode("inferencerImplementation");
+        YAML::Node inferencerConfigKey = this->config.getNode("inferencerConfig");
+        YAML::Node inferencerWeightsKey = this->config.getNode("inferencerWeights");
+        YAML::Node inferencerNamesKey = this->config.getNode("inferencerNames");
+        YAML::Node readerNamesKey = this->config.getNode("readerNames");
 
         GenericDatasetReaderPtr reader;
-        if (inputPath.isVector()) {
+        if (inputPath.IsSequence()) {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPath.getValues(),readerNamesKey.getValue(), readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPath.as<std::vector<std::string>>(),readerNamesKey.as<std::string>(), readerImplementationKey.as<std::string>()));
         }
         else {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPath.getValue(),readerNamesKey.getValue(), readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPath.as<std::string>(),readerNamesKey.as<std::string>(), readerImplementationKey.as<std::string>()));
         }
 
 
-        GenericInferencerPtr inferencer(new GenericInferencer(inferencerConfigKey.getValue(),inferencerWeightsKey.getValue(),inferencerNamesKey.getValue(),infererImplementationKey.getValue()));
-        MassInferencer massInferencer(reader->getReader(),inferencer->getInferencer(),outputPath.getValue(), true);
+        GenericInferencerPtr inferencer(new GenericInferencer(inferencerConfigKey.as<std::string>(),inferencerWeightsKey.as<std::string>(),inferencerNamesKey.as<std::string>(),infererImplementationKey.as<std::string>()));
+        MassInferencer massInferencer(reader->getReader(),inferencer->getInferencer(),outputPath.as<std::string>(), true);
         massInferencer.process(false);
 
     };
@@ -59,5 +59,3 @@ int main (int argc, char* argv[]) {
     MyApp myApp(argc,argv);
     myApp.process();
 }
-
-

@@ -18,13 +18,18 @@ DetectionsEvaluator::DetectionsEvaluator(DatasetReaderPtr gt, DatasetReaderPtr d
 
 }
 
+std::map<std::string, double> DetectionsEvaluator::getClassWiseAP() {
+    return this->classWiseMeanAP;
+}
+
+std::map<std::string, double> DetectionsEvaluator::getClassWiseAR() {
+    return this->classWiseMeanAR;
+}
+
 void DetectionsEvaluator::accumulateResults() {
 
     std::valarray<double> ApDiffIou(10);
     std::valarray<double> ArDiffIou(10);
-    std::map<double, std::map<std::string, double>> ApDiffIouClassWise;
-    std::map<double, std::map<std::string, double>> ArDiffIouClassWise;
-
 
     int start_s=clock();
 
@@ -36,14 +41,13 @@ void DetectionsEvaluator::accumulateResults() {
         //double ap = 0;
         //int size = 0;
         int totalCount = 0;
-        int totalRecallCount = 0;
         double totalPrecision = 0;
         double totalRecall = 0;
 
+        int classCount = 0;
 
         for (auto iter = mystats.begin(); iter != mystats.end(); iter++) {
             //std::cout << "ClassID: " << iter->first << '\n';
-            totalRecallCount++;
             if (iter->second.numGroundTruthsReg == 0)
                 continue;
             std::vector<double> pr = iter->second.getPrecisionArray();
@@ -75,6 +79,8 @@ void DetectionsEvaluator::accumulateResults() {
 
             recall = iter->second.getRecall();
             //std::cout << "Printing Recall Value: " << recall << '\n';
+            this->classWiseMeanAR[iter->first] += recall / 10;            // 10 IOU Thresholds,
+                                                                    // mean will be calculated directly
             totalRecall += recall;
 
             //std::cout << totalRecall << " " << recall << " " << recallCount << '\n';
@@ -91,7 +97,10 @@ void DetectionsEvaluator::accumulateResults() {
 
             }*/
 
-            totalPrecision += iter->second.getAveragePrecision(recallThrs);
+            double precision = iter->second.getAveragePrecision(this->recallThrs);
+            this->classWiseMeanAP[iter->first] += precision / 10;     // 10 IOU Thresholds,
+                                                                // mean will be calculated directly
+            totalPrecision += precision;
 
             totalCount++;
             //std::cout << average/count;
@@ -439,9 +448,6 @@ void DetectionsEvaluator::printStats() {
     //this->stats.printStats(classesToDisplay);
 }
 
-GlobalStats DetectionsEvaluator::getStats() {
-    return this->stats;
-}
 
 bool DetectionsEvaluator::sameClass(const std::string class1, const std::string class2) {
 
