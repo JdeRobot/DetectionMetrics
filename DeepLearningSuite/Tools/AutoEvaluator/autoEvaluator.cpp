@@ -110,7 +110,7 @@ public:
                 reader->getReader()->resetReaderCounter();
 
                 GenericInferencerPtr inferencer(new GenericInferencer(inferencerConfig, inferencerWeights, inferencerNames, inferencerImplementation));
-                MassInferencer massInferencer(reader->getReader(),inferencer->getInferencer(), true);
+                MassInferencer massInferencer(reader->getReader(),inferencer->getInferencer(), false);
                 massInferencer.process(false, &samples);
 
                 /*std::vector<Sample>::iterator iter;

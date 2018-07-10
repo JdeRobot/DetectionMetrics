@@ -68,7 +68,7 @@ class TensorFlowDetector:
 
           return boxes[0], scores[0], classes[0].astype(np.uint8), num[0]
 
-    def detect(self, img, threshold=0.5):
+    def detect(self, img, threshold=0.2):
 
         print "Starting inference"
         start_time = time.time()
@@ -93,9 +93,7 @@ class TensorFlowDetector:
         start_time = time.time()
 
         boxes, scores, classes, num = self.run_inference_for_single_image(image_passed)
-        # Visualization of the results of a detection.
-
-
+        # Visualization of the results of a detectio
 
         print "Inference Time: " + str(time.time() - start_time) + " seconds"
 

@@ -23,6 +23,8 @@ public:
     void addClassToDisplay(const std::string& classID);
     std::map<std::string, double> getClassWiseAP();
     std::map<std::string, double> getClassWiseAR();
+    double getOverallmAP();
+    double getOverallmAR();
 
 private:
     DatasetReaderPtr gt;
@@ -46,6 +48,9 @@ private:
 
     std::map<std::string, double> classWiseMeanAP;
     std::map<std::string, double> classWiseMeanAR;
+    std::valarray<double> ApDiffIou = std::valarray<double>(10);
+    std::valarray<double> ArDiffIou = std::valarray<double>(10);
+
 
     std::map<std::string, std::tuple <unsigned int, unsigned int>> areaRng = { {"all", std::make_tuple(0, 10000000000) },
                                                                 {"small", std::make_tuple(0, 1024) },
