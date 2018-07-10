@@ -10,8 +10,12 @@
 
 #include <cv.h>
 #include <highgui.h>
-#include <list>
 #include <iostream>
+#include <list>
+<<<<<<< HEAD
+#include <iostream>
+=======
+>>>>>>> bedffb7... fixed bugs
 #include <mutex>
 #include <numeric>
 namespace jderobot {

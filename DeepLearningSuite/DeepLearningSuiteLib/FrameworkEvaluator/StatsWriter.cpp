@@ -11,8 +11,13 @@ StatsWriter::StatsWriter(DatasetReaderPtr dataset, std::string& writerFile) {
 
     int counter = 0;
     while(getline(classNamesReader, className)) {
+<<<<<<< HEAD
         if (classname.empty())
           continue;
+=======
+	if (className.empty())
+            continue;
+>>>>>>> bedffb7... fixed bugs
         if (counter == 0)
             this->writer << ", " << className;
         else
@@ -26,6 +31,8 @@ StatsWriter::StatsWriter(DatasetReaderPtr dataset, std::string& writerFile) {
     for (int i = 0; i< counter; i++) {
         this->writer << ", mAP(IOU=0.5:0.95), mAR(IOU=0.5:0.95)";
     }
+
+    this->writer << ", mAP(Overall)(IOU=0.5:0.95), mAR(Overall)(IOU=0.5:0.95)";
 
     this->writer << "\n";
 
@@ -52,6 +59,7 @@ void StatsWriter::writeInferencerResults(std::string inferencerName, DetectionsE
         }
 
     }
+      this->writer << ", " << evaluator->getOverallmAP() << ", " << evaluator->getOverallmAR();
 
       this->writer << "\n";
       std::cout << "Inference Results Written Successfully" << '\n';
