@@ -93,9 +93,7 @@ class TensorFlowDetector:
         start_time = time.time()
 
         boxes, scores, classes, num = self.run_inference_for_single_image(image_passed)
-        # Visualization of the results of a detection.
-
-
+        # Visualization of the results of a detectio
 
         print "Inference Time: " + str(time.time() - start_time) + " seconds"
 

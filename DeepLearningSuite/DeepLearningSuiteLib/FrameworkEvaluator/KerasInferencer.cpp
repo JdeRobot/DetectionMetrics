@@ -75,11 +75,11 @@ Sample KerasInferencer::detectImp(const cv::Mat &image) {
 	}
 
 	cv::Mat rgbImage;
-	cv::cvtColor(image,rgbImage,CV_RGB2BGR);
+	cv::cvtColor(image,rgbImage,CV_BGR2RGB);
 
 	this->detections.clear();						//remove previous detections
 
-	int result = gettfInferences(image);
+	int result = gettfInferences(rgbImage);
 
 	if (result == 0) {
 		std::cout << "Error Occured during getting inferences" << '\n';
@@ -92,7 +92,7 @@ Sample KerasInferencer::detectImp(const cv::Mat &image) {
 	for (auto it = detections.begin(), end=detections.end(); it !=end; ++it){
 
 		typeConverter.setId(it->classId);
-		regions->add(it->boundingBox,typeConverter.getClassString());
+		regions->add(it->boundingBox,typeConverter.getClassString(), it->probability);
 		//std::cout<< it->boundingBox.x << " " << it->boundingBox.y << " " << it->boundingBox.height << " " << it->boundingBox.width << std::endl;
 		std::cout<< typeConverter.getClassString() << ": " << it->probability << std::endl;
 	}

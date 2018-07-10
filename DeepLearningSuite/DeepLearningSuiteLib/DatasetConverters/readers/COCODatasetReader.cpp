@@ -60,16 +60,26 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
     rapidjson::Document doc;
 
     if (doc.Parse<0>(ss.str().c_str()).HasParseError())
-        throw std::invalid_argument("json parse error");
+        throw std::invalid_argument(std::string("JSON Parse Error: ") +  rapidjson::GetParseError_En(doc.GetParseError()));
 
-    if(!(doc.HasMember("annotations") && doc.HasMember("images")))
+    if( !doc.HasMember("annotations") )
         throw std::invalid_argument("Invalid Annotations file Passed");
+
+    bool read_images = true;
+
+    if (!doc.HasMember("images")) {
+        LOG(WARNING) << "Images Member not available, therefore images won't be read";
+        read_images = false;
+    }
 
     const rapidjson::Value& a = doc["annotations"];
 
-    const rapidjson::Value& imgs = doc["images"];
-    std::string filename(imgs[0]["file_name"].GetString(), imgs[0]["file_name"].GetStringLength());
+    std::string filename;
 
+    if (read_images) {
+        const rapidjson::Value& imgs = doc["images"];
+        filename = std::string(imgs[0]["file_name"].GetString(), imgs[0]["file_name"].GetStringLength());
+    }
 
     if(!a.IsArray())
         throw std::invalid_argument("Invalid Annotations file Passed");
@@ -97,27 +107,42 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
         y = (*itr)["bbox"][1].GetDouble();
         w = (*itr)["bbox"][2].GetDouble();
         h = (*itr)["bbox"][3].GetDouble();
-
+        bool isCrowd = (*itr).HasMember("iscrowd") ? ( (*itr)["iscrowd"].GetInt() > 0 ? true : false) : false;
+        /*if (isCrowd) {
+            std::cout << "Found 1" << '\n';
+            exit(0);
+        }*/
+        //std::cout << isCrowd << '\n';
+        //std::cout << x << y << w <<  h << '\n';
+        //counter++;
+        //if (counter == 100) {
+        //    break;
+        //}
 
         if ( this->map_image_id.find(image_id) == this->map_image_id.end() ) {
 
             std::string num_string = std::to_string(image_id);
 
-            std::size_t filename_id_start = filename.find_last_of("_");
-            std::size_t filename_ext = filename.find_last_of(".");
+            std::string full_image_path;
 
-            std::string dest = std::string( filename_ext - filename_id_start - 1 - num_string.length(), '0').append( num_string );
+            if (read_images) {
+                std::size_t filename_id_start = filename.find_last_of("_");
+                std::size_t filename_ext = filename.find_last_of(".");
 
+                std::string dest = std::string( filename_ext - filename_id_start - 1 - num_string.length(), '0').append( num_string );
 
-            filename.replace(filename_id_start + 1, filename_ext - filename_id_start - 1, dest);
+                filename.replace(filename_id_start + 1, filename_ext - filename_id_start - 1, dest);
 
-            std::string full_image_path = img_dir.string() + "/" + filename;
+                full_image_path = img_dir.string() + "/" + filename;
+
+            }
 
             Sample sample;
-            sample.setSampleID(dest);
-            sample.setColorImage(full_image_path);
+            sample.setSampleID(num_string);
+            if (read_images)
+                sample.setColorImage(full_image_path);
 
-            LOG(INFO) << "Loading Instance for Sample: " + full_image_path;
+            LOG(INFO) << "Loading Instance for Sample: " + num_string;
 
             RectRegionsPtr rectRegions(new RectRegions());
             ClassTypeGeneric typeConverter(this->classNamesFile);
@@ -125,11 +150,16 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
             typeConverter.setId(category - 1);   //since index starts from 0 and categories from 1
 
 
+            //std::cout << category << '\n';
+            cv::Rect_<double> bounding = cv::Rect_<double>(x , y , w , h);
 
-            cv::Rect bounding(x , y , w , h);
 
-            rectRegions->add(bounding,typeConverter.getClassString());
-
+            if ((*itr).HasMember("score")) {
+                //std::cout << "Adding Score" << '\n';
+                rectRegions->add(bounding,typeConverter.getClassString(),(*itr)["score"].GetDouble(), isCrowd);
+            } else {
+                rectRegions->add(bounding,typeConverter.getClassString(), isCrowd);
+            }
             sample.setRectRegions(rectRegions);
 
             this->samples.push_back(sample);
@@ -144,15 +174,20 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
 
 
 
-            cv::Rect bounding(x , y , w , h);
+            cv::Rect_<double> bounding(x , y , w , h);
 
             RectRegionsPtr rectRegions_old = this->samples[this->map_image_id[image_id]].getRectRegions();
 
-            rectRegions_old->add(bounding,typeConverter.getClassString());
+            if ((*itr).HasMember("score")) {
+                //std::cout << "Adding Score" << '\n';
+                rectRegions_old->add(bounding,typeConverter.getClassString(),(*itr)["score"].GetDouble(), isCrowd);
+            } else {
+                rectRegions_old->add(bounding,typeConverter.getClassString(), isCrowd);
+            }
 
             this->samples[this->map_image_id[image_id]].setRectRegions(rectRegions_old);
 
-            LOG(INFO) << "Loading Instance for Sample: " + this->samples[this->map_image_id[image_id]].getColorImagePath();
+            LOG(INFO) << "Loading Instance for Sample: " + this->samples[this->map_image_id[image_id]].getSampleID();
 
         }
         //this->map_image_id[this->samples.size()] = (*);
@@ -160,5 +195,5 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
 
     }
 
-    printDatasetStats();
+    //printDatasetStats();
 }

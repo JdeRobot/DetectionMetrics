@@ -18,6 +18,7 @@ public:
     std::vector<cv::String> getOutputsNames();
     void postprocess(const std::vector<cv::Mat>& outs, cv::Mat& image);
 
+
 private:
     std::string netConfig;
     std::string netWeights;
@@ -36,6 +37,7 @@ private:
     int inpWidth;
     int inpHeight;
     bool swapRB;
+
 };
 
 

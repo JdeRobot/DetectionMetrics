@@ -8,7 +8,7 @@
 #include <string>
 #include <Common/Sample.h>
 #include <boost/shared_ptr.hpp>
-
+#include <Common/EvalMatrix.h>
 
 class DatasetReader {
 public:
@@ -19,6 +19,7 @@ public:
     int getNumberOfElements();
     void resetReaderCounter();
     bool getSampleBySampleID(Sample** sample, const std::string& sampleID);
+    bool getSampleBySampleID(Sample** sample, const long long int sampleID);
     void printDatasetStats();
     virtual bool appendDataset(const std::string& datasetPath, const std::string& datasetPrefix="");
     void addSample(Sample sample);

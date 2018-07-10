@@ -54,4 +54,3 @@ int ClassType::getClassID() {
 std::vector<std::string> ClassType::getAllAvailableClasses() {
     return this->classes;
 }
-

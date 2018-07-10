@@ -101,6 +101,7 @@ void COCODatasetWriter::process(bool usedColorImage) {
             double y = it->region.y;
             double w = it->region.width;
             double h = it->region.height;
+            double confidence_score = it->confidence_score;
 
             int classId;
             if (overWriteclassWithZero)
@@ -149,6 +150,8 @@ void COCODatasetWriter::process(bool usedColorImage) {
             writer_anns.Int(classId + 1);        // Classes in DetectionSuite start
                                                 // 0 wherease it starts from 1 in
                                                 // COCO dataset, that's why +
+            writer_anns.Key("score");
+            writer_anns.Double(confidence_score);
             writer_anns.Key("image_id");
             writer_anns.Int(id);
             writer_anns.EndObject();

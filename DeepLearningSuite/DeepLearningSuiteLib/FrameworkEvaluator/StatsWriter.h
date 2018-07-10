@@ -2,14 +2,13 @@
 #define SAMPLERGENERATOR_STATSWRITER_H
 
 #include <map>
-#include "ClassStatistics.h"
-#include "GlobalStats.h"
+#include <FrameworkEvaluator/DetectionsEvaluator.h>
 #include <DatasetConverters/readers/GenericDatasetReader.h>
 
 class StatsWriter {
 public:
     StatsWriter(DatasetReaderPtr dataset, std::string& writerFile);
-    void writeInferencerResults(std::string inferencerName, GlobalStats stats);
+    void writeInferencerResults(std::string inferencerName, DetectionsEvaluatorPtr evaluator);
     void saveFile();
 
 private:

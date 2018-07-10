@@ -62,6 +62,9 @@ void YoloDatasetWriter::process(bool usedColorImage) {
             double y = it->region.y;
             double w = it->region.width;
             double h = it->region.height;
+
+            double confidence_score = it->confidence_score;
+
             if ((w + x) > image.size().width){
                 w =  image.size().width - 1 - x;
             }
@@ -87,4 +90,3 @@ void YoloDatasetWriter::process(bool usedColorImage) {
     }
     sampleFile.close();
 }
-

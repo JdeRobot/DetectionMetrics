@@ -58,7 +58,6 @@ void MassInferencer::process(bool useDepthImages, std::vector<Sample>* samples) 
         counter++;
         std::cout << "Evaluating : " << sample.getSampleID() << "(" << counter << "/" << nsamples << ")" << std::endl;
 
-        cv::Mat image =sample.getSampledColorImage();
         cv::Mat image2detect;
         if (useDepthImages)
             image2detect = sample.getDepthColorMapImage();
@@ -86,6 +85,7 @@ void MassInferencer::process(bool useDepthImages, std::vector<Sample>* samples) 
             samples->push_back(detection);
         }
         if (this->debug) {
+            cv::Mat image =sample.getSampledColorImage();
             Sample detectionWithImage;
             detectionWithImage=detection;
             if (useDepthImages)

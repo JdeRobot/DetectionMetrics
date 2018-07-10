@@ -36,7 +36,7 @@ Properties::showConfig() {
 
     for (YAML::const_iterator it = this->node.begin(); it != this->node.end(); ++it){
        std::cout << it->first.as<std::string>() << ": ";
-       printNode(it->second);
+       printNode(it->second, 0);
        std::cout << '\n';
         // it->second.as<std::string>(); // can't do this until it's type is checked!!
    }
@@ -46,7 +46,8 @@ Properties::showConfig() {
 }
 
 void
-Properties::printNode(YAML::Node node_passed) {
+Properties::printNode(YAML::Node node_passed, int nesting_level) {
+    //std::cout << nesting_level << '\n';
    switch (node_passed.Type()) {
      case  YAML::NodeType::Null:
         return;
@@ -54,18 +55,18 @@ Properties::printNode(YAML::Node node_passed) {
         std::cout << node_passed.as<std::string>() << '\n';
         break;
      case YAML::NodeType::Sequence:
-        std::cout << "[ ";
+        std::cout << '\n';
         for (YAML::const_iterator it = node_passed.begin(); it != node_passed.end(); ++it){
-            printNode(*it);
-            std::cout << ",";
+            std::cout << std::string(nesting_level, ' ')  << "-" << '\n';
+            printNode(*it, nesting_level + 2);
+
             // it->second.as<std::string>(); // can't do this until it's type is checked!!
         }
-        std::cout << " ]";
         break;
      case YAML::NodeType::Map:
         for (YAML::const_iterator it = node_passed.begin(); it != node_passed.end(); ++it){
-            std::cout << it->first.as<std::string>() << ": ";
-            printNode(it->second);
+            std::cout << std::string(nesting_level, ' ') << it->first.as<std::string>() << ": ";
+            printNode(it->second, nesting_level + 2);
          // it->second.as<std::string>(); // can't do this until it's type is checked!!
         }
         break;
@@ -78,8 +79,31 @@ bool
 Properties::keyExists(std::string element) {
     std::vector<std::string> v = std::split(element, ".");
 
-    YAML::Node nod = this->searchNode(this->node, v);
-    return nod ? true : false;
+    return this->NodeExists(this->node, v);
+
+}
+
+bool
+Properties::NodeExists(YAML::Node n, std::vector<std::string> names) {
+    YAML::Node nod = n[names[0]];
+    names.erase(names.begin());
+
+    if (names.size() > 0) {
+        if (nod.IsSequence()) {
+            for (YAML::const_iterator it=nod.begin();it!=nod.end();++it) {
+                if (!this->NodeExists(*it, names))
+                    return false;
+            }
+        } else {
+
+              return this->searchNode(nod, names);
+        }
+
+    } else {
+        return nod ? true : false;
+
+    }
+
 
 }
 

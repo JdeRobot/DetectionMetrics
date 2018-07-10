@@ -69,6 +69,8 @@ void PascalVOCDatasetWriter::process(bool usedColorImage) {
             double w = it->region.width;
             double h = it->region.height;
 
+            double confidence_score = it->confidence_score;
+
             std::string className;
 
             if (overWriteclassWithZero)
@@ -105,6 +107,7 @@ void PascalVOCDatasetWriter::process(bool usedColorImage) {
             node.put("bndbox.xmax", x + w);
             node.put("bndbox.ymin", y);
             node.put("bndbox.ymax", y + h);
+            node.put("score", confidence_score);
 
         }
 

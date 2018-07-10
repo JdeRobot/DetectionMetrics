@@ -50,6 +50,9 @@ void RectRegions::saveJson(const std::string &outPath) {
         rapidjson::Value hValue(it->region.height);
         node.AddMember("h",hValue,d.GetAllocator());
 
+        rapidjson::Value confValue(it->confidence_score);
+        node.AddMember("score",confValue,d.GetAllocator());
+
         rapidjson::Value idValue(it->classID.c_str(), d.GetAllocator());
         node.AddMember("id",idValue,d.GetAllocator());
 
@@ -70,16 +73,41 @@ void RectRegions::saveJson(const std::string &outPath) {
     outFile.close();
 }
 
-void RectRegions::add(const cv::Rect rect,const std::string classId){
-    regions.push_back(RectRegion(rect,classId));
+void RectRegions::add(const cv::Rect_<double> rect,const std::string classId, bool isCrowd){
+    RectRegion regionToInsert(rect, classId, isCrowd);
+    auto itr = std::upper_bound(regions.begin(), regions.end(), regionToInsert);
+    regionToInsert.uniqObjectID = regions.size();
+    regions.insert(itr, regionToInsert);
+
+    //regions.push_back(RectRegion(rect,classId));
 }
 
-void RectRegions::add(const std::vector<cv::Point> &detections,const std::string classId) {
-    regions.push_back(RectRegion(cv::boundingRect(detections),classId));
+void RectRegions::add(const cv::Rect_<double> rect, const std::string classId, double confidence_score, bool isCrowd) {
+    RectRegion regionToInsert(rect, classId, confidence_score, isCrowd);
+    auto itr = std::upper_bound(regions.begin(), regions.end(), regionToInsert);
+    regionToInsert.uniqObjectID = regions.size();
+    regions.insert(itr, regionToInsert);
+    //regions.push_back(RectRegion(rect, classId, confidence_score));
 }
 
-void RectRegions::add(int x, int y, int w, int h,const std::string classId) {
-    regions.push_back(RectRegion(cv::Rect(x,y,w,h),classId));
+
+void RectRegions::add(const std::vector<cv::Point_<double>> &detections,const std::string classId, const bool isCrowd) {
+    regions.push_back(RectRegion(cv::boundingRect(detections),classId, isCrowd));
+}
+
+void RectRegions::add(double x, double y, double w, double h,const std::string classId, const bool isCrowd) {
+    RectRegion regionToInsert(cv::Rect_<double>(x,y,w,h), classId, isCrowd);
+    auto itr = std::upper_bound(regions.begin(), regions.end(), regionToInsert);
+    regionToInsert.uniqObjectID = regions.size();
+    regions.insert(itr, regionToInsert);
+    //regions.push_back(RectRegion(cv::Rect(x,y,w,h),classId));
+}
+
+void RectRegions::add(double x, double y, double w, double h, const std::string classId, const double confidence_score, const bool isCrowd) {
+    RectRegion regionToInsert(cv::Rect_<double>(x,y,w,h), classId, confidence_score, isCrowd);
+    auto itr = std::upper_bound(regions.begin(), regions.end(), regionToInsert);
+    regionToInsert.uniqObjectID = regions.size();
+    regions.insert(itr, regionToInsert);
 }
 
 RectRegion RectRegions::getRegion(int id) {
