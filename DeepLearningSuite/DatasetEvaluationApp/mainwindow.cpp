@@ -346,7 +346,7 @@ void MainWindow::handleSelectOutputFolderButtonDeployer() {
     tree->setRootIsDecorated(true);
     tree->setItemsExpandable(false);
     fd->setFileMode(QFileDialog::Directory);
-    fd->setOption(QFileDialog::ShowDirsOnly);
+    //fd->setOption(QFileDialog::ShowDirsOnly);
     fd->setViewMode(QFileDialog::Detail);
     fd->setDirectory("/mnt/large/pentalo/deep/evaluations/");
     int result = fd->exec();

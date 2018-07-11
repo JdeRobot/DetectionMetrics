@@ -101,6 +101,7 @@ Sample TensorFlowInferencer::detectImp(const cv::Mat &image) {
 		std::cout<< typeConverter.getClassString() << ": " << it->probability << std::endl;
 	}
 
+	sample.setColorImage(image);
 	sample.setRectRegions(regions);
     sample.setContourRegions(contourRegions);
 	return sample;

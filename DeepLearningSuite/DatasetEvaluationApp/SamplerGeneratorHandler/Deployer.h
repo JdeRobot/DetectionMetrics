@@ -7,6 +7,7 @@
 
 #include <QtWidgets/QListView>
 #include <QPushButton>
+#include <QMessageBox>
 
 namespace SampleGeneratorHandler {
     class Deployer {
