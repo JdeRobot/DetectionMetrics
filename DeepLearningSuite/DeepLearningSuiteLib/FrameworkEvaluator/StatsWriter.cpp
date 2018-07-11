@@ -11,13 +11,9 @@ StatsWriter::StatsWriter(DatasetReaderPtr dataset, std::string& writerFile) {
 
     int counter = 0;
     while(getline(classNamesReader, className)) {
-<<<<<<< HEAD
-        if (classname.empty())
-          continue;
-=======
-	if (className.empty())
+
+	    if (className.empty())
             continue;
->>>>>>> bedffb7... fixed bugs
         if (counter == 0)
             this->writer << ", " << className;
         else

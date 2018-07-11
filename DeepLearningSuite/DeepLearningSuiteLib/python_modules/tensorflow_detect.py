@@ -62,7 +62,13 @@ class TensorFlowDetector:
         #self.detection_scores = detection_graph.get_tensor_by_name('detection_scores:0')
         #self.detection_classes = detection_graph.get_tensor_by_name('detection_classes:0')
         #self.num_detections = detection_graph.get_tensor_by_name('num_detections:0')
-        self.sess = tf.Session(graph=detection_graph)
+	session_conf = tf.ConfigProto(
+		intra_op_parallelism_threads=2,
+		inter_op_parallelism_threads=2,
+	)
+	
+	
+        self.sess = tf.Session(config=session_conf, graph=detection_graph)
 
 	print "Initializing"
 
@@ -167,18 +173,11 @@ class TensorFlowDetector:
 
         start_time = time.time()
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 575dfee27a958a3df1612e90021a7ab418bc381c
+
         output_dict = self.run_inference_for_single_image(image_passed)
         # Visualization of the results of a detection.
 
 
-=======
-        boxes, scores, classes, num = self.run_inference_for_single_image(image_passed)
-        # Visualization of the results of a detectio
->>>>>>> bedffb7... fixed bugs
 
         print "Inference Time: " + str(time.time() - start_time) + " seconds"
 

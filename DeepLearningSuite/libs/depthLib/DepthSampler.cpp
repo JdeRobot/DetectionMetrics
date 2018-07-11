@@ -78,12 +78,8 @@ void DepthSampler::evalSample(cv::Mat source, std::vector<cv::Mat> layers, int s
 		layerSample[i]=0;
 	}
 
-<<<<<<< HEAD
-    int start_s=clock();
-	//IceUtil::Time n=IceUtil::Time::now();
-=======
+
 	int start_s=clock();
->>>>>>> bedffb7... fixed bugs
 	for (int xIm=0; xIm< source.cols; xIm+=samplingRate) {
 		for (int yIm=0; yIm<source.rows ; yIm+=samplingRate) {
 			float d=dM.at<float>(yIm,xIm);
@@ -99,12 +95,8 @@ void DepthSampler::evalSample(cv::Mat source, std::vector<cv::Mat> layers, int s
 			}
 		}
 	}
-<<<<<<< HEAD
 
-    int stop_s=clock();
-=======
 	int stop_s=clock();
->>>>>>> bedffb7... fixed bugs
 	std::cout << "Time for normal sampling: " << (stop_s-start_s)/double(CLOCKS_PER_SEC)*1000 << std::endl;
 	std::cout << "Layer sampling Size : " << std::accumulate(normalSample.begin(), normalSample.end(), 0) << ",  result:" << std::endl;
 	for (std::vector<int>::iterator it= normalSample.begin(); it!= normalSample.end(); it++){
@@ -136,11 +128,8 @@ void DepthSampler::evalSample(cv::Mat source, std::vector<cv::Mat> layers, int s
 
 		localStep=localStep-step;
 	}
-<<<<<<< HEAD
-    stop_s=clock();
-=======
+
 	stop_s=clock();
->>>>>>> bedffb7... fixed bugs
 	std::cout << "Time for layers sampling: " << (stop_s-start_s)/double(CLOCKS_PER_SEC)*1000 << std::endl;
 	std::cout << "Layer sampling Size : " << std::accumulate(layerSample.begin(), layerSample.end(), 0) << ",  result:" << std::endl;
 	for (std::vector<int>::iterator it= layerSample.begin(); it!= layerSample.end(); it++){

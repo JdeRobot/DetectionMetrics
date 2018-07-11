@@ -12,10 +12,6 @@
 #include <highgui.h>
 #include <iostream>
 #include <list>
-<<<<<<< HEAD
-#include <iostream>
-=======
->>>>>>> bedffb7... fixed bugs
 #include <mutex>
 #include <numeric>
 namespace jderobot {

@@ -169,7 +169,7 @@ void TensorFlowInferencer::output_result(int num_detections, int width, int heig
 
             if (useMasks) {
                 cv::Mat mask = cv::Mat(mask_shape[1], mask_shape[2], CV_32F, detection_masks_data + i*mask_shape[1]*mask_shape[2]);
-				std::cout << "Showing mask for 5 seconds" << mask_shape[0] << " " << mask_shape[1] << " " << mask_shape[2] << " " << mask_shape[3] << '\n';
+				//std::cout << "Showing mask for 5 seconds" << mask_shape[0] << " " << mask_shape[1] << " " << mask_shape[2] << " " << mask_shape[3] << '\n';
                 cv::Mat mask_r;
                 std::vector<std::vector<cv::Point> > contours;
                 cv::resize(mask, mask_r, cv::Size(detections[i].boundingBox.width, detections[i].boundingBox.height));
@@ -177,14 +177,14 @@ void TensorFlowInferencer::output_result(int num_detections, int width, int heig
                 mask_r.convertTo(mask_char, CV_8U, 255);
                 cv::threshold(mask_char, mask_char, 127, 255, cv::THRESH_BINARY);
                 cv::findContours( mask_char.clone(), contours, CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE, cv::Point(detections[i].boundingBox.x, detections[i].boundingBox.y) );
-                std::cout << "Outer Vector Size:" << contours.size() << '\n';
-                std::cout << "Inner Vector Size:" << contours[0].size() << '\n';
+                //std::cout << "Outer Vector Size:" << contours.size() << '\n';
+                //std::cout << "Inner Vector Size:" << contours[0].size() << '\n';
                 detections[i].mask = contours[0];
-                cv::drawContours(image_mask, contours, -1, cv::Scalar(255, 0, 0), 2, 8);
+                //cv::drawContours(image_mask, contours, -1, cv::Scalar(255, 0, 0), 2, 8);
 
-                cv::imshow("mask", mask_char);
-                cv::imshow("image mask", image_mask);
-                cv::waitKey(5000);
+                //cv::imshow("mask", mask_char);
+                //cv::imshow("image mask", image_mask);
+                //cv::waitKey(5000);
             }
 
 
