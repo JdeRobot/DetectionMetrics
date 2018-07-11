@@ -35,21 +35,21 @@ public:
 
     };
     void operator()(){
-        Key inputPathKey=this->config->getKey("inputPath");
-        Key readerImplementationKey = this->config->getKey("readerImplementation");
-        Key writerImplementationKey = this->config->getKey("writerImplementation");
-        Key outputPathKey = this->config->getKey("outputPath");
-        Key readerNamesKey = this->config->getKey("readerNames");
+        YAML::Node inputPathNode=this->config.getNode("inputPath");
+        YAML::Node readerImplementationNode = this->config.getNode("readerImplementation");
+        YAML::Node writerImplementationNode = this->config.getNode("writerImplementation");
+        YAML::Node outputPathNode = this->config.getNode("outputPath");
+        YAML::Node readerNamesNode = this->config.getNode("readerNames");
 
 
         GenericDatasetReaderPtr reader;
-        if (inputPathKey.isVector()) {
+        if (inputPathNode.IsSequence()) {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPathKey.getValues(), readerNamesKey.getValue(), readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPathNode.as<std::vector<std::string>>(), readerNamesNode.as<std::string>(), readerImplementationNode.as<std::string>()));
         }
         else {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPathKey.getValue(),readerNamesKey.getValue(), readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPathNode.as<std::string>(),readerNamesNode.as<std::string>(), readerImplementationNode.as<std::string>()));
         }
 
         auto readerPtr = reader->getReader();
@@ -62,7 +62,7 @@ public:
 //        readerPtr->printDatasetStats();
 
 
-        GenericDatasetWriterPtr writer( new GenericDatasetWriter(outputPathKey.getValue(),readerPtr,writerImplementationKey.getValue()));
+        GenericDatasetWriterPtr writer( new GenericDatasetWriter(outputPathNode.as<std::string>(),readerPtr,writerImplementationNode.as<std::string>()));
         writer->getWriter()->process();
     };
 };

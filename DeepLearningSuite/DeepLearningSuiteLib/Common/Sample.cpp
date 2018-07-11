@@ -193,6 +193,19 @@ void Sample::save(const std::string &outPath) {
 
 }
 
+void Sample::print() {
+
+    std::cout << "Printing Regions with Classes" << '\n';
+
+    std::vector<RectRegion> regionsToPrint = this->rectRegions->getRegions();
+
+    for (auto it = regionsToPrint.begin(); it != regionsToPrint.end(); it++) {
+        std::cout << "Class: " << it->classID << '\n';
+        std::cout << "Confidence: " << it->confidence_score << '\n';
+        std::cout << "uniqObjectID" << it->uniqObjectID <<'\n';
+        std::cout << "BBOX" << it->region.x << it->region.y << it->region.width << it->region.height << '\n';
+    }
+}
 
 bool Sample::isDepthImageValid() {
   return !this->depthImage.empty();

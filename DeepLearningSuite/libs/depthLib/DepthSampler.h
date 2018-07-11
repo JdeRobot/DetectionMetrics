@@ -10,8 +10,9 @@
 
 #include <cv.h>
 #include <highgui.h>
+#include <iostream>
 #include <list>
-#include <IceUtil/Mutex.h>
+#include <mutex>
 #include <numeric>
 namespace jderobot {
 

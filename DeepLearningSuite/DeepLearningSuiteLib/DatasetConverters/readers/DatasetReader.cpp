@@ -60,6 +60,16 @@ bool DatasetReader::getSampleBySampleID(Sample** sample, const std::string& samp
     return false;
 }
 
+bool DatasetReader::getSampleBySampleID(Sample** sample, const long long int sampleID) {
+    for (auto it=this->samples.begin(), end= this->samples.end(); it != end; ++it){
+        if ((long long int)std::stoi(it->getSampleID())==sampleID){
+            *sample=&(*it);
+            return true;
+        }
+    }
+    return false;
+}
+
 void DatasetReader::printDatasetStats() {
     std::unordered_map<std::string, int> classStats;
     std::unordered_map<std::string, int>::iterator map_it;
@@ -118,8 +128,8 @@ void DatasetReader::overWriteClasses(const std::string &from, const std::string 
             for (auto it2 = s.getContourRegions()->regions.begin(), end2 = s.getContourRegions()->regions.end();
                  it2 != end2; ++it2) {
                 ContourRegion &cr = *it2;
-                if (cr.id.compare(from) == 0) {
-                    cr.id = to;
+                if (cr.classID.compare(from) == 0) {
+                    cr.classID = to;
                 }
             }
         }

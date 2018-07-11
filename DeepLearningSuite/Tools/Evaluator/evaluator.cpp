@@ -23,17 +23,17 @@ public:
 
     };
     void operator()(){
-        Key outputPath=this->config->getKey("outputPath");
-        Key inputPathGT=this->config->getKey("inputPathGT");
-        Key inputPathDetection=this->config->getKey("inputPathDetection");
-        Key readerImplementationGTKey=this->config->getKey("readerImplementationGT");
-        Key readerImplementationDetectionKey=this->config->getKey("readerImplementationDetection");
-        Key readerNamesKey=this->config->getKey("readerNames");
+        YAML::Node outputPath=this->config.getNode("outputPath");
+        YAML::Node inputPathGT=this->config.getNode("inputPathGT");
+        YAML::Node inputPathDetection=this->config.getNode("inputPathDetection");
+        YAML::Node readerImplementationGTKey=this->config.getNode("readerImplementationGT");
+        YAML::Node readerImplementationDetectionKey=this->config.getNode("readerImplementationDetection");
+        YAML::Node readerNamesKey=this->config.getNode("readerNames");
 
 
 
-        GenericDatasetReaderPtr readerGT(new GenericDatasetReader(inputPathGT.getValue(),readerNamesKey.getValue(), readerImplementationGTKey.getValue()));
-        GenericDatasetReaderPtr readerDetection(new GenericDatasetReader(inputPathDetection.getValue(),readerNamesKey.getValue(), readerImplementationDetectionKey.getValue()));
+        GenericDatasetReaderPtr readerGT(new GenericDatasetReader(inputPathGT.as<std::string>(),readerNamesKey.as<std::string>(), readerImplementationGTKey.as<std::string>()));
+        GenericDatasetReaderPtr readerDetection(new GenericDatasetReader(inputPathDetection.as<std::string>(),readerNamesKey.as<std::string>(), readerImplementationDetectionKey.as<std::string>()));
 
 
         DetectionsEvaluatorPtr evaluator(new DetectionsEvaluator(readerGT->getReader(),readerDetection->getReader(),true));
@@ -44,6 +44,7 @@ public:
         evaluator->addClassToDisplay("person-falling");
         evaluator->addClassToDisplay("person-fall");
         evaluator->evaluate();
+        evaluator->accumulateResults();
 
 
     };

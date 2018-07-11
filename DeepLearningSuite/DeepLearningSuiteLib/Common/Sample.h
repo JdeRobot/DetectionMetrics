@@ -41,6 +41,7 @@ struct Sample {
     void save(const std::string& outPath, int id);
     void save(const std::string& outPath, const std::string& filename);
     void save(const std::string& outPath);
+    void print();
 
     bool isDepthImageValid();
     bool isValid();

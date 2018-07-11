@@ -75,11 +75,11 @@ Sample KerasInferencer::detectImp(const cv::Mat &image) {
 	}
 
 	cv::Mat rgbImage;
-	cv::cvtColor(image,rgbImage,CV_RGB2BGR);
+	cv::cvtColor(image,rgbImage,CV_BGR2RGB);
 
 	this->detections.clear();						//remove previous detections
 
-	int result = gettfInferences(image);
+	int result = gettfInferences(rgbImage);
 
 	if (result == 0) {
 		std::cout << "Error Occured during getting inferences" << '\n';
@@ -92,7 +92,7 @@ Sample KerasInferencer::detectImp(const cv::Mat &image) {
 	for (auto it = detections.begin(), end=detections.end(); it !=end; ++it){
 
 		typeConverter.setId(it->classId);
-		regions->add(it->boundingBox,typeConverter.getClassString());
+		regions->add(it->boundingBox,typeConverter.getClassString(), it->probability);
 		//std::cout<< it->boundingBox.x << " " << it->boundingBox.y << " " << it->boundingBox.height << " " << it->boundingBox.width << std::endl;
 		std::cout<< typeConverter.getClassString() << ": " << it->probability << std::endl;
 	}
@@ -128,7 +128,7 @@ void KerasInferencer::output_result(PyObject* result, int sizes[])
 		for( i=0; i<dims[0]; i++ ) {
 
 			detections.push_back(detection());
-			detections[i].classId = (int) result_data[k++] - 1;  // In TensorFlow id's start from 1 whereas detectionsuite starts from 0s
+			detections[i].classId = (int) result_data[k++] - 1;  // In Keras id's start from 1 whereas detectionsuite starts from 0s
 			detections[i].probability = result_data[k++];
 
 			detections[i].boundingBox.x = result_data[k++] * sizes[1];

@@ -26,28 +26,28 @@ public:
 
     };
     void operator()(){
-        Key inputPathKey=this->config->getKey("inputPath");
-        Key outputPathKey=this->config->getKey("outputPath");
-        Key readerImplementationKey = this->config->getKey("readerImplementation");
-        Key writerImplementationKey = this->config->getKey("writerImplementation");
-        Key trainRatioKey = this->config->getKey("trainRatio");
-        Key readerNamesKey = this->config->getKey("readerNames");
+        YAML::Node inputPathNode=this->config.getNode("inputPath");
+        YAML::Node outputPathNode=this->config.getNode("outputPath");
+        YAML::Node readerImplementationNode = this->config.getNode("readerImplementation");
+        YAML::Node writerImplementationNode = this->config.getNode("writerImplementation");
+        YAML::Node trainRatioNode = this->config.getNode("trainRatio");
+        YAML::Node readerNamesNode = this->config.getNode("readerNames");
 
 
 
-        std::string trainPath=outputPathKey.getValue() + "/train";
-        std::string testPath=outputPathKey.getValue() + "/test";
+        std::string trainPath=outputPathNode.as<std::string>() + "/train";
+        std::string testPath=outputPathNode.as<std::string>() + "/test";
 
 
         GenericDatasetReaderPtr reader;
-        if (inputPathKey.isVector()) {
+        if (inputPathNode.IsSequence()) {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPathKey.getValues(),readerNamesKey.getValue(), readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPathNode.as<std::vector<std::string>>(),readerNamesNode.as<std::string>(), readerImplementationNode.as<std::string>()));
         }
         else {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPathKey.getValue(),readerNamesKey.getValue(),
-                                             readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPathNode.as<std::string>(),readerNamesNode.as<std::string>(),
+                                             readerImplementationNode.as<std::string>()));
         }
 
 
@@ -67,7 +67,7 @@ public:
         DatasetReaderPtr readerTrain(new DatasetReader());
 
 
-        int ratio=trainRatioKey.getValueAsInt();
+        int ratio=trainRatioNode.as<int>();
 
         Sample sample;
         int counter=0;
@@ -88,10 +88,10 @@ public:
         readerTest->printDatasetStats();
 
 
-        GenericDatasetWriterPtr writerTest( new GenericDatasetWriter(testPath,readerTest,writerImplementationKey.getValue()));
+        GenericDatasetWriterPtr writerTest( new GenericDatasetWriter(testPath,readerTest,writerImplementationNode.as<std::string>()));
         writerTest->getWriter()->process();
 
-        GenericDatasetWriterPtr writerTrain( new GenericDatasetWriter(trainPath,readerTrain,writerImplementationKey.getValue()));
+        GenericDatasetWriterPtr writerTrain( new GenericDatasetWriter(trainPath,readerTrain,writerImplementationNode.as<std::string>()));
         writerTrain->getWriter()->process();
 
     };

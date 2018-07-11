@@ -95,9 +95,10 @@ void SampleGenerationApp::process() {
 bool SampleGenerationApp::verifyRequirements() {
     bool success=true;
     this->config.showConfig();
+    std::string msg;
     for (auto it = this->requiredArguments.begin(), end =this->requiredArguments.end(); it != end; ++it){
         if (!this->config.keyExists(*it)){
-            LOG(WARNING)<< "Key: " + (*it) + " is not defined in the configuration file";
+            LOG(WARNING)<< "Key: " + *it + " is missing somewhere in the coniguration file";
             success=false;
         }
 

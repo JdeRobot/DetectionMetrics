@@ -6,6 +6,7 @@ ENDIF()
 
 include_directories(
         ${OpenCV_INCLUDE_DIRS}
+        ${config_INCLUDE_DIRS}
         ${Boost_INCLUDE_DIR}
         ${CMAKE_CURRENT_LIST_DIR}
         ${DeepLearningSuite_INCLUDE_DIR}

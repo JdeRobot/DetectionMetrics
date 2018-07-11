@@ -19,19 +19,19 @@ public:
 
     };
     void operator()(){
-        Key inputPathKey=this->config->getKey("inputPath");
-        Key readerImplementationKey = this->config->getKey("readerImplementation");
-        Key readerNamesKey = this->config->getKey("readerNames");
+        YAML::Node  inputPathNode=this->config.getNode("inputPath");
+        YAML::Node  readerImplementationNode = this->config.getNode("readerImplementation");
+        YAML::Node  readerNamesNode = this->config.getNode("readerNames");
 
 
         GenericDatasetReaderPtr reader;
-        if (inputPathKey.isVector()) {
+        if (inputPathNode.IsSequence()) {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPathKey.getValues(),readerNamesKey.getValue(), readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPathNode.as<std::vector<std::string>>(),readerNamesNode.as<std::string>(), readerImplementationNode.as<std::string>()));
         }
         else {
             reader = GenericDatasetReaderPtr(
-                    new GenericDatasetReader(inputPathKey.getValue(),readerNamesKey.getValue(), readerImplementationKey.getValue()));
+                    new GenericDatasetReader(inputPathNode.as<std::string>(),readerNamesNode.as<std::string>(), readerImplementationNode.as<std::string>()));
         }
 
 
