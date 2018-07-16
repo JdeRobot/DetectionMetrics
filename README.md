@@ -145,5 +145,5 @@ Once you have all the required Dependencies installed just:
 Once it is build you will find various executables in different folders ready to be executed :smile:.
 
 ## Starting with DetectionSuite
-The best way to start is with our [beginner's tutorial](https://github.com/JdeRobot/dl-DetectionSuite/wiki/Beginner's-Tutorial-to-DetectionSuite) for DetectionSuite.
+The best way to start is with our [beginner's tutorial](https://github.com/JdeRobot/dl-DetectionSuite/wiki/Beginner's-Tutorial-to-DetectionSuite-Part-1) for DetectionSuite.
 If you have any issue feel free to drop a mail <vinay04sharma@icloud.com> or create an issue for the same.
