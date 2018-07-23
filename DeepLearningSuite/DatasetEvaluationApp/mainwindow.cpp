@@ -42,6 +42,9 @@ MainWindow::MainWindow(SampleGenerationApp* app,QWidget *parent) :
     connect(ui->checkBox_deployer_saveOutput, SIGNAL (released()), this, SLOT( handleDeployerSaveOutputCheckboxChange()));
     connect(ui->pushButton_stop_deployer_process, SIGNAL(released()), this, SLOT(handleDeployerStop()));
     connect(ui->pushButton_deployer_output_folder, SIGNAL(released()), this, SLOT(handleSelectOutputFolderButtonDeployer()));
+    connect(ui->deployer_conf_horizontalSlider, SIGNAL(valueChanged(int)), this, SLOT(handleDeployerConfidenceSliderChange(int)));
+    connect(ui->deployer_confidence_lineEdit, SIGNAL(textEdited(QString)), this, SLOT(handleDeployerConfidenceLineEditChange(QString)));
+
 
 }
 
@@ -197,6 +200,7 @@ void MainWindow::setupTabsInformation() {
             #endif
 
             ui->deployer_groupBox_inferencer_params->setEnabled(false);
+            ui->deployer_cameraID_groupBox->setEnabled(false);
 
             connect(ui->listView_deploy_input_imp->selectionModel(),SIGNAL(currentRowChanged(QModelIndex,QModelIndex)), this,SLOT(handleDeployerImpListViewChange(QModelIndex, QModelIndex)));
             //connect(ui->groupBox_config_file, SIGNAL(toggled(bool)), this, SLOT(handleDeployerConfigFileOptionChange(bool)));
@@ -234,7 +238,7 @@ void MainWindow::handleConvertButton() {
     ratio = this->ui->textEdit_converter_trainRatio->toPlainText().toDouble();
     std::string outputPath = this->ui->textEdit_converterOutPath->toPlainText().toStdString();
     bool splitActive = this->ui->checkBox_splitActive->isChecked();
-    bool colorImage = !(this->ui->checkBox_yolo_depth->isChecked());
+    bool writeImages = this->ui->checkBox_converter_write_images->isChecked();
 
     try {
         SampleGeneratorHandler::Converter::process(ui->listView_converter_dataset, ui->listView_converter_names,
@@ -245,7 +249,7 @@ void MainWindow::handleConvertButton() {
                                                    ui->checkBox_use_writernames->isChecked(),
                                                    app->getConfig().asString("datasetPath"),
                                                    app->getConfig().asString("namesPath"), outputPath,
-                                                   splitActive, ratio, colorImage);
+                                                   splitActive, ratio, writeImages);
     }
     catch (const std::string& msg){
         std::cout << "Exception detected: " << msg << std::endl;
@@ -265,7 +269,7 @@ void MainWindow::handleEvaluateButton() {
                                                ui->listView_evaluator_dectection_dataset,ui->listView_evaluator_detection_names, ui->listView_evaluator_detection_imp,
                                                ui->listView_evaluator_classFilter,app->getConfig().asString("datasetPath"),app->getConfig().asString("namesPath"),
                                                app->getConfig().asString("inferencesPath"),app->getConfig().asString("namesPath"),ui->checkBox_evaluator_merge->isChecked(),
-                                               ui->checkBox_evaluator_mix->isChecked(),ui->checkBox_evaluator_show_eval->isChecked());
+                                               ui->checkBox_evaluator_mix->isChecked());
     }
     catch (const std::string& msg){
         std::cout << "Exception detected: " << msg << std::endl;
@@ -362,18 +366,21 @@ void MainWindow::handleDeployerImpListViewChange(const QModelIndex& selected, co
     if (selected.data().toString() == "stream") {
         ui->deployer_param_groupBox->setEnabled(true);
         ui->groupBox_config_option->setEnabled(true);
+        ui->deployer_cameraID_groupBox->setEnabled(false);
         handleDeployerConfigFileOptionChange(ui->deployer_radioButton_manual->isChecked());
     } else if (selected.data().toString() == "camera") {
         ui->textEdit_deployInputPath->setEnabled(false);
         ui->pushButton_deploy_input->setEnabled(false);
         ui->deployer_param_groupBox->setEnabled(false);
         ui->groupBox_config_option->setEnabled(false);
+        ui->deployer_cameraID_groupBox->setEnabled(true);
     }
     else {
         ui->textEdit_deployInputPath->setEnabled(true);
         ui->pushButton_deploy_input->setEnabled(true);
         ui->deployer_param_groupBox->setEnabled(false);
         ui->groupBox_config_option->setEnabled(false);
+        ui->deployer_cameraID_groupBox->setEnabled(false);
     }
 }
 
@@ -405,6 +412,55 @@ void MainWindow::handleDetectorInferencerImpListViewChange(const QModelIndex& se
     }
 }
 
+void MainWindow::handleDeployerConfidenceLineEditChange(const QString& confidence) {
+
+
+    std::string conf_val = confidence.toStdString();
+
+    //std::cout << conf_val << '\n';
+    double val;
+
+    try {
+
+        val = std::stod(confidence.toStdString());
+    } catch (...) {
+
+        bool oldState = this->ui->deployer_conf_horizontalSlider->blockSignals(true);
+        this->ui->deployer_conf_horizontalSlider->setValue(0);
+        this->ui->deployer_conf_horizontalSlider->blockSignals(oldState);
+        return;
+    }
+    //std::cout << val << '\n';
+    if (val > 1.0) {
+        QMessageBox::warning(this, QObject::tr("Confidence Threshold out of Bounds"), QObject::tr("Confidence Threshold can't be greater than 1.0, setting Threshold to 0.2"));
+        val = 1.0;
+        this->ui->deployer_confidence_lineEdit->setText(QString("0.2"));
+    }
+    if ( val < 0.0) {
+        QMessageBox::warning(this, QObject::tr("Confidence Threshold out of Bounds"), QObject::tr("Confidence Threshold can't be smaller than 0, setting Threshold to 0.2"));
+        val = 0;
+        this->ui->deployer_confidence_lineEdit->setText(QString("0.2"));
+    }
+    bool oldState = this->ui->deployer_conf_horizontalSlider->blockSignals(true);
+    this->ui->deployer_conf_horizontalSlider->setValue((int)(val*100));
+    this->ui->deployer_conf_horizontalSlider->blockSignals(oldState);
+    this->confidence_threshold = val;
+}
+
+void MainWindow::handleDeployerConfidenceSliderChange(const int& confidence) {
+
+    std::stringstream str;
+    double val = confidence/100.0;
+    str << std::fixed << std::setprecision( 2 ) << val;
+    QString qstr = QString::fromStdString(str.str());
+
+    //std::cout << qstr.toStdString() << '\n';
+
+    this->ui->deployer_confidence_lineEdit->setText(qstr);
+    this->confidence_threshold = val;
+}
+
+
 void MainWindow::handleDeployerSaveOutputCheckboxChange() {
     if(ui->checkBox_deployer_saveOutput->isChecked()) {
         ui->groupbox_deployer_saveOutput->setEnabled(true);
@@ -423,6 +479,7 @@ void MainWindow::handleProcessDeploy() {
     std::string inputInfo = this->ui->textEdit_deployInputPath->toPlainText().toStdString();
 
     QGroupBox* deployer_params = this->ui->deployer_param_groupBox;
+    QGroupBox* camera_params = this->ui->deployer_cameraID_groupBox;
     QGroupBox* inferencer_params = this->ui->deployer_groupBox_inferencer_params;
     std::string outputFolder = this->ui->textEdit_deployerOutputPath->toPlainText().toStdString();
     if (!ui->checkBox_deployer_saveOutput->isChecked()) {
@@ -432,7 +489,7 @@ void MainWindow::handleProcessDeploy() {
     try{
         SampleGeneratorHandler::Deployer::process(ui->listView_deploy_input_imp,ui->listView_deploy_weights,
                                                   ui->listView_deploy_net_config,ui->listView_deploy_impl,ui->listView_deploy_names_inferencer, &this->stopDeployer,
-                                                  deployer_params, inferencer_params, app->getConfig().asString("weightsPath"),
+                                                  &confidence_threshold, deployer_params, camera_params, inferencer_params, app->getConfig().asString("weightsPath"),
                                                   app->getConfig().asString("netCfgPath"),app->getConfig().asString("namesPath"),inputInfo, outputFolder);
     }
     catch (const std::string& msg){

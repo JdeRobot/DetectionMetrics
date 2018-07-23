@@ -10,10 +10,12 @@
 
 class MassInferencer {
 public:
+    MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, const std::string& resultsPath, double* confidence_threshold = NULL, bool debug=true);
     MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, const std::string& resultsPath, bool debug=true);
-    MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, const std::string &resultsPath, bool* stopDeployer, bool debug=true);
+    MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, const std::string &resultsPath, bool* stopDeployer, double* confidence_threshold = NULL, bool debug=true);
+    MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, double* confidence_threshold = NULL, bool debug=true);
     MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, bool debug=true);
-    void process(bool useDepthImages, std::vector<Sample>* samples = NULL);
+    void process(bool writeImages, DatasetReaderPtr readerDetection = NULL);
 
 private:
     DatasetReaderPtr reader;
@@ -23,6 +25,8 @@ private:
     bool saveOutput;
     int alreadyProcessed;
     bool* stopDeployer = NULL;
+    double* confidence_threshold = NULL;
+    double default_confidence_threshold = 0.2;
 
 };
 

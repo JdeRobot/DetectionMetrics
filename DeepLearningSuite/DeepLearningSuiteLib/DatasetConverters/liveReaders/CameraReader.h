@@ -3,7 +3,7 @@
 
 
 #include <DatasetConverters/readers/DatasetReader.h>
-
+#include <glog/logging.h>
 
 class CameraReader: public DatasetReader {
 public:
@@ -13,7 +13,7 @@ public:
 private:
     cv::VideoCapture* cap;
     bool init;
-    long long int sample_count;
+    long long int sample_count = 0;
 
 };
 

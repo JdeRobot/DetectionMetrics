@@ -12,7 +12,7 @@
 void
 SampleGeneratorHandler::Deployer::process(QListView *deployImpList, QListView *weightsList, QListView *netConfigList,
                                           QListView *inferencerImpList, QListView *inferencerNamesList,
-                                          bool* stopButton, QGroupBox* deployer_params, QGroupBox* inferencer_params, const std::string &weightsPath, const std::string &cfgPath,
+                                          bool* stopButton, double* confidence_threshold, QGroupBox* deployer_params, QGroupBox* camera_params, QGroupBox* inferencer_params, const std::string &weightsPath, const std::string &cfgPath,
                                           const std::string &inferencerNamesPath, const std::string &inputInfo, const std::string &outputFolder) {
 
     GenericLiveReaderPtr reader;
@@ -20,7 +20,7 @@ SampleGeneratorHandler::Deployer::process(QListView *deployImpList, QListView *w
     try {
 
         reader = SamplerGenerationHandler::createLiveReaderPtr( inferencerNamesList,
-                                                                                 deployImpList, deployer_params, inputInfo,inferencerNamesPath);
+                                                                                 deployImpList, deployer_params, camera_params, inputInfo,inferencerNamesPath);
 
      } catch(const std::invalid_argument& ex) {
          LOG(WARNING)<< "Error Creating Generic Live Reader\nError Message: " << ex.what();
@@ -84,6 +84,6 @@ SampleGeneratorHandler::Deployer::process(QListView *deployImpList, QListView *w
     }
 
     GenericInferencerPtr inferencer(new GenericInferencer(netConfiguration[0],weights[0],inferencerNames[0],inferencerImp[0], inferencerParamsMap));
-    MassInferencer massInferencer(reader->getReader(),inferencer->getInferencer(),outputFolder, stopButton,  true);
+    MassInferencer massInferencer(reader->getReader(),inferencer->getInferencer(),outputFolder, stopButton, confidence_threshold, true);
     massInferencer.process(false);
 }

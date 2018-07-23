@@ -72,7 +72,7 @@ bool Utils::getInferencerParamsContent(const QGroupBox* inferencer_params, std::
     }*/
 
 
-    inferencer_params_map["conf_thresh"] = inferencer_params->findChild<QLineEdit*>((prefix + "_lineEdit_confidence_thresh").c_str())->text().toStdString();
+    //inferencer_params_map["conf_thresh"] = inferencer_params->findChild<QLineEdit*>((prefix + "_lineEdit_confidence_thresh").c_str())->text().toStdString();
     inferencer_params_map["scaling_factor"] = inferencer_params->findChild<QLineEdit*>((prefix + "_lineEdit_inferencer_scaling_factor").c_str())->text().toStdString();
     inferencer_params_map["inpWidth"] = inferencer_params->findChild<QLineEdit*>((prefix + "_lineEdit_inferencer_input_width").c_str())->text().toStdString();
     inferencer_params_map["inpHeight"] = inferencer_params->findChild<QLineEdit*>((prefix + "_lineEdit_inferencer_input_height").c_str())->text().toStdString();
@@ -80,6 +80,18 @@ bool Utils::getInferencerParamsContent(const QGroupBox* inferencer_params, std::
     inferencer_params_map["mean_sub_green"] = inferencer_params->findChild<QLineEdit*>((prefix + "_lineEdit_mean_sub_green").c_str())->text().toStdString();
     inferencer_params_map["mean_sub_red"] = inferencer_params->findChild<QLineEdit*>((prefix + "_lineEdit_mean_sub_red").c_str())->text().toStdString();
     inferencer_params_map["useRGB"] = inferencer_params->findChild<QCheckBox*>((prefix + "_checkBox_use_rgb").c_str())->isChecked() ? "true" : "false";
+
+    return true;
+
+}
+
+bool Utils::getCameraParamsContent(const QGroupBox* camera_params, int& cameraID) {
+
+    cameraID = camera_params->findChild<QSpinBox*>("deployer_camera_spinBox")->value();
+    std::cout << cameraID << '\n';
+    if (cameraID < -1) {
+        return false;
+    }
 
     return true;
 

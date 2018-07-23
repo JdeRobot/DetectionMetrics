@@ -14,9 +14,9 @@
 class CaffeInferencer: public FrameworkInferencer {
 public:
     CaffeInferencer(const std::string& netConfig, const std::string& netWeights, const std::string& classNamesFile, std::map<std::string, std::string>* inferencerParamsMap);
-    Sample detectImp(const cv::Mat& image);
+    Sample detectImp(const cv::Mat& image, double confidence_threshold);
     std::vector<cv::String> getOutputsNames();
-    void postprocess(const std::vector<cv::Mat>& outs, cv::Mat& image);
+    void postprocess(const std::vector<cv::Mat>& outs, cv::Mat& image, double confidence_threshold);
 
 
 private:
@@ -30,7 +30,6 @@ private:
 
     std::vector<detection> detections;
     std::vector<cv::String> names;
-    double confThreshold;
     double scaling_factor;
     cv::Scalar mean_sub;
     cv::dnn::Net net;
