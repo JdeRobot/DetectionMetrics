@@ -16,7 +16,8 @@ private:
     std::string netWeights;
     struct detection {
         cv::Rect boundingBox;
-        std::vector<cv::Point> mask;
+        //std::vector<cv::Point> mask;
+        RLE rleRegion;
         float probability;
         int classId;
     };
@@ -25,6 +26,7 @@ private:
     PyObject *pArgs, *pValue, *pmodel;
 
     std::vector<detection> detections;
+    bool hasMasks;
 
 };
 
