@@ -113,7 +113,7 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
 
             unsigned long int id = (*itr)["id"].GetUint64();
             std::string filename = (*itr)["file_name"].GetString();
-            //std::cout << image_id << '\n';
+
             int category = (*itr)["category_id"].GetUint();
 
             Sample imsample;
@@ -134,7 +134,7 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
     for (rapidjson::Value::ConstValueIterator itr = a.Begin(); itr != a.End(); ++itr) {
 
         unsigned long int image_id = (*itr)["image_id"].GetUint64();
-        //std::cout << image_id << '\n';
+
         int category = (*itr)["category_id"].GetUint();
 
         double x, y, w, h;
@@ -172,12 +172,12 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
             typeConverter.setId(category - 1);   //since index starts from 0 and categories from 1
 
 
-            //std::cout << category << '\n';
+
             cv::Rect_<double> bounding = cv::Rect_<double>(x , y , w , h);
 
 
             if ((*itr).HasMember("score")) {
-                //std::cout << "Adding Score" << '\n';
+                //Adding Score
                 rectRegions->add(bounding,typeConverter.getClassString(),(*itr)["score"].GetDouble(), isCrowd);
             } else {
                 rectRegions->add(bounding,typeConverter.getClassString(), isCrowd);
@@ -204,10 +204,9 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
 
             RectRegionsPtr rectRegions_old = sample.getRectRegions();
 
-            //std::cout << "Initial Size" << rectRegions_old->getRegions().size() << '\n';
 
             if ((*itr).HasMember("score")) {
-                //std::cout << "Adding Score" << '\n';
+                //Adding Score
                 rectRegions_old->add(bounding,typeConverter.getClassString(),(*itr)["score"].GetDouble(), isCrowd);
             } else {
                 rectRegions_old->add(bounding,typeConverter.getClassString(), isCrowd);
@@ -218,12 +217,10 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
             if ((*itr).HasMember("segmentation"))
                 appendSegmentationRegion(*itr, sample, typeConverter, isCrowd);
 
-            //std::cout << "Size After: " << this->map_image_id[image_id].getRectRegions()->getRegions().size() << '\n';
 
             LOG(INFO) << "Loading Instance for Sample: " + sample.getSampleID();
 
         }
-        //this->map_image_id[this->samples.size()] = (*);
 
 
     }
@@ -242,7 +239,6 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
 void COCODatasetReader::appendSegmentationRegion(const rapidjson::Value& node, Sample& sample, ClassTypeGeneric typeConverter, const bool isCrowd) {
 
 
-    std::cout << "Dims:  " << sample.getSampleWidth() << " " << sample.getSampleHeight() << '\n';
     RLE region = getSegmentationRegion(node["segmentation"], sample.getSampleWidth(), sample.getSampleHeight());
     //std::cout << "RLE String: " << rleToString( &region ) << '\n';
     RleRegionsPtr rleRegions = sample.getRleRegions();
@@ -265,16 +261,17 @@ RLE COCODatasetReader::getSegmentationRegion(const rapidjson::Value& seg, int im
 
             if (seg[0].IsArray()) {       // Multiple Arrays
 
-                std::cout << "here" << '\n';
-
                 return fromSegmentationList(seg, im_width, im_height, (int)seg.Size());
+
 
             } else if (seg[0].IsObject()) {                     // list of objects, size is available no need to store
 
                 return fromSegmentationObject(seg, seg.Size());
 
-            } else if (seg[0].IsDouble() || seg[0].IsInt()) {                      // Single Array
+            } else if (seg[0].IsDouble() || seg[0].IsInt()) {
+
                 return fromSegmentationList(seg, im_width, im_height, 0);
+
             }
 
         }
@@ -346,7 +343,7 @@ RLE COCODatasetReader::fromUncompressedRle(const rapidjson::Value& seg) {
     RLE result;
 
     const rapidjson::Value& arr = seg["counts"];
-    uint* data = (uint*) malloc((int)arr.Size()* sizeof(uint));
+    uint* data = (uint*) malloc((int)(arr.Size()* sizeof(uint)));
     unsigned long i;
     for (i = 0; i < arr.Size(); i++) {
         data[i] = (uint) arr[i].GetUint();
@@ -355,16 +352,25 @@ RLE COCODatasetReader::fromUncompressedRle(const rapidjson::Value& seg) {
     rleInit(&result, seg["size"][0].GetInt64(), seg["size"][1].GetInt64(), i, data );
 
 
-    /*cv::Mat matrix_decoded(result.h, result.w, CV_8U);
+    /*cv::Mat matrix_decoded(result.w, result.h, CV_8U);
 
     rleDecode(&result, matrix_decoded.data , 1);
     matrix_decoded = matrix_decoded * 255;
 
-    cv::imshow("From Uncompressed", matrix_decoded);
+    //cv::bitwise_not(matrix_decoded, matrix_decoded);
+
+    //cv::rotate(matrix_decoded, matrix_decoded, cv::ROTATE_90_CLOCKWISE);
+    //cv::flip(matrix_decoded, matrix_decoded, 1);
+
+
+    /*cv::imshow("From Uncompressed", matrix_decoded);
     cv::waitKey(0);
+
+    std::cout << "In debug: " << rleToString(&result) << '\n';
     */
     return result;
-    /*# time for malloc can be saved here but its fine
+    /*# time for malloc can be saved here but
+     its fine
     data = <uint*> malloc(len(cnts)* sizeof(uint))
     for j in range(len(cnts)):
         data[j] = <uint> cnts[j]
@@ -386,7 +392,7 @@ RLE COCODatasetReader::fromSegmentationList(const rapidjson::Value& seg, int im_
             arr[i] = seg[i].GetDouble();
         }
         rleFrPoly( &result, arr, i/2 , im_height, im_width);
-        cv::Mat matrix_decoded(result.h, result.w, CV_8U);
+        //cv::Mat matrix_decoded(result.h, result.w, CV_8U);
 
         /*rleDecode(&result, matrix_decoded.data , 1);
         matrix_decoded = matrix_decoded * 255;
@@ -396,18 +402,16 @@ RLE COCODatasetReader::fromSegmentationList(const rapidjson::Value& seg, int im_
         return result;
 
     } else {
-        std::cout << "in else " << size << '\n';
+
         RLE* multipleRles;
         rlesInit(&multipleRles, size);
         for (int i = 0; i < size; i++) {
             if (seg[i].IsArray()) {
                 double* arr = new double[(int)(seg[i].Size())];
                 int j;
-                std::cout << seg[i].Size() << '\n';
                 for (j = 0; j < (int)seg[i].Size(); j++) {
                     arr[j] = seg[i][j].GetDouble();
                 }
-                std::cout << j << " " << im_height << " " << im_width << '\n';
                 rleFrPoly( multipleRles + i, arr, j/2 , im_height, im_width);
             } else {
                 throw std::invalid_argument("Invalid Annotations File Passed\n Error Detected in segmentation Member, 2D array consists of a Scalar");
@@ -451,8 +455,13 @@ RLE COCODatasetReader::fromRle(const rapidjson::Value& seg) {
     rleDecode(&result, matrix_decoded.data , 1);
     matrix_decoded = matrix_decoded * 255;
 
+    cv::rotate(matrix_decoded, matrix_decoded, cv::ROTATE_90_CLOCKWISE);
+    cv::flip(matrix_decoded, matrix_decoded, 1);
+
     cv::imshow("From RLE", matrix_decoded);
     cv::waitKey(0);
     */
+
+
     return result;
 }

@@ -25,6 +25,9 @@ SampleGeneratorHandler::Evaluator::process(QListView *datasetListGT, QListView *
                                                                                                namesPath, false);
 
 
+    if (!readerGT || !readerDetection)
+        return;
+
 
     DetectionsEvaluatorPtr evaluator(new DetectionsEvaluator(readerGT->getReader(),readerDetection->getReader()));
 

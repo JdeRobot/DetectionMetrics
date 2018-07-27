@@ -4,6 +4,7 @@
 #include <rapidjson/stringbuffer.h>
 #include <rapidjson/writer.h>
 #include <fstream>
+#include <random>
 #include "rapidjson/filereadstream.h"
 
 
@@ -78,28 +79,36 @@ RleRegion RleRegions::getRegion(int idx) {
 }
 
 void RleRegions::drawRegions(cv::Mat &image) {
-  std::cout << regions.size() << '\n';
+    std::default_random_engine generator;
+    std::uniform_real_distribution<double> distribution(0.0,1.0);
+
     for (auto it = regions.begin(), end= regions.end(); it != end; ++it) {
+
         cv::Mat mask = cv::Mat(it->region.w, it->region.h, CV_8UC1, cv::Scalar(0));
-        std::cout << rleToString(&(it->region)) << '\n';
+
         rleDecode(&(it->region), mask.data , 1);
-        std::cout << "Decoding Done" << '\n';
         mask = mask * 255;
         cv::rotate(mask, mask, cv::ROTATE_90_CLOCKWISE);
         cv::flip(mask, mask, 1);
-        cv::imshow("mask", mask);
-        cv::waitKey(0);
 
-        //std::cout << image.rows << " " << mask.rows << " " << image.cols << " " << mask.cols << '\n';
-        cv::Scalar color(255);
-        std::vector<cv::Mat> channels;
-        cv::split(image, channels);
-        cv::Mat colorMask(image.size(), CV_8UC1, cv::Scalar(255));
-        colorMask.copyTo(channels[0], mask);
-        colorMask.copyTo(channels[1], mask);
-        cv::Mat image2show;
-        cv::merge(channels, image2show);
-        image2show.copyTo(image);
+
+        cv::Scalar color;
+        std::vector<std::vector<cv::Point> > contours;
+        if (it->isCrowd) {
+            color = cv::Scalar(2,166,101);
+        } else {
+            color = cv::Scalar((unsigned int)(distribution(generator)*170), (unsigned int)(distribution(generator)*170), (unsigned int)(distribution(generator)*170));
+            cv::findContours( mask.clone(), contours, CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE, cv::Point(0, 0) );
+
+        }
+
+        cv::Mat colorMask(image.size(), CV_8UC3, color);
+
+        cv::Mat output(colorMask.size(), CV_8UC3, cv::Scalar(0));
+        colorMask.copyTo(output, mask);
+
+        image = image.mul((( 255 - output )/255 ))  + output;
+        cv::drawContours(image, contours, -1, color, 2, 8);
 
     }
 
