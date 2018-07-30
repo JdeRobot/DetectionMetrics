@@ -1,11 +1,23 @@
+IF (DARKNET_ACTIVE)
+    SET(EXTRA_LIBS ${EXTRA_LIBS}
+         ${DARKNET_LIBRARIES}
+         ${CUDA_LIBRARIES}
+         ${CUDA_LIBRARIES}
+         ${CUDA_CUBLAS_LIBRARIES}
+         ${CUDA_curand_LIBRARY})
+
+    include_directories(${DARKNET_INCLUDE_DIR})
+ENDIF()
 
 include_directories(
     ${OpenCV_INCLUDE_DIRS}
+    ${PYTHON_INCLUDE_DIRS}
     ${Boost_INCLUDE_DIR}
     ${config_INCLUDE_DIRS}
     ${depthLib_INCLUDE_DIRS}
     ${comm_INCLUDE_DIRS}
     ${ros_INCLUDE_DIRS}
+    ${GLOG_INCLUDE_DIRS}
     ${utils_INCLUDE_DIRS}
     ${INTERFACES_CPP_DIR}
     ${jderobottypes_INCLUDE_DIRS}
@@ -91,4 +103,14 @@ ENDIF()
 
 add_library (DeepLearningSuite SHARED ${SOURCE_FILES})
 
-TARGET_LINK_LIBRARIES(DeepLearningSuite ${depthLib_LIBRARIES} ${JderobotInterfaces_LIBRARIES} ${comm_LIBRARIES} ${config_LIBRARIES})
+message("Python: ${PYTHON_LIBRARIES}")
+
+TARGET_LINK_LIBRARIES(DeepLearningSuite
+                    ${EXTRA_LIBS}
+                    ${depthLib_LIBRARIES}
+                    ${JderobotInterfaces_LIBRARIES}
+                    ${comm_LIBRARIES}
+                    ${config_LIBRARIES}
+                    ${PYTHON_LIBRARIES}
+                    ${GLOG_LIBRARIES}
+                    )

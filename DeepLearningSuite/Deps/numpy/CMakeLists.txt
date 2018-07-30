@@ -8,6 +8,5 @@ find_package( PythonInterp REQUIRED )
 find_package( PythonLibs REQUIRED )
 find_package( NumPy REQUIRED )
 
-
-include_directories ( ${PYTHON_INCLUDE_DIRS} ${PYTHON_NUMPY_INCLUDE_DIR} )
-link_directories(${PYTHON_LIBRARIES})
+SET(PYTHON_INCLUDE_DIRS ${PYTHON_INCLUDE_DIRS} ${PYTHON_NUMPY_INCLUDE_DIR})
+# LIBRARIESD AVAILABLE IN PYTHON_LIBRARIES

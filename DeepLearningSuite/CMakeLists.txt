@@ -4,21 +4,16 @@ project(samplerGenerator C CXX)
 
 
 #check compiller
-if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
-	include(CheckCXXCompilerFlag)
-	CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
-	CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)
-	message ("-- version: ${CMAKE_CXX_COMPILER_VERSION}")
-	if(COMPILER_SUPPORTS_CXX11)
-    		set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -std=c++11)
-	elseif(COMPILER_SUPPORTS_CXX0X)
-        #boost have problems with gcc < 4.7 and c++0x
-        if(CMAKE_CXX_COMPILER_VERSION VERSION_GREATER "4.7.0")
-    		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
-        endif()
-	else()
-		    message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support.")
-	endif()
+
+include(CheckCXXCompilerFlag)
+CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
+
+message ("-- version: ${CMAKE_CXX_COMPILER_VERSION}")
+if(COMPILER_SUPPORTS_CXX11)
+  		set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} -std=c++11)
+      MESSAGE("-- C++11 support enabled")
+else()
+	    message(FATAL_ERROR "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support.")
 endif()
 
 IF (NOT CMAKE_BUILD_TYPE)
@@ -28,12 +23,13 @@ ENDIF()
 
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated -fPIC")
-
+set(CMAKE_MACOSX_RPATH 1)
 
 #automated opencv
 include(FindPkgConfig)
 
-FIND_PACKAGE(CUDA REQUIRED)
+OPTION(USE_GPU_DARKNET "Compile with GPU Support" OFF)						## Only Applicable for Darknet
+
 ## FIND_PACKAGE(JdeRobot REQUIRED)
 
  include(Deps/glog/CMakeLists.txt)
@@ -42,28 +38,9 @@ FIND_PACKAGE(CUDA REQUIRED)
  include(Deps/yaml-cpp/CMakeLists.txt)
  include(Deps/ros/CMakeLists.txt)
  include(Deps/opencv/CMakeLists.txt)
+ include(Deps/qt/CMakeLists.txt)
+
 FIND_PACKAGE(Boost REQUIRED program_options filesystem)
-FIND_PACKAGE(Qt5Widgets REQUIRED)
-FIND_PACKAGE(Qt5Core REQUIRED)
-FIND_PACKAGE(Qt5Gui REQUIRED)
-FIND_PACKAGE(Qt5Svg REQUIRED)
-FIND_PACKAGE(Qt5OpenGL REQUIRED)
-
- SET(QT_INCLUDE_DIRS
-	 Qt5Widgets_INCLUDE_DIRS}
-	 ${Qt5Core_INCLUDE_DIRS}
-	 ${Qt5Gui_INCLUDE_DIRS}
-	 ${Qt5Svg_INCLUDE_DIRS}
-	 ${Qt5OpenGL_INCLUDE_DIRS}
- )
-
- set(QT_LIBRARIES
-	 ${Qt5Widgets_LIBRARIES}
-	 ${Qt5Core_LIBRARIES}
-	 ${Qt5Gui_LIBRARIES}
-	 ${Qt5Svg_LIBRARIES}
-	 ${Qt5OpenGL_LIBRARIES}
-)
 
 
 #darknet
@@ -83,6 +60,12 @@ ENDFOREACH()
 
 
 if (DARKNET_INCLUDE_DIR AND DARKNET_LIBRARIES)				## Sometimes it may be found without specifing DARNKNET_PATH
+
+	if (USE_GPU_DARKNET)
+		MESSAGE("Darknet must be build with GPU support")
+		FIND_PACKAGE(CUDA REQUIRED)
+	endif(USE_GPU_DARKNET)
+
 	message("DARKNET FOUND")
 	message("DARKNET_INCLUDE_DIR: ${DARKNET_INCLUDE_DIR}")
 	message("DARKNET_LIBRARIES: ${DARKNET_LIBRARIES}")
@@ -116,7 +99,9 @@ endif(HAS_OPENCV_DNN)
 
  add_subdirectory(libs)
  add_subdirectory(DeepLearningSuiteLib)
- add_subdirectory(DatasetEvaluationApp)
+ if (QT_FOUND)
+   add_subdirectory(DatasetEvaluationApp)
+ endif(QT_FOUND)
  add_subdirectory(SampleGenerationApp)
  add_subdirectory(Tools)
 

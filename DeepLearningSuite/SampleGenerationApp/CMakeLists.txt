@@ -1,5 +1,11 @@
 IF (DARKNET_ACTIVE)
-    SET(EXTRA_LIBS ${EXTRA_LIBS} ${DARKNET_LIBRARIES} ${CUDA_LIBRARIES} -L/usr/local/cuda/lib64 cudart cublas curand)
+    SET(EXTRA_LIBS ${EXTRA_LIBS}
+         ${DARKNET_LIBRARIES}
+         ${CUDA_LIBRARIES}
+         ${CUDA_LIBRARIES}
+         ${CUDA_CUBLAS_LIBRARIES}
+         ${CUDA_curand_LIBRARY})
+
     include_directories(${DARKNET_INCLUDE_DIR})
 ENDIF()
 
@@ -20,7 +26,7 @@ add_executable (SampleGenerationApp generator.cpp)
 TARGET_LINK_LIBRARIES(SampleGenerationApp
         DeepLearningSuite
         ${EXTRA_LIBS}
-        ${config_LIBRARIES} 
+        ${config_LIBRARIES}
         ${JdeRobot_LIBRARIES}
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}

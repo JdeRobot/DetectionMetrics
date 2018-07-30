@@ -4,7 +4,13 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 
 IF (DARKNET_ACTIVE)
-    SET(EXTRA_LIBS ${EXTRA_LIBS} ${DARKNET_LIBRARIES} ${CUDA_LIBRARIES} -L/usr/local/cuda/lib64 cudart cublas curand)
+    SET(EXTRA_LIBS ${EXTRA_LIBS}
+         ${DARKNET_LIBRARIES}
+         ${CUDA_LIBRARIES}
+         ${CUDA_LIBRARIES}
+         ${CUDA_CUBLAS_LIBRARIES}
+         ${CUDA_curand_LIBRARY})
+
     include_directories(${DARKNET_INCLUDE_DIR})
 ENDIF()
 
@@ -28,6 +34,7 @@ include_directories(
         ${comm_INCLUDE_DIRS}
         ${utils_INCLUDE_DIRS}
         ${ros_INCLUDE_DIRS}
+        ${PYTHON_INCLUDE_DIRS}
         ${INTERFACES_CPP_DIR}
         ${jderobottypes_INCLUDE_DIRS}
         ${OpenCV_INCLUDE_DIRS}
@@ -50,6 +57,7 @@ TARGET_LINK_LIBRARIES(DatasetEvaluationApp
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}
         ${QT_LIBRARIES}
+        ${PYTHON_LIBRARIES}
         ${GLOG_LIBRARIES}
         ${PYTHON_LIBRARIES}
         ssl
