@@ -10,7 +10,6 @@ branches:
   only:
     - travis-test
 
-
 os:
   - linux
   - osx
@@ -28,13 +27,13 @@ cache:
      - $HOME/opencv/
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then wget https://www.python.org/ftp/python/2.7.15/python-2.7.15-macosx10.6.pkg ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo installer -pkg python-2.7.15-macosx10.6.pkg -target / ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then python -V ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew update          ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install boost rapidjson glog yaml-cpp qt ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export PATH="/usr/local/opt/qt/bin:$PATH" ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install opencv ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then wget https://www.python.org/ftp/python/2.7.15/python-2.7.15-macosx10.6.pkg ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo installer -pkg python-2.7.15-macosx10.6.pkg -target / ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}" ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt install -y rapidjson-dev ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt install -y libboost-dev libboost-filesystem-dev libboost-system-dev libboost-program-options-dev ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt install -y libgoogle-glog-dev libyaml-cpp-dev qt5-default libqt5svg5-dev libqt5opengl5-dev ; fi
