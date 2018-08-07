@@ -1,7 +1,3 @@
-IF (DARKNET_ACTIVE)
-    SET(EXTRA_LIBS ${EXTRA_LIBS} ${DARKNET_LIBRARIES} ${CUDA_LIBRARIES} -L/usr/local/cuda/lib64 cudart cublas curand)
-    include_directories(${DARKNET_INCLUDE_DIR})
-ENDIF()
 
 include_directories(
         ${OpenCV_INCLUDE_DIRS}

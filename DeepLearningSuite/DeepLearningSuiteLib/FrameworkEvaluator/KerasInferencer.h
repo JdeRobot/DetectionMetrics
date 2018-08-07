@@ -1,5 +1,6 @@
 //#include <boost/shared_ptr.hpp>
 #include "FrameworkInferencer.h"
+#include <boost/python.hpp>
 #include <Python.h>
 #include <numpy/arrayobject.h>
 #include <vector>

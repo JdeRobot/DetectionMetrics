@@ -13,7 +13,7 @@
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see http://www.gnu.org/licenses/. 
+ *  along with this program.  If not, see http://www.gnu.org/licenses/.
  *
  *  Authors : David Lobato Bravo <dav.lobato@gmail.com>
  *
@@ -26,7 +26,7 @@
 #include <exception>
 #include <vector>
 #include <iostream>
-#include <tr1/memory>
+#include <memory>
 #include "uncopyable.h"
 
 namespace colorspaces {
@@ -57,9 +57,9 @@ namespace colorspaces {
 
     typedef Image* (*imageCtor)(const int height, const int width, void *const data);
     typedef Image& (*imageCvt)(const Image& src, Image& dst);
-    
+
     class Format;
-    typedef std::tr1::shared_ptr<Format> FormatPtr;
+    typedef std::shared_ptr<Format> FormatPtr;
 
     /**
      * Define the pixel format of an image
@@ -71,7 +71,7 @@ namespace colorspaces {
       static const FormatPtr searchFormat(const std::string name);
       Image* createInstance(const int width, const int height, void *const data);
       int bytesPerPixel() { return CV_ELEM_SIZE(cvType); }
-      std::string name;/**< String that represents this format*/ 
+      std::string name;/**< String that represents this format*/
       int id;/**< Format identification*/
       int cvType;/**< Opencv data type used for pixel data*/
       imageCtor ctor;/**< Contructor*/
@@ -81,7 +81,7 @@ namespace colorspaces {
       static std::vector<FormatPtr>& formatTable();
     };
 
-  
+
     /**
      * Constructor
      */
@@ -91,7 +91,7 @@ namespace colorspaces {
      * Constructor
      */
     Image(const int width, const int height, const FormatPtr fmt);
-    
+
     /**
      * Constructor from user data
      */
@@ -129,7 +129,7 @@ namespace colorspaces {
 
     int width;
     int height;
-    
+
     static const FormatPtr FORMAT_NONE;
   private:
     FormatPtr _format;
@@ -145,7 +145,7 @@ namespace colorspaces {
      * Constructor
      */
     ImageRGB8(const int width, const int height);
-    
+
     /**
      * Constructor from user data
      */
@@ -155,7 +155,7 @@ namespace colorspaces {
      * Copy constructor from Image, conversion will happen if needed
      */
     ImageRGB8(const Image& i);
-    
+
     /**
      * Conversion methods.
      */
@@ -169,14 +169,14 @@ namespace colorspaces {
      * See cv::imread for flags and params
      */
     static ImageRGB8 read(const std::string& filename);
-    
+
     /**
      * Write to a file
      * See cv::imwrite for flags and params
      */
     bool write(const std::string& filename, const std::vector<int>& params=std::vector<int>());
 
-    
+
     /**
      * Factory method
      */
@@ -195,7 +195,7 @@ namespace colorspaces {
      * Width have to be an even number.
      */
     ImageYUY2(const int width, const int height);
-    
+
     /**
      * Constructor from user data
      * Width have to be an even number.
@@ -208,7 +208,7 @@ namespace colorspaces {
      */
     ImageYUY2(const Image& i);
 
-    
+
     /**
      * Conversion methods.
      * Returns a copy
@@ -216,7 +216,7 @@ namespace colorspaces {
     void toGRAY8(Image& dst) const throw(FormatMismatch);
     void toRGB8(Image& dst) const throw(FormatMismatch);
     void toYCRCB(Image& dst) const throw(FormatMismatch);
-    
+
     /**
      * Factory method
      */
@@ -235,7 +235,7 @@ namespace colorspaces {
      * Constructor
      */
     ImageGRAY8(const int width, const int height);
-    
+
     /**
      * Constructor from user data
      */
@@ -247,7 +247,7 @@ namespace colorspaces {
      */
     ImageGRAY8(const Image& i);
 
-    
+
     /**
      * Conversion methods.
      * Returns a copy
@@ -260,7 +260,7 @@ namespace colorspaces {
      * See cv::imread for flags and params
      */
     static ImageGRAY8 read(const std::string& filename);
-    
+
     /**
      * Write to a file
      * See cv::imwrite for flags and params
@@ -284,7 +284,7 @@ namespace colorspaces {
      * Constructor
      */
     ImageHSV8(const int width, const int height);
-    
+
     /**
      * Constructor from user data
      */
@@ -296,7 +296,7 @@ namespace colorspaces {
      */
     ImageHSV8(const Image& i);
 
-    
+
     /**
      * Conversion methods.
      * Returns a copy
@@ -320,7 +320,7 @@ namespace colorspaces {
      * Constructor
      */
     ImageYCRCB(const int width, const int height);
-    
+
     /**
      * Constructor from user data
      */
@@ -332,7 +332,7 @@ namespace colorspaces {
      */
     ImageYCRCB(const Image& i);
 
-    
+
     /**
      * Conversion methods.
      * Returns a copy
@@ -358,7 +358,7 @@ namespace colorspaces {
      * Width have to be an even number.
      */
     ImageNV21(const int width, const int height);
-    
+
     /**
      * Constructor from user data
      * Width have to be an even number.
@@ -371,7 +371,7 @@ namespace colorspaces {
      */
     ImageNV21(const Image& i);
 
-    
+
     /**
      * Conversion methods.
      * Returns a copy
@@ -379,7 +379,7 @@ namespace colorspaces {
     void toGRAY8(Image& dst) const throw(FormatMismatch);
     void toRGB8(Image& dst) const throw(FormatMismatch);
     void toYCRCB(Image& dst) const throw(FormatMismatch);
-    
+
     /**
      * Factory method
      */
@@ -387,7 +387,7 @@ namespace colorspaces {
     static Image& imageCvt(const Image& src, Image& dst) throw(NoConversion);
     static const FormatPtr FORMAT_NV21;
   };
-  
+
 
 } //namespace
 

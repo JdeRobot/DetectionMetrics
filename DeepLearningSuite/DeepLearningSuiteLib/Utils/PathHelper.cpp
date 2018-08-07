@@ -18,6 +18,6 @@ std::string PathHelper::getPathSeparator() {
 #ifdef __linux__
     return std::string("/");
 #else
-    return std::string("\");
+    return std::string("\\");
 #endif
 }

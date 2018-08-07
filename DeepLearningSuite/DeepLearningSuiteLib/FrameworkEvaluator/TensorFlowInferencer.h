@@ -1,5 +1,6 @@
 //#include <boost/shared_ptr.hpp>
 #include "FrameworkInferencer.h"
+#include <boost/python.hpp>
 #include <Python.h>
 #include <numpy/arrayobject.h>
 #include <vector>
@@ -16,7 +17,8 @@ private:
     std::string netWeights;
     struct detection {
         cv::Rect boundingBox;
-        std::vector<cv::Point> mask;
+        //std::vector<cv::Point> mask;
+        RLE rleRegion;
         float probability;
         int classId;
     };
@@ -25,6 +27,7 @@ private:
     PyObject *pArgs, *pValue, *pmodel;
 
     std::vector<detection> detections;
+    bool hasMasks;
 
 };
 

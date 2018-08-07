@@ -6,6 +6,9 @@ The idea is to offer a generic infrastructure to evaluates object detection algo
 * Precision
 * Recall
 
+#### Supported Operating Systems:
+* Linux
+* MacOS
 
 
 ##### Supported datasets formats:
@@ -32,12 +35,90 @@ The idea is to offer a generic infrastructure to evaluates object detection algo
 * JdeRobot Recorder Logs
 
 # Sample generation Tool
-Sample Generation Tool has been developed in order to simply the process of generation samples for datasets focused on object detection. The tools provides some features to reduce the time on labeling objects as rectangles.
+Sample Generation Tool has been developed in order to simply the process of generation samples for datasets focused on object detection. The tools provides some features to reduce the time on labelling objects as rectangles.
 
 
 # Requirements
 
-### CUDA
+### Common deps
+
+
+<table>
+<tr>
+<td>
+<center><b>Ubuntu</b></center>
+</td>
+<td>
+<center><b>MacOS</b></center>
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+sudo apt install build-essential git cmake rapidjson-dev
+sudo apt install libboost-dev libboost-filesystem-dev libboost-system-dev
+</pre>
+</td>
+<td>
+<pre>
+sudo easy_install numpy
+brew install cmake boost rapidjson
+</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+sudo apt install libgoogle-glog-dev libyaml-cpp-dev qt5-default libqt5svg5-dev
+</pre>
+</td>
+<td>
+<pre>
+brew install glog yaml-cpp qt
+</pre>
+<br/>
+Also, just add qt in your PATH by running:<br/>
+<pre>
+echo 'export PATH="/usr/local/opt/qt/bin:$PATH"' >> ~/.bash_profile
+</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>
+sudo apt install libopencv-dev
+</pre>
+<br/>
+For Caffe Support Opencv 3.4 or greater is necessary. Instructions for the same can be found [here](https://github.com/JdeRobot/dl-DetectionSuite/wiki/FrameWorks#caffe).
+</td>
+<td>
+<pre>
+brew install opencv
+</pre>
+
+</td>
+</tr>
+</table>
+
+<!--
+### Opencv
+```
+sudo apt-get install libopencv-dev
+
+```
+
+### Dependencies (Currently being refined and reduced)
+
+```
+    sudo apt-get install -y libboost-filesystem-dev libboost-system-dev libboost-thread-dev libeigen3-dev libgoogle-glog-dev \
+          libgsl-dev libgtkgl2.0-dev libgtkmm-2.4-dev libglademm-2.4-dev libgnomecanvas2-dev libgoocanvasmm-2.0-dev libgnomecanvasmm-2.6-dev \
+          libgtkglextmm-x11-1.2-dev libyaml-cpp-dev icestorm zeroc-ice libxml++2.6-dev qt5-default libqt5svg5-dev libtinyxml-dev \
+          catkin libssl-dev
+```
+-->
+## Optional Dependencies
+
+### CUDA (For GPU support)
 
 ```
    NVIDIA_GPGKEY_SUM=d1be581509378368edeec8c1eb2958702feedf3bc3d17011adbf24efacce4ab5 && \
@@ -58,27 +139,6 @@ sudo apt-get update
 sudo apt-get install -y cuda
 ```
 
-### Common deps
-```
- sudo apt-get install -y build-essential git cmake rapidjson-dev libboost-dev sudo
-```
-
-### Opencv
-```
-sudo apt-get install libopencv-dev
-
-```
-
-### Dependencies (Currently being refined and reduced)
-
-```
-    sudo apt-get install -y libboost-filesystem-dev libboost-system-dev libboost-thread-dev libeigen3-dev libgoogle-glog-dev \
-          libgsl-dev libgtkgl2.0-dev libgtkmm-2.4-dev libglademm-2.4-dev libgnomecanvas2-dev libgoocanvasmm-2.0-dev libgnomecanvasmm-2.6-dev \
-          libgtkglextmm-x11-1.2-dev libyaml-cpp-dev icestorm zeroc-ice libxml++2.6-dev qt5-default libqt5svg5-dev libtinyxml-dev \
-          catkin libssl-dev
-```
-
-## Optional Dependencies
 Below is a list of Optional Dependencies you may require depending on your Usage.
 
 * ### Camera Streaming Support
@@ -120,13 +180,13 @@ Each one of them has some Dependencies, and are mentioned below.
    So, just install TensorFlow. Though it should be 1.4.1 or greater.
 
    * #### Keras
-   Similarly, only dependency for using  Keras as an Inferencing is Keras only.
+   Similarly, only dependency for using Keras as an Inferencing is Keras only.
 
    * #### Caffe
    For using Caffe as an inferencing framework, it is necessary to install OpenCV 3.4 or greater.
 
 
-**Note: ** Be Sure to checkout the Wiki Pages for tutorials on how to use the above mentioned functionalities and frameworks.  
+**Note:** Be Sure to checkout the Wiki Pages for tutorials on how to use the above mentioned functionalities and frameworks.  
 
 # How to compile DL_DetectionSuite:
 
@@ -136,10 +196,20 @@ Once you have all the required Dependencies installed just:
     git clone https://github.com/JdeRobot/DeepLearningSuite
     cd DeepLearningSuite/
     mkdir build && cd build
+```
+```
     cmake ..
+```
+To enable Darknet support with GPU:
+```
+    cmake -DARKNET_PATH=<DARKNET_INSTALLETION_DIR> -DUSE_GPU_DARKNET=ON ..
+```
+**Note:** GPU support is enabled by default for other Frameworks
+```
     make -j4
 
 ```
+
 **NOTE:** To enable Darknet support just pass an optinal parameter in cmake `-D DARKNET_PATH ` equal to Darknet installation directory, and is same as `<DARKNET_DIR>` passed above in darknet installation.
 
 Once it is build you will find various executables in different folders ready to be executed :smile:.
