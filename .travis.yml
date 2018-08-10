@@ -1,15 +1,5 @@
 language: cpp
 
-# blacklist
-branches:
-  except:
-    - master
-
-# whitelist
-branches:
-  only:
-    - travis-test
-
 os:
   - linux
   - osx
@@ -30,7 +20,6 @@ cache:
 matrix:
   include:
     - env: TO_TEST=WITH_ROS_AND_ICE
-  fast_finish: true
 
 
 before_install:
@@ -50,6 +39,7 @@ before_install:
   - if [[ ( "$TRAVIS_OS_NAME" == "linux" ) && ( "$TO_TEST" == "WITH_ROS_AND_ICE" ) ]]; then sudo apt-add-repository "deb http://zeroc.com/download/Ice/3.6/ubuntu16.04 stable main" ; fi
   - if [[ ( "$TRAVIS_OS_NAME" == "linux" ) && ( "$TO_TEST" == "WITH_ROS_AND_ICE" ) ]]; then sudo apt update ; fi
   - if [[ ( "$TRAVIS_OS_NAME" == "linux" ) && ( "$TO_TEST" == "WITH_ROS_AND_ICE" ) ]]; then sudo apt install ros-kinetic-roscpp ros-kinetic-cv-bridge ros-kinetic-image-transport zeroc-ice-all-runtime zeroc-ice-all-dev ; fi
+  - if [[ ( "$TRAVIS_OS_NAME" == "linux" ) && ( "$TO_TEST" == "WITH_ROS_AND_ICE" ) ]]; then source /opt/ros/kinetic/setup.bash ; fi
   - sudo pip install numpy
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./install_opencv.sh ; fi
   - ./install_darknet.sh
@@ -60,18 +50,17 @@ before_script:
   - cd build
   - cmake ..
 
-script: make -j4
+script: make -j2
 
 
 after_success:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then source ../package.sh ; fi    # To run the script in the same shell so as to setup environment variables 
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then travis_wait bash ../package.sh ; fi    # To run the script in the same shell so as to setup environment variables
   - ls -lh out/*            # Assuming you have some files in out/ that you would like to upload
   - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
-  - bash upload.sh out/*
+  - travis_wait bash upload.sh out/*
 
 
 branches:
   except:
     - # Do not build tags that we create when we upload to GitHub Releases
     - /^(?i:continuous)$/
-

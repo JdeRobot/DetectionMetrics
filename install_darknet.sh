@@ -12,7 +12,7 @@ if [ -n "$(ls -A $HOME/darknet/build)" ];
 	cd darknet
         mkdir build && cd build
         cmake -DUSE_GPU=OFF ..
-        make -j4
+        make -j2
         sudo make install
  fi
 

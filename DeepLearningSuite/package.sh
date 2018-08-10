@@ -19,8 +19,6 @@ LOWERAPP=${APP,,}
 
 
 mkdir -p $APP.AppDir/usr/
-wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./functions.sh
-. ./functions.sh
 
 cd $APP.AppDir
 
@@ -28,14 +26,6 @@ echo `pwd`
 
 mkdir -p usr/bin
 cp ../DatasetEvaluationApp/DatasetEvaluationApp usr/bin/
-
-
-out=`find /opt -name "setup.bash"`
-if [ -a "$out"  ]
-then
-source $out
-fi
-
 
 mkdir -p usr/lib
 ldd ../DatasetEvaluationApp/DatasetEvaluationApp | grep "=> /" | awk '{print $3}' | xargs -I '{}' cp -v '{}' usr/lib/
