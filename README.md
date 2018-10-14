@@ -46,12 +46,12 @@ Sample Generation Tool has been developed in order to simply the process of gene
 #### We have AppImages !!!  
 ###  [Download from here](https://github.com/vinay0410/dl-DetectionSuite/releases/tag/continuous)  
 
-<br />
+
 To run,  
 First give executable permissions by running  
-```chmod a+x DetectionSuitexxxxx.AppImage  ```  
-And Run it by
-```./DetectionSuitexxxxx -c configFile ```
+`chmod a+x DetectionSuitexxxxx.AppImage`  
+And Run it by  
+`./DetectionSuitexxxxx -c configFile`  
 
 
 Though you would need `python` in your system installed with `numpy`.  
