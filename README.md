@@ -118,11 +118,14 @@ echo 'export PATH="/usr/local/opt/qt/bin:$PATH"' >> ~/.bash_profile
 </tr>
 <tr>
 <td>
+Install OpenCV 3.4
 <pre>
-sudo apt install libopencv-dev
+git clone https://github.com/opencv/opencv.git
+git checkout 3.4
+cmake -D WITH_QT=ON -D WITH_GTK=OFF ..
+make -j4
+sudo make install
 </pre>
-<br/>
-For Caffe Support Opencv 3.4 or greater is necessary. Instructions for the same can be found [here](https://github.com/JdeRobot/dl-DetectionSuite/wiki/FrameWorks#caffe).
 </td>
 <td>
 <pre>
