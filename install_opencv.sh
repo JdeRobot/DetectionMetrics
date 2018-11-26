@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh=
 if [ -n "$(ls -A $HOME/opencv/build)" ];
  then
  	# We're using a cached version of our OpenCV build

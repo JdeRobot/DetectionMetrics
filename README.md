@@ -88,8 +88,8 @@ pip install keras
 <tr>
 <td>
 <pre>
-sudo apt install build-essential git cmake rapidjson-dev
-sudo apt install libboost-dev libboost-filesystem-dev libboost-system-dev
+sudo apt install build-essential git cmake rapidjson-dev libssl-dev
+sudo apt install libboost-dev libboost-filesystem-dev libboost-system-dev libboost-program-options-dev
 </pre>
 </td>
 <td>

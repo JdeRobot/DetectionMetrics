@@ -13,7 +13,7 @@ DarknetInferencer::DarknetInferencer(const std::string &netConfig, const std::st
 
 Sample DarknetInferencer::detectImp(const cv::Mat &image, double confidence_threshold) {
     cv::Mat rgbImage;
-    cv::cvtColor(image,rgbImage,CV_RGB2BGR);
+    cv::cvtColor(image,rgbImage,cv::COLOR_RGB2BGR);
     DarknetDetections detections = this->cnn->process(rgbImage, (float)confidence_threshold);
 
     Sample sample;
