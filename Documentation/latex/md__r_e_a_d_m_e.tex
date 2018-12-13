@@ -1,0 +1,246 @@
+\href{https://travis-ci.org/JdeRobot/dl-DetectionSuite}{\tt }
+
+Deep\+Learning Suite is a set of tool that simplify the evaluation of most common object detection datasets with several object detection neural networks.
+
+The idea is to offer a generic infrastructure to evaluates object detection algorithms againts a dataset and compute most common statistics\+:
+\begin{DoxyItemize}
+\item Intersecion Over Union
+\item Precision
+\item Recall
+\end{DoxyItemize}
+
+\paragraph*{Supported Operating Systems\+:}
+
+
+\begin{DoxyItemize}
+\item Linux
+\item Mac\+OS
+\end{DoxyItemize}
+
+\subparagraph*{Supported datasets formats\+:}
+
+
+\begin{DoxyItemize}
+\item Y\+O\+LO
+\item C\+O\+CO
+\item Image\+Net
+\item Pascal V\+OC
+\item Jderobot recorder logs
+\item Princeton R\+GB dataset \mbox{[}1\mbox{]}
+\item Spinello dataset \mbox{[}2\mbox{]}
+\end{DoxyItemize}
+
+\subparagraph*{Supported object detection frameworks/algorithms}
+
+
+\begin{DoxyItemize}
+\item Y\+O\+LO (darknet)
+\item Tensor\+Flow
+\item Keras
+\item Caffe
+\item Background substraction
+\end{DoxyItemize}
+
+\subparagraph*{Supported Inputs for Deploying Networks}
+
+
+\begin{DoxyItemize}
+\item Web\+Camera/ U\+SB Camera
+\item Videos
+\item Streams from R\+OS
+\item Streams from I\+CE
+\item Jde\+Robot Recorder Logs
+\end{DoxyItemize}
+
+\subsection*{Sample generation Tool}
+
+Sample Generation Tool has been developed in order to simply the process of generation samples for datasets focused on object detection. The tools provides some features to reduce the time on labelling objects as rectangles.
+
+\section*{Installation}
+
+\paragraph*{We have App\+Images !!!}
+
+\subsubsection*{\href{https://github.com/vinay0410/dl-DetectionSuite/releases/tag/continuous}{\tt Download from here}}
+
+To run, First give executable permissions by running {\ttfamily chmod a+x Detection\+Suitexxxxx.\+App\+Image} And Run it by {\ttfamily ./\+Detection\+Suitexxxxx -\/c config\+File}
+
+Though you would need {\ttfamily python} in your system installed with {\ttfamily numpy}. Also, for using Tensor\+Flow, you would need to tensorflow, and similaraly for keras you would need to install Keras.
+
+If required they can be installed by 
+\begin{DoxyCode}
+pip install tensorflow
+\end{DoxyCode}
+ or
+
+
+\begin{DoxyCode}
+pip install tensorflow-gpu
+\end{DoxyCode}
+ Similrarly for keras\+: 
+\begin{DoxyCode}
+pip install keras
+\end{DoxyCode}
+
+
+\section*{Requirements}
+
+\subsubsection*{Common deps}
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\begin{center}{\bfseries Ubuntu}\end{center}   &\begin{center}{\bfseries Mac\+OS}\end{center}    \\\cline{1-2}
+
+\begin{DoxyPre}
+sudo apt install build-essential git cmake rapidjson-dev libssl-dev
+sudo apt install libboost-dev libboost-filesystem-dev libboost-system-dev libboost-program-options-dev
+\end{DoxyPre}
+  &
+\begin{DoxyPre}
+sudo easy\_install numpy
+brew install cmake boost rapidjson
+\end{DoxyPre}
+   \\\cline{1-2}
+
+\begin{DoxyPre}
+sudo apt install libgoogle-glog-dev libyaml-cpp-dev qt5-default libqt5svg5-dev
+\end{DoxyPre}
+  &
+\begin{DoxyPre}
+brew install glog yaml-cpp qt
+\end{DoxyPre}
+ ~\newline
+ Also, just add qt in your P\+A\+TH by running\+:~\newline
+ 
+\begin{DoxyPre}
+echo 'export PATH="/usr/local/opt/qt/bin:$PATH"' >> ~/.bash\_profile
+\end{DoxyPre}
+   \\\cline{1-2}
+Install Open\+CV 3.\+4 
+\begin{DoxyPre}
+git clone \href{https://github.com/opencv/opencv.git}{\tt https://github.com/opencv/opencv.git}
+git checkout 3.4
+cmake -D WITH\_QT=ON -D WITH\_GTK=OFF ..
+make -j4
+sudo make install
+\end{DoxyPre}
+  &
+\begin{DoxyPre}
+brew install opencv
+\end{DoxyPre}
+
+
+\\\cline{1-2}
+\end{longtabu}
+
+
+\subsection*{Optional Dependencies}
+
+\subsubsection*{C\+U\+DA (For G\+PU support)}
+
+
+\begin{DoxyCode}
+NVIDIA\_GPGKEY\_SUM=d1be581509378368edeec8c1eb2958702feedf3bc3d17011adbf24efacce4ab5 && \(\backslash\)
+
+  NVIDIA\_GPGKEY\_FPR=ae09fe4bbd223a84b2ccfce3f60f4b3d7fa2af80 && \(\backslash\)
+ sudo apt-key adv --fetch-keys
+       http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86\_64/7fa2af80.pub && \(\backslash\)
+ sudo apt-key adv --export --no-emit-version -a $NVIDIA\_GPGKEY\_FPR | tail -n +5 > cudasign.pub && \(\backslash\)
+  echo "$NVIDIA\_GPGKEY\_SUM  cudasign.pub" | sha256sum -c --strict - && rm cudasign.pub && \(\backslash\)
+
+  sudo sh -c 'echo "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86\_64 /" >
+       /etc/apt/sources.list.d/cuda.list' && \(\backslash\)
+  sudo sh -c 'echo "deb
+       http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86\_64 /" > /etc/apt/sources.list.d/nvidia-ml.list'
+\end{DoxyCode}
+
+
+Update and Install
+
+
+\begin{DoxyCode}
+sudo apt-get update
+sudo apt-get install -y cuda
+\end{DoxyCode}
+
+
+Below is a list of Optional Dependencies you may require depending on your Usage.
+
+
+\begin{DoxyItemize}
+\item \#\#\# Camera Streaming Support Detectionsuite can currently read R\+OS and I\+CE Camera Streams. So, to enable Streaming support install any one of them.
+\item \#\#\# Inferencing Frame\+Works Detection\+Suite currently supports many Inferencing Frame\+Works namely Darknet, Tensor\+Flow, Keras and Caffe. Each one of them has some Dependencies, and are mentioned below.
+
+Choose your Favourite one and go ahead.
+\begin{DoxyItemize}
+\item \#\#\#\# Darknet (jderobot fork) Darknet supports both G\+PU and C\+PU builds, and G\+PU build is enabled by default. If your Computer doesn\textquotesingle{}t have a N\+V\+I\+D\+IA Graphics card, then it is necessary to turn of G\+PU build in cmake by passing {\ttfamily -\/\+D\+U\+S\+E\+\_\+\+G\+PU=O\+FF} as an option in cmake.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}
+git clone https://github.com/JdeRobot/darknet
+cd darknet
+mkdir build && cd build
+\end{DoxyCode}
+
+
+For {\bfseries G\+PU} users\+:~\newline
+ 
+\begin{DoxyCode}
+cmake -DCMAKE\_INSTALL\_PREFIX=<DARKNET\_DIR> ..
+\end{DoxyCode}
+ For {\bfseries Non-\/\+G\+PU} users (C\+PU build)\+:
+
+
+\begin{DoxyCode}
+cmake -DCMAKE\_INSTALL\_PREFIX=<DARKNET\_DIR> -DUSE\_GPU=OFF ..
+\end{DoxyCode}
+ Change {\ttfamily $<$D\+A\+R\+K\+N\+E\+T\+\_\+\+D\+IR$>$} to your custom installation path.
+
+
+\begin{DoxyCode}
+``` sudo make -j4 install
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item \#\#\#\# Tensor\+Flow Only depedency for using Tensor\+Flow as an Inferencing framework is Tensor\+Flow. So, just install Tensor\+Flow. Though it should be 1.\+4.\+1 or greater.
+\item \#\#\#\# Keras Similarly, only dependency for using Keras as an Inferencing is Keras only.
+\item \#\#\#\# Caffe For using Caffe as an inferencing framework, it is necessary to install Open\+CV 3.\+4 or greater.
+\end{DoxyItemize}
+
+{\bfseries Note\+:} Be Sure to checkout the Wiki Pages for tutorials on how to use the above mentioned functionalities and frameworks.
+
+\section*{How to compile D\+L\+\_\+\+Detection\+Suite\+:}
+
+Once you have all the required Dependencies installed just\+:
+
+
+\begin{DoxyCode}
+git clone https://github.com/JdeRobot/DeepLearningSuite
+cd DeepLearningSuite/
+mkdir build && cd build
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+cmake ..
+\end{DoxyCode}
+ To enable Darknet support with G\+PU\+: 
+\begin{DoxyCode}
+cmake -DARKNET\_PATH=<DARKNET\_INSTALLETION\_DIR> -DUSE\_GPU\_DARKNET=ON ..
+\end{DoxyCode}
+ {\bfseries Note\+:} G\+PU support is enabled by default for other Frameworks 
+\begin{DoxyCode}
+make -j4
+\end{DoxyCode}
+
+
+{\bfseries N\+O\+TE\+:} To enable Darknet support just pass an optinal parameter in cmake {\ttfamily -\/D D\+A\+R\+K\+N\+E\+T\+\_\+\+P\+A\+TH} equal to Darknet installation directory, and is same as {\ttfamily $<$D\+A\+R\+K\+N\+E\+T\+\_\+\+D\+IR$>$} passed above in darknet installation.
+
+Once it is build you will find various executables in different folders ready to be executed \+:smile\+:.
+
+\subsection*{Starting with Detection\+Suite}
+
+The best way to start is with our \mbox{[}beginner\textquotesingle{}s tutorial\mbox{]}(\href{https://github.com/JdeRobot/dl-DetectionSuite/wiki/Beginner's-Tutorial-to-DetectionSuite-Part-1}{\tt https\+://github.\+com/\+Jde\+Robot/dl-\/\+Detection\+Suite/wiki/\+Beginner\textquotesingle{}s-\/\+Tutorial-\/to-\/\+Detection\+Suite-\/\+Part-\/1}) for Detection\+Suite. If you have any issue feel free to drop a mail \href{mailto:vinay04sharma@icloud.com}{\tt vinay04sharma@icloud.\+com} or create an issue for the same. 
