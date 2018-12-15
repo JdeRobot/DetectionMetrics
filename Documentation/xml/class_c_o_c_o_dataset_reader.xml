@@ -1,0 +1,342 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_c_o_c_o_dataset_reader" kind="class" language="C++" prot="public">
+    <compoundname>COCODatasetReader</compoundname>
+    <basecompoundref refid="class_dataset_reader" prot="public" virt="non-virtual">DatasetReader</basecompoundref>
+    <includes refid="_c_o_c_o_dataset_reader_8h" local="no">COCODatasetReader.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_c_o_c_o_dataset_reader_1aa520b72ff434572eeb0998eece0cfc6a" prot="private" static="no" mutable="no">
+        <type>std::map&lt; unsigned long int, <ref refid="struct_sample" kindref="compound">Sample</ref> &gt;</type>
+        <definition>std::map&lt; unsigned long int, Sample &gt; COCODatasetReader::map_image_id</definition>
+        <argsstring></argsstring>
+        <name>map_image_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_c_o_c_o_dataset_reader_1aeb5609c8496c92013c5e6d551696f3c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>COCODatasetReader::COCODatasetReader</definition>
+        <argsstring>(const std::string &amp;path, const std::string &amp;classNamesFile, bool imagesRequired)</argsstring>
+        <name>COCODatasetReader</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classNamesFile</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>imagesRequired</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.cpp" bodystart="16" bodyend="19"/>
+        <references refid="class_dataset_reader_1a45ded43b56539f1e37a24ca9c94b4611" compoundref="_dataset_reader_8h" startline="37">DatasetReader::classNamesFile</references>
+        <references refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">appendDataset</references>
+      </memberdef>
+      <memberdef kind="function" id="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool COCODatasetReader::appendDataset</definition>
+        <argsstring>(const std::string &amp;datasetPath, const std::string &amp;datasetPrefix=&quot;&quot;)</argsstring>
+        <name>appendDataset</name>
+        <reimplements refid="class_dataset_reader_1a732438244cec7c20294f93c6b635888c">appendDataset</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>datasetPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>datasetPrefix</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.cpp" bodystart="49" bodyend="248"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+        <references refid="class_dataset_reader_1a45ded43b56539f1e37a24ca9c94b4611" compoundref="_dataset_reader_8h" startline="37">DatasetReader::classNamesFile</references>
+        <references refid="class_dataset_reader_1a71d04d25d58e0e9a0c05d69afcff03a1" compoundref="_dataset_reader_8h" startline="39">DatasetReader::imagesRequired</references>
+        <references refid="class_c_o_c_o_dataset_reader_1a081c7b899608f70981075a37b291a221" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="22" endline="47">find_img_directory</references>
+        <references refid="struct_sample_1a64fc306f85a0a1966f5f3b662efe95bb" compoundref="_sample_8cpp" startline="326" endline="328">Sample::setSampleID</references>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">Sample::setColorImage</references>
+        <references refid="struct_sample_1abf2406fa93155628a56b7087ff322ab4" compoundref="_sample_8cpp" startline="61" endline="64">Sample::setSampleDims</references>
+        <references refid="struct_class_type_generic_1abb29534e4b1c9e2b33c57df5e56ef2fb" compoundref="_class_type_generic_8cpp" startline="26" endline="28">ClassTypeGeneric::setId</references>
+        <references refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" compoundref="_class_type_8cpp" startline="44" endline="46">ClassType::getClassString</references>
+        <references refid="struct_sample_1a9654dcf85e7a0b19b7b462cd7e6e1e6a" compoundref="_sample_8cpp" startline="84" endline="86">Sample::setRectRegions</references>
+        <references refid="class_c_o_c_o_dataset_reader_1a2e9d81e9fa12aa9d0e5df202f53792f0" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="251" endline="265">appendSegmentationRegion</references>
+        <references refid="struct_sample_1a5f1b7716e5c4e8f5217a18021169283f" compoundref="_sample_8cpp" startline="123" endline="125">Sample::getRectRegions</references>
+        <references refid="struct_sample_1adead1781500bbf8508eae6f983621d3a" compoundref="_sample_8cpp" startline="330" endline="332">Sample::getSampleID</references>
+        <references refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" compoundref="_dataset_reader_8h" startline="34">DatasetReader::samples</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1aeb5609c8496c92013c5e6d551696f3c8" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="16" endline="19">COCODatasetReader</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_c_o_c_o_dataset_reader_1a081c7b899608f70981075a37b291a221" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool COCODatasetReader::find_img_directory</definition>
+        <argsstring>(const boost::filesystem::path &amp;dir_path, boost::filesystem::path &amp;path_found, std::string &amp;img_filename)</argsstring>
+        <name>find_img_directory</name>
+        <param>
+          <type>const boost::filesystem::path &amp;</type>
+          <declname>dir_path</declname>
+        </param>
+        <param>
+          <type>boost::filesystem::path &amp;</type>
+          <declname>path_found</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>img_filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.cpp" bodystart="22" bodyend="47"/>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">appendDataset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_c_o_c_o_dataset_reader_1a2e9d81e9fa12aa9d0e5df202f53792f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void COCODatasetReader::appendSegmentationRegion</definition>
+        <argsstring>(const rapidjson::Value &amp;node, Sample &amp;sample, ClassTypeGeneric typeConverter, const bool isCrowd)</argsstring>
+        <name>appendSegmentationRegion</name>
+        <param>
+          <type>const rapidjson::Value &amp;</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_sample" kindref="compound">Sample</ref> &amp;</type>
+          <declname>sample</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_class_type_generic" kindref="compound">ClassTypeGeneric</ref></type>
+          <declname>typeConverter</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isCrowd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.cpp" bodystart="251" bodyend="265"/>
+        <references refid="class_c_o_c_o_dataset_reader_1a2fcb9bb8c21783596a9c77efb49ca509" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="268" endline="301">getSegmentationRegion</references>
+        <references refid="struct_sample_1a90e4c417c9b81664bd0027a7ea2aeedc" compoundref="_sample_8cpp" startline="97" endline="108">Sample::getSampleWidth</references>
+        <references refid="struct_sample_1a7e18614451f5a983bba865592b661eea" compoundref="_sample_8cpp" startline="110" endline="121">Sample::getSampleHeight</references>
+        <references refid="struct_sample_1aba47baeaed03136d0b63ca6609de25a7" compoundref="_sample_8cpp" startline="131" endline="133">Sample::getRleRegions</references>
+        <references refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" compoundref="_class_type_8cpp" startline="44" endline="46">ClassType::getClassString</references>
+        <references refid="struct_sample_1a6716c8c1e8fdcd00d66b2a959a79b507" compoundref="_sample_8cpp" startline="92" endline="94">Sample::setRleRegions</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">appendDataset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_c_o_c_o_dataset_reader_1ac1529b3cc125da893d089fa88c866a53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref></type>
+        <definition>RLE COCODatasetReader::fromSegmentationList</definition>
+        <argsstring>(const rapidjson::Value &amp;seg, int im_width, int im_height, int size=1)</argsstring>
+        <name>fromSegmentationList</name>
+        <param>
+          <type>const rapidjson::Value &amp;</type>
+          <declname>seg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>im_width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>im_height</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.cpp" bodystart="396" bodyend="457"/>
+        <references refid="mask_api_8cpp_1a084dece6a0cb5f2a8f16b921ad3f7e4b" compoundref="mask_api_8cpp" startline="158" endline="198">rleFrPoly</references>
+        <references refid="mask_api_8cpp_1a32c5da9d1f7dcf59262e5c8af4bd8525" compoundref="mask_api_8cpp" startline="18" endline="21">rlesInit</references>
+        <references refid="mask_api_8cpp_1a74a6558465a0ea2511156cbf9b24b685" compoundref="mask_api_8cpp" startline="45" endline="66">rleMerge</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a2fcb9bb8c21783596a9c77efb49ca509" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="268" endline="301">getSegmentationRegion</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_c_o_c_o_dataset_reader_1a2fcb9bb8c21783596a9c77efb49ca509" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref></type>
+        <definition>RLE COCODatasetReader::getSegmentationRegion</definition>
+        <argsstring>(const rapidjson::Value &amp;seg, int im_width, int im_height)</argsstring>
+        <name>getSegmentationRegion</name>
+        <param>
+          <type>const rapidjson::Value &amp;</type>
+          <declname>seg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>im_width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>im_height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.cpp" bodystart="268" bodyend="301"/>
+        <references refid="class_c_o_c_o_dataset_reader_1ac1529b3cc125da893d089fa88c866a53" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="396" endline="457">fromSegmentationList</references>
+        <references refid="class_c_o_c_o_dataset_reader_1a0133d6cd0659f32bb96c52e5afee33e6" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="303" endline="351">fromSegmentationObject</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a2e9d81e9fa12aa9d0e5df202f53792f0" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="251" endline="265">appendSegmentationRegion</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_c_o_c_o_dataset_reader_1a0133d6cd0659f32bb96c52e5afee33e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref></type>
+        <definition>RLE COCODatasetReader::fromSegmentationObject</definition>
+        <argsstring>(const rapidjson::Value &amp;seg, int size=1)</argsstring>
+        <name>fromSegmentationObject</name>
+        <param>
+          <type>const rapidjson::Value &amp;</type>
+          <declname>seg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.cpp" bodystart="303" bodyend="351"/>
+        <references refid="class_c_o_c_o_dataset_reader_1ad3dc79ff171b5df8677a0a66a5f97ebd" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="353" endline="394">fromUncompressedRle</references>
+        <references refid="class_c_o_c_o_dataset_reader_1aa88f5bc653084dd529950558ebd6322c" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="459" endline="479">fromRle</references>
+        <references refid="mask_api_8cpp_1a32c5da9d1f7dcf59262e5c8af4bd8525" compoundref="mask_api_8cpp" startline="18" endline="21">rlesInit</references>
+        <references refid="mask_api_8cpp_1a74a6558465a0ea2511156cbf9b24b685" compoundref="mask_api_8cpp" startline="45" endline="66">rleMerge</references>
+        <references refid="mask_api_8cpp_1a8f4a62edceb041bc08c1fbc94a339c82" compoundref="mask_api_8cpp" startline="23" endline="25">rlesFree</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a2fcb9bb8c21783596a9c77efb49ca509" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="268" endline="301">getSegmentationRegion</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_c_o_c_o_dataset_reader_1ad3dc79ff171b5df8677a0a66a5f97ebd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref></type>
+        <definition>RLE COCODatasetReader::fromUncompressedRle</definition>
+        <argsstring>(const rapidjson::Value &amp;seg)</argsstring>
+        <name>fromUncompressedRle</name>
+        <param>
+          <type>const rapidjson::Value &amp;</type>
+          <declname>seg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.cpp" bodystart="353" bodyend="394"/>
+        <references refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0133d6cd0659f32bb96c52e5afee33e6" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="303" endline="351">fromSegmentationObject</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_c_o_c_o_dataset_reader_1aa88f5bc653084dd529950558ebd6322c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref></type>
+        <definition>RLE COCODatasetReader::fromRle</definition>
+        <argsstring>(const rapidjson::Value &amp;seg)</argsstring>
+        <name>fromRle</name>
+        <param>
+          <type>const rapidjson::Value &amp;</type>
+          <declname>seg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.cpp" bodystart="459" bodyend="479"/>
+        <references refid="mask_api_8cpp_1af7769ad8a8d4a37dca02ec731213e2e3" compoundref="mask_api_8cpp" startline="214" endline="227">rleFrString</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0133d6cd0659f32bb96c52e5afee33e6" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="303" endline="351">fromSegmentationObject</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="50">
+        <label>DatasetReader</label>
+        <link refid="class_dataset_reader"/>
+      </node>
+      <node id="49">
+        <label>COCODatasetReader</label>
+        <link refid="class_c_o_c_o_dataset_reader"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="52">
+        <label>DatasetReader</label>
+        <link refid="class_dataset_reader"/>
+      </node>
+      <node id="51">
+        <label>COCODatasetReader</label>
+        <link refid="class_c_o_c_o_dataset_reader"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h" bodystart="14" bodyend="30"/>
+    <listofallmembers>
+      <member refid="class_dataset_reader_1a03ceb33ec8ecd5fb73a4b17e9701cbb3" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>addSample</name></member>
+      <member refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" prot="public" virt="virtual"><scope>COCODatasetReader</scope><name>appendDataset</name></member>
+      <member refid="class_c_o_c_o_dataset_reader_1a2e9d81e9fa12aa9d0e5df202f53792f0" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>appendSegmentationRegion</name></member>
+      <member refid="class_dataset_reader_1a76c52c7db385a4a930021fe69d04fefb" prot="protected" virt="non-virtual"><scope>COCODatasetReader</scope><name>classNames</name></member>
+      <member refid="class_dataset_reader_1a45ded43b56539f1e37a24ca9c94b4611" prot="protected" virt="non-virtual"><scope>COCODatasetReader</scope><name>classNamesFile</name></member>
+      <member refid="class_c_o_c_o_dataset_reader_1aeb5609c8496c92013c5e6d551696f3c8" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>COCODatasetReader</name></member>
+      <member refid="class_dataset_reader_1a357a86043c584062497bbc0fcd3ea420" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>DatasetReader</name></member>
+      <member refid="class_dataset_reader_1ac94f1934639708dc2a29b1ba05e3cc0b" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>decrementReaderCounter</name></member>
+      <member refid="class_dataset_reader_1a17085ffacc392c459a95cd510f341a7d" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>filterSamplesByID</name></member>
+      <member refid="class_c_o_c_o_dataset_reader_1a081c7b899608f70981075a37b291a221" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>find_img_directory</name></member>
+      <member refid="class_c_o_c_o_dataset_reader_1aa88f5bc653084dd529950558ebd6322c" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>fromRle</name></member>
+      <member refid="class_c_o_c_o_dataset_reader_1ac1529b3cc125da893d089fa88c866a53" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>fromSegmentationList</name></member>
+      <member refid="class_c_o_c_o_dataset_reader_1a0133d6cd0659f32bb96c52e5afee33e6" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>fromSegmentationObject</name></member>
+      <member refid="class_c_o_c_o_dataset_reader_1ad3dc79ff171b5df8677a0a66a5f97ebd" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>fromUncompressedRle</name></member>
+      <member refid="class_dataset_reader_1a2838c12e627e42e8394fd18011afa203" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>getClassNamesFile</name></member>
+      <member refid="class_dataset_reader_1af50668f52c34f4620c44e91f26dd11ce" prot="public" virt="virtual"><scope>COCODatasetReader</scope><name>getNextSample</name></member>
+      <member refid="class_dataset_reader_1a4875a59f33227329ca93241add8370c0" prot="public" virt="virtual"><scope>COCODatasetReader</scope><name>getNextSamples</name></member>
+      <member refid="class_dataset_reader_1a67f4c1c3fdfcc0c6bf3b90d65d5fc7c5" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>getNumberOfElements</name></member>
+      <member refid="class_dataset_reader_1aeff3413e85bbde9f1f755e36860c7f3a" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>getSampleBySampleID</name></member>
+      <member refid="class_dataset_reader_1a2cfa8b90e643a325b519a292c62d4460" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>getSampleBySampleID</name></member>
+      <member refid="class_c_o_c_o_dataset_reader_1a2fcb9bb8c21783596a9c77efb49ca509" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>getSegmentationRegion</name></member>
+      <member refid="class_dataset_reader_1a71d04d25d58e0e9a0c05d69afcff03a1" prot="protected" virt="non-virtual"><scope>COCODatasetReader</scope><name>imagesRequired</name></member>
+      <member refid="class_dataset_reader_1a951146f7949deff5e17c3482f4339672" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>incrementReaderCounter</name></member>
+      <member refid="class_c_o_c_o_dataset_reader_1aa520b72ff434572eeb0998eece0cfc6a" prot="private" virt="non-virtual"><scope>COCODatasetReader</scope><name>map_image_id</name></member>
+      <member refid="class_dataset_reader_1ac662ff47f081f872d05ade9a33724a2a" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>overWriteClasses</name></member>
+      <member refid="class_dataset_reader_1a1e37cddfc448b548dc6ca40f629884cb" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>printDatasetStats</name></member>
+      <member refid="class_dataset_reader_1af0fd759568c5db7187d19bae8ebe1b6c" prot="protected" virt="non-virtual"><scope>COCODatasetReader</scope><name>readerCounter</name></member>
+      <member refid="class_dataset_reader_1a528f4df5009c93efd37ff5cfafe4c778" prot="public" virt="non-virtual"><scope>COCODatasetReader</scope><name>resetReaderCounter</name></member>
+      <member refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" prot="protected" virt="non-virtual"><scope>COCODatasetReader</scope><name>samples</name></member>
+      <member refid="class_dataset_reader_1aae9a49629ae536c02b726e52a9def4ee" prot="protected" virt="non-virtual"><scope>COCODatasetReader</scope><name>skip_count</name></member>
+      <member refid="class_dataset_reader_1af972d4b7460587b2292d3dd15e69827b" prot="public" virt="virtual"><scope>COCODatasetReader</scope><name>~DatasetReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

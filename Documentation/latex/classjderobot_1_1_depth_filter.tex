@@ -1,0 +1,157 @@
+\hypertarget{classjderobot_1_1_depth_filter}{}\section{jderobot\+:\+:Depth\+Filter Class Reference}
+\label{classjderobot_1_1_depth_filter}\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+
+
+{\ttfamily \#include $<$Depth\+Filter.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classjderobot_1_1_depth_filter_a5f1717aa509c378e2124f9ab86dfe584}{Depth\+Filter} (int type, int buff\+Size, int erode\+Size, int threshold)
+\item 
+\hyperlink{classjderobot_1_1_depth_filter_afd0b86c3f0bf4328025ee4f92934f564}{Depth\+Filter} ()
+\item 
+virtual \hyperlink{classjderobot_1_1_depth_filter_a6bc39bb21bc8a8685e910ddbc70bef20}{$\sim$\+Depth\+Filter} ()
+\item 
+void \hyperlink{classjderobot_1_1_depth_filter_adc334eab73132c4ae1f44da6db02ae70}{update} (cv\+::\+Mat image\+In, cv\+::\+Mat \&image\+Out)
+\item 
+int \hyperlink{classjderobot_1_1_depth_filter_a0906e79126a1447526a40fe2345d7653}{get\+Buffer\+Size} ()
+\item 
+void \hyperlink{classjderobot_1_1_depth_filter_a619b72f8bded1c3ea8e3a02f2bcb21ec}{set\+Buffer\+Size} (int size)
+\item 
+int \hyperlink{classjderobot_1_1_depth_filter_a6ce70c6b569e38f4bf95037fc32e9474}{get\+Erode\+Size} ()
+\item 
+void \hyperlink{classjderobot_1_1_depth_filter_a9e8d63b72611be1fca6913241c162889}{set\+Erode\+Size} (int size)
+\item 
+int \hyperlink{classjderobot_1_1_depth_filter_a47fc6768210b2b11df536729c04a23cb}{get\+Threshold} ()
+\item 
+void \hyperlink{classjderobot_1_1_depth_filter_af7ddc46805bded3d3f8ad24bc866268c}{set\+Threshold} (int value)
+\item 
+void \hyperlink{classjderobot_1_1_depth_filter_abb7692e32727b32edebb1f01601dfbe7}{set\+Filter\+Type} (int value)
+\item 
+int \hyperlink{classjderobot_1_1_depth_filter_a5d0a063ea9641f5bcf3dd71c3d45609f}{get\+Filter\+Type} ()
+\item 
+void \hyperlink{classjderobot_1_1_depth_filter_a89460a33c77663365cdaac29f3e06e9a}{clear} ()
+\item 
+void \hyperlink{classjderobot_1_1_depth_filter_a3ec6d1a0731ddbc235eacff6bae7970c}{get\+Mean\+Image} (cv\+::\+Mat \&out)
+\item 
+void \hyperlink{classjderobot_1_1_depth_filter_a726764bf1ca8f8f765507b32870ed8ee}{get\+Diff\+Image} (cv\+::\+Mat \&out)
+\item 
+void \hyperlink{classjderobot_1_1_depth_filter_a6667315ceee0a6abba42840d29b848d3}{get\+Fist\+Mask} (cv\+::\+Mat \&out)
+\item 
+void \hyperlink{classjderobot_1_1_depth_filter_a1e69ca9fd83391b8fb89d4ae4df35262}{get\+Second\+Mask} (cv\+::\+Mat \&out)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_a5f1717aa509c378e2124f9ab86dfe584}\label{classjderobot_1_1_depth_filter_a5f1717aa509c378e2124f9ab86dfe584}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!Depth\+Filter@{Depth\+Filter}}
+\index{Depth\+Filter@{Depth\+Filter}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{Depth\+Filter()}{DepthFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily jderobot\+::\+Depth\+Filter\+::\+Depth\+Filter (\begin{DoxyParamCaption}\item[{int}]{type,  }\item[{int}]{buff\+Size,  }\item[{int}]{erode\+Size,  }\item[{int}]{threshold }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_afd0b86c3f0bf4328025ee4f92934f564}\label{classjderobot_1_1_depth_filter_afd0b86c3f0bf4328025ee4f92934f564}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!Depth\+Filter@{Depth\+Filter}}
+\index{Depth\+Filter@{Depth\+Filter}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{Depth\+Filter()}{DepthFilter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily jderobot\+::\+Depth\+Filter\+::\+Depth\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_a6bc39bb21bc8a8685e910ddbc70bef20}\label{classjderobot_1_1_depth_filter_a6bc39bb21bc8a8685e910ddbc70bef20}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!````~Depth\+Filter@{$\sim$\+Depth\+Filter}}
+\index{````~Depth\+Filter@{$\sim$\+Depth\+Filter}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{$\sim$\+Depth\+Filter()}{~DepthFilter()}}
+{\footnotesize\ttfamily jderobot\+::\+Depth\+Filter\+::$\sim$\+Depth\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_a89460a33c77663365cdaac29f3e06e9a}\label{classjderobot_1_1_depth_filter_a89460a33c77663365cdaac29f3e06e9a}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!clear@{clear}}
+\index{clear@{clear}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Filter\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_a0906e79126a1447526a40fe2345d7653}\label{classjderobot_1_1_depth_filter_a0906e79126a1447526a40fe2345d7653}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!get\+Buffer\+Size@{get\+Buffer\+Size}}
+\index{get\+Buffer\+Size@{get\+Buffer\+Size}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{get\+Buffer\+Size()}{getBufferSize()}}
+{\footnotesize\ttfamily int jderobot\+::\+Depth\+Filter\+::get\+Buffer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_a726764bf1ca8f8f765507b32870ed8ee}\label{classjderobot_1_1_depth_filter_a726764bf1ca8f8f765507b32870ed8ee}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!get\+Diff\+Image@{get\+Diff\+Image}}
+\index{get\+Diff\+Image@{get\+Diff\+Image}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{get\+Diff\+Image()}{getDiffImage()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Filter\+::get\+Diff\+Image (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_a6ce70c6b569e38f4bf95037fc32e9474}\label{classjderobot_1_1_depth_filter_a6ce70c6b569e38f4bf95037fc32e9474}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!get\+Erode\+Size@{get\+Erode\+Size}}
+\index{get\+Erode\+Size@{get\+Erode\+Size}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{get\+Erode\+Size()}{getErodeSize()}}
+{\footnotesize\ttfamily int jderobot\+::\+Depth\+Filter\+::get\+Erode\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_a5d0a063ea9641f5bcf3dd71c3d45609f}\label{classjderobot_1_1_depth_filter_a5d0a063ea9641f5bcf3dd71c3d45609f}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!get\+Filter\+Type@{get\+Filter\+Type}}
+\index{get\+Filter\+Type@{get\+Filter\+Type}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{get\+Filter\+Type()}{getFilterType()}}
+{\footnotesize\ttfamily int jderobot\+::\+Depth\+Filter\+::get\+Filter\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_a6667315ceee0a6abba42840d29b848d3}\label{classjderobot_1_1_depth_filter_a6667315ceee0a6abba42840d29b848d3}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!get\+Fist\+Mask@{get\+Fist\+Mask}}
+\index{get\+Fist\+Mask@{get\+Fist\+Mask}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{get\+Fist\+Mask()}{getFistMask()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Filter\+::get\+Fist\+Mask (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_a3ec6d1a0731ddbc235eacff6bae7970c}\label{classjderobot_1_1_depth_filter_a3ec6d1a0731ddbc235eacff6bae7970c}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!get\+Mean\+Image@{get\+Mean\+Image}}
+\index{get\+Mean\+Image@{get\+Mean\+Image}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{get\+Mean\+Image()}{getMeanImage()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Filter\+::get\+Mean\+Image (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_a1e69ca9fd83391b8fb89d4ae4df35262}\label{classjderobot_1_1_depth_filter_a1e69ca9fd83391b8fb89d4ae4df35262}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!get\+Second\+Mask@{get\+Second\+Mask}}
+\index{get\+Second\+Mask@{get\+Second\+Mask}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{get\+Second\+Mask()}{getSecondMask()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Filter\+::get\+Second\+Mask (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_a47fc6768210b2b11df536729c04a23cb}\label{classjderobot_1_1_depth_filter_a47fc6768210b2b11df536729c04a23cb}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!get\+Threshold@{get\+Threshold}}
+\index{get\+Threshold@{get\+Threshold}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{get\+Threshold()}{getThreshold()}}
+{\footnotesize\ttfamily int jderobot\+::\+Depth\+Filter\+::get\+Threshold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_a619b72f8bded1c3ea8e3a02f2bcb21ec}\label{classjderobot_1_1_depth_filter_a619b72f8bded1c3ea8e3a02f2bcb21ec}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!set\+Buffer\+Size@{set\+Buffer\+Size}}
+\index{set\+Buffer\+Size@{set\+Buffer\+Size}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{set\+Buffer\+Size()}{setBufferSize()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Filter\+::set\+Buffer\+Size (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_a9e8d63b72611be1fca6913241c162889}\label{classjderobot_1_1_depth_filter_a9e8d63b72611be1fca6913241c162889}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!set\+Erode\+Size@{set\+Erode\+Size}}
+\index{set\+Erode\+Size@{set\+Erode\+Size}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{set\+Erode\+Size()}{setErodeSize()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Filter\+::set\+Erode\+Size (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_abb7692e32727b32edebb1f01601dfbe7}\label{classjderobot_1_1_depth_filter_abb7692e32727b32edebb1f01601dfbe7}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!set\+Filter\+Type@{set\+Filter\+Type}}
+\index{set\+Filter\+Type@{set\+Filter\+Type}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{set\+Filter\+Type()}{setFilterType()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Filter\+::set\+Filter\+Type (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_af7ddc46805bded3d3f8ad24bc866268c}\label{classjderobot_1_1_depth_filter_af7ddc46805bded3d3f8ad24bc866268c}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!set\+Threshold@{set\+Threshold}}
+\index{set\+Threshold@{set\+Threshold}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{set\+Threshold()}{setThreshold()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Filter\+::set\+Threshold (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_filter_adc334eab73132c4ae1f44da6db02ae70}\label{classjderobot_1_1_depth_filter_adc334eab73132c4ae1f44da6db02ae70}} 
+\index{jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}!update@{update}}
+\index{update@{update}!jderobot\+::\+Depth\+Filter@{jderobot\+::\+Depth\+Filter}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Filter\+::update (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{image\+In,  }\item[{cv\+::\+Mat \&}]{image\+Out }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/libs/depth\+Lib/\hyperlink{_depth_filter_8h}{Depth\+Filter.\+h}\item 
+Deep\+Learning\+Suite/libs/depth\+Lib/\hyperlink{_depth_filter_8cpp}{Depth\+Filter.\+cpp}\end{DoxyCompactItemize}

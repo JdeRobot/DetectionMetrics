@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="tools_8hpp" kind="file" language="C++">
+    <compoundname>tools.hpp</compoundname>
+    <includes refid="properties_8hpp" local="no">config/properties.hpp</includes>
+    <includedby refid="camera_client_8hpp" local="no">DeepLearningSuite/libs/comm/include/comm/cameraClient.hpp</includedby>
+    <includedby refid="communicator_8hpp" local="no">DeepLearningSuite/libs/comm/include/comm/communicator.hpp</includedby>
+    <includedby refid="tools_8cpp" local="no">DeepLearningSuite/libs/comm/src/tools.cpp</includedby>
+    <incdepgraph>
+      <node id="5165">
+        <label>iomanip</label>
+      </node>
+      <node id="5173">
+        <label>boost/algorithm/string/classification.hpp</label>
+      </node>
+      <node id="5163">
+        <label>config/properties.hpp</label>
+        <link refid="properties_8hpp"/>
+        <childnode refid="5164" relation="include">
+        </childnode>
+        <childnode refid="5165" relation="include">
+        </childnode>
+        <childnode refid="5166" relation="include">
+        </childnode>
+        <childnode refid="5167" relation="include">
+        </childnode>
+        <childnode refid="5168" relation="include">
+        </childnode>
+        <childnode refid="5169" relation="include">
+        </childnode>
+        <childnode refid="5170" relation="include">
+        </childnode>
+      </node>
+      <node id="5167">
+        <label>string</label>
+      </node>
+      <node id="5174">
+        <label>fstream</label>
+      </node>
+      <node id="5169">
+        <label>yaml-cpp/yaml.h</label>
+      </node>
+      <node id="5172">
+        <label>boost/algorithm/string/split.hpp</label>
+      </node>
+      <node id="5170">
+        <label>config/stdutils.hpp</label>
+        <link refid="stdutils_8hpp"/>
+        <childnode refid="5171" relation="include">
+        </childnode>
+        <childnode refid="5167" relation="include">
+        </childnode>
+        <childnode refid="5168" relation="include">
+        </childnode>
+        <childnode refid="5172" relation="include">
+        </childnode>
+        <childnode refid="5173" relation="include">
+        </childnode>
+        <childnode refid="5174" relation="include">
+        </childnode>
+      </node>
+      <node id="5168">
+        <label>vector</label>
+      </node>
+      <node id="5162">
+        <label>DeepLearningSuite/libs/comm/include/comm/tools.hpp</label>
+        <link refid="tools_8hpp"/>
+        <childnode refid="5163" relation="include">
+        </childnode>
+      </node>
+      <node id="5166">
+        <label>sstream</label>
+      </node>
+      <node id="5171">
+        <label>cstdlib</label>
+      </node>
+      <node id="5164">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5187">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.cpp</label>
+        <link refid="_generic_live_reader_8cpp"/>
+      </node>
+      <node id="5177">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h</label>
+        <link refid="_jderobot_reader_8h"/>
+        <childnode refid="5178" relation="include">
+        </childnode>
+        <childnode refid="5188" relation="include">
+        </childnode>
+      </node>
+      <node id="5176">
+        <label>DeepLearningSuite/libs/comm/include/comm/cameraClient.hpp</label>
+        <link refid="camera_client_8hpp"/>
+        <childnode refid="5177" relation="include">
+        </childnode>
+        <childnode refid="5189" relation="include">
+        </childnode>
+      </node>
+      <node id="5189">
+        <label>DeepLearningSuite/libs/comm/src/cameraClient.cpp</label>
+        <link refid="camera_client_8cpp"/>
+      </node>
+      <node id="5181">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_converter_8cpp"/>
+      </node>
+      <node id="5191">
+        <label>DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp</label>
+        <link refid="camera_ice_client_8hpp"/>
+        <childnode refid="5192" relation="include">
+        </childnode>
+      </node>
+      <node id="5186">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Viewer.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp"/>
+      </node>
+      <node id="5178">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h</label>
+        <link refid="_generic_live_reader_8h"/>
+        <childnode refid="5179" relation="include">
+        </childnode>
+        <childnode refid="5180" relation="include">
+        </childnode>
+        <childnode refid="5182" relation="include">
+        </childnode>
+        <childnode refid="5187" relation="include">
+        </childnode>
+      </node>
+      <node id="5192">
+        <label>DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp</label>
+        <link refid="camera_ice_client_8cpp"/>
+      </node>
+      <node id="5182">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.cpp</label>
+        <link refid="_deployer_8cpp"/>
+      </node>
+      <node id="5185">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.cpp</label>
+        <link refid="_sampler_generation_handler_8cpp"/>
+      </node>
+      <node id="5194">
+        <label>DeepLearningSuite/libs/comm/src/tools.cpp</label>
+        <link refid="tools_8cpp"/>
+      </node>
+      <node id="5193">
+        <label>DeepLearningSuite/libs/comm/src/communicator.cpp</label>
+        <link refid="communicator_8cpp"/>
+      </node>
+      <node id="5180">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.h</label>
+        <link refid="_sampler_generation_handler_8h"/>
+        <childnode refid="5181" relation="include">
+        </childnode>
+        <childnode refid="5182" relation="include">
+        </childnode>
+        <childnode refid="5183" relation="include">
+        </childnode>
+        <childnode refid="5184" relation="include">
+        </childnode>
+        <childnode refid="5185" relation="include">
+        </childnode>
+        <childnode refid="5186" relation="include">
+        </childnode>
+      </node>
+      <node id="5175">
+        <label>DeepLearningSuite/libs/comm/include/comm/tools.hpp</label>
+        <link refid="tools_8hpp"/>
+        <childnode refid="5176" relation="include">
+        </childnode>
+        <childnode refid="5190" relation="include">
+        </childnode>
+        <childnode refid="5194" relation="include">
+        </childnode>
+      </node>
+      <node id="5184">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_evaluator_8cpp"/>
+      </node>
+      <node id="5188">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.cpp</label>
+        <link refid="_jderobot_reader_8cpp"/>
+      </node>
+      <node id="5179">
+        <label>DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="5183">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp"/>
+      </node>
+      <node id="5190">
+        <label>DeepLearningSuite/libs/comm/include/comm/communicator.hpp</label>
+        <link refid="communicator_8hpp"/>
+        <childnode refid="5177" relation="include">
+        </childnode>
+        <childnode refid="5176" relation="include">
+        </childnode>
+        <childnode refid="5191" relation="include">
+        </childnode>
+        <childnode refid="5193" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespace_comm">Comm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>(C)<sp/>1997-2018<sp/>JDE<sp/>Developers<sp/>Team</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>http://www.gnu.org/licenses/.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>Authors<sp/>:</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Aitor<sp/>Martinez<sp/>Fernandez<sp/>&lt;aitor.martinez.fernandez@gmail.com&gt;</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>JDEROBOTCOMM_TOOLS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JDEROBOTCOMM_TOOLS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="properties_8hpp" kindref="compound">config/properties.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_comm" kindref="compound">Comm</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespace_comm_1ab6b021c81a3c5ebabd75caaffa9f16da" kindref="member">server2int</ref><sp/>(std::string<sp/>server);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}<sp/></highlight><highlight class="comment">//NS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>JDEROBOTCOMM_TOOLS_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/libs/comm/include/comm/tools.hpp"/>
+  </compounddef>
+</doxygen>

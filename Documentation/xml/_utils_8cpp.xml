@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_utils_8cpp" kind="file" language="C++">
+    <compoundname>Utils.cpp</compoundname>
+    <includes refid="_utils_8h" local="yes">Utils.h</includes>
+    <incdepgraph>
+      <node id="195">
+        <label>DeepLearningSuite/DatasetEvaluationApp/gui/Utils.cpp</label>
+        <link refid="_utils_8cpp"/>
+        <childnode refid="196" relation="include">
+        </childnode>
+      </node>
+      <node id="201">
+        <label>map</label>
+      </node>
+      <node id="199">
+        <label>QGroupBox</label>
+      </node>
+      <node id="202">
+        <label>iostream</label>
+      </node>
+      <node id="198">
+        <label>QtWidgets</label>
+      </node>
+      <node id="196">
+        <label>Utils.h</label>
+        <link refid="_utils_8h"/>
+        <childnode refid="197" relation="include">
+        </childnode>
+        <childnode refid="198" relation="include">
+        </childnode>
+        <childnode refid="199" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+      </node>
+      <node id="200">
+        <label>QRadioButton</label>
+      </node>
+      <node id="197">
+        <label>QtWidgets/QListView</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>19/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_utils_8h" kindref="compound">Utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="class_utils_1af7234a751d8a81bd01774e9af9e403be" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_utils_1af7234a751d8a81bd01774e9af9e403be" kindref="member">Utils::getListViewContent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QListView<sp/>*list,<sp/>std::vector&lt;std::string&gt;<sp/>&amp;content,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;prefix)<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>content.clear();</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(list-&gt;model()<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>QModelIndexList<sp/>selectedList<sp/>=list-&gt;selectionModel()-&gt;selectedIndexes();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>selectedList.begin(),<sp/>end<sp/>=<sp/>selectedList.end();<sp/>it<sp/>!=<sp/>end;<sp/>++it){</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>content.push_back(prefix<sp/>+<sp/>it-&gt;data().toString().toStdString());</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>content.size()<sp/>!=<sp/>0;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_utils_1a67febf7d08f4b9e5e8a105317556c22b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_utils_1a67febf7d08f4b9e5e8a105317556c22b" kindref="member">Utils::getDeployerParamsContent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QGroupBox*<sp/>deployer_params,<sp/>std::map&lt;std::string,<sp/>std::string&gt;&amp;<sp/>deployer_params_map)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>deployer_params_map.clear();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!deployer_params-&gt;isEnabled())</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QLineEdit<sp/>*&gt;<sp/>allLineEdits<sp/>=<sp/>deployer_params-&gt;findChildren&lt;QLineEdit<sp/>*&gt;();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QLineEdit<sp/>*&gt;::iterator<sp/>i;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>allLineEdits.begin();<sp/>i<sp/>!=<sp/>allLineEdits.end();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((*i)-&gt;text().toStdString().empty())</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::invalid_argument(</highlight><highlight class="stringliteral">&quot;Please<sp/>Enter<sp/>All<sp/>the<sp/>Parameters&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*foreach(<sp/>QLineEdit*<sp/>item,<sp/>allLineEdits<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>item-&gt;text().toStdString()<sp/>&lt;&lt;<sp/>&apos;\n&apos;;</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/>}*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>deployer_params_map[</highlight><highlight class="stringliteral">&quot;Server&quot;</highlight><highlight class="normal">]<sp/>=<sp/>deployer_params-&gt;findChild&lt;QRadioButton*&gt;(</highlight><highlight class="stringliteral">&quot;radioButton_deployer_ros&quot;</highlight><highlight class="normal">)-&gt;isChecked()<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;ROS&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;Ice&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>deployer_params_map[</highlight><highlight class="stringliteral">&quot;Proxy&quot;</highlight><highlight class="normal">]<sp/>=<sp/>deployer_params-&gt;findChild&lt;QLineEdit*&gt;(</highlight><highlight class="stringliteral">&quot;lineEdit_deployer_proxy&quot;</highlight><highlight class="normal">)-&gt;text().toStdString();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>deployer_params_map[</highlight><highlight class="stringliteral">&quot;Format&quot;</highlight><highlight class="normal">]<sp/>=<sp/>deployer_params-&gt;findChild&lt;QLineEdit*&gt;(</highlight><highlight class="stringliteral">&quot;lineEdit_deployer_format&quot;</highlight><highlight class="normal">)-&gt;text().toStdString();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>deployer_params_map[</highlight><highlight class="stringliteral">&quot;Topic&quot;</highlight><highlight class="normal">]<sp/>=<sp/>deployer_params-&gt;findChild&lt;QLineEdit*&gt;(</highlight><highlight class="stringliteral">&quot;lineEdit_deployer_topic&quot;</highlight><highlight class="normal">)-&gt;text().toStdString();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>deployer_params_map[</highlight><highlight class="stringliteral">&quot;Name&quot;</highlight><highlight class="normal">]<sp/>=<sp/>deployer_params-&gt;findChild&lt;QLineEdit*&gt;(</highlight><highlight class="stringliteral">&quot;lineEdit_deployer_name&quot;</highlight><highlight class="normal">)-&gt;text().toStdString();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="class_utils_1ae909b1275beb381a21977eb3618d31cd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_utils_1ae909b1275beb381a21977eb3618d31cd" kindref="member">Utils::getInferencerParamsContent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QGroupBox*<sp/>inferencer_params,<sp/>std::map&lt;std::string,<sp/>std::string&gt;&amp;<sp/>inferencer_params_map)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>inferencer_params_map.clear();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!inferencer_params-&gt;isEnabled())</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>prefix<sp/>=<sp/>inferencer_params-&gt;objectName().toStdString();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>pos<sp/>=<sp/>prefix.find_first_of(</highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>prefix<sp/>=<sp/>prefix.substr(0,<sp/>pos);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QLineEdit<sp/>*&gt;<sp/>allLineEdits<sp/>=<sp/>inferencer_params-&gt;findChildren&lt;QLineEdit<sp/>*&gt;();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QLineEdit<sp/>*&gt;::iterator<sp/>i;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>allLineEdits.begin();<sp/>i<sp/>!=<sp/>allLineEdits.end();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((*i)-&gt;text().toStdString().empty())</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>std::invalid_argument(</highlight><highlight class="stringliteral">&quot;Please<sp/>Enter<sp/>All<sp/>the<sp/>Parameters&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*foreach(<sp/>QLineEdit*<sp/>item,<sp/>allLineEdits<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>item-&gt;text().toStdString()<sp/>&lt;&lt;<sp/>&apos;\n&apos;;</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/>}*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//inferencer_params_map[&quot;conf_thresh&quot;]<sp/>=<sp/>inferencer_params-&gt;findChild&lt;QLineEdit*&gt;((prefix<sp/>+<sp/>&quot;_lineEdit_confidence_thresh&quot;).c_str())-&gt;text().toStdString();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>inferencer_params_map[</highlight><highlight class="stringliteral">&quot;scaling_factor&quot;</highlight><highlight class="normal">]<sp/>=<sp/>inferencer_params-&gt;findChild&lt;QLineEdit*&gt;((prefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_lineEdit_inferencer_scaling_factor&quot;</highlight><highlight class="normal">).c_str())-&gt;text().toStdString();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>inferencer_params_map[</highlight><highlight class="stringliteral">&quot;inpWidth&quot;</highlight><highlight class="normal">]<sp/>=<sp/>inferencer_params-&gt;findChild&lt;QLineEdit*&gt;((prefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_lineEdit_inferencer_input_width&quot;</highlight><highlight class="normal">).c_str())-&gt;text().toStdString();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>inferencer_params_map[</highlight><highlight class="stringliteral">&quot;inpHeight&quot;</highlight><highlight class="normal">]<sp/>=<sp/>inferencer_params-&gt;findChild&lt;QLineEdit*&gt;((prefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_lineEdit_inferencer_input_height&quot;</highlight><highlight class="normal">).c_str())-&gt;text().toStdString();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>inferencer_params_map[</highlight><highlight class="stringliteral">&quot;mean_sub_blue&quot;</highlight><highlight class="normal">]<sp/>=<sp/>inferencer_params-&gt;findChild&lt;QLineEdit*&gt;((prefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_lineEdit_mean_sub_blue&quot;</highlight><highlight class="normal">).c_str())-&gt;text().toStdString();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>inferencer_params_map[</highlight><highlight class="stringliteral">&quot;mean_sub_green&quot;</highlight><highlight class="normal">]<sp/>=<sp/>inferencer_params-&gt;findChild&lt;QLineEdit*&gt;((prefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_lineEdit_mean_sub_green&quot;</highlight><highlight class="normal">).c_str())-&gt;text().toStdString();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>inferencer_params_map[</highlight><highlight class="stringliteral">&quot;mean_sub_red&quot;</highlight><highlight class="normal">]<sp/>=<sp/>inferencer_params-&gt;findChild&lt;QLineEdit*&gt;((prefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_lineEdit_mean_sub_red&quot;</highlight><highlight class="normal">).c_str())-&gt;text().toStdString();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>inferencer_params_map[</highlight><highlight class="stringliteral">&quot;useRGB&quot;</highlight><highlight class="normal">]<sp/>=<sp/>inferencer_params-&gt;findChild&lt;QCheckBox*&gt;((prefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_checkBox_use_rgb&quot;</highlight><highlight class="normal">).c_str())-&gt;isChecked()<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;true&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;false&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="class_utils_1a70525e7417b0c195534a64403d25bf13" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_utils_1a70525e7417b0c195534a64403d25bf13" kindref="member">Utils::getCameraParamsContent</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QGroupBox*<sp/>camera_params,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>cameraID)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>cameraID<sp/>=<sp/>camera_params-&gt;findChild&lt;QSpinBox*&gt;(</highlight><highlight class="stringliteral">&quot;deployer_camera_spinBox&quot;</highlight><highlight class="normal">)-&gt;value();</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>cameraID<sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cameraID<sp/>&lt;<sp/>-1)<sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/gui/Utils.cpp"/>
+  </compounddef>
+</doxygen>

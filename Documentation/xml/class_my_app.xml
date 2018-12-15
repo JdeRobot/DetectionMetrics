@@ -1,0 +1,435 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_my_app" kind="class" language="C++" prot="public">
+    <compoundname>MyApp</compoundname>
+    <basecompoundref refid="class_sample_generation_app" prot="public" virt="non-virtual">SampleGenerationApp</basecompoundref>
+    <basecompoundref refid="class_sample_generation_app" prot="public" virt="non-virtual">SampleGenerationApp</basecompoundref>
+    <basecompoundref refid="class_sample_generation_app" prot="public" virt="non-virtual">SampleGenerationApp</basecompoundref>
+    <basecompoundref refid="class_sample_generation_app" prot="public" virt="non-virtual">SampleGenerationApp</basecompoundref>
+    <basecompoundref refid="class_sample_generation_app" prot="public" virt="non-virtual">SampleGenerationApp</basecompoundref>
+    <basecompoundref refid="class_sample_generation_app" prot="public" virt="non-virtual">SampleGenerationApp</basecompoundref>
+    <basecompoundref refid="class_sample_generation_app" prot="public" virt="non-virtual">SampleGenerationApp</basecompoundref>
+    <basecompoundref refid="class_sample_generation_app" prot="public" virt="non-virtual">SampleGenerationApp</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MyApp::MyApp</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>MyApp</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/main.cpp" line="8" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/main.cpp" bodystart="8" bodyend="14"/>
+        <references refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" compoundref="_sample_generation_app_8h" startline="22">SampleGenerationApp::requiredArguments</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void MyApp::operator()</definition>
+        <argsstring>()</argsstring>
+        <name>operator()</name>
+        <reimplements refid="class_sample_generation_app_1a351fe6cfe624aeeee9ba4fb04d80ca0f">operator()</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/main.cpp" line="15" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/main.cpp" bodystart="15" bodyend="23"/>
+        <references refid="class_sample_generation_app_1af98f6187cc8eb62fc3fe0ff53df76b6e" compoundref="_sample_generation_app_8h" startline="26">SampleGenerationApp::argc</references>
+        <references refid="class_sample_generation_app_1a7e490e3711491c2bc58351f9e9dd9945" compoundref="_sample_generation_app_8h" startline="27">SampleGenerationApp::argv</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MyApp::MyApp</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>MyApp</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/SampleGenerationApp/generator.cpp" line="24" column="1" bodyfile="DeepLearningSuite/SampleGenerationApp/generator.cpp" bodystart="24" bodyend="30"/>
+        <references refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" compoundref="_sample_generation_app_8h" startline="22">SampleGenerationApp::requiredArguments</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1ab3cc458e74a9fc059504fa33983249ee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void MyApp::operator()</definition>
+        <argsstring>()</argsstring>
+        <name>operator()</name>
+        <reimplements refid="class_sample_generation_app_1a351fe6cfe624aeeee9ba4fb04d80ca0f">operator()</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/SampleGenerationApp/generator.cpp" line="31" column="1" bodyfile="DeepLearningSuite/SampleGenerationApp/generator.cpp" bodystart="31" bodyend="209"/>
+        <references refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" compoundref="_sample_generation_app_8h" startline="20">SampleGenerationApp::config</references>
+        <references refid="class_config_1_1_properties_1abb18930b0431bd89e85ed0a5b9b7cac3" compoundref="properties_8cpp" startline="111" endline="116">Config::Properties::getNode</references>
+        <references refid="class_recorder_reader_1a5aba35af024680621c7af019049f0b6e" compoundref="_recorder_reader_8cpp" startline="101" endline="103">RecorderReader::getNumSamples</references>
+        <references refid="class_recorder_reader_1afc52cde597201a1838e6e31b8c801941" compoundref="_recorder_reader_8cpp" startline="83" endline="99">RecorderReader::getNextSample</references>
+        <references refid="struct_sample_1abf69bbc9b312c22d3ded30d30d1e278f" compoundref="_sample_8cpp" startline="149" endline="156">Sample::getColorImage</references>
+        <references refid="struct_sample_1a4d2e91f909467a974832c9359cc81c3c" compoundref="_sample_8cpp" startline="158" endline="165">Sample::getDepthImage</references>
+        <references refid="class_depth_foreground_segmentator_1a7ad8701ffcce41cf71694f02bbb5f40d" compoundref="_depth_foreground_segmentator_8cpp" startline="26" endline="121">DepthForegroundSegmentator::process</references>
+        <references refid="class_detections_validator_1a105c1bda43fee24887005840fccb7576" compoundref="_detections_validator_8cpp" startline="51" endline="103">DetectionsValidator::validate</references>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">Sample::setColorImage</references>
+        <references refid="struct_sample_1a1a140ca4aa294de160581251fe5072e5" compoundref="_sample_8cpp" startline="80" endline="82">Sample::setDepthImage</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MyApp::MyApp</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>MyApp</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp" line="14" column="1" bodyfile="DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp" bodystart="14" bodyend="29"/>
+        <references refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" compoundref="_sample_generation_app_8h" startline="22">SampleGenerationApp::requiredArguments</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void MyApp::operator()</definition>
+        <argsstring>()</argsstring>
+        <name>operator()</name>
+        <reimplements refid="class_sample_generation_app_1a351fe6cfe624aeeee9ba4fb04d80ca0f">operator()</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp" line="31" column="1" bodyfile="DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp" bodystart="31" bodyend="171"/>
+        <references refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" compoundref="_sample_generation_app_8h" startline="20">SampleGenerationApp::config</references>
+        <references refid="class_config_1_1_properties_1abb18930b0431bd89e85ed0a5b9b7cac3" compoundref="properties_8cpp" startline="111" endline="116">Config::Properties::getNode</references>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+        <references refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" compoundref="_mass_inferencer_8cpp" startline="81" endline="159">MassInferencer::process</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MyApp::MyApp</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>MyApp</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/Tools/Converter/converter.cpp" line="27" column="1" bodyfile="DeepLearningSuite/Tools/Converter/converter.cpp" bodystart="27" bodyend="36"/>
+        <references refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" compoundref="_sample_generation_app_8h" startline="22">SampleGenerationApp::requiredArguments</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void MyApp::operator()</definition>
+        <argsstring>()</argsstring>
+        <name>operator()</name>
+        <reimplements refid="class_sample_generation_app_1a351fe6cfe624aeeee9ba4fb04d80ca0f">operator()</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/Tools/Converter/converter.cpp" line="37" column="1" bodyfile="DeepLearningSuite/Tools/Converter/converter.cpp" bodystart="37" bodyend="67"/>
+        <references refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" compoundref="_sample_generation_app_8h" startline="20">SampleGenerationApp::config</references>
+        <references refid="class_config_1_1_properties_1abb18930b0431bd89e85ed0a5b9b7cac3" compoundref="properties_8cpp" startline="111" endline="116">Config::Properties::getNode</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MyApp::MyApp</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>MyApp</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/Tools/Detector/detector.cpp" line="16" column="1" bodyfile="DeepLearningSuite/Tools/Detector/detector.cpp" bodystart="16" bodyend="25"/>
+        <references refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" compoundref="_sample_generation_app_8h" startline="22">SampleGenerationApp::requiredArguments</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void MyApp::operator()</definition>
+        <argsstring>()</argsstring>
+        <name>operator()</name>
+        <reimplements refid="class_sample_generation_app_1a351fe6cfe624aeeee9ba4fb04d80ca0f">operator()</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/Tools/Detector/detector.cpp" line="26" column="1" bodyfile="DeepLearningSuite/Tools/Detector/detector.cpp" bodystart="26" bodyend="52"/>
+        <references refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" compoundref="_sample_generation_app_8h" startline="20">SampleGenerationApp::config</references>
+        <references refid="class_config_1_1_properties_1abb18930b0431bd89e85ed0a5b9b7cac3" compoundref="properties_8cpp" startline="111" endline="116">Config::Properties::getNode</references>
+        <references refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" compoundref="_mass_inferencer_8cpp" startline="81" endline="159">MassInferencer::process</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MyApp::MyApp</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>MyApp</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/Tools/Evaluator/evaluator.cpp" line="16" column="1" bodyfile="DeepLearningSuite/Tools/Evaluator/evaluator.cpp" bodystart="16" bodyend="26"/>
+        <references refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" compoundref="_sample_generation_app_8h" startline="22">SampleGenerationApp::requiredArguments</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void MyApp::operator()</definition>
+        <argsstring>()</argsstring>
+        <name>operator()</name>
+        <reimplements refid="class_sample_generation_app_1a351fe6cfe624aeeee9ba4fb04d80ca0f">operator()</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/Tools/Evaluator/evaluator.cpp" line="27" column="1" bodyfile="DeepLearningSuite/Tools/Evaluator/evaluator.cpp" bodystart="27" bodyend="65"/>
+        <references refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" compoundref="_sample_generation_app_8h" startline="20">SampleGenerationApp::config</references>
+        <references refid="class_config_1_1_properties_1abb18930b0431bd89e85ed0a5b9b7cac3" compoundref="properties_8cpp" startline="111" endline="116">Config::Properties::getNode</references>
+        <references refid="class_config_1_1_properties_1a87fb20ec94658e8ce0cce06b239019be" compoundref="properties_8cpp" startline="119" endline="124">Config::Properties::asString</references>
+        <references refid="class_stats_writer_1a3eaa872621d87d7c26df3d4d810ee759" compoundref="_stats_writer_8cpp" startline="37" endline="65">StatsWriter::writeInferencerResults</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MyApp::MyApp</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>MyApp</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/Tools/Splitter/splitter.cpp" line="18" column="1" bodyfile="DeepLearningSuite/Tools/Splitter/splitter.cpp" bodystart="18" bodyend="27"/>
+        <references refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" compoundref="_sample_generation_app_8h" startline="22">SampleGenerationApp::requiredArguments</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void MyApp::operator()</definition>
+        <argsstring>()</argsstring>
+        <name>operator()</name>
+        <reimplements refid="class_sample_generation_app_1a351fe6cfe624aeeee9ba4fb04d80ca0f">operator()</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/Tools/Splitter/splitter.cpp" line="28" column="1" bodyfile="DeepLearningSuite/Tools/Splitter/splitter.cpp" bodystart="28" bodyend="97"/>
+        <references refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" compoundref="_sample_generation_app_8h" startline="20">SampleGenerationApp::config</references>
+        <references refid="class_config_1_1_properties_1abb18930b0431bd89e85ed0a5b9b7cac3" compoundref="properties_8cpp" startline="111" endline="116">Config::Properties::getNode</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MyApp::MyApp</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>MyApp</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/Tools/Viewer/viewer.cpp" line="14" column="1" bodyfile="DeepLearningSuite/Tools/Viewer/viewer.cpp" bodystart="14" bodyend="20"/>
+        <references refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" compoundref="_sample_generation_app_8h" startline="22">SampleGenerationApp::requiredArguments</references>
+      </memberdef>
+      <memberdef kind="function" id="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void MyApp::operator()</definition>
+        <argsstring>()</argsstring>
+        <name>operator()</name>
+        <reimplements refid="class_sample_generation_app_1a351fe6cfe624aeeee9ba4fb04d80ca0f">operator()</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/Tools/Viewer/viewer.cpp" line="21" column="1" bodyfile="DeepLearningSuite/Tools/Viewer/viewer.cpp" bodystart="21" bodyend="47"/>
+        <references refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" compoundref="_sample_generation_app_8h" startline="20">SampleGenerationApp::config</references>
+        <references refid="class_config_1_1_properties_1abb18930b0431bd89e85ed0a5b9b7cac3" compoundref="properties_8cpp" startline="111" endline="116">Config::Properties::getNode</references>
+        <references refid="struct_sample_1a5f1b7716e5c4e8f5217a18021169283f" compoundref="_sample_8cpp" startline="123" endline="125">Sample::getRectRegions</references>
+        <references refid="struct_sample_1a19aef3e998d244412a87c9d7760d0937" compoundref="_sample_8cpp" startline="184" endline="193">Sample::getSampledColorImage</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="246">
+        <label>SampleGenerationApp</label>
+        <link refid="class_sample_generation_app"/>
+      </node>
+      <node id="245">
+        <label>MyApp</label>
+        <link refid="class_my_app"/>
+        <childnode refid="246" relation="public-inheritance">
+        </childnode>
+        <childnode refid="246" relation="public-inheritance">
+        </childnode>
+        <childnode refid="246" relation="public-inheritance">
+        </childnode>
+        <childnode refid="246" relation="public-inheritance">
+        </childnode>
+        <childnode refid="246" relation="public-inheritance">
+        </childnode>
+        <childnode refid="246" relation="public-inheritance">
+        </childnode>
+        <childnode refid="246" relation="public-inheritance">
+        </childnode>
+        <childnode refid="246" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="249">
+        <label>Config::Properties</label>
+        <link refid="class_config_1_1_properties"/>
+      </node>
+      <node id="248">
+        <label>SampleGenerationApp</label>
+        <link refid="class_sample_generation_app"/>
+        <childnode refid="249" relation="usage">
+          <edgelabel>config</edgelabel>
+        </childnode>
+      </node>
+      <node id="247">
+        <label>MyApp</label>
+        <link refid="class_my_app"/>
+        <childnode refid="248" relation="public-inheritance">
+        </childnode>
+        <childnode refid="248" relation="public-inheritance">
+        </childnode>
+        <childnode refid="248" relation="public-inheritance">
+        </childnode>
+        <childnode refid="248" relation="public-inheritance">
+        </childnode>
+        <childnode refid="248" relation="public-inheritance">
+        </childnode>
+        <childnode refid="248" relation="public-inheritance">
+        </childnode>
+        <childnode refid="248" relation="public-inheritance">
+        </childnode>
+        <childnode refid="248" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/main.cpp" line="6" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/main.cpp" bodystart="6" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_sample_generation_app_1af98f6187cc8eb62fc3fe0ff53df76b6e" prot="protected" virt="non-virtual"><scope>MyApp</scope><name>argc</name></member>
+      <member refid="class_sample_generation_app_1a7e490e3711491c2bc58351f9e9dd9945" prot="protected" virt="non-virtual"><scope>MyApp</scope><name>argv</name></member>
+      <member refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" prot="protected" virt="non-virtual"><scope>MyApp</scope><name>config</name></member>
+      <member refid="class_sample_generation_app_1ad40fd006cd4f887a6458054152bf3592" prot="protected" virt="non-virtual"><scope>MyApp</scope><name>configFilePath</name></member>
+      <member refid="class_sample_generation_app_1a2c13df2c47ec917170e0b995218bb31b" prot="public" virt="non-virtual"><scope>MyApp</scope><name>getConfig</name></member>
+      <member refid="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" virt="non-virtual"><scope>MyApp</scope><name>MyApp</name></member>
+      <member refid="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" virt="non-virtual"><scope>MyApp</scope><name>MyApp</name></member>
+      <member refid="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" virt="non-virtual"><scope>MyApp</scope><name>MyApp</name></member>
+      <member refid="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" virt="non-virtual"><scope>MyApp</scope><name>MyApp</name></member>
+      <member refid="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" virt="non-virtual"><scope>MyApp</scope><name>MyApp</name></member>
+      <member refid="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" virt="non-virtual"><scope>MyApp</scope><name>MyApp</name></member>
+      <member refid="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" virt="non-virtual"><scope>MyApp</scope><name>MyApp</name></member>
+      <member refid="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" prot="public" virt="non-virtual"><scope>MyApp</scope><name>MyApp</name></member>
+      <member refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" prot="public" virt="virtual"><scope>MyApp</scope><name>operator()</name></member>
+      <member refid="class_my_app_1ab3cc458e74a9fc059504fa33983249ee" prot="public" virt="virtual"><scope>MyApp</scope><name>operator()</name></member>
+      <member refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" prot="public" virt="virtual"><scope>MyApp</scope><name>operator()</name></member>
+      <member refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" prot="public" virt="virtual"><scope>MyApp</scope><name>operator()</name></member>
+      <member refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" prot="public" virt="virtual"><scope>MyApp</scope><name>operator()</name></member>
+      <member refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" prot="public" virt="virtual"><scope>MyApp</scope><name>operator()</name></member>
+      <member refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" prot="public" virt="virtual"><scope>MyApp</scope><name>operator()</name></member>
+      <member refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" prot="public" virt="virtual"><scope>MyApp</scope><name>operator()</name></member>
+      <member refid="class_sample_generation_app_1a4304bff49d553420b6cf436fad6f5e6a" prot="protected" virt="non-virtual"><scope>MyApp</scope><name>parse_arguments</name></member>
+      <member refid="class_sample_generation_app_1acec58569149ac1fc8af9525d35b9e88a" prot="public" virt="non-virtual"><scope>MyApp</scope><name>process</name></member>
+      <member refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" prot="protected" virt="non-virtual"><scope>MyApp</scope><name>requiredArguments</name></member>
+      <member refid="class_sample_generation_app_1ac7359b551057127947243e1251237a90" prot="public" virt="non-virtual"><scope>MyApp</scope><name>SampleGenerationApp</name></member>
+      <member refid="class_sample_generation_app_1adb5fa7f811a3177d7966981789b41f72" prot="protected" virt="non-virtual"><scope>MyApp</scope><name>verifyRequirements</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

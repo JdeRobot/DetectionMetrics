@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_5bb1a0668c271979530d58023cf261a8" kind="dir">
+    <compoundname>DeepLearningSuite/libs/comm/include/comm/ros</compoundname>
+    <innerfile refid="listener_camera_8hpp">listenerCamera.hpp</innerfile>
+    <innerfile refid="translators_8hpp">translators.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/comm/include/comm/ros/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,191 @@
+.TH "keras_utils.keras_layer_DecodeDetections.DecodeDetections" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+keras_utils.keras_layer_DecodeDetections.DecodeDetections
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Layer\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, \fBconfidence_thresh\fP=0\&.01, \fBiou_threshold\fP=0\&.45, \fBtop_k\fP=200, \fBnms_max_output_size\fP=400, \fBcoords\fP='centroids', \fBnormalize_coords\fP=True, \fBimg_height\fP=None, \fBimg_width\fP=None, kwargs)"
+.br
+.ti -1c
+.RI "def \fBbuild\fP (self, input_shape)"
+.br
+.ti -1c
+.RI "def \fBcall\fP (self, y_pred, mask=None)"
+.br
+.ti -1c
+.RI "def \fBcompute_output_shape\fP (self, input_shape)"
+.br
+.ti -1c
+.RI "def \fBget_config\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBconfidence_thresh\fP"
+.br
+.ti -1c
+.RI "\fBiou_threshold\fP"
+.br
+.ti -1c
+.RI "\fBtop_k\fP"
+.br
+.ti -1c
+.RI "\fBnormalize_coords\fP"
+.br
+.ti -1c
+.RI "\fBimg_height\fP"
+.br
+.ti -1c
+.RI "\fBimg_width\fP"
+.br
+.ti -1c
+.RI "\fBcoords\fP"
+.br
+.ti -1c
+.RI "\fBnms_max_output_size\fP"
+.br
+.ti -1c
+.RI "\fBtf_confidence_thresh\fP"
+.br
+.ti -1c
+.RI "\fBtf_iou_threshold\fP"
+.br
+.ti -1c
+.RI "\fBtf_top_k\fP"
+.br
+.ti -1c
+.RI "\fBtf_normalize_coords\fP"
+.br
+.ti -1c
+.RI "\fBtf_img_height\fP"
+.br
+.ti -1c
+.RI "\fBtf_img_width\fP"
+.br
+.ti -1c
+.RI "\fBtf_nms_max_output_size\fP"
+.br
+.ti -1c
+.RI "\fBinput_spec\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A Keras layer to decode the raw SSD prediction output.
+
+Input shape:
+    3D tensor of shape `(batch_size, n_boxes, n_classes + 12)`.
+
+Output shape:
+    3D tensor of shape `(batch_size, top_k, 6)`.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.__init__ ( self,  confidence_thresh = \fC0\&.01\fP,  iou_threshold = \fC0\&.45\fP,  top_k = \fC200\fP,  nms_max_output_size = \fC400\fP,  coords = \fC'centroids'\fP,  normalize_coords = \fCTrue\fP,  img_height = \fCNone\fP,  img_width = \fCNone\fP,  kwargs)"
+
+.PP
+.nf
+All default argument values follow the Caffe implementation.
+
+Arguments:
+    confidence_thresh (float, optional): A float in [0,1), the minimum classification confidence in a specific
+positive class in order to be considered for the non-maximum suppression stage for the respective class.
+A lower value will result in a larger part of the selection process being done by the non-maximum suppression
+stage, while a larger value will result in a larger part of the selection process happening in the confidence
+thresholding stage.
+    iou_threshold (float, optional): A float in [0,1]. All boxes with a Jaccard similarity of greater than `iou_threshold`
+with a locally maximal box will be removed from the set of predictions for a given class, where 'maximal' refers
+to the box score.
+    top_k (int, optional): The number of highest scoring predictions to be kept for each batch item after the
+non-maximum suppression stage.
+    nms_max_output_size (int, optional): The maximum number of predictions that will be left after performing non-maximum
+suppression.
+    coords (str, optional): The box coordinate format that the model outputs. Must be 'centroids'
+i.e. the format `(cx, cy, w, h)` (box center coordinates, width, and height). Other coordinate formats are
+currently not supported.
+    normalize_coords (bool, optional): Set to `True` if the model outputs relative coordinates (i.e. coordinates in [0,1])
+and you wish to transform these relative coordinates back to absolute coordinates. If the model outputs
+relative coordinates, but you do not want to convert them back to absolute coordinates, set this to `False`.
+Do not set this to `True` if the model already outputs absolute coordinates, as that would result in incorrect
+coordinates. Requires `img_height` and `img_width` if set to `True`.
+    img_height (int, optional): The height of the input images. Only needed if `normalize_coords` is `True`.
+    img_width (int, optional): The width of the input images. Only needed if `normalize_coords` is `True`.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "def keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.build ( self,  input_shape)"
+
+.SS "def keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.call ( self,  y_pred,  mask = \fCNone\fP)"
+
+.PP
+.nf
+Returns:
+    3D tensor of shape `(batch_size, top_k, 6)`. The second axis is zero-padded
+    to always yield `top_k` predictions per batch item. The last axis contains
+    the coordinates for each predicted box in the format
+    `[class_id, confidence, xmin, ymin, xmax, ymax]`.
+
+.fi
+.PP
+ 
+.SS "def keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.compute_output_shape ( self,  input_shape)"
+
+.SS "def keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.get_config ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.confidence_thresh"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.coords"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.img_height"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.img_width"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.input_spec"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.iou_threshold"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.nms_max_output_size"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.normalize_coords"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.tf_confidence_thresh"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.tf_img_height"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.tf_img_width"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.tf_iou_threshold"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.tf_nms_max_output_size"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.tf_normalize_coords"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.tf_top_k"
+
+.SS "keras_utils\&.keras_layer_DecodeDetections\&.DecodeDetections\&.top_k"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

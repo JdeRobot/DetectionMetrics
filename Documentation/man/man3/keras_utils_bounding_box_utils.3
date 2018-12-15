@@ -1,0 +1,188 @@
+.TH "keras_utils.bounding_box_utils" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+keras_utils.bounding_box_utils
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBconvert_coordinates\fP (tensor, start_index, conversion)"
+.br
+.ti -1c
+.RI "def \fBconvert_coordinates2\fP (tensor, start_index, conversion)"
+.br
+.ti -1c
+.RI "def \fBintersection_area\fP (boxes1, boxes2, coords='centroids', mode='outer_product')"
+.br
+.ti -1c
+.RI "def \fBintersection_area_\fP (boxes1, boxes2, coords='corners', mode='outer_product')"
+.br
+.ti -1c
+.RI "def \fBiou\fP (boxes1, boxes2, coords='centroids', mode='outer_product')"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Includes:
+* Function to compute the IoU similarity for axis-aligned, rectangular, 2D bounding boxes
+* Function for coordinate conversion for axis-aligned, rectangular, 2D bounding boxes
+
+Copyright (C) 2017 Pierluigi Ferrari
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "def keras_utils\&.bounding_box_utils\&.convert_coordinates ( tensor,  start_index,  conversion)"
+
+.PP
+.nf
+Convert coordinates for axis-aligned 2D boxes between two coordinate formats.
+
+Creates a copy of `tensor`, i.e. does not operate in place. Currently there are
+three supported coordinate formats that can be converted from and to each other:
+    1) (xmin, xmax, ymin, ymax) - the 'minmax' format
+    2) (xmin, ymin, xmax, ymax) - the 'corners' format
+    2) (cx, cy, w, h) - the 'centroids' format
+
+Arguments:
+    tensor (array): A Numpy nD array containing the four consecutive coordinates
+        to be converted somewhere in the last axis.
+    start_index (int): The index of the first coordinate in the last axis of `tensor`.
+    conversion (str, optional): The conversion direction. Can be 'minmax2centroids',
+        'centroids2minmax', 'corners2centroids', 'centroids2corners', 'minmax2corners',
+        or 'corners2minmax'.
+
+Returns:
+    A Numpy nD array, a copy of the input tensor with the converted coordinates
+    in place of the original coordinates and the unaltered elements of the original
+    tensor elsewhere.
+
+.fi
+.PP
+ 
+.SS "def keras_utils\&.bounding_box_utils\&.convert_coordinates2 ( tensor,  start_index,  conversion)"
+
+.PP
+.nf
+A matrix multiplication implementation of `convert_coordinates()`.
+Supports only conversion between the 'centroids' and 'minmax' formats.
+
+This function is marginally slower on average than `convert_coordinates()`,
+probably because it involves more (unnecessary) arithmetic operations (unnecessary
+because the two matrices are sparse).
+
+For details please refer to the documentation of `convert_coordinates()`.
+
+.fi
+.PP
+ 
+.SS "def keras_utils\&.bounding_box_utils\&.intersection_area ( boxes1,  boxes2,  coords = \fC'centroids'\fP,  mode = \fC'outer_product'\fP)"
+
+.PP
+.nf
+Computes the intersection areas of two sets of axis-aligned 2D rectangular boxes.
+
+Let `boxes1` and `boxes2` contain `m` and `n` boxes, respectively.
+
+In 'outer_product' mode, returns an `(m,n)` matrix with the intersection areas for all possible
+combinations of the boxes in `boxes1` and `boxes2`.
+
+In 'element-wise' mode, `m` and `n` must be broadcast-compatible. Refer to the explanation
+of the `mode` argument for details.
+
+Arguments:
+    boxes1 (array): Either a 1D Numpy array of shape `(4, )` containing the coordinates for one box in the
+        format specified by `coords` or a 2D Numpy array of shape `(m, 4)` containing the coordinates for `m` boxes.
+        If `mode` is set to 'element_wise', the shape must be broadcast-compatible with `boxes2`.
+    boxes2 (array): Either a 1D Numpy array of shape `(4, )` containing the coordinates for one box in the
+        format specified by `coords` or a 2D Numpy array of shape `(n, 4)` containing the coordinates for `n` boxes.
+        If `mode` is set to 'element_wise', the shape must be broadcast-compatible with `boxes1`.
+    coords (str, optional): The coordinate format in the input arrays. Can be either 'centroids' for the format
+        `(cx, cy, w, h)`, 'minmax' for the format `(xmin, xmax, ymin, ymax)`, or 'corners' for the format
+        `(xmin, ymin, xmax, ymax)`.
+    mode (str, optional): Can be one of 'outer_product' and 'element-wise'. In 'outer_product' mode, returns an
+        `(m,n)` matrix with the intersection areas for all possible combinations of the `m` boxes in `boxes1` with the
+        `n` boxes in `boxes2`. In 'element-wise' mode, returns a 1D array and the shapes of `boxes1` and `boxes2`
+        must be boadcast-compatible. If both `boxes1` and `boxes2` have `m` boxes, then this returns an array of
+        length `m` where the i-th position contains the intersection area of `boxes1[i]` with `boxes2[i]`.
+
+Returns:
+    A 1D or 2D Numpy array (refer to the `mode` argument for details) of dtype float containing values with
+    the intersection areas of the boxes in `boxes1` and `boxes2`.
+
+.fi
+.PP
+ 
+.SS "def keras_utils\&.bounding_box_utils\&.intersection_area_ ( boxes1,  boxes2,  coords = \fC'corners'\fP,  mode = \fC'outer_product'\fP)"
+
+.PP
+.nf
+The same as 'intersection_area()' but for internal use, i.e. without all the safety checks.
+
+.fi
+.PP
+ 
+.SS "def keras_utils\&.bounding_box_utils\&.iou ( boxes1,  boxes2,  coords = \fC'centroids'\fP,  mode = \fC'outer_product'\fP)"
+
+.PP
+.nf
+Computes the intersection-over-union similarity (also known as Jaccard similarity)
+of two sets of axis-aligned 2D rectangular boxes.
+
+Let `boxes1` and `boxes2` contain `m` and `n` boxes, respectively.
+
+In 'outer_product' mode, returns an `(m,n)` matrix with the IoUs for all possible
+combinations of the boxes in `boxes1` and `boxes2`.
+
+In 'element-wise' mode, `m` and `n` must be broadcast-compatible. Refer to the explanation
+of the `mode` argument for details.
+
+Arguments:
+    boxes1 (array): Either a 1D Numpy array of shape `(4, )` containing the coordinates for one box in the
+        format specified by `coords` or a 2D Numpy array of shape `(m, 4)` containing the coordinates for `m` boxes.
+        If `mode` is set to 'element_wise', the shape must be broadcast-compatible with `boxes2`.
+    boxes2 (array): Either a 1D Numpy array of shape `(4, )` containing the coordinates for one box in the
+        format specified by `coords` or a 2D Numpy array of shape `(n, 4)` containing the coordinates for `n` boxes.
+        If `mode` is set to 'element_wise', the shape must be broadcast-compatible with `boxes1`.
+    coords (str, optional): The coordinate format in the input arrays. Can be either 'centroids' for the format
+        `(cx, cy, w, h)`, 'minmax' for the format `(xmin, xmax, ymin, ymax)`, or 'corners' for the format
+        `(xmin, ymin, xmax, ymax)`.
+    mode (str, optional): Can be one of 'outer_product' and 'element-wise'. In 'outer_product' mode, returns an
+        `(m,n)` matrix with the IoU overlaps for all possible combinations of the `m` boxes in `boxes1` with the
+        `n` boxes in `boxes2`. In 'element-wise' mode, returns a 1D array and the shapes of `boxes1` and `boxes2`
+        must be boadcast-compatible. If both `boxes1` and `boxes2` have `m` boxes, then this returns an array of
+        length `m` where the i-th position contains the IoU overlap of `boxes1[i]` with `boxes2[i]`.
+
+Returns:
+    A 1D or 2D Numpy array (refer to the `mode` argument for details) of dtype float containing values in [0,1],
+    the Jaccard similarity of the boxes in `boxes1` and `boxes2`. 0 means there is no overlap between two given
+    boxes, 1 means their coordinates are identical.
+
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

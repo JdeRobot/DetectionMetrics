@@ -1,0 +1,215 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_bounding_rect_gui_mover" kind="struct" language="C++" prot="public">
+    <compoundname>BoundingRectGuiMover</compoundname>
+    <includes refid="_bounding_rect_gui_mover_8h" local="no">BoundingRectGuiMover.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493" prot="public" static="no">
+        <name>MovementType</name>
+        <enumvalue id="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493abf66fc6c222bd5db76829f8b8a227202" prot="public">
+          <name>LOCAL_MOVEMENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493a1703ea806817f5f686511ed4c49f6eb7" prot="public">
+          <name>GLOBAL_MOVEMENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493a3965bc68b15cffd59d6d4cf842e0578c" prot="public">
+          <name>NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h" bodystart="12" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="struct_bounding_rect_gui_mover_1a1ba50dcef0b5500accec2a28fd5b05d7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; cv::Point &gt;</type>
+        <definition>std::vector&lt;cv::Point&gt; BoundingRectGuiMover::points</definition>
+        <argsstring></argsstring>
+        <name>points</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_bounding_rect_gui_mover_1ab11a7dba1cae9cb635258daae2b161eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BoundingRectGuiMover::BoundingRectGuiMover</definition>
+        <argsstring>(const std::vector&lt; cv::Point &gt; &amp;points)</argsstring>
+        <name>BoundingRectGuiMover</name>
+        <param>
+          <type>const std::vector&lt; cv::Point &gt; &amp;</type>
+          <declname>points</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.cpp" bodystart="7" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_bounding_rect_gui_mover_1aee1d69e1b9d599b692e1226f3455974f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BoundingRectGuiMover::BoundingRectGuiMover</definition>
+        <argsstring>(const cv::Rect_&lt; double &gt; &amp;rectangle)</argsstring>
+        <name>BoundingRectGuiMover</name>
+        <param>
+          <type>const cv::Rect_&lt; double &gt; &amp;</type>
+          <declname>rectangle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.cpp" bodystart="11" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_bounding_rect_gui_mover_1a72ff4270c2c100aab98125ca381aab10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; cv::Point &gt;</type>
+        <definition>std::vector&lt; cv::Point &gt; BoundingRectGuiMover::getPoints</definition>
+        <argsstring>()</argsstring>
+        <name>getPoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.cpp" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_bounding_rect_gui_mover_1a86c01942e7a57a0cec7d757592b40c41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BoundingRectGuiMover::move</definition>
+        <argsstring>(const cv::Point &amp;from, const cv::Point &amp;to, const MovementType &amp;type)</argsstring>
+        <name>move</name>
+        <param>
+          <type>const cv::Point &amp;</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>const cv::Point &amp;</type>
+          <declname>to</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493" kindref="member">MovementType</ref> &amp;</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.cpp" bodystart="25" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_bounding_rect_gui_mover_1a5e242d1bbc84714da0fa04b0adee0e5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Rect_&lt; double &gt;</type>
+        <definition>cv::Rect_&lt; double &gt; BoundingRectGuiMover::getRect</definition>
+        <argsstring>(const double scale=1)</argsstring>
+        <name>getRect</name>
+        <param>
+          <type>const double</type>
+          <declname>scale</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.cpp" bodystart="88" bodyend="90"/>
+        <referencedby refid="class_bounding_validator_1aeb223a7f1fcd5f62503c22167c4051dd" compoundref="_bounding_validator_8cpp" startline="80" endline="109">BoundingValidator::validate</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="struct_bounding_rect_gui_mover_1a5a01163dc0413c425fac147e7dda0792" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BoundingRectGuiMover::getClosestsLinePoints</definition>
+        <argsstring>(const cv::Point &amp;from, unsigned int &amp;p1, unsigned int &amp;p2)</argsstring>
+        <name>getClosestsLinePoints</name>
+        <param>
+          <type>const cv::Point &amp;</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>unsigned int &amp;</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>unsigned int &amp;</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.cpp" bodystart="59" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_bounding_rect_gui_mover_1a4d39805159b4c3b49c98d2a7115c9b56" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool BoundingRectGuiMover::isVertical</definition>
+        <argsstring>(const cv::Point &amp;from, const cv::Point &amp;to)</argsstring>
+        <name>isVertical</name>
+        <param>
+          <type>const cv::Point &amp;</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>const cv::Point &amp;</type>
+          <declname>to</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.cpp" bodystart="81" bodyend="86"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h" line="10" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h" bodystart="10" bodyend="28"/>
+    <listofallmembers>
+      <member refid="struct_bounding_rect_gui_mover_1ab11a7dba1cae9cb635258daae2b161eb" prot="public" virt="non-virtual"><scope>BoundingRectGuiMover</scope><name>BoundingRectGuiMover</name></member>
+      <member refid="struct_bounding_rect_gui_mover_1aee1d69e1b9d599b692e1226f3455974f" prot="public" virt="non-virtual"><scope>BoundingRectGuiMover</scope><name>BoundingRectGuiMover</name></member>
+      <member refid="struct_bounding_rect_gui_mover_1a5a01163dc0413c425fac147e7dda0792" prot="private" virt="non-virtual"><scope>BoundingRectGuiMover</scope><name>getClosestsLinePoints</name></member>
+      <member refid="struct_bounding_rect_gui_mover_1a72ff4270c2c100aab98125ca381aab10" prot="public" virt="non-virtual"><scope>BoundingRectGuiMover</scope><name>getPoints</name></member>
+      <member refid="struct_bounding_rect_gui_mover_1a5e242d1bbc84714da0fa04b0adee0e5d" prot="public" virt="non-virtual"><scope>BoundingRectGuiMover</scope><name>getRect</name></member>
+      <member refid="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493a1703ea806817f5f686511ed4c49f6eb7" prot="public" virt="non-virtual"><scope>BoundingRectGuiMover</scope><name>GLOBAL_MOVEMENT</name></member>
+      <member refid="struct_bounding_rect_gui_mover_1a4d39805159b4c3b49c98d2a7115c9b56" prot="private" virt="non-virtual"><scope>BoundingRectGuiMover</scope><name>isVertical</name></member>
+      <member refid="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493abf66fc6c222bd5db76829f8b8a227202" prot="public" virt="non-virtual"><scope>BoundingRectGuiMover</scope><name>LOCAL_MOVEMENT</name></member>
+      <member refid="struct_bounding_rect_gui_mover_1a86c01942e7a57a0cec7d757592b40c41" prot="public" virt="non-virtual"><scope>BoundingRectGuiMover</scope><name>move</name></member>
+      <member refid="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493" prot="public" virt="non-virtual"><scope>BoundingRectGuiMover</scope><name>MovementType</name></member>
+      <member refid="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493a3965bc68b15cffd59d6d4cf842e0578c" prot="public" virt="non-virtual"><scope>BoundingRectGuiMover</scope><name>NONE</name></member>
+      <member refid="struct_bounding_rect_gui_mover_1a1ba50dcef0b5500accec2a28fd5b05d7" prot="private" virt="non-virtual"><scope>BoundingRectGuiMover</scope><name>points</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

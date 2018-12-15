@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacekeras__utils_1_1bounding__box__utils" kind="namespace" language="Python">
+    <compoundname>keras_utils::bounding_box_utils</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacekeras__utils_1_1bounding__box__utils_1a7b2a9d86d4acfcddcec55133486f2012" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.bounding_box_utils.convert_coordinates</definition>
+        <argsstring>(tensor, start_index, conversion)</argsstring>
+        <name>convert_coordinates</name>
+        <param>
+          <type>tensor</type>
+          <defname>tensor</defname>
+        </param>
+        <param>
+          <type>start_index</type>
+          <defname>start_index</defname>
+        </param>
+        <param>
+          <type>conversion</type>
+          <defname>conversion</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Convert coordinates for axis-aligned 2D boxes between two coordinate formats.
+
+Creates a copy of `tensor`, i.e. does not operate in place. Currently there are
+three supported coordinate formats that can be converted from and to each other:
+    1) (xmin, xmax, ymin, ymax) - the &apos;minmax&apos; format
+    2) (xmin, ymin, xmax, ymax) - the &apos;corners&apos; format
+    2) (cx, cy, w, h) - the &apos;centroids&apos; format
+
+Arguments:
+    tensor (array): A Numpy nD array containing the four consecutive coordinates
+        to be converted somewhere in the last axis.
+    start_index (int): The index of the first coordinate in the last axis of `tensor`.
+    conversion (str, optional): The conversion direction. Can be &apos;minmax2centroids&apos;,
+        &apos;centroids2minmax&apos;, &apos;corners2centroids&apos;, &apos;centroids2corners&apos;, &apos;minmax2corners&apos;,
+        or &apos;corners2minmax&apos;.
+
+Returns:
+    A Numpy nD array, a copy of the input tensor with the converted coordinates
+    in place of the original coordinates and the unaltered elements of the original
+    tensor elsewhere.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/bounding_box_utils.py" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/bounding_box_utils.py" bodystart="25" bodyend="77"/>
+        <referencedby refid="namespacekeras__utils_1_1bounding__box__utils_1a91ddfb47dfc8b356861c2a04950b7913" compoundref="bounding__box__utils_8py" startline="108" endline="202">keras_utils.bounding_box_utils.intersection_area</referencedby>
+        <referencedby refid="namespacekeras__utils_1_1bounding__box__utils_1a2aa9711828ff2fd23f2769c95bfa3b52" compoundref="bounding__box__utils_8py" startline="253" endline="342">keras_utils.bounding_box_utils.iou</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeras__utils_1_1bounding__box__utils_1a924087a3e5b888d700dbff75254f370b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.bounding_box_utils.convert_coordinates2</definition>
+        <argsstring>(tensor, start_index, conversion)</argsstring>
+        <name>convert_coordinates2</name>
+        <param>
+          <type>tensor</type>
+          <defname>tensor</defname>
+        </param>
+        <param>
+          <type>start_index</type>
+          <defname>start_index</defname>
+        </param>
+        <param>
+          <type>conversion</type>
+          <defname>conversion</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>A matrix multiplication implementation of `convert_coordinates()`.
+Supports only conversion between the &apos;centroids&apos; and &apos;minmax&apos; formats.
+
+This function is marginally slower on average than `convert_coordinates()`,
+probably because it involves more (unnecessary) arithmetic operations (unnecessary
+because the two matrices are sparse).
+
+For details please refer to the documentation of `convert_coordinates()`.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/bounding_box_utils.py" line="78" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/bounding_box_utils.py" bodystart="78" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeras__utils_1_1bounding__box__utils_1a91ddfb47dfc8b356861c2a04950b7913" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.bounding_box_utils.intersection_area</definition>
+        <argsstring>(boxes1, boxes2, coords=&apos;centroids&apos;, mode=&apos;outer_product&apos;)</argsstring>
+        <name>intersection_area</name>
+        <param>
+          <type>boxes1</type>
+          <defname>boxes1</defname>
+        </param>
+        <param>
+          <type>boxes2</type>
+          <defname>boxes2</defname>
+        </param>
+        <param>
+          <type>coords</type>
+          <defname>coords</defname>
+          <defval>&apos;centroids&apos;</defval>
+        </param>
+        <param>
+          <type>mode</type>
+          <defname>mode</defname>
+          <defval>&apos;outer_product&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Computes the intersection areas of two sets of axis-aligned 2D rectangular boxes.
+
+Let `boxes1` and `boxes2` contain `m` and `n` boxes, respectively.
+
+In &apos;outer_product&apos; mode, returns an `(m,n)` matrix with the intersection areas for all possible
+combinations of the boxes in `boxes1` and `boxes2`.
+
+In &apos;element-wise&apos; mode, `m` and `n` must be broadcast-compatible. Refer to the explanation
+of the `mode` argument for details.
+
+Arguments:
+    boxes1 (array): Either a 1D Numpy array of shape `(4, )` containing the coordinates for one box in the
+        format specified by `coords` or a 2D Numpy array of shape `(m, 4)` containing the coordinates for `m` boxes.
+        If `mode` is set to &apos;element_wise&apos;, the shape must be broadcast-compatible with `boxes2`.
+    boxes2 (array): Either a 1D Numpy array of shape `(4, )` containing the coordinates for one box in the
+        format specified by `coords` or a 2D Numpy array of shape `(n, 4)` containing the coordinates for `n` boxes.
+        If `mode` is set to &apos;element_wise&apos;, the shape must be broadcast-compatible with `boxes1`.
+    coords (str, optional): The coordinate format in the input arrays. Can be either &apos;centroids&apos; for the format
+        `(cx, cy, w, h)`, &apos;minmax&apos; for the format `(xmin, xmax, ymin, ymax)`, or &apos;corners&apos; for the format
+        `(xmin, ymin, xmax, ymax)`.
+    mode (str, optional): Can be one of &apos;outer_product&apos; and &apos;element-wise&apos;. In &apos;outer_product&apos; mode, returns an
+        `(m,n)` matrix with the intersection areas for all possible combinations of the `m` boxes in `boxes1` with the
+        `n` boxes in `boxes2`. In &apos;element-wise&apos; mode, returns a 1D array and the shapes of `boxes1` and `boxes2`
+        must be boadcast-compatible. If both `boxes1` and `boxes2` have `m` boxes, then this returns an array of
+        length `m` where the i-th position contains the intersection area of `boxes1[i]` with `boxes2[i]`.
+
+Returns:
+    A 1D or 2D Numpy array (refer to the `mode` argument for details) of dtype float containing values with
+    the intersection areas of the boxes in `boxes1` and `boxes2`.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/bounding_box_utils.py" line="108" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/bounding_box_utils.py" bodystart="108" bodyend="202"/>
+        <references refid="namespacekeras__utils_1_1bounding__box__utils_1a7b2a9d86d4acfcddcec55133486f2012" compoundref="bounding__box__utils_8py" startline="25" endline="77">keras_utils.bounding_box_utils.convert_coordinates</references>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeras__utils_1_1bounding__box__utils_1a61242ff96fe1b973d428544abdbfed53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.bounding_box_utils.intersection_area_</definition>
+        <argsstring>(boxes1, boxes2, coords=&apos;corners&apos;, mode=&apos;outer_product&apos;)</argsstring>
+        <name>intersection_area_</name>
+        <param>
+          <type>boxes1</type>
+          <defname>boxes1</defname>
+        </param>
+        <param>
+          <type>boxes2</type>
+          <defname>boxes2</defname>
+        </param>
+        <param>
+          <type>coords</type>
+          <defname>coords</defname>
+          <defval>&apos;corners&apos;</defval>
+        </param>
+        <param>
+          <type>mode</type>
+          <defname>mode</defname>
+          <defval>&apos;outer_product&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>The same as &apos;intersection_area()&apos; but for internal use, i.e. without all the safety checks.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/bounding_box_utils.py" line="203" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/bounding_box_utils.py" bodystart="203" bodyend="252"/>
+        <referencedby refid="namespacekeras__utils_1_1bounding__box__utils_1a2aa9711828ff2fd23f2769c95bfa3b52" compoundref="bounding__box__utils_8py" startline="253" endline="342">keras_utils.bounding_box_utils.iou</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacekeras__utils_1_1bounding__box__utils_1a2aa9711828ff2fd23f2769c95bfa3b52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.bounding_box_utils.iou</definition>
+        <argsstring>(boxes1, boxes2, coords=&apos;centroids&apos;, mode=&apos;outer_product&apos;)</argsstring>
+        <name>iou</name>
+        <param>
+          <type>boxes1</type>
+          <defname>boxes1</defname>
+        </param>
+        <param>
+          <type>boxes2</type>
+          <defname>boxes2</defname>
+        </param>
+        <param>
+          <type>coords</type>
+          <defname>coords</defname>
+          <defval>&apos;centroids&apos;</defval>
+        </param>
+        <param>
+          <type>mode</type>
+          <defname>mode</defname>
+          <defval>&apos;outer_product&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Computes the intersection-over-union similarity (also known as Jaccard similarity)
+of two sets of axis-aligned 2D rectangular boxes.
+
+Let `boxes1` and `boxes2` contain `m` and `n` boxes, respectively.
+
+In &apos;outer_product&apos; mode, returns an `(m,n)` matrix with the IoUs for all possible
+combinations of the boxes in `boxes1` and `boxes2`.
+
+In &apos;element-wise&apos; mode, `m` and `n` must be broadcast-compatible. Refer to the explanation
+of the `mode` argument for details.
+
+Arguments:
+    boxes1 (array): Either a 1D Numpy array of shape `(4, )` containing the coordinates for one box in the
+        format specified by `coords` or a 2D Numpy array of shape `(m, 4)` containing the coordinates for `m` boxes.
+        If `mode` is set to &apos;element_wise&apos;, the shape must be broadcast-compatible with `boxes2`.
+    boxes2 (array): Either a 1D Numpy array of shape `(4, )` containing the coordinates for one box in the
+        format specified by `coords` or a 2D Numpy array of shape `(n, 4)` containing the coordinates for `n` boxes.
+        If `mode` is set to &apos;element_wise&apos;, the shape must be broadcast-compatible with `boxes1`.
+    coords (str, optional): The coordinate format in the input arrays. Can be either &apos;centroids&apos; for the format
+        `(cx, cy, w, h)`, &apos;minmax&apos; for the format `(xmin, xmax, ymin, ymax)`, or &apos;corners&apos; for the format
+        `(xmin, ymin, xmax, ymax)`.
+    mode (str, optional): Can be one of &apos;outer_product&apos; and &apos;element-wise&apos;. In &apos;outer_product&apos; mode, returns an
+        `(m,n)` matrix with the IoU overlaps for all possible combinations of the `m` boxes in `boxes1` with the
+        `n` boxes in `boxes2`. In &apos;element-wise&apos; mode, returns a 1D array and the shapes of `boxes1` and `boxes2`
+        must be boadcast-compatible. If both `boxes1` and `boxes2` have `m` boxes, then this returns an array of
+        length `m` where the i-th position contains the IoU overlap of `boxes1[i]` with `boxes2[i]`.
+
+Returns:
+    A 1D or 2D Numpy array (refer to the `mode` argument for details) of dtype float containing values in [0,1],
+    the Jaccard similarity of the boxes in `boxes1` and `boxes2`. 0 means there is no overlap between two given
+    boxes, 1 means their coordinates are identical.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/bounding_box_utils.py" line="253" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/bounding_box_utils.py" bodystart="253" bodyend="342"/>
+        <references refid="namespacekeras__utils_1_1bounding__box__utils_1a7b2a9d86d4acfcddcec55133486f2012" compoundref="bounding__box__utils_8py" startline="25" endline="77">keras_utils.bounding_box_utils.convert_coordinates</references>
+        <references refid="namespacekeras__utils_1_1bounding__box__utils_1a61242ff96fe1b973d428544abdbfed53" compoundref="bounding__box__utils_8py" startline="203" endline="252">keras_utils.bounding_box_utils.intersection_area_</references>
+        <referencedby refid="class_detections_evaluator_1ae3047c04a1fbdce949f309373f1d81c5" compoundref="_detections_evaluator_8cpp" startline="109" endline="163">DetectionsEvaluator::evaluate</referencedby>
+        <referencedby refid="class_stats_utils_1a88224307181b4b86d5e611e34e77587e" compoundref="_stats_utils_8cpp" startline="7" endline="56">StatsUtils::getIOU</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Includes:
+* Function to compute the IoU similarity for axis-aligned, rectangular, 2D bounding boxes
+* Function for coordinate conversion for axis-aligned, rectangular, 2D bounding boxes
+
+Copyright (C) 2017 Pierluigi Ferrari
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</verbatim> </para>    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/bounding_box_utils.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

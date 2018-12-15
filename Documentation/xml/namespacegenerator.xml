@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacegenerator" kind="namespace" language="Python">
+    <compoundname>generator</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacegenerator_1a3bbee52e6a87a6496700890e3344c874" prot="public" static="no" mutable="no">
+        <type>def</type>
+        <definition>def generator.args</definition>
+        <argsstring></argsstring>
+        <name>args</name>
+        <initializer>=  <ref refid="namespacegenerator_1a300e19c576b1e53645eb8811f9cc3f22" kindref="member">configure_arguments</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="datasetGenerator/generator.py" line="35" column="1" bodyfile="datasetGenerator/generator.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacegenerator_1a300e19c576b1e53645eb8811f9cc3f22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def generator.configure_arguments</definition>
+        <argsstring>()</argsstring>
+        <name>configure_arguments</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="datasetGenerator/generator.py" line="5" column="1" bodyfile="datasetGenerator/generator.py" bodystart="5" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacegenerator_1aeac4d92bc4bed52fb32f23c0b9416a01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def generator.main</definition>
+        <argsstring>(path)</argsstring>
+        <name>main</name>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="datasetGenerator/generator.py" line="10" column="1" bodyfile="datasetGenerator/generator.py" bodystart="10" bodyend="33"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="datasetGenerator/generator.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,242 @@
+.TH "Sample" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Sample
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Sample\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSample\fP (const std::string &path, const std::string &id, bool loadDepth=true)"
+.br
+.ti -1c
+.RI "\fBSample\fP ()"
+.br
+.ti -1c
+.RI "\fBSample\fP (const cv::Mat &colorImage)"
+.br
+.ti -1c
+.RI "\fBSample\fP (const cv::Mat &colorImage, const \fBRectRegionsPtr\fP &rectRegions)"
+.br
+.ti -1c
+.RI "\fBSample\fP (const cv::Mat &colorImage, const \fBContourRegionsPtr\fP &contourRegions)"
+.br
+.ti -1c
+.RI "\fBSample\fP (const cv::Mat &colorImage, const \fBRectRegionsPtr\fP &rectRegions, const \fBContourRegionsPtr\fP &contourRegions)"
+.br
+.ti -1c
+.RI "\fBSample\fP (const cv::Mat &colorImage, const cv::Mat &depthImage, const \fBRectRegionsPtr\fP &rectRegions)"
+.br
+.ti -1c
+.RI "\fBSample\fP (const cv::Mat &colorImage, const cv::Mat &depthImage, const \fBContourRegionsPtr\fP &contourRegions)"
+.br
+.ti -1c
+.RI "\fBSample\fP (const cv::Mat &colorImage, const cv::Mat &depthImage, const \fBRectRegionsPtr\fP &rectRegions, const \fBContourRegionsPtr\fP &contourRegions)"
+.br
+.ti -1c
+.RI "\fB~Sample\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSampleDims\fP (const int width, const int height)"
+.br
+.ti -1c
+.RI "void \fBsetColorImage\fP (const std::string &imagePath)"
+.br
+.ti -1c
+.RI "void \fBsetColorImage\fP (const cv::Mat &image)"
+.br
+.ti -1c
+.RI "void \fBsetDepthImage\fP (const cv::Mat &image)"
+.br
+.ti -1c
+.RI "void \fBsetDepthImage\fP (const std::string &imagePath)"
+.br
+.ti -1c
+.RI "void \fBsetRectRegions\fP (const \fBRectRegionsPtr\fP &regions)"
+.br
+.ti -1c
+.RI "void \fBsetContourRegions\fP (const \fBContourRegionsPtr\fP &regions)"
+.br
+.ti -1c
+.RI "void \fBsetRleRegions\fP (const \fBRleRegionsPtr\fP &regions)"
+.br
+.ti -1c
+.RI "void \fBsetSampleID\fP (const std::string &sampleID)"
+.br
+.ti -1c
+.RI "void \fBclearColorImage\fP ()"
+.br
+.ti -1c
+.RI "void \fBclearDepthImage\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetSampleWidth\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetSampleHeight\fP () const"
+.br
+.ti -1c
+.RI "\fBRectRegionsPtr\fP \fBgetRectRegions\fP () const"
+.br
+.ti -1c
+.RI "\fBContourRegionsPtr\fP \fBgetContourRegions\fP () const"
+.br
+.ti -1c
+.RI "\fBRleRegionsPtr\fP \fBgetRleRegions\fP () const"
+.br
+.ti -1c
+.RI "std::string \fBgetColorImagePath\fP () const"
+.br
+.ti -1c
+.RI "std::string \fBgetDepthImagePath\fP () const"
+.br
+.ti -1c
+.RI "cv::Mat \fBgetColorImage\fP () const"
+.br
+.ti -1c
+.RI "cv::Mat \fBgetDepthImage\fP () const"
+.br
+.ti -1c
+.RI "cv::Mat \fBgetDeptImageGrayRGB\fP () const"
+.br
+.ti -1c
+.RI "cv::Mat \fBgetSampledColorImage\fP () const"
+.br
+.ti -1c
+.RI "cv::Mat \fBgetSampledDepthImage\fP () const"
+.br
+.ti -1c
+.RI "cv::Mat \fBgetSampledDepthColorMapImage\fP (double alpha=1, double beta=0) const"
+.br
+.ti -1c
+.RI "cv::Mat \fBgetDepthColorMapImage\fP (double alpha=1, double beta=0) const"
+.br
+.ti -1c
+.RI "void \fBsave\fP (const std::string &outPath, int id)"
+.br
+.ti -1c
+.RI "void \fBsave\fP (const std::string &outPath, const std::string &filename)"
+.br
+.ti -1c
+.RI "void \fBsave\fP (const std::string &outPath)"
+.br
+.ti -1c
+.RI "void \fBprint\fP ()"
+.br
+.ti -1c
+.RI "bool \fBshow\fP (const std::string readerImplementation, const std::string windowName, const int waitKey, const bool showDepth)"
+.br
+.ti -1c
+.RI "bool \fBisDepthImageValid\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisValid\fP ()"
+.br
+.ti -1c
+.RI "void \fBfilterSamplesByID\fP (std::vector< std::string > filteredIDS)"
+.br
+.ti -1c
+.RI "std::string \fBgetSampleID\fP ()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Sample::Sample (const std::string & path, const std::string & id, bool loadDepth = \fCtrue\fP)"
+
+.SS "Sample::Sample ()"
+
+.SS "Sample::Sample (const cv::Mat & colorImage)"
+
+.SS "Sample::Sample (const cv::Mat & colorImage, const \fBRectRegionsPtr\fP & rectRegions)"
+
+.SS "Sample::Sample (const cv::Mat & colorImage, const \fBContourRegionsPtr\fP & contourRegions)"
+
+.SS "Sample::Sample (const cv::Mat & colorImage, const \fBRectRegionsPtr\fP & rectRegions, const \fBContourRegionsPtr\fP & contourRegions)"
+
+.SS "Sample::Sample (const cv::Mat & colorImage, const cv::Mat & depthImage, const \fBRectRegionsPtr\fP & rectRegions)"
+
+.SS "Sample::Sample (const cv::Mat & colorImage, const cv::Mat & depthImage, const \fBContourRegionsPtr\fP & contourRegions)"
+
+.SS "Sample::Sample (const cv::Mat & colorImage, const cv::Mat & depthImage, const \fBRectRegionsPtr\fP & rectRegions, const \fBContourRegionsPtr\fP & contourRegions)"
+
+.SS "Sample::~Sample ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Sample::clearColorImage ()"
+
+.SS "void Sample::clearDepthImage ()"
+
+.SS "void Sample::filterSamplesByID (std::vector< std::string > filteredIDS)"
+
+.SS "cv::Mat Sample::getColorImage () const"
+
+.SS "std::string Sample::getColorImagePath () const"
+
+.SS "\fBContourRegionsPtr\fP Sample::getContourRegions () const"
+
+.SS "cv::Mat Sample::getDepthColorMapImage (double alpha = \fC1\fP, double beta = \fC0\fP) const"
+
+.SS "cv::Mat Sample::getDepthImage () const"
+
+.SS "std::string Sample::getDepthImagePath () const"
+
+.SS "cv::Mat Sample::getDeptImageGrayRGB () const"
+
+.SS "\fBRectRegionsPtr\fP Sample::getRectRegions () const"
+
+.SS "\fBRleRegionsPtr\fP Sample::getRleRegions () const"
+
+.SS "cv::Mat Sample::getSampledColorImage () const"
+
+.SS "cv::Mat Sample::getSampledDepthColorMapImage (double alpha = \fC1\fP, double beta = \fC0\fP) const"
+
+.SS "cv::Mat Sample::getSampledDepthImage () const"
+
+.SS "int Sample::getSampleHeight () const"
+
+.SS "std::string Sample::getSampleID ()"
+
+.SS "int Sample::getSampleWidth () const"
+
+.SS "bool Sample::isDepthImageValid ()"
+
+.SS "bool Sample::isValid ()"
+
+.SS "void Sample::print ()"
+
+.SS "void Sample::save (const std::string & outPath, int id)"
+
+.SS "void Sample::save (const std::string & outPath, const std::string & filename)"
+
+.SS "void Sample::save (const std::string & outPath)"
+
+.SS "void Sample::setColorImage (const std::string & imagePath)"
+
+.SS "void Sample::setColorImage (const cv::Mat & image)"
+
+.SS "void Sample::setContourRegions (const \fBContourRegionsPtr\fP & regions)"
+
+.SS "void Sample::setDepthImage (const cv::Mat & image)"
+
+.SS "void Sample::setDepthImage (const std::string & imagePath)"
+
+.SS "void Sample::setRectRegions (const \fBRectRegionsPtr\fP & regions)"
+
+.SS "void Sample::setRleRegions (const \fBRleRegionsPtr\fP & regions)"
+
+.SS "void Sample::setSampleDims (const int width, const int height)"
+
+.SS "void Sample::setSampleID (const std::string & sampleID)"
+
+.SS "bool Sample::show (const std::string readerImplementation, const std::string windowName, const int waitKey, const bool showDepth)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

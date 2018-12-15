@@ -1,0 +1,130 @@
+\hypertarget{class_sample_generation_app}{}\section{Sample\+Generation\+App Class Reference}
+\label{class_sample_generation_app}\index{Sample\+Generation\+App@{Sample\+Generation\+App}}
+
+
+{\ttfamily \#include $<$Sample\+Generation\+App.\+h$>$}
+
+Inheritance diagram for Sample\+Generation\+App\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{class_sample_generation_app}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sample_generation_app_ac7359b551057127947243e1251237a90}{Sample\+Generation\+App} (int \hyperlink{class_sample_generation_app_af98f6187cc8eb62fc3fe0ff53df76b6e}{argc}, char $\ast$\hyperlink{class_sample_generation_app_a7e490e3711491c2bc58351f9e9dd9945}{argv}\mbox{[}$\,$\mbox{]})
+\item 
+virtual void \hyperlink{class_sample_generation_app_a351fe6cfe624aeeee9ba4fb04d80ca0f}{operator()} ()=0
+\item 
+void \hyperlink{class_sample_generation_app_acec58569149ac1fc8af9525d35b9e88a}{process} ()
+\item 
+\hyperlink{class_config_1_1_properties}{Config\+::\+Properties} \hyperlink{class_sample_generation_app_a2c13df2c47ec917170e0b995218bb31b}{get\+Config} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_sample_generation_app_adb5fa7f811a3177d7966981789b41f72}{verify\+Requirements} ()
+\item 
+int \hyperlink{class_sample_generation_app_a4304bff49d553420b6cf436fad6f5e6a}{parse\+\_\+arguments} (const int \hyperlink{class_sample_generation_app_af98f6187cc8eb62fc3fe0ff53df76b6e}{argc}, char $\ast$\hyperlink{class_sample_generation_app_a7e490e3711491c2bc58351f9e9dd9945}{argv}\mbox{[}$\,$\mbox{]}, std\+::string \&config\+File)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_config_1_1_properties}{Config\+::\+Properties} \hyperlink{class_sample_generation_app_a4123900b02b2c4d61e9425d9b35da2f2}{config}
+\item 
+std\+::string \hyperlink{class_sample_generation_app_ad40fd006cd4f887a6458054152bf3592}{config\+File\+Path}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_sample_generation_app_a1dae733636d90e8b5d27002cf513e59a}{required\+Arguments}
+\item 
+int \hyperlink{class_sample_generation_app_af98f6187cc8eb62fc3fe0ff53df76b6e}{argc}
+\item 
+char $\ast$$\ast$ \hyperlink{class_sample_generation_app_a7e490e3711491c2bc58351f9e9dd9945}{argv}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sample_generation_app_ac7359b551057127947243e1251237a90}\label{class_sample_generation_app_ac7359b551057127947243e1251237a90}} 
+\index{Sample\+Generation\+App@{Sample\+Generation\+App}!Sample\+Generation\+App@{Sample\+Generation\+App}}
+\index{Sample\+Generation\+App@{Sample\+Generation\+App}!Sample\+Generation\+App@{Sample\+Generation\+App}}
+\subsubsection{\texorpdfstring{Sample\+Generation\+App()}{SampleGenerationApp()}}
+{\footnotesize\ttfamily Sample\+Generation\+App\+::\+Sample\+Generation\+App (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sample_generation_app_a2c13df2c47ec917170e0b995218bb31b}\label{class_sample_generation_app_a2c13df2c47ec917170e0b995218bb31b}} 
+\index{Sample\+Generation\+App@{Sample\+Generation\+App}!get\+Config@{get\+Config}}
+\index{get\+Config@{get\+Config}!Sample\+Generation\+App@{Sample\+Generation\+App}}
+\subsubsection{\texorpdfstring{get\+Config()}{getConfig()}}
+{\footnotesize\ttfamily \hyperlink{class_config_1_1_properties}{Config\+::\+Properties} Sample\+Generation\+App\+::get\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_sample_generation_app_a351fe6cfe624aeeee9ba4fb04d80ca0f}\label{class_sample_generation_app_a351fe6cfe624aeeee9ba4fb04d80ca0f}} 
+\index{Sample\+Generation\+App@{Sample\+Generation\+App}!operator()@{operator()}}
+\index{operator()@{operator()}!Sample\+Generation\+App@{Sample\+Generation\+App}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily virtual void Sample\+Generation\+App\+::operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_my_app_a376d7e3ddb7ab21223f29a7263b6fb14}{My\+App}, \hyperlink{class_my_app_ab3cc458e74a9fc059504fa33983249ee}{My\+App}, \hyperlink{class_my_app_a376d7e3ddb7ab21223f29a7263b6fb14}{My\+App}, \hyperlink{class_my_app_a376d7e3ddb7ab21223f29a7263b6fb14}{My\+App}, \hyperlink{class_my_app_a376d7e3ddb7ab21223f29a7263b6fb14}{My\+App}, \hyperlink{class_my_app_a376d7e3ddb7ab21223f29a7263b6fb14}{My\+App}, \hyperlink{class_my_app_a376d7e3ddb7ab21223f29a7263b6fb14}{My\+App}, and \hyperlink{class_my_app_a376d7e3ddb7ab21223f29a7263b6fb14}{My\+App}.
+
+\mbox{\Hypertarget{class_sample_generation_app_a4304bff49d553420b6cf436fad6f5e6a}\label{class_sample_generation_app_a4304bff49d553420b6cf436fad6f5e6a}} 
+\index{Sample\+Generation\+App@{Sample\+Generation\+App}!parse\+\_\+arguments@{parse\+\_\+arguments}}
+\index{parse\+\_\+arguments@{parse\+\_\+arguments}!Sample\+Generation\+App@{Sample\+Generation\+App}}
+\subsubsection{\texorpdfstring{parse\+\_\+arguments()}{parse\_arguments()}}
+{\footnotesize\ttfamily int Sample\+Generation\+App\+::parse\+\_\+arguments (\begin{DoxyParamCaption}\item[{const int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]},  }\item[{std\+::string \&}]{config\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Define and parse the program options
+
+--help option\mbox{\Hypertarget{class_sample_generation_app_acec58569149ac1fc8af9525d35b9e88a}\label{class_sample_generation_app_acec58569149ac1fc8af9525d35b9e88a}} 
+\index{Sample\+Generation\+App@{Sample\+Generation\+App}!process@{process}}
+\index{process@{process}!Sample\+Generation\+App@{Sample\+Generation\+App}}
+\subsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void Sample\+Generation\+App\+::process (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_sample_generation_app_adb5fa7f811a3177d7966981789b41f72}\label{class_sample_generation_app_adb5fa7f811a3177d7966981789b41f72}} 
+\index{Sample\+Generation\+App@{Sample\+Generation\+App}!verify\+Requirements@{verify\+Requirements}}
+\index{verify\+Requirements@{verify\+Requirements}!Sample\+Generation\+App@{Sample\+Generation\+App}}
+\subsubsection{\texorpdfstring{verify\+Requirements()}{verifyRequirements()}}
+{\footnotesize\ttfamily bool Sample\+Generation\+App\+::verify\+Requirements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sample_generation_app_af98f6187cc8eb62fc3fe0ff53df76b6e}\label{class_sample_generation_app_af98f6187cc8eb62fc3fe0ff53df76b6e}} 
+\index{Sample\+Generation\+App@{Sample\+Generation\+App}!argc@{argc}}
+\index{argc@{argc}!Sample\+Generation\+App@{Sample\+Generation\+App}}
+\subsubsection{\texorpdfstring{argc}{argc}}
+{\footnotesize\ttfamily int Sample\+Generation\+App\+::argc\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_sample_generation_app_a7e490e3711491c2bc58351f9e9dd9945}\label{class_sample_generation_app_a7e490e3711491c2bc58351f9e9dd9945}} 
+\index{Sample\+Generation\+App@{Sample\+Generation\+App}!argv@{argv}}
+\index{argv@{argv}!Sample\+Generation\+App@{Sample\+Generation\+App}}
+\subsubsection{\texorpdfstring{argv}{argv}}
+{\footnotesize\ttfamily char$\ast$$\ast$ Sample\+Generation\+App\+::argv\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_sample_generation_app_a4123900b02b2c4d61e9425d9b35da2f2}\label{class_sample_generation_app_a4123900b02b2c4d61e9425d9b35da2f2}} 
+\index{Sample\+Generation\+App@{Sample\+Generation\+App}!config@{config}}
+\index{config@{config}!Sample\+Generation\+App@{Sample\+Generation\+App}}
+\subsubsection{\texorpdfstring{config}{config}}
+{\footnotesize\ttfamily \hyperlink{class_config_1_1_properties}{Config\+::\+Properties} Sample\+Generation\+App\+::config\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_sample_generation_app_ad40fd006cd4f887a6458054152bf3592}\label{class_sample_generation_app_ad40fd006cd4f887a6458054152bf3592}} 
+\index{Sample\+Generation\+App@{Sample\+Generation\+App}!config\+File\+Path@{config\+File\+Path}}
+\index{config\+File\+Path@{config\+File\+Path}!Sample\+Generation\+App@{Sample\+Generation\+App}}
+\subsubsection{\texorpdfstring{config\+File\+Path}{configFilePath}}
+{\footnotesize\ttfamily std\+::string Sample\+Generation\+App\+::config\+File\+Path\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_sample_generation_app_a1dae733636d90e8b5d27002cf513e59a}\label{class_sample_generation_app_a1dae733636d90e8b5d27002cf513e59a}} 
+\index{Sample\+Generation\+App@{Sample\+Generation\+App}!required\+Arguments@{required\+Arguments}}
+\index{required\+Arguments@{required\+Arguments}!Sample\+Generation\+App@{Sample\+Generation\+App}}
+\subsubsection{\texorpdfstring{required\+Arguments}{requiredArguments}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Sample\+Generation\+App\+::required\+Arguments\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Utils/\hyperlink{_sample_generation_app_8h}{Sample\+Generation\+App.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Utils/\hyperlink{_sample_generation_app_8cpp}{Sample\+Generation\+App.\+cpp}\end{DoxyCompactItemize}

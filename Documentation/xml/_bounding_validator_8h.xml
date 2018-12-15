@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_bounding_validator_8h" kind="file" language="C++">
+    <compoundname>BoundingValidator.h</compoundname>
+    <includes local="no">opencv2/opencv.hpp</includes>
+    <includes refid="_rect_region_8h" local="no">Regions/RectRegion.h</includes>
+    <includes refid="_bounding_rect_gui_mover_8h" local="yes">BoundingRectGuiMover.h</includes>
+    <includedby refid="_bounding_validator_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.cpp</includedby>
+    <includedby refid="_detections_validator_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.cpp</includedby>
+    <incdepgraph>
+      <node id="3948">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="3950">
+        <label>BoundingRectGuiMover.h</label>
+        <link refid="_bounding_rect_gui_mover_8h"/>
+        <childnode refid="3948" relation="include">
+        </childnode>
+      </node>
+      <node id="3949">
+        <label>Regions/RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="3948" relation="include">
+        </childnode>
+      </node>
+      <node id="3947">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h</label>
+        <link refid="_bounding_validator_8h"/>
+        <childnode refid="3948" relation="include">
+        </childnode>
+        <childnode refid="3949" relation="include">
+        </childnode>
+        <childnode refid="3950" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3953">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.cpp</label>
+        <link refid="_detections_validator_8cpp"/>
+      </node>
+      <node id="3951">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h</label>
+        <link refid="_bounding_validator_8h"/>
+        <childnode refid="3952" relation="include">
+        </childnode>
+        <childnode refid="3953" relation="include">
+        </childnode>
+      </node>
+      <node id="3952">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.cpp</label>
+        <link refid="_bounding_validator_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_bounding_validator" prot="public">BoundingValidator</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_bounding_validator_8h_1ae5d06440a24c63145723a3f8a8e773b6" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool clicked</definition>
+        <argsstring></argsstring>
+        <name>clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_bounding_validator_8h_1a5c1eb1172469e7d1bef0ee554638a9b7" prot="public" static="yes" mutable="no">
+        <type>cv::Point</type>
+        <definition>cv::Point from</definition>
+        <argsstring></argsstring>
+        <name>from</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_bounding_validator_8h_1a3e80b1cc5ae372efcefc65428da94da1" prot="public" static="yes" mutable="no">
+        <type>cv::Point</type>
+        <definition>cv::Point to</definition>
+        <argsstring></argsstring>
+        <name>to</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_bounding_validator_8h_1a6ab59cf375b93fa51ea8336269a18dd2" prot="public" static="yes" mutable="no">
+        <type>cv::Point</type>
+        <definition>cv::Point tempFrom</definition>
+        <argsstring></argsstring>
+        <name>tempFrom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_bounding_validator_8h_1a3983b78cabc1921e6e88bee2245a6ed9" prot="public" static="yes" mutable="no">
+        <type><ref refid="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493" kindref="member">BoundingRectGuiMover::MovementType</ref></type>
+        <definition>BoundingRectGuiMover::MovementType movementType</definition>
+        <argsstring></argsstring>
+        <name>movementType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>22/11/16.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_BOUNDINGVALIDATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_BOUNDINGVALIDATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/opencv.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_rect_region_8h" kindref="compound">Regions/RectRegion.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_bounding_rect_gui_mover_8h" kindref="compound">BoundingRectGuiMover.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>clicked;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>cv::Point<sp/>from,<sp/>to;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>cv::Point<sp/>tempFrom;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493" kindref="member">BoundingRectGuiMover::MovementType</ref><sp/>movementType;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="class_bounding_validator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_bounding_validator" kindref="compound">BoundingValidator</ref><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_bounding_validator_1ae697e066d8c9d8bc0edb60282cec3324" kindref="member">BoundingValidator</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>image_in,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scale=3);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_bounding_validator_1af81f3b37170e45eb241667604a47fece" kindref="member">validate</ref>(std::vector&lt;cv::Point&gt;&amp;<sp/>bounding,cv::Rect_&lt;double&gt;&amp;<sp/>validatedBound,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_bounding_validator_1af81f3b37170e45eb241667604a47fece" kindref="member">validate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Rect_&lt;double&gt;&amp;<sp/>bounding,cv::Rect_&lt;double&gt;&amp;<sp/>validatedBound,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>key);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_bounding_validator_1a490e960e21fae4b4e695314eb014fe22" kindref="member">validateNDetections</ref>(std::vector&lt;RectRegion&gt;&amp;<sp/>regions);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scale;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>image;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CallBackFunc(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>event,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>userdata);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>CallBackFuncNumberDetections(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>event,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flags,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>userdata);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>updateRegionsImage(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;RectRegion&gt;&amp;<sp/>regions);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_BOUNDINGVALIDATOR_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h"/>
+  </compounddef>
+</doxygen>

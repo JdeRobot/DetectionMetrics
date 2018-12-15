@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_path_helper_8h" kind="file" language="C++">
+    <compoundname>PathHelper.h</compoundname>
+    <includes local="no">string</includes>
+    <includedby refid="_recorder_reader_8cpp" local="no">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.cpp</includedby>
+    <includedby refid="_princeton_dataset_reader_8cpp" local="no">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/PrincetonDatasetReader.cpp</includedby>
+    <includedby refid="_path_helper_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/Utils/PathHelper.cpp</includedby>
+    <incdepgraph>
+      <node id="4904">
+        <label>string</label>
+      </node>
+      <node id="4903">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Utils/PathHelper.h</label>
+        <link refid="_path_helper_8h"/>
+        <childnode refid="4904" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4907">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/PrincetonDatasetReader.cpp</label>
+        <link refid="_princeton_dataset_reader_8cpp"/>
+      </node>
+      <node id="4905">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Utils/PathHelper.h</label>
+        <link refid="_path_helper_8h"/>
+        <childnode refid="4906" relation="include">
+        </childnode>
+        <childnode refid="4907" relation="include">
+        </childnode>
+        <childnode refid="4908" relation="include">
+        </childnode>
+      </node>
+      <node id="4908">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Utils/PathHelper.cpp</label>
+        <link refid="_path_helper_8cpp"/>
+      </node>
+      <node id="4906">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.cpp</label>
+        <link refid="_recorder_reader_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_path_helper" prot="public">PathHelper</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>19/07/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_PATHHELPER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_PATHHELPER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="class_path_helper" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_path_helper" kindref="compound">PathHelper</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_path_helper_1a4f5f750586edd95d7095f0dc50052282" kindref="member">concatPaths</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>p1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>p2);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_path_helper_1af3f3b7923ba996a37f7ba2509519fc4e" kindref="member">getPathSeparator</ref>();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_PATHHELPER_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/PathHelper.h"/>
+  </compounddef>
+</doxygen>

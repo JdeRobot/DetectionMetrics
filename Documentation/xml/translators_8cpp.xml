@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="translators_8cpp" kind="file" language="C++">
+    <compoundname>translators.cpp</compoundname>
+    <includes refid="translators_8hpp" local="no">comm/ros/translators.hpp</includes>
+    <incdepgraph>
+      <node id="5294">
+        <label>image_transport/image_transport.h</label>
+      </node>
+      <node id="5292">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="5295">
+        <label>cv_bridge/cv_bridge.h</label>
+      </node>
+      <node id="5293">
+        <label>jderobottypes/rgbd.h</label>
+        <link refid="rgbd_8h"/>
+        <childnode refid="5291" relation="include">
+        </childnode>
+      </node>
+      <node id="5296">
+        <label>sensor_msgs/image_encodings.h</label>
+      </node>
+      <node id="5291">
+        <label>jderobottypes/image.h</label>
+        <link refid="image_8h"/>
+        <childnode refid="5292" relation="include">
+        </childnode>
+      </node>
+      <node id="5286">
+        <label>DeepLearningSuite/libs/comm/src/ros/translators.cpp</label>
+        <link refid="translators_8cpp"/>
+        <childnode refid="5287" relation="include">
+        </childnode>
+      </node>
+      <node id="5290">
+        <label>vector</label>
+      </node>
+      <node id="5287">
+        <label>comm/ros/translators.hpp</label>
+        <link refid="translators_8hpp"/>
+        <childnode refid="5288" relation="include">
+        </childnode>
+        <childnode refid="5289" relation="include">
+        </childnode>
+        <childnode refid="5290" relation="include">
+        </childnode>
+        <childnode refid="5291" relation="include">
+        </childnode>
+        <childnode refid="5293" relation="include">
+        </childnode>
+        <childnode refid="5294" relation="include">
+        </childnode>
+        <childnode refid="5295" relation="include">
+        </childnode>
+        <childnode refid="5296" relation="include">
+        </childnode>
+      </node>
+      <node id="5289">
+        <label>cv.h</label>
+      </node>
+      <node id="5288">
+        <label>ros/ros.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_comm">Comm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;<ref refid="translators_8hpp" kindref="compound">comm/ros/translators.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_comm" kindref="compound">Comm</ref><sp/>{</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="namespace_comm_1a7d4da4b3fc818fb4d75a7df90df80152" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespace_comm_1a7d4da4b3fc818fb4d75a7df90df80152" kindref="member">PI</ref><sp/>=<sp/>3.1415;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="namespace_comm_1a8f60d778070dabbe4b6fa39157309097" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespace_comm_1a8f60d778070dabbe4b6fa39157309097" kindref="member">MAXRANGEIMGD</ref><sp/>=<sp/>8;<sp/></highlight><highlight class="comment">//max<sp/>length<sp/>received<sp/>from<sp/>imageD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="namespace_comm_1ad99fee34a48e5331dfa18b2b766e7df2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_comm_1afe46bbd9c6bec183b93879e39e21fcbc" kindref="member">depthToRGB</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>float_img,<sp/>cv::Mat&amp;<sp/>rgb_img,<sp/>std::string<sp/>type<sp/>){</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Process<sp/>images</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::Mat<sp/>mono8_img;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type.substr(type.length()<sp/>-<sp/>3,<sp/>1)<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;U&quot;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mono8_img<sp/>=<sp/>float_img;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rgb_img<sp/>=<sp/>cv::Mat(float_img.size(),<sp/>CV_8UC3);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::Mat<sp/>mono8_img<sp/>=<sp/>cv::Mat(float_img.size(),<sp/>CV_8UC1);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(rgb_img.rows<sp/>!=<sp/>float_img.rows<sp/>||<sp/>rgb_img.cols<sp/>!=<sp/>float_img.cols){</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rgb_img<sp/>=<sp/>cv::Mat(float_img.size(),<sp/>CV_8UC3);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::convertScaleAbs(float_img,<sp/>mono8_img,<sp/>255/MAXRANGEIMGD,<sp/>0.0);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::cvtColor(mono8_img,<sp/>rgb_img,<sp/>CV_GRAY2RGB);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_jde_robot_types_1_1_image" kindref="compound">JdeRobotTypes::Image</ref></highlight></codeline>
+<codeline lineno="31" refid="namespace_comm_1ad9eade500ada9cd99a62086a53986e36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_comm_1ad9eade500ada9cd99a62086a53986e36" kindref="member">translate_image_messages</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sensor_msgs::ImageConstPtr&amp;<sp/>image_msg){</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_jde_robot_types_1_1_image" kindref="compound">JdeRobotTypes::Image</ref><sp/>img;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv_bridge::CvImagePtr<sp/>cv_ptr;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>img.<ref refid="class_jde_robot_types_1_1_image_1a4557271a34c2a35e6a9c03946ed2332c" kindref="member">timeStamp</ref><sp/>=<sp/>image_msg-&gt;header.stamp.sec<sp/>+<sp/>(image_msg-&gt;header.stamp.nsec<sp/>*1e-9);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>img.<ref refid="class_jde_robot_types_1_1_image_1ac702a6dbc5f6d6009524159bcc4d07e4" kindref="member">format</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;RGB8&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>we<sp/>convert<sp/>img_msg<sp/>to<sp/>RGB8<sp/>format</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>img.<ref refid="class_jde_robot_types_1_1_image_1ac377507ac13a54f523169f55911e3147" kindref="member">width</ref><sp/>=<sp/>image_msg-&gt;width;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>img.<ref refid="class_jde_robot_types_1_1_image_1ad3b073fd5f50c62c535d0083ca0f9ae9" kindref="member">height</ref><sp/>=<sp/>image_msg-&gt;height;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::Mat<sp/>img_data;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>image_msg-&gt;encoding<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>(image_msg-&gt;encoding.compare(sensor_msgs::image_encodings::TYPE_32FC1)==0<sp/>||<sp/>image_msg-&gt;encoding.compare(sensor_msgs::image_encodings::TYPE_16UC1)==0){</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(image_msg-&gt;encoding.substr(image_msg-&gt;encoding.length()<sp/>-<sp/>2<sp/>)<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;C1&quot;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv_ptr<sp/>=<sp/>cv_bridge::toCvCopy(image_msg);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_comm_1afe46bbd9c6bec183b93879e39e21fcbc" kindref="member">depthToRGB</ref>(cv_ptr-&gt;image,<sp/>img_data,<sp/>image_msg-&gt;encoding);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv_ptr<sp/>=<sp/>cv_bridge::toCvCopy(image_msg,<sp/>sensor_msgs::image_encodings::RGB8);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>img_data<sp/>=<sp/><sp/>cv_ptr-&gt;image;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(cv_bridge::Exception&amp;<sp/>e)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROS_ERROR(</highlight><highlight class="stringliteral">&quot;cv_bridge<sp/>exception:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/>e.what());</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>img.<ref refid="class_jde_robot_types_1_1_image_1a00caf819fb206f75e125f9a63f78cb8a" kindref="member">data</ref><sp/>=<sp/>img_data;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>img;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>NS<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/libs/comm/src/ros/translators.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacekeras__utils" kind="namespace" language="Python">
+    <compoundname>keras_utils</compoundname>
+    <innernamespace refid="namespacekeras__utils_1_1bounding__box__utils">keras_utils::bounding_box_utils</innernamespace>
+    <innernamespace refid="namespacekeras__utils_1_1keras__layer___anchor_boxes">keras_utils::keras_layer_AnchorBoxes</innernamespace>
+    <innernamespace refid="namespacekeras__utils_1_1keras__layer___decode_detections">keras_utils::keras_layer_DecodeDetections</innernamespace>
+    <innernamespace refid="namespacekeras__utils_1_1keras__layer___l2_normalization">keras_utils::keras_layer_L2Normalization</innernamespace>
+    <innernamespace refid="namespacekeras__utils_1_1keras__ssd__loss">keras_utils::keras_ssd_loss</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

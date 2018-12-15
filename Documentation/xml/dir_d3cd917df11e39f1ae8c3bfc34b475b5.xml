@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_d3cd917df11e39f1ae8c3bfc34b475b5" kind="dir">
+    <compoundname>DeepLearningSuite/DeepLearningSuiteLib/Regions</compoundname>
+    <innerfile refid="_contour_region_8cpp">ContourRegion.cpp</innerfile>
+    <innerfile refid="_contour_region_8h">ContourRegion.h</innerfile>
+    <innerfile refid="_contour_regions_8cpp">ContourRegions.cpp</innerfile>
+    <innerfile refid="_contour_regions_8h">ContourRegions.h</innerfile>
+    <innerfile refid="mask_api_8cpp">maskApi.cpp</innerfile>
+    <innerfile refid="mask_api_8h">maskApi.h</innerfile>
+    <innerfile refid="_rect_region_8cpp">RectRegion.cpp</innerfile>
+    <innerfile refid="_rect_region_8h">RectRegion.h</innerfile>
+    <innerfile refid="_rect_regions_8cpp">RectRegions.cpp</innerfile>
+    <innerfile refid="_rect_regions_8h">RectRegions.h</innerfile>
+    <innerfile refid="_region_8h">Region.h</innerfile>
+    <innerfile refid="_regions_8h">Regions.h</innerfile>
+    <innerfile refid="_rle_region_8cpp">RleRegion.cpp</innerfile>
+    <innerfile refid="_rle_region_8h">RleRegion.h</innerfile>
+    <innerfile refid="_rle_regions_8cpp">RleRegions.cpp</innerfile>
+    <innerfile refid="_rle_regions_8h">RleRegions.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classcolorspaces_1_1_image_y_c_r_c_b" kind="class" language="C++" prot="public">
+    <compoundname>colorspaces::ImageYCRCB</compoundname>
+    <basecompoundref refid="classcolorspaces_1_1_image" prot="public" virt="non-virtual">colorspaces::Image</basecompoundref>
+    <includes refid="imagecv_8h" local="no">imagecv.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcolorspaces_1_1_image_y_c_r_c_b_1a9423fb6d470113987bd078e88ff46cb8" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classcolorspaces_1_1_image_1ab3978cc7acc2b5e855f8c715f09667d1" kindref="member">FormatPtr</ref></type>
+        <definition>const Image::FormatPtr colorspaces::ImageYCRCB::FORMAT_YCRCB</definition>
+        <argsstring></argsstring>
+        <name>FORMAT_YCRCB</name>
+        <initializer>= <ref refid="classcolorspaces_1_1_image_1_1_format_1ae79208f237b72cf596331ebcec2ff58b" kindref="member">Image::Format::createFormat</ref>(&quot;YCRCB&quot;,CV_8UC3,&amp;<ref refid="classcolorspaces_1_1_image_y_c_r_c_b_1ad2774884c1acea49b7c6799839763a02" kindref="member">ImageYCRCB::createInstance</ref>,&amp;<ref refid="classcolorspaces_1_1_image_y_c_r_c_b_1aae06774e3c6de95fdd0fc20d87eb1400" kindref="member">ImageYCRCB::imageCvt</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="348" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" bodystart="348" bodyend="-1"/>
+        <referencedby refid="classcolorspaces_1_1_image_1a1bf62f4371700005a8f9581b2f70f31f" compoundref="imagecv_8cpp" startline="50" endline="53">colorspaces::Image::clone</referencedby>
+        <referencedby refid="classcolorspaces_1_1_image_r_g_b8_1ac26f79bdedd29a4ab1ee6f9ac0abd928" compoundref="imagecv_8cpp" startline="112" endline="133">colorspaces::ImageRGB8::imageCvt</referencedby>
+        <referencedby refid="classcolorspaces_1_1_image_r_g_b8_1afd40b7e2468a59bd82bd307e5ab55224" compoundref="imagecv_8cpp" startline="167" endline="171">colorspaces::ImageRGB8::toYCRCB</referencedby>
+        <referencedby refid="classcolorspaces_1_1_image_y_u_y2_1aaa26a6af0f8e2f36d35d65a5dcb0a25a" compoundref="imagecv_8cpp" startline="191" endline="207">colorspaces::ImageYUY2::imageCvt</referencedby>
+        <referencedby refid="classcolorspaces_1_1_image_y_u_y2_1a2aa1dd77495bccf2f588a0dd620e7bbb" compoundref="imagecv_8cpp" startline="229" endline="245">colorspaces::ImageYUY2::toYCRCB</referencedby>
+        <referencedby refid="classcolorspaces_1_1_image_y_c_r_c_b_1aae06774e3c6de95fdd0fc20d87eb1400" compoundref="imagecv_8cpp" startline="368" endline="380">imageCvt</referencedby>
+        <referencedby refid="classcolorspaces_1_1_image_n_v21_1accca097e4cca85e511a1bedcba198549" compoundref="imagecv_8cpp" startline="463" endline="469">colorspaces::ImageNV21::toYCRCB</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcolorspaces_1_1_image_y_c_r_c_b_1aa0307d1c32bb95b5730733058a4d10aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>colorspaces::ImageYCRCB::ImageYCRCB</definition>
+        <argsstring>(const int width, const int height)</argsstring>
+        <name>ImageYCRCB</name>
+        <param>
+          <type>const int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="322" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="357" bodyend="358"/>
+        <referencedby refid="classcolorspaces_1_1_image_y_c_r_c_b_1ad2774884c1acea49b7c6799839763a02" compoundref="imagecv_8cpp" startline="389" endline="394">createInstance</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcolorspaces_1_1_image_y_c_r_c_b_1a0f38ca1ce16bb80d8592682591d9eca4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>colorspaces::ImageYCRCB::ImageYCRCB</definition>
+        <argsstring>(const int width, const int height, void *const data)</argsstring>
+        <name>ImageYCRCB</name>
+        <param>
+          <type>const int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>void *const</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor from user data </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="327" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="360" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="classcolorspaces_1_1_image_y_c_r_c_b_1a090033b73fd8260b084eaa5b06414e78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>colorspaces::ImageYCRCB::ImageYCRCB</definition>
+        <argsstring>(const Image &amp;i)</argsstring>
+        <name>ImageYCRCB</name>
+        <param>
+          <type>const <ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref> &amp;</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy constructor. if <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>doesn&apos;t match format a conversion will happen. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="333" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="363" bodyend="366"/>
+        <references refid="classcolorspaces_1_1_image_1af33b3aeb1a668b64f3ae4e00b90058a5" compoundref="imagecv_8cpp" startline="45" endline="48">colorspaces::Image::convert</references>
+      </memberdef>
+      <memberdef kind="function" id="classcolorspaces_1_1_image_y_c_r_c_b_1a9b6dbc86cb1e608f7d4f3f3b31f2f229" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void colorspaces::ImageYCRCB::toRGB8</definition>
+        <argsstring>(Image &amp;dst) const</argsstring>
+        <name>toRGB8</name>
+        <param>
+          <type><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref> &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <exceptions> throw (<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Conversion methods. Returns a copy </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="340" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="382" bodyend="387"/>
+        <references refid="classcolorspaces_1_1_image_r_g_b8_1abb2bd76934dd71bb401db29cd5082b5c" compoundref="imagecv_8h" startline="185">colorspaces::ImageRGB8::FORMAT_RGB8</references>
+        <referencedby refid="classcolorspaces_1_1_image_y_c_r_c_b_1aae06774e3c6de95fdd0fc20d87eb1400" compoundref="imagecv_8cpp" startline="368" endline="380">imageCvt</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcolorspaces_1_1_image_y_c_r_c_b_1ad2774884c1acea49b7c6799839763a02" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref> *</type>
+        <definition>Image * colorspaces::ImageYCRCB::createInstance</definition>
+        <argsstring>(const int width, const int height, void *const data)</argsstring>
+        <name>createInstance</name>
+        <param>
+          <type>const int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>void *const</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Factory method </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="346" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="389" bodyend="394"/>
+        <references refid="classcolorspaces_1_1_image_y_c_r_c_b_1aa0307d1c32bb95b5730733058a4d10aa" compoundref="imagecv_8cpp" startline="357" endline="358">ImageYCRCB</references>
+        <referencedby refid="classcolorspaces_1_1_image_1a1bf62f4371700005a8f9581b2f70f31f" compoundref="imagecv_8cpp" startline="50" endline="53">colorspaces::Image::clone</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcolorspaces_1_1_image_y_c_r_c_b_1aae06774e3c6de95fdd0fc20d87eb1400" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref> &amp;</type>
+        <definition>Image &amp; colorspaces::ImageYCRCB::imageCvt</definition>
+        <argsstring>(const Image &amp;src, Image &amp;dst)</argsstring>
+        <name>imageCvt</name>
+        <param>
+          <type>const <ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref> &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <exceptions> throw (<ref refid="classcolorspaces_1_1_image_1_1_no_conversion" kindref="compound">NoConversion</ref>)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="347" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="368" bodyend="380"/>
+        <references refid="classcolorspaces_1_1_image_y_c_r_c_b_1a9423fb6d470113987bd078e88ff46cb8" compoundref="imagecv_8h" startline="348">FORMAT_YCRCB</references>
+        <references refid="classcolorspaces_1_1_image_r_g_b8_1abb2bd76934dd71bb401db29cd5082b5c" compoundref="imagecv_8h" startline="185">colorspaces::ImageRGB8::FORMAT_RGB8</references>
+        <references refid="classcolorspaces_1_1_image_y_c_r_c_b_1a9b6dbc86cb1e608f7d4f3f3b31f2f229" compoundref="imagecv_8cpp" startline="382" endline="387">toRGB8</references>
+        <referencedby refid="classcolorspaces_1_1_image_1a1bf62f4371700005a8f9581b2f70f31f" compoundref="imagecv_8cpp" startline="50" endline="53">colorspaces::Image::clone</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A YCRCB image </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="195">
+        <label>colorspaces::Image</label>
+        <link refid="classcolorspaces_1_1_image"/>
+        <childnode refid="196" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="194">
+        <label>colorspaces::ImageYCRCB</label>
+        <link refid="classcolorspaces_1_1_image_y_c_r_c_b"/>
+        <childnode refid="195" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="196">
+        <label>cv::Mat</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="198">
+        <label>colorspaces::Image</label>
+        <link refid="classcolorspaces_1_1_image"/>
+        <childnode refid="199" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="197">
+        <label>colorspaces::ImageYCRCB</label>
+        <link refid="classcolorspaces_1_1_image_y_c_r_c_b"/>
+        <childnode refid="198" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="199">
+        <label>cv::Mat</label>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="317" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" bodystart="317" bodyend="349"/>
+    <listofallmembers>
+      <member refid="classcolorspaces_1_1_image_1a1bf62f4371700005a8f9581b2f70f31f" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>clone</name></member>
+      <member refid="classcolorspaces_1_1_image_1af33b3aeb1a668b64f3ae4e00b90058a5" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>convert</name></member>
+      <member refid="classcolorspaces_1_1_image_y_c_r_c_b_1ad2774884c1acea49b7c6799839763a02" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>createInstance</name></member>
+      <member refid="classcolorspaces_1_1_image_1a1bd416764e9349d73ab57154c0eebcc7" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>format</name></member>
+      <member refid="classcolorspaces_1_1_image_1a53b533100b5fd24fae3617f271c73271" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>FORMAT_NONE</name></member>
+      <member refid="classcolorspaces_1_1_image_y_c_r_c_b_1a9423fb6d470113987bd078e88ff46cb8" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>FORMAT_YCRCB</name></member>
+      <member refid="classcolorspaces_1_1_image_1ab3978cc7acc2b5e855f8c715f09667d1" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>FormatPtr</name></member>
+      <member refid="classcolorspaces_1_1_image_1a99a05ebd37f61215b2c3042ecaefdbfc" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>height</name></member>
+      <member refid="classcolorspaces_1_1_image_1ac5cf4664b2cd2c67bb83624c14d92b5f" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>Image</name></member>
+      <member refid="classcolorspaces_1_1_image_1a814ba81329dd867cc29ad784cb99e533" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>Image</name></member>
+      <member refid="classcolorspaces_1_1_image_1ac2f208a6668b26a5db23c4c5a42b0b13" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>Image</name></member>
+      <member refid="classcolorspaces_1_1_image_1a1db9485ca9972ed04c2eef084bde5c42" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>Image</name></member>
+      <member refid="classcolorspaces_1_1_image_1a1d662eee2751a2f4980efe083e6d8f32" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>Image</name></member>
+      <member refid="classcolorspaces_1_1_image_1a5d086f8bb03d6eab9c3accfd0040e28d" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>imageCtor</name></member>
+      <member refid="classcolorspaces_1_1_image_y_c_r_c_b_1aae06774e3c6de95fdd0fc20d87eb1400" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>imageCvt</name></member>
+      <member refid="classcolorspaces_1_1_image_1a8d8b6c8b517caac4cb685f4d73e2c8dc" prot="public" virt="non-virtual" ambiguityscope="colorspaces::Image::"><scope>colorspaces::ImageYCRCB</scope><name>imageCvt</name></member>
+      <member refid="classcolorspaces_1_1_image_y_c_r_c_b_1aa0307d1c32bb95b5730733058a4d10aa" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>ImageYCRCB</name></member>
+      <member refid="classcolorspaces_1_1_image_y_c_r_c_b_1a0f38ca1ce16bb80d8592682591d9eca4" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>ImageYCRCB</name></member>
+      <member refid="classcolorspaces_1_1_image_y_c_r_c_b_1a090033b73fd8260b084eaa5b06414e78" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>ImageYCRCB</name></member>
+      <member refid="classcolorspaces_1_1_image_y_c_r_c_b_1a9b6dbc86cb1e608f7d4f3f3b31f2f229" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>toRGB8</name></member>
+      <member refid="classcolorspaces_1_1_image_1ab80af7d4797110c23ed575b329ec7c4f" prot="public" virt="non-virtual"><scope>colorspaces::ImageYCRCB</scope><name>width</name></member>
+      <member refid="classcolorspaces_1_1_image_1ad5463e8cae11b572cd10a92734216f8a" prot="public" virt="virtual"><scope>colorspaces::ImageYCRCB</scope><name>~Image</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

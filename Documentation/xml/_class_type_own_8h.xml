@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_class_type_own_8h" kind="file" language="C++">
+    <compoundname>ClassTypeOwn.h</compoundname>
+    <includes refid="_class_type_8h" local="yes">ClassType.h</includes>
+    <includedby refid="_class_type_own_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.cpp</includedby>
+    <includedby refid="_dataset_reader_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp</includedby>
+    <includedby refid="_yolo_dataset_writer_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.cpp</includedby>
+    <includedby refid="_rect_regions_8cpp" local="no">DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp</includedby>
+    <incdepgraph>
+      <node id="1659">
+        <label>ClassType.h</label>
+        <link refid="_class_type_8h"/>
+        <childnode refid="1660" relation="include">
+        </childnode>
+      </node>
+      <node id="1658">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.h</label>
+        <link refid="_class_type_own_8h"/>
+        <childnode refid="1659" relation="include">
+        </childnode>
+      </node>
+      <node id="1660">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1661">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.h</label>
+        <link refid="_class_type_own_8h"/>
+        <childnode refid="1662" relation="include">
+        </childnode>
+        <childnode refid="1663" relation="include">
+        </childnode>
+        <childnode refid="1664" relation="include">
+        </childnode>
+        <childnode refid="1665" relation="include">
+        </childnode>
+      </node>
+      <node id="1663">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp</label>
+        <link refid="_dataset_reader_8cpp"/>
+      </node>
+      <node id="1662">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.cpp</label>
+        <link refid="_class_type_own_8cpp"/>
+      </node>
+      <node id="1665">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp</label>
+        <link refid="_rect_regions_8cpp"/>
+      </node>
+      <node id="1664">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.cpp</label>
+        <link refid="_yolo_dataset_writer_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_class_type_own" prot="public">ClassTypeOwn</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>2/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_CLASSTYPEOWN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_CLASSTYPEOWN_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_class_type_8h" kindref="compound">ClassType.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="struct_class_type_own" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_class_type_own" kindref="compound">ClassTypeOwn</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="struct_class_type" kindref="compound">ClassType</ref>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_class_type_own_1a1224d96cba263c903f2943477fd25273" kindref="member">ClassTypeOwn</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_class_type_own_1a1224d96cba263c903f2943477fd25273" kindref="member">ClassTypeOwn</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" kindref="member">classID</ref>);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_class_type_own_1a4328aa6d88335c50ea33e1bbe6584d7e" kindref="member">fillStringClassesVector</ref>();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_CLASSTYPEOWN_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,475 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_tools_2_viewer_2_viewer_8cpp" kind="file" language="C++">
+    <compoundname>viewer.cpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">string</includes>
+    <includes refid="_sample_generation_app_8h" local="no">Utils/SampleGenerationApp.h</includes>
+    <includes refid="_generic_dataset_reader_8h" local="no">DatasetConverters/readers/GenericDatasetReader.h</includes>
+    <incdepgraph>
+      <node id="1246">
+        <label>boost/property_tree/xml_parser.hpp</label>
+      </node>
+      <node id="1213">
+        <label>iomanip</label>
+      </node>
+      <node id="1222">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="1243">
+        <label>ClassType.h</label>
+        <link refid="_class_type_8h"/>
+        <childnode refid="1220" relation="include">
+        </childnode>
+      </node>
+      <node id="1249">
+        <label>OwnDatasetReader.h</label>
+        <link refid="_own_dataset_reader_8h"/>
+        <childnode refid="1217" relation="include">
+        </childnode>
+      </node>
+      <node id="1216">
+        <label>SpinelloDatasetReader.h</label>
+        <link refid="_spinello_dataset_reader_8h"/>
+        <childnode refid="1217" relation="include">
+        </childnode>
+      </node>
+      <node id="1198">
+        <label>DeepLearningSuite/Tools/Viewer/viewer.cpp</label>
+        <link refid="_tools_2_viewer_2_viewer_8cpp"/>
+        <childnode refid="1199" relation="include">
+        </childnode>
+        <childnode refid="1200" relation="include">
+        </childnode>
+        <childnode refid="1201" relation="include">
+        </childnode>
+        <childnode refid="1215" relation="include">
+        </childnode>
+      </node>
+      <node id="1241">
+        <label>boost/filesystem/operations.hpp</label>
+      </node>
+      <node id="1237">
+        <label>rapidjson/prettywriter.h</label>
+      </node>
+      <node id="1229">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="1233">
+        <label>glog/logging.h</label>
+      </node>
+      <node id="1227">
+        <label>Regions/RleRegions.h</label>
+        <link refid="_rle_regions_8h"/>
+        <childnode refid="1220" relation="include">
+        </childnode>
+        <childnode refid="1221" relation="include">
+        </childnode>
+        <childnode refid="1228" relation="include">
+        </childnode>
+      </node>
+      <node id="1219">
+        <label>Regions/RectRegions.h</label>
+        <link refid="_rect_regions_8h"/>
+        <childnode refid="1220" relation="include">
+        </childnode>
+        <childnode refid="1221" relation="include">
+        </childnode>
+        <childnode refid="1223" relation="include">
+        </childnode>
+        <childnode refid="1224" relation="include">
+        </childnode>
+      </node>
+      <node id="1247">
+        <label>boost/foreach.hpp</label>
+      </node>
+      <node id="1209">
+        <label>boost/algorithm/string/classification.hpp</label>
+      </node>
+      <node id="1221">
+        <label>Regions.h</label>
+        <link refid="_regions_8h"/>
+        <childnode refid="1220" relation="include">
+        </childnode>
+        <childnode refid="1222" relation="include">
+        </childnode>
+      </node>
+      <node id="1212">
+        <label>config/properties.hpp</label>
+        <link refid="properties_8hpp"/>
+        <childnode refid="1199" relation="include">
+        </childnode>
+        <childnode refid="1213" relation="include">
+        </childnode>
+        <childnode refid="1214" relation="include">
+        </childnode>
+        <childnode refid="1200" relation="include">
+        </childnode>
+        <childnode refid="1207" relation="include">
+        </childnode>
+        <childnode refid="1203" relation="include">
+        </childnode>
+        <childnode refid="1205" relation="include">
+        </childnode>
+      </node>
+      <node id="1220">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="1200">
+        <label>string</label>
+      </node>
+      <node id="1230">
+        <label>Common/EvalMatrix.h</label>
+        <link refid="_eval_matrix_8h"/>
+        <childnode refid="1231" relation="include">
+        </childnode>
+        <childnode refid="1232" relation="include">
+        </childnode>
+      </node>
+      <node id="1232">
+        <label>map</label>
+      </node>
+      <node id="1236">
+        <label>rapidjson/document.h</label>
+      </node>
+      <node id="1225">
+        <label>Regions/ContourRegions.h</label>
+        <link refid="_contour_regions_8h"/>
+        <childnode refid="1220" relation="include">
+        </childnode>
+        <childnode refid="1221" relation="include">
+        </childnode>
+        <childnode refid="1226" relation="include">
+        </childnode>
+      </node>
+      <node id="1202">
+        <label>config/config.h</label>
+        <link refid="config_8h"/>
+        <childnode refid="1203" relation="include">
+        </childnode>
+        <childnode refid="1204" relation="include">
+        </childnode>
+        <childnode refid="1212" relation="include">
+        </childnode>
+      </node>
+      <node id="1210">
+        <label>fstream</label>
+      </node>
+      <node id="1250">
+        <label>PrincetonDatasetReader.h</label>
+        <link refid="_princeton_dataset_reader_8h"/>
+        <childnode refid="1217" relation="include">
+        </childnode>
+      </node>
+      <node id="1238">
+        <label>rapidjson/stringbuffer.h</label>
+      </node>
+      <node id="1234">
+        <label>YoloDatasetReader.h</label>
+        <link refid="_yolo_dataset_reader_8h"/>
+        <childnode refid="1217" relation="include">
+        </childnode>
+      </node>
+      <node id="1203">
+        <label>yaml-cpp/yaml.h</label>
+      </node>
+      <node id="1242">
+        <label>DatasetConverters/ClassTypeGeneric.h</label>
+        <link refid="_class_type_generic_8h"/>
+        <childnode refid="1243" relation="include">
+        </childnode>
+      </node>
+      <node id="1235">
+        <label>COCODatasetReader.h</label>
+        <link refid="_c_o_c_o_dataset_reader_8h"/>
+        <childnode refid="1217" relation="include">
+        </childnode>
+        <childnode refid="1236" relation="include">
+        </childnode>
+        <childnode refid="1237" relation="include">
+        </childnode>
+        <childnode refid="1238" relation="include">
+        </childnode>
+        <childnode refid="1239" relation="include">
+        </childnode>
+        <childnode refid="1240" relation="include">
+        </childnode>
+        <childnode refid="1241" relation="include">
+        </childnode>
+        <childnode refid="1242" relation="include">
+        </childnode>
+      </node>
+      <node id="1208">
+        <label>boost/algorithm/string/split.hpp</label>
+      </node>
+      <node id="1215">
+        <label>DatasetConverters/readers/GenericDatasetReader.h</label>
+        <link refid="_generic_dataset_reader_8h"/>
+        <childnode refid="1200" relation="include">
+        </childnode>
+        <childnode refid="1216" relation="include">
+        </childnode>
+        <childnode refid="1234" relation="include">
+        </childnode>
+        <childnode refid="1235" relation="include">
+        </childnode>
+        <childnode refid="1244" relation="include">
+        </childnode>
+        <childnode refid="1248" relation="include">
+        </childnode>
+        <childnode refid="1217" relation="include">
+        </childnode>
+        <childnode refid="1249" relation="include">
+        </childnode>
+        <childnode refid="1250" relation="include">
+        </childnode>
+        <childnode refid="1251" relation="include">
+        </childnode>
+      </node>
+      <node id="1201">
+        <label>Utils/SampleGenerationApp.h</label>
+        <link refid="_sample_generation_app_8h"/>
+        <childnode refid="1202" relation="include">
+        </childnode>
+      </node>
+      <node id="1240">
+        <label>boost/filesystem/path.hpp</label>
+      </node>
+      <node id="1228">
+        <label>RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="1222" relation="include">
+        </childnode>
+        <childnode refid="1229" relation="include">
+        </childnode>
+      </node>
+      <node id="1205">
+        <label>config/stdutils.hpp</label>
+        <link refid="stdutils_8hpp"/>
+        <childnode refid="1206" relation="include">
+        </childnode>
+        <childnode refid="1200" relation="include">
+        </childnode>
+        <childnode refid="1207" relation="include">
+        </childnode>
+        <childnode refid="1208" relation="include">
+        </childnode>
+        <childnode refid="1209" relation="include">
+        </childnode>
+        <childnode refid="1210" relation="include">
+        </childnode>
+      </node>
+      <node id="1218">
+        <label>Common/Sample.h</label>
+        <link refid="_sample_8h"/>
+        <childnode refid="1219" relation="include">
+        </childnode>
+        <childnode refid="1225" relation="include">
+        </childnode>
+        <childnode refid="1227" relation="include">
+        </childnode>
+      </node>
+      <node id="1251">
+        <label>SamplesReader.h</label>
+        <link refid="_samples_reader_8h"/>
+        <childnode refid="1217" relation="include">
+        </childnode>
+      </node>
+      <node id="1207">
+        <label>vector</label>
+      </node>
+      <node id="1248">
+        <label>ImageNetDatasetReader.h</label>
+        <link refid="_image_net_dataset_reader_8h"/>
+        <childnode refid="1217" relation="include">
+        </childnode>
+        <childnode refid="1245" relation="include">
+        </childnode>
+        <childnode refid="1246" relation="include">
+        </childnode>
+        <childnode refid="1240" relation="include">
+        </childnode>
+        <childnode refid="1241" relation="include">
+        </childnode>
+        <childnode refid="1247" relation="include">
+        </childnode>
+      </node>
+      <node id="1231">
+        <label>Matrix.h</label>
+        <link refid="_matrix_8h"/>
+        <childnode refid="1207" relation="include">
+        </childnode>
+      </node>
+      <node id="1214">
+        <label>sstream</label>
+      </node>
+      <node id="1226">
+        <label>ContourRegion.h</label>
+        <link refid="_contour_region_8h"/>
+        <childnode refid="1220" relation="include">
+        </childnode>
+        <childnode refid="1222" relation="include">
+        </childnode>
+      </node>
+      <node id="1206">
+        <label>cstdlib</label>
+      </node>
+      <node id="1245">
+        <label>boost/property_tree/ptree.hpp</label>
+      </node>
+      <node id="1199">
+        <label>iostream</label>
+      </node>
+      <node id="1244">
+        <label>PascalVOCDatasetReader.h</label>
+        <link refid="_pascal_v_o_c_dataset_reader_8h"/>
+        <childnode refid="1217" relation="include">
+        </childnode>
+        <childnode refid="1245" relation="include">
+        </childnode>
+        <childnode refid="1246" relation="include">
+        </childnode>
+        <childnode refid="1240" relation="include">
+        </childnode>
+        <childnode refid="1241" relation="include">
+        </childnode>
+        <childnode refid="1247" relation="include">
+        </childnode>
+      </node>
+      <node id="1239">
+        <label>rapidjson/error/en.h</label>
+      </node>
+      <node id="1204">
+        <label>config/loader.hpp</label>
+        <link refid="loader_8hpp"/>
+        <childnode refid="1199" relation="include">
+        </childnode>
+        <childnode refid="1200" relation="include">
+        </childnode>
+        <childnode refid="1205" relation="include">
+        </childnode>
+        <childnode refid="1203" relation="include">
+        </childnode>
+        <childnode refid="1211" relation="include">
+        </childnode>
+        <childnode refid="1212" relation="include">
+        </childnode>
+      </node>
+      <node id="1223">
+        <label>RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="1220" relation="include">
+        </childnode>
+      </node>
+      <node id="1217">
+        <label>DatasetConverters/readers/DatasetReader.h</label>
+        <link refid="_dataset_reader_8h"/>
+        <childnode refid="1200" relation="include">
+        </childnode>
+        <childnode refid="1218" relation="include">
+        </childnode>
+        <childnode refid="1222" relation="include">
+        </childnode>
+        <childnode refid="1230" relation="include">
+        </childnode>
+        <childnode refid="1233" relation="include">
+        </childnode>
+      </node>
+      <node id="1224">
+        <label>algorithm</label>
+      </node>
+      <node id="1211">
+        <label>yaml-cpp/exceptions.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_my_app" prot="public">MyApp</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_tools_2_viewer_2_viewer_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/Tools/Viewer/viewer.cpp" line="50" column="1" bodyfile="DeepLearningSuite/Tools/Viewer/viewer.cpp" bodystart="50" bodyend="55"/>
+        <references refid="class_sample_generation_app_1acec58569149ac1fc8af9525d35b9e88a" compoundref="_sample_generation_app_8cpp" startline="90" endline="93">SampleGenerationApp::process</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>21/01/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_sample_generation_app_8h" kindref="compound">Utils/SampleGenerationApp.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_generic_dataset_reader_8h" kindref="compound">DatasetConverters/readers/GenericDatasetReader.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_my_app" kindref="compound">MyApp</ref>:</highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_sample_generation_app" kindref="compound">SampleGenerationApp</ref>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14" refid="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" kindref="member">MyApp</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_sample_generation_app_1af98f6187cc8eb62fc3fe0ff53df76b6e" kindref="member">argc</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="class_sample_generation_app_1a7e490e3711491c2bc58351f9e9dd9945" kindref="member">argv</ref>[]):<ref refid="class_sample_generation_app" kindref="compound">SampleGenerationApp</ref>(argc,argv){</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" kindref="member">requiredArguments</ref>.push_back(</highlight><highlight class="stringliteral">&quot;inputPath&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" kindref="member">requiredArguments</ref>.push_back(</highlight><highlight class="stringliteral">&quot;readerImplementation&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" kindref="member">requiredArguments</ref>.push_back(</highlight><highlight class="stringliteral">&quot;readerNames&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="21" refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" kindref="member">operator()</ref>(){</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>YAML::Node<sp/><sp/>inputPathNode=this-&gt;<ref refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" kindref="member">config</ref>.<ref refid="class_config_1_1_properties_1abb18930b0431bd89e85ed0a5b9b7cac3" kindref="member">getNode</ref>(</highlight><highlight class="stringliteral">&quot;inputPath&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>YAML::Node<sp/><sp/>readerImplementationNode<sp/>=<sp/>this-&gt;<ref refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" kindref="member">config</ref>.<ref refid="class_config_1_1_properties_1abb18930b0431bd89e85ed0a5b9b7cac3" kindref="member">getNode</ref>(</highlight><highlight class="stringliteral">&quot;readerImplementation&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>YAML::Node<sp/><sp/>readerNamesNode<sp/>=<sp/>this-&gt;<ref refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" kindref="member">config</ref>.<ref refid="class_config_1_1_properties_1abb18930b0431bd89e85ed0a5b9b7cac3" kindref="member">getNode</ref>(</highlight><highlight class="stringliteral">&quot;readerNames&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_generic_dataset_reader_8h_1aee69804c49b311360ba65543d4111f58" kindref="member">GenericDatasetReaderPtr</ref><sp/>reader;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(inputPathNode.IsSequence())<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reader<sp/>=<sp/><ref refid="_generic_dataset_reader_8h_1aee69804c49b311360ba65543d4111f58" kindref="member">GenericDatasetReaderPtr</ref>(</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_generic_dataset_reader" kindref="compound">GenericDatasetReader</ref>(inputPathNode.as&lt;std::vector&lt;std::string&gt;&gt;(),readerNamesNode.as&lt;std::string&gt;(),<sp/>readerImplementationNode.as&lt;std::string&gt;(),<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>reader<sp/>=<sp/><ref refid="_generic_dataset_reader_8h_1aee69804c49b311360ba65543d4111f58" kindref="member">GenericDatasetReaderPtr</ref>(</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_generic_dataset_reader" kindref="compound">GenericDatasetReader</ref>(inputPathNode.as&lt;std::string&gt;(),readerNamesNode.as&lt;std::string&gt;(),<sp/>readerImplementationNode.as&lt;std::string&gt;(),<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_sample" kindref="compound">Sample</ref><sp/>sample;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(reader-&gt;getReader()-&gt;getNextSample(sample)){</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;number<sp/>of<sp/>elements:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>sample.<ref refid="struct_sample_1a5f1b7716e5c4e8f5217a18021169283f" kindref="member">getRectRegions</ref>()-&gt;getRegions().size()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::Mat<sp/>image<sp/>=sample.<ref refid="struct_sample_1a19aef3e998d244412a87c9d7760d0937" kindref="member">getSampledColorImage</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::imshow(</highlight><highlight class="stringliteral">&quot;Viewer&quot;</highlight><highlight class="normal">,<sp/>image);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::waitKey(0);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="_tools_2_viewer_2_viewer_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_tools_2_viewer_2_viewer_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_sample_generation_app_1af98f6187cc8eb62fc3fe0ff53df76b6e" kindref="member">argc</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="class_sample_generation_app_1a7e490e3711491c2bc58351f9e9dd9945" kindref="member">argv</ref>[])</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_my_app" kindref="compound">MyApp</ref><sp/>myApp(argc,argv);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>myApp.<ref refid="class_sample_generation_app_1acec58569149ac1fc8af9525d35b9e88a" kindref="member">process</ref>();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/Tools/Viewer/viewer.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,208 @@
+.TH "keras_utils.keras_layer_AnchorBoxes.AnchorBoxes" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+keras_utils.keras_layer_AnchorBoxes.AnchorBoxes
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Layer\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, \fBimg_height\fP, \fBimg_width\fP, \fBthis_scale\fP, \fBnext_scale\fP, \fBaspect_ratios\fP=[0\&.5, \fBtwo_boxes_for_ar1\fP=True, \fBthis_steps\fP=None, \fBthis_offsets\fP=None, \fBclip_boxes\fP=False, \fBvariances\fP=[0\&.1, \fBcoords\fP='centroids', \fBnormalize_coords\fP=False, kwargs)"
+.br
+.ti -1c
+.RI "def \fBbuild\fP (self, input_shape)"
+.br
+.ti -1c
+.RI "def \fBcall\fP (self, x, mask=None)"
+.br
+.ti -1c
+.RI "def \fBcompute_output_shape\fP (self, input_shape)"
+.br
+.ti -1c
+.RI "def \fBget_config\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBimg_height\fP"
+.br
+.ti -1c
+.RI "\fBimg_width\fP"
+.br
+.ti -1c
+.RI "\fBthis_scale\fP"
+.br
+.ti -1c
+.RI "\fBnext_scale\fP"
+.br
+.ti -1c
+.RI "\fBaspect_ratios\fP"
+.br
+.ti -1c
+.RI "\fBtwo_boxes_for_ar1\fP"
+.br
+.ti -1c
+.RI "\fBthis_steps\fP"
+.br
+.ti -1c
+.RI "\fBthis_offsets\fP"
+.br
+.ti -1c
+.RI "\fBclip_boxes\fP"
+.br
+.ti -1c
+.RI "\fBvariances\fP"
+.br
+.ti -1c
+.RI "\fBcoords\fP"
+.br
+.ti -1c
+.RI "\fBnormalize_coords\fP"
+.br
+.ti -1c
+.RI "\fBn_boxes\fP"
+.br
+.ti -1c
+.RI "\fBinput_spec\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A Keras layer to create an output tensor containing anchor box coordinates
+and variances based on the input tensor and the passed arguments.
+
+A set of 2D anchor boxes of different aspect ratios is created for each spatial unit of
+the input tensor. The number of anchor boxes created per unit depends on the arguments
+`aspect_ratios` and `two_boxes_for_ar1`, in the default case it is 4. The boxes
+are parameterized by the coordinate tuple `(xmin, xmax, ymin, ymax)`.
+
+The logic implemented by this layer is identical to the logic in the module
+`ssd_box_encode_decode_utils.py`.
+
+The purpose of having this layer in the network is to make the model self-sufficient
+at inference time. Since the model is predicting offsets to the anchor boxes
+(rather than predicting absolute box coordinates directly), one needs to know the anchor
+box coordinates in order to construct the final prediction boxes from the predicted offsets.
+If the model's output tensor did not contain the anchor box coordinates, the necessary
+information to convert the predicted offsets back to absolute coordinates would be missing
+in the model output. The reason why it is necessary to predict offsets to the anchor boxes
+rather than to predict absolute box coordinates directly is explained in `README.md`.
+
+Input shape:
+    4D tensor of shape `(batch, channels, height, width)` if `dim_ordering = 'th'`
+    or `(batch, height, width, channels)` if `dim_ordering = 'tf'`.
+
+Output shape:
+    5D tensor of shape `(batch, height, width, n_boxes, 8)`. The last axis contains
+    the four anchor box coordinates and the four variance values for each box.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.__init__ ( self,  img_height,  img_width,  this_scale,  next_scale,  aspect_ratios = \fC[0\&.5\fP,  two_boxes_for_ar1 = \fCTrue\fP,  this_steps = \fCNone\fP,  this_offsets = \fCNone\fP,  clip_boxes = \fCFalse\fP,  variances = \fC[0\&.1\fP,  coords = \fC'centroids'\fP,  normalize_coords = \fCFalse\fP,  kwargs)"
+
+.PP
+.nf
+All arguments need to be set to the same values as in the box encoding process, otherwise the behavior is undefined.
+Some of these arguments are explained in more detail in the documentation of the `SSDBoxEncoder` class.
+
+Arguments:
+    img_height (int): The height of the input images.
+    img_width (int): The width of the input images.
+    this_scale (float): A float in [0, 1], the scaling factor for the size of the generated anchor boxes
+as a fraction of the shorter side of the input image.
+    next_scale (float): A float in [0, 1], the next larger scaling factor. Only relevant if
+`self.two_boxes_for_ar1 == True`.
+    aspect_ratios (list, optional): The list of aspect ratios for which default boxes are to be
+generated for this layer.
+    two_boxes_for_ar1 (bool, optional): Only relevant if `aspect_ratios` contains 1.
+If `True`, two default boxes will be generated for aspect ratio 1. The first will be generated
+using the scaling factor for the respective layer, the second one will be generated using
+geometric mean of said scaling factor and next bigger scaling factor.
+    clip_boxes (bool, optional): If `True`, clips the anchor box coordinates to stay within image boundaries.
+    variances (list, optional): A list of 4 floats >0. The anchor box offset for each coordinate will be divided by
+its respective variance value.
+    coords (str, optional): The box coordinate format to be used internally in the model (i.e. this is not the input format
+of the ground truth labels). Can be either 'centroids' for the format `(cx, cy, w, h)` (box center coordinates, width, and height),
+'corners' for the format `(xmin, ymin, xmax,  ymax)`, or 'minmax' for the format `(xmin, xmax, ymin, ymax)`.
+    normalize_coords (bool, optional): Set to `True` if the model uses relative instead of absolute coordinates,
+i.e. if the model predicts box coordinates within [0,1] instead of absolute coordinates.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "def keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.build ( self,  input_shape)"
+
+.SS "def keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.call ( self,  x,  mask = \fCNone\fP)"
+
+.PP
+.nf
+Return an anchor box tensor based on the shape of the input tensor.
+
+The logic implemented here is identical to the logic in the module `ssd_box_encode_decode_utils.py`.
+
+Note that this tensor does not participate in any graph computations at runtime. It is being created
+as a constant once during graph creation and is just being output along with the rest of the model output
+during runtime. Because of this, all logic is implemented as Numpy array operations and it is sufficient
+to convert the resulting Numpy array into a Keras tensor at the very end before outputting it.
+
+Arguments:
+    x (tensor): 4D tensor of shape `(batch, channels, height, width)` if `dim_ordering = 'th'`
+or `(batch, height, width, channels)` if `dim_ordering = 'tf'`. The input for this
+layer must be the output of the localization predictor layer.
+
+.fi
+.PP
+ 
+.SS "def keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.compute_output_shape ( self,  input_shape)"
+
+.SS "def keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.get_config ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.aspect_ratios"
+
+.SS "keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.clip_boxes"
+
+.SS "keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.coords"
+
+.SS "keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.img_height"
+
+.SS "keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.img_width"
+
+.SS "keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.input_spec"
+
+.SS "keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.n_boxes"
+
+.SS "keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.next_scale"
+
+.SS "keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.normalize_coords"
+
+.SS "keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.this_offsets"
+
+.SS "keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.this_scale"
+
+.SS "keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.this_steps"
+
+.SS "keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.two_boxes_for_ar1"
+
+.SS "keras_utils\&.keras_layer_AnchorBoxes\&.AnchorBoxes\&.variances"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

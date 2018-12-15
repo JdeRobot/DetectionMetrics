@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_class_type_mapper" kind="struct" language="C++" prot="public">
+    <compoundname>ClassTypeMapper</compoundname>
+    <basecompoundref refid="struct_class_type" prot="public" virt="non-virtual">ClassType</basecompoundref>
+    <includes refid="_class_type_mapper_8h" local="no">ClassTypeMapper.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="struct_class_type_mapper_1a33baf5ec92ecf07bf1081f4f17194224" prot="private" static="no" mutable="no">
+        <type><ref refid="class_tree" kindref="compound">Tree</ref></type>
+        <definition>Tree ClassTypeMapper::root</definition>
+        <argsstring></argsstring>
+        <name>root</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_class_type_mapper_1abc46bb3ad740aaccdcb0914941a85cbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ClassTypeMapper::ClassTypeMapper</definition>
+        <argsstring>(const std::string &amp;classNamesFile)</argsstring>
+        <name>ClassTypeMapper</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classNamesFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.h" line="11" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.cpp" bodystart="5" bodyend="10"/>
+        <references refid="struct_class_type_mapper_1a999c63158f2d0093de9d60734e6605fb" compoundref="_class_type_mapper_8cpp" startline="16" endline="22">fillStringClassesVector</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_type_mapper_1a4b16c84f275540ed654841dc7a33484a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ClassTypeMapper::ClassTypeMapper</definition>
+        <argsstring>()</argsstring>
+        <name>ClassTypeMapper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.cpp" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_type_mapper_1a999c63158f2d0093de9d60734e6605fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ClassTypeMapper::fillStringClassesVector</definition>
+        <argsstring>(const std::string &amp;classesFile)</argsstring>
+        <name>fillStringClassesVector</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classesFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.cpp" bodystart="16" bodyend="22"/>
+        <references refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" compoundref="_class_type_8h" startline="18">ClassType::classes</references>
+        <referencedby refid="struct_class_type_mapper_1abc46bb3ad740aaccdcb0914941a85cbe" compoundref="_class_type_mapper_8cpp" startline="5" endline="10">ClassTypeMapper</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_type_mapper_1af76d00ce9a2267710ee9119f0bb2e607" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ClassTypeMapper::mapString</definition>
+        <argsstring>(std::string &amp;className)</argsstring>
+        <name>mapString</name>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>className</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.cpp" bodystart="24" bodyend="49"/>
+        <references refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" compoundref="_class_type_8h" startline="18">ClassType::classes</references>
+        <references refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" compoundref="_class_type_8h" startline="19">ClassType::classID</references>
+        <references refid="class_tree_1ab88f67717ecef951fac69e530ded3e5d" compoundref="_tree_8cpp" startline="116" endline="144">Tree::getImmediateSynonmys</references>
+        <referencedby refid="struct_class_type_mapper_1afca49a200b7561bf9120a6a0312de119" compoundref="_class_type_mapper_8cpp" startline="51" endline="75">mapFile</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_writer_1a93b4aa44b217491ddf99348b2517e6ea" compoundref="_pascal_v_o_c_dataset_writer_8cpp" startline="29" endline="171">PascalVOCDatasetWriter::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_type_mapper_1afca49a200b7561bf9120a6a0312de119" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt; std::string, std::string &gt; ClassTypeMapper::mapFile</definition>
+        <argsstring>(std::string classNamesFile)</argsstring>
+        <name>mapFile</name>
+        <param>
+          <type>std::string</type>
+          <declname>classNamesFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.cpp" bodystart="51" bodyend="75"/>
+        <references refid="struct_class_type_mapper_1af76d00ce9a2267710ee9119f0bb2e607" compoundref="_class_type_mapper_8cpp" startline="24" endline="49">mapString</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="41">
+        <label>ClassTypeMapper</label>
+        <link refid="struct_class_type_mapper"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>ClassType</label>
+        <link refid="struct_class_type"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="43">
+        <label>ClassTypeMapper</label>
+        <link refid="struct_class_type_mapper"/>
+        <childnode refid="44" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>ClassType</label>
+        <link refid="struct_class_type"/>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.h" line="10" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.h" bodystart="10" bodyend="19"/>
+    <listofallmembers>
+      <member refid="struct_class_type_1a37ea5c5449bc06ed3f2a327448abe02a" prot="protected" virt="non-virtual"><scope>ClassTypeMapper</scope><name>_get_color</name></member>
+      <member refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" prot="protected" virt="non-virtual"><scope>ClassTypeMapper</scope><name>classes</name></member>
+      <member refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" prot="protected" virt="non-virtual"><scope>ClassTypeMapper</scope><name>classID</name></member>
+      <member refid="struct_class_type_mapper_1abc46bb3ad740aaccdcb0914941a85cbe" prot="public" virt="non-virtual"><scope>ClassTypeMapper</scope><name>ClassTypeMapper</name></member>
+      <member refid="struct_class_type_mapper_1a4b16c84f275540ed654841dc7a33484a" prot="public" virt="non-virtual"><scope>ClassTypeMapper</scope><name>ClassTypeMapper</name></member>
+      <member refid="struct_class_type_mapper_1a999c63158f2d0093de9d60734e6605fb" prot="public" virt="non-virtual"><scope>ClassTypeMapper</scope><name>fillStringClassesVector</name></member>
+      <member refid="struct_class_type_1a867149836bb99711a7c14fbe7801c9e4" prot="public" virt="non-virtual"><scope>ClassTypeMapper</scope><name>getAllAvailableClasses</name></member>
+      <member refid="struct_class_type_1ab5cc3bb3376a812d051d4726eb4ee063" prot="public" virt="non-virtual"><scope>ClassTypeMapper</scope><name>getClassID</name></member>
+      <member refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" prot="public" virt="non-virtual"><scope>ClassTypeMapper</scope><name>getClassString</name></member>
+      <member refid="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" prot="public" virt="non-virtual"><scope>ClassTypeMapper</scope><name>getColor</name></member>
+      <member refid="struct_class_type_mapper_1afca49a200b7561bf9120a6a0312de119" prot="public" virt="non-virtual"><scope>ClassTypeMapper</scope><name>mapFile</name></member>
+      <member refid="struct_class_type_mapper_1af76d00ce9a2267710ee9119f0bb2e607" prot="public" virt="non-virtual"><scope>ClassTypeMapper</scope><name>mapString</name></member>
+      <member refid="struct_class_type_mapper_1a33baf5ec92ecf07bf1081f4f17194224" prot="private" virt="non-virtual"><scope>ClassTypeMapper</scope><name>root</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

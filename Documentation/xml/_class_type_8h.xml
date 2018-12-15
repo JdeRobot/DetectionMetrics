@@ -1,0 +1,341 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_class_type_8h" kind="file" language="C++">
+    <compoundname>ClassType.h</compoundname>
+    <includes local="no">opencv2/opencv.hpp</includes>
+    <includedby refid="_class_type_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.cpp</includedby>
+    <includedby refid="_class_type_generic_8h" local="yes">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.h</includedby>
+    <includedby refid="_class_type_mapper_8h" local="yes">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.h</includedby>
+    <includedby refid="_class_type_own_8h" local="yes">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.h</includedby>
+    <incdepgraph>
+      <node id="1529">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.h</label>
+        <link refid="_class_type_8h"/>
+        <childnode refid="1530" relation="include">
+        </childnode>
+      </node>
+      <node id="1530">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1560">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.cpp</label>
+        <link refid="_caffe_inferencer_8cpp"/>
+      </node>
+      <node id="1559">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/YoloDatasetReader.cpp</label>
+        <link refid="_yolo_dataset_reader_8cpp"/>
+      </node>
+      <node id="1531">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.h</label>
+        <link refid="_class_type_8h"/>
+        <childnode refid="1532" relation="include">
+        </childnode>
+        <childnode refid="1533" relation="include">
+        </childnode>
+        <childnode refid="1564" relation="include">
+        </childnode>
+        <childnode refid="1570" relation="include">
+        </childnode>
+      </node>
+      <node id="1562">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.cpp</label>
+        <link refid="_keras_inferencer_8cpp"/>
+      </node>
+      <node id="1557">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/ImageNetDatasetReader.cpp</label>
+        <link refid="_image_net_dataset_reader_8cpp"/>
+      </node>
+      <node id="1556">
+        <label>DeepLearningSuite/Tools/Viewer/viewer.cpp</label>
+        <link refid="_tools_2_viewer_2_viewer_8cpp"/>
+      </node>
+      <node id="1547">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.cpp</label>
+        <link refid="_generic_dataset_reader_8cpp"/>
+      </node>
+      <node id="1549">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.cpp</label>
+        <link refid="_stats_writer_8cpp"/>
+      </node>
+      <node id="1570">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.h</label>
+        <link refid="_class_type_own_8h"/>
+        <childnode refid="1571" relation="include">
+        </childnode>
+        <childnode refid="1572" relation="include">
+        </childnode>
+        <childnode refid="1573" relation="include">
+        </childnode>
+        <childnode refid="1574" relation="include">
+        </childnode>
+      </node>
+      <node id="1541">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_converter_8cpp"/>
+      </node>
+      <node id="1546">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Viewer.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp"/>
+      </node>
+      <node id="1572">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp</label>
+        <link refid="_dataset_reader_8cpp"/>
+      </node>
+      <node id="1571">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.cpp</label>
+        <link refid="_class_type_own_8cpp"/>
+      </node>
+      <node id="1532">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.cpp</label>
+        <link refid="_class_type_8cpp"/>
+      </node>
+      <node id="1542">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.cpp</label>
+        <link refid="_deployer_8cpp"/>
+      </node>
+      <node id="1551">
+        <label>DeepLearningSuite/Tools/Evaluator/evaluator.cpp</label>
+        <link refid="_tools_2_evaluator_2_evaluator_8cpp"/>
+      </node>
+      <node id="1545">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.cpp</label>
+        <link refid="_sampler_generation_handler_8cpp"/>
+      </node>
+      <node id="1535">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.cpp</label>
+        <link refid="_class_type_generic_8cpp"/>
+      </node>
+      <node id="1533">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.h</label>
+        <link refid="_class_type_generic_8h"/>
+        <childnode refid="1534" relation="include">
+        </childnode>
+        <childnode refid="1535" relation="include">
+        </childnode>
+        <childnode refid="1536" relation="include">
+        </childnode>
+        <childnode refid="1557" relation="include">
+        </childnode>
+        <childnode refid="1558" relation="include">
+        </childnode>
+        <childnode refid="1559" relation="include">
+        </childnode>
+        <childnode refid="1560" relation="include">
+        </childnode>
+        <childnode refid="1561" relation="include">
+        </childnode>
+        <childnode refid="1562" relation="include">
+        </childnode>
+        <childnode refid="1563" relation="include">
+        </childnode>
+      </node>
+      <node id="1564">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.h</label>
+        <link refid="_class_type_mapper_8h"/>
+        <childnode refid="1565" relation="include">
+        </childnode>
+        <childnode refid="1566" relation="include">
+        </childnode>
+        <childnode refid="1567" relation="include">
+        </childnode>
+        <childnode refid="1568" relation="include">
+        </childnode>
+      </node>
+      <node id="1536">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h</label>
+        <link refid="_c_o_c_o_dataset_reader_8h"/>
+        <childnode refid="1537" relation="include">
+        </childnode>
+        <childnode refid="1538" relation="include">
+        </childnode>
+      </node>
+      <node id="1550">
+        <label>DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp</label>
+        <link refid="auto_evaluator_8cpp"/>
+      </node>
+      <node id="1553">
+        <label>DeepLearningSuite/Tools/Converter/converter.cpp</label>
+        <link refid="_tools_2_converter_2_converter_8cpp"/>
+      </node>
+      <node id="1538">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h</label>
+        <link refid="_generic_dataset_reader_8h"/>
+        <childnode refid="1539" relation="include">
+        </childnode>
+        <childnode refid="1534" relation="include">
+        </childnode>
+        <childnode refid="1540" relation="include">
+        </childnode>
+        <childnode refid="1543" relation="include">
+        </childnode>
+        <childnode refid="1546" relation="include">
+        </childnode>
+        <childnode refid="1547" relation="include">
+        </childnode>
+        <childnode refid="1548" relation="include">
+        </childnode>
+        <childnode refid="1552" relation="include">
+        </childnode>
+        <childnode refid="1550" relation="include">
+        </childnode>
+        <childnode refid="1553" relation="include">
+        </childnode>
+        <childnode refid="1554" relation="include">
+        </childnode>
+        <childnode refid="1551" relation="include">
+        </childnode>
+        <childnode refid="1555" relation="include">
+        </childnode>
+        <childnode refid="1556" relation="include">
+        </childnode>
+      </node>
+      <node id="1540">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.h</label>
+        <link refid="_sampler_generation_handler_8h"/>
+        <childnode refid="1541" relation="include">
+        </childnode>
+        <childnode refid="1542" relation="include">
+        </childnode>
+        <childnode refid="1543" relation="include">
+        </childnode>
+        <childnode refid="1544" relation="include">
+        </childnode>
+        <childnode refid="1545" relation="include">
+        </childnode>
+        <childnode refid="1546" relation="include">
+        </childnode>
+      </node>
+      <node id="1567">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.cpp</label>
+        <link refid="_pascal_v_o_c_dataset_writer_8cpp"/>
+      </node>
+      <node id="1548">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h</label>
+        <link refid="_stats_writer_8h"/>
+        <childnode refid="1544" relation="include">
+        </childnode>
+        <childnode refid="1549" relation="include">
+        </childnode>
+        <childnode refid="1550" relation="include">
+        </childnode>
+        <childnode refid="1551" relation="include">
+        </childnode>
+      </node>
+      <node id="1574">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp</label>
+        <link refid="_rect_regions_8cpp"/>
+      </node>
+      <node id="1558">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/PascalVOCDatasetReader.cpp</label>
+        <link refid="_pascal_v_o_c_dataset_reader_8cpp"/>
+      </node>
+      <node id="1563">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.cpp</label>
+        <link refid="_tensor_flow_inferencer_8cpp"/>
+      </node>
+      <node id="1569">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp</label>
+        <link refid="_detections_evaluator_8cpp"/>
+      </node>
+      <node id="1573">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.cpp</label>
+        <link refid="_yolo_dataset_writer_8cpp"/>
+      </node>
+      <node id="1555">
+        <label>DeepLearningSuite/Tools/Splitter/splitter.cpp</label>
+        <link refid="splitter_8cpp"/>
+      </node>
+      <node id="1561">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.cpp</label>
+        <link refid="_darknet_inferencer_8cpp"/>
+      </node>
+      <node id="1544">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_evaluator_8cpp"/>
+      </node>
+      <node id="1565">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.cpp</label>
+        <link refid="_class_type_mapper_8cpp"/>
+      </node>
+      <node id="1566">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.cpp</label>
+        <link refid="_c_o_c_o_dataset_writer_8cpp"/>
+      </node>
+      <node id="1537">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.cpp</label>
+        <link refid="_c_o_c_o_dataset_reader_8cpp"/>
+      </node>
+      <node id="1534">
+        <label>DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="1543">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp"/>
+      </node>
+      <node id="1568">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h</label>
+        <link refid="_detections_evaluator_8h"/>
+        <childnode refid="1544" relation="include">
+        </childnode>
+        <childnode refid="1569" relation="include">
+        </childnode>
+        <childnode refid="1548" relation="include">
+        </childnode>
+        <childnode refid="1550" relation="include">
+        </childnode>
+        <childnode refid="1551" relation="include">
+        </childnode>
+        <childnode refid="1555" relation="include">
+        </childnode>
+      </node>
+      <node id="1554">
+        <label>DeepLearningSuite/Tools/Detector/detector.cpp</label>
+        <link refid="_tools_2_detector_2_detector_8cpp"/>
+      </node>
+      <node id="1552">
+        <label>DeepLearningSuite/SampleGenerationApp/generator.cpp</label>
+        <link refid="generator_8cpp"/>
+      </node>
+      <node id="1539">
+        <label>DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.cpp</label>
+        <link refid="_tab_handler_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_class_type" prot="public">ClassType</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>2/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_CLASSTYPE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_CLASSTYPE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/opencv.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="struct_class_type" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_class_type" kindref="compound">ClassType</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Scalar<sp/><ref refid="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" kindref="member">getColor</ref>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" kindref="member">getClassString</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_class_type_1ab5cc3bb3376a812d051d4726eb4ee063" kindref="member">getClassID</ref>();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="struct_class_type_1a867149836bb99711a7c14fbe7801c9e4" kindref="member">getAllAvailableClasses</ref>();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_class_type_1a37ea5c5449bc06ed3f2a327448abe02a" kindref="member">_get_color</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max);</highlight></codeline>
+<codeline lineno="18" refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>;</highlight></codeline>
+<codeline lineno="19" refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" kindref="member">classID</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_CLASSTYPE_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.h"/>
+  </compounddef>
+</doxygen>

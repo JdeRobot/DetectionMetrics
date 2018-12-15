@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_generic_dataset_writer" kind="class" language="C++" prot="public">
+    <compoundname>GenericDatasetWriter</compoundname>
+    <includes refid="_generic_dataset_writer_8h" local="no">GenericDatasetWriter.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_generic_dataset_writer_1a1981d57553586625d6119ba988f4ba30" prot="private" static="no" mutable="no">
+        <type><ref refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066" kindref="member">WRITER_IMPLEMENTATIONS</ref></type>
+        <definition>WRITER_IMPLEMENTATIONS GenericDatasetWriter::imp</definition>
+        <argsstring></argsstring>
+        <name>imp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_dataset_writer_1a083f68a2a71a1e89b69c55655441769c" prot="private" static="no" mutable="no">
+        <type><ref refid="_yolo_dataset_writer_8h_1ac90eb7c291939096c04b75f21b75471a" kindref="member">YoloDatasetWriterPtr</ref></type>
+        <definition>YoloDatasetWriterPtr GenericDatasetWriter::yoloDatasetWriterPtr</definition>
+        <argsstring></argsstring>
+        <name>yoloDatasetWriterPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_dataset_writer_1a6e8d67c2bf3ade83c4c7e93d4232d1cd" prot="private" static="no" mutable="no">
+        <type><ref refid="_own_dataset_writer_8h_1a44fef7e2023419282f83ffbca3266275" kindref="member">OwnDatasetWriterPtr</ref></type>
+        <definition>OwnDatasetWriterPtr GenericDatasetWriter::ownDatasetWriterPtr</definition>
+        <argsstring></argsstring>
+        <name>ownDatasetWriterPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_dataset_writer_1a0c5cb25623eb26cefc44d99f1d305962" prot="private" static="no" mutable="no">
+        <type><ref refid="_c_o_c_o_dataset_writer_8h_1adc1b46863feaa4a2a037fd391eea2825" kindref="member">COCODatasetWriterPtr</ref></type>
+        <definition>COCODatasetWriterPtr GenericDatasetWriter::cocoDatasetWriterPtr</definition>
+        <argsstring></argsstring>
+        <name>cocoDatasetWriterPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" line="29" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_dataset_writer_1a26f734dab9102da7a6431d8753e8ffc9" prot="private" static="no" mutable="no">
+        <type><ref refid="_pascal_v_o_c_dataset_writer_8h_1abb5287e23628cfc9cbccc05797a90afe" kindref="member">PascalVOCDatasetWriterPtr</ref></type>
+        <definition>PascalVOCDatasetWriterPtr GenericDatasetWriter::pascalvocDatasetWriterPtr</definition>
+        <argsstring></argsstring>
+        <name>pascalvocDatasetWriterPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" line="30" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_dataset_writer_1adac6c0a720baed49960941bd065886bd" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; GenericDatasetWriter::availableImplementations</definition>
+        <argsstring></argsstring>
+        <name>availableImplementations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" line="32" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_generic_dataset_writer_1a687568a6fff812dca1b41063209b144c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GenericDatasetWriter::GenericDatasetWriter</definition>
+        <argsstring>(const std::string &amp;path, DatasetReaderPtr &amp;reader, const std::string &amp;writerImplementation, const std::string &amp;writerNamesFile=std::string())</argsstring>
+        <name>GenericDatasetWriter</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref> &amp;</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>writerImplementation</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>writerNamesFile</declname>
+          <defval>std::string()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.cpp" bodystart="9" bodyend="34"/>
+        <references refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066a3a7c589b65404eb923a50b874ba3f25c" compoundref="_generic_dataset_writer_8h" startline="8">WR_COCO</references>
+        <references refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066ac6207bdc21aae7a73c7ae7e766c75ac4" compoundref="_generic_dataset_writer_8h" startline="8">WR_PASCALVOC</references>
+        <references refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066a7aca064476488e9f3ee5ca08c924466d" compoundref="_generic_dataset_writer_8h" startline="8">WR_YOLO</references>
+        <references refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066ab82371b187856d4de3e8112c9da18445" compoundref="_generic_dataset_writer_8h" startline="8">WR_OWN</references>
+      </memberdef>
+      <memberdef kind="function" id="class_generic_dataset_writer_1a56eed0c235998128360dfc4fdc347799" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_dataset_writer_8h_1a6d016fa40626aa1798ebce934c5d29b0" kindref="member">DatasetWriterPtr</ref></type>
+        <definition>DatasetWriterPtr GenericDatasetWriter::getWriter</definition>
+        <argsstring>()</argsstring>
+        <name>getWriter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.cpp" bodystart="60" bodyend="73"/>
+        <references refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066ac6207bdc21aae7a73c7ae7e766c75ac4" compoundref="_generic_dataset_writer_8h" startline="8">WR_PASCALVOC</references>
+        <references refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066a3a7c589b65404eb923a50b874ba3f25c" compoundref="_generic_dataset_writer_8h" startline="8">WR_COCO</references>
+        <references refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066a7aca064476488e9f3ee5ca08c924466d" compoundref="_generic_dataset_writer_8h" startline="8">WR_YOLO</references>
+        <references refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066ab82371b187856d4de3e8112c9da18445" compoundref="_generic_dataset_writer_8h" startline="8">WR_OWN</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_generic_dataset_writer_1ae2728eb07aa990f39d41aa0d2eee2206" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; GenericDatasetWriter::getAvailableImplementations</definition>
+        <argsstring>()</argsstring>
+        <name>getAvailableImplementations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.cpp" bodystart="75" bodyend="79"/>
+        <referencedby refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" compoundref="mainwindow_8cpp" startline="51" endline="54">MainWindow::~MainWindow</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_generic_dataset_writer_1af31ec0c4c5d0da09714d4018008c9bc4" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GenericDatasetWriter::configureAvailableImplementations</definition>
+        <argsstring>(std::vector&lt; std::string &gt; &amp;data)</argsstring>
+        <name>configureAvailableImplementations</name>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" line="34" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.cpp" bodystart="38" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_generic_dataset_writer_1a5c152cf08e026de1574cd83cc8e1c2c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066" kindref="member">WRITER_IMPLEMENTATIONS</ref></type>
+        <definition>WRITER_IMPLEMENTATIONS GenericDatasetWriter::getImplementation</definition>
+        <argsstring>(const std::string &amp;writerImplementation)</argsstring>
+        <name>getImplementation</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>writerImplementation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" line="35" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.cpp" bodystart="45" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" bodystart="17" bodyend="37"/>
+    <listofallmembers>
+      <member refid="class_generic_dataset_writer_1adac6c0a720baed49960941bd065886bd" prot="private" virt="non-virtual"><scope>GenericDatasetWriter</scope><name>availableImplementations</name></member>
+      <member refid="class_generic_dataset_writer_1a0c5cb25623eb26cefc44d99f1d305962" prot="private" virt="non-virtual"><scope>GenericDatasetWriter</scope><name>cocoDatasetWriterPtr</name></member>
+      <member refid="class_generic_dataset_writer_1af31ec0c4c5d0da09714d4018008c9bc4" prot="private" virt="non-virtual"><scope>GenericDatasetWriter</scope><name>configureAvailableImplementations</name></member>
+      <member refid="class_generic_dataset_writer_1a687568a6fff812dca1b41063209b144c" prot="public" virt="non-virtual"><scope>GenericDatasetWriter</scope><name>GenericDatasetWriter</name></member>
+      <member refid="class_generic_dataset_writer_1ae2728eb07aa990f39d41aa0d2eee2206" prot="public" virt="non-virtual"><scope>GenericDatasetWriter</scope><name>getAvailableImplementations</name></member>
+      <member refid="class_generic_dataset_writer_1a5c152cf08e026de1574cd83cc8e1c2c5" prot="private" virt="non-virtual"><scope>GenericDatasetWriter</scope><name>getImplementation</name></member>
+      <member refid="class_generic_dataset_writer_1a56eed0c235998128360dfc4fdc347799" prot="public" virt="non-virtual"><scope>GenericDatasetWriter</scope><name>getWriter</name></member>
+      <member refid="class_generic_dataset_writer_1a1981d57553586625d6119ba988f4ba30" prot="private" virt="non-virtual"><scope>GenericDatasetWriter</scope><name>imp</name></member>
+      <member refid="class_generic_dataset_writer_1a6e8d67c2bf3ade83c4c7e93d4232d1cd" prot="private" virt="non-virtual"><scope>GenericDatasetWriter</scope><name>ownDatasetWriterPtr</name></member>
+      <member refid="class_generic_dataset_writer_1a26f734dab9102da7a6431d8753e8ffc9" prot="private" virt="non-virtual"><scope>GenericDatasetWriter</scope><name>pascalvocDatasetWriterPtr</name></member>
+      <member refid="class_generic_dataset_writer_1a083f68a2a71a1e89b69c55655441769c" prot="private" virt="non-virtual"><scope>GenericDatasetWriter</scope><name>yoloDatasetWriterPtr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

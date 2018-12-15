@@ -1,0 +1,351 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_mass_inferencer" kind="class" language="C++" prot="public">
+    <compoundname>MassInferencer</compoundname>
+    <includes refid="_mass_inferencer_8h" local="no">MassInferencer.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_mass_inferencer_1ac8b995e34163b0d3323dca3f6eccaef2" prot="private" static="no" mutable="no">
+        <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref></type>
+        <definition>DatasetReaderPtr MassInferencer::reader</definition>
+        <argsstring></argsstring>
+        <name>reader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mass_inferencer_1a205a050b09e7a0fb3860d0e5adf0617a" prot="private" static="no" mutable="no">
+        <type><ref refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" kindref="member">FrameworkInferencerPtr</ref></type>
+        <definition>FrameworkInferencerPtr MassInferencer::inferencer</definition>
+        <argsstring></argsstring>
+        <name>inferencer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mass_inferencer_1a1d46d8ec77b4498e2e0e6e9adea81ee9" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string MassInferencer::resultsPath</definition>
+        <argsstring></argsstring>
+        <name>resultsPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mass_inferencer_1a4c355884cf4c44e2c56587350b85fa23" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MassInferencer::debug</definition>
+        <argsstring></argsstring>
+        <name>debug</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mass_inferencer_1ac9d904d10f81a8ae2f253b9365225a68" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MassInferencer::saveOutput</definition>
+        <argsstring></argsstring>
+        <name>saveOutput</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mass_inferencer_1ae45eb3e8702f8c406d18548cf4629c24" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int MassInferencer::alreadyProcessed</definition>
+        <argsstring></argsstring>
+        <name>alreadyProcessed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mass_inferencer_1a9f3768213110c40fd6e7fa3643e2f85d" prot="private" static="no" mutable="no">
+        <type>bool *</type>
+        <definition>bool* MassInferencer::stopDeployer</definition>
+        <argsstring></argsstring>
+        <name>stopDeployer</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mass_inferencer_1add596d5824183640426e18ceb2592d30" prot="private" static="no" mutable="no">
+        <type>double *</type>
+        <definition>double* MassInferencer::confidence_threshold</definition>
+        <argsstring></argsstring>
+        <name>confidence_threshold</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mass_inferencer_1a0dd14daaca7394a25818a0fde945a737" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double MassInferencer::default_confidence_threshold</definition>
+        <argsstring></argsstring>
+        <name>default_confidence_threshold</name>
+        <initializer>= 0.2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="29" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_mass_inferencer_1aa1f9519adb814a99f8c20a5d28d2f4e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MassInferencer::MassInferencer</definition>
+        <argsstring>(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, const std::string &amp;resultsPath, double *confidence_threshold=NULL, bool debug=true)</argsstring>
+        <name>MassInferencer</name>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref></type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type><ref refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" kindref="member">FrameworkInferencerPtr</ref></type>
+          <declname>inferencer</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>resultsPath</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>confidence_threshold</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>debug</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.cpp" bodystart="16" bodyend="45"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+      </memberdef>
+      <memberdef kind="function" id="class_mass_inferencer_1a358995e115d7c7a015620ca42df10fe9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MassInferencer::MassInferencer</definition>
+        <argsstring>(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, const std::string &amp;resultsPath, bool debug=true)</argsstring>
+        <name>MassInferencer</name>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref></type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type><ref refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" kindref="member">FrameworkInferencerPtr</ref></type>
+          <declname>inferencer</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>resultsPath</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>debug</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.cpp" bodystart="10" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mass_inferencer_1a47dfb5d42669485a0390c579051e57f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MassInferencer::MassInferencer</definition>
+        <argsstring>(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, const std::string &amp;resultsPath, bool *stopDeployer, double *confidence_threshold=NULL, bool debug=true)</argsstring>
+        <name>MassInferencer</name>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref></type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type><ref refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" kindref="member">FrameworkInferencerPtr</ref></type>
+          <declname>inferencer</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>resultsPath</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>stopDeployer</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>confidence_threshold</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>debug</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.cpp" bodystart="47" bodyend="72"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+      </memberdef>
+      <memberdef kind="function" id="class_mass_inferencer_1afc617523cbd7df73545cda0755e9ff77" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MassInferencer::MassInferencer</definition>
+        <argsstring>(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, double *confidence_threshold=NULL, bool debug=true)</argsstring>
+        <name>MassInferencer</name>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref></type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type><ref refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" kindref="member">FrameworkInferencerPtr</ref></type>
+          <declname>inferencer</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>confidence_threshold</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>debug</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.cpp" bodystart="74" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mass_inferencer_1a785c29013dd824096d2cf5992d5a1f86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MassInferencer::MassInferencer</definition>
+        <argsstring>(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, bool debug=true)</argsstring>
+        <name>MassInferencer</name>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref></type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type><ref refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" kindref="member">FrameworkInferencerPtr</ref></type>
+          <declname>inferencer</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>debug</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.cpp" bodystart="13" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MassInferencer::process</definition>
+        <argsstring>(bool writeImages, DatasetReaderPtr readerDetection=NULL)</argsstring>
+        <name>process</name>
+        <param>
+          <type>bool</type>
+          <declname>writeImages</declname>
+        </param>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref></type>
+          <declname>readerDetection</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.cpp" bodystart="81" bodyend="159"/>
+        <references refid="struct_sample_1adead1781500bbf8508eae6f983621d3a" compoundref="_sample_8cpp" startline="330" endline="332">Sample::getSampleID</references>
+        <references refid="struct_sample_1ae6488ecd5c5996029a68915541b01245" compoundref="_sample_8cpp" startline="360" endline="377">Sample::getDepthColorMapImage</references>
+        <references refid="struct_sample_1abf69bbc9b312c22d3ded30d30d1e278f" compoundref="_sample_8cpp" startline="149" endline="156">Sample::getColorImage</references>
+        <references refid="struct_sample_1a64fc306f85a0a1966f5f3b662efe95bb" compoundref="_sample_8cpp" startline="326" endline="328">Sample::setSampleID</references>
+        <references refid="struct_sample_1a2c873df91344017f41f144af9baa3b7c" compoundref="_sample_8cpp" startline="204" endline="209">Sample::save</references>
+        <references refid="struct_sample_1a19aef3e998d244412a87c9d7760d0937" compoundref="_sample_8cpp" startline="184" endline="193">Sample::getSampledColorImage</references>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">Sample::setColorImage</references>
+        <references refid="struct_sample_1a4bd0f24d929a2559152a88d7669c84a2" compoundref="_sample_8cpp" startline="379" endline="386">Sample::getSampledDepthColorMapImage</references>
+        <references refid="struct_sample_1a54f7617fddaaa461fd46320e5bb19201" compoundref="_sample_8cpp" startline="70" endline="73">Sample::clearColorImage</references>
+        <references refid="struct_sample_1a7e9518b37a26d5d3788f090808a691ba" compoundref="_sample_8cpp" startline="75" endline="78">Sample::clearDepthImage</references>
+        <referencedby refid="class_sample_generator_handler_1_1_deployer_1ad9964a4e64b6d51ce7cd63083929ac42" compoundref="_deployer_8cpp" startline="13" endline="89">SampleGeneratorHandler::Deployer::process</referencedby>
+        <referencedby refid="class_sample_generator_handler_1_1_detector_1a9444b20f47b9b07fa4800bc283ab5c8a" compoundref="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp" startline="14" endline="83">SampleGeneratorHandler::Detector::process</referencedby>
+        <referencedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" compoundref="_tools_2_detector_2_detector_8cpp" startline="26" endline="52">MyApp::operator()</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" line="11" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h" bodystart="11" bodyend="31"/>
+    <listofallmembers>
+      <member refid="class_mass_inferencer_1ae45eb3e8702f8c406d18548cf4629c24" prot="private" virt="non-virtual"><scope>MassInferencer</scope><name>alreadyProcessed</name></member>
+      <member refid="class_mass_inferencer_1add596d5824183640426e18ceb2592d30" prot="private" virt="non-virtual"><scope>MassInferencer</scope><name>confidence_threshold</name></member>
+      <member refid="class_mass_inferencer_1a4c355884cf4c44e2c56587350b85fa23" prot="private" virt="non-virtual"><scope>MassInferencer</scope><name>debug</name></member>
+      <member refid="class_mass_inferencer_1a0dd14daaca7394a25818a0fde945a737" prot="private" virt="non-virtual"><scope>MassInferencer</scope><name>default_confidence_threshold</name></member>
+      <member refid="class_mass_inferencer_1a205a050b09e7a0fb3860d0e5adf0617a" prot="private" virt="non-virtual"><scope>MassInferencer</scope><name>inferencer</name></member>
+      <member refid="class_mass_inferencer_1aa1f9519adb814a99f8c20a5d28d2f4e9" prot="public" virt="non-virtual"><scope>MassInferencer</scope><name>MassInferencer</name></member>
+      <member refid="class_mass_inferencer_1a358995e115d7c7a015620ca42df10fe9" prot="public" virt="non-virtual"><scope>MassInferencer</scope><name>MassInferencer</name></member>
+      <member refid="class_mass_inferencer_1a47dfb5d42669485a0390c579051e57f9" prot="public" virt="non-virtual"><scope>MassInferencer</scope><name>MassInferencer</name></member>
+      <member refid="class_mass_inferencer_1afc617523cbd7df73545cda0755e9ff77" prot="public" virt="non-virtual"><scope>MassInferencer</scope><name>MassInferencer</name></member>
+      <member refid="class_mass_inferencer_1a785c29013dd824096d2cf5992d5a1f86" prot="public" virt="non-virtual"><scope>MassInferencer</scope><name>MassInferencer</name></member>
+      <member refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" prot="public" virt="non-virtual"><scope>MassInferencer</scope><name>process</name></member>
+      <member refid="class_mass_inferencer_1ac8b995e34163b0d3323dca3f6eccaef2" prot="private" virt="non-virtual"><scope>MassInferencer</scope><name>reader</name></member>
+      <member refid="class_mass_inferencer_1a1d46d8ec77b4498e2e0e6e9adea81ee9" prot="private" virt="non-virtual"><scope>MassInferencer</scope><name>resultsPath</name></member>
+      <member refid="class_mass_inferencer_1ac9d904d10f81a8ae2f253b9365225a68" prot="private" virt="non-virtual"><scope>MassInferencer</scope><name>saveOutput</name></member>
+      <member refid="class_mass_inferencer_1a9f3768213110c40fd6e7fa3643e2f85d" prot="private" virt="non-virtual"><scope>MassInferencer</scope><name>stopDeployer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

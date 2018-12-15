@@ -1,0 +1,619 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="rgb2hsv_8c" kind="file" language="C++">
+    <compoundname>rgb2hsv.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">math.h</includes>
+    <includes local="no">pthread.h</includes>
+    <includes refid="colorspaces_8h" local="yes">colorspaces.h</includes>
+    <incdepgraph>
+      <node id="5698">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5696">
+        <label>DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c</label>
+        <link refid="rgb2hsv_8c"/>
+        <childnode refid="5697" relation="include">
+        </childnode>
+        <childnode refid="5698" relation="include">
+        </childnode>
+        <childnode refid="5699" relation="include">
+        </childnode>
+        <childnode refid="5700" relation="include">
+        </childnode>
+        <childnode refid="5701" relation="include">
+        </childnode>
+      </node>
+      <node id="5700">
+        <label>pthread.h</label>
+      </node>
+      <node id="5699">
+        <label>math.h</label>
+      </node>
+      <node id="5701">
+        <label>colorspaces.h</label>
+        <link refid="colorspaces_8h"/>
+      </node>
+      <node id="5697">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="rgb2hsv_8c_1ab70d7462ac875c42ef0369c3972deca2" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int MAX_BITS</definition>
+        <argsstring></argsstring>
+        <name>MAX_BITS</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" line="29" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb2hsv_8c_1a8cbe804ef68b5f73a678c4ac0279867c" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int SIGNIFICATIVE_BITS</definition>
+        <argsstring></argsstring>
+        <name>SIGNIFICATIVE_BITS</name>
+        <initializer>= 6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" line="30" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb2hsv_8c_1a326c0e940e5d5c329218e5ccff03df52" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int MAX_RGB</definition>
+        <argsstring></argsstring>
+        <name>MAX_RGB</name>
+        <initializer>= 255</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" line="31" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="31" bodyend="-1"/>
+        <referencedby refid="rgb2hsv_8c_1ad7dd44362d341ab79bbf849231329901" compoundref="rgb2hsv_8c" startline="156" endline="182">RGB2HSV_destroyTable</referencedby>
+        <referencedby refid="rgb2hsv_8c_1a1c0a6a7df547f29e98835424b6b66c09" compoundref="rgb2hsv_8c" startline="204" endline="254">RGB2HSV_createTable</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="rgb2hsv_8c_1a4dddeb18ef9d4b3ad60a78ec2b33d11c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="struct_h_s_v" kindref="compound">HSV</ref> *</type>
+        <definition>struct HSV* LUT_RGB2HSV[64][64][64]</definition>
+        <argsstring>[64][64][64]</argsstring>
+        <name>LUT_RGB2HSV</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" line="33" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb2hsv_8c_1a3d8f38fa99d5cc96d230b933664c17cf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int isInitTableHSV</definition>
+        <argsstring></argsstring>
+        <name>isInitTableHSV</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" line="39" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="39" bodyend="-1"/>
+        <referencedby refid="rgb2hsv_8c_1ad7dd44362d341ab79bbf849231329901" compoundref="rgb2hsv_8c" startline="156" endline="182">RGB2HSV_destroyTable</referencedby>
+        <referencedby refid="rgb2hsv_8c_1a9d3c0b7a96c30bad15271386140eb6ae" compoundref="rgb2hsv_8c" startline="185" endline="200">RGB2HSV_init</referencedby>
+        <referencedby refid="rgb2hsv_8c_1a1c0a6a7df547f29e98835424b6b66c09" compoundref="rgb2hsv_8c" startline="204" endline="254">RGB2HSV_createTable</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" prot="public" static="no" mutable="no">
+        <type>pthread_mutex_t</type>
+        <definition>pthread_mutex_t mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" line="42" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="42" bodyend="-1"/>
+        <referencedby refid="classjderobot_1_1_depth_filter_1a5d0a063ea9641f5bcf3dd71c3d45609f" compoundref="_depth_filter_8h" startline="31" endline="31">jderobot::DepthFilter::getFilterType</referencedby>
+        <referencedby refid="rgb2hsv_8c_1ad7dd44362d341ab79bbf849231329901" compoundref="rgb2hsv_8c" startline="156" endline="182">RGB2HSV_destroyTable</referencedby>
+        <referencedby refid="rgb2hsv_8c_1a9d3c0b7a96c30bad15271386140eb6ae" compoundref="rgb2hsv_8c" startline="185" endline="200">RGB2HSV_init</referencedby>
+        <referencedby refid="rgb2hsv_8c_1a1c0a6a7df547f29e98835424b6b66c09" compoundref="rgb2hsv_8c" startline="204" endline="254">RGB2HSV_createTable</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="rgb2hsv_8c_1a4716974869bc6274b2241b1a27dee97e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb2hsv_wiki</definition>
+        <argsstring>(double r, double g, double b, double *H, double *S, double *V)</argsstring>
+        <name>rgb2hsv_wiki</name>
+        <param>
+          <type>double</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>H</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" line="44" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="44" bodyend="95"/>
+        <referencedby refid="rgb2hsv_8c_1a1c0a6a7df547f29e98835424b6b66c09" compoundref="rgb2hsv_8c" startline="204" endline="254">RGB2HSV_createTable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="rgb2hsv_8c_1a5b3adc13cc2586f7905ea56f141ceef0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hsv2rgb</definition>
+        <argsstring>(double H, double S, double V, double *r, double *g, double *b)</argsstring>
+        <name>hsv2rgb</name>
+        <param>
+          <type>double</type>
+          <declname>H</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Returns the translation from <ref refid="struct_h_s_v" kindref="compound">HSV</ref> to RGB. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" line="98" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="98" bodyend="130"/>
+        <references refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" compoundref="colorspaces_8h" startline="42">HSV::V</references>
+        <references refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" compoundref="colorspaces_8h" startline="41">HSV::S</references>
+      </memberdef>
+      <memberdef kind="function" id="rgb2hsv_8c_1a5f4a3a50114f90fcb9765952ec68a2c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_status_YUV</definition>
+        <argsstring>(unsigned long status)</argsstring>
+        <name>print_status_YUV</name>
+        <param>
+          <type>unsigned long</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Function to print unsiged int in binary. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" line="133" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="133" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="rgb2hsv_8c_1ad7dd44362d341ab79bbf849231329901" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2HSV_destroyTable</definition>
+        <argsstring>()</argsstring>
+        <name>RGB2HSV_destroyTable</name>
+        <briefdescription>
+<para>Free de memory of RGB2HSV. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" line="156" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="156" bodyend="182"/>
+        <references refid="rgb2hsv_8c_1a326c0e940e5d5c329218e5ccff03df52" compoundref="rgb2hsv_8c" startline="31">MAX_RGB</references>
+        <references refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" compoundref="rgb2hsv_8c" startline="42">mutex</references>
+        <references refid="rgb2hsv_8c_1a3d8f38fa99d5cc96d230b933664c17cf" compoundref="rgb2hsv_8c" startline="39">isInitTableHSV</references>
+      </memberdef>
+      <memberdef kind="function" id="rgb2hsv_8c_1a9d3c0b7a96c30bad15271386140eb6ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2HSV_init</definition>
+        <argsstring>()</argsstring>
+        <name>RGB2HSV_init</name>
+        <briefdescription>
+<para>Init the RGB2HSV. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" line="185" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="185" bodyend="200"/>
+        <references refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" compoundref="rgb2hsv_8c" startline="42">mutex</references>
+        <references refid="rgb2hsv_8c_1a3d8f38fa99d5cc96d230b933664c17cf" compoundref="rgb2hsv_8c" startline="39">isInitTableHSV</references>
+        <references refid="colorspaces_8h_1a47f2e62c0dbebc787052c165afcada0e" compoundref="colorspaces_8h" startline="28">NAME</references>
+        <references refid="colorspaces_8h_1aee272dd28e234398015e21016d0693a2" compoundref="colorspaces_8h" startline="29">COLORSPACES_VERSION</references>
+      </memberdef>
+      <memberdef kind="function" id="rgb2hsv_8c_1a1c0a6a7df547f29e98835424b6b66c09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2HSV_createTable</definition>
+        <argsstring>()</argsstring>
+        <name>RGB2HSV_createTable</name>
+        <briefdescription>
+<para>: Calculate values for create a generic table </para>        </briefdescription>
+        <detaileddescription>
+<para>Create a translate RGB2HSV table with resolution of 6bits (64x64x64) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" line="204" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="204" bodyend="254"/>
+        <references refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" compoundref="rgb2hsv_8c" startline="42">mutex</references>
+        <references refid="rgb2hsv_8c_1a3d8f38fa99d5cc96d230b933664c17cf" compoundref="rgb2hsv_8c" startline="39">isInitTableHSV</references>
+        <references refid="rgb2hsv_8c_1a326c0e940e5d5c329218e5ccff03df52" compoundref="rgb2hsv_8c" startline="31">MAX_RGB</references>
+        <references refid="rgb2hsv_8c_1a4716974869bc6274b2241b1a27dee97e" compoundref="rgb2hsv_8c" startline="44" endline="95">rgb2hsv_wiki</references>
+        <references refid="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" compoundref="colorspaces_8h" startline="40">HSV::H</references>
+        <references refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" compoundref="colorspaces_8h" startline="41">HSV::S</references>
+        <references refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" compoundref="colorspaces_8h" startline="42">HSV::V</references>
+      </memberdef>
+      <memberdef kind="function" id="rgb2hsv_8c_1ab77e39ef0029a5ecf5e970bcaaae2335" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2HSV_printHSV</definition>
+        <argsstring>(struct HSV *hsv)</argsstring>
+        <name>RGB2HSV_printHSV</name>
+        <param>
+          <type>struct <ref refid="struct_h_s_v" kindref="compound">HSV</ref> *</type>
+          <declname>hsv</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" line="257" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="257" bodyend="260"/>
+        <references refid="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" compoundref="colorspaces_8h" startline="40">HSV::H</references>
+        <references refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" compoundref="colorspaces_8h" startline="41">HSV::S</references>
+        <references refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" compoundref="colorspaces_8h" startline="42">HSV::V</references>
+      </memberdef>
+      <memberdef kind="function" id="rgb2hsv_8c_1aa96ba32c645c0cbcaa92a30849f05df0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2HSV_test</definition>
+        <argsstring>(void)</argsstring>
+        <name>RGB2HSV_test</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Test. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" line="263" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="263" bodyend="293"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>(C)<sp/>1997-2008<sp/>JDE<sp/>Developers<sp/>Team</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>http://www.gnu.org/licenses/.<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/>Authors<sp/>:<sp/>Roberto<sp/>Calvo<sp/>Palomino<sp/>&lt;rocapal@gsyc.es&gt;</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pthread.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="colorspaces_8h" kindref="compound">colorspaces.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="rgb2hsv_8c_1ab70d7462ac875c42ef0369c3972deca2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="rgb2hsv_8c_1ab70d7462ac875c42ef0369c3972deca2" kindref="member">MAX_BITS</ref><sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="30" refid="rgb2hsv_8c_1a8cbe804ef68b5f73a678c4ac0279867c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="rgb2hsv_8c_1a8cbe804ef68b5f73a678c4ac0279867c" kindref="member">SIGNIFICATIVE_BITS</ref><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="31" refid="rgb2hsv_8c_1a326c0e940e5d5c329218e5ccff03df52" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="rgb2hsv_8c_1a326c0e940e5d5c329218e5ccff03df52" kindref="member">MAX_RGB</ref><sp/>=<sp/>255;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="rgb2hsv_8c_1a4dddeb18ef9d4b3ad60a78ec2b33d11c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_h_s_v" kindref="compound">HSV</ref><sp/>*<sp/><ref refid="rgb2hsv_8c_1a4dddeb18ef9d4b3ad60a78ec2b33d11c" kindref="member">LUT_RGB2HSV</ref><sp/>[64][64][64];</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Condicional<sp/>variable:</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/><sp/><sp/>0:<sp/>The<sp/>table<sp/>RGB2HSV<sp/>don&apos;t<sp/>exists.</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/><sp/>1:<sp/>The<sp/>table<sp/>RGB2HSV<sp/>exists.</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="rgb2hsv_8c_1a3d8f38fa99d5cc96d230b933664c17cf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="rgb2hsv_8c_1a3d8f38fa99d5cc96d230b933664c17cf" kindref="member">isInitTableHSV</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>mutex<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" refkind="member"><highlight class="normal">pthread_mutex_t<sp/><ref refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="rgb2hsv_8c_1a4716974869bc6274b2241b1a27dee97e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2hsv_8c_1a4716974869bc6274b2241b1a27dee97e" kindref="member">rgb2hsv_wiki</ref><sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>g,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" kindref="member">H</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" kindref="member">S</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" kindref="member">V</ref>)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>min,<sp/>max;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculamos<sp/>el<sp/>minimo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((r<sp/>&lt;=<sp/>g)<sp/>&amp;&amp;<sp/>(r<sp/>&lt;=<sp/>b))</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>min<sp/>=<sp/>r;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((g<sp/>&lt;=<sp/>r)<sp/>&amp;&amp;<sp/>(g<sp/>&lt;=<sp/>b))</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>min<sp/>=<sp/>g;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>min<sp/>=<sp/>b;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculamos<sp/>el<sp/>mximo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((r<sp/>&gt;=<sp/>g)<sp/>&amp;&amp;<sp/>(r<sp/>&gt;=<sp/>b))</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max<sp/>=<sp/>r;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((g<sp/>&gt;=<sp/>r)<sp/>&amp;&amp;<sp/>(g<sp/>&gt;=<sp/>b))</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max<sp/>=<sp/>g;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max<sp/>=<sp/>b;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;min=%.1f<sp/>-<sp/>max=%.1f<sp/>-<sp/>r=%.1f<sp/>-<sp/>g=%.1f<sp/>-<sp/>b=%.1f\n&quot;,min,max,r,g,b);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculamos<sp/>valor<sp/>de<sp/>H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max==min)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*H=.0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>En<sp/>estos<sp/>casos,<sp/>H<sp/>no<sp/>tiene<sp/>sentido</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max==r<sp/>&amp;&amp;<sp/>g&gt;=b)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*H=60*((g-b)/(max-min));</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max==r<sp/>&amp;&amp;<sp/>g&lt;b)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*H=60*((g-b)/(max-min))+360;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max==g)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*H=60*((b-r)/(max-min))+120;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max==b)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*H=60*((r-g)/(max-min))+240;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculamos<sp/>el<sp/>valor<sp/>de<sp/>S</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(max==0)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*S=0.0;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*S=<sp/>1-(min/max);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Calculamos<sp/>el<sp/>valor<sp/>si<sp/>V</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>*V=max;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="rgb2hsv_8c_1a5b3adc13cc2586f7905ea56f141ceef0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2hsv_8c_1a5b3adc13cc2586f7905ea56f141ceef0" kindref="member">hsv2rgb</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" kindref="member">H</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" kindref="member">S</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" kindref="member">V</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*r,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*g,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*b)</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>From<sp/>the<sp/>wikipedia:<sp/>hsv<sp/>color<sp/>space<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*H<sp/>entre<sp/>0<sp/>y<sp/>360,<sp/>S<sp/>entre<sp/>0<sp/>y<sp/>1<sp/>,<sp/>V<sp/>entre<sp/>0<sp/>,255*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>h_aux,f,p,q,t,<sp/>v_aux;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>h_aux<sp/>=<sp/>((int)fabs(H/60.0))<sp/>%<sp/>6;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>f<sp/>=<sp/>(H/60.0)<sp/>-<sp/>h_aux;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>v_aux<sp/>=<sp/><ref refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" kindref="member">V</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>p<sp/>=<sp/>v_aux<sp/>*<sp/>(1-<ref refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" kindref="member">S</ref>);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>q<sp/>=<sp/>v_aux<sp/>*<sp/>(1<sp/>-<sp/>f*<ref refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" kindref="member">S</ref>);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>t<sp/>=<sp/>v_aux<sp/>*<sp/>(1<sp/>-<sp/>(1-f)*S);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)h_aux)<sp/>==<sp/>0){</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>*r<sp/>=<sp/>v_aux;<sp/>*g=t;<sp/>*b=p;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)h_aux<sp/>==<sp/>1)){</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>*r<sp/>=<sp/>q;<sp/>*g=v_aux;<sp/>*b=p;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)h_aux<sp/>==<sp/>2)){</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>*r<sp/>=<sp/>p;<sp/>*g=v_aux;<sp/>*b=t;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>}<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)h_aux<sp/>==<sp/>3)){</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>*r<sp/>=<sp/>p;<sp/>*g=q;<sp/>*b=v_aux;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)h_aux<sp/>==<sp/>4)){</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>*r<sp/>=<sp/>t;<sp/>*g=p;<sp/>*b=v_aux;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)h_aux<sp/>==<sp/>5)){</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>*r<sp/>=<sp/>v_aux;<sp/>*g=p;<sp/>*b=q;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="rgb2hsv_8c_1a5f4a3a50114f90fcb9765952ec68a2c0" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2hsv_8c_1a5f4a3a50114f90fcb9765952ec68a2c0" kindref="member">print_status_YUV</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>status)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//const<sp/>int<sp/>BITS_PACK<sp/>=<sp/>4;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j=<sp/>1<sp/>&lt;&lt;<sp/>(t<sp/>-<sp/>1);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=<sp/>t;<sp/>i<sp/>&gt;<sp/>0;<sp/>--i)</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal">,<sp/>(status<sp/>&amp;<sp/>j)<sp/>!=<sp/>0);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j&gt;&gt;=<sp/>1;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>((i<sp/>-<sp/>1)<sp/>%<sp/>BITS_PACK<sp/>==<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i==3)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;<sp/>(%lu)\n&quot;</highlight><highlight class="normal">,status);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="rgb2hsv_8c_1ad7dd44362d341ab79bbf849231329901" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2hsv_8c_1ad7dd44362d341ab79bbf849231329901" kindref="member">RGB2HSV_destroyTable</ref><sp/>()</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r,g,b;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos_r,<sp/>pos_g,<sp/>pos_b;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Destroy<sp/>Table<sp/>LUT_RGB2HSV<sp/>....<sp/>OK\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(b=0;b&lt;=<ref refid="rgb2hsv_8c_1a326c0e940e5d5c329218e5ccff03df52" kindref="member">MAX_RGB</ref>;b=b+count)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(g=0;g&lt;=<ref refid="rgb2hsv_8c_1a326c0e940e5d5c329218e5ccff03df52" kindref="member">MAX_RGB</ref>;g=g+count)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(r=0;r&lt;=<ref refid="rgb2hsv_8c_1a326c0e940e5d5c329218e5ccff03df52" kindref="member">MAX_RGB</ref>;r=r+count)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r==0)<sp/>pos_r=0;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>pos_r<sp/>=<sp/>r/4;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g==0)<sp/>pos_g=0;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>pos_g<sp/>=<sp/>g/4;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b==0)<sp/>pos_b=0;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>pos_b<sp/>=<sp/>b/4;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(LUT_RGB2HSV[pos_r][pos_g][pos_b])</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(LUT_RGB2HSV[pos_r][pos_g][pos_b]);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//RGB2HSI[pos_r][pos_g][pos_b]=NULL;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;<ref refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="rgb2hsv_8c_1a3d8f38fa99d5cc96d230b933664c17cf" kindref="member">isInitTableHSV</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185" refid="rgb2hsv_8c_1a9d3c0b7a96c30bad15271386140eb6ae" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2hsv_8c_1a9d3c0b7a96c30bad15271386140eb6ae" kindref="member">RGB2HSV_init</ref>()</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Checking<sp/>exist<sp/>one<sp/>instance<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;<ref refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="rgb2hsv_8c_1a3d8f38fa99d5cc96d230b933664c17cf" kindref="member">isInitTableHSV</ref>==1)</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Init<sp/>%s<sp/>v%s<sp/>...<sp/>\n&quot;</highlight><highlight class="normal">,<ref refid="colorspaces_8h_1a47f2e62c0dbebc787052c165afcada0e" kindref="member">NAME</ref>,<ref refid="colorspaces_8h_1aee272dd28e234398015e21016d0693a2" kindref="member">COLORSPACES_VERSION</ref>);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;<ref refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="rgb2hsv_8c_1a3d8f38fa99d5cc96d230b933664c17cf" kindref="member">isInitTableHSV</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="rgb2hsv_8c_1a1c0a6a7df547f29e98835424b6b66c09" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2hsv_8c_1a1c0a6a7df547f29e98835424b6b66c09" kindref="member">RGB2HSV_createTable</ref>()</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r,g,b;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count,<sp/>index;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos_r,<sp/>pos_g,<sp/>pos_b;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_h_s_v" kindref="compound">HSV</ref>*<sp/>newHSV;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Checking<sp/>exist<sp/>one<sp/>instance<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;<ref refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="rgb2hsv_8c_1a3d8f38fa99d5cc96d230b933664c17cf" kindref="member">isInitTableHSV</ref>==1)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>count<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>index<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(b=0;b&lt;=<ref refid="rgb2hsv_8c_1a326c0e940e5d5c329218e5ccff03df52" kindref="member">MAX_RGB</ref>;b=b+count)</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(g=0;g&lt;=<ref refid="rgb2hsv_8c_1a326c0e940e5d5c329218e5ccff03df52" kindref="member">MAX_RGB</ref>;g=g+count)</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(r=0;r&lt;=<ref refid="rgb2hsv_8c_1a326c0e940e5d5c329218e5ccff03df52" kindref="member">MAX_RGB</ref>;r=r+count)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newHSV<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_h_s_v" kindref="compound">HSV</ref>*)<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_h_s_v" kindref="compound">HSV</ref>));</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!newHSV)</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Allocated<sp/>memory<sp/>error\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rgb2hsv_8c_1a4716974869bc6274b2241b1a27dee97e" kindref="member">rgb2hsv_wiki</ref>(r,g,b,&amp;(newHSV-&gt;<ref refid="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" kindref="member">H</ref>),&amp;(newHSV-&gt;<ref refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" kindref="member">S</ref>),&amp;(newHSV-&gt;<ref refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" kindref="member">V</ref>));</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r==0)<sp/>pos_r=0;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>pos_r<sp/>=<sp/>r/4;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g==0)<sp/>pos_g=0;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>pos_g<sp/>=<sp/>g/4;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b==0)<sp/>pos_b=0;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>pos_b<sp/>=<sp/>b/4;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;[%d,%d,%d]<sp/>RGB=%d,%d,%d<sp/>-<sp/>%.1f,%.1f,%.1f<sp/>\n&quot;,pos_r,pos_g,pos_b,r,g,b,newHSI-&gt;H,newHSI-&gt;S,newHSI-&gt;I);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LUT_RGB2HSV[pos_r][pos_g][pos_b]<sp/>=<sp/>newHSV;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index++;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Table<sp/>&apos;LUT_RGB2HSV&apos;<sp/>create<sp/>with<sp/>6<sp/>bits<sp/>(%d<sp/>values)\n&quot;</highlight><highlight class="normal">,index);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;<ref refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="rgb2hsv_8c_1a3d8f38fa99d5cc96d230b933664c17cf" kindref="member">isInitTableHSV</ref>=1;</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257" refid="rgb2hsv_8c_1ab77e39ef0029a5ecf5e970bcaaae2335" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2hsv_8c_1ab77e39ef0029a5ecf5e970bcaaae2335" kindref="member">RGB2HSV_printHSV</ref><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_h_s_v" kindref="compound">HSV</ref>*<sp/>hsv)</highlight></codeline>
+<codeline lineno="258"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;HSV:<sp/>%.1f,%.1f,%.1f\n&quot;</highlight><highlight class="normal">,hsv-&gt;<ref refid="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" kindref="member">H</ref>,hsv-&gt;<ref refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" kindref="member">S</ref>,hsv-&gt;<ref refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" kindref="member">V</ref>);</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263" refid="rgb2hsv_8c_1aa96ba32c645c0cbcaa92a30849f05df0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2hsv_8c_1aa96ba32c645c0cbcaa92a30849f05df0" kindref="member">RGB2HSV_test</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r,g,b;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_h_s_v" kindref="compound">HSV</ref>*<sp/>myHSV=NULL;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_h_s_v" kindref="compound">HSV</ref><sp/>myHSV2;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>line[16];</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nIntroduce<sp/>R,G,B:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fgets(line,16,stdin);</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>sscanf(line,</highlight><highlight class="stringliteral">&quot;%d,%d,%d&quot;</highlight><highlight class="normal">,&amp;r,&amp;g,&amp;b)!=<sp/>3)</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>myHSV<sp/>=<sp/>RGB2HSV_getHSV(r,g,b);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(myHSV==NULL)</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;Error<sp/>in<sp/>myHSV=NULL\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;[Table]<sp/>RGB:<sp/>%d,%d,%d<sp/>--<sp/>HSV:<sp/>%.1f,%.1f,%.1f\n&quot;</highlight><highlight class="normal">,r,g,b,myHSV-&gt;<ref refid="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" kindref="member">H</ref>,myHSV-&gt;<ref refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" kindref="member">S</ref>,myHSV-&gt;<ref refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" kindref="member">V</ref>);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rgb2hsv_8c_1a4716974869bc6274b2241b1a27dee97e" kindref="member">rgb2hsv_wiki</ref>(r,g,b,&amp;myHSV2.<ref refid="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" kindref="member">H</ref>,&amp;myHSV2.<ref refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" kindref="member">S</ref>,&amp;myHSV2.<ref refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" kindref="member">V</ref>);</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;[Algor]<sp/>RGB:<sp/>%d,%d,%d<sp/>--<sp/>HSI:<sp/>%.1f,%.1f,%.1f\n&quot;</highlight><highlight class="normal">,r,g,b,myHSV2.<ref refid="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" kindref="member">H</ref>,myHSV2.<ref refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" kindref="member">S</ref>,myHSV2.<ref refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" kindref="member">V</ref>);</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="293"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c"/>
+  </compounddef>
+</doxygen>

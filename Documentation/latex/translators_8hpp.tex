@@ -1,0 +1,24 @@
+\hypertarget{translators_8hpp}{}\section{Deep\+Learning\+Suite/libs/comm/include/comm/ros/translators.hpp File Reference}
+\label{translators_8hpp}\index{Deep\+Learning\+Suite/libs/comm/include/comm/ros/translators.\+hpp@{Deep\+Learning\+Suite/libs/comm/include/comm/ros/translators.\+hpp}}
+{\ttfamily \#include $<$ros/ros.\+h$>$}\newline
+{\ttfamily \#include $<$cv.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$jderobottypes/image.\+h$>$}\newline
+{\ttfamily \#include $<$jderobottypes/rgbd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}image\+\_\+transport/image\+\_\+transport.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cv\+\_\+bridge/cv\+\_\+bridge.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sensor\+\_\+msgs/image\+\_\+encodings.\+h\char`\"{}}\newline
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_comm}{Comm}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_jde_robot_types_1_1_image}{Jde\+Robot\+Types\+::\+Image} \hyperlink{namespace_comm_ad9eade500ada9cd99a62086a53986e36}{Comm\+::translate\+\_\+image\+\_\+messages} (const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&image\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em translate R\+OS Image messages to Jde\+Robot Image \end{DoxyCompactList}\item 
+\hyperlink{class_jde_robot_types_1_1_rgbd}{Jde\+Robot\+Types\+::\+Rgbd} \hyperlink{namespace_comm_a7e4e8f50789805802aea4d68670a495c}{Comm\+::translate\+\_\+rgbd} (const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&rgb, const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&d)
+\begin{DoxyCompactList}\small\item\em translate R\+OS images messages to Jde\+Robot Rgbd \end{DoxyCompactList}\item 
+void \hyperlink{namespace_comm_afe46bbd9c6bec183b93879e39e21fcbc}{Comm\+::depth\+To\+R\+GB} (const cv\+::\+Mat \&float\+\_\+img, cv\+::\+Mat \&rgb\+\_\+img)
+\begin{DoxyCompactList}\small\item\em Translates from 32\+F\+C1 Image format to R\+GB. Inf values are represented by NaN, when converting to R\+GB, NaN passed to 0. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_pascal_v_o_c_dataset_writer" kind="class" language="C++" prot="public">
+    <compoundname>PascalVOCDatasetWriter</compoundname>
+    <basecompoundref refid="class_dataset_writer" prot="public" virt="non-virtual">DatasetWriter</basecompoundref>
+    <includes refid="_pascal_v_o_c_dataset_writer_8h" local="no">PascalVOCDatasetWriter.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_pascal_v_o_c_dataset_writer_1a851305a4192f78f2fa983f06dc71f3e1" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string PascalVOCDatasetWriter::fullImagesPath</definition>
+        <argsstring></argsstring>
+        <name>fullImagesPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pascal_v_o_c_dataset_writer_1a7e634d978ce70f8bffc9bec7bd129e72" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string PascalVOCDatasetWriter::fullLabelsPath</definition>
+        <argsstring></argsstring>
+        <name>fullLabelsPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pascal_v_o_c_dataset_writer_1a4e1491bfde340de48b3c599d371a4228" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string PascalVOCDatasetWriter::fullNamesPath</definition>
+        <argsstring></argsstring>
+        <name>fullNamesPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pascal_v_o_c_dataset_writer_1aaaebd5f8eacb8a91533e403fd51a6cb0" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PascalVOCDatasetWriter::overWriteclassWithZero</definition>
+        <argsstring></argsstring>
+        <name>overWriteclassWithZero</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pascal_v_o_c_dataset_writer_1ace38cc1e1586dc41028dcec202734a35" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string PascalVOCDatasetWriter::writerNamesFile</definition>
+        <argsstring></argsstring>
+        <name>writerNamesFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_pascal_v_o_c_dataset_writer_1af6fb8a8d61b6b9fced7415d2de4becc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PascalVOCDatasetWriter::PascalVOCDatasetWriter</definition>
+        <argsstring>(const std::string &amp;outPath, DatasetReaderPtr &amp;reader, const std::string &amp;writerNamesFile, bool overWriteclassWithZero=false)</argsstring>
+        <name>PascalVOCDatasetWriter</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outPath</declname>
+        </param>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref> &amp;</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>writerNamesFile</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>overWriteclassWithZero</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.cpp" bodystart="8" bodyend="27"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+      </memberdef>
+      <memberdef kind="function" id="class_pascal_v_o_c_dataset_writer_1a93b4aa44b217491ddf99348b2517e6ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void PascalVOCDatasetWriter::process</definition>
+        <argsstring>(bool writeImages=false, bool useDepth=false)</argsstring>
+        <name>process</name>
+        <reimplements refid="class_dataset_writer_1a97270b2e182e6c08d9342d8db42710fd">process</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>writeImages</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useDepth</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.cpp" bodystart="29" bodyend="171"/>
+        <references refid="class_dataset_writer_1a2c5c9a2670a4acb12278284668af7970" compoundref="_dataset_writer_8h" startline="23">DatasetWriter::skip_count</references>
+        <references refid="class_dataset_writer_1a2edef70c0de507a2e056eb3984705811" compoundref="_dataset_writer_8h" startline="19">DatasetWriter::reader</references>
+        <references refid="struct_sample_1a5f1b7716e5c4e8f5217a18021169283f" compoundref="_sample_8cpp" startline="123" endline="125">Sample::getRectRegions</references>
+        <references refid="struct_sample_1adead1781500bbf8508eae6f983621d3a" compoundref="_sample_8cpp" startline="330" endline="332">Sample::getSampleID</references>
+        <references refid="struct_sample_1a4d2e91f909467a974832c9359cc81c3c" compoundref="_sample_8cpp" startline="158" endline="165">Sample::getDepthImage</references>
+        <references refid="struct_sample_1abf69bbc9b312c22d3ded30d30d1e278f" compoundref="_sample_8cpp" startline="149" endline="156">Sample::getColorImage</references>
+        <references refid="class_dataset_writer_1a55b8888beec78365ed6ea9b057a2d17b" compoundref="_dataset_writer_8h" startline="20">DatasetWriter::outputClasses</references>
+        <references refid="struct_class_type_mapper_1af76d00ce9a2267710ee9119f0bb2e607" compoundref="_class_type_mapper_8cpp" startline="24" endline="49">ClassTypeMapper::mapString</references>
+        <references refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" compoundref="_class_type_8cpp" startline="44" endline="46">ClassType::getClassString</references>
+        <references refid="class_dataset_writer_1a44b65963ebc0c9146e29802658627031" compoundref="_dataset_writer_8h" startline="21">DatasetWriter::mapped_classes</references>
+        <references refid="class_dataset_writer_1a978c35196e9b3be5dcd7ef3cb7c968c5" compoundref="_dataset_writer_8h" startline="22">DatasetWriter::discarded_classes</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="268">
+        <label>PascalVOCDatasetWriter</label>
+        <link refid="class_pascal_v_o_c_dataset_writer"/>
+        <childnode refid="269" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="269">
+        <label>DatasetWriter</label>
+        <link refid="class_dataset_writer"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="270">
+        <label>PascalVOCDatasetWriter</label>
+        <link refid="class_pascal_v_o_c_dataset_writer"/>
+        <childnode refid="271" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="271">
+        <label>DatasetWriter</label>
+        <link refid="class_dataset_writer"/>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h" bodystart="12" bodyend="23"/>
+    <listofallmembers>
+      <member refid="class_dataset_writer_1a96cb64791602cd684ec3a05156a7c28e" prot="public" virt="non-virtual"><scope>PascalVOCDatasetWriter</scope><name>DatasetWriter</name></member>
+      <member refid="class_dataset_writer_1a978c35196e9b3be5dcd7ef3cb7c968c5" prot="protected" virt="non-virtual"><scope>PascalVOCDatasetWriter</scope><name>discarded_classes</name></member>
+      <member refid="class_pascal_v_o_c_dataset_writer_1a851305a4192f78f2fa983f06dc71f3e1" prot="private" virt="non-virtual"><scope>PascalVOCDatasetWriter</scope><name>fullImagesPath</name></member>
+      <member refid="class_pascal_v_o_c_dataset_writer_1a7e634d978ce70f8bffc9bec7bd129e72" prot="private" virt="non-virtual"><scope>PascalVOCDatasetWriter</scope><name>fullLabelsPath</name></member>
+      <member refid="class_pascal_v_o_c_dataset_writer_1a4e1491bfde340de48b3c599d371a4228" prot="private" virt="non-virtual"><scope>PascalVOCDatasetWriter</scope><name>fullNamesPath</name></member>
+      <member refid="class_dataset_writer_1a44b65963ebc0c9146e29802658627031" prot="protected" virt="non-virtual"><scope>PascalVOCDatasetWriter</scope><name>mapped_classes</name></member>
+      <member refid="class_dataset_writer_1ac19eabc3e69f6e9bc4c5185803eed626" prot="protected" virt="non-virtual"><scope>PascalVOCDatasetWriter</scope><name>outPath</name></member>
+      <member refid="class_dataset_writer_1a55b8888beec78365ed6ea9b057a2d17b" prot="protected" virt="non-virtual"><scope>PascalVOCDatasetWriter</scope><name>outputClasses</name></member>
+      <member refid="class_pascal_v_o_c_dataset_writer_1aaaebd5f8eacb8a91533e403fd51a6cb0" prot="private" virt="non-virtual"><scope>PascalVOCDatasetWriter</scope><name>overWriteclassWithZero</name></member>
+      <member refid="class_pascal_v_o_c_dataset_writer_1af6fb8a8d61b6b9fced7415d2de4becc0" prot="public" virt="non-virtual"><scope>PascalVOCDatasetWriter</scope><name>PascalVOCDatasetWriter</name></member>
+      <member refid="class_pascal_v_o_c_dataset_writer_1a93b4aa44b217491ddf99348b2517e6ea" prot="public" virt="virtual"><scope>PascalVOCDatasetWriter</scope><name>process</name></member>
+      <member refid="class_dataset_writer_1a2edef70c0de507a2e056eb3984705811" prot="protected" virt="non-virtual"><scope>PascalVOCDatasetWriter</scope><name>reader</name></member>
+      <member refid="class_dataset_writer_1a2c5c9a2670a4acb12278284668af7970" prot="protected" virt="non-virtual"><scope>PascalVOCDatasetWriter</scope><name>skip_count</name></member>
+      <member refid="class_pascal_v_o_c_dataset_writer_1ace38cc1e1586dc41028dcec202734a35" prot="private" virt="non-virtual"><scope>PascalVOCDatasetWriter</scope><name>writerNamesFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

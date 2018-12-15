@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_sample_generator_handler_1_1_detector" kind="class" language="C++" prot="public">
+    <compoundname>SampleGeneratorHandler::Detector</compoundname>
+    <includes refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8h" local="no">Detector.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_sample_generator_handler_1_1_detector_1a9444b20f47b9b07fa4800bc283ab5c8a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Detector::process</definition>
+        <argsstring>(QListView *datasetList, QListView *namesList, QListView *readerImpList, const std::string &amp;datasetPath, QListView *weightsList, QListView *netConfigList, QListView *inferencerImpList, QListView *inferencerNamesList, QGroupBox *inferencer_params, const std::string &amp;weightsPath, const std::string &amp;cfgPath, const std::string &amp;outputPath, const std::string &amp;namesPath, bool useDepth, bool singleEvaluation)</argsstring>
+        <name>process</name>
+        <param>
+          <type>QListView *</type>
+          <declname>datasetList</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>namesList</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>readerImpList</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>datasetPath</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>weightsList</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>netConfigList</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>inferencerImpList</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>inferencerNamesList</declname>
+        </param>
+        <param>
+          <type>QGroupBox *</type>
+          <declname>inferencer_params</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>weightsPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cfgPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outputPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>namesPath</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useDepth</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>singleEvaluation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.h" line="16" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp" bodystart="14" bodyend="83"/>
+        <references refid="class_sample_generator_handler_1_1_sampler_generation_handler_1af7e70df7bcf3189d20278f31c82c4c02" compoundref="_sampler_generation_handler_8cpp" startline="9" endline="55">SampleGeneratorHandler::SamplerGenerationHandler::createDatasetReaderPtr</references>
+        <references refid="class_utils_1af7234a751d8a81bd01774e9af9e403be" compoundref="_utils_8cpp" startline="7" endline="21">Utils::getListViewContent</references>
+        <references refid="class_utils_1ae909b1275beb381a21977eb3618d31cd" compoundref="_utils_8cpp" startline="52" endline="86">Utils::getInferencerParamsContent</references>
+        <references refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" compoundref="_mass_inferencer_8cpp" startline="81" endline="159">MassInferencer::process</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.h" line="14" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.h" bodystart="14" bodyend="21"/>
+    <listofallmembers>
+      <member refid="class_sample_generator_handler_1_1_detector_1a9444b20f47b9b07fa4800bc283ab5c8a" prot="public" virt="non-virtual"><scope>SampleGeneratorHandler::Detector</scope><name>process</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Config</title>
+    <detaileddescription>
+<para>JdeRobot COnfig library</para><para><simplesect kind="author"><para>Aitor Martinez Fernandez , <ulink url="mailto:.aitor.martinez.fernandez@gmail.com">.aitor.martinez.fernandez@gmail.com</ulink> </para></simplesect>
+<simplesect kind="date"><para>September 2017 </para></simplesect>
+<simplesect kind="version"><para>0.9.0 (alpha) </para></simplesect>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

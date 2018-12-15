@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_global_stats" kind="class" language="C++" prot="public">
+    <compoundname>GlobalStats</compoundname>
+    <includes refid="_global_stats_8h" local="no">GlobalStats.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_global_stats_1af253fe9b2b13df13e8d8ca8a94205edb" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="struct_class_statistics" kindref="compound">ClassStatistics</ref> &gt;</type>
+        <definition>std::map&lt;std::string,ClassStatistics&gt; GlobalStats::statsMap</definition>
+        <argsstring></argsstring>
+        <name>statsMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.h" line="31" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_global_stats_1a75c399ee4fa74973ed52cc285cae94e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GlobalStats::GlobalStats</definition>
+        <argsstring>()</argsstring>
+        <name>GlobalStats</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.h" line="13" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_global_stats_1a43e9e950d3ab11dd07f7fe3ca76f91ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GlobalStats::addTruePositive</definition>
+        <argsstring>(const std::string &amp;classID, double confScore)</argsstring>
+        <name>addTruePositive</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classID</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>confScore</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.cpp" bodystart="45" bodyend="61"/>
+        <references refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" compoundref="_class_statistics_8h" startline="35">ClassStatistics::truePositives</references>
+        <references refid="struct_class_statistics_1a0193beb26acd9dab5f7a1709b50c353c" compoundref="_class_statistics_8h" startline="36">ClassStatistics::falsePositives</references>
+        <references refid="struct_class_statistics_1a13f50f2fa57bf7de930955cd149667b6" compoundref="_class_statistics_8h" startline="37">ClassStatistics::confScores</references>
+      </memberdef>
+      <memberdef kind="function" id="class_global_stats_1ad3b7ccc1ad4191394357d7280b04d13c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GlobalStats::addFalsePositive</definition>
+        <argsstring>(const std::string &amp;classID, double confScore)</argsstring>
+        <name>addFalsePositive</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classID</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>confScore</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.cpp" bodystart="63" bodyend="81"/>
+        <references refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" compoundref="_class_statistics_8h" startline="35">ClassStatistics::truePositives</references>
+        <references refid="struct_class_statistics_1a0193beb26acd9dab5f7a1709b50c353c" compoundref="_class_statistics_8h" startline="36">ClassStatistics::falsePositives</references>
+        <references refid="struct_class_statistics_1a13f50f2fa57bf7de930955cd149667b6" compoundref="_class_statistics_8h" startline="37">ClassStatistics::confScores</references>
+      </memberdef>
+      <memberdef kind="function" id="class_global_stats_1a667d0c7293eadc152d9de17aa1b6d40e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GlobalStats::addFalseNegative</definition>
+        <argsstring>(const std::string &amp;classID)</argsstring>
+        <name>addFalseNegative</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.cpp" bodystart="83" bodyend="92"/>
+        <references refid="struct_class_statistics_1a5485816a475a6cc554c2d9e5b442c96d" compoundref="_class_statistics_8h" startline="42">ClassStatistics::falseNegatives</references>
+      </memberdef>
+      <memberdef kind="function" id="class_global_stats_1a2c29f0dbc05606ac58ae49a1dedeef78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GlobalStats::addGroundTruth</definition>
+        <argsstring>(const std::string &amp;classID, bool isRegular)</argsstring>
+        <name>addGroundTruth</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classID</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isRegular</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.cpp" bodystart="29" bodyend="43"/>
+        <references refid="struct_class_statistics_1af869c91eda0b044c899797a3b10153ca" compoundref="_class_statistics_8h" startline="32">ClassStatistics::numGroundTruthsReg</references>
+        <references refid="struct_class_statistics_1a016df1ad61f150bb92d7d987488a4741" compoundref="_class_statistics_8h" startline="33">ClassStatistics::numGroundTruthsIg</references>
+      </memberdef>
+      <memberdef kind="function" id="class_global_stats_1a44ef2427549b0eb26c755b0a2e9a5ae9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GlobalStats::addIgnore</definition>
+        <argsstring>(const std::string &amp;classID, double confScore)</argsstring>
+        <name>addIgnore</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classID</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>confScore</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.cpp" bodystart="10" bodyend="27"/>
+        <references refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" compoundref="_class_statistics_8h" startline="35">ClassStatistics::truePositives</references>
+        <references refid="struct_class_statistics_1a0193beb26acd9dab5f7a1709b50c353c" compoundref="_class_statistics_8h" startline="36">ClassStatistics::falsePositives</references>
+        <references refid="struct_class_statistics_1a13f50f2fa57bf7de930955cd149667b6" compoundref="_class_statistics_8h" startline="37">ClassStatistics::confScores</references>
+      </memberdef>
+      <memberdef kind="function" id="class_global_stats_1a07078ad8a5909da138bb7d0571f461c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GlobalStats::addIOU</definition>
+        <argsstring>(const std::string &amp;classID, double value)</argsstring>
+        <name>addIOU</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classID</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.cpp" bodystart="94" bodyend="103"/>
+        <references refid="struct_class_statistics_1ac0495687ef1d08720c41612afbf49730" compoundref="_class_statistics_8h" startline="34">ClassStatistics::iou</references>
+      </memberdef>
+      <memberdef kind="function" id="class_global_stats_1a2a98ea3959dc7e104122a7839e6249fe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::map&lt; std::string, <ref refid="struct_class_statistics" kindref="compound">ClassStatistics</ref> &gt;</type>
+        <definition>std::map&lt; std::string, ClassStatistics &gt; GlobalStats::getStats</definition>
+        <argsstring>() const</argsstring>
+        <name>getStats</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.cpp" bodystart="121" bodyend="123"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.h" line="11" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.h" bodystart="11" bodyend="33"/>
+    <listofallmembers>
+      <member refid="class_global_stats_1a667d0c7293eadc152d9de17aa1b6d40e" prot="public" virt="non-virtual"><scope>GlobalStats</scope><name>addFalseNegative</name></member>
+      <member refid="class_global_stats_1ad3b7ccc1ad4191394357d7280b04d13c" prot="public" virt="non-virtual"><scope>GlobalStats</scope><name>addFalsePositive</name></member>
+      <member refid="class_global_stats_1a2c29f0dbc05606ac58ae49a1dedeef78" prot="public" virt="non-virtual"><scope>GlobalStats</scope><name>addGroundTruth</name></member>
+      <member refid="class_global_stats_1a44ef2427549b0eb26c755b0a2e9a5ae9" prot="public" virt="non-virtual"><scope>GlobalStats</scope><name>addIgnore</name></member>
+      <member refid="class_global_stats_1a07078ad8a5909da138bb7d0571f461c3" prot="public" virt="non-virtual"><scope>GlobalStats</scope><name>addIOU</name></member>
+      <member refid="class_global_stats_1a43e9e950d3ab11dd07f7fe3ca76f91ee" prot="public" virt="non-virtual"><scope>GlobalStats</scope><name>addTruePositive</name></member>
+      <member refid="class_global_stats_1a2a98ea3959dc7e104122a7839e6249fe" prot="public" virt="non-virtual"><scope>GlobalStats</scope><name>getStats</name></member>
+      <member refid="class_global_stats_1a75c399ee4fa74973ed52cc285cae94e4" prot="public" virt="non-virtual"><scope>GlobalStats</scope><name>GlobalStats</name></member>
+      <member refid="class_global_stats_1af253fe9b2b13df13e8d8ca8a94205edb" prot="private" virt="non-virtual"><scope>GlobalStats</scope><name>statsMap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_h_s_v" kind="struct" language="C++" prot="public">
+    <compoundname>HSV</compoundname>
+    <includes refid="colorspaces_8h" local="no">colorspaces.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double HSV::H</definition>
+        <argsstring></argsstring>
+        <name>H</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="40" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="rgb2hsv_8c_1a1c0a6a7df547f29e98835424b6b66c09" compoundref="rgb2hsv_8c" startline="204" endline="254">RGB2HSV_createTable</referencedby>
+        <referencedby refid="rgb2hsv_8c_1ab77e39ef0029a5ecf5e970bcaaae2335" compoundref="rgb2hsv_8c" startline="257" endline="260">RGB2HSV_printHSV</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double HSV::S</definition>
+        <argsstring></argsstring>
+        <name>S</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="41" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="rgb2hsv_8c_1a5b3adc13cc2586f7905ea56f141ceef0" compoundref="rgb2hsv_8c" startline="98" endline="130">hsv2rgb</referencedby>
+        <referencedby refid="rgb2hsv_8c_1a1c0a6a7df547f29e98835424b6b66c09" compoundref="rgb2hsv_8c" startline="204" endline="254">RGB2HSV_createTable</referencedby>
+        <referencedby refid="rgb2hsv_8c_1ab77e39ef0029a5ecf5e970bcaaae2335" compoundref="rgb2hsv_8c" startline="257" endline="260">RGB2HSV_printHSV</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double HSV::V</definition>
+        <argsstring></argsstring>
+        <name>V</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="42" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="rgb2hsv_8c_1a5b3adc13cc2586f7905ea56f141ceef0" compoundref="rgb2hsv_8c" startline="98" endline="130">hsv2rgb</referencedby>
+        <referencedby refid="rgb2hsv_8c_1a1c0a6a7df547f29e98835424b6b66c09" compoundref="rgb2hsv_8c" startline="204" endline="254">RGB2HSV_createTable</referencedby>
+        <referencedby refid="rgb2hsv_8c_1ab77e39ef0029a5ecf5e970bcaaae2335" compoundref="rgb2hsv_8c" startline="257" endline="260">RGB2HSV_printHSV</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>*** RGB to HSI *** /// </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="39" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" bodystart="38" bodyend="43"/>
+    <listofallmembers>
+      <member refid="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" prot="public" virt="non-virtual"><scope>HSV</scope><name>H</name></member>
+      <member refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" prot="public" virt="non-virtual"><scope>HSV</scope><name>S</name></member>
+      <member refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" prot="public" virt="non-virtual"><scope>HSV</scope><name>V</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

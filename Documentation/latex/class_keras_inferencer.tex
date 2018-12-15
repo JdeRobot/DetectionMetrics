@@ -1,0 +1,75 @@
+\hypertarget{class_keras_inferencer}{}\section{Keras\+Inferencer Class Reference}
+\label{class_keras_inferencer}\index{Keras\+Inferencer@{Keras\+Inferencer}}
+
+
+{\ttfamily \#include $<$Keras\+Inferencer.\+h$>$}
+
+Inheritance diagram for Keras\+Inferencer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_keras_inferencer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_keras_inferencer_a086ecb2ca8beafba15acdfca0e3ede00}{Keras\+Inferencer} (const std\+::string \&net\+Config, const std\+::string \&net\+Weights, const std\+::string \&\hyperlink{class_framework_inferencer_abdb304d43262f48e0438a55778c7540f}{class\+Names\+File})
+\item 
+\hyperlink{struct_sample}{Sample} \hyperlink{class_keras_inferencer_a4c944e963e3ec3ca8fa0bd4b229a8931}{detect\+Imp} (const cv\+::\+Mat \&image, double confidence\+\_\+threshold)
+\item 
+int \hyperlink{class_keras_inferencer_adb1b0ad044dd344be3d12df018db589c}{get\+Keras\+Inferences} (const cv\+::\+Mat \&image, double confidence\+\_\+threshold)
+\item 
+void \hyperlink{class_keras_inferencer_a954532264ddadbee70c7c4bdb7b55ed3}{output\+\_\+result} (Py\+Object $\ast$result, int sizes\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_keras_inferencer_a98f3d1bdf1e3207e44602312c04c6e98}{init} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_keras_inferencer_a086ecb2ca8beafba15acdfca0e3ede00}\label{class_keras_inferencer_a086ecb2ca8beafba15acdfca0e3ede00}} 
+\index{Keras\+Inferencer@{Keras\+Inferencer}!Keras\+Inferencer@{Keras\+Inferencer}}
+\index{Keras\+Inferencer@{Keras\+Inferencer}!Keras\+Inferencer@{Keras\+Inferencer}}
+\subsubsection{\texorpdfstring{Keras\+Inferencer()}{KerasInferencer()}}
+{\footnotesize\ttfamily Keras\+Inferencer\+::\+Keras\+Inferencer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{net\+Config,  }\item[{const std\+::string \&}]{net\+Weights,  }\item[{const std\+::string \&}]{class\+Names\+File }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_keras_inferencer_a4c944e963e3ec3ca8fa0bd4b229a8931}\label{class_keras_inferencer_a4c944e963e3ec3ca8fa0bd4b229a8931}} 
+\index{Keras\+Inferencer@{Keras\+Inferencer}!detect\+Imp@{detect\+Imp}}
+\index{detect\+Imp@{detect\+Imp}!Keras\+Inferencer@{Keras\+Inferencer}}
+\subsubsection{\texorpdfstring{detect\+Imp()}{detectImp()}}
+{\footnotesize\ttfamily \hyperlink{struct_sample}{Sample} Keras\+Inferencer\+::detect\+Imp (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image,  }\item[{double}]{confidence\+\_\+threshold }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_framework_inferencer_a8fd7e708c8be4471bc2b37a4193a9045}{Framework\+Inferencer}.
+
+\mbox{\Hypertarget{class_keras_inferencer_adb1b0ad044dd344be3d12df018db589c}\label{class_keras_inferencer_adb1b0ad044dd344be3d12df018db589c}} 
+\index{Keras\+Inferencer@{Keras\+Inferencer}!get\+Keras\+Inferences@{get\+Keras\+Inferences}}
+\index{get\+Keras\+Inferences@{get\+Keras\+Inferences}!Keras\+Inferencer@{Keras\+Inferencer}}
+\subsubsection{\texorpdfstring{get\+Keras\+Inferences()}{getKerasInferences()}}
+{\footnotesize\ttfamily int Keras\+Inferencer\+::get\+Keras\+Inferences (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image,  }\item[{double}]{confidence\+\_\+threshold }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_keras_inferencer_a98f3d1bdf1e3207e44602312c04c6e98}\label{class_keras_inferencer_a98f3d1bdf1e3207e44602312c04c6e98}} 
+\index{Keras\+Inferencer@{Keras\+Inferencer}!init@{init}}
+\index{init@{init}!Keras\+Inferencer@{Keras\+Inferencer}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Keras\+Inferencer\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_keras_inferencer_a954532264ddadbee70c7c4bdb7b55ed3}\label{class_keras_inferencer_a954532264ddadbee70c7c4bdb7b55ed3}} 
+\index{Keras\+Inferencer@{Keras\+Inferencer}!output\+\_\+result@{output\+\_\+result}}
+\index{output\+\_\+result@{output\+\_\+result}!Keras\+Inferencer@{Keras\+Inferencer}}
+\subsubsection{\texorpdfstring{output\+\_\+result()}{output\_result()}}
+{\footnotesize\ttfamily void Keras\+Inferencer\+::output\+\_\+result (\begin{DoxyParamCaption}\item[{Py\+Object $\ast$}]{result,  }\item[{int}]{sizes\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Framework\+Evaluator/\hyperlink{_keras_inferencer_8h}{Keras\+Inferencer.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Framework\+Evaluator/\hyperlink{_keras_inferencer_8cpp}{Keras\+Inferencer.\+cpp}\end{DoxyCompactItemize}

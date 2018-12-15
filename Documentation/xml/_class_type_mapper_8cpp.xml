@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_class_type_mapper_8cpp" kind="file" language="C++">
+    <compoundname>ClassTypeMapper.cpp</compoundname>
+    <includes refid="_class_type_mapper_8h" local="yes">ClassTypeMapper.h</includes>
+    <incdepgraph>
+      <node id="1623">
+        <label>boost/property_tree/xml_parser.hpp</label>
+      </node>
+      <node id="1617">
+        <label>ClassType.h</label>
+        <link refid="_class_type_8h"/>
+        <childnode refid="1618" relation="include">
+        </childnode>
+      </node>
+      <node id="1625">
+        <label>boost/foreach.hpp</label>
+      </node>
+      <node id="1618">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="1621">
+        <label>string</label>
+      </node>
+      <node id="1616">
+        <label>ClassTypeMapper.h</label>
+        <link refid="_class_type_mapper_8h"/>
+        <childnode refid="1617" relation="include">
+        </childnode>
+        <childnode refid="1619" relation="include">
+        </childnode>
+        <childnode refid="1626" relation="include">
+        </childnode>
+        <childnode refid="1627" relation="include">
+        </childnode>
+      </node>
+      <node id="1619">
+        <label>Tree.h</label>
+        <link refid="_tree_8h"/>
+        <childnode refid="1620" relation="include">
+        </childnode>
+        <childnode refid="1621" relation="include">
+        </childnode>
+        <childnode refid="1622" relation="include">
+        </childnode>
+        <childnode refid="1623" relation="include">
+        </childnode>
+        <childnode refid="1624" relation="include">
+        </childnode>
+        <childnode refid="1625" relation="include">
+        </childnode>
+      </node>
+      <node id="1622">
+        <label>vector</label>
+      </node>
+      <node id="1624">
+        <label>boost/property_tree/ptree.hpp</label>
+      </node>
+      <node id="1620">
+        <label>iostream</label>
+      </node>
+      <node id="1627">
+        <label>unordered_map</label>
+      </node>
+      <node id="1615">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.cpp</label>
+        <link refid="_class_type_mapper_8cpp"/>
+        <childnode refid="1616" relation="include">
+        </childnode>
+      </node>
+      <node id="1626">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_class_type_mapper_8h" kindref="compound">ClassTypeMapper.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="struct_class_type_mapper_1abc46bb3ad740aaccdcb0914941a85cbe" refkind="member"><highlight class="normal"><ref refid="struct_class_type_mapper_1a4b16c84f275540ed654841dc7a33484a" kindref="member">ClassTypeMapper::ClassTypeMapper</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>classNamesFile)<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;root<sp/>=<sp/><ref refid="class_tree" kindref="compound">Tree</ref>(</highlight><highlight class="stringliteral">&quot;../ClassMappingHierarchy.xml&quot;</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Initializing<sp/>tree<sp/>for<sp/>mapping<sp/>synonmys</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_class_type_mapper_1a999c63158f2d0093de9d60734e6605fb" kindref="member">fillStringClassesVector</ref>(classNamesFile);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="struct_class_type_mapper_1a4b16c84f275540ed654841dc7a33484a" refkind="member"><highlight class="normal"><ref refid="struct_class_type_mapper_1a4b16c84f275540ed654841dc7a33484a" kindref="member">ClassTypeMapper::ClassTypeMapper</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="struct_class_type_mapper_1a999c63158f2d0093de9d60734e6605fb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_class_type_mapper_1a999c63158f2d0093de9d60734e6605fb" kindref="member">ClassTypeMapper::fillStringClassesVector</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;classesFile)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ifstream<sp/>labelFile(classesFile);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>data;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(getline(labelFile,data))<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.push_back(data);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="struct_class_type_mapper_1af76d00ce9a2267710ee9119f0bb2e607" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_class_type_mapper_1af76d00ce9a2267710ee9119f0bb2e607" kindref="member">ClassTypeMapper::mapString</ref>(std::string<sp/>&amp;className)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;::iterator<sp/>it;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>it<sp/>=<sp/>find<sp/>(this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.begin(),<sp/>this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.end(),<sp/>className);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.end())<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" kindref="member">classID</ref><sp/>=<sp/>className;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Class<sp/>Name<sp/>already<sp/>present<sp/>in<sp/>dataset<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>syns<sp/>=<sp/>this-&gt;root.<ref refid="class_tree_1ab88f67717ecef951fac69e530ded3e5d" kindref="member">getImmediateSynonmys</ref>(className);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;::iterator<sp/>itr;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!syns.empty())<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(itr<sp/>=<sp/>syns.begin();<sp/>itr<sp/>!=<sp/>syns.end();<sp/>itr++)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/>find<sp/>(this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.begin(),<sp/>this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.end(),<sp/>*itr);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.end())<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" kindref="member">classID</ref><sp/>=<sp/>*itr;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="struct_class_type_mapper_1afca49a200b7561bf9120a6a0312de119" refkind="member"><highlight class="normal">std::unordered_map&lt;std::string,<sp/>std::string&gt;<sp/><ref refid="struct_class_type_mapper_1afca49a200b7561bf9120a6a0312de119" kindref="member">ClassTypeMapper::mapFile</ref>(std::string<sp/>classNamesFile)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;<sp/>classMap;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ifstream<sp/>myReadFile;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>myReadFile.open(classNamesFile);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>output;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(myReadFile.is_open())<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(getline(myReadFile,<sp/>output))<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="struct_class_type_mapper_1af76d00ce9a2267710ee9119f0bb2e607" kindref="member">mapString</ref>(output))</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>classMap.insert(std::pair&lt;std::string,std::string&gt;(output,<sp/>this-&gt;classID));</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>classMap.insert(std::pair&lt;std::string,std::string&gt;(output,<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>output<sp/>&lt;&lt;<sp/>&apos;\n&apos;;<sp/>//<sp/>Prints<sp/>our<sp/>STRING.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>myReadFile.close();</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>classMap;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeMapper.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_sample" kind="struct" language="C++" prot="public">
+    <compoundname>Sample</compoundname>
+    <includes refid="_sample_8h" local="no">Sample.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="struct_sample_1a5e2c0088af8374d77d741835a35df40f" prot="private" static="no" mutable="no">
+        <type><ref refid="_rect_regions_8h_1af395a1050a923eecf6862568feaf5d1d" kindref="member">RectRegionsPtr</ref></type>
+        <definition>RectRegionsPtr Sample::rectRegions</definition>
+        <argsstring></argsstring>
+        <name>rectRegions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="63" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sample_1a7ee16f0f343bc397ea1e03dc93137d60" prot="private" static="no" mutable="no">
+        <type><ref refid="_contour_regions_8h_1a3a7590ecfb061e3c09270d38b53671ef" kindref="member">ContourRegionsPtr</ref></type>
+        <definition>ContourRegionsPtr Sample::contourRegions</definition>
+        <argsstring></argsstring>
+        <name>contourRegions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="64" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sample_1a54b2d48164f9ea82b537843768bf40eb" prot="private" static="no" mutable="no">
+        <type><ref refid="_rle_regions_8h_1a9bcb41ed7094063e159a665178703e0f" kindref="member">RleRegionsPtr</ref></type>
+        <definition>RleRegionsPtr Sample::rleRegions</definition>
+        <argsstring></argsstring>
+        <name>rleRegions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="65" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sample_1a55fc14b080beb6d8422043b218548865" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Sample::colorImage</definition>
+        <argsstring></argsstring>
+        <name>colorImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="66" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sample_1a12406a67f137cf22d77ad2db39af3d53" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Sample::colorImagePath</definition>
+        <argsstring></argsstring>
+        <name>colorImagePath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="67" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sample_1a72f468e150cf1f7c245c0e66d9d63cd0" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Sample::depthImage</definition>
+        <argsstring></argsstring>
+        <name>depthImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="68" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sample_1af7e7625a327cf47520796e26f8ba252b" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Sample::depthImagePath</definition>
+        <argsstring></argsstring>
+        <name>depthImagePath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="69" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sample_1a2bd6a5bc44e4efbeb67f10df48645114" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Sample::sampleID</definition>
+        <argsstring></argsstring>
+        <name>sampleID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="70" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sample_1ae9e2198a3885c371576d1880d3b5f918" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Sample::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="71" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_sample_1a5badc9a8f21bf9cedfea49805f6511ac" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Sample::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <initializer>= -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="72" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_sample_1a01a02e244812649a05144cca680a06bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sample::Sample</definition>
+        <argsstring>(const std::string &amp;path, const std::string &amp;id, bool loadDepth=true)</argsstring>
+        <name>Sample</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>loadDepth</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="167" bodyend="182"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a48a4cf559a1ff65b7d4776c262236e27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sample::Sample</definition>
+        <argsstring>()</argsstring>
+        <name>Sample</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="11" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a18364a41c55332c945504818d159f92c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sample::Sample</definition>
+        <argsstring>(const cv::Mat &amp;colorImage)</argsstring>
+        <name>Sample</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>colorImage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a54afae9ec8fb587733d941a9adbf701a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sample::Sample</definition>
+        <argsstring>(const cv::Mat &amp;colorImage, const RectRegionsPtr &amp;rectRegions)</argsstring>
+        <name>Sample</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>colorImage</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_rect_regions_8h_1af395a1050a923eecf6862568feaf5d1d" kindref="member">RectRegionsPtr</ref> &amp;</type>
+          <declname>rectRegions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="24" bodyend="27"/>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">setColorImage</references>
+        <references refid="struct_sample_1a9654dcf85e7a0b19b7b462cd7e6e1e6a" compoundref="_sample_8cpp" startline="84" endline="86">setRectRegions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1acf65866ea4db2e2e112ba93d5f6d52d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sample::Sample</definition>
+        <argsstring>(const cv::Mat &amp;colorImage, const ContourRegionsPtr &amp;contourRegions)</argsstring>
+        <name>Sample</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>colorImage</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_contour_regions_8h_1a3a7590ecfb061e3c09270d38b53671ef" kindref="member">ContourRegionsPtr</ref> &amp;</type>
+          <declname>contourRegions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="29" bodyend="32"/>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">setColorImage</references>
+        <references refid="struct_sample_1afd5668ff78c7745c33b104cdf8ddddda" compoundref="_sample_8cpp" startline="88" endline="90">setContourRegions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a9a059f41dae3c5f434ab2f5477d0ee8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sample::Sample</definition>
+        <argsstring>(const cv::Mat &amp;colorImage, const RectRegionsPtr &amp;rectRegions, const ContourRegionsPtr &amp;contourRegions)</argsstring>
+        <name>Sample</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>colorImage</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_rect_regions_8h_1af395a1050a923eecf6862568feaf5d1d" kindref="member">RectRegionsPtr</ref> &amp;</type>
+          <declname>rectRegions</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_contour_regions_8h_1a3a7590ecfb061e3c09270d38b53671ef" kindref="member">ContourRegionsPtr</ref> &amp;</type>
+          <declname>contourRegions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="34" bodyend="38"/>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">setColorImage</references>
+        <references refid="struct_sample_1a9654dcf85e7a0b19b7b462cd7e6e1e6a" compoundref="_sample_8cpp" startline="84" endline="86">setRectRegions</references>
+        <references refid="struct_sample_1afd5668ff78c7745c33b104cdf8ddddda" compoundref="_sample_8cpp" startline="88" endline="90">setContourRegions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a4e51a8f368870b1d15bd44d52df31643" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sample::Sample</definition>
+        <argsstring>(const cv::Mat &amp;colorImage, const cv::Mat &amp;depthImage, const RectRegionsPtr &amp;rectRegions)</argsstring>
+        <name>Sample</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>colorImage</declname>
+        </param>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>depthImage</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_rect_regions_8h_1af395a1050a923eecf6862568feaf5d1d" kindref="member">RectRegionsPtr</ref> &amp;</type>
+          <declname>rectRegions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="40" bodyend="44"/>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">setColorImage</references>
+        <references refid="struct_sample_1a1a140ca4aa294de160581251fe5072e5" compoundref="_sample_8cpp" startline="80" endline="82">setDepthImage</references>
+        <references refid="struct_sample_1a9654dcf85e7a0b19b7b462cd7e6e1e6a" compoundref="_sample_8cpp" startline="84" endline="86">setRectRegions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1ae36ef0947cd02feb71d9d933bec1b3d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sample::Sample</definition>
+        <argsstring>(const cv::Mat &amp;colorImage, const cv::Mat &amp;depthImage, const ContourRegionsPtr &amp;contourRegions)</argsstring>
+        <name>Sample</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>colorImage</declname>
+        </param>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>depthImage</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_contour_regions_8h_1a3a7590ecfb061e3c09270d38b53671ef" kindref="member">ContourRegionsPtr</ref> &amp;</type>
+          <declname>contourRegions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="46" bodyend="50"/>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">setColorImage</references>
+        <references refid="struct_sample_1a1a140ca4aa294de160581251fe5072e5" compoundref="_sample_8cpp" startline="80" endline="82">setDepthImage</references>
+        <references refid="struct_sample_1afd5668ff78c7745c33b104cdf8ddddda" compoundref="_sample_8cpp" startline="88" endline="90">setContourRegions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a40041d82410fa312c6b1fa9f2ebb577b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sample::Sample</definition>
+        <argsstring>(const cv::Mat &amp;colorImage, const cv::Mat &amp;depthImage, const RectRegionsPtr &amp;rectRegions, const ContourRegionsPtr &amp;contourRegions)</argsstring>
+        <name>Sample</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>colorImage</declname>
+        </param>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>depthImage</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_rect_regions_8h_1af395a1050a923eecf6862568feaf5d1d" kindref="member">RectRegionsPtr</ref> &amp;</type>
+          <declname>rectRegions</declname>
+        </param>
+        <param>
+          <type>const <ref refid="_contour_regions_8h_1a3a7590ecfb061e3c09270d38b53671ef" kindref="member">ContourRegionsPtr</ref> &amp;</type>
+          <declname>contourRegions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="52" bodyend="59"/>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">setColorImage</references>
+        <references refid="struct_sample_1a1a140ca4aa294de160581251fe5072e5" compoundref="_sample_8cpp" startline="80" endline="82">setDepthImage</references>
+        <references refid="struct_sample_1a9654dcf85e7a0b19b7b462cd7e6e1e6a" compoundref="_sample_8cpp" startline="84" endline="86">setRectRegions</references>
+        <references refid="struct_sample_1afd5668ff78c7745c33b104cdf8ddddda" compoundref="_sample_8cpp" startline="88" endline="90">setContourRegions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1aea8a48c34d94596f6affbbd28938fb2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Sample::~Sample</definition>
+        <argsstring>()</argsstring>
+        <name>~Sample</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="334" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1abf2406fa93155628a56b7087ff322ab4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::setSampleDims</definition>
+        <argsstring>(const int width, const int height)</argsstring>
+        <name>setSampleDims</name>
+        <param>
+          <type>const int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="61" bodyend="64"/>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">COCODatasetReader::appendDataset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::setColorImage</definition>
+        <argsstring>(const std::string &amp;imagePath)</argsstring>
+        <name>setColorImage</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>imagePath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="318" bodyend="320"/>
+        <referencedby refid="struct_sample_1a54afae9ec8fb587733d941a9adbf701a" compoundref="_sample_8cpp" startline="24" endline="27">Sample</referencedby>
+        <referencedby refid="class_camera_reader_1a1b78cca892789abc2294d56afab3146d" compoundref="_camera_reader_8cpp" startline="18" endline="44">CameraReader::getNextSample</referencedby>
+        <referencedby refid="class_jderobot_reader_1aef97b473c11e144fcf07e01c3181269b" compoundref="_jderobot_reader_8cpp" startline="78" endline="93">JderobotReader::getNextSample</referencedby>
+        <referencedby refid="class_recorder_reader_1afc52cde597201a1838e6e31b8c801941" compoundref="_recorder_reader_8cpp" startline="83" endline="99">RecorderReader::getNextSample</referencedby>
+        <referencedby refid="class_video_reader_1ae2b1921c337b9e2543616017dbd551a7" compoundref="_video_reader_8cpp" startline="22" endline="49">VideoReader::getNextSample</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">COCODatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_princeton_dataset_reader_1a078bdc2105cbef10ce0dc8c2fd12923e" compoundref="_princeton_dataset_reader_8cpp" startline="25" endline="75">PrincetonDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9" compoundref="_spinello_dataset_reader_8cpp" startline="24" endline="113">SpinelloDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_yolo_dataset_reader_1adabb18f657d4e0dc7b03f7f1b77eb452" compoundref="_yolo_dataset_reader_8cpp" startline="29" endline="61">YoloDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_caffe_inferencer_1a898f6d0e7106ac663a6c26ecdf799502" compoundref="_caffe_inferencer_8cpp" startline="29" endline="76">CaffeInferencer::detectImp</referencedby>
+        <referencedby refid="class_darknet_inferencer_1a9fb53792b71055b3104e5a54a6190c50" compoundref="_darknet_inferencer_8cpp" startline="14" endline="31">DarknetInferencer::detectImp</referencedby>
+        <referencedby refid="class_detections_evaluator_1ae3047c04a1fbdce949f309373f1d81c5" compoundref="_detections_evaluator_8cpp" startline="109" endline="163">DetectionsEvaluator::evaluate</referencedby>
+        <referencedby refid="class_keras_inferencer_1a4c944e963e3ec3ca8fa0bd4b229a8931" compoundref="_keras_inferencer_8cpp" startline="71" endline="103">KerasInferencer::detectImp</referencedby>
+        <referencedby refid="class_mass_batch_inferencer_1aeebcf30a5d03aac850f021d8f0ea5767" compoundref="_mass_batch_inferencer_8cpp" startline="53" endline="127">MassBatchInferencer::process</referencedby>
+        <referencedby refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" compoundref="_mass_inferencer_8cpp" startline="81" endline="159">MassInferencer::process</referencedby>
+        <referencedby refid="class_tensor_flow_inferencer_1ae8b603ab05273a9ec5fee720f23d0c58" compoundref="_tensor_flow_inferencer_8cpp" startline="72" endline="108">TensorFlowInferencer::detectImp</referencedby>
+        <referencedby refid="class_my_app_1ab3cc458e74a9fc059504fa33983249ee" compoundref="generator_8cpp" startline="31" endline="209">MyApp::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a8a506a461c09213d2bcc87b00aafa420" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::setColorImage</definition>
+        <argsstring>(const cv::Mat &amp;image)</argsstring>
+        <name>setColorImage</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="66" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a1a140ca4aa294de160581251fe5072e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::setDepthImage</definition>
+        <argsstring>(const cv::Mat &amp;image)</argsstring>
+        <name>setDepthImage</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="80" bodyend="82"/>
+        <referencedby refid="struct_sample_1a4e51a8f368870b1d15bd44d52df31643" compoundref="_sample_8cpp" startline="40" endline="44">Sample</referencedby>
+        <referencedby refid="class_recorder_reader_1afc52cde597201a1838e6e31b8c801941" compoundref="_recorder_reader_8cpp" startline="83" endline="99">RecorderReader::getNextSample</referencedby>
+        <referencedby refid="class_princeton_dataset_reader_1a078bdc2105cbef10ce0dc8c2fd12923e" compoundref="_princeton_dataset_reader_8cpp" startline="25" endline="75">PrincetonDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9" compoundref="_spinello_dataset_reader_8cpp" startline="24" endline="113">SpinelloDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_my_app_1ab3cc458e74a9fc059504fa33983249ee" compoundref="generator_8cpp" startline="31" endline="209">MyApp::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1aa56728d1891ddc907d6d379f44deada3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::setDepthImage</definition>
+        <argsstring>(const std::string &amp;imagePath)</argsstring>
+        <name>setDepthImage</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>imagePath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="322" bodyend="324"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a9654dcf85e7a0b19b7b462cd7e6e1e6a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::setRectRegions</definition>
+        <argsstring>(const RectRegionsPtr &amp;regions)</argsstring>
+        <name>setRectRegions</name>
+        <param>
+          <type>const <ref refid="_rect_regions_8h_1af395a1050a923eecf6862568feaf5d1d" kindref="member">RectRegionsPtr</ref> &amp;</type>
+          <declname>regions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="84" bodyend="86"/>
+        <referencedby refid="struct_sample_1a54afae9ec8fb587733d941a9adbf701a" compoundref="_sample_8cpp" startline="24" endline="27">Sample</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">COCODatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9" compoundref="_spinello_dataset_reader_8cpp" startline="24" endline="113">SpinelloDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_yolo_dataset_reader_1adabb18f657d4e0dc7b03f7f1b77eb452" compoundref="_yolo_dataset_reader_8cpp" startline="29" endline="61">YoloDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_caffe_inferencer_1a898f6d0e7106ac663a6c26ecdf799502" compoundref="_caffe_inferencer_8cpp" startline="29" endline="76">CaffeInferencer::detectImp</referencedby>
+        <referencedby refid="class_darknet_inferencer_1a9fb53792b71055b3104e5a54a6190c50" compoundref="_darknet_inferencer_8cpp" startline="14" endline="31">DarknetInferencer::detectImp</referencedby>
+        <referencedby refid="class_keras_inferencer_1a4c944e963e3ec3ca8fa0bd4b229a8931" compoundref="_keras_inferencer_8cpp" startline="71" endline="103">KerasInferencer::detectImp</referencedby>
+        <referencedby refid="class_tensor_flow_inferencer_1ae8b603ab05273a9ec5fee720f23d0c58" compoundref="_tensor_flow_inferencer_8cpp" startline="72" endline="108">TensorFlowInferencer::detectImp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1afd5668ff78c7745c33b104cdf8ddddda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::setContourRegions</definition>
+        <argsstring>(const ContourRegionsPtr &amp;regions)</argsstring>
+        <name>setContourRegions</name>
+        <param>
+          <type>const <ref refid="_contour_regions_8h_1a3a7590ecfb061e3c09270d38b53671ef" kindref="member">ContourRegionsPtr</ref> &amp;</type>
+          <declname>regions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="29" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="88" bodyend="90"/>
+        <referencedby refid="struct_sample_1acf65866ea4db2e2e112ba93d5f6d52d7" compoundref="_sample_8cpp" startline="29" endline="32">Sample</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a6716c8c1e8fdcd00d66b2a959a79b507" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::setRleRegions</definition>
+        <argsstring>(const RleRegionsPtr &amp;regions)</argsstring>
+        <name>setRleRegions</name>
+        <param>
+          <type>const <ref refid="_rle_regions_8h_1a9bcb41ed7094063e159a665178703e0f" kindref="member">RleRegionsPtr</ref> &amp;</type>
+          <declname>regions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="30" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="92" bodyend="94"/>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a2e9d81e9fa12aa9d0e5df202f53792f0" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="251" endline="265">COCODatasetReader::appendSegmentationRegion</referencedby>
+        <referencedby refid="class_tensor_flow_inferencer_1ae8b603ab05273a9ec5fee720f23d0c58" compoundref="_tensor_flow_inferencer_8cpp" startline="72" endline="108">TensorFlowInferencer::detectImp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a64fc306f85a0a1966f5f3b662efe95bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::setSampleID</definition>
+        <argsstring>(const std::string &amp;sampleID)</argsstring>
+        <name>setSampleID</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sampleID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="31" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="326" bodyend="328"/>
+        <referencedby refid="class_camera_reader_1a1b78cca892789abc2294d56afab3146d" compoundref="_camera_reader_8cpp" startline="18" endline="44">CameraReader::getNextSample</referencedby>
+        <referencedby refid="class_jderobot_reader_1aef97b473c11e144fcf07e01c3181269b" compoundref="_jderobot_reader_8cpp" startline="78" endline="93">JderobotReader::getNextSample</referencedby>
+        <referencedby refid="class_video_reader_1ae2b1921c337b9e2543616017dbd551a7" compoundref="_video_reader_8cpp" startline="22" endline="49">VideoReader::getNextSample</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">COCODatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_image_net_dataset_reader_1ae9aa640c47637de8cf22ed3644c945c6" compoundref="_image_net_dataset_reader_8cpp" startline="73" endline="145">ImageNetDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_own_dataset_reader_1aaae1790f8ee3efd504fbf17ec717b640" compoundref="_own_dataset_reader_8cpp" startline="19" endline="45">OwnDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_reader_1a845b70b47078741f29d8e348c3c48467" compoundref="_pascal_v_o_c_dataset_reader_8cpp" startline="39" endline="121">PascalVOCDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9" compoundref="_spinello_dataset_reader_8cpp" startline="24" endline="113">SpinelloDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_yolo_dataset_reader_1adabb18f657d4e0dc7b03f7f1b77eb452" compoundref="_yolo_dataset_reader_8cpp" startline="29" endline="61">YoloDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_detections_evaluator_1ae3047c04a1fbdce949f309373f1d81c5" compoundref="_detections_evaluator_8cpp" startline="109" endline="163">DetectionsEvaluator::evaluate</referencedby>
+        <referencedby refid="class_mass_batch_inferencer_1aeebcf30a5d03aac850f021d8f0ea5767" compoundref="_mass_batch_inferencer_8cpp" startline="53" endline="127">MassBatchInferencer::process</referencedby>
+        <referencedby refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" compoundref="_mass_inferencer_8cpp" startline="81" endline="159">MassInferencer::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a54f7617fddaaa461fd46320e5bb19201" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::clearColorImage</definition>
+        <argsstring>()</argsstring>
+        <name>clearColorImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="32" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="70" bodyend="73"/>
+        <referencedby refid="class_mass_batch_inferencer_1aeebcf30a5d03aac850f021d8f0ea5767" compoundref="_mass_batch_inferencer_8cpp" startline="53" endline="127">MassBatchInferencer::process</referencedby>
+        <referencedby refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" compoundref="_mass_inferencer_8cpp" startline="81" endline="159">MassInferencer::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a7e9518b37a26d5d3788f090808a691ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::clearDepthImage</definition>
+        <argsstring>()</argsstring>
+        <name>clearDepthImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="33" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="75" bodyend="78"/>
+        <referencedby refid="class_mass_batch_inferencer_1aeebcf30a5d03aac850f021d8f0ea5767" compoundref="_mass_batch_inferencer_8cpp" startline="53" endline="127">MassBatchInferencer::process</referencedby>
+        <referencedby refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" compoundref="_mass_inferencer_8cpp" startline="81" endline="159">MassInferencer::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a90e4c417c9b81664bd0027a7ea2aeedc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Sample::getSampleWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>getSampleWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="35" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="97" bodyend="108"/>
+        <references refid="struct_sample_1abf69bbc9b312c22d3ded30d30d1e278f" compoundref="_sample_8cpp" startline="149" endline="156">getColorImage</references>
+        <references refid="struct_sample_1a4d2e91f909467a974832c9359cc81c3c" compoundref="_sample_8cpp" startline="158" endline="165">getDepthImage</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a2e9d81e9fa12aa9d0e5df202f53792f0" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="251" endline="265">COCODatasetReader::appendSegmentationRegion</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a7e18614451f5a983bba865592b661eea" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Sample::getSampleHeight</definition>
+        <argsstring>() const</argsstring>
+        <name>getSampleHeight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="36" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="110" bodyend="121"/>
+        <references refid="struct_sample_1abf69bbc9b312c22d3ded30d30d1e278f" compoundref="_sample_8cpp" startline="149" endline="156">getColorImage</references>
+        <references refid="struct_sample_1a4d2e91f909467a974832c9359cc81c3c" compoundref="_sample_8cpp" startline="158" endline="165">getDepthImage</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a2e9d81e9fa12aa9d0e5df202f53792f0" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="251" endline="265">COCODatasetReader::appendSegmentationRegion</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a5f1b7716e5c4e8f5217a18021169283f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_rect_regions_8h_1af395a1050a923eecf6862568feaf5d1d" kindref="member">RectRegionsPtr</ref></type>
+        <definition>RectRegionsPtr Sample::getRectRegions</definition>
+        <argsstring>() const</argsstring>
+        <name>getRectRegions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="37" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="123" bodyend="125"/>
+        <referencedby refid="class_sample_generator_handler_1_1_viewer_1a49261aa867217f568842e0d460743691" compoundref="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp" startline="15" endline="40">SampleGeneratorHandler::Viewer::process</referencedby>
+        <referencedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" compoundref="_tools_2_viewer_2_viewer_8cpp" startline="21" endline="47">MyApp::operator()</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">COCODatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9" compoundref="_spinello_dataset_reader_8cpp" startline="24" endline="113">SpinelloDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_writer_1a93b4aa44b217491ddf99348b2517e6ea" compoundref="_pascal_v_o_c_dataset_writer_8cpp" startline="29" endline="171">PascalVOCDatasetWriter::process</referencedby>
+        <referencedby refid="class_yolo_dataset_writer_1a29ecb0d94701fc78b0b800d9665ca70d" compoundref="_yolo_dataset_writer_8cpp" startline="35" endline="109">YoloDatasetWriter::process</referencedby>
+        <referencedby refid="class_detections_evaluator_1ae3047c04a1fbdce949f309373f1d81c5" compoundref="_detections_evaluator_8cpp" startline="109" endline="163">DetectionsEvaluator::evaluate</referencedby>
+        <referencedby refid="class_detections_validator_1a742df9d44127fa19a919e985b7ad6953" compoundref="_detections_validator_8cpp" startline="135" endline="192">DetectionsValidator::validate</referencedby>
+        <referencedby refid="class_stats_utils_1ab2ddaf474a74534ae5896d7d564d9a68" compoundref="_stats_utils_8cpp" startline="58" endline="140">StatsUtils::computeIOUMatrix</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1aa70ac3682cd06e667b4daab50ffc66fb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_contour_regions_8h_1a3a7590ecfb061e3c09270d38b53671ef" kindref="member">ContourRegionsPtr</ref></type>
+        <definition>ContourRegionsPtr Sample::getContourRegions</definition>
+        <argsstring>() const</argsstring>
+        <name>getContourRegions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="38" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="127" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1aba47baeaed03136d0b63ca6609de25a7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_rle_regions_8h_1a9bcb41ed7094063e159a665178703e0f" kindref="member">RleRegionsPtr</ref></type>
+        <definition>RleRegionsPtr Sample::getRleRegions</definition>
+        <argsstring>() const</argsstring>
+        <name>getRleRegions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="39" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="131" bodyend="133"/>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a2e9d81e9fa12aa9d0e5df202f53792f0" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="251" endline="265">COCODatasetReader::appendSegmentationRegion</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+        <referencedby refid="class_detections_evaluator_1ae3047c04a1fbdce949f309373f1d81c5" compoundref="_detections_evaluator_8cpp" startline="109" endline="163">DetectionsEvaluator::evaluate</referencedby>
+        <referencedby refid="class_stats_utils_1ab2ddaf474a74534ae5896d7d564d9a68" compoundref="_stats_utils_8cpp" startline="58" endline="140">StatsUtils::computeIOUMatrix</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a2991d3bc768b12e84c51f52381dad944" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Sample::getColorImagePath</definition>
+        <argsstring>() const</argsstring>
+        <name>getColorImagePath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="40" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="135" bodyend="140"/>
+        <referencedby refid="class_detections_evaluator_1ae3047c04a1fbdce949f309373f1d81c5" compoundref="_detections_evaluator_8cpp" startline="109" endline="163">DetectionsEvaluator::evaluate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a7484f917e461198bd49138149920955e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Sample::getDepthImagePath</definition>
+        <argsstring>() const</argsstring>
+        <name>getDepthImagePath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="41" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="142" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1abf69bbc9b312c22d3ded30d30d1e278f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Sample::getColorImage</definition>
+        <argsstring>() const</argsstring>
+        <name>getColorImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="42" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="149" bodyend="156"/>
+        <referencedby refid="struct_sample_1a90e4c417c9b81664bd0027a7ea2aeedc" compoundref="_sample_8cpp" startline="97" endline="108">getSampleWidth</referencedby>
+        <referencedby refid="struct_sample_1a7e18614451f5a983bba865592b661eea" compoundref="_sample_8cpp" startline="110" endline="121">getSampleHeight</referencedby>
+        <referencedby refid="struct_sample_1a19aef3e998d244412a87c9d7760d0937" compoundref="_sample_8cpp" startline="184" endline="193">getSampledColorImage</referencedby>
+        <referencedby refid="class_dataset_reader_1a03ceb33ec8ecd5fb73a4b17e9701cbb3" compoundref="_dataset_reader_8cpp" startline="143" endline="150">DatasetReader::addSample</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_writer_1a93b4aa44b217491ddf99348b2517e6ea" compoundref="_pascal_v_o_c_dataset_writer_8cpp" startline="29" endline="171">PascalVOCDatasetWriter::process</referencedby>
+        <referencedby refid="class_yolo_dataset_writer_1a29ecb0d94701fc78b0b800d9665ca70d" compoundref="_yolo_dataset_writer_8cpp" startline="35" endline="109">YoloDatasetWriter::process</referencedby>
+        <referencedby refid="class_mass_batch_inferencer_1aeebcf30a5d03aac850f021d8f0ea5767" compoundref="_mass_batch_inferencer_8cpp" startline="53" endline="127">MassBatchInferencer::process</referencedby>
+        <referencedby refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" compoundref="_mass_inferencer_8cpp" startline="81" endline="159">MassInferencer::process</referencedby>
+        <referencedby refid="class_detections_validator_1a742df9d44127fa19a919e985b7ad6953" compoundref="_detections_validator_8cpp" startline="135" endline="192">DetectionsValidator::validate</referencedby>
+        <referencedby refid="class_my_app_1ab3cc458e74a9fc059504fa33983249ee" compoundref="generator_8cpp" startline="31" endline="209">MyApp::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a4d2e91f909467a974832c9359cc81c3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Sample::getDepthImage</definition>
+        <argsstring>() const</argsstring>
+        <name>getDepthImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="43" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="158" bodyend="165"/>
+        <referencedby refid="struct_sample_1a90e4c417c9b81664bd0027a7ea2aeedc" compoundref="_sample_8cpp" startline="97" endline="108">getSampleWidth</referencedby>
+        <referencedby refid="struct_sample_1a7e18614451f5a983bba865592b661eea" compoundref="_sample_8cpp" startline="110" endline="121">getSampleHeight</referencedby>
+        <referencedby refid="struct_sample_1a8e31cb70e624975d18e617dc7f71f9a1" compoundref="_sample_8cpp" startline="195" endline="202">getSampledDepthImage</referencedby>
+        <referencedby refid="struct_sample_1ac1506dc52a2f8b5bcb130c380492b784" compoundref="_sample_8cpp" startline="344" endline="358">getDeptImageGrayRGB</referencedby>
+        <referencedby refid="struct_sample_1ae6488ecd5c5996029a68915541b01245" compoundref="_sample_8cpp" startline="360" endline="377">getDepthColorMapImage</referencedby>
+        <referencedby refid="class_dataset_reader_1a03ceb33ec8ecd5fb73a4b17e9701cbb3" compoundref="_dataset_reader_8cpp" startline="143" endline="150">DatasetReader::addSample</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_writer_1a93b4aa44b217491ddf99348b2517e6ea" compoundref="_pascal_v_o_c_dataset_writer_8cpp" startline="29" endline="171">PascalVOCDatasetWriter::process</referencedby>
+        <referencedby refid="class_yolo_dataset_writer_1a29ecb0d94701fc78b0b800d9665ca70d" compoundref="_yolo_dataset_writer_8cpp" startline="35" endline="109">YoloDatasetWriter::process</referencedby>
+        <referencedby refid="class_detections_validator_1a742df9d44127fa19a919e985b7ad6953" compoundref="_detections_validator_8cpp" startline="135" endline="192">DetectionsValidator::validate</referencedby>
+        <referencedby refid="class_my_app_1ab3cc458e74a9fc059504fa33983249ee" compoundref="generator_8cpp" startline="31" endline="209">MyApp::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1ac1506dc52a2f8b5bcb130c380492b784" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Sample::getDeptImageGrayRGB</definition>
+        <argsstring>() const</argsstring>
+        <name>getDeptImageGrayRGB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="44" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="344" bodyend="358"/>
+        <references refid="struct_sample_1a4d2e91f909467a974832c9359cc81c3c" compoundref="_sample_8cpp" startline="158" endline="165">getDepthImage</references>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a19aef3e998d244412a87c9d7760d0937" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Sample::getSampledColorImage</definition>
+        <argsstring>() const</argsstring>
+        <name>getSampledColorImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="45" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="184" bodyend="193"/>
+        <references refid="struct_sample_1abf69bbc9b312c22d3ded30d30d1e278f" compoundref="_sample_8cpp" startline="149" endline="156">getColorImage</references>
+        <referencedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" compoundref="_tools_2_viewer_2_viewer_8cpp" startline="21" endline="47">MyApp::operator()</referencedby>
+        <referencedby refid="struct_sample_1af210b104d04dd438902828102f3ff2f7" compoundref="_sample_8cpp" startline="271" endline="301">show</referencedby>
+        <referencedby refid="class_mass_batch_inferencer_1aeebcf30a5d03aac850f021d8f0ea5767" compoundref="_mass_batch_inferencer_8cpp" startline="53" endline="127">MassBatchInferencer::process</referencedby>
+        <referencedby refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" compoundref="_mass_inferencer_8cpp" startline="81" endline="159">MassInferencer::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a8e31cb70e624975d18e617dc7f71f9a1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Sample::getSampledDepthImage</definition>
+        <argsstring>() const</argsstring>
+        <name>getSampledDepthImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="46" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="195" bodyend="202"/>
+        <references refid="struct_sample_1a4d2e91f909467a974832c9359cc81c3c" compoundref="_sample_8cpp" startline="158" endline="165">getDepthImage</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a4bd0f24d929a2559152a88d7669c84a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Sample::getSampledDepthColorMapImage</definition>
+        <argsstring>(double alpha=1, double beta=0) const</argsstring>
+        <name>getSampledDepthColorMapImage</name>
+        <param>
+          <type>double</type>
+          <declname>alpha</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>beta</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="47" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="379" bodyend="386"/>
+        <references refid="struct_sample_1ae6488ecd5c5996029a68915541b01245" compoundref="_sample_8cpp" startline="360" endline="377">getDepthColorMapImage</references>
+        <referencedby refid="struct_sample_1af210b104d04dd438902828102f3ff2f7" compoundref="_sample_8cpp" startline="271" endline="301">show</referencedby>
+        <referencedby refid="class_mass_batch_inferencer_1aeebcf30a5d03aac850f021d8f0ea5767" compoundref="_mass_batch_inferencer_8cpp" startline="53" endline="127">MassBatchInferencer::process</referencedby>
+        <referencedby refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" compoundref="_mass_inferencer_8cpp" startline="81" endline="159">MassInferencer::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1ae6488ecd5c5996029a68915541b01245" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Sample::getDepthColorMapImage</definition>
+        <argsstring>(double alpha=1, double beta=0) const</argsstring>
+        <name>getDepthColorMapImage</name>
+        <param>
+          <type>double</type>
+          <declname>alpha</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>beta</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="48" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="360" bodyend="377"/>
+        <references refid="struct_sample_1a4d2e91f909467a974832c9359cc81c3c" compoundref="_sample_8cpp" startline="158" endline="165">getDepthImage</references>
+        <references refid="namespacetensorflow__detect_1a92f27be303bb36c28ed99f95a89104b1" compoundref="tensorflow__detect_8py" startline="12">tensorflow_detect.threshold</references>
+        <referencedby refid="struct_sample_1a4bd0f24d929a2559152a88d7669c84a2" compoundref="_sample_8cpp" startline="379" endline="386">getSampledDepthColorMapImage</referencedby>
+        <referencedby refid="class_mass_batch_inferencer_1aeebcf30a5d03aac850f021d8f0ea5767" compoundref="_mass_batch_inferencer_8cpp" startline="53" endline="127">MassBatchInferencer::process</referencedby>
+        <referencedby refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" compoundref="_mass_inferencer_8cpp" startline="81" endline="159">MassInferencer::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a2c873df91344017f41f144af9baa3b7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::save</definition>
+        <argsstring>(const std::string &amp;outPath, int id)</argsstring>
+        <name>save</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outPath</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="49" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="204" bodyend="209"/>
+        <referencedby refid="struct_sample_1a9bf371e9070c521390867961965e8c94" compoundref="_sample_8cpp" startline="247" endline="255">save</referencedby>
+        <referencedby refid="class_own_dataset_writer_1a63b35dd2752ea15af5ab5b25693d135c" compoundref="_own_dataset_writer_8cpp" startline="12" endline="17">OwnDatasetWriter::process</referencedby>
+        <referencedby refid="class_mass_batch_inferencer_1aeebcf30a5d03aac850f021d8f0ea5767" compoundref="_mass_batch_inferencer_8cpp" startline="53" endline="127">MassBatchInferencer::process</referencedby>
+        <referencedby refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" compoundref="_mass_inferencer_8cpp" startline="81" endline="159">MassInferencer::process</referencedby>
+        <referencedby refid="class_detections_validator_1a105c1bda43fee24887005840fccb7576" compoundref="_detections_validator_8cpp" startline="51" endline="103">DetectionsValidator::validate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a8e2faad4265f473f102594897a06ae1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::save</definition>
+        <argsstring>(const std::string &amp;outPath, const std::string &amp;filename)</argsstring>
+        <name>save</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="50" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="211" bodyend="245"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a9bf371e9070c521390867961965e8c94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::save</definition>
+        <argsstring>(const std::string &amp;outPath)</argsstring>
+        <name>save</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="51" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="247" bodyend="255"/>
+        <references refid="struct_sample_1a2c873df91344017f41f144af9baa3b7c" compoundref="_sample_8cpp" startline="204" endline="209">save</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a9d1fe0b4de7a046026520b5efa39aac8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::print</definition>
+        <argsstring>()</argsstring>
+        <name>print</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="52" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="257" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1af210b104d04dd438902828102f3ff2f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Sample::show</definition>
+        <argsstring>(const std::string readerImplementation, const std::string windowName, const int waitKey, const bool showDepth)</argsstring>
+        <name>show</name>
+        <param>
+          <type>const std::string</type>
+          <declname>readerImplementation</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>windowName</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>waitKey</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>showDepth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="53" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="271" bodyend="301"/>
+        <references refid="struct_sample_1a19aef3e998d244412a87c9d7760d0937" compoundref="_sample_8cpp" startline="184" endline="193">getSampledColorImage</references>
+        <references refid="struct_sample_1a081726861f4977cb88fcdf709dd58cc9" compoundref="_sample_8cpp" startline="303" endline="305">isDepthImageValid</references>
+        <references refid="struct_sample_1a4bd0f24d929a2559152a88d7669c84a2" compoundref="_sample_8cpp" startline="379" endline="386">getSampledDepthColorMapImage</references>
+        <referencedby refid="class_sample_generator_handler_1_1_viewer_1a49261aa867217f568842e0d460743691" compoundref="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp" startline="15" endline="40">SampleGeneratorHandler::Viewer::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a081726861f4977cb88fcdf709dd58cc9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Sample::isDepthImageValid</definition>
+        <argsstring>()</argsstring>
+        <name>isDepthImageValid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="55" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="303" bodyend="305"/>
+        <referencedby refid="struct_sample_1af210b104d04dd438902828102f3ff2f7" compoundref="_sample_8cpp" startline="271" endline="301">show</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1a8dbfc18d3b69992cb7865437242e1f55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Sample::isValid</definition>
+        <argsstring>()</argsstring>
+        <name>isValid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="56" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="307" bodyend="309"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1adbfe8d1087bd0ded0edcd572a7beb7e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Sample::filterSamplesByID</definition>
+        <argsstring>(std::vector&lt; std::string &gt; filteredIDS)</argsstring>
+        <name>filterSamplesByID</name>
+        <param>
+          <type>std::vector&lt; std::string &gt;</type>
+          <declname>filteredIDS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="57" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="311" bodyend="316"/>
+        <referencedby refid="class_dataset_reader_1a17085ffacc392c459a95cd510f341a7d" compoundref="_dataset_reader_8cpp" startline="16" endline="30">DatasetReader::filterSamplesByID</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_sample_1adead1781500bbf8508eae6f983621d3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Sample::getSampleID</definition>
+        <argsstring>()</argsstring>
+        <name>getSampleID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="58" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp" bodystart="330" bodyend="332"/>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">COCODatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_writer_1a93b4aa44b217491ddf99348b2517e6ea" compoundref="_pascal_v_o_c_dataset_writer_8cpp" startline="29" endline="171">PascalVOCDatasetWriter::process</referencedby>
+        <referencedby refid="class_detections_evaluator_1ae3047c04a1fbdce949f309373f1d81c5" compoundref="_detections_evaluator_8cpp" startline="109" endline="163">DetectionsEvaluator::evaluate</referencedby>
+        <referencedby refid="class_mass_batch_inferencer_1aeebcf30a5d03aac850f021d8f0ea5767" compoundref="_mass_batch_inferencer_8cpp" startline="53" endline="127">MassBatchInferencer::process</referencedby>
+        <referencedby refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" compoundref="_mass_inferencer_8cpp" startline="81" endline="159">MassInferencer::process</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h" bodystart="12" bodyend="73"/>
+    <listofallmembers>
+      <member refid="struct_sample_1a54f7617fddaaa461fd46320e5bb19201" prot="public" virt="non-virtual"><scope>Sample</scope><name>clearColorImage</name></member>
+      <member refid="struct_sample_1a7e9518b37a26d5d3788f090808a691ba" prot="public" virt="non-virtual"><scope>Sample</scope><name>clearDepthImage</name></member>
+      <member refid="struct_sample_1a55fc14b080beb6d8422043b218548865" prot="private" virt="non-virtual"><scope>Sample</scope><name>colorImage</name></member>
+      <member refid="struct_sample_1a12406a67f137cf22d77ad2db39af3d53" prot="private" virt="non-virtual"><scope>Sample</scope><name>colorImagePath</name></member>
+      <member refid="struct_sample_1a7ee16f0f343bc397ea1e03dc93137d60" prot="private" virt="non-virtual"><scope>Sample</scope><name>contourRegions</name></member>
+      <member refid="struct_sample_1a72f468e150cf1f7c245c0e66d9d63cd0" prot="private" virt="non-virtual"><scope>Sample</scope><name>depthImage</name></member>
+      <member refid="struct_sample_1af7e7625a327cf47520796e26f8ba252b" prot="private" virt="non-virtual"><scope>Sample</scope><name>depthImagePath</name></member>
+      <member refid="struct_sample_1adbfe8d1087bd0ded0edcd572a7beb7e8" prot="public" virt="non-virtual"><scope>Sample</scope><name>filterSamplesByID</name></member>
+      <member refid="struct_sample_1abf69bbc9b312c22d3ded30d30d1e278f" prot="public" virt="non-virtual"><scope>Sample</scope><name>getColorImage</name></member>
+      <member refid="struct_sample_1a2991d3bc768b12e84c51f52381dad944" prot="public" virt="non-virtual"><scope>Sample</scope><name>getColorImagePath</name></member>
+      <member refid="struct_sample_1aa70ac3682cd06e667b4daab50ffc66fb" prot="public" virt="non-virtual"><scope>Sample</scope><name>getContourRegions</name></member>
+      <member refid="struct_sample_1ae6488ecd5c5996029a68915541b01245" prot="public" virt="non-virtual"><scope>Sample</scope><name>getDepthColorMapImage</name></member>
+      <member refid="struct_sample_1a4d2e91f909467a974832c9359cc81c3c" prot="public" virt="non-virtual"><scope>Sample</scope><name>getDepthImage</name></member>
+      <member refid="struct_sample_1a7484f917e461198bd49138149920955e" prot="public" virt="non-virtual"><scope>Sample</scope><name>getDepthImagePath</name></member>
+      <member refid="struct_sample_1ac1506dc52a2f8b5bcb130c380492b784" prot="public" virt="non-virtual"><scope>Sample</scope><name>getDeptImageGrayRGB</name></member>
+      <member refid="struct_sample_1a5f1b7716e5c4e8f5217a18021169283f" prot="public" virt="non-virtual"><scope>Sample</scope><name>getRectRegions</name></member>
+      <member refid="struct_sample_1aba47baeaed03136d0b63ca6609de25a7" prot="public" virt="non-virtual"><scope>Sample</scope><name>getRleRegions</name></member>
+      <member refid="struct_sample_1a19aef3e998d244412a87c9d7760d0937" prot="public" virt="non-virtual"><scope>Sample</scope><name>getSampledColorImage</name></member>
+      <member refid="struct_sample_1a4bd0f24d929a2559152a88d7669c84a2" prot="public" virt="non-virtual"><scope>Sample</scope><name>getSampledDepthColorMapImage</name></member>
+      <member refid="struct_sample_1a8e31cb70e624975d18e617dc7f71f9a1" prot="public" virt="non-virtual"><scope>Sample</scope><name>getSampledDepthImage</name></member>
+      <member refid="struct_sample_1a7e18614451f5a983bba865592b661eea" prot="public" virt="non-virtual"><scope>Sample</scope><name>getSampleHeight</name></member>
+      <member refid="struct_sample_1adead1781500bbf8508eae6f983621d3a" prot="public" virt="non-virtual"><scope>Sample</scope><name>getSampleID</name></member>
+      <member refid="struct_sample_1a90e4c417c9b81664bd0027a7ea2aeedc" prot="public" virt="non-virtual"><scope>Sample</scope><name>getSampleWidth</name></member>
+      <member refid="struct_sample_1a5badc9a8f21bf9cedfea49805f6511ac" prot="private" virt="non-virtual"><scope>Sample</scope><name>height</name></member>
+      <member refid="struct_sample_1a081726861f4977cb88fcdf709dd58cc9" prot="public" virt="non-virtual"><scope>Sample</scope><name>isDepthImageValid</name></member>
+      <member refid="struct_sample_1a8dbfc18d3b69992cb7865437242e1f55" prot="public" virt="non-virtual"><scope>Sample</scope><name>isValid</name></member>
+      <member refid="struct_sample_1a9d1fe0b4de7a046026520b5efa39aac8" prot="public" virt="non-virtual"><scope>Sample</scope><name>print</name></member>
+      <member refid="struct_sample_1a5e2c0088af8374d77d741835a35df40f" prot="private" virt="non-virtual"><scope>Sample</scope><name>rectRegions</name></member>
+      <member refid="struct_sample_1a54b2d48164f9ea82b537843768bf40eb" prot="private" virt="non-virtual"><scope>Sample</scope><name>rleRegions</name></member>
+      <member refid="struct_sample_1a01a02e244812649a05144cca680a06bb" prot="public" virt="non-virtual"><scope>Sample</scope><name>Sample</name></member>
+      <member refid="struct_sample_1a48a4cf559a1ff65b7d4776c262236e27" prot="public" virt="non-virtual"><scope>Sample</scope><name>Sample</name></member>
+      <member refid="struct_sample_1a18364a41c55332c945504818d159f92c" prot="public" virt="non-virtual"><scope>Sample</scope><name>Sample</name></member>
+      <member refid="struct_sample_1a54afae9ec8fb587733d941a9adbf701a" prot="public" virt="non-virtual"><scope>Sample</scope><name>Sample</name></member>
+      <member refid="struct_sample_1acf65866ea4db2e2e112ba93d5f6d52d7" prot="public" virt="non-virtual"><scope>Sample</scope><name>Sample</name></member>
+      <member refid="struct_sample_1a9a059f41dae3c5f434ab2f5477d0ee8b" prot="public" virt="non-virtual"><scope>Sample</scope><name>Sample</name></member>
+      <member refid="struct_sample_1a4e51a8f368870b1d15bd44d52df31643" prot="public" virt="non-virtual"><scope>Sample</scope><name>Sample</name></member>
+      <member refid="struct_sample_1ae36ef0947cd02feb71d9d933bec1b3d9" prot="public" virt="non-virtual"><scope>Sample</scope><name>Sample</name></member>
+      <member refid="struct_sample_1a40041d82410fa312c6b1fa9f2ebb577b" prot="public" virt="non-virtual"><scope>Sample</scope><name>Sample</name></member>
+      <member refid="struct_sample_1a2bd6a5bc44e4efbeb67f10df48645114" prot="private" virt="non-virtual"><scope>Sample</scope><name>sampleID</name></member>
+      <member refid="struct_sample_1a2c873df91344017f41f144af9baa3b7c" prot="public" virt="non-virtual"><scope>Sample</scope><name>save</name></member>
+      <member refid="struct_sample_1a8e2faad4265f473f102594897a06ae1d" prot="public" virt="non-virtual"><scope>Sample</scope><name>save</name></member>
+      <member refid="struct_sample_1a9bf371e9070c521390867961965e8c94" prot="public" virt="non-virtual"><scope>Sample</scope><name>save</name></member>
+      <member refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" prot="public" virt="non-virtual"><scope>Sample</scope><name>setColorImage</name></member>
+      <member refid="struct_sample_1a8a506a461c09213d2bcc87b00aafa420" prot="public" virt="non-virtual"><scope>Sample</scope><name>setColorImage</name></member>
+      <member refid="struct_sample_1afd5668ff78c7745c33b104cdf8ddddda" prot="public" virt="non-virtual"><scope>Sample</scope><name>setContourRegions</name></member>
+      <member refid="struct_sample_1a1a140ca4aa294de160581251fe5072e5" prot="public" virt="non-virtual"><scope>Sample</scope><name>setDepthImage</name></member>
+      <member refid="struct_sample_1aa56728d1891ddc907d6d379f44deada3" prot="public" virt="non-virtual"><scope>Sample</scope><name>setDepthImage</name></member>
+      <member refid="struct_sample_1a9654dcf85e7a0b19b7b462cd7e6e1e6a" prot="public" virt="non-virtual"><scope>Sample</scope><name>setRectRegions</name></member>
+      <member refid="struct_sample_1a6716c8c1e8fdcd00d66b2a959a79b507" prot="public" virt="non-virtual"><scope>Sample</scope><name>setRleRegions</name></member>
+      <member refid="struct_sample_1abf2406fa93155628a56b7087ff322ab4" prot="public" virt="non-virtual"><scope>Sample</scope><name>setSampleDims</name></member>
+      <member refid="struct_sample_1a64fc306f85a0a1966f5f3b662efe95bb" prot="public" virt="non-virtual"><scope>Sample</scope><name>setSampleID</name></member>
+      <member refid="struct_sample_1af210b104d04dd438902828102f3ff2f7" prot="public" virt="non-virtual"><scope>Sample</scope><name>show</name></member>
+      <member refid="struct_sample_1ae9e2198a3885c371576d1880d3b5f918" prot="private" virt="non-virtual"><scope>Sample</scope><name>width</name></member>
+      <member refid="struct_sample_1aea8a48c34d94596f6affbbd28938fb2c" prot="public" virt="non-virtual"><scope>Sample</scope><name>~Sample</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

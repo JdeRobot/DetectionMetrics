@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>DeepLearningSuite</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![Build<sp/>Status](https://travis-ci.org/JdeRobot/dl-DetectionSuite.svg?branch=master)](https://travis-ci.org/JdeRobot/dl-DetectionSuite)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">DeepLearning<sp/>Suite<sp/>is<sp/>a<sp/>set<sp/>of<sp/>tool<sp/>that<sp/>simplify<sp/>the<sp/>evaluation<sp/>of<sp/>most<sp/>common<sp/>object<sp/>detection<sp/>datasets<sp/>with<sp/>several<sp/>object<sp/>detection<sp/>neural<sp/>networks.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>idea<sp/>is<sp/>to<sp/>offer<sp/>a<sp/>generic<sp/>infrastructure<sp/>to<sp/>evaluates<sp/>object<sp/>detection<sp/>algorithms<sp/>againts<sp/>a<sp/>dataset<sp/>and<sp/>compute<sp/>most<sp/>common<sp/>statistics:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Intersecion<sp/>Over<sp/>Union</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Precision</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Recall</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Supported<sp/>Operating<sp/>Systems:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Linux</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>MacOS</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Supported<sp/>datasets<sp/>formats:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>YOLO</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>COCO</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>ImageNet</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Pascal<sp/>VOC</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Jderobot<sp/>recorder<sp/>logs</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Princeton<sp/>RGB<sp/>dataset<sp/>[1]</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Spinello<sp/>dataset<sp/>[2]</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Supported<sp/>object<sp/>detection<sp/>frameworks/algorithms</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>YOLO<sp/>(darknet)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>TensorFlow</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Keras</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Caffe</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Background<sp/>substraction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Supported<sp/>Inputs<sp/>for<sp/>Deploying<sp/>Networks</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>WebCamera/<sp/>USB<sp/>Camera</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Videos</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Streams<sp/>from<sp/>ROS</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Streams<sp/>from<sp/>ICE</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>JdeRobot<sp/>Recorder<sp/>Logs</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Sample<sp/>generation<sp/>Tool</highlight></codeline>
+<codeline><highlight class="normal">Sample<sp/>Generation<sp/>Tool<sp/>has<sp/>been<sp/>developed<sp/>in<sp/>order<sp/>to<sp/>simply<sp/>the<sp/>process<sp/>of<sp/>generation<sp/>samples<sp/>for<sp/>datasets<sp/>focused<sp/>on<sp/>object<sp/>detection.<sp/>The<sp/>tools<sp/>provides<sp/>some<sp/>features<sp/>to<sp/>reduce<sp/>the<sp/>time<sp/>on<sp/>labelling<sp/>objects<sp/>as<sp/>rectangles.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Installation</highlight></codeline>
+<codeline><highlight class="normal">####<sp/>We<sp/>have<sp/>AppImages<sp/>!!!<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">###<sp/><sp/>[Download<sp/>from<sp/>here](https://github.com/vinay0410/dl-DetectionSuite/releases/tag/continuous)<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>run,<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">First<sp/>give<sp/>executable<sp/>permissions<sp/>by<sp/>running<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">`chmod<sp/>a+x<sp/>DetectionSuitexxxxx.AppImage`<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">And<sp/>Run<sp/>it<sp/>by<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">`./DetectionSuitexxxxx<sp/>-c<sp/>configFile`<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Though<sp/>you<sp/>would<sp/>need<sp/>`python`<sp/>in<sp/>your<sp/>system<sp/>installed<sp/>with<sp/>`numpy`.<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Also,<sp/>for<sp/>using<sp/>TensorFlow,<sp/>you<sp/>would<sp/>need<sp/>to<sp/>tensorflow,<sp/>and<sp/>similaraly<sp/>for<sp/>keras<sp/>you<sp/>would<sp/>need<sp/>to<sp/>install<sp/>Keras.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>required<sp/>they<sp/>can<sp/>be<sp/>installed<sp/>by</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">pip<sp/>install<sp/>tensorflow</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">or</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">pip<sp/>install<sp/>tensorflow-gpu</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Similrarly<sp/>for<sp/>keras:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">pip<sp/>install<sp/>keras</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Requirements</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Common<sp/>deps</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;table&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;tr&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;center&gt;&lt;b&gt;Ubuntu&lt;/b&gt;&lt;/center&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;center&gt;&lt;b&gt;MacOS&lt;/b&gt;&lt;/center&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/tr&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;tr&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;pre&gt;</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt<sp/>install<sp/>build-essential<sp/>git<sp/>cmake<sp/>rapidjson-dev<sp/>libssl-dev</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt<sp/>install<sp/>libboost-dev<sp/>libboost-filesystem-dev<sp/>libboost-system-dev<sp/>libboost-program-options-dev</highlight></codeline>
+<codeline><highlight class="normal">&lt;/pre&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;pre&gt;</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>easy_install<sp/>numpy</highlight></codeline>
+<codeline><highlight class="normal">brew<sp/>install<sp/>cmake<sp/>boost<sp/>rapidjson</highlight></codeline>
+<codeline><highlight class="normal">&lt;/pre&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/tr&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;tr&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;pre&gt;</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt<sp/>install<sp/>libgoogle-glog-dev<sp/>libyaml-cpp-dev<sp/>qt5-default<sp/>libqt5svg5-dev</highlight></codeline>
+<codeline><highlight class="normal">&lt;/pre&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;pre&gt;</highlight></codeline>
+<codeline><highlight class="normal">brew<sp/>install<sp/>glog<sp/>yaml-cpp<sp/>qt</highlight></codeline>
+<codeline><highlight class="normal">&lt;/pre&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;br/&gt;</highlight></codeline>
+<codeline><highlight class="normal">Also,<sp/>just<sp/>add<sp/>qt<sp/>in<sp/>your<sp/>PATH<sp/>by<sp/>running:&lt;br/&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;pre&gt;</highlight></codeline>
+<codeline><highlight class="normal">echo<sp/>&apos;export<sp/>PATH=&quot;/usr/local/opt/qt/bin:$PATH&quot;&apos;<sp/>&gt;&gt;<sp/>~/.bash_profile</highlight></codeline>
+<codeline><highlight class="normal">&lt;/pre&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/tr&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;tr&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;td&gt;</highlight></codeline>
+<codeline><highlight class="normal">Install<sp/>OpenCV<sp/>3.4</highlight></codeline>
+<codeline><highlight class="normal">&lt;pre&gt;</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/opencv/opencv.git</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>checkout<sp/>3.4</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>-D<sp/>WITH_QT=ON<sp/>-D<sp/>WITH_GTK=OFF<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>-j4</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>make<sp/>install</highlight></codeline>
+<codeline><highlight class="normal">&lt;/pre&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;pre&gt;</highlight></codeline>
+<codeline><highlight class="normal">brew<sp/>install<sp/>opencv</highlight></codeline>
+<codeline><highlight class="normal">&lt;/pre&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;/td&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/tr&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/table&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;!--</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Opencv</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>install<sp/>libopencv-dev</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Dependencies<sp/>(Currently<sp/>being<sp/>refined<sp/>and<sp/>reduced)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>apt-get<sp/>install<sp/>-y<sp/>libboost-filesystem-dev<sp/>libboost-system-dev<sp/>libboost-thread-dev<sp/>libeigen3-dev<sp/>libgoogle-glog-dev<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>libgsl-dev<sp/>libgtkgl2.0-dev<sp/>libgtkmm-2.4-dev<sp/>libglademm-2.4-dev<sp/>libgnomecanvas2-dev<sp/>libgoocanvasmm-2.0-dev<sp/>libgnomecanvasmm-2.6-dev<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>libgtkglextmm-x11-1.2-dev<sp/>libyaml-cpp-dev<sp/>icestorm<sp/>zeroc-ice<sp/>libxml++2.6-dev<sp/>qt5-default<sp/>libqt5svg5-dev<sp/>libtinyxml-dev<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>catkin<sp/>libssl-dev</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">--&gt;</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>Optional<sp/>Dependencies</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>CUDA<sp/>(For<sp/>GPU<sp/>support)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>NVIDIA_GPGKEY_SUM=d1be581509378368edeec8c1eb2958702feedf3bc3d17011adbf24efacce4ab5<sp/>&amp;&amp;<sp/>\</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>NVIDIA_GPGKEY_FPR=ae09fe4bbd223a84b2ccfce3f60f4b3d7fa2af80<sp/>&amp;&amp;<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>apt-key<sp/>adv<sp/>--fetch-keys<sp/>http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub<sp/>&amp;&amp;<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sudo<sp/>apt-key<sp/>adv<sp/>--export<sp/>--no-emit-version<sp/>-a<sp/>$NVIDIA_GPGKEY_FPR<sp/>|<sp/>tail<sp/>-n<sp/>+5<sp/>&gt;<sp/>cudasign.pub<sp/>&amp;&amp;<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>echo<sp/>&quot;$NVIDIA_GPGKEY_SUM<sp/><sp/>cudasign.pub&quot;<sp/>|<sp/>sha256sum<sp/>-c<sp/>--strict<sp/>-<sp/>&amp;&amp;<sp/>rm<sp/>cudasign.pub<sp/>&amp;&amp;<sp/>\</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>sudo<sp/>sh<sp/>-c<sp/>&apos;echo<sp/>&quot;deb<sp/>http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64<sp/>/&quot;<sp/>&gt;<sp/>/etc/apt/sources.list.d/cuda.list&apos;<sp/>&amp;&amp;<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>sudo<sp/>sh<sp/>-c<sp/>&apos;echo<sp/>&quot;deb<sp/>http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1604/x86_64<sp/>/&quot;<sp/>&gt;<sp/>/etc/apt/sources.list.d/nvidia-ml.list&apos;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Update<sp/>and<sp/>Install</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>update</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt-get<sp/>install<sp/>-y<sp/>cuda</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Below<sp/>is<sp/>a<sp/>list<sp/>of<sp/>Optional<sp/>Dependencies<sp/>you<sp/>may<sp/>require<sp/>depending<sp/>on<sp/>your<sp/>Usage.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>###<sp/>Camera<sp/>Streaming<sp/>Support</highlight></codeline>
+<codeline><highlight class="normal">Detectionsuite<sp/>can<sp/>currently<sp/>read<sp/>ROS<sp/>and<sp/>ICE<sp/>Camera<sp/>Streams.<sp/>So,<sp/>to<sp/>enable<sp/>Streaming<sp/>support<sp/>install<sp/>any<sp/>one<sp/>of<sp/>them.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>###<sp/>Inferencing<sp/>FrameWorks</highlight></codeline>
+<codeline><highlight class="normal">DetectionSuite<sp/>currently<sp/>supports<sp/>many<sp/>Inferencing<sp/>FrameWorks<sp/>namely<sp/>Darknet,<sp/>TensorFlow,<sp/>Keras<sp/>and<sp/>Caffe.</highlight></codeline>
+<codeline><highlight class="normal">Each<sp/>one<sp/>of<sp/>them<sp/>has<sp/>some<sp/>Dependencies,<sp/>and<sp/>are<sp/>mentioned<sp/>below.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>Choose<sp/>your<sp/>Favourite<sp/>one<sp/>and<sp/>go<sp/>ahead.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>*<sp/>####<sp/>Darknet<sp/>(jderobot<sp/>fork)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>Darknet<sp/>supports<sp/>both<sp/>GPU<sp/>and<sp/>CPU<sp/>builds,<sp/>and<sp/>GPU<sp/>build<sp/>is<sp/>enabled<sp/>by<sp/>default.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>If<sp/>your<sp/>Computer<sp/>doesn&apos;t<sp/>have<sp/>a<sp/>NVIDIA<sp/>Graphics<sp/>card,<sp/>then<sp/>it<sp/>is<sp/>necessary<sp/>to<sp/>turn<sp/>of<sp/>GPU<sp/>build<sp/>in<sp/>cmake<sp/>by<sp/>passing<sp/>```-DUSE_GPU=OFF```<sp/>as<sp/>an<sp/>option<sp/>in<sp/>cmake.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>git<sp/>clone<sp/>https://github.com/JdeRobot/darknet</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cd<sp/>darknet</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mkdir<sp/>build<sp/>&amp;&amp;<sp/>cd<sp/>build</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>For<sp/>**GPU**<sp/>users:&lt;br&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>cmake<sp/>-DCMAKE_INSTALL_PREFIX=&lt;DARKNET_DIR&gt;<sp/>..</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>For<sp/>**Non-GPU**<sp/>users<sp/>(CPU<sp/>build):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>cmake<sp/>-DCMAKE_INSTALL_PREFIX=&lt;DARKNET_DIR&gt;<sp/>-DUSE_GPU=OFF<sp/>..</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>Change<sp/>```&lt;DARKNET_DIR&gt;```<sp/>to<sp/>your<sp/>custom<sp/>installation<sp/>path.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```<sp/>make<sp/>-j4<sp/>```<sp/>&lt;br&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```<sp/>sudo<sp/>make<sp/>-j4<sp/>install<sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>*<sp/>####<sp/>TensorFlow</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>Only<sp/>depedency<sp/>for<sp/>using<sp/>TensorFlow<sp/>as<sp/>an<sp/>Inferencing<sp/>framework<sp/>is<sp/>TensorFlow.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>So,<sp/>just<sp/>install<sp/>TensorFlow.<sp/>Though<sp/>it<sp/>should<sp/>be<sp/>1.4.1<sp/>or<sp/>greater.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>*<sp/>####<sp/>Keras</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>Similarly,<sp/>only<sp/>dependency<sp/>for<sp/>using<sp/>Keras<sp/>as<sp/>an<sp/>Inferencing<sp/>is<sp/>Keras<sp/>only.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>*<sp/>####<sp/>Caffe</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>For<sp/>using<sp/>Caffe<sp/>as<sp/>an<sp/>inferencing<sp/>framework,<sp/>it<sp/>is<sp/>necessary<sp/>to<sp/>install<sp/>OpenCV<sp/>3.4<sp/>or<sp/>greater.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Note:**<sp/>Be<sp/>Sure<sp/>to<sp/>checkout<sp/>the<sp/>Wiki<sp/>Pages<sp/>for<sp/>tutorials<sp/>on<sp/>how<sp/>to<sp/>use<sp/>the<sp/>above<sp/>mentioned<sp/>functionalities<sp/>and<sp/>frameworks.<sp/><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>How<sp/>to<sp/>compile<sp/>DL_DetectionSuite:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>you<sp/>have<sp/>all<sp/>the<sp/>required<sp/>Dependencies<sp/>installed<sp/>just:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>git<sp/>clone<sp/>https://github.com/JdeRobot/DeepLearningSuite</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cd<sp/>DeepLearningSuite/</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mkdir<sp/>build<sp/>&amp;&amp;<sp/>cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cmake<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>enable<sp/>Darknet<sp/>support<sp/>with<sp/>GPU:</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cmake<sp/>-DARKNET_PATH=&lt;DARKNET_INSTALLETION_DIR&gt;<sp/>-DUSE_GPU_DARKNET=ON<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">**Note:**<sp/>GPU<sp/>support<sp/>is<sp/>enabled<sp/>by<sp/>default<sp/>for<sp/>other<sp/>Frameworks</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>make<sp/>-j4</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**NOTE:**<sp/>To<sp/>enable<sp/>Darknet<sp/>support<sp/>just<sp/>pass<sp/>an<sp/>optinal<sp/>parameter<sp/>in<sp/>cmake<sp/>`-D<sp/>DARKNET_PATH<sp/>`<sp/>equal<sp/>to<sp/>Darknet<sp/>installation<sp/>directory,<sp/>and<sp/>is<sp/>same<sp/>as<sp/>`&lt;DARKNET_DIR&gt;`<sp/>passed<sp/>above<sp/>in<sp/>darknet<sp/>installation.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>it<sp/>is<sp/>build<sp/>you<sp/>will<sp/>find<sp/>various<sp/>executables<sp/>in<sp/>different<sp/>folders<sp/>ready<sp/>to<sp/>be<sp/>executed<sp/>:smile:.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Starting<sp/>with<sp/>DetectionSuite</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>best<sp/>way<sp/>to<sp/>start<sp/>is<sp/>with<sp/>our<sp/>[beginner&apos;s<sp/>tutorial](https://github.com/JdeRobot/dl-DetectionSuite/wiki/Beginner&apos;s-Tutorial-to-DetectionSuite-Part-1)<sp/>for<sp/>DetectionSuite.</highlight></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>have<sp/>any<sp/>issue<sp/>feel<sp/>free<sp/>to<sp/>drop<sp/>a<sp/>mail<sp/>&lt;vinay04sharma@icloud.com&gt;<sp/>or<sp/>create<sp/>an<sp/>issue<sp/>for<sp/>the<sp/>same.</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

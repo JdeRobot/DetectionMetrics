@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_9e4caa9e98b241898a112b3acb70c317" kind="dir">
+    <compoundname>DeepLearningSuite/DeepLearningSuiteLib/python_modules</compoundname>
+    <innerdir refid="dir_7535d753a64d206e12b2d0c07db25649">DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils</innerdir>
+    <innerfile refid="keras__detect_8py">keras_detect.py</innerfile>
+    <innerfile refid="tensorflow__detect_8py">tensorflow_detect.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/"/>
+  </compounddef>
+</doxygen>

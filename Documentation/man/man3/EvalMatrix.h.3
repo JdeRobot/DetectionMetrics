@@ -1,0 +1,40 @@
+.TH "DeepLearningSuite/DeepLearningSuiteLib/Common/EvalMatrix.h" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DeepLearningSuite/DeepLearningSuiteLib/Common/EvalMatrix.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Matrix\&.h'\fP
+.br
+\fC#include <map>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBEval\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "using \fBEval::EvalMatrix\fP = std::map< std::string, \fBMatrix\fP< double > >"
+.br
+.ti -1c
+.RI "using \fBEval::DetectionsMatcher\fP = std::map< double, std::map< std::string, std::map< int, int > >>"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBEval::printMatrix\fP (EvalMatrix matrix)"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

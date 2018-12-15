@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_ef3a148e0ae3a855b110d50627de4d6c" kind="dir">
+    <compoundname>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler</compoundname>
+    <innerfile refid="_dataset_evaluation_app_2_sampler_generator_handler_2_converter_8cpp">Converter.cpp</innerfile>
+    <innerfile refid="_converter_8h">Converter.h</innerfile>
+    <innerfile refid="_deployer_8cpp">Deployer.cpp</innerfile>
+    <innerfile refid="_deployer_8h">Deployer.h</innerfile>
+    <innerfile refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp">Detector.cpp</innerfile>
+    <innerfile refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8h">Detector.h</innerfile>
+    <innerfile refid="_dataset_evaluation_app_2_sampler_generator_handler_2_evaluator_8cpp">Evaluator.cpp</innerfile>
+    <innerfile refid="_evaluator_8h">Evaluator.h</innerfile>
+    <innerfile refid="_sampler_generation_handler_8cpp">SamplerGenerationHandler.cpp</innerfile>
+    <innerfile refid="_sampler_generation_handler_8h">SamplerGenerationHandler.h</innerfile>
+    <innerfile refid="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp">Viewer.cpp</innerfile>
+    <innerfile refid="_viewer_8h">Viewer.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/"/>
+  </compounddef>
+</doxygen>

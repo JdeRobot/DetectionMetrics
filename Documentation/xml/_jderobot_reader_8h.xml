@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_jderobot_reader_8h" kind="file" language="C++">
+    <compoundname>JderobotReader.h</compoundname>
+    <includes refid="_dataset_reader_8h" local="no">DatasetConverters/readers/DatasetReader.h</includes>
+    <includes refid="config_8h" local="no">config/config.h</includes>
+    <includes refid="communicator_8hpp" local="no">comm/communicator.hpp</includes>
+    <includes refid="camera_client_8hpp" local="no">comm/cameraClient.hpp</includes>
+    <includes local="no">yaml-cpp/yaml.h</includes>
+    <includes local="no">glog/logging.h</includes>
+    <includedby refid="_generic_live_reader_8h" local="no">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h</includedby>
+    <includedby refid="_jderobot_reader_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.cpp</includedby>
+    <incdepgraph>
+      <node id="1878">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h</label>
+        <link refid="_jderobot_reader_8h"/>
+        <childnode refid="1879" relation="include">
+        </childnode>
+        <childnode refid="1898" relation="include">
+        </childnode>
+        <childnode refid="1911" relation="include">
+        </childnode>
+        <childnode refid="1913" relation="include">
+        </childnode>
+        <childnode refid="1899" relation="include">
+        </childnode>
+        <childnode refid="1897" relation="include">
+        </childnode>
+      </node>
+      <node id="1909">
+        <label>iomanip</label>
+      </node>
+      <node id="1885">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="1892">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="1913">
+        <label>comm/cameraClient.hpp</label>
+        <link refid="camera_client_8hpp"/>
+        <childnode refid="1914" relation="include">
+        </childnode>
+        <childnode refid="1916" relation="include">
+        </childnode>
+        <childnode refid="1912" relation="include">
+        </childnode>
+        <childnode refid="1911" relation="include">
+        </childnode>
+        <childnode refid="1921" relation="include">
+        </childnode>
+      </node>
+      <node id="1897">
+        <label>glog/logging.h</label>
+      </node>
+      <node id="1890">
+        <label>Regions/RleRegions.h</label>
+        <link refid="_rle_regions_8h"/>
+        <childnode refid="1883" relation="include">
+        </childnode>
+        <childnode refid="1884" relation="include">
+        </childnode>
+        <childnode refid="1891" relation="include">
+        </childnode>
+      </node>
+      <node id="1920">
+        <label>uncopyable.h</label>
+        <link refid="uncopyable_8h"/>
+      </node>
+      <node id="1882">
+        <label>Regions/RectRegions.h</label>
+        <link refid="_rect_regions_8h"/>
+        <childnode refid="1883" relation="include">
+        </childnode>
+        <childnode refid="1884" relation="include">
+        </childnode>
+        <childnode refid="1886" relation="include">
+        </childnode>
+        <childnode refid="1887" relation="include">
+        </childnode>
+      </node>
+      <node id="1905">
+        <label>boost/algorithm/string/classification.hpp</label>
+      </node>
+      <node id="1884">
+        <label>Regions.h</label>
+        <link refid="_regions_8h"/>
+        <childnode refid="1883" relation="include">
+        </childnode>
+        <childnode refid="1885" relation="include">
+        </childnode>
+      </node>
+      <node id="1915">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="1908">
+        <label>config/properties.hpp</label>
+        <link refid="properties_8hpp"/>
+        <childnode refid="1901" relation="include">
+        </childnode>
+        <childnode refid="1909" relation="include">
+        </childnode>
+        <childnode refid="1910" relation="include">
+        </childnode>
+        <childnode refid="1880" relation="include">
+        </childnode>
+        <childnode refid="1895" relation="include">
+        </childnode>
+        <childnode refid="1899" relation="include">
+        </childnode>
+        <childnode refid="1902" relation="include">
+        </childnode>
+      </node>
+      <node id="1883">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="1880">
+        <label>string</label>
+      </node>
+      <node id="1893">
+        <label>Common/EvalMatrix.h</label>
+        <link refid="_eval_matrix_8h"/>
+        <childnode refid="1894" relation="include">
+        </childnode>
+        <childnode refid="1896" relation="include">
+        </childnode>
+      </node>
+      <node id="1896">
+        <label>map</label>
+      </node>
+      <node id="1917">
+        <label>imagecv.h</label>
+        <link refid="imagecv_8h"/>
+        <childnode refid="1915" relation="include">
+        </childnode>
+        <childnode refid="1918" relation="include">
+        </childnode>
+        <childnode refid="1895" relation="include">
+        </childnode>
+        <childnode refid="1901" relation="include">
+        </childnode>
+        <childnode refid="1919" relation="include">
+        </childnode>
+        <childnode refid="1920" relation="include">
+        </childnode>
+      </node>
+      <node id="1888">
+        <label>Regions/ContourRegions.h</label>
+        <link refid="_contour_regions_8h"/>
+        <childnode refid="1883" relation="include">
+        </childnode>
+        <childnode refid="1884" relation="include">
+        </childnode>
+        <childnode refid="1889" relation="include">
+        </childnode>
+      </node>
+      <node id="1918">
+        <label>exception</label>
+      </node>
+      <node id="1898">
+        <label>config/config.h</label>
+        <link refid="config_8h"/>
+        <childnode refid="1899" relation="include">
+        </childnode>
+        <childnode refid="1900" relation="include">
+        </childnode>
+        <childnode refid="1908" relation="include">
+        </childnode>
+      </node>
+      <node id="1906">
+        <label>fstream</label>
+      </node>
+      <node id="1899">
+        <label>yaml-cpp/yaml.h</label>
+      </node>
+      <node id="1904">
+        <label>boost/algorithm/string/split.hpp</label>
+      </node>
+      <node id="1914">
+        <label>jderobottypes/image.h</label>
+        <link refid="image_8h"/>
+        <childnode refid="1915" relation="include">
+        </childnode>
+      </node>
+      <node id="1891">
+        <label>RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="1885" relation="include">
+        </childnode>
+        <childnode refid="1892" relation="include">
+        </childnode>
+      </node>
+      <node id="1902">
+        <label>config/stdutils.hpp</label>
+        <link refid="stdutils_8hpp"/>
+        <childnode refid="1903" relation="include">
+        </childnode>
+        <childnode refid="1880" relation="include">
+        </childnode>
+        <childnode refid="1895" relation="include">
+        </childnode>
+        <childnode refid="1904" relation="include">
+        </childnode>
+        <childnode refid="1905" relation="include">
+        </childnode>
+        <childnode refid="1906" relation="include">
+        </childnode>
+      </node>
+      <node id="1881">
+        <label>Common/Sample.h</label>
+        <link refid="_sample_8h"/>
+        <childnode refid="1882" relation="include">
+        </childnode>
+        <childnode refid="1888" relation="include">
+        </childnode>
+        <childnode refid="1890" relation="include">
+        </childnode>
+      </node>
+      <node id="1895">
+        <label>vector</label>
+      </node>
+      <node id="1916">
+        <label>colorspaces/colorspacesmm.h</label>
+        <link refid="colorspacesmm_8h"/>
+        <childnode refid="1917" relation="include">
+        </childnode>
+      </node>
+      <node id="1912">
+        <label>comm/tools.hpp</label>
+        <link refid="tools_8hpp"/>
+        <childnode refid="1908" relation="include">
+        </childnode>
+      </node>
+      <node id="1910">
+        <label>sstream</label>
+      </node>
+      <node id="1894">
+        <label>Matrix.h</label>
+        <link refid="_matrix_8h"/>
+        <childnode refid="1895" relation="include">
+        </childnode>
+      </node>
+      <node id="1889">
+        <label>ContourRegion.h</label>
+        <link refid="_contour_region_8h"/>
+        <childnode refid="1883" relation="include">
+        </childnode>
+        <childnode refid="1885" relation="include">
+        </childnode>
+      </node>
+      <node id="1903">
+        <label>cstdlib</label>
+      </node>
+      <node id="1921">
+        <label>comm/interfaces/cameraClient.hpp</label>
+        <link refid="interfaces_2camera_client_8hpp"/>
+        <childnode refid="1914" relation="include">
+        </childnode>
+      </node>
+      <node id="1901">
+        <label>iostream</label>
+      </node>
+      <node id="1900">
+        <label>config/loader.hpp</label>
+        <link refid="loader_8hpp"/>
+        <childnode refid="1901" relation="include">
+        </childnode>
+        <childnode refid="1880" relation="include">
+        </childnode>
+        <childnode refid="1902" relation="include">
+        </childnode>
+        <childnode refid="1899" relation="include">
+        </childnode>
+        <childnode refid="1907" relation="include">
+        </childnode>
+        <childnode refid="1908" relation="include">
+        </childnode>
+      </node>
+      <node id="1886">
+        <label>RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="1883" relation="include">
+        </childnode>
+      </node>
+      <node id="1879">
+        <label>DatasetConverters/readers/DatasetReader.h</label>
+        <link refid="_dataset_reader_8h"/>
+        <childnode refid="1880" relation="include">
+        </childnode>
+        <childnode refid="1881" relation="include">
+        </childnode>
+        <childnode refid="1885" relation="include">
+        </childnode>
+        <childnode refid="1893" relation="include">
+        </childnode>
+        <childnode refid="1897" relation="include">
+        </childnode>
+      </node>
+      <node id="1887">
+        <label>algorithm</label>
+      </node>
+      <node id="1919">
+        <label>memory</label>
+      </node>
+      <node id="1907">
+        <label>yaml-cpp/exceptions.h</label>
+      </node>
+      <node id="1911">
+        <label>comm/communicator.hpp</label>
+        <link refid="communicator_8hpp"/>
+        <childnode refid="1908" relation="include">
+        </childnode>
+        <childnode refid="1912" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1932">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.cpp</label>
+        <link refid="_generic_live_reader_8cpp"/>
+      </node>
+      <node id="1922">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h</label>
+        <link refid="_jderobot_reader_8h"/>
+        <childnode refid="1923" relation="include">
+        </childnode>
+        <childnode refid="1933" relation="include">
+        </childnode>
+      </node>
+      <node id="1926">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_converter_8cpp"/>
+      </node>
+      <node id="1931">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Viewer.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp"/>
+      </node>
+      <node id="1923">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h</label>
+        <link refid="_generic_live_reader_8h"/>
+        <childnode refid="1924" relation="include">
+        </childnode>
+        <childnode refid="1925" relation="include">
+        </childnode>
+        <childnode refid="1927" relation="include">
+        </childnode>
+        <childnode refid="1932" relation="include">
+        </childnode>
+      </node>
+      <node id="1927">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.cpp</label>
+        <link refid="_deployer_8cpp"/>
+      </node>
+      <node id="1930">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.cpp</label>
+        <link refid="_sampler_generation_handler_8cpp"/>
+      </node>
+      <node id="1925">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.h</label>
+        <link refid="_sampler_generation_handler_8h"/>
+        <childnode refid="1926" relation="include">
+        </childnode>
+        <childnode refid="1927" relation="include">
+        </childnode>
+        <childnode refid="1928" relation="include">
+        </childnode>
+        <childnode refid="1929" relation="include">
+        </childnode>
+        <childnode refid="1930" relation="include">
+        </childnode>
+        <childnode refid="1931" relation="include">
+        </childnode>
+      </node>
+      <node id="1929">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_evaluator_8cpp"/>
+      </node>
+      <node id="1933">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.cpp</label>
+        <link refid="_jderobot_reader_8cpp"/>
+      </node>
+      <node id="1924">
+        <label>DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="1928">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_jderobot_reader" prot="public">JderobotReader</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_jderobot_reader_8h_1a8ba9a6449b78871a7512886c1b53dfc0" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="class_jderobot_reader" kindref="compound">JderobotReader</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;JderobotReader&gt; JderobotReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>JderobotReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>24/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_JDEROBOTREADER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_JDEROBOTREADER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_dataset_reader_8h" kindref="compound">DatasetConverters/readers/DatasetReader.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="config_8h" kindref="compound">config/config.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="communicator_8hpp" kindref="compound">comm/communicator.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="camera_client_8hpp" kindref="compound">comm/cameraClient.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;yaml-cpp/yaml.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;glog/logging.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_jderobot_reader" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_jderobot_reader" kindref="compound">JderobotReader</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_dataset_reader" kindref="compound">DatasetReader</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_jderobot_reader_1a89dde6b225b901d5b55926437be46d54" kindref="member">JderobotReader</ref>(std::map&lt;std::string,<sp/>std::string&gt;*<sp/>deployer_params_map,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" kindref="member">path</ref>);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_jderobot_reader_1aef97b473c11e144fcf07e01c3181269b" kindref="member">getNextSample</ref>(<ref refid="struct_sample" kindref="compound">Sample</ref><sp/>&amp;sample);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_comm_1_1_communicator" kindref="compound">Comm::Communicator</ref>*<sp/>jdrc;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_comm_1_1_camera_client" kindref="compound">Comm::CameraClient</ref>*<sp/>camera;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sample_count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="_jderobot_reader_8h_1a8ba9a6449b78871a7512886c1b53dfc0" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;JderobotReader&gt;<sp/><ref refid="_jderobot_reader_8h_1a8ba9a6449b78871a7512886c1b53dfc0" kindref="member">JderobotReaderPtr</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_JDEROBOTREADER_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,67 @@
+.TH "DetectionsEvaluator" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DetectionsEvaluator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DetectionsEvaluator\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDetectionsEvaluator\fP (\fBDatasetReaderPtr\fP gt, \fBDatasetReaderPtr\fP detections, bool debug=false)"
+.br
+.ti -1c
+.RI "void \fBevaluate\fP (bool isIouTypeBbox)"
+.br
+.ti -1c
+.RI "void \fBaccumulateResults\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddValidMixClass\fP (const std::string classA, const std::string classB)"
+.br
+.ti -1c
+.RI "void \fBaddClassToDisplay\fP (const std::string &classID)"
+.br
+.ti -1c
+.RI "std::map< std::string, double > \fBgetClassWiseAP\fP ()"
+.br
+.ti -1c
+.RI "std::map< std::string, double > \fBgetClassWiseAR\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetOverallmAP\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetOverallmAR\fP ()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DetectionsEvaluator::DetectionsEvaluator (\fBDatasetReaderPtr\fP gt, \fBDatasetReaderPtr\fP detections, bool debug = \fCfalse\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void DetectionsEvaluator::accumulateResults ()"
+
+.SS "void DetectionsEvaluator::addClassToDisplay (const std::string & classID)"
+
+.SS "void DetectionsEvaluator::addValidMixClass (const std::string classA, const std::string classB)"
+
+.SS "void DetectionsEvaluator::evaluate (bool isIouTypeBbox)"
+
+.SS "std::map< std::string, double > DetectionsEvaluator::getClassWiseAP ()"
+
+.SS "std::map< std::string, double > DetectionsEvaluator::getClassWiseAR ()"
+
+.SS "double DetectionsEvaluator::getOverallmAP ()"
+
+.SS "double DetectionsEvaluator::getOverallmAR ()"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

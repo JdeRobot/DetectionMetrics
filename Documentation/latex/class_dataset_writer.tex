@@ -1,0 +1,101 @@
+\hypertarget{class_dataset_writer}{}\section{Dataset\+Writer Class Reference}
+\label{class_dataset_writer}\index{Dataset\+Writer@{Dataset\+Writer}}
+
+
+{\ttfamily \#include $<$Dataset\+Writer.\+h$>$}
+
+Inheritance diagram for Dataset\+Writer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.728395cm]{class_dataset_writer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_dataset_writer_a96cb64791602cd684ec3a05156a7c28e}{Dataset\+Writer} (const std\+::string \&\hyperlink{class_dataset_writer_ac19eabc3e69f6e9bc4c5185803eed626}{out\+Path}, \hyperlink{_dataset_reader_8h_a30d89cba514a220d64d04535c0465f1c}{Dataset\+Reader\+Ptr} \&\hyperlink{class_dataset_writer_a2edef70c0de507a2e056eb3984705811}{reader})
+\item 
+virtual void \hyperlink{class_dataset_writer_a97270b2e182e6c08d9342d8db42710fd}{process} (bool write\+Images=false, bool use\+Depth=false)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_dataset_writer_ac19eabc3e69f6e9bc4c5185803eed626}{out\+Path}
+\item 
+\hyperlink{_dataset_reader_8h_a30d89cba514a220d64d04535c0465f1c}{Dataset\+Reader\+Ptr} \& \hyperlink{class_dataset_writer_a2edef70c0de507a2e056eb3984705811}{reader}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_dataset_writer_a55b8888beec78365ed6ea9b057a2d17b}{output\+Classes}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \hyperlink{class_dataset_writer_a44b65963ebc0c9146e29802658627031}{mapped\+\_\+classes}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, long int $>$ \hyperlink{class_dataset_writer_a978c35196e9b3be5dcd7ef3cb7c968c5}{discarded\+\_\+classes}
+\item 
+unsigned int \hyperlink{class_dataset_writer_a2c5c9a2670a4acb12278284668af7970}{skip\+\_\+count} = 10
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dataset_writer_a96cb64791602cd684ec3a05156a7c28e}\label{class_dataset_writer_a96cb64791602cd684ec3a05156a7c28e}} 
+\index{Dataset\+Writer@{Dataset\+Writer}!Dataset\+Writer@{Dataset\+Writer}}
+\index{Dataset\+Writer@{Dataset\+Writer}!Dataset\+Writer@{Dataset\+Writer}}
+\subsubsection{\texorpdfstring{Dataset\+Writer()}{DatasetWriter()}}
+{\footnotesize\ttfamily Dataset\+Writer\+::\+Dataset\+Writer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{out\+Path,  }\item[{\hyperlink{_dataset_reader_8h_a30d89cba514a220d64d04535c0465f1c}{Dataset\+Reader\+Ptr} \&}]{reader }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dataset_writer_a97270b2e182e6c08d9342d8db42710fd}\label{class_dataset_writer_a97270b2e182e6c08d9342d8db42710fd}} 
+\index{Dataset\+Writer@{Dataset\+Writer}!process@{process}}
+\index{process@{process}!Dataset\+Writer@{Dataset\+Writer}}
+\subsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily virtual void Dataset\+Writer\+::process (\begin{DoxyParamCaption}\item[{bool}]{write\+Images = {\ttfamily false},  }\item[{bool}]{use\+Depth = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_own_dataset_writer_a63b35dd2752ea15af5ab5b25693d135c}{Own\+Dataset\+Writer}, \hyperlink{class_pascal_v_o_c_dataset_writer_a93b4aa44b217491ddf99348b2517e6ea}{Pascal\+V\+O\+C\+Dataset\+Writer}, \hyperlink{class_yolo_dataset_writer_a29ecb0d94701fc78b0b800d9665ca70d}{Yolo\+Dataset\+Writer}, and \hyperlink{class_c_o_c_o_dataset_writer_a82b054ee143507382ae3f87b46c246d6}{C\+O\+C\+O\+Dataset\+Writer}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_dataset_writer_a978c35196e9b3be5dcd7ef3cb7c968c5}\label{class_dataset_writer_a978c35196e9b3be5dcd7ef3cb7c968c5}} 
+\index{Dataset\+Writer@{Dataset\+Writer}!discarded\+\_\+classes@{discarded\+\_\+classes}}
+\index{discarded\+\_\+classes@{discarded\+\_\+classes}!Dataset\+Writer@{Dataset\+Writer}}
+\subsubsection{\texorpdfstring{discarded\+\_\+classes}{discarded\_classes}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, long int$>$ Dataset\+Writer\+::discarded\+\_\+classes\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dataset_writer_a44b65963ebc0c9146e29802658627031}\label{class_dataset_writer_a44b65963ebc0c9146e29802658627031}} 
+\index{Dataset\+Writer@{Dataset\+Writer}!mapped\+\_\+classes@{mapped\+\_\+classes}}
+\index{mapped\+\_\+classes@{mapped\+\_\+classes}!Dataset\+Writer@{Dataset\+Writer}}
+\subsubsection{\texorpdfstring{mapped\+\_\+classes}{mapped\_classes}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::string$>$ Dataset\+Writer\+::mapped\+\_\+classes\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dataset_writer_ac19eabc3e69f6e9bc4c5185803eed626}\label{class_dataset_writer_ac19eabc3e69f6e9bc4c5185803eed626}} 
+\index{Dataset\+Writer@{Dataset\+Writer}!out\+Path@{out\+Path}}
+\index{out\+Path@{out\+Path}!Dataset\+Writer@{Dataset\+Writer}}
+\subsubsection{\texorpdfstring{out\+Path}{outPath}}
+{\footnotesize\ttfamily std\+::string Dataset\+Writer\+::out\+Path\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dataset_writer_a55b8888beec78365ed6ea9b057a2d17b}\label{class_dataset_writer_a55b8888beec78365ed6ea9b057a2d17b}} 
+\index{Dataset\+Writer@{Dataset\+Writer}!output\+Classes@{output\+Classes}}
+\index{output\+Classes@{output\+Classes}!Dataset\+Writer@{Dataset\+Writer}}
+\subsubsection{\texorpdfstring{output\+Classes}{outputClasses}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Dataset\+Writer\+::output\+Classes\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dataset_writer_a2edef70c0de507a2e056eb3984705811}\label{class_dataset_writer_a2edef70c0de507a2e056eb3984705811}} 
+\index{Dataset\+Writer@{Dataset\+Writer}!reader@{reader}}
+\index{reader@{reader}!Dataset\+Writer@{Dataset\+Writer}}
+\subsubsection{\texorpdfstring{reader}{reader}}
+{\footnotesize\ttfamily \hyperlink{_dataset_reader_8h_a30d89cba514a220d64d04535c0465f1c}{Dataset\+Reader\+Ptr}\& Dataset\+Writer\+::reader\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dataset_writer_a2c5c9a2670a4acb12278284668af7970}\label{class_dataset_writer_a2c5c9a2670a4acb12278284668af7970}} 
+\index{Dataset\+Writer@{Dataset\+Writer}!skip\+\_\+count@{skip\+\_\+count}}
+\index{skip\+\_\+count@{skip\+\_\+count}!Dataset\+Writer@{Dataset\+Writer}}
+\subsubsection{\texorpdfstring{skip\+\_\+count}{skip\_count}}
+{\footnotesize\ttfamily unsigned int Dataset\+Writer\+::skip\+\_\+count = 10\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Dataset\+Converters/writers/\hyperlink{_dataset_writer_8h}{Dataset\+Writer.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Dataset\+Converters/writers/\hyperlink{_dataset_writer_8cpp}{Dataset\+Writer.\+cpp}\end{DoxyCompactItemize}

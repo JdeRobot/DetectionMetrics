@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacestd" kind="namespace" language="C++">
+    <compoundname>std</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacestd_1afbda037ce4502f9a197deba4a43bada9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>vector&lt; string &gt;</type>
+        <definition>vector&lt;string&gt; std::split</definition>
+        <argsstring>(string str, string del)</argsstring>
+        <name>split</name>
+        <param>
+          <type>string</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>del</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/stdutils.hpp" line="44" column="1" bodyfile="DeepLearningSuite/libs/config/include/config/stdutils.hpp" bodystart="44" bodyend="48"/>
+        <referencedby refid="struct_sample_1ac1506dc52a2f8b5bcb130c380492b784" compoundref="_sample_8cpp" startline="344" endline="358">Sample::getDeptImageGrayRGB</referencedby>
+        <referencedby refid="class_depth_foreground_segmentator_1a7ad8701ffcce41cf71694f02bbb5f40d" compoundref="_depth_foreground_segmentator_8cpp" startline="26" endline="121">DepthForegroundSegmentator::process</referencedby>
+        <referencedby refid="class_detections_validator_1a105c1bda43fee24887005840fccb7576" compoundref="_detections_validator_8cpp" startline="51" endline="103">DetectionsValidator::validate</referencedby>
+        <referencedby refid="struct_contour_regions_1a4f77a669499f53d59e51aa30ec040bc6" compoundref="_contour_regions_8cpp" startline="104" endline="122">ContourRegions::drawRegions</referencedby>
+        <referencedby refid="class_depth_utils_1aa27c57f9882e66c600a03a5378c00110" compoundref="_depth_utils_8cpp" startline="46" endline="69">DepthUtils::spinello_mat16_to_viewable</referencedby>
+        <referencedby refid="namespacejderobotconfig_1_1loader_1a521f15425002acf9d87a5857ac38268f" compoundref="loader_8cpp" startline="27" endline="44">jderobotconfig::loader::findConfigFile</referencedby>
+        <referencedby refid="class_config_1_1_properties_1a93e257f371ab1cd5d87d96fc39983101" compoundref="properties_8cpp" startline="79" endline="84">Config::Properties::keyExists</referencedby>
+        <referencedby refid="class_config_1_1_properties_1abb18930b0431bd89e85ed0a5b9b7cac3" compoundref="properties_8cpp" startline="111" endline="116">Config::Properties::getNode</referencedby>
+        <referencedby refid="class_config_1_1_properties_1a87fb20ec94658e8ce0cce06b239019be" compoundref="properties_8cpp" startline="119" endline="124">Config::Properties::asString</referencedby>
+        <referencedby refid="class_config_1_1_properties_1a38019252713b2a815b78eab3a4e00e75" compoundref="properties_8cpp" startline="127" endline="138">Config::Properties::asStringWithDefault</referencedby>
+        <referencedby refid="class_config_1_1_properties_1a82dc1305eac3b4e68d776b868d03c599" compoundref="properties_8cpp" startline="141" endline="146">Config::Properties::asFloat</referencedby>
+        <referencedby refid="class_config_1_1_properties_1a30c642acc0904cf510825bf29034eb95" compoundref="properties_8cpp" startline="149" endline="160">Config::Properties::asFloatWithDefault</referencedby>
+        <referencedby refid="class_config_1_1_properties_1aa30deb695b2a7ca89332c9db746efc07" compoundref="properties_8cpp" startline="163" endline="168">Config::Properties::asInt</referencedby>
+        <referencedby refid="class_config_1_1_properties_1a513b23817b03c01443252a58aea17fc1" compoundref="properties_8cpp" startline="171" endline="182">Config::Properties::asIntWithDefault</referencedby>
+        <referencedby refid="class_config_1_1_properties_1a5577e668732a41e58b9852cb59f4400b" compoundref="properties_8cpp" startline="185" endline="190">Config::Properties::asDouble</referencedby>
+        <referencedby refid="class_config_1_1_properties_1ac482a248dab5d785c38a883ad6053062" compoundref="properties_8cpp" startline="193" endline="204">Config::Properties::asDoubleWithDefault</referencedby>
+        <referencedby refid="classjderobot_1_1_depth_filter_1a6bc39bb21bc8a8685e910ddbc70bef20" compoundref="_depth_filter_8cpp" startline="30" endline="32">jderobot::DepthFilter::~DepthFilter</referencedby>
+        <referencedby refid="classjderobot_1_1_depth_sampler_1abd92df0e1e72431b2297344ff6d7dd78" compoundref="_depth_sampler_8cpp" startline="31" endline="52">jderobot::DepthSampler::calculateLayers</referencedby>
+        <referencedby refid="classjderobot_1_1_depth_sampler_1a208a3898c54c443647ad5116044041e8" compoundref="_depth_sampler_8cpp" startline="56" endline="144">jderobot::DepthSampler::evalSample</referencedby>
+        <referencedby refid="classjderobot_1_1_depth_sampler_1ac8dda5c26e30a21ad5a23d9421eb732e" compoundref="_depth_sampler_8cpp" startline="146" endline="171">jderobot::DepthSampler::sample</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacestd_1ae966385e77759fc59768aa9bc280f3d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool std::fileexists</definition>
+        <argsstring>(std::string filepath)</argsstring>
+        <name>fileexists</name>
+        <param>
+          <type>std::string</type>
+          <declname>filepath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/stdutils.hpp" line="60" column="1" bodyfile="DeepLearningSuite/libs/config/include/config/stdutils.hpp" bodystart="60" bodyend="63"/>
+        <referencedby refid="namespacejderobotconfig_1_1loader_1a521f15425002acf9d87a5857ac38268f" compoundref="loader_8cpp" startline="27" endline="44">jderobotconfig::loader::findConfigFile</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Fallback <ref refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" kindref="member">std::split</ref> source: <ulink url="http://stackoverflow.com/questions/5607589/right-way-to-split-an-stdstring-into-a-vectorstring">http://stackoverflow.com/questions/5607589/right-way-to-split-an-stdstring-into-a-vectorstring</ulink></para><para>Check if file exists For Linux works for files and directories source: <ulink url="http://www.cplusplus.com/forum/general/1796/">http://www.cplusplus.com/forum/general/1796/</ulink> </para>    </detaileddescription>
+    <location file="DeepLearningSuite/libs/config/include/config/stdutils.hpp" line="42" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_68595adf0bb43cc17ae9262e77bb4a0d" kind="dir">
+    <compoundname>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters</compoundname>
+    <innerdir refid="dir_cb0fa5cd5c7df0fc0a7d30769940b065">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders</innerdir>
+    <innerdir refid="dir_88e402e4e26e6abe7e96048f579ae4e3">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers</innerdir>
+    <innerdir refid="dir_6f87ac3418f776f89192232d28cb2d59">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers</innerdir>
+    <innerfile refid="_class_type_8cpp">ClassType.cpp</innerfile>
+    <innerfile refid="_class_type_8h">ClassType.h</innerfile>
+    <innerfile refid="_class_type_generic_8cpp">ClassTypeGeneric.cpp</innerfile>
+    <innerfile refid="_class_type_generic_8h">ClassTypeGeneric.h</innerfile>
+    <innerfile refid="_class_type_mapper_8cpp">ClassTypeMapper.cpp</innerfile>
+    <innerfile refid="_class_type_mapper_8h">ClassTypeMapper.h</innerfile>
+    <innerfile refid="_class_type_own_8cpp">ClassTypeOwn.cpp</innerfile>
+    <innerfile refid="_class_type_own_8h">ClassTypeOwn.h</innerfile>
+    <innerfile refid="_dataset_converter_8cpp">DatasetConverter.cpp</innerfile>
+    <innerfile refid="_dataset_converter_8h">DatasetConverter.h</innerfile>
+    <innerfile refid="_tree_8cpp">Tree.cpp</innerfile>
+    <innerfile refid="_tree_8h">Tree.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_list_view_config" kind="class" language="C++" prot="public">
+    <compoundname>ListViewConfig</compoundname>
+    <includes refid="_list_view_config_8h" local="no">ListViewConfig.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_list_view_config_1a018c9bf8ec0f705ebc40076b54aec658" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ListViewConfig::configureDatasetInput</definition>
+        <argsstring>(QMainWindow *mainWindow, QListView *qlistView, const std::string &amp;path, bool multipleSelection)</argsstring>
+        <name>configureDatasetInput</name>
+        <param>
+          <type>QMainWindow *</type>
+          <declname>mainWindow</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>qlistView</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>multipleSelection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/ListViewConfig.h" line="15" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/ListViewConfig.cpp" bodystart="13" bodyend="51"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+        <referencedby refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" compoundref="mainwindow_8cpp" startline="51" endline="54">MainWindow::~MainWindow</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_list_view_config_1aa280ece932674550644df1b827f768b0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ListViewConfig::configureInputByFile</definition>
+        <argsstring>(QMainWindow *mainWindow, QListView *qlistView, const std::string &amp;path, bool multipleSelection)</argsstring>
+        <name>configureInputByFile</name>
+        <param>
+          <type>QMainWindow *</type>
+          <declname>mainWindow</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>qlistView</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>multipleSelection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/ListViewConfig.h" line="16" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/ListViewConfig.cpp" bodystart="176" bodyend="211"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+        <referencedby refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" compoundref="mainwindow_8cpp" startline="51" endline="54">MainWindow::~MainWindow</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_list_view_config_1a4e5262ada7f3ae203f6ad7b86998def7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ListViewConfig::configureInputByData</definition>
+        <argsstring>(QMainWindow *mainWindow, QListView *qlistView, const std::vector&lt; std::string &gt; &amp;data, bool multipleSelection)</argsstring>
+        <name>configureInputByData</name>
+        <param>
+          <type>QMainWindow *</type>
+          <declname>mainWindow</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>qlistView</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>multipleSelection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/ListViewConfig.h" line="17" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/ListViewConfig.cpp" bodystart="229" bodyend="244"/>
+        <referencedby refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" compoundref="mainwindow_8cpp" startline="51" endline="54">MainWindow::~MainWindow</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_list_view_config_1a2aca1bb0aa5e0e5295cc76d962ade001" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ListViewConfig::getPathContentDatasetInput</definition>
+        <argsstring>(const std::string &amp;path, std::vector&lt; std::string &gt; &amp;content)</argsstring>
+        <name>getPathContentDatasetInput</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/ListViewConfig.h" line="22" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/ListViewConfig.cpp" bodystart="53" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="class_list_view_config_1af740f44af57f4c309b91dd605f462744" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ListViewConfig::getPathContentOnlyFiles</definition>
+        <argsstring>(const std::string &amp;path, std::vector&lt; std::string &gt; &amp;content)</argsstring>
+        <name>getPathContentOnlyFiles</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/ListViewConfig.h" line="23" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/ListViewConfig.cpp" bodystart="213" bodyend="226"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/gui/ListViewConfig.h" line="13" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/ListViewConfig.h" bodystart="13" bodyend="25"/>
+    <listofallmembers>
+      <member refid="class_list_view_config_1a018c9bf8ec0f705ebc40076b54aec658" prot="public" virt="non-virtual"><scope>ListViewConfig</scope><name>configureDatasetInput</name></member>
+      <member refid="class_list_view_config_1a4e5262ada7f3ae203f6ad7b86998def7" prot="public" virt="non-virtual"><scope>ListViewConfig</scope><name>configureInputByData</name></member>
+      <member refid="class_list_view_config_1aa280ece932674550644df1b827f768b0" prot="public" virt="non-virtual"><scope>ListViewConfig</scope><name>configureInputByFile</name></member>
+      <member refid="class_list_view_config_1a2aca1bb0aa5e0e5295cc76d962ade001" prot="private" virt="non-virtual"><scope>ListViewConfig</scope><name>getPathContentDatasetInput</name></member>
+      <member refid="class_list_view_config_1af740f44af57f4c309b91dd605f462744" prot="private" virt="non-virtual"><scope>ListViewConfig</scope><name>getPathContentOnlyFiles</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

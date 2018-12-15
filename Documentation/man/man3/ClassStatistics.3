@@ -1,0 +1,132 @@
+.TH "ClassStatistics" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ClassStatistics
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ClassStatistics\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBClassStatistics\fP ()"
+.br
+.ti -1c
+.RI "\fBClassStatistics\fP (const std::string &\fBclassID\fP)"
+.br
+.ti -1c
+.RI "double \fBgetMeanIOU\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetAveragePrecision\fP (std::vector< double > recallThrs) const"
+.br
+.ti -1c
+.RI "std::vector< double > \fBgetPrecisionArray\fP () const"
+.br
+.ti -1c
+.RI "std::vector< double > \fBgetPrecisionArrayOp\fP () const"
+.br
+.ti -1c
+.RI "std::vector< double > \fBgetPrecisionForDiffRecallThrs\fP (std::vector< double > recallThrs) const"
+.br
+.ti -1c
+.RI "std::vector< double > \fBgetRecallArray\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetRecall\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static double \fBdivide\fP (double x, double y)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBclassID\fP"
+.br
+.ti -1c
+.RI "int \fBnumGroundTruthsReg\fP = 0"
+.br
+.ti -1c
+.RI "int \fBnumGroundTruthsIg\fP = 0"
+.br
+.ti -1c
+.RI "std::vector< double > \fBiou\fP"
+.br
+.ti -1c
+.RI "std::vector< int > \fBtruePositives\fP"
+.br
+.ti -1c
+.RI "std::vector< int > \fBfalsePositives\fP"
+.br
+.ti -1c
+.RI "std::multiset< double > \fBconfScores\fP"
+.br
+.ti -1c
+.RI "int \fBnSamples\fP"
+.br
+.ti -1c
+.RI "int \fBfalseNegatives\fP"
+.br
+.ti -1c
+.RI "int \fBtrueNegatives\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ClassStatistics::ClassStatistics ()"
+
+.SS "ClassStatistics::ClassStatistics (const std::string & classID)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "double ClassStatistics::divide (double x, double y)\fC [static]\fP"
+
+.SS "double ClassStatistics::getAveragePrecision (std::vector< double > recallThrs) const"
+
+.SS "double ClassStatistics::getMeanIOU () const"
+
+.SS "std::vector< double > ClassStatistics::getPrecisionArray () const"
+
+.SS "std::vector< double > ClassStatistics::getPrecisionArrayOp () const"
+
+.SS "std::vector< double > ClassStatistics::getPrecisionForDiffRecallThrs (std::vector< double > recallThrs) const"
+
+.SS "double ClassStatistics::getRecall () const"
+
+.SS "std::vector< double > ClassStatistics::getRecallArray () const"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string ClassStatistics::classID"
+
+.SS "std::multiset<double> ClassStatistics::confScores"
+
+.SS "int ClassStatistics::falseNegatives"
+
+.SS "std::vector<int> ClassStatistics::falsePositives"
+
+.SS "std::vector<double> ClassStatistics::iou"
+
+.SS "int ClassStatistics::nSamples"
+
+.SS "int ClassStatistics::numGroundTruthsIg = 0"
+
+.SS "int ClassStatistics::numGroundTruthsReg = 0"
+
+.SS "int ClassStatistics::trueNegatives"
+
+.SS "std::vector<int> ClassStatistics::truePositives"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

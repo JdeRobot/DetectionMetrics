@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_viewer_8h" kind="file" language="C++">
+    <compoundname>Viewer.h</compoundname>
+    <includes local="no">QtWidgets/QListView</includes>
+    <includedby refid="mainwindow_8cpp" local="no">DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp</includedby>
+    <includedby refid="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp" local="yes">DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Viewer.cpp</includedby>
+    <incdepgraph>
+      <node id="1253">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Viewer.h</label>
+        <link refid="_viewer_8h"/>
+        <childnode refid="1254" relation="include">
+        </childnode>
+      </node>
+      <node id="1254">
+        <label>QtWidgets/QListView</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1257">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Viewer.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp"/>
+      </node>
+      <node id="1255">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Viewer.h</label>
+        <link refid="_viewer_8h"/>
+        <childnode refid="1256" relation="include">
+        </childnode>
+        <childnode refid="1257" relation="include">
+        </childnode>
+      </node>
+      <node id="1256">
+        <label>DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_sample_generator_handler_1_1_viewer" prot="public">SampleGeneratorHandler::Viewer</innerclass>
+    <innernamespace refid="namespace_sample_generator_handler">SampleGeneratorHandler</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>18/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_VIEWER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_VIEWER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QtWidgets/QListView&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_sample_generator_handler" kindref="compound">SampleGeneratorHandler</ref><sp/>{</highlight></codeline>
+<codeline lineno="11" refid="class_sample_generator_handler_1_1_viewer" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_sample_generator_handler_1_1_viewer" kindref="compound">Viewer</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_sample_generator_handler_1_1_viewer_1a49261aa867217f568842e0d460743691" kindref="member">process</ref>(QListView*<sp/>datasetList,QListView*<sp/>namesList,QListView*<sp/>readerImpList,<sp/>QListView*<sp/>filterClasses,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>showDepth,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>datasetPath,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>namesPath);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_VIEWER_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Viewer.h"/>
+  </compounddef>
+</doxygen>

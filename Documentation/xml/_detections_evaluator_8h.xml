@@ -1,0 +1,406 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_detections_evaluator_8h" kind="file" language="C++">
+    <compoundname>DetectionsEvaluator.h</compoundname>
+    <includes refid="_dataset_reader_8h" local="no">DatasetConverters/readers/DatasetReader.h</includes>
+    <includes local="no">boost/shared_ptr.hpp</includes>
+    <includes refid="_class_statistics_8h" local="yes">ClassStatistics.h</includes>
+    <includes refid="_global_stats_8h" local="yes">GlobalStats.h</includes>
+    <includes refid="_class_type_mapper_8h" local="no">DatasetConverters/ClassTypeMapper.h</includes>
+    <includes refid="_eval_matrix_8h" local="no">Common/EvalMatrix.h</includes>
+    <includes local="no">tuple</includes>
+    <includes local="no">valarray</includes>
+    <includedby refid="_dataset_evaluation_app_2_sampler_generator_handler_2_evaluator_8cpp" local="no">DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.cpp</includedby>
+    <includedby refid="_detections_evaluator_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp</includedby>
+    <includedby refid="_stats_writer_8h" local="no">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h</includedby>
+    <includedby refid="auto_evaluator_8cpp" local="no">DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp</includedby>
+    <includedby refid="_tools_2_evaluator_2_evaluator_8cpp" local="no">DeepLearningSuite/Tools/Evaluator/evaluator.cpp</includedby>
+    <includedby refid="splitter_8cpp" local="no">DeepLearningSuite/Tools/Splitter/splitter.cpp</includedby>
+    <incdepgraph>
+      <node id="3453">
+        <label>valarray</label>
+      </node>
+      <node id="3448">
+        <label>boost/property_tree/xml_parser.hpp</label>
+      </node>
+      <node id="3443">
+        <label>GlobalStats.h</label>
+        <link refid="_global_stats_8h"/>
+        <childnode refid="3436" relation="include">
+        </childnode>
+        <childnode refid="3438" relation="include">
+        </childnode>
+      </node>
+      <node id="3441">
+        <label>functional</label>
+      </node>
+      <node id="3425">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="3445">
+        <label>ClassType.h</label>
+        <link refid="_class_type_8h"/>
+        <childnode refid="3423" relation="include">
+        </childnode>
+      </node>
+      <node id="3432">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="3437">
+        <label>glog/logging.h</label>
+      </node>
+      <node id="3430">
+        <label>Regions/RleRegions.h</label>
+        <link refid="_rle_regions_8h"/>
+        <childnode refid="3423" relation="include">
+        </childnode>
+        <childnode refid="3424" relation="include">
+        </childnode>
+        <childnode refid="3431" relation="include">
+        </childnode>
+      </node>
+      <node id="3422">
+        <label>Regions/RectRegions.h</label>
+        <link refid="_rect_regions_8h"/>
+        <childnode refid="3423" relation="include">
+        </childnode>
+        <childnode refid="3424" relation="include">
+        </childnode>
+        <childnode refid="3426" relation="include">
+        </childnode>
+        <childnode refid="3427" relation="include">
+        </childnode>
+      </node>
+      <node id="3438">
+        <label>ClassStatistics.h</label>
+        <link refid="_class_statistics_8h"/>
+        <childnode refid="3435" relation="include">
+        </childnode>
+        <childnode refid="3420" relation="include">
+        </childnode>
+        <childnode refid="3439" relation="include">
+        </childnode>
+        <childnode refid="3440" relation="include">
+        </childnode>
+        <childnode refid="3441" relation="include">
+        </childnode>
+        <childnode refid="3427" relation="include">
+        </childnode>
+        <childnode refid="3442" relation="include">
+        </childnode>
+      </node>
+      <node id="3450">
+        <label>boost/foreach.hpp</label>
+      </node>
+      <node id="3424">
+        <label>Regions.h</label>
+        <link refid="_regions_8h"/>
+        <childnode refid="3423" relation="include">
+        </childnode>
+        <childnode refid="3425" relation="include">
+        </childnode>
+      </node>
+      <node id="3440">
+        <label>numeric</label>
+      </node>
+      <node id="3423">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="3420">
+        <label>string</label>
+      </node>
+      <node id="3433">
+        <label>Common/EvalMatrix.h</label>
+        <link refid="_eval_matrix_8h"/>
+        <childnode refid="3434" relation="include">
+        </childnode>
+        <childnode refid="3436" relation="include">
+        </childnode>
+      </node>
+      <node id="3436">
+        <label>map</label>
+      </node>
+      <node id="3428">
+        <label>Regions/ContourRegions.h</label>
+        <link refid="_contour_regions_8h"/>
+        <childnode refid="3423" relation="include">
+        </childnode>
+        <childnode refid="3424" relation="include">
+        </childnode>
+        <childnode refid="3429" relation="include">
+        </childnode>
+      </node>
+      <node id="3444">
+        <label>DatasetConverters/ClassTypeMapper.h</label>
+        <link refid="_class_type_mapper_8h"/>
+        <childnode refid="3445" relation="include">
+        </childnode>
+        <childnode refid="3446" relation="include">
+        </childnode>
+        <childnode refid="3427" relation="include">
+        </childnode>
+        <childnode refid="3451" relation="include">
+        </childnode>
+      </node>
+      <node id="3446">
+        <label>Tree.h</label>
+        <link refid="_tree_8h"/>
+        <childnode refid="3447" relation="include">
+        </childnode>
+        <childnode refid="3420" relation="include">
+        </childnode>
+        <childnode refid="3435" relation="include">
+        </childnode>
+        <childnode refid="3448" relation="include">
+        </childnode>
+        <childnode refid="3449" relation="include">
+        </childnode>
+        <childnode refid="3450" relation="include">
+        </childnode>
+      </node>
+      <node id="3452">
+        <label>tuple</label>
+      </node>
+      <node id="3431">
+        <label>RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="3425" relation="include">
+        </childnode>
+        <childnode refid="3432" relation="include">
+        </childnode>
+      </node>
+      <node id="3421">
+        <label>Common/Sample.h</label>
+        <link refid="_sample_8h"/>
+        <childnode refid="3422" relation="include">
+        </childnode>
+        <childnode refid="3428" relation="include">
+        </childnode>
+        <childnode refid="3430" relation="include">
+        </childnode>
+      </node>
+      <node id="3435">
+        <label>vector</label>
+      </node>
+      <node id="3434">
+        <label>Matrix.h</label>
+        <link refid="_matrix_8h"/>
+        <childnode refid="3435" relation="include">
+        </childnode>
+      </node>
+      <node id="3429">
+        <label>ContourRegion.h</label>
+        <link refid="_contour_region_8h"/>
+        <childnode refid="3423" relation="include">
+        </childnode>
+        <childnode refid="3425" relation="include">
+        </childnode>
+      </node>
+      <node id="3449">
+        <label>boost/property_tree/ptree.hpp</label>
+      </node>
+      <node id="3447">
+        <label>iostream</label>
+      </node>
+      <node id="3451">
+        <label>unordered_map</label>
+      </node>
+      <node id="3426">
+        <label>RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="3423" relation="include">
+        </childnode>
+      </node>
+      <node id="3419">
+        <label>DatasetConverters/readers/DatasetReader.h</label>
+        <link refid="_dataset_reader_8h"/>
+        <childnode refid="3420" relation="include">
+        </childnode>
+        <childnode refid="3421" relation="include">
+        </childnode>
+        <childnode refid="3425" relation="include">
+        </childnode>
+        <childnode refid="3433" relation="include">
+        </childnode>
+        <childnode refid="3437" relation="include">
+        </childnode>
+      </node>
+      <node id="3442">
+        <label>type_traits</label>
+      </node>
+      <node id="3439">
+        <label>set</label>
+      </node>
+      <node id="3427">
+        <label>algorithm</label>
+      </node>
+      <node id="3418">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h</label>
+        <link refid="_detections_evaluator_8h"/>
+        <childnode refid="3419" relation="include">
+        </childnode>
+        <childnode refid="3425" relation="include">
+        </childnode>
+        <childnode refid="3438" relation="include">
+        </childnode>
+        <childnode refid="3443" relation="include">
+        </childnode>
+        <childnode refid="3444" relation="include">
+        </childnode>
+        <childnode refid="3433" relation="include">
+        </childnode>
+        <childnode refid="3452" relation="include">
+        </childnode>
+        <childnode refid="3453" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3458">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.cpp</label>
+        <link refid="_stats_writer_8cpp"/>
+      </node>
+      <node id="3460">
+        <label>DeepLearningSuite/Tools/Evaluator/evaluator.cpp</label>
+        <link refid="_tools_2_evaluator_2_evaluator_8cpp"/>
+      </node>
+      <node id="3459">
+        <label>DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp</label>
+        <link refid="auto_evaluator_8cpp"/>
+      </node>
+      <node id="3457">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h</label>
+        <link refid="_stats_writer_8h"/>
+        <childnode refid="3455" relation="include">
+        </childnode>
+        <childnode refid="3458" relation="include">
+        </childnode>
+        <childnode refid="3459" relation="include">
+        </childnode>
+        <childnode refid="3460" relation="include">
+        </childnode>
+      </node>
+      <node id="3456">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp</label>
+        <link refid="_detections_evaluator_8cpp"/>
+      </node>
+      <node id="3461">
+        <label>DeepLearningSuite/Tools/Splitter/splitter.cpp</label>
+        <link refid="splitter_8cpp"/>
+      </node>
+      <node id="3455">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_evaluator_8cpp"/>
+      </node>
+      <node id="3454">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h</label>
+        <link refid="_detections_evaluator_8h"/>
+        <childnode refid="3455" relation="include">
+        </childnode>
+        <childnode refid="3456" relation="include">
+        </childnode>
+        <childnode refid="3457" relation="include">
+        </childnode>
+        <childnode refid="3459" relation="include">
+        </childnode>
+        <childnode refid="3460" relation="include">
+        </childnode>
+        <childnode refid="3461" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_detections_evaluator" prot="public">DetectionsEvaluator</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_detections_evaluator_8h_1ad123715cbea5e203556b7efa1ec44d77" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="class_detections_evaluator" kindref="compound">DetectionsEvaluator</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;DetectionsEvaluator&gt; DetectionsEvaluatorPtr</definition>
+        <argsstring></argsstring>
+        <name>DetectionsEvaluatorPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="66" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>1/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_DETECTIONSEVALUATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_DETECTIONSEVALUATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_dataset_reader_8h" kindref="compound">DatasetConverters/readers/DatasetReader.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/shared_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_class_statistics_8h" kindref="compound">ClassStatistics.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_global_stats_8h" kindref="compound">GlobalStats.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_class_type_mapper_8h" kindref="compound">DatasetConverters/ClassTypeMapper.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_eval_matrix_8h" kindref="compound">Common/EvalMatrix.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;tuple&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;valarray&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_detections_evaluator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_detections_evaluator" kindref="compound">DetectionsEvaluator</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_detections_evaluator_1aea7893610a1924fc827b1140f4d64644" kindref="member">DetectionsEvaluator</ref>(<ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref><sp/>gt,<sp/><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref><sp/>detections,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>debug=</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_detections_evaluator_1ae3047c04a1fbdce949f309373f1d81c5" kindref="member">evaluate</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isIouTypeBbox);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_detections_evaluator_1ae5bd9702b49c12f39d09243b2d00ee74" kindref="member">accumulateResults</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_detections_evaluator_1ac71c60dd93e3afdf7ccdc69353afbed7" kindref="member">addValidMixClass</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>classA,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>classB);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_detections_evaluator_1a4dd79b8b2b45a8f035a2ce5d447d5738" kindref="member">addClassToDisplay</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>classID);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>double&gt;<sp/><ref refid="class_detections_evaluator_1a8e45b894c4bd12036b06d661b22cfad3" kindref="member">getClassWiseAP</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>double&gt;<sp/><ref refid="class_detections_evaluator_1a721ab693346076a18bf7dbdfa9a52c35" kindref="member">getClassWiseAR</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_detections_evaluator_1a593969daae1eb92721cbf6b4d58e480c" kindref="member">getOverallmAP</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_detections_evaluator_1a33ecd969977924ce1385fc64109e619c" kindref="member">getOverallmAR</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref><sp/>gt;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref><sp/>detections;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>debug;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::pair&lt;std::string,<sp/>std::string&gt;&gt;<sp/>validMixClass;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>std::unordered_map&lt;std::string,<sp/>std::string&gt;<sp/>classMapping;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//void<sp/>evaluateSamples(Sample<sp/>gt,<sp/>Sample<sp/>detection);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>evaluateSample(<ref refid="struct_sample" kindref="compound">Sample</ref><sp/>gt,<sp/><ref refid="struct_sample" kindref="compound">Sample</ref><sp/>detection,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isIouTypeBbox);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>printStats();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>sameClass(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>class1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>class2);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>classesToDisplay;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>thIOU;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;double,<sp/>GlobalStats&gt;<sp/>sampleStats;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_global_stats" kindref="compound">GlobalStats</ref><sp/>stats;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>double&gt;<sp/>classWiseMeanAP;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>double&gt;<sp/>classWiseMeanAR;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::valarray&lt;double&gt;<sp/>ApDiffIou<sp/>=<sp/>std::valarray&lt;double&gt;(10);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>std::valarray&lt;double&gt;<sp/>ArDiffIou<sp/>=<sp/>std::valarray&lt;double&gt;(10);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>std::map&lt;std::string,<sp/>std::tuple<sp/>&lt;unsigned<sp/>int,<sp/>unsigned<sp/>int&gt;&gt;<sp/>areaRng<sp/>=<sp/>{<sp/>{</highlight><highlight class="stringliteral">&quot;all&quot;</highlight><highlight class="normal">,<sp/>std::make_tuple(0,<sp/>10000000000)<sp/>},</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;small&quot;</highlight><highlight class="normal">,<sp/>std::make_tuple(0,<sp/>1024)<sp/>},</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;medium&quot;</highlight><highlight class="normal">,<sp/>std::make_tuple(1024,<sp/>9216)<sp/>},</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;large&quot;</highlight><highlight class="normal">,<sp/>std::make_tuple(9210,<sp/>10000000000)}<sp/>};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>iouThrs[10]<sp/>=<sp/>{0.5,<sp/>0.55,<sp/>0.6,<sp/>0.65,<sp/>0.7,<sp/>0.75,<sp/>0.8,<sp/>0.85,<sp/>0.9,<sp/>0.95};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>recallThrs;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>101<sp/>recall<sp/>Thrs<sp/>initialized<sp/>in<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="_detections_evaluator_8h_1ad123715cbea5e203556b7efa1ec44d77" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;DetectionsEvaluator&gt;<sp/><ref refid="_detections_evaluator_8h_1ad123715cbea5e203556b7efa1ec44d77" kindref="member">DetectionsEvaluatorPtr</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_DETECTIONSEVALUATOR_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h"/>
+  </compounddef>
+</doxygen>

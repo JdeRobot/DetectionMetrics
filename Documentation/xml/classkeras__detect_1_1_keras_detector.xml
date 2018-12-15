@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classkeras__detect_1_1_keras_detector" kind="class" language="Python" prot="public">
+    <compoundname>keras_detect::KerasDetector</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classkeras__detect_1_1_keras_detector_1a9f1a5aa144f6bc63ad0fbdb2ad4f1bb8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_detect.KerasDetector::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_detect.py" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_detect.py" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classkeras__detect_1_1_keras_detector_1a3365b62a0117ff56d5913ff56ae9550b" compoundref="keras__detect_8py" startline="37" endline="66">keras_detect.KerasDetector.detect</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__detect_1_1_keras_detector_1a6c60b5ed2f4149d396ce410e307d7cd2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_detect.KerasDetector::img_height</definition>
+        <argsstring></argsstring>
+        <name>img_height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_detect.py" line="32" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_detect.py" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classkeras__detect_1_1_keras_detector_1a3365b62a0117ff56d5913ff56ae9550b" compoundref="keras__detect_8py" startline="37" endline="66">keras_detect.KerasDetector.detect</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1988375ec7920e139beb249a8151bba2" compoundref="keras__layer___anchor_boxes_8py" startline="265" endline="280">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.get_config</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" compoundref="keras__layer___decode_detections_8py" startline="272" endline="285">keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__detect_1_1_keras_detector_1ad52720474febcb0bbaed74f51d7bab04" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_detect.KerasDetector::img_width</definition>
+        <argsstring></argsstring>
+        <name>img_width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_detect.py" line="33" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_detect.py" bodystart="33" bodyend="-1"/>
+        <referencedby refid="classkeras__detect_1_1_keras_detector_1a3365b62a0117ff56d5913ff56ae9550b" compoundref="keras__detect_8py" startline="37" endline="66">keras_detect.KerasDetector.detect</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1988375ec7920e139beb249a8151bba2" compoundref="keras__layer___anchor_boxes_8py" startline="265" endline="280">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.get_config</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" compoundref="keras__layer___decode_detections_8py" startline="272" endline="285">keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classkeras__detect_1_1_keras_detector_1a2ea1f7b1bddbab726db95aef994b65c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_detect.KerasDetector.__init__</definition>
+        <argsstring>(self, path_to_hdf5)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>path_to_hdf5</type>
+          <defname>path_to_hdf5</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_detect.py" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_detect.py" bodystart="20" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__detect_1_1_keras_detector_1a3365b62a0117ff56d5913ff56ae9550b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_detect.KerasDetector.detect</definition>
+        <argsstring>(self, img, threshold)</argsstring>
+        <name>detect</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>img</type>
+          <defname>img</defname>
+        </param>
+        <param>
+          <type>threshold</type>
+          <defname>threshold</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_detect.py" line="37" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_detect.py" bodystart="37" bodyend="66"/>
+        <references refid="classkeras__detect_1_1_keras_detector_1ad52720474febcb0bbaed74f51d7bab04" compoundref="keras__detect_8py" startline="33">keras_detect.KerasDetector.img_width</references>
+        <references refid="classkeras__detect_1_1_keras_detector_1a6c60b5ed2f4149d396ce410e307d7cd2" compoundref="keras__detect_8py" startline="32">keras_detect.KerasDetector.img_height</references>
+        <references refid="classkeras__detect_1_1_keras_detector_1a9f1a5aa144f6bc63ad0fbdb2ad4f1bb8" compoundref="keras__detect_8py" startline="26">keras_detect.KerasDetector.model</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_detect.py" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_detect.py" bodystart="18" bodyend="66"/>
+    <listofallmembers>
+      <member refid="classkeras__detect_1_1_keras_detector_1a2ea1f7b1bddbab726db95aef994b65c7" prot="public" virt="non-virtual"><scope>keras_detect::KerasDetector</scope><name>__init__</name></member>
+      <member refid="classkeras__detect_1_1_keras_detector_1a3365b62a0117ff56d5913ff56ae9550b" prot="public" virt="non-virtual"><scope>keras_detect::KerasDetector</scope><name>detect</name></member>
+      <member refid="classkeras__detect_1_1_keras_detector_1a6c60b5ed2f4149d396ce410e307d7cd2" prot="public" virt="non-virtual"><scope>keras_detect::KerasDetector</scope><name>img_height</name></member>
+      <member refid="classkeras__detect_1_1_keras_detector_1ad52720474febcb0bbaed74f51d7bab04" prot="public" virt="non-virtual"><scope>keras_detect::KerasDetector</scope><name>img_width</name></member>
+      <member refid="classkeras__detect_1_1_keras_detector_1a9f1a5aa144f6bc63ad0fbdb2ad4f1bb8" prot="public" virt="non-virtual"><scope>keras_detect::KerasDetector</scope><name>model</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

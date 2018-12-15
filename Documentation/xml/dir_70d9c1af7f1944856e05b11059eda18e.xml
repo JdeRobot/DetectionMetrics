@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_70d9c1af7f1944856e05b11059eda18e" kind="dir">
+    <compoundname>DeepLearningSuite/Tools</compoundname>
+    <innerdir refid="dir_39334bd067b6d1923792508aae46ddc6">DeepLearningSuite/Tools/AutoEvaluator</innerdir>
+    <innerdir refid="dir_feb2a47e5c3a107e09aa8e4a886fd66a">DeepLearningSuite/Tools/Converter</innerdir>
+    <innerdir refid="dir_fc00313a2eb44e49b6da85e16cb65b42">DeepLearningSuite/Tools/Detector</innerdir>
+    <innerdir refid="dir_0b9a4643c171c1b9a27b77e795438db9">DeepLearningSuite/Tools/Evaluator</innerdir>
+    <innerdir refid="dir_92a843af9d5ea4cd30e24f879a6eb1d0">DeepLearningSuite/Tools/Splitter</innerdir>
+    <innerdir refid="dir_a1804292a0ce6676a8128067c2623697">DeepLearningSuite/Tools/Viewer</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/Tools/"/>
+  </compounddef>
+</doxygen>

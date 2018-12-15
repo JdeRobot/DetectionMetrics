@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_comm_1_1_camera_client" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Comm::CameraClient</compoundname>
+    <derivedcompoundref refid="class_comm_1_1_camera_ice_client" prot="public" virt="non-virtual">Comm::CameraIceClient</derivedcompoundref>
+    <derivedcompoundref refid="class_comm_1_1_listener_camera" prot="public" virt="non-virtual">Comm::ListenerCamera</derivedcompoundref>
+    <includes refid="interfaces_2camera_client_8hpp" local="no">cameraClient.hpp</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Comm::CameraClient::on</definition>
+        <argsstring></argsstring>
+        <name>on</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/interfaces/cameraClient.hpp" line="32" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/interfaces/cameraClient.hpp" bodystart="32" bodyend="-1"/>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1aa59fe901fa8a7c4b0cb2404a0922905e" compoundref="camera_ice_client_8cpp" startline="30" endline="72">Comm::CameraIceClient::CameraIceClient</referencedby>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1a2c506c1c710f2f9daae1a62bd743ffbc" compoundref="camera_ice_client_8cpp" startline="75" endline="77">Comm::CameraIceClient::~CameraIceClient</referencedby>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1a74d06122ed0688df849d2de07bbd0a03" compoundref="camera_ice_client_8cpp" startline="110" endline="192">Comm::CameraIceClient::run</referencedby>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1afde034cca2e5396b5c439069dfab4725" compoundref="camera_ice_client_8cpp" startline="194" endline="197">Comm::CameraIceClient::stop_thread</referencedby>
+        <referencedby refid="class_comm_1_1_listener_camera_1ab798ec9f70324e0b644edf14bfca443a" compoundref="listener_camera_8cpp" startline="5" endline="26">Comm::ListenerCamera::ListenerCamera</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_jde_robot_types_1_1_image" kindref="compound">JdeRobotTypes::Image</ref></type>
+        <definition>JdeRobotTypes::Image Comm::CameraClient::image</definition>
+        <argsstring></argsstring>
+        <name>image</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/interfaces/cameraClient.hpp" line="34" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/interfaces/cameraClient.hpp" bodystart="34" bodyend="-1"/>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1a74d06122ed0688df849d2de07bbd0a03" compoundref="camera_ice_client_8cpp" startline="110" endline="192">Comm::CameraIceClient::run</referencedby>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1aff1f3ff0d95d8a04aacfe5cfc9955740" compoundref="camera_ice_client_8cpp" startline="199" endline="207">Comm::CameraIceClient::getImage</referencedby>
+        <referencedby refid="class_comm_1_1_listener_camera_1a62683e72d06ba387aa19e4f213d1eada" compoundref="listener_camera_8cpp" startline="40" endline="43">Comm::ListenerCamera::stop</referencedby>
+        <referencedby refid="class_comm_1_1_listener_camera_1a854d67843d55c98a0020661b8fb7fca9" compoundref="listener_camera_8cpp" startline="61" endline="67">Comm::ListenerCamera::getImage</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a7cd149af483afe13533c9572ded173ae" compoundref="sample_8py" startline="30" endline="33">sampleGenerator.sample.sample.getImage</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab1d8c7ea79c8874ae0bdf808bc67e9e6" compoundref="sample_8py" startline="34" endline="36">sampleGenerator.sample.sample.getImageWidth</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a06106232d720b3f6b169461f34469cfd" compoundref="sample_8py" startline="37" endline="39">sampleGenerator.sample.sample.getImageHeight</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1aabf57b5d5eb0d1b6e89f28d5c0d97940" compoundref="sample_8py" startline="52" endline="58">sampleGenerator.sample.sample.getImageWithData</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab97e323c321d16a707d6dac1f9e06723" compoundref="sample_8py" startline="59" endline="68">sampleGenerator.sample.sample.applyScale</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a93fdd9624584a5452887a7efe5003849" compoundref="sample_8py" startline="69" endline="96">sampleGenerator.sample.sample.applyWarp</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a13629bd805c34f9847ded8720650d37b" compoundref="sample_8py" startline="97" endline="106">sampleGenerator.sample.sample.applyFlip</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_comm_1_1_camera_client_1ac5499dca33e4d1bfd11f1ad1143bc8f6" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Comm::CameraClient::refreshRate</definition>
+        <argsstring></argsstring>
+        <name>refreshRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/interfaces/cameraClient.hpp" line="35" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/interfaces/cameraClient.hpp" bodystart="35" bodyend="-1"/>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1aa59fe901fa8a7c4b0cb2404a0922905e" compoundref="camera_ice_client_8cpp" startline="30" endline="72">Comm::CameraIceClient::CameraIceClient</referencedby>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1a74d06122ed0688df849d2de07bbd0a03" compoundref="camera_ice_client_8cpp" startline="110" endline="192">Comm::CameraIceClient::run</referencedby>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1a4c6bcb1559bd04fe1b55461352056430" compoundref="camera_ice_client_8cpp" startline="209" endline="216">Comm::CameraIceClient::getRefreshRate</referencedby>
+        <referencedby refid="class_comm_1_1_listener_camera_1a62683e72d06ba387aa19e4f213d1eada" compoundref="listener_camera_8cpp" startline="40" endline="43">Comm::ListenerCamera::stop</referencedby>
+        <referencedby refid="class_comm_1_1_listener_camera_1a7ba9f0f4210d75cbedba5a016ac60175" compoundref="listener_camera_8cpp" startline="69" endline="77">Comm::ListenerCamera::getRefreshRate</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_comm_1_1_camera_client_1a1947976aa6b31734b9938091e63782e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="class_jde_robot_types_1_1_image" kindref="compound">JdeRobotTypes::Image</ref></type>
+        <definition>virtual JdeRobotTypes::Image Comm::CameraClient::getImage</definition>
+        <argsstring>()=0</argsstring>
+        <name>getImage</name>
+        <reimplementedby refid="class_comm_1_1_listener_camera_1a854d67843d55c98a0020661b8fb7fca9">getImage</reimplementedby>
+        <reimplementedby refid="class_comm_1_1_camera_ice_client_1aff1f3ff0d95d8a04aacfe5cfc9955740">getImage</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/interfaces/cameraClient.hpp" line="30" column="1"/>
+        <referencedby refid="class_jderobot_reader_1aef97b473c11e144fcf07e01c3181269b" compoundref="_jderobot_reader_8cpp" startline="78" endline="93">JderobotReader::getNextSample</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_camera_client_1afa8d54f4d72921376ec35607897ab5bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int Comm::CameraClient::getRefreshRate</definition>
+        <argsstring>()=0</argsstring>
+        <name>getRefreshRate</name>
+        <reimplementedby refid="class_comm_1_1_listener_camera_1a7ba9f0f4210d75cbedba5a016ac60175">getRefreshRate</reimplementedby>
+        <reimplementedby refid="class_comm_1_1_camera_ice_client_1a4c6bcb1559bd04fe1b55461352056430">getRefreshRate</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/interfaces/cameraClient.hpp" line="31" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="14">
+        <label>Comm::ListenerCamera</label>
+        <link refid="class_comm_1_1_listener_camera"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Comm::CameraIceClient</label>
+        <link refid="class_comm_1_1_camera_ice_client"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Comm::CameraClient</label>
+        <link refid="class_comm_1_1_camera_client"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="15">
+        <label>Comm::CameraClient</label>
+        <link refid="class_comm_1_1_camera_client"/>
+        <childnode refid="16" relation="usage">
+          <edgelabel>image</edgelabel>
+        </childnode>
+      </node>
+      <node id="16">
+        <label>JdeRobotTypes::Image</label>
+        <link refid="class_jde_robot_types_1_1_image"/>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/libs/comm/include/comm/interfaces/cameraClient.hpp" line="28" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/interfaces/cameraClient.hpp" bodystart="28" bodyend="36"/>
+    <listofallmembers>
+      <member refid="class_comm_1_1_camera_client_1a1947976aa6b31734b9938091e63782e2" prot="public" virt="pure-virtual"><scope>Comm::CameraClient</scope><name>getImage</name></member>
+      <member refid="class_comm_1_1_camera_client_1afa8d54f4d72921376ec35607897ab5bc" prot="public" virt="pure-virtual"><scope>Comm::CameraClient</scope><name>getRefreshRate</name></member>
+      <member refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" prot="protected" virt="non-virtual"><scope>Comm::CameraClient</scope><name>image</name></member>
+      <member refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" prot="public" virt="non-virtual"><scope>Comm::CameraClient</scope><name>on</name></member>
+      <member refid="class_comm_1_1_camera_client_1ac5499dca33e4d1bfd11f1ad1143bc8f6" prot="protected" virt="non-virtual"><scope>Comm::CameraClient</scope><name>refreshRate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

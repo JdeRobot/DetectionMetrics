@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_f5639b98007a08348e88250c8bbe3b60" kind="dir">
+    <compoundname>DeepLearningSuite/DatasetEvaluationApp/gui</compoundname>
+    <innerfile refid="_list_view_config_8cpp">ListViewConfig.cpp</innerfile>
+    <innerfile refid="_list_view_config_8h">ListViewConfig.h</innerfile>
+    <innerfile refid="_tab_handler_8cpp">TabHandler.cpp</innerfile>
+    <innerfile refid="_tab_handler_8h">TabHandler.h</innerfile>
+    <innerfile refid="_utils_8cpp">Utils.cpp</innerfile>
+    <innerfile refid="_utils_8h">Utils.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/gui/"/>
+  </compounddef>
+</doxygen>

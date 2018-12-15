@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_contour_region_8cpp" kind="file" language="C++">
+    <compoundname>ContourRegion.cpp</compoundname>
+    <includes refid="_contour_region_8h" local="yes">ContourRegion.h</includes>
+    <incdepgraph>
+      <node id="4034">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="4033">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="4031">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegion.cpp</label>
+        <link refid="_contour_region_8cpp"/>
+        <childnode refid="4032" relation="include">
+        </childnode>
+      </node>
+      <node id="4032">
+        <label>ContourRegion.h</label>
+        <link refid="_contour_region_8h"/>
+        <childnode refid="4033" relation="include">
+        </childnode>
+        <childnode refid="4034" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>26/01/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_contour_region_8h" kindref="compound">ContourRegion.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="struct_contour_region_1a8c5b1aa1ee317050828ebd5f53739285" refkind="member"><highlight class="normal"><ref refid="struct_contour_region_1a24b9b3e8e9eaf336089c0ba91b0579ca" kindref="member">ContourRegion::ContourRegion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_contour_region" kindref="compound">ContourRegion</ref><sp/>&amp;other)<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="struct_contour_region_1ada861b3bc539bf62d0344a5a2b1b06da" kindref="member">classID</ref>=other.<ref refid="struct_contour_region_1ada861b3bc539bf62d0344a5a2b1b06da" kindref="member">classID</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(other.<ref refid="struct_contour_region_1a638a84fef2113ccf2016f29273f6992d" kindref="member">region</ref>.size())<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="struct_contour_region_1a638a84fef2113ccf2016f29273f6992d" kindref="member">region</ref>.resize(other.<ref refid="struct_contour_region_1a638a84fef2113ccf2016f29273f6992d" kindref="member">region</ref>.size());</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::copy(other.<ref refid="struct_contour_region_1a638a84fef2113ccf2016f29273f6992d" kindref="member">region</ref>.begin(),<sp/>other.<ref refid="struct_contour_region_1a638a84fef2113ccf2016f29273f6992d" kindref="member">region</ref>.end(),<sp/>this-&gt;<ref refid="struct_contour_region_1a638a84fef2113ccf2016f29273f6992d" kindref="member">region</ref>.begin());</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="struct_contour_region_1a3b8236711736047f72242b486ca288da" kindref="member">valid</ref>=other.<ref refid="struct_contour_region_1a3b8236711736047f72242b486ca288da" kindref="member">valid</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegion.cpp"/>
+  </compounddef>
+</doxygen>

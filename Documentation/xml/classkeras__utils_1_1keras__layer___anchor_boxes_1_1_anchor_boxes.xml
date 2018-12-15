@@ -1,0 +1,524 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes" kind="class" language="Python" prot="public">
+    <compoundname>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Layer</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a2f760ca34099ac8be9e8869362f95295" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes::img_height</definition>
+        <argsstring></argsstring>
+        <name>img_height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="111" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="111" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1988375ec7920e139beb249a8151bba2" compoundref="keras__layer___anchor_boxes_8py" startline="265" endline="280">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.get_config</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" compoundref="keras__layer___decode_detections_8py" startline="272" endline="285">keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1e80e372b9345dfd2792b038ee496de9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes::img_width</definition>
+        <argsstring></argsstring>
+        <name>img_width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="112" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="112" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1988375ec7920e139beb249a8151bba2" compoundref="keras__layer___anchor_boxes_8py" startline="265" endline="280">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.get_config</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" compoundref="keras__layer___decode_detections_8py" startline="272" endline="285">keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a24e9592f65b944f9d50aeb820b67016c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes::this_scale</definition>
+        <argsstring></argsstring>
+        <name>this_scale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="113" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="113" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1988375ec7920e139beb249a8151bba2" compoundref="keras__layer___anchor_boxes_8py" startline="265" endline="280">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1ae6c10587c354db5c2104b7c18020c001" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes::next_scale</definition>
+        <argsstring></argsstring>
+        <name>next_scale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="114" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="114" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1988375ec7920e139beb249a8151bba2" compoundref="keras__layer___anchor_boxes_8py" startline="265" endline="280">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1adf34e7e35d60dd85a2badcb8e0ce9f07" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes::aspect_ratios</definition>
+        <argsstring></argsstring>
+        <name>aspect_ratios</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="115" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="115" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1988375ec7920e139beb249a8151bba2" compoundref="keras__layer___anchor_boxes_8py" startline="265" endline="280">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1c1bd98352cf19dd0ad2d3e573fe06ab" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes::two_boxes_for_ar1</definition>
+        <argsstring></argsstring>
+        <name>two_boxes_for_ar1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="116" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="116" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1988375ec7920e139beb249a8151bba2" compoundref="keras__layer___anchor_boxes_8py" startline="265" endline="280">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a31bea1902b9bad5c14ad74c975586a1f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes::this_steps</definition>
+        <argsstring></argsstring>
+        <name>this_steps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="117" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="117" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a0f61985b5286284949ebb7849252c3ae" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes::this_offsets</definition>
+        <argsstring></argsstring>
+        <name>this_offsets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="118" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="118" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a156d64fac26c39b4029b7a1063377853" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes::clip_boxes</definition>
+        <argsstring></argsstring>
+        <name>clip_boxes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="119" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="119" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1988375ec7920e139beb249a8151bba2" compoundref="keras__layer___anchor_boxes_8py" startline="265" endline="280">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a97efbea33013e4f346616123a6c02f9b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes::variances</definition>
+        <argsstring></argsstring>
+        <name>variances</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="120" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="120" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1988375ec7920e139beb249a8151bba2" compoundref="keras__layer___anchor_boxes_8py" startline="265" endline="280">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a5aa6cd27c22879f898243f55a833d21a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes::coords</definition>
+        <argsstring></argsstring>
+        <name>coords</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="121" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="121" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1988375ec7920e139beb249a8151bba2" compoundref="keras__layer___anchor_boxes_8py" startline="265" endline="280">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.get_config</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" compoundref="keras__layer___decode_detections_8py" startline="272" endline="285">keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a3c2c020df03cacc182a84c96140b3e95" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes::normalize_coords</definition>
+        <argsstring></argsstring>
+        <name>normalize_coords</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="122" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="122" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1988375ec7920e139beb249a8151bba2" compoundref="keras__layer___anchor_boxes_8py" startline="265" endline="280">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.get_config</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" compoundref="keras__layer___decode_detections_8py" startline="272" endline="285">keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1ae3b69cf6b4d2f0e425ede0d2aac30821" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes::n_boxes</definition>
+        <argsstring></argsstring>
+        <name>n_boxes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="125" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="125" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" compoundref="keras__layer___anchor_boxes_8py" startline="134" endline="257">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aac014e7b48a6d681b225db3341ce7198" compoundref="keras__layer___anchor_boxes_8py" startline="258" endline="264">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.compute_output_shape</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a3eb44050c7a18448b40651c143ce3e58" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes::input_spec</definition>
+        <argsstring></argsstring>
+        <name>input_spec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="131" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1ae01d3b3883a59f2d3b0590d4bdba82d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.__init__</definition>
+        <argsstring>(self, img_height, img_width, this_scale, next_scale, aspect_ratios=[0.5, two_boxes_for_ar1=True, this_steps=None, this_offsets=None, clip_boxes=False, variances=[0.1, coords=&apos;centroids&apos;, normalize_coords=False, kwargs)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a2f760ca34099ac8be9e8869362f95295" kindref="member">img_height</ref></type>
+          <defname>img_height</defname>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1e80e372b9345dfd2792b038ee496de9" kindref="member">img_width</ref></type>
+          <defname>img_width</defname>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a24e9592f65b944f9d50aeb820b67016c" kindref="member">this_scale</ref></type>
+          <defname>this_scale</defname>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1ae6c10587c354db5c2104b7c18020c001" kindref="member">next_scale</ref></type>
+          <defname>next_scale</defname>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1adf34e7e35d60dd85a2badcb8e0ce9f07" kindref="member">aspect_ratios</ref></type>
+          <defname>aspect_ratios</defname>
+          <defval>[0.5</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1c1bd98352cf19dd0ad2d3e573fe06ab" kindref="member">two_boxes_for_ar1</ref></type>
+          <defname>two_boxes_for_ar1</defname>
+          <defval>True</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a31bea1902b9bad5c14ad74c975586a1f" kindref="member">this_steps</ref></type>
+          <defname>this_steps</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a0f61985b5286284949ebb7849252c3ae" kindref="member">this_offsets</ref></type>
+          <defname>this_offsets</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a156d64fac26c39b4029b7a1063377853" kindref="member">clip_boxes</ref></type>
+          <defname>clip_boxes</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a97efbea33013e4f346616123a6c02f9b" kindref="member">variances</ref></type>
+          <defname>variances</defname>
+          <defval>[0.1</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a5aa6cd27c22879f898243f55a833d21a" kindref="member">coords</ref></type>
+          <defname>coords</defname>
+          <defval>&apos;centroids&apos;</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a3c2c020df03cacc182a84c96140b3e95" kindref="member">normalize_coords</ref></type>
+          <defname>normalize_coords</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>kwargs</type>
+          <defname>kwargs</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>All arguments need to be set to the same values as in the box encoding process, otherwise the behavior is undefined.
+Some of these arguments are explained in more detail in the documentation of the `SSDBoxEncoder` class.
+
+Arguments:
+    img_height (int): The height of the input images.
+    img_width (int): The width of the input images.
+    this_scale (float): A float in [0, 1], the scaling factor for the size of the generated anchor boxes
+as a fraction of the shorter side of the input image.
+    next_scale (float): A float in [0, 1], the next larger scaling factor. Only relevant if
+`self.two_boxes_for_ar1 == True`.
+    aspect_ratios (list, optional): The list of aspect ratios for which default boxes are to be
+generated for this layer.
+    two_boxes_for_ar1 (bool, optional): Only relevant if `aspect_ratios` contains 1.
+If `True`, two default boxes will be generated for aspect ratio 1. The first will be generated
+using the scaling factor for the respective layer, the second one will be generated using
+geometric mean of said scaling factor and next bigger scaling factor.
+    clip_boxes (bool, optional): If `True`, clips the anchor box coordinates to stay within image boundaries.
+    variances (list, optional): A list of 4 floats &gt;0. The anchor box offset for each coordinate will be divided by
+its respective variance value.
+    coords (str, optional): The box coordinate format to be used internally in the model (i.e. this is not the input format
+of the ground truth labels). Can be either &apos;centroids&apos; for the format `(cx, cy, w, h)` (box center coordinates, width, and height),
+&apos;corners&apos; for the format `(xmin, ymin, xmax,  ymax)`, or &apos;minmax&apos; for the format `(xmin, xmax, ymin, ymax)`.
+    normalize_coords (bool, optional): Set to `True` if the model uses relative instead of absolute coordinates,
+i.e. if the model predicts box coordinates within [0,1] instead of absolute coordinates.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="59" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="72" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aae79e1e24e095100c895e09468e79a43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.build</definition>
+        <argsstring>(self, input_shape)</argsstring>
+        <name>build</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>input_shape</type>
+          <defname>input_shape</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="130" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="130" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.call</definition>
+        <argsstring>(self, x, mask=None)</argsstring>
+        <name>call</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>mask</type>
+          <defname>mask</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Return an anchor box tensor based on the shape of the input tensor.
+
+The logic implemented here is identical to the logic in the module `ssd_box_encode_decode_utils.py`.
+
+Note that this tensor does not participate in any graph computations at runtime. It is being created
+as a constant once during graph creation and is just being output along with the rest of the model output
+during runtime. Because of this, all logic is implemented as Numpy array operations and it is sufficient
+to convert the resulting Numpy array into a Keras tensor at the very end before outputting it.
+
+Arguments:
+    x (tensor): 4D tensor of shape `(batch, channels, height, width)` if `dim_ordering = &apos;th&apos;`
+or `(batch, height, width, channels)` if `dim_ordering = &apos;tf&apos;`. The input for this
+layer must be the output of the localization predictor layer.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="134" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="134" bodyend="257"/>
+        <references refid="classkeras__detect_1_1_keras_detector_1a6c60b5ed2f4149d396ce410e307d7cd2" compoundref="keras__detect_8py" startline="32">keras_detect.KerasDetector.img_height</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a2f760ca34099ac8be9e8869362f95295" compoundref="keras__layer___anchor_boxes_8py" startline="111">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.img_height</references>
+        <references refid="classkeras__detect_1_1_keras_detector_1ad52720474febcb0bbaed74f51d7bab04" compoundref="keras__detect_8py" startline="33">keras_detect.KerasDetector.img_width</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1e80e372b9345dfd2792b038ee496de9" compoundref="keras__layer___anchor_boxes_8py" startline="112">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.img_width</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1adf34e7e35d60dd85a2badcb8e0ce9f07" compoundref="keras__layer___anchor_boxes_8py" startline="115">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.aspect_ratios</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a24e9592f65b944f9d50aeb820b67016c" compoundref="keras__layer___anchor_boxes_8py" startline="113">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.this_scale</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1c1bd98352cf19dd0ad2d3e573fe06ab" compoundref="keras__layer___anchor_boxes_8py" startline="116">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.two_boxes_for_ar1</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1ae6c10587c354db5c2104b7c18020c001" compoundref="keras__layer___anchor_boxes_8py" startline="114">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.next_scale</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a31bea1902b9bad5c14ad74c975586a1f" compoundref="keras__layer___anchor_boxes_8py" startline="117">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.this_steps</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a0f61985b5286284949ebb7849252c3ae" compoundref="keras__layer___anchor_boxes_8py" startline="118">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.this_offsets</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1ae3b69cf6b4d2f0e425ede0d2aac30821" compoundref="keras__layer___anchor_boxes_8py" startline="125">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.n_boxes</references>
+        <references refid="namespacekeras__utils_1_1bounding__box__utils_1a7b2a9d86d4acfcddcec55133486f2012" compoundref="bounding__box__utils_8py" startline="25" endline="77">keras_utils.bounding_box_utils.convert_coordinates</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a156d64fac26c39b4029b7a1063377853" compoundref="keras__layer___anchor_boxes_8py" startline="119">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.clip_boxes</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a3c2c020df03cacc182a84c96140b3e95" compoundref="keras__layer___anchor_boxes_8py" startline="122">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.normalize_coords</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a5aa6cd27c22879f898243f55a833d21a" compoundref="keras__layer___anchor_boxes_8py" startline="121">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.coords</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a97efbea33013e4f346616123a6c02f9b" compoundref="keras__layer___anchor_boxes_8py" startline="120">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.variances</references>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aac014e7b48a6d681b225db3341ce7198" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.compute_output_shape</definition>
+        <argsstring>(self, input_shape)</argsstring>
+        <name>compute_output_shape</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>input_shape</type>
+          <defname>input_shape</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="258" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="258" bodyend="264"/>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1ae3b69cf6b4d2f0e425ede0d2aac30821" compoundref="keras__layer___anchor_boxes_8py" startline="125">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.n_boxes</references>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1988375ec7920e139beb249a8151bba2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.get_config</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_config</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="265" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="265" bodyend="280"/>
+        <references refid="classkeras__detect_1_1_keras_detector_1a6c60b5ed2f4149d396ce410e307d7cd2" compoundref="keras__detect_8py" startline="32">keras_detect.KerasDetector.img_height</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a2f760ca34099ac8be9e8869362f95295" compoundref="keras__layer___anchor_boxes_8py" startline="111">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.img_height</references>
+        <references refid="classkeras__detect_1_1_keras_detector_1ad52720474febcb0bbaed74f51d7bab04" compoundref="keras__detect_8py" startline="33">keras_detect.KerasDetector.img_width</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1e80e372b9345dfd2792b038ee496de9" compoundref="keras__layer___anchor_boxes_8py" startline="112">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.img_width</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a24e9592f65b944f9d50aeb820b67016c" compoundref="keras__layer___anchor_boxes_8py" startline="113">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.this_scale</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1ae6c10587c354db5c2104b7c18020c001" compoundref="keras__layer___anchor_boxes_8py" startline="114">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.next_scale</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1adf34e7e35d60dd85a2badcb8e0ce9f07" compoundref="keras__layer___anchor_boxes_8py" startline="115">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.aspect_ratios</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1c1bd98352cf19dd0ad2d3e573fe06ab" compoundref="keras__layer___anchor_boxes_8py" startline="116">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.two_boxes_for_ar1</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a156d64fac26c39b4029b7a1063377853" compoundref="keras__layer___anchor_boxes_8py" startline="119">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.clip_boxes</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a97efbea33013e4f346616123a6c02f9b" compoundref="keras__layer___anchor_boxes_8py" startline="120">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.variances</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a5aa6cd27c22879f898243f55a833d21a" compoundref="keras__layer___anchor_boxes_8py" startline="121">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.coords</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a3c2c020df03cacc182a84c96140b3e95" compoundref="keras__layer___anchor_boxes_8py" startline="122">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.normalize_coords</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>A Keras layer to create an output tensor containing anchor box coordinates
+and variances based on the input tensor and the passed arguments.
+
+A set of 2D anchor boxes of different aspect ratios is created for each spatial unit of
+the input tensor. The number of anchor boxes created per unit depends on the arguments
+`aspect_ratios` and `two_boxes_for_ar1`, in the default case it is 4. The boxes
+are parameterized by the coordinate tuple `(xmin, xmax, ymin, ymax)`.
+
+The logic implemented by this layer is identical to the logic in the module
+`ssd_box_encode_decode_utils.py`.
+
+The purpose of having this layer in the network is to make the model self-sufficient
+at inference time. Since the model is predicting offsets to the anchor boxes
+(rather than predicting absolute box coordinates directly), one needs to know the anchor
+box coordinates in order to construct the final prediction boxes from the predicted offsets.
+If the model&apos;s output tensor did not contain the anchor box coordinates, the necessary
+information to convert the predicted offsets back to absolute coordinates would be missing
+in the model output. The reason why it is necessary to predict offsets to the anchor boxes
+rather than to predict absolute box coordinates directly is explained in `README.md`.
+
+Input shape:
+    4D tensor of shape `(batch, channels, height, width)` if `dim_ordering = &apos;th&apos;`
+    or `(batch, height, width, channels)` if `dim_ordering = &apos;tf&apos;`.
+
+Output shape:
+    5D tensor of shape `(batch, height, width, n_boxes, 8)`. The last axis contains
+    the four anchor box coordinates and the four variance values for each box.
+</verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Layer</label>
+      </node>
+      <node id="0">
+        <label>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes</label>
+        <link refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>Layer</label>
+      </node>
+      <node id="2">
+        <label>keras_utils.keras_layer_AnchorBoxes.AnchorBoxes</label>
+        <link refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_AnchorBoxes.py" bodystart="28" bodyend="280"/>
+    <listofallmembers>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1ae01d3b3883a59f2d3b0590d4bdba82d8" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>__init__</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1adf34e7e35d60dd85a2badcb8e0ce9f07" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>aspect_ratios</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aae79e1e24e095100c895e09468e79a43" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>build</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aeaccaf4a41fe48f6f5e80431f0456304" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>call</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a156d64fac26c39b4029b7a1063377853" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>clip_boxes</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1aac014e7b48a6d681b225db3341ce7198" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>compute_output_shape</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a5aa6cd27c22879f898243f55a833d21a" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>coords</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1988375ec7920e139beb249a8151bba2" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>get_config</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a2f760ca34099ac8be9e8869362f95295" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>img_height</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1e80e372b9345dfd2792b038ee496de9" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>img_width</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a3eb44050c7a18448b40651c143ce3e58" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>input_spec</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1ae3b69cf6b4d2f0e425ede0d2aac30821" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>n_boxes</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1ae6c10587c354db5c2104b7c18020c001" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>next_scale</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a3c2c020df03cacc182a84c96140b3e95" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>normalize_coords</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a0f61985b5286284949ebb7849252c3ae" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>this_offsets</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a24e9592f65b944f9d50aeb820b67016c" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>this_scale</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a31bea1902b9bad5c14ad74c975586a1f" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>this_steps</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1c1bd98352cf19dd0ad2d3e573fe06ab" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>two_boxes_for_ar1</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a97efbea33013e4f346616123a6c02f9b" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_AnchorBoxes::AnchorBoxes</scope><name>variances</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

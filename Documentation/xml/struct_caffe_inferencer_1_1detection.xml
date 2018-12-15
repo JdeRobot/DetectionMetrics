@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_caffe_inferencer_1_1detection" kind="struct" language="C++" prot="private">
+    <compoundname>CaffeInferencer::detection</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_caffe_inferencer_1_1detection_1ad37fb70c0a7a172f84a6cb68180d9b7f" prot="public" static="no" mutable="no">
+        <type>cv::Rect</type>
+        <definition>cv::Rect CaffeInferencer::detection::boundingBox</definition>
+        <argsstring></argsstring>
+        <name>boundingBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_caffe_inferencer_1_1detection_1a9f5be54342b689792dd7dd0e9815dce5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float CaffeInferencer::detection::probability</definition>
+        <argsstring></argsstring>
+        <name>probability</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_caffe_inferencer_1_1detection_1ab399ddc85ac1f15a1181810ea6739d38" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CaffeInferencer::detection::classId</definition>
+        <argsstring></argsstring>
+        <name>classId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="25" bodyend="29"/>
+    <listofallmembers>
+      <member refid="struct_caffe_inferencer_1_1detection_1ad37fb70c0a7a172f84a6cb68180d9b7f" prot="public" virt="non-virtual"><scope>CaffeInferencer::detection</scope><name>boundingBox</name></member>
+      <member refid="struct_caffe_inferencer_1_1detection_1ab399ddc85ac1f15a1181810ea6739d38" prot="public" virt="non-virtual"><scope>CaffeInferencer::detection</scope><name>classId</name></member>
+      <member refid="struct_caffe_inferencer_1_1detection_1a9f5be54342b689792dd7dd0e9815dce5" prot="public" virt="non-virtual"><scope>CaffeInferencer::detection</scope><name>probability</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

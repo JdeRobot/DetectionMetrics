@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_c_o_c_o_dataset_writer_8h" kind="file" language="C++">
+    <compoundname>COCODatasetWriter.h</compoundname>
+    <includes local="no">string</includes>
+    <includes refid="_dataset_writer_8h" local="yes">DatasetWriter.h</includes>
+    <includes local="no">rapidjson/document.h</includes>
+    <includes local="no">rapidjson/writer.h</includes>
+    <includes local="no">rapidjson/stringbuffer.h</includes>
+    <includedby refid="_c_o_c_o_dataset_writer_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.cpp</includedby>
+    <includedby refid="_generic_dataset_writer_8h" local="yes">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h</includedby>
+    <incdepgraph>
+      <node id="2919">
+        <label>rapidjson/writer.h</label>
+      </node>
+      <node id="2904">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="2911">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="2916">
+        <label>glog/logging.h</label>
+      </node>
+      <node id="2898">
+        <label>DatasetWriter.h</label>
+        <link refid="_dataset_writer_8h"/>
+        <childnode refid="2899" relation="include">
+        </childnode>
+        <childnode refid="2917" relation="include">
+        </childnode>
+      </node>
+      <node id="2909">
+        <label>Regions/RleRegions.h</label>
+        <link refid="_rle_regions_8h"/>
+        <childnode refid="2902" relation="include">
+        </childnode>
+        <childnode refid="2903" relation="include">
+        </childnode>
+        <childnode refid="2910" relation="include">
+        </childnode>
+      </node>
+      <node id="2901">
+        <label>Regions/RectRegions.h</label>
+        <link refid="_rect_regions_8h"/>
+        <childnode refid="2902" relation="include">
+        </childnode>
+        <childnode refid="2903" relation="include">
+        </childnode>
+        <childnode refid="2905" relation="include">
+        </childnode>
+        <childnode refid="2906" relation="include">
+        </childnode>
+      </node>
+      <node id="2903">
+        <label>Regions.h</label>
+        <link refid="_regions_8h"/>
+        <childnode refid="2902" relation="include">
+        </childnode>
+        <childnode refid="2904" relation="include">
+        </childnode>
+      </node>
+      <node id="2902">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="2897">
+        <label>string</label>
+      </node>
+      <node id="2912">
+        <label>Common/EvalMatrix.h</label>
+        <link refid="_eval_matrix_8h"/>
+        <childnode refid="2913" relation="include">
+        </childnode>
+        <childnode refid="2915" relation="include">
+        </childnode>
+      </node>
+      <node id="2915">
+        <label>map</label>
+      </node>
+      <node id="2918">
+        <label>rapidjson/document.h</label>
+      </node>
+      <node id="2907">
+        <label>Regions/ContourRegions.h</label>
+        <link refid="_contour_regions_8h"/>
+        <childnode refid="2902" relation="include">
+        </childnode>
+        <childnode refid="2903" relation="include">
+        </childnode>
+        <childnode refid="2908" relation="include">
+        </childnode>
+      </node>
+      <node id="2920">
+        <label>rapidjson/stringbuffer.h</label>
+      </node>
+      <node id="2910">
+        <label>RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="2904" relation="include">
+        </childnode>
+        <childnode refid="2911" relation="include">
+        </childnode>
+      </node>
+      <node id="2900">
+        <label>Common/Sample.h</label>
+        <link refid="_sample_8h"/>
+        <childnode refid="2901" relation="include">
+        </childnode>
+        <childnode refid="2907" relation="include">
+        </childnode>
+        <childnode refid="2909" relation="include">
+        </childnode>
+      </node>
+      <node id="2914">
+        <label>vector</label>
+      </node>
+      <node id="2913">
+        <label>Matrix.h</label>
+        <link refid="_matrix_8h"/>
+        <childnode refid="2914" relation="include">
+        </childnode>
+      </node>
+      <node id="2908">
+        <label>ContourRegion.h</label>
+        <link refid="_contour_region_8h"/>
+        <childnode refid="2902" relation="include">
+        </childnode>
+        <childnode refid="2904" relation="include">
+        </childnode>
+      </node>
+      <node id="2917">
+        <label>unordered_map</label>
+      </node>
+      <node id="2905">
+        <label>RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="2902" relation="include">
+        </childnode>
+      </node>
+      <node id="2899">
+        <label>DatasetConverters/readers/DatasetReader.h</label>
+        <link refid="_dataset_reader_8h"/>
+        <childnode refid="2897" relation="include">
+        </childnode>
+        <childnode refid="2900" relation="include">
+        </childnode>
+        <childnode refid="2904" relation="include">
+        </childnode>
+        <childnode refid="2912" relation="include">
+        </childnode>
+        <childnode refid="2916" relation="include">
+        </childnode>
+      </node>
+      <node id="2906">
+        <label>algorithm</label>
+      </node>
+      <node id="2896">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h</label>
+        <link refid="_c_o_c_o_dataset_writer_8h"/>
+        <childnode refid="2897" relation="include">
+        </childnode>
+        <childnode refid="2898" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+        <childnode refid="2919" relation="include">
+        </childnode>
+        <childnode refid="2920" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2925">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_converter_8cpp"/>
+      </node>
+      <node id="2923">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h</label>
+        <link refid="_generic_dataset_writer_8h"/>
+        <childnode refid="2924" relation="include">
+        </childnode>
+        <childnode refid="2925" relation="include">
+        </childnode>
+        <childnode refid="2926" relation="include">
+        </childnode>
+        <childnode refid="2927" relation="include">
+        </childnode>
+        <childnode refid="2928" relation="include">
+        </childnode>
+        <childnode refid="2929" relation="include">
+        </childnode>
+      </node>
+      <node id="2928">
+        <label>DeepLearningSuite/Tools/Converter/converter.cpp</label>
+        <link refid="_tools_2_converter_2_converter_8cpp"/>
+      </node>
+      <node id="2929">
+        <label>DeepLearningSuite/Tools/Splitter/splitter.cpp</label>
+        <link refid="splitter_8cpp"/>
+      </node>
+      <node id="2922">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.cpp</label>
+        <link refid="_c_o_c_o_dataset_writer_8cpp"/>
+      </node>
+      <node id="2924">
+        <label>DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="2926">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp"/>
+      </node>
+      <node id="2927">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.cpp</label>
+        <link refid="_generic_dataset_writer_8cpp"/>
+      </node>
+      <node id="2921">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h</label>
+        <link refid="_c_o_c_o_dataset_writer_8h"/>
+        <childnode refid="2922" relation="include">
+        </childnode>
+        <childnode refid="2923" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_c_o_c_o_dataset_writer" prot="public">COCODatasetWriter</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_c_o_c_o_dataset_writer_8h_1adc1b46863feaa4a2a037fd391eea2825" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="class_c_o_c_o_dataset_writer" kindref="compound">COCODatasetWriter</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;COCODatasetWriter&gt; COCODatasetWriterPtr</definition>
+        <argsstring></argsstring>
+        <name>COCODatasetWriterPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_COCODATASETCONVERTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_COCODATASETCONVERTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_dataset_writer_8h" kindref="compound">DatasetWriter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rapidjson/document.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rapidjson/writer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rapidjson/stringbuffer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_c_o_c_o_dataset_writer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_c_o_c_o_dataset_writer" kindref="compound">COCODatasetWriter</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_dataset_writer" kindref="compound">DatasetWriter</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_c_o_c_o_dataset_writer_1adec3d112a29a894f380b0e72ffde9f93" kindref="member">COCODatasetWriter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="class_dataset_writer_1ac19eabc3e69f6e9bc4c5185803eed626" kindref="member">outPath</ref>,<sp/><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref>&amp;<sp/><ref refid="class_dataset_writer_1a2edef70c0de507a2e056eb3984705811" kindref="member">reader</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>writerNamesFile,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>overWriteclassWithZero=</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" kindref="member">process</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>writeImages<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useDepth<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>fullImagesPath;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>fullLabelsPath;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>fullNamesPath;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>overWriteclassWithZero;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>writerNamesFile;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="_c_o_c_o_dataset_writer_8h_1adc1b46863feaa4a2a037fd391eea2825" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><sp/>boost::shared_ptr&lt;COCODatasetWriter&gt;<sp/><ref refid="_c_o_c_o_dataset_writer_8h_1adc1b46863feaa4a2a037fd391eea2825" kindref="member">COCODatasetWriterPtr</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h"/>
+  </compounddef>
+</doxygen>

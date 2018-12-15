@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_utils" kind="class" language="C++" prot="public">
+    <compoundname>Utils</compoundname>
+    <includes refid="_utils_8h" local="no">Utils.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_utils_1af7234a751d8a81bd01774e9af9e403be" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Utils::getListViewContent</definition>
+        <argsstring>(const QListView *list, std::vector&lt; std::string &gt; &amp;content, const std::string &amp;prefix)</argsstring>
+        <name>getListViewContent</name>
+        <param>
+          <type>const QListView *</type>
+          <declname>list</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/Utils.h" line="18" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/Utils.cpp" bodystart="7" bodyend="21"/>
+        <referencedby refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" compoundref="mainwindow_8cpp" startline="51" endline="54">MainWindow::~MainWindow</referencedby>
+        <referencedby refid="class_sample_generator_handler_1_1_converter_1aa81680abc717a733101b6cddd7aa69f7" compoundref="_dataset_evaluation_app_2_sampler_generator_handler_2_converter_8cpp" startline="10" endline="99">SampleGeneratorHandler::Converter::process</referencedby>
+        <referencedby refid="class_sample_generator_handler_1_1_deployer_1ad9964a4e64b6d51ce7cd63083929ac42" compoundref="_deployer_8cpp" startline="13" endline="89">SampleGeneratorHandler::Deployer::process</referencedby>
+        <referencedby refid="class_sample_generator_handler_1_1_detector_1a9444b20f47b9b07fa4800bc283ab5c8a" compoundref="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp" startline="14" endline="83">SampleGeneratorHandler::Detector::process</referencedby>
+        <referencedby refid="class_sample_generator_handler_1_1_sampler_generation_handler_1af7e70df7bcf3189d20278f31c82c4c02" compoundref="_sampler_generation_handler_8cpp" startline="9" endline="55">SampleGeneratorHandler::SamplerGenerationHandler::createDatasetReaderPtr</referencedby>
+        <referencedby refid="class_sample_generator_handler_1_1_sampler_generation_handler_1ad840c7f9b5a3281f62829933308e7e18" compoundref="_sampler_generation_handler_8cpp" startline="57" endline="102">SampleGeneratorHandler::SamplerGenerationHandler::createLiveReaderPtr</referencedby>
+        <referencedby refid="class_sample_generator_handler_1_1_viewer_1a49261aa867217f568842e0d460743691" compoundref="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp" startline="15" endline="40">SampleGeneratorHandler::Viewer::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_utils_1a67febf7d08f4b9e5e8a105317556c22b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Utils::getDeployerParamsContent</definition>
+        <argsstring>(const QGroupBox *deployer_params, std::map&lt; std::string, std::string &gt; &amp;deployer_params_map)</argsstring>
+        <name>getDeployerParamsContent</name>
+        <param>
+          <type>const QGroupBox *</type>
+          <declname>deployer_params</declname>
+        </param>
+        <param>
+          <type>std::map&lt; std::string, std::string &gt; &amp;</type>
+          <declname>deployer_params_map</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/Utils.h" line="19" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/Utils.cpp" bodystart="23" bodyend="50"/>
+        <referencedby refid="class_sample_generator_handler_1_1_sampler_generation_handler_1ad840c7f9b5a3281f62829933308e7e18" compoundref="_sampler_generation_handler_8cpp" startline="57" endline="102">SampleGeneratorHandler::SamplerGenerationHandler::createLiveReaderPtr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_utils_1ae909b1275beb381a21977eb3618d31cd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Utils::getInferencerParamsContent</definition>
+        <argsstring>(const QGroupBox *inferencer_params, std::map&lt; std::string, std::string &gt; &amp;inferencer_params_map)</argsstring>
+        <name>getInferencerParamsContent</name>
+        <param>
+          <type>const QGroupBox *</type>
+          <declname>inferencer_params</declname>
+        </param>
+        <param>
+          <type>std::map&lt; std::string, std::string &gt; &amp;</type>
+          <declname>inferencer_params_map</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/Utils.h" line="20" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/Utils.cpp" bodystart="52" bodyend="86"/>
+        <referencedby refid="class_sample_generator_handler_1_1_deployer_1ad9964a4e64b6d51ce7cd63083929ac42" compoundref="_deployer_8cpp" startline="13" endline="89">SampleGeneratorHandler::Deployer::process</referencedby>
+        <referencedby refid="class_sample_generator_handler_1_1_detector_1a9444b20f47b9b07fa4800bc283ab5c8a" compoundref="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp" startline="14" endline="83">SampleGeneratorHandler::Detector::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_utils_1a70525e7417b0c195534a64403d25bf13" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Utils::getCameraParamsContent</definition>
+        <argsstring>(const QGroupBox *camera_params, int &amp;cameraID)</argsstring>
+        <name>getCameraParamsContent</name>
+        <param>
+          <type>const QGroupBox *</type>
+          <declname>camera_params</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>cameraID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/Utils.h" line="21" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/Utils.cpp" bodystart="88" bodyend="98"/>
+        <referencedby refid="class_sample_generator_handler_1_1_sampler_generation_handler_1ad840c7f9b5a3281f62829933308e7e18" compoundref="_sampler_generation_handler_8cpp" startline="57" endline="102">SampleGeneratorHandler::SamplerGenerationHandler::createLiveReaderPtr</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/gui/Utils.h" line="16" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/Utils.h" bodystart="16" bodyend="22"/>
+    <listofallmembers>
+      <member refid="class_utils_1a70525e7417b0c195534a64403d25bf13" prot="public" virt="non-virtual"><scope>Utils</scope><name>getCameraParamsContent</name></member>
+      <member refid="class_utils_1a67febf7d08f4b9e5e8a105317556c22b" prot="public" virt="non-virtual"><scope>Utils</scope><name>getDeployerParamsContent</name></member>
+      <member refid="class_utils_1ae909b1275beb381a21977eb3618d31cd" prot="public" virt="non-virtual"><scope>Utils</scope><name>getInferencerParamsContent</name></member>
+      <member refid="class_utils_1af7234a751d8a81bd01774e9af9e403be" prot="public" virt="non-virtual"><scope>Utils</scope><name>getListViewContent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

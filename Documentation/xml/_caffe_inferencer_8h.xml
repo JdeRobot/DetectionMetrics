@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_caffe_inferencer_8h" kind="file" language="C++">
+    <compoundname>CaffeInferencer.h</compoundname>
+    <includes refid="_framework_inferencer_8h" local="yes">FrameworkInferencer.h</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">opencv2/dnn.hpp</includes>
+    <includes local="no">opencv2/imgproc.hpp</includes>
+    <includes local="no">opencv2/highgui.hpp</includes>
+    <includedby refid="_caffe_inferencer_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.cpp</includedby>
+    <incdepgraph>
+      <node id="3287">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="3297">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="3295">
+        <label>Regions/RleRegions.h</label>
+        <link refid="_rle_regions_8h"/>
+        <childnode refid="3285" relation="include">
+        </childnode>
+        <childnode refid="3290" relation="include">
+        </childnode>
+        <childnode refid="3296" relation="include">
+        </childnode>
+      </node>
+      <node id="3289">
+        <label>Regions/RectRegions.h</label>
+        <link refid="_rect_regions_8h"/>
+        <childnode refid="3285" relation="include">
+        </childnode>
+        <childnode refid="3290" relation="include">
+        </childnode>
+        <childnode refid="3291" relation="include">
+        </childnode>
+        <childnode refid="3292" relation="include">
+        </childnode>
+      </node>
+      <node id="3290">
+        <label>Regions.h</label>
+        <link refid="_regions_8h"/>
+        <childnode refid="3285" relation="include">
+        </childnode>
+        <childnode refid="3287" relation="include">
+        </childnode>
+      </node>
+      <node id="3303">
+        <label>opencv2/imgproc.hpp</label>
+      </node>
+      <node id="3285">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="3293">
+        <label>Regions/ContourRegions.h</label>
+        <link refid="_contour_regions_8h"/>
+        <childnode refid="3285" relation="include">
+        </childnode>
+        <childnode refid="3290" relation="include">
+        </childnode>
+        <childnode refid="3294" relation="include">
+        </childnode>
+      </node>
+      <node id="3302">
+        <label>opencv2/dnn.hpp</label>
+      </node>
+      <node id="3300">
+        <label>fstream</label>
+      </node>
+      <node id="3283">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h</label>
+        <link refid="_caffe_inferencer_8h"/>
+        <childnode refid="3284" relation="include">
+        </childnode>
+        <childnode refid="3299" relation="include">
+        </childnode>
+        <childnode refid="3300" relation="include">
+        </childnode>
+        <childnode refid="3301" relation="include">
+        </childnode>
+        <childnode refid="3302" relation="include">
+        </childnode>
+        <childnode refid="3303" relation="include">
+        </childnode>
+        <childnode refid="3304" relation="include">
+        </childnode>
+      </node>
+      <node id="3298">
+        <label>boost/date_time/posix_time/posix_time.hpp</label>
+      </node>
+      <node id="3286">
+        <label>opencv2/imgproc/imgproc.hpp</label>
+      </node>
+      <node id="3296">
+        <label>RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="3287" relation="include">
+        </childnode>
+        <childnode refid="3297" relation="include">
+        </childnode>
+      </node>
+      <node id="3288">
+        <label>Common/Sample.h</label>
+        <link refid="_sample_8h"/>
+        <childnode refid="3289" relation="include">
+        </childnode>
+        <childnode refid="3293" relation="include">
+        </childnode>
+        <childnode refid="3295" relation="include">
+        </childnode>
+      </node>
+      <node id="3299">
+        <label>vector</label>
+      </node>
+      <node id="3301">
+        <label>sstream</label>
+      </node>
+      <node id="3304">
+        <label>opencv2/highgui.hpp</label>
+      </node>
+      <node id="3294">
+        <label>ContourRegion.h</label>
+        <link refid="_contour_region_8h"/>
+        <childnode refid="3285" relation="include">
+        </childnode>
+        <childnode refid="3287" relation="include">
+        </childnode>
+      </node>
+      <node id="3284">
+        <label>FrameworkInferencer.h</label>
+        <link refid="_framework_inferencer_8h"/>
+        <childnode refid="3285" relation="include">
+        </childnode>
+        <childnode refid="3286" relation="include">
+        </childnode>
+        <childnode refid="3287" relation="include">
+        </childnode>
+        <childnode refid="3288" relation="include">
+        </childnode>
+        <childnode refid="3298" relation="include">
+        </childnode>
+        <childnode refid="3292" relation="include">
+        </childnode>
+      </node>
+      <node id="3291">
+        <label>RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="3285" relation="include">
+        </childnode>
+      </node>
+      <node id="3292">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3306">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.cpp</label>
+        <link refid="_caffe_inferencer_8cpp"/>
+      </node>
+      <node id="3305">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h</label>
+        <link refid="_caffe_inferencer_8h"/>
+        <childnode refid="3306" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_caffe_inferencer" prot="public">CaffeInferencer</innerclass>
+    <innerclass refid="struct_caffe_inferencer_1_1detection" prot="private">CaffeInferencer::detection</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_caffe_inferencer_8h_1a3947e32fc14579adb5ee647a82b72686" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="class_caffe_inferencer" kindref="compound">CaffeInferencer</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;CaffeInferencer&gt; CaffeInferencerPtr</definition>
+        <argsstring></argsstring>
+        <name>CaffeInferencerPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="43" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_CAFFEINFERENCER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_CAFFEINFERENCER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_framework_inferencer_8h" kindref="compound">FrameworkInferencer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/dnn.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/imgproc.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/highgui.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="class_caffe_inferencer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_caffe_inferencer" kindref="compound">CaffeInferencer</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_framework_inferencer" kindref="compound">FrameworkInferencer</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_caffe_inferencer_1a061bf73e8736135e292154d9fa50d13d" kindref="member">CaffeInferencer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>netConfig,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>netWeights,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" kindref="member">classNamesFile</ref>,<sp/>std::map&lt;std::string,<sp/>std::string&gt;*<sp/>inferencerParamsMap);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_sample" kindref="compound">Sample</ref><sp/><ref refid="class_caffe_inferencer_1a898f6d0e7106ac663a6c26ecdf799502" kindref="member">detectImp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>image,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>confidence_threshold);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;cv::String&gt;<sp/><ref refid="class_caffe_inferencer_1a92db0b7b61f5f7bbfcee3c1905022082" kindref="member">getOutputsNames</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_caffe_inferencer_1a3eb860abbe252b50d6f17104bf751b62" kindref="member">postprocess</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;cv::Mat&gt;&amp;<sp/>outs,<sp/>cv::Mat&amp;<sp/>image,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>confidence_threshold);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>netConfig;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>netWeights;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">detection<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::Rect<sp/>boundingBox;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>probability;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>classId;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;detection&gt;<sp/>detections;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;cv::String&gt;<sp/>names;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scaling_factor;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Scalar<sp/>mean_sub;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::dnn::Net<sp/>net;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>inpWidth;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>inpHeight;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>swapRB;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="_caffe_inferencer_8h_1a3947e32fc14579adb5ee647a82b72686" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;CaffeInferencer&gt;<sp/><ref refid="_caffe_inferencer_8h_1a3947e32fc14579adb5ee647a82b72686" kindref="member">CaffeInferencerPtr</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_CAFFEINFERENCER_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h"/>
+  </compounddef>
+</doxygen>

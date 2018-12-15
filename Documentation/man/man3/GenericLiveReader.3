@@ -1,0 +1,46 @@
+.TH "GenericLiveReader" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GenericLiveReader
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GenericLiveReader\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGenericLiveReader\fP (const std::string &path, const std::string &classNamesFile, const std::string &readerImplementation, std::map< std::string, std::string > *deployer_params_map=NULL, int cameraID=\-1)"
+.br
+.ti -1c
+.RI "\fBGenericLiveReader\fP (const std::vector< std::string > &paths, const std::string &classNamesFile, const std::string &readerImplementation)"
+.br
+.ti -1c
+.RI "\fBDatasetReaderPtr\fP \fBgetReader\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::vector< std::string > \fBgetAvailableImplementations\fP ()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GenericLiveReader::GenericLiveReader (const std::string & path, const std::string & classNamesFile, const std::string & readerImplementation, std::map< std::string, std::string > * deployer_params_map = \fCNULL\fP, int cameraID = \fC\-1\fP)"
+
+.SS "GenericLiveReader::GenericLiveReader (const std::vector< std::string > & paths, const std::string & classNamesFile, const std::string & readerImplementation)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< std::string > GenericLiveReader::getAvailableImplementations ()\fC [static]\fP"
+
+.SS "\fBDatasetReaderPtr\fP GenericLiveReader::getReader ()"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

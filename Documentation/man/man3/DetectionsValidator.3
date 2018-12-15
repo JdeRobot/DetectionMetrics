@@ -1,0 +1,42 @@
+.TH "DetectionsValidator" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DetectionsValidator
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DetectionsValidator\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDetectionsValidator\fP (const std::string &pathToSave, double scale=3)"
+.br
+.ti -1c
+.RI "\fB~DetectionsValidator\fP ()"
+.br
+.ti -1c
+.RI "void \fBvalidate\fP (const cv::Mat &colorImage, const cv::Mat &depthImage, std::vector< std::vector< cv::Point >> &detections)"
+.br
+.ti -1c
+.RI "void \fBvalidate\fP (const \fBSample\fP &inputSample)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DetectionsValidator::DetectionsValidator (const std::string & pathToSave, double scale = \fC3\fP)"
+
+.SS "DetectionsValidator::~DetectionsValidator ()\fC [default]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void DetectionsValidator::validate (const cv::Mat & colorImage, const cv::Mat & depthImage, std::vector< std::vector< cv::Point >> & detections)"
+
+.SS "void DetectionsValidator::validate (const \fBSample\fP & inputSample)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

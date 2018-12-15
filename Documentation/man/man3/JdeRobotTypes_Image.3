@@ -1,0 +1,45 @@
+.TH "JdeRobotTypes::Image" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+JdeRobotTypes::Image
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <image\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBheight\fP = 0"
+.br
+.ti -1c
+.RI "int \fBwidth\fP = 0"
+.br
+.ti -1c
+.RI "double \fBtimeStamp\fP = 0"
+.br
+.ti -1c
+.RI "std::string \fBformat\fP = ''"
+.br
+.ti -1c
+.RI "cv::Mat \fBdata\fP = cv::Mat::zeros(3,3, CV_8UC3)"
+.br
+.in -1c
+.SH "Member Data Documentation"
+.PP 
+.SS "cv::Mat JdeRobotTypes::Image::data = cv::Mat::zeros(3,3, CV_8UC3)"
+The image data itself 
+.SS "std::string JdeRobotTypes::Image::format = ''"
+Image format string (RGB8, BGR,\&.\&.\&.) 
+.SS "int JdeRobotTypes::Image::height = 0"
+Image height [pixels] 
+.SS "double JdeRobotTypes::Image::timeStamp = 0"
+Time stamp [s] 
+.SS "int JdeRobotTypes::Image::width = 0"
+Image width [pixels] 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

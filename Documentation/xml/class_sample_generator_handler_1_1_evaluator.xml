@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_sample_generator_handler_1_1_evaluator" kind="class" language="C++" prot="public">
+    <compoundname>SampleGeneratorHandler::Evaluator</compoundname>
+    <includes refid="_evaluator_8h" local="no">Evaluator.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_sample_generator_handler_1_1_evaluator_1aea0f0fd9a50055382e4c44f45f61c4f0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SampleGeneratorHandler::Evaluator::process</definition>
+        <argsstring>(QListView *datasetListGT, QListView *namesListGT, QListView *readerImpListGT, QListView *datasetListDetect, QListView *namesListDetect, QListView *readerImpListDetect, QListView *filterClasses, const std::string &amp;datasetPath, const std::string &amp;namesGTPath, const std::string &amp;inferencesPath, const std::string &amp;namesPath, bool overWriterPersonClasses, bool enableMixEvaluation, bool isIouTypeBbox)</argsstring>
+        <name>process</name>
+        <param>
+          <type>QListView *</type>
+          <declname>datasetListGT</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>namesListGT</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>readerImpListGT</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>datasetListDetect</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>namesListDetect</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>readerImpListDetect</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>filterClasses</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>datasetPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>namesGTPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>inferencesPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>namesPath</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>overWriterPersonClasses</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>enableMixEvaluation</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isIouTypeBbox</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.h" line="15" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.cpp" bodystart="11" bodyend="61"/>
+        <references refid="class_sample_generator_handler_1_1_sampler_generation_handler_1af7e70df7bcf3189d20278f31c82c4c02" compoundref="_sampler_generation_handler_8cpp" startline="9" endline="55">SampleGeneratorHandler::SamplerGenerationHandler::createDatasetReaderPtr</references>
+        <references refid="class_stats_writer_1a3eaa872621d87d7c26df3d4d810ee759" compoundref="_stats_writer_8cpp" startline="37" endline="65">StatsWriter::writeInferencerResults</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.h" line="13" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.h" bodystart="13" bodyend="21"/>
+    <listofallmembers>
+      <member refid="class_sample_generator_handler_1_1_evaluator_1aea0f0fd9a50055382e4c44f45f61c4f0" prot="public" virt="non-virtual"><scope>SampleGeneratorHandler::Evaluator</scope><name>process</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

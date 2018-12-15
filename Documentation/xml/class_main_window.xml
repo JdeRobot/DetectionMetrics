@@ -1,0 +1,512 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_main_window" kind="class" language="C++" prot="public">
+    <compoundname>MainWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QMainWindow</basecompoundref>
+    <includes refid="mainwindow_8h" local="no">mainwindow.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_main_window_1a35466a70ed47252a0191168126a352a5" prot="public" static="no" mutable="no">
+        <type><ref refid="class_ui_1_1_main_window" kindref="compound">Ui::MainWindow</ref> *</type>
+        <definition>Ui::MainWindow* MainWindow::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="20" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="class_main_window_1a7fb1138e5c824a58606e94b08c7278af" compoundref="mainwindow_8cpp" startline="21" endline="49">MainWindow</referencedby>
+        <referencedby refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" compoundref="mainwindow_8cpp" startline="51" endline="54">~MainWindow</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_main_window_1a23c07390c1280b802f35cf8fa8e09689" prot="private" static="no" mutable="no">
+        <type><ref refid="class_sample_generation_app" kindref="compound">SampleGenerationApp</ref> *</type>
+        <definition>SampleGenerationApp* MainWindow::app</definition>
+        <argsstring></argsstring>
+        <name>app</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="24" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1abf5cb3f758fe46ddc8f0c61e757e1aa7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MainWindow::stopDeployer</definition>
+        <argsstring></argsstring>
+        <name>stopDeployer</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="25" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a99b170599736c0ed61dce7d22522e114" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double MainWindow::confidence_threshold</definition>
+        <argsstring></argsstring>
+        <name>confidence_threshold</name>
+        <initializer>= 0.2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="26" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_main_window_1a7fb1138e5c824a58606e94b08c7278af" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainWindow::MainWindow</definition>
+        <argsstring>(SampleGenerationApp *app, QWidget *parent=0)</argsstring>
+        <name>MainWindow</name>
+        <param>
+          <type><ref refid="class_sample_generation_app" kindref="compound">SampleGenerationApp</ref> *</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="18" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="21" bodyend="49"/>
+        <references refid="class_main_window_1a35466a70ed47252a0191168126a352a5" compoundref="mainwindow_8h" startline="20">ui</references>
+        <references refid="class_ui___main_window_1acf4a0872c4c77d8f43a2ec66ed849b58" compoundref="ui__mainwindow_8h" startline="244" endline="1096">Ui_MainWindow::setupUi</references>
+        <references refid="class_ui___main_window_1ad332d93084584930878f1daf5f84cdbf" compoundref="ui__mainwindow_8h" startline="44">Ui_MainWindow::pushButton</references>
+        <references refid="class_ui___main_window_1a3260b943854b841c986f47c4726ee7f9" compoundref="ui__mainwindow_8h" startline="42">Ui_MainWindow::tabWidget</references>
+        <references refid="class_ui___main_window_1aed16e1c25540482fc249643ab6b2fc39" compoundref="ui__mainwindow_8h" startline="90">Ui_MainWindow::pushButton_converter_output</references>
+        <references refid="class_ui___main_window_1a3a1a35e5655aaa97ba672356b4279e6d" compoundref="ui__mainwindow_8h" startline="114">Ui_MainWindow::pushButton_detector_output</references>
+        <references refid="class_ui___main_window_1a2c039d057072eb5f23b73bcc563d013c" compoundref="ui__mainwindow_8h" startline="91">Ui_MainWindow::pushButton_convert</references>
+        <references refid="class_ui___main_window_1a2204a95e5d48dee0ca4934bb92ae5f0d" compoundref="ui__mainwindow_8h" startline="176">Ui_MainWindow::pushButton_evaluate</references>
+        <references refid="class_ui___main_window_1a2d0cb8da286d7413988919991e390ec7" compoundref="ui__mainwindow_8h" startline="127">Ui_MainWindow::pushButton_detect</references>
+        <references refid="class_ui___main_window_1a76e5b3c7f2cc01e3150928540d5e4b3c" compoundref="ui__mainwindow_8h" startline="213">Ui_MainWindow::pushButton_deploy_input</references>
+        <references refid="class_ui___main_window_1a675768ae37bd76796ea5ab0a5ac8ae38" compoundref="ui__mainwindow_8h" startline="214">Ui_MainWindow::pushButton_deploy_process</references>
+        <references refid="class_ui___main_window_1ae6738983e603f6ea1c7b78bb235f21f4" compoundref="ui__mainwindow_8h" startline="229">Ui_MainWindow::checkBox_deployer_saveOutput</references>
+        <references refid="class_ui___main_window_1a79e9fa8f83ebfda559d73855a2f17967" compoundref="ui__mainwindow_8h" startline="234">Ui_MainWindow::pushButton_stop_deployer_process</references>
+        <references refid="class_ui___main_window_1aafb902cf3c987152453a8240fa67d2a9" compoundref="ui__mainwindow_8h" startline="227">Ui_MainWindow::pushButton_deployer_output_folder</references>
+        <references refid="class_ui___main_window_1a2cc4bbc3a3be8d809cd21e6976ce7550" compoundref="ui__mainwindow_8h" startline="235">Ui_MainWindow::deployer_conf_horizontalSlider</references>
+        <references refid="class_ui___main_window_1ab175e6315d05d53b89ad808af07ab7f0" compoundref="ui__mainwindow_8h" startline="237">Ui_MainWindow::deployer_confidence_lineEdit</references>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainWindow::~MainWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~MainWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="19" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="51" bodyend="54"/>
+        <references refid="class_main_window_1a35466a70ed47252a0191168126a352a5" compoundref="mainwindow_8h" startline="20">ui</references>
+        <references refid="class_sample_generator_handler_1_1_viewer_1a49261aa867217f568842e0d460743691" compoundref="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp" startline="15" endline="40">SampleGeneratorHandler::Viewer::process</references>
+        <references refid="class_ui___main_window_1aa685d9d2d4e60e53c288ecf32647f35a" compoundref="ui__mainwindow_8h" startline="48">Ui_MainWindow::listView_viewer_dataset</references>
+        <references refid="class_ui___main_window_1af4947b2cf47f37208aebd8ba38db853a" compoundref="ui__mainwindow_8h" startline="52">Ui_MainWindow::listView_viewer_names</references>
+        <references refid="class_ui___main_window_1a29ad2667c992936d57a5517c7c8259ac" compoundref="ui__mainwindow_8h" startline="56">Ui_MainWindow::listView_viewer_reader_imp</references>
+        <references refid="class_ui___main_window_1a412ce9f0509fe3197e16fee0215681ce" compoundref="ui__mainwindow_8h" startline="60">Ui_MainWindow::listView_viewer_classFilter</references>
+        <references refid="class_ui___main_window_1a1608b61e6422af2964ad7da6ec3ed633" compoundref="ui__mainwindow_8h" startline="61">Ui_MainWindow::checkBox_evaluator_show_depth</references>
+        <references refid="class_sample_generation_app_1a2c13df2c47ec917170e0b995218bb31b" compoundref="_sample_generation_app_8cpp" startline="109" endline="111">SampleGenerationApp::getConfig</references>
+        <references refid="class_config_1_1_properties_1a87fb20ec94658e8ce0cce06b239019be" compoundref="properties_8cpp" startline="119" endline="124">Config::Properties::asString</references>
+        <references refid="class_ui___main_window_1a3260b943854b841c986f47c4726ee7f9" compoundref="ui__mainwindow_8h" startline="42">Ui_MainWindow::tabWidget</references>
+        <references refid="class_utils_1af7234a751d8a81bd01774e9af9e403be" compoundref="_utils_8cpp" startline="7" endline="21">Utils::getListViewContent</references>
+        <references refid="class_list_view_config_1a4e5262ada7f3ae203f6ad7b86998def7" compoundref="_list_view_config_8cpp" startline="229" endline="244">ListViewConfig::configureInputByData</references>
+        <references refid="class_ui___main_window_1aacf5b449aa29b1e99616341855751a8e" compoundref="ui__mainwindow_8h" startline="70">Ui_MainWindow::listView_converter_names</references>
+        <references refid="class_ui___main_window_1a9d4975188649658fbba7dc50f796019b" compoundref="ui__mainwindow_8h" startline="78">Ui_MainWindow::listView_converter_classFilter</references>
+        <references refid="class_ui___main_window_1ab08d539aa785bc82d717afad6a36add7" compoundref="ui__mainwindow_8h" startline="163">Ui_MainWindow::listView_evaluator_detection_names</references>
+        <references refid="class_ui___main_window_1a866370f94029bb74094485bd673c7efe" compoundref="ui__mainwindow_8h" startline="175">Ui_MainWindow::listView_evaluator_classFilter</references>
+        <references refid="class_ui___main_window_1a40e53c5773a8f45a8141f90d1bc90fe1" compoundref="ui__mainwindow_8h" startline="87">Ui_MainWindow::checkBox_use_writernames</references>
+        <references refid="class_ui___main_window_1a7a26850212ec1827adbade5ef2eaf48b" compoundref="ui__mainwindow_8h" startline="86">Ui_MainWindow::listView_converter_writer_names</references>
+        <references refid="class_list_view_config_1a018c9bf8ec0f705ebc40076b54aec658" compoundref="_list_view_config_8cpp" startline="13" endline="51">ListViewConfig::configureDatasetInput</references>
+        <references refid="class_list_view_config_1aa280ece932674550644df1b827f768b0" compoundref="_list_view_config_8cpp" startline="176" endline="211">ListViewConfig::configureInputByFile</references>
+        <references refid="class_generic_dataset_reader_1a61027ae03b1fcf92eee88c95eb8740a0" compoundref="_generic_dataset_reader_8cpp" startline="158" endline="163">GenericDatasetReader::getAvailableImplementations</references>
+        <references refid="class_ui___main_window_1ab880027088604be2d2a85082180455ca" compoundref="ui__mainwindow_8h" startline="74">Ui_MainWindow::listView_converter_dataset</references>
+        <references refid="class_ui___main_window_1a57bcb6f52781dc8b088d157181aca6a1" compoundref="ui__mainwindow_8h" startline="66">Ui_MainWindow::listView_converter_reader_imp</references>
+        <references refid="class_ui___main_window_1a8d24a02a61fd90cf443ea262d63b7af3" compoundref="ui__mainwindow_8h" startline="82">Ui_MainWindow::listView_converter_outImp</references>
+        <references refid="class_generic_dataset_writer_1ae2728eb07aa990f39d41aa0d2eee2206" compoundref="_generic_dataset_writer_8cpp" startline="75" endline="79">GenericDatasetWriter::getAvailableImplementations</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_main_window_1a08a7b25302a32a7874bb83a96019a7ca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleViewButton</definition>
+        <argsstring>()</argsstring>
+        <name>handleViewButton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="29" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a688890c86ea45ba82aef2e0ddbfd91df" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleSelectOutputFolderButton</definition>
+        <argsstring>()</argsstring>
+        <name>handleSelectOutputFolderButton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="30" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="218" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a59225fcc498ad914977fcb5dd66c8660" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleSelectionNamesChanged</definition>
+        <argsstring>()</argsstring>
+        <name>handleSelectionNamesChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="31" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="61" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a9a03015bb99460a976eeeb9caad8f203" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::setupTabsInformation</definition>
+        <argsstring>()</argsstring>
+        <name>setupTabsInformation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="32" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="107" bodyend="216"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a2a5027f450118eddfa2df99be0416468" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleConvertButton</definition>
+        <argsstring>()</argsstring>
+        <name>handleConvertButton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="33" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="237" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a63ffb42085994058704e99ae5648dce8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleEvaluateButton</definition>
+        <argsstring>()</argsstring>
+        <name>handleEvaluateButton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="34" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="267" bodyend="285"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a1b91dc2cf0c6df7e572fe1fa42aa5e6b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleDetectButton</definition>
+        <argsstring>()</argsstring>
+        <name>handleDetectButton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="35" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="287" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a808123347955452c2ab054a33aaf1ec1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleSelectOutputFolderButtonDetector</definition>
+        <argsstring>()</argsstring>
+        <name>handleSelectOutputFolderButtonDetector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="36" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="312" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ac2d748efaefe7444901ec93c01e6ab27" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleSelectDeployInputSource</definition>
+        <argsstring>()</argsstring>
+        <name>handleSelectDeployInputSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="37" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="331" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a798df0865ee4add6fba8ac8457757ad5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleSelectOutputFolderButtonDeployer</definition>
+        <argsstring>()</argsstring>
+        <name>handleSelectOutputFolderButtonDeployer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="38" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="350" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a414f448191b271d29014823feb58cde2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleProcessDeploy</definition>
+        <argsstring>()</argsstring>
+        <name>handleProcessDeploy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="39" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="481" bodyend="509"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ad33c50f05a39899471bf93e488bce9c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleMappingCheckBoxChange</definition>
+        <argsstring>()</argsstring>
+        <name>handleMappingCheckBoxChange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="40" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="99" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a21e746591953c470b89472524bd783b6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleDeployerImpListViewChange</definition>
+        <argsstring>(const QModelIndex &amp;selected, const QModelIndex &amp;deselected)</argsstring>
+        <name>handleDeployerImpListViewChange</name>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>selected</declname>
+        </param>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>deselected</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="41" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="369" bodyend="389"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a52403274093f59eed65e407d8be793dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleDeployerConfigFileOptionChange</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>handleDeployerConfigFileOptionChange</name>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="42" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="391" bodyend="401"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1aaaa507911cd4384c2190c6f2ccd2850f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleDeployerInferencerImpListViewChange</definition>
+        <argsstring>(const QModelIndex &amp;selected, const QModelIndex &amp;deselected)</argsstring>
+        <name>handleDeployerInferencerImpListViewChange</name>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>selected</declname>
+        </param>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>deselected</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="43" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="403" bodyend="409"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a9a7ea728320525f268f114604b4bbdba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleDetectorInferencerImpListViewChange</definition>
+        <argsstring>(const QModelIndex &amp;selected, const QModelIndex &amp;deselected)</argsstring>
+        <name>handleDetectorInferencerImpListViewChange</name>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>selected</declname>
+        </param>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>deselected</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="44" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="411" bodyend="417"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a0acfd1d5bb20867c9d9bd224b49b87dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleDeployerSaveOutputCheckboxChange</definition>
+        <argsstring>()</argsstring>
+        <name>handleDeployerSaveOutputCheckboxChange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="45" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="468" bodyend="474"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a0743f660d4af52618e410bbc6d7ac6dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleDeployerStop</definition>
+        <argsstring>()</argsstring>
+        <name>handleDeployerStop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="46" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="476" bodyend="479"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ac2646e35e28d0a35ed1602c0654ad939" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleDeployerConfidenceLineEditChange</definition>
+        <argsstring>(const QString &amp;confidence)</argsstring>
+        <name>handleDeployerConfidenceLineEditChange</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>confidence</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="47" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="419" bodyend="452"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1afc59c300220849507e7c6a52209f1416" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::handleDeployerConfidenceSliderChange</definition>
+        <argsstring>(const int &amp;confidence)</argsstring>
+        <name>handleDeployerConfidenceSliderChange</name>
+        <param>
+          <type>const int &amp;</type>
+          <declname>confidence</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="48" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp" bodystart="454" bodyend="465"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="236">
+        <label>QMainWindow</label>
+      </node>
+      <node id="235">
+        <label>MainWindow</label>
+        <link refid="class_main_window"/>
+        <childnode refid="236" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="239">
+        <label>Ui::MainWindow</label>
+        <link refid="class_ui_1_1_main_window"/>
+        <childnode refid="240" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="238">
+        <label>QMainWindow</label>
+      </node>
+      <node id="237">
+        <label>MainWindow</label>
+        <link refid="class_main_window"/>
+        <childnode refid="238" relation="public-inheritance">
+        </childnode>
+        <childnode refid="239" relation="usage">
+          <edgelabel>ui</edgelabel>
+        </childnode>
+      </node>
+      <node id="240">
+        <label>Ui_MainWindow</label>
+        <link refid="class_ui___main_window"/>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" line="14" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/mainwindow.h" bodystart="13" bodyend="49"/>
+    <listofallmembers>
+      <member refid="class_main_window_1a23c07390c1280b802f35cf8fa8e09689" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>app</name></member>
+      <member refid="class_main_window_1a99b170599736c0ed61dce7d22522e114" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>confidence_threshold</name></member>
+      <member refid="class_main_window_1a2a5027f450118eddfa2df99be0416468" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleConvertButton</name></member>
+      <member refid="class_main_window_1ac2646e35e28d0a35ed1602c0654ad939" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleDeployerConfidenceLineEditChange</name></member>
+      <member refid="class_main_window_1afc59c300220849507e7c6a52209f1416" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleDeployerConfidenceSliderChange</name></member>
+      <member refid="class_main_window_1a52403274093f59eed65e407d8be793dd" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleDeployerConfigFileOptionChange</name></member>
+      <member refid="class_main_window_1a21e746591953c470b89472524bd783b6" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleDeployerImpListViewChange</name></member>
+      <member refid="class_main_window_1aaaa507911cd4384c2190c6f2ccd2850f" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleDeployerInferencerImpListViewChange</name></member>
+      <member refid="class_main_window_1a0acfd1d5bb20867c9d9bd224b49b87dd" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleDeployerSaveOutputCheckboxChange</name></member>
+      <member refid="class_main_window_1a0743f660d4af52618e410bbc6d7ac6dd" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleDeployerStop</name></member>
+      <member refid="class_main_window_1a1b91dc2cf0c6df7e572fe1fa42aa5e6b" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleDetectButton</name></member>
+      <member refid="class_main_window_1a9a7ea728320525f268f114604b4bbdba" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleDetectorInferencerImpListViewChange</name></member>
+      <member refid="class_main_window_1a63ffb42085994058704e99ae5648dce8" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleEvaluateButton</name></member>
+      <member refid="class_main_window_1ad33c50f05a39899471bf93e488bce9c5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleMappingCheckBoxChange</name></member>
+      <member refid="class_main_window_1a414f448191b271d29014823feb58cde2" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleProcessDeploy</name></member>
+      <member refid="class_main_window_1ac2d748efaefe7444901ec93c01e6ab27" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleSelectDeployInputSource</name></member>
+      <member refid="class_main_window_1a59225fcc498ad914977fcb5dd66c8660" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleSelectionNamesChanged</name></member>
+      <member refid="class_main_window_1a688890c86ea45ba82aef2e0ddbfd91df" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleSelectOutputFolderButton</name></member>
+      <member refid="class_main_window_1a798df0865ee4add6fba8ac8457757ad5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleSelectOutputFolderButtonDeployer</name></member>
+      <member refid="class_main_window_1a808123347955452c2ab054a33aaf1ec1" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleSelectOutputFolderButtonDetector</name></member>
+      <member refid="class_main_window_1a08a7b25302a32a7874bb83a96019a7ca" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>handleViewButton</name></member>
+      <member refid="class_main_window_1a7fb1138e5c824a58606e94b08c7278af" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>MainWindow</name></member>
+      <member refid="class_main_window_1a9a03015bb99460a976eeeb9caad8f203" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>setupTabsInformation</name></member>
+      <member refid="class_main_window_1abf5cb3f758fe46ddc8f0c61e757e1aa7" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>stopDeployer</name></member>
+      <member refid="class_main_window_1a35466a70ed47252a0191168126a352a5" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>ui</name></member>
+      <member refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>~MainWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

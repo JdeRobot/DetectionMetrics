@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_5ba02919e4e4a2266d748fa28aaa0a93" kind="dir">
+    <compoundname>DeepLearningSuite/libs/config/include/config</compoundname>
+    <innerfile refid="config_8h">config.h</innerfile>
+    <innerfile refid="loader_8hpp">loader.hpp</innerfile>
+    <innerfile refid="properties_8hpp">properties.hpp</innerfile>
+    <innerfile refid="stdutils_8hpp">stdutils.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/config/include/config/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,510 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="colorspaces_8h" kind="file" language="C++">
+    <compoundname>colorspaces.h</compoundname>
+    <includedby refid="rgb2hsv_8c" local="yes">DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c</includedby>
+    <includedby refid="rgb2yuv_8c" local="yes">DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c</includedby>
+    <invincdepgraph>
+      <node id="5625">
+        <label>DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c</label>
+        <link refid="rgb2yuv_8c"/>
+      </node>
+      <node id="5624">
+        <label>DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c</label>
+        <link refid="rgb2hsv_8c"/>
+      </node>
+      <node id="5623">
+        <label>DeepLearningSuite/libs/utils/colorspaces/colorspaces.h</label>
+        <link refid="colorspaces_8h"/>
+        <childnode refid="5624" relation="include">
+        </childnode>
+        <childnode refid="5625" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_h_s_v" prot="public">HSV</innerclass>
+    <innerclass refid="struct_y_u_v" prot="public">YUV</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="colorspaces_8h_1a47f2e62c0dbebc787052c165afcada0e" prot="public" static="no">
+        <name>NAME</name>
+        <initializer>&quot;colorspaces&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="28" column="9" bodyfile="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="colorspaces_8h_1aee272dd28e234398015e21016d0693a2" prot="public" static="no">
+        <name>COLORSPACES_VERSION</name>
+        <initializer>&quot;1.4.0&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="29" column="9" bodyfile="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="colorspaces_8h_1a4dddeb18ef9d4b3ad60a78ec2b33d11c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="struct_h_s_v" kindref="compound">HSV</ref> *</type>
+        <definition>struct HSV* LUT_RGB2HSV[64][64][64]</definition>
+        <argsstring>[64][64][64]</argsstring>
+        <name>LUT_RGB2HSV</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="45" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="colorspaces_8h_1a3d8f38fa99d5cc96d230b933664c17cf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int isInitTableHSV</definition>
+        <argsstring></argsstring>
+        <name>isInitTableHSV</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="47" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="39" bodyend="-1"/>
+        <referencedby refid="rgb2hsv_8c_1ad7dd44362d341ab79bbf849231329901" compoundref="rgb2hsv_8c" startline="156" endline="182">RGB2HSV_destroyTable</referencedby>
+        <referencedby refid="rgb2hsv_8c_1a9d3c0b7a96c30bad15271386140eb6ae" compoundref="rgb2hsv_8c" startline="185" endline="200">RGB2HSV_init</referencedby>
+        <referencedby refid="rgb2hsv_8c_1a1c0a6a7df547f29e98835424b6b66c09" compoundref="rgb2hsv_8c" startline="204" endline="254">RGB2HSV_createTable</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="colorspaces_8h_1ae6bcabd09da17a93dcba1556dae20720" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="struct_y_u_v" kindref="compound">YUV</ref> *</type>
+        <definition>struct YUV* LUT_RGB2YUV[64][64][64]</definition>
+        <argsstring>[64][64][64]</argsstring>
+        <name>LUT_RGB2YUV</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="80" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="colorspaces_8h_1aaae0c312320c8f59fb2b072d84dcbc38" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int isInitTableYUV</definition>
+        <argsstring></argsstring>
+        <name>isInitTableYUV</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="82" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="37" bodyend="-1"/>
+        <referencedby refid="rgb2yuv_8c_1aae0cea8e9df662fcb538c679a4049045" compoundref="rgb2yuv_8c" startline="108" endline="133">RGB2YUV_destroyTable</referencedby>
+        <referencedby refid="rgb2yuv_8c_1a076be3570ea0ec2aba5811ee0c609361" compoundref="rgb2yuv_8c" startline="136" endline="151">RGB2YUV_init</referencedby>
+        <referencedby refid="rgb2yuv_8c_1ab2b3287a0417bedece40b4bcc665265c" compoundref="rgb2yuv_8c" startline="155" endline="206">RGB2YUV_createTable</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="colorspaces_8h_1a9d3c0b7a96c30bad15271386140eb6ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2HSV_init</definition>
+        <argsstring>()</argsstring>
+        <name>RGB2HSV_init</name>
+        <briefdescription>
+<para>Init the RGB2HSV. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="50" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="185" bodyend="200"/>
+        <references refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" compoundref="rgb2hsv_8c" startline="42">mutex</references>
+        <references refid="rgb2hsv_8c_1a3d8f38fa99d5cc96d230b933664c17cf" compoundref="rgb2hsv_8c" startline="39">isInitTableHSV</references>
+        <references refid="colorspaces_8h_1a47f2e62c0dbebc787052c165afcada0e" compoundref="colorspaces_8h" startline="28">NAME</references>
+        <references refid="colorspaces_8h_1aee272dd28e234398015e21016d0693a2" compoundref="colorspaces_8h" startline="29">COLORSPACES_VERSION</references>
+      </memberdef>
+      <memberdef kind="function" id="colorspaces_8h_1a1c0a6a7df547f29e98835424b6b66c09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2HSV_createTable</definition>
+        <argsstring>()</argsstring>
+        <name>RGB2HSV_createTable</name>
+        <briefdescription>
+<para>Create a translate RGB2HSV table with resolution of 6bits (64x64x64) </para>        </briefdescription>
+        <detaileddescription>
+<para>Create a translate RGB2HSV table with resolution of 6bits (64x64x64) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="53" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="204" bodyend="254"/>
+        <references refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" compoundref="rgb2hsv_8c" startline="42">mutex</references>
+        <references refid="rgb2hsv_8c_1a3d8f38fa99d5cc96d230b933664c17cf" compoundref="rgb2hsv_8c" startline="39">isInitTableHSV</references>
+        <references refid="rgb2hsv_8c_1a326c0e940e5d5c329218e5ccff03df52" compoundref="rgb2hsv_8c" startline="31">MAX_RGB</references>
+        <references refid="rgb2hsv_8c_1a4716974869bc6274b2241b1a27dee97e" compoundref="rgb2hsv_8c" startline="44" endline="95">rgb2hsv_wiki</references>
+        <references refid="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" compoundref="colorspaces_8h" startline="40">HSV::H</references>
+        <references refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" compoundref="colorspaces_8h" startline="41">HSV::S</references>
+        <references refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" compoundref="colorspaces_8h" startline="42">HSV::V</references>
+      </memberdef>
+      <memberdef kind="function" id="colorspaces_8h_1ad7dd44362d341ab79bbf849231329901" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2HSV_destroyTable</definition>
+        <argsstring>()</argsstring>
+        <name>RGB2HSV_destroyTable</name>
+        <briefdescription>
+<para>Free de memory of RGB2HSV. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="56" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="156" bodyend="182"/>
+        <references refid="rgb2hsv_8c_1a326c0e940e5d5c329218e5ccff03df52" compoundref="rgb2hsv_8c" startline="31">MAX_RGB</references>
+        <references refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" compoundref="rgb2hsv_8c" startline="42">mutex</references>
+        <references refid="rgb2hsv_8c_1a3d8f38fa99d5cc96d230b933664c17cf" compoundref="rgb2hsv_8c" startline="39">isInitTableHSV</references>
+      </memberdef>
+      <memberdef kind="function" id="colorspaces_8h_1a94a0d8d53cecb5f8b8b84120908b932e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2HSV_printHSI</definition>
+        <argsstring>(struct HSV *)</argsstring>
+        <name>RGB2HSV_printHSI</name>
+        <param>
+          <type>struct <ref refid="struct_h_s_v" kindref="compound">HSV</ref> *</type>
+        </param>
+        <briefdescription>
+<para>Print the struct <ref refid="struct_h_s_v" kindref="compound">HSV</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="colorspaces_8h_1a16c64baf07fe565ac70d6c4d99590095" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2HSV_test</definition>
+        <argsstring>()</argsstring>
+        <name>RGB2HSV_test</name>
+        <briefdescription>
+<para>Test. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="62" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="263" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="colorspaces_8h_1a9881ab18d444b54e55c6ff6f8b10df34" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const struct <ref refid="struct_h_s_v" kindref="compound">HSV</ref> *</type>
+        <definition>static const struct HSV* RGB2HSV_getHSV</definition>
+        <argsstring>(int R, int G, int B)</argsstring>
+        <name>RGB2HSV_getHSV</name>
+        <param>
+          <type>int</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+<para>Returns the translation from RGB to <ref refid="struct_h_s_v" kindref="compound">HSV</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="65" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="colorspaces_8h_1a5b3adc13cc2586f7905ea56f141ceef0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hsv2rgb</definition>
+        <argsstring>(double H, double S, double V, double *r, double *g, double *b)</argsstring>
+        <name>hsv2rgb</name>
+        <param>
+          <type>double</type>
+          <declname>H</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>S</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Returns the translation from <ref refid="struct_h_s_v" kindref="compound">HSV</ref> to RGB. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="68" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c" bodystart="98" bodyend="130"/>
+        <references refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" compoundref="colorspaces_8h" startline="42">HSV::V</references>
+        <references refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" compoundref="colorspaces_8h" startline="41">HSV::S</references>
+      </memberdef>
+      <memberdef kind="function" id="colorspaces_8h_1a076be3570ea0ec2aba5811ee0c609361" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2YUV_init</definition>
+        <argsstring>()</argsstring>
+        <name>RGB2YUV_init</name>
+        <briefdescription>
+<para>Init the RGB2YUV. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="85" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="136" bodyend="151"/>
+        <references refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" compoundref="rgb2yuv_8c" startline="40">mutex</references>
+        <references refid="rgb2yuv_8c_1aaae0c312320c8f59fb2b072d84dcbc38" compoundref="rgb2yuv_8c" startline="37">isInitTableYUV</references>
+        <references refid="colorspaces_8h_1a47f2e62c0dbebc787052c165afcada0e" compoundref="colorspaces_8h" startline="28">NAME</references>
+        <references refid="colorspaces_8h_1aee272dd28e234398015e21016d0693a2" compoundref="colorspaces_8h" startline="29">COLORSPACES_VERSION</references>
+      </memberdef>
+      <memberdef kind="function" id="colorspaces_8h_1ab2b3287a0417bedece40b4bcc665265c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2YUV_createTable</definition>
+        <argsstring>()</argsstring>
+        <name>RGB2YUV_createTable</name>
+        <briefdescription>
+<para>Create a generic translate RGB2YUV table with resolution of 6bits (64x64x64) </para>        </briefdescription>
+        <detaileddescription>
+<para>Create a generic translate RGB2YUV table with resolution of 6bits (64x64x64) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="88" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="155" bodyend="206"/>
+        <references refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" compoundref="rgb2yuv_8c" startline="40">mutex</references>
+        <references refid="rgb2yuv_8c_1aaae0c312320c8f59fb2b072d84dcbc38" compoundref="rgb2yuv_8c" startline="37">isInitTableYUV</references>
+        <references refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" compoundref="rgb2yuv_8c" startline="29">MAXIMUN_RGB</references>
+        <references refid="rgb2yuv_8c_1a3a13eec5805909b2257e309f187a8d67" compoundref="rgb2yuv_8c" startline="42" endline="60">rgb2yuv_wiki</references>
+        <references refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" compoundref="colorspaces_8h" startline="75">YUV::Y</references>
+        <references refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" compoundref="colorspaces_8h" startline="76">YUV::U</references>
+        <references refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" compoundref="colorspaces_8h" startline="77">YUV::V</references>
+      </memberdef>
+      <memberdef kind="function" id="colorspaces_8h_1aae0cea8e9df662fcb538c679a4049045" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2YUV_destroyTable</definition>
+        <argsstring>()</argsstring>
+        <name>RGB2YUV_destroyTable</name>
+        <briefdescription>
+<para>Free de memory of RGB2YUV. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="91" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="108" bodyend="133"/>
+        <references refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" compoundref="rgb2yuv_8c" startline="29">MAXIMUN_RGB</references>
+        <references refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" compoundref="rgb2yuv_8c" startline="40">mutex</references>
+        <references refid="rgb2yuv_8c_1aaae0c312320c8f59fb2b072d84dcbc38" compoundref="rgb2yuv_8c" startline="37">isInitTableYUV</references>
+      </memberdef>
+      <memberdef kind="function" id="colorspaces_8h_1aa91b8e95db779f1752278e5adecde51a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2YUV_printYUV</definition>
+        <argsstring>(struct YUV *)</argsstring>
+        <name>RGB2YUV_printYUV</name>
+        <param>
+          <type>struct <ref refid="struct_y_u_v" kindref="compound">YUV</ref> *</type>
+        </param>
+        <briefdescription>
+<para>Print the struct <ref refid="struct_y_u_v" kindref="compound">YUV</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="94" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="209" bodyend="212"/>
+        <references refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" compoundref="colorspaces_8h" startline="75">YUV::Y</references>
+        <references refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" compoundref="colorspaces_8h" startline="76">YUV::U</references>
+        <references refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" compoundref="colorspaces_8h" startline="77">YUV::V</references>
+      </memberdef>
+      <memberdef kind="function" id="colorspaces_8h_1a0c65812b12ded7bf0bcf2f6438196263" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2YUV_test</definition>
+        <argsstring>()</argsstring>
+        <name>RGB2YUV_test</name>
+        <briefdescription>
+<para>Test. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="97" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="215" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="colorspaces_8h_1ac1f8fc29746ec448dd9067e2756ef941" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const struct <ref refid="struct_y_u_v" kindref="compound">YUV</ref> *</type>
+        <definition>static const struct YUV* RGB2YUV_getYUV</definition>
+        <argsstring>(int R, int G, int B)</argsstring>
+        <name>RGB2YUV_getYUV</name>
+        <param>
+          <type>int</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>G</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>B</declname>
+        </param>
+        <briefdescription>
+<para>Returns the translation from RGB to <ref refid="struct_y_u_v" kindref="compound">YUV</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="100" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" bodystart="100" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="colorspaces_8h_1ae80eb39e10fb510ac3d5be1c81671f0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void yuv2rgb</definition>
+        <argsstring>(double Y, double U, double V, double *r, double *g, double *b)</argsstring>
+        <name>yuv2rgb</name>
+        <param>
+          <type>double</type>
+          <declname>Y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Returns the translation from <ref refid="struct_y_u_v" kindref="compound">YUV</ref> to RGB. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="103" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="64" bodyend="82"/>
+        <references refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" compoundref="colorspaces_8h" startline="77">YUV::V</references>
+        <references refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" compoundref="colorspaces_8h" startline="76">YUV::U</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>(C)<sp/>1997-2009<sp/>JDERobot<sp/>Developers<sp/>Team</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>http://www.gnu.org/licenses/.<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/>Authors<sp/>:<sp/>Roberto<sp/>Calvo<sp/>Palomino<sp/>&lt;rocapal@gsyc.es&gt;</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>José María<sp/>Cañas<sp/>&lt;jmplaza@gsyc.es&gt;</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Pablo<sp/>Miangolarra<sp/>Tejada<sp/>&lt;pablo.miangolarra@gmail.com&gt;</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>David<sp/>Lobato<sp/>Bravo<sp/>&lt;dav.lobato@gmail.com&gt;</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_COLOR_SPACES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_COLOR_SPACES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="colorspaces_8h_1a47f2e62c0dbebc787052c165afcada0e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NAME<sp/><sp/><sp/><sp/><sp/>&quot;colorspaces&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="colorspaces_8h_1aee272dd28e234398015e21016d0693a2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COLORSPACES_VERSION<sp/><sp/>&quot;1.4.0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="struct_h_s_v" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_h_s_v" kindref="compound">HSV</ref></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="40" refid="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" kindref="member">H</ref>;</highlight></codeline>
+<codeline lineno="41" refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" kindref="member">S</ref>;</highlight></codeline>
+<codeline lineno="42" refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" kindref="member">V</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_h_s_v" kindref="compound">HSV</ref><sp/>*<sp/><ref refid="colorspaces_8h_1a4dddeb18ef9d4b3ad60a78ec2b33d11c" kindref="member">LUT_RGB2HSV</ref><sp/>[64][64][64];</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="colorspaces_8h_1a3d8f38fa99d5cc96d230b933664c17cf" kindref="member">isInitTableHSV</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="colorspaces_8h_1a9d3c0b7a96c30bad15271386140eb6ae" kindref="member">RGB2HSV_init</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="colorspaces_8h_1a1c0a6a7df547f29e98835424b6b66c09" kindref="member">RGB2HSV_createTable</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="colorspaces_8h_1ad7dd44362d341ab79bbf849231329901" kindref="member">RGB2HSV_destroyTable</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="colorspaces_8h_1a94a0d8d53cecb5f8b8b84120908b932e" kindref="member">RGB2HSV_printHSI</ref><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_h_s_v" kindref="compound">HSV</ref>*);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="colorspaces_8h_1a16c64baf07fe565ac70d6c4d99590095" kindref="member">RGB2HSV_test</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_h_s_v" kindref="compound">HSV</ref>*<sp/>RGB2HSV_getHSV<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>R,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>G,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>B)<sp/><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>LUT_RGB2HSV[R&gt;&gt;2][G&gt;&gt;2][B&gt;&gt;2];<sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="colorspaces_8h_1a5b3adc13cc2586f7905ea56f141ceef0" kindref="member">hsv2rgb</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_h_s_v_1aa5298b83b6f6ad2da2f2921c3e3202e7" kindref="member">H</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_h_s_v_1a246df45210c6b7c61056158d1596676d" kindref="member">S</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" kindref="member">V</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*r,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*g,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*b);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="struct_y_u_v" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_y_u_v" kindref="compound">YUV</ref></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="75" refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" kindref="member">Y</ref>;</highlight></codeline>
+<codeline lineno="76" refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" kindref="member">U</ref>;</highlight></codeline>
+<codeline lineno="77" refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" kindref="member">V</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_y_u_v" kindref="compound">YUV</ref><sp/>*<sp/><ref refid="colorspaces_8h_1ae6bcabd09da17a93dcba1556dae20720" kindref="member">LUT_RGB2YUV</ref><sp/>[64][64][64];</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="colorspaces_8h_1aaae0c312320c8f59fb2b072d84dcbc38" kindref="member">isInitTableYUV</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="colorspaces_8h_1a076be3570ea0ec2aba5811ee0c609361" kindref="member">RGB2YUV_init</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="colorspaces_8h_1ab2b3287a0417bedece40b4bcc665265c" kindref="member">RGB2YUV_createTable</ref>();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="colorspaces_8h_1aae0cea8e9df662fcb538c679a4049045" kindref="member">RGB2YUV_destroyTable</ref>();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="colorspaces_8h_1aa91b8e95db779f1752278e5adecde51a" kindref="member">RGB2YUV_printYUV</ref><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_y_u_v" kindref="compound">YUV</ref>*);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="colorspaces_8h_1a0c65812b12ded7bf0bcf2f6438196263" kindref="member">RGB2YUV_test</ref>();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_y_u_v" kindref="compound">YUV</ref>*<sp/>RGB2YUV_getYUV<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>R,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>G,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>B)<sp/><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>LUT_RGB2YUV[R&gt;&gt;2][G&gt;&gt;2][B&gt;&gt;2];<sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="colorspaces_8h_1ae80eb39e10fb510ac3d5be1c81671f0d" kindref="member">yuv2rgb</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" kindref="member">Y</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" kindref="member">U</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_h_s_v_1aade636e6ce581e93de5374f0e5d77d7c" kindref="member">V</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*r,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*g,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*b);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*extern<sp/>&quot;C&quot;*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*_COLOR_SPACES_H*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h"/>
+  </compounddef>
+</doxygen>

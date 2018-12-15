@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_995a2a719ea362e80c1d05185554af55" kind="dir">
+    <compoundname>DeepLearningSuite/libs/utils</compoundname>
+    <innerdir refid="dir_435016fffeb65ac125a019123af23397">DeepLearningSuite/libs/utils/colorspaces</innerdir>
+    <innerfile refid="_camera_utils_8cpp">CameraUtils.cpp</innerfile>
+    <innerfile refid="_camera_utils_8h">CameraUtils.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/utils/"/>
+  </compounddef>
+</doxygen>

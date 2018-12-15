@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_json_helper" kind="class" language="C++" prot="public">
+    <compoundname>JsonHelper</compoundname>
+    <includes refid="_json_helper_8h" local="no">JsonHelper.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_json_helper_1ab0c3df073a06036c7f5a0d4784470266" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>std::vector&lt; T &gt;</type>
+        <definition>static std::vector&lt;T&gt; JsonHelper::as_vector</definition>
+        <argsstring>(boost::property_tree::ptree const &amp;pt, boost::property_tree::ptree::key_type const &amp;key)</argsstring>
+        <name>as_vector</name>
+        <param>
+          <type>boost::property_tree::ptree const &amp;</type>
+          <declname>pt</declname>
+        </param>
+        <param>
+          <type>boost::property_tree::ptree::key_type const &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/JsonHelper.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/JsonHelper.h" bodystart="16" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/JsonHelper.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/JsonHelper.h" bodystart="13" bodyend="23"/>
+    <listofallmembers>
+      <member refid="class_json_helper_1ab0c3df073a06036c7f5a0d4784470266" prot="public" virt="non-virtual"><scope>JsonHelper</scope><name>as_vector</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

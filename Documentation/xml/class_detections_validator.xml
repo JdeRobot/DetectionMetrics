@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_detections_validator" kind="class" language="C++" prot="public">
+    <compoundname>DetectionsValidator</compoundname>
+    <includes refid="_detections_validator_8h" local="no">DetectionsValidator.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_detections_validator_1a36b3dac84ccf534b3a4c7ee5e5d1636e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DetectionsValidator::validationCounter</definition>
+        <argsstring></argsstring>
+        <name>validationCounter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_validator_1a7d6ec402c8b8aaa822f7da4584509935" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string DetectionsValidator::path</definition>
+        <argsstring></argsstring>
+        <name>path</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_validator_1a88261b1fbcaff404b65183fcfaebf8e1" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double DetectionsValidator::scale</definition>
+        <argsstring></argsstring>
+        <name>scale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.h" bodystart="22" bodyend="-1"/>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab97e323c321d16a707d6dac1f9e06723" compoundref="sample_8py" startline="59" endline="68">sampleGenerator.sample.sample.applyScale</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1abad33069f3e1539735ea8ac428d1a510" compoundref="sample_8py" startline="110" endline="112">sampleGenerator.sample.sample.getScale</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_detections_validator_1a85eb7bc41a47b9672c6dec768fd39ad5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DetectionsValidator::DetectionsValidator</definition>
+        <argsstring>(const std::string &amp;pathToSave, double scale=3)</argsstring>
+        <name>DetectionsValidator</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>pathToSave</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+          <defval>3</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.cpp" bodystart="15" bodyend="45"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+        <references refid="class_detections_validator_1a993e013f8be223822d46d96847d4ff76">~DetectionsValidator</references>
+      </memberdef>
+      <memberdef kind="function" id="class_detections_validator_1a993e013f8be223822d46d96847d4ff76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DetectionsValidator::~DetectionsValidator</definition>
+        <argsstring>()</argsstring>
+        <name>~DetectionsValidator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.h" line="15" column="1"/>
+        <referencedby refid="class_detections_validator_1a85eb7bc41a47b9672c6dec768fd39ad5" compoundref="_detections_validator_8cpp" startline="15" endline="45">DetectionsValidator</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_detections_validator_1a105c1bda43fee24887005840fccb7576" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectionsValidator::validate</definition>
+        <argsstring>(const cv::Mat &amp;colorImage, const cv::Mat &amp;depthImage, std::vector&lt; std::vector&lt; cv::Point &gt;&gt; &amp;detections)</argsstring>
+        <name>validate</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>colorImage</declname>
+        </param>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>depthImage</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::vector&lt; cv::Point &gt;&gt; &amp;</type>
+          <declname>detections</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.cpp" bodystart="51" bodyend="103"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+        <references refid="class_bounding_validator_1af81f3b37170e45eb241667604a47fece" compoundref="_bounding_validator_8cpp" startline="17" endline="23">BoundingValidator::validate</references>
+        <references refid="struct_sample_1a2c873df91344017f41f144af9baa3b7c" compoundref="_sample_8cpp" startline="204" endline="209">Sample::save</references>
+        <referencedby refid="class_my_app_1ab3cc458e74a9fc059504fa33983249ee" compoundref="generator_8cpp" startline="31" endline="209">MyApp::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_detections_validator_1a742df9d44127fa19a919e985b7ad6953" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectionsValidator::validate</definition>
+        <argsstring>(const Sample &amp;inputSample)</argsstring>
+        <name>validate</name>
+        <param>
+          <type>const <ref refid="struct_sample" kindref="compound">Sample</ref> &amp;</type>
+          <declname>inputSample</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.cpp" bodystart="135" bodyend="192"/>
+        <references refid="struct_sample_1a5f1b7716e5c4e8f5217a18021169283f" compoundref="_sample_8cpp" startline="123" endline="125">Sample::getRectRegions</references>
+        <references refid="struct_sample_1abf69bbc9b312c22d3ded30d30d1e278f" compoundref="_sample_8cpp" startline="149" endline="156">Sample::getColorImage</references>
+        <references refid="class_bounding_validator_1a490e960e21fae4b4e695314eb014fe22" compoundref="_bounding_validator_8cpp" startline="111" endline="144">BoundingValidator::validateNDetections</references>
+        <references refid="class_bounding_validator_1af81f3b37170e45eb241667604a47fece" compoundref="_bounding_validator_8cpp" startline="17" endline="23">BoundingValidator::validate</references>
+        <references refid="struct_sample_1a4d2e91f909467a974832c9359cc81c3c" compoundref="_sample_8cpp" startline="158" endline="165">Sample::getDepthImage</references>
+        <references refid="struct_sample_1a2c873df91344017f41f144af9baa3b7c" compoundref="_sample_8cpp" startline="204" endline="209">Sample::save</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_detections_validator_1aa24b7ced3de4b6a9ff6f63b2f4637a9f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectionsValidator::fillRectIntoImageDimensions</definition>
+        <argsstring>(cv::Rect_&lt; double &gt; &amp;rect, const cv::Size size)</argsstring>
+        <name>fillRectIntoImageDimensions</name>
+        <param>
+          <type>cv::Rect_&lt; double &gt; &amp;</type>
+          <declname>rect</declname>
+        </param>
+        <param>
+          <type>const cv::Size</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.cpp" bodystart="105" bodyend="133"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.h" bodystart="12" bodyend="25"/>
+    <listofallmembers>
+      <member refid="class_detections_validator_1a85eb7bc41a47b9672c6dec768fd39ad5" prot="public" virt="non-virtual"><scope>DetectionsValidator</scope><name>DetectionsValidator</name></member>
+      <member refid="class_detections_validator_1aa24b7ced3de4b6a9ff6f63b2f4637a9f" prot="private" virt="non-virtual"><scope>DetectionsValidator</scope><name>fillRectIntoImageDimensions</name></member>
+      <member refid="class_detections_validator_1a7d6ec402c8b8aaa822f7da4584509935" prot="private" virt="non-virtual"><scope>DetectionsValidator</scope><name>path</name></member>
+      <member refid="class_detections_validator_1a88261b1fbcaff404b65183fcfaebf8e1" prot="private" virt="non-virtual"><scope>DetectionsValidator</scope><name>scale</name></member>
+      <member refid="class_detections_validator_1a105c1bda43fee24887005840fccb7576" prot="public" virt="non-virtual"><scope>DetectionsValidator</scope><name>validate</name></member>
+      <member refid="class_detections_validator_1a742df9d44127fa19a919e985b7ad6953" prot="public" virt="non-virtual"><scope>DetectionsValidator</scope><name>validate</name></member>
+      <member refid="class_detections_validator_1a36b3dac84ccf534b3a4c7ee5e5d1636e" prot="private" virt="non-virtual"><scope>DetectionsValidator</scope><name>validationCounter</name></member>
+      <member refid="class_detections_validator_1a993e013f8be223822d46d96847d4ff76" prot="public" virt="non-virtual"><scope>DetectionsValidator</scope><name>~DetectionsValidator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

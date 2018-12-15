@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_class_statistics_8h" kind="file" language="C++">
+    <compoundname>ClassStatistics.h</compoundname>
+    <includes local="no">vector</includes>
+    <includes local="no">string</includes>
+    <includes local="no">set</includes>
+    <includes local="no">numeric</includes>
+    <includes local="no">functional</includes>
+    <includes local="no">algorithm</includes>
+    <includes local="no">type_traits</includes>
+    <includedby refid="_class_statistics_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.cpp</includedby>
+    <includedby refid="_detections_evaluator_8h" local="yes">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h</includedby>
+    <includedby refid="_global_stats_8h" local="yes">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.h</includedby>
+    <incdepgraph>
+      <node id="3324">
+        <label>functional</label>
+      </node>
+      <node id="3319">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h</label>
+        <link refid="_class_statistics_8h"/>
+        <childnode refid="3320" relation="include">
+        </childnode>
+        <childnode refid="3321" relation="include">
+        </childnode>
+        <childnode refid="3322" relation="include">
+        </childnode>
+        <childnode refid="3323" relation="include">
+        </childnode>
+        <childnode refid="3324" relation="include">
+        </childnode>
+        <childnode refid="3325" relation="include">
+        </childnode>
+        <childnode refid="3326" relation="include">
+        </childnode>
+      </node>
+      <node id="3323">
+        <label>numeric</label>
+      </node>
+      <node id="3321">
+        <label>string</label>
+      </node>
+      <node id="3320">
+        <label>vector</label>
+      </node>
+      <node id="3326">
+        <label>type_traits</label>
+      </node>
+      <node id="3322">
+        <label>set</label>
+      </node>
+      <node id="3325">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3338">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.cpp</label>
+        <link refid="_global_stats_8cpp"/>
+      </node>
+      <node id="3337">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GlobalStats.h</label>
+        <link refid="_global_stats_8h"/>
+        <childnode refid="3329" relation="include">
+        </childnode>
+        <childnode refid="3338" relation="include">
+        </childnode>
+      </node>
+      <node id="3327">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h</label>
+        <link refid="_class_statistics_8h"/>
+        <childnode refid="3328" relation="include">
+        </childnode>
+        <childnode refid="3329" relation="include">
+        </childnode>
+        <childnode refid="3337" relation="include">
+        </childnode>
+      </node>
+      <node id="3333">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.cpp</label>
+        <link refid="_stats_writer_8cpp"/>
+      </node>
+      <node id="3335">
+        <label>DeepLearningSuite/Tools/Evaluator/evaluator.cpp</label>
+        <link refid="_tools_2_evaluator_2_evaluator_8cpp"/>
+      </node>
+      <node id="3334">
+        <label>DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp</label>
+        <link refid="auto_evaluator_8cpp"/>
+      </node>
+      <node id="3332">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h</label>
+        <link refid="_stats_writer_8h"/>
+        <childnode refid="3330" relation="include">
+        </childnode>
+        <childnode refid="3333" relation="include">
+        </childnode>
+        <childnode refid="3334" relation="include">
+        </childnode>
+        <childnode refid="3335" relation="include">
+        </childnode>
+      </node>
+      <node id="3331">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp</label>
+        <link refid="_detections_evaluator_8cpp"/>
+      </node>
+      <node id="3336">
+        <label>DeepLearningSuite/Tools/Splitter/splitter.cpp</label>
+        <link refid="splitter_8cpp"/>
+      </node>
+      <node id="3328">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.cpp</label>
+        <link refid="_class_statistics_8cpp"/>
+      </node>
+      <node id="3330">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_evaluator_8cpp"/>
+      </node>
+      <node id="3329">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h</label>
+        <link refid="_detections_evaluator_8h"/>
+        <childnode refid="3330" relation="include">
+        </childnode>
+        <childnode refid="3331" relation="include">
+        </childnode>
+        <childnode refid="3332" relation="include">
+        </childnode>
+        <childnode refid="3334" relation="include">
+        </childnode>
+        <childnode refid="3335" relation="include">
+        </childnode>
+        <childnode refid="3336" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_class_statistics" prot="public">ClassStatistics</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>1/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_STATISTICS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_STATISTICS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;set&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;numeric&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;functional&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;type_traits&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="struct_class_statistics" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_class_statistics" kindref="compound">ClassStatistics</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_class_statistics_1ac5a27388db5ca1d9283096020a9b1aeb" kindref="member">ClassStatistics</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_class_statistics_1ac5a27388db5ca1d9283096020a9b1aeb" kindref="member">ClassStatistics</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="struct_class_statistics_1a4f06e2d800fde06ed4f6b77547d8dc06" kindref="member">classID</ref>);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_class_statistics_1a22377aafdf557f655f500783fc5dc77f" kindref="member">getMeanIOU</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_class_statistics_1af97e1c498a387e6762be460e61d0e610" kindref="member">getAveragePrecision</ref>(std::vector&lt;double&gt;<sp/>recallThrs)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/><ref refid="struct_class_statistics_1a33a90034e90af43aa97e1b46e9c8567f" kindref="member">getPrecisionArray</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/><ref refid="struct_class_statistics_1a3fa2067c657166bcc5d6719575e64ddc" kindref="member">getPrecisionArrayOp</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/><ref refid="struct_class_statistics_1aa6b024d72444ea2b8d71f5f2a416655c" kindref="member">getPrecisionForDiffRecallThrs</ref>(std::vector&lt;double&gt;<sp/>recallThrs)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/><ref refid="struct_class_statistics_1ae8fc780d72aca26b4dfc5af5992cb41b" kindref="member">getRecallArray</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_class_statistics_1a4b189bb3822f02cca79dbe1b59fce7b5" kindref="member">getRecall</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_class_statistics_1a66418a700e12730feb6ad54d81ba0a8e" kindref="member">divide</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//void<sp/>printStats()<sp/>const;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="struct_class_statistics_1a4f06e2d800fde06ed4f6b77547d8dc06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="struct_class_statistics_1a4f06e2d800fde06ed4f6b77547d8dc06" kindref="member">classID</ref>;</highlight></codeline>
+<codeline lineno="32" refid="struct_class_statistics_1af869c91eda0b044c899797a3b10153ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_class_statistics_1af869c91eda0b044c899797a3b10153ca" kindref="member">numGroundTruthsReg</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="33" refid="struct_class_statistics_1a016df1ad61f150bb92d7d987488a4741" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_class_statistics_1a016df1ad61f150bb92d7d987488a4741" kindref="member">numGroundTruthsIg</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="34" refid="struct_class_statistics_1ac0495687ef1d08720c41612afbf49730" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/><ref refid="struct_class_statistics_1ac0495687ef1d08720c41612afbf49730" kindref="member">iou</ref>;</highlight></codeline>
+<codeline lineno="35" refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/><ref refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" kindref="member">truePositives</ref>;</highlight></codeline>
+<codeline lineno="36" refid="struct_class_statistics_1a0193beb26acd9dab5f7a1709b50c353c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/><ref refid="struct_class_statistics_1a0193beb26acd9dab5f7a1709b50c353c" kindref="member">falsePositives</ref>;</highlight></codeline>
+<codeline lineno="37" refid="struct_class_statistics_1a13f50f2fa57bf7de930955cd149667b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::multiset&lt;double&gt;<sp/><ref refid="struct_class_statistics_1a13f50f2fa57bf7de930955cd149667b6" kindref="member">confScores</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2<sp/>vectors<sp/>in<sp/>same<sp/>order<sp/>on<sp/>with<sp/>conf<sp/>score<sp/>and<sp/>other<sp/>with<sp/>true<sp/>positive<sp/>1/0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="struct_class_statistics_1aa0b08fee8daa548214f4bcc3b2c5cc86" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_class_statistics_1aa0b08fee8daa548214f4bcc3b2c5cc86" kindref="member">nSamples</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//int<sp/>truePositives;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//int<sp/>falsePositives;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="struct_class_statistics_1a5485816a475a6cc554c2d9e5b442c96d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_class_statistics_1a5485816a475a6cc554c2d9e5b442c96d" kindref="member">falseNegatives</ref>;</highlight></codeline>
+<codeline lineno="43" refid="struct_class_statistics_1a8b268ca669e6d982c8ce409330cf08f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_class_statistics_1a8b268ca669e6d982c8ce409330cf08f9" kindref="member">trueNegatives</ref>;<sp/></highlight><highlight class="comment">//????<sp/>evaluar<sp/>muestra<sp/>negativa??</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_STATISTICS_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h"/>
+  </compounddef>
+</doxygen>

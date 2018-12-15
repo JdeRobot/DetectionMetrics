@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_e4715c061a6d1260498ab64309752151" kind="dir">
+    <compoundname>DeepLearningSuite/libs/depthLib</compoundname>
+    <innerfile refid="_depth_filter_8cpp">DepthFilter.cpp</innerfile>
+    <innerfile refid="_depth_filter_8h">DepthFilter.h</innerfile>
+    <innerfile refid="_depth_sampler_8cpp">DepthSampler.cpp</innerfile>
+    <innerfile refid="_depth_sampler_8h">DepthSampler.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/depthLib/"/>
+  </compounddef>
+</doxygen>

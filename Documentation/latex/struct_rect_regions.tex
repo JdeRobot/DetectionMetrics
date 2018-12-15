@@ -1,0 +1,173 @@
+\hypertarget{struct_rect_regions}{}\section{Rect\+Regions Struct Reference}
+\label{struct_rect_regions}\index{Rect\+Regions@{Rect\+Regions}}
+
+
+{\ttfamily \#include $<$Rect\+Regions.\+h$>$}
+
+Inheritance diagram for Rect\+Regions\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_rect_regions}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_rect_regions_a75fc4850d7b8caee61164658e47832fb}{Rect\+Regions} (const std\+::string \&json\+Path)
+\item 
+\hyperlink{struct_rect_regions_af0c705b56314b41a80970fcd826b0600}{Rect\+Regions} ()
+\item 
+void \hyperlink{struct_rect_regions_a949e327f668e731868a853b6331761be}{add} (const cv\+::\+Rect\+\_\+$<$ double $>$ rect, const std\+::string class\+Id, const bool is\+Crowd=false)
+\item 
+void \hyperlink{struct_rect_regions_afebb1d6079ae2d0701b70c3c153a4a88}{add} (const cv\+::\+Rect\+\_\+$<$ double $>$ rect, const std\+::string class\+Id, const double confidence\+\_\+score, const bool is\+Crowd=false)
+\item 
+void \hyperlink{struct_rect_regions_a00afed1e298d77dd9dd722e590507586}{add} (const std\+::vector$<$ cv\+::\+Point\+\_\+$<$ double $>$$>$ \&detections, const std\+::string class\+Id, const bool is\+Crowd=false)
+\item 
+void \hyperlink{struct_rect_regions_a988c804d33f2b8fc9dabe79c3259b267}{add} (double x, double y, double w, double h, const std\+::string class\+Id, const bool is\+Crowd=false)
+\item 
+void \hyperlink{struct_rect_regions_a009ff3de6ffc9c05e0cd3c87916d16be}{add} (double x, double y, double w, double h, const std\+::string class\+Id, const double confidence\+\_\+score, const bool is\+Crowd=false)
+\item 
+void \hyperlink{struct_rect_regions_a84d6d3a2e3ee8faf775c69fcd3207767}{save\+Json} (const std\+::string \&out\+Path)
+\item 
+\hyperlink{struct_rect_region}{Rect\+Region} \hyperlink{struct_rect_regions_a4bbad55e0b6f3a8ece1d76402f16bfc2}{get\+Region} (int id)
+\item 
+std\+::vector$<$ \hyperlink{struct_rect_region}{Rect\+Region} $>$ \hyperlink{struct_rect_regions_ab1d9ba6a6a0087fd2db278a22162c63a}{get\+Regions} ()
+\item 
+void \hyperlink{struct_rect_regions_a9f31dc6fd3d371417e2c9024d1fdeecb}{draw\+Regions} (cv\+::\+Mat \&image)
+\item 
+void \hyperlink{struct_rect_regions_a8eff732b9c2308dae4e0ff45f147cb51}{filter\+Samples\+By\+ID} (std\+::vector$<$ std\+::string $>$ filtered\+I\+DS)
+\item 
+bool \hyperlink{struct_rect_regions_a4ec356e30d899d9a49fce3fe95f73d34}{empty} ()
+\item 
+void \hyperlink{struct_rect_regions_a6ce45dd2b9d9f0f3424d4c6d656652c2}{print} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{struct_rect_region}{Rect\+Region} $>$ \hyperlink{struct_rect_regions_a213237dc4a98b5d77d76c3992d533694}{regions}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_rect_regions_a75fc4850d7b8caee61164658e47832fb}\label{struct_rect_regions_a75fc4850d7b8caee61164658e47832fb}} 
+\index{Rect\+Regions@{Rect\+Regions}!Rect\+Regions@{Rect\+Regions}}
+\index{Rect\+Regions@{Rect\+Regions}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{Rect\+Regions()}{RectRegions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Rect\+Regions\+::\+Rect\+Regions (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_rect_regions_af0c705b56314b41a80970fcd826b0600}\label{struct_rect_regions_af0c705b56314b41a80970fcd826b0600}} 
+\index{Rect\+Regions@{Rect\+Regions}!Rect\+Regions@{Rect\+Regions}}
+\index{Rect\+Regions@{Rect\+Regions}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{Rect\+Regions()}{RectRegions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Rect\+Regions\+::\+Rect\+Regions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_rect_regions_a949e327f668e731868a853b6331761be}\label{struct_rect_regions_a949e327f668e731868a853b6331761be}} 
+\index{Rect\+Regions@{Rect\+Regions}!add@{add}}
+\index{add@{add}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily void Rect\+Regions\+::add (\begin{DoxyParamCaption}\item[{const cv\+::\+Rect\+\_\+$<$ double $>$}]{rect,  }\item[{const std\+::string}]{class\+Id,  }\item[{const bool}]{is\+Crowd = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_rect_regions_afebb1d6079ae2d0701b70c3c153a4a88}\label{struct_rect_regions_afebb1d6079ae2d0701b70c3c153a4a88}} 
+\index{Rect\+Regions@{Rect\+Regions}!add@{add}}
+\index{add@{add}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily void Rect\+Regions\+::add (\begin{DoxyParamCaption}\item[{const cv\+::\+Rect\+\_\+$<$ double $>$}]{rect,  }\item[{const std\+::string}]{class\+Id,  }\item[{const double}]{confidence\+\_\+score,  }\item[{const bool}]{is\+Crowd = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_rect_regions_a00afed1e298d77dd9dd722e590507586}\label{struct_rect_regions_a00afed1e298d77dd9dd722e590507586}} 
+\index{Rect\+Regions@{Rect\+Regions}!add@{add}}
+\index{add@{add}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily void Rect\+Regions\+::add (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ cv\+::\+Point\+\_\+$<$ double $>$$>$ \&}]{detections,  }\item[{const std\+::string}]{class\+Id,  }\item[{const bool}]{is\+Crowd = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_rect_regions_a988c804d33f2b8fc9dabe79c3259b267}\label{struct_rect_regions_a988c804d33f2b8fc9dabe79c3259b267}} 
+\index{Rect\+Regions@{Rect\+Regions}!add@{add}}
+\index{add@{add}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily void Rect\+Regions\+::add (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{w,  }\item[{double}]{h,  }\item[{const std\+::string}]{class\+Id,  }\item[{const bool}]{is\+Crowd = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_rect_regions_a009ff3de6ffc9c05e0cd3c87916d16be}\label{struct_rect_regions_a009ff3de6ffc9c05e0cd3c87916d16be}} 
+\index{Rect\+Regions@{Rect\+Regions}!add@{add}}
+\index{add@{add}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily void Rect\+Regions\+::add (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{w,  }\item[{double}]{h,  }\item[{const std\+::string}]{class\+Id,  }\item[{const double}]{confidence\+\_\+score,  }\item[{const bool}]{is\+Crowd = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_rect_regions_a9f31dc6fd3d371417e2c9024d1fdeecb}\label{struct_rect_regions_a9f31dc6fd3d371417e2c9024d1fdeecb}} 
+\index{Rect\+Regions@{Rect\+Regions}!draw\+Regions@{draw\+Regions}}
+\index{draw\+Regions@{draw\+Regions}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{draw\+Regions()}{drawRegions()}}
+{\footnotesize\ttfamily void Rect\+Regions\+::draw\+Regions (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_adab32a2a00fc77abb6f4876939dc8505}{Regions}.
+
+\mbox{\Hypertarget{struct_rect_regions_a4ec356e30d899d9a49fce3fe95f73d34}\label{struct_rect_regions_a4ec356e30d899d9a49fce3fe95f73d34}} 
+\index{Rect\+Regions@{Rect\+Regions}!empty@{empty}}
+\index{empty@{empty}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool Rect\+Regions\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_a5763d0526981f665356ac35734e8e505}{Regions}.
+
+\mbox{\Hypertarget{struct_rect_regions_a8eff732b9c2308dae4e0ff45f147cb51}\label{struct_rect_regions_a8eff732b9c2308dae4e0ff45f147cb51}} 
+\index{Rect\+Regions@{Rect\+Regions}!filter\+Samples\+By\+ID@{filter\+Samples\+By\+ID}}
+\index{filter\+Samples\+By\+ID@{filter\+Samples\+By\+ID}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{filter\+Samples\+By\+I\+D()}{filterSamplesByID()}}
+{\footnotesize\ttfamily void Rect\+Regions\+::filter\+Samples\+By\+ID (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{filtered\+I\+DS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_ae2bcea2b1c245a9d1ab1ff3abc23f2a0}{Regions}.
+
+\mbox{\Hypertarget{struct_rect_regions_a4bbad55e0b6f3a8ece1d76402f16bfc2}\label{struct_rect_regions_a4bbad55e0b6f3a8ece1d76402f16bfc2}} 
+\index{Rect\+Regions@{Rect\+Regions}!get\+Region@{get\+Region}}
+\index{get\+Region@{get\+Region}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{get\+Region()}{getRegion()}}
+{\footnotesize\ttfamily \hyperlink{struct_rect_region}{Rect\+Region} Rect\+Regions\+::get\+Region (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_rect_regions_ab1d9ba6a6a0087fd2db278a22162c63a}\label{struct_rect_regions_ab1d9ba6a6a0087fd2db278a22162c63a}} 
+\index{Rect\+Regions@{Rect\+Regions}!get\+Regions@{get\+Regions}}
+\index{get\+Regions@{get\+Regions}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{get\+Regions()}{getRegions()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{struct_rect_region}{Rect\+Region} $>$ Rect\+Regions\+::get\+Regions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_rect_regions_a6ce45dd2b9d9f0f3424d4c6d656652c2}\label{struct_rect_regions_a6ce45dd2b9d9f0f3424d4c6d656652c2}} 
+\index{Rect\+Regions@{Rect\+Regions}!print@{print}}
+\index{print@{print}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Rect\+Regions\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_a5a19f40bc0d2226f244625b88fbf8e59}{Regions}.
+
+\mbox{\Hypertarget{struct_rect_regions_a84d6d3a2e3ee8faf775c69fcd3207767}\label{struct_rect_regions_a84d6d3a2e3ee8faf775c69fcd3207767}} 
+\index{Rect\+Regions@{Rect\+Regions}!save\+Json@{save\+Json}}
+\index{save\+Json@{save\+Json}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{save\+Json()}{saveJson()}}
+{\footnotesize\ttfamily void Rect\+Regions\+::save\+Json (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{out\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_a402078d4ff67e4aee31b231c2d1942c6}{Regions}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_rect_regions_a213237dc4a98b5d77d76c3992d533694}\label{struct_rect_regions_a213237dc4a98b5d77d76c3992d533694}} 
+\index{Rect\+Regions@{Rect\+Regions}!regions@{regions}}
+\index{regions@{regions}!Rect\+Regions@{Rect\+Regions}}
+\subsubsection{\texorpdfstring{regions}{regions}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{struct_rect_region}{Rect\+Region}$>$ Rect\+Regions\+::regions}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Regions/\hyperlink{_rect_regions_8h}{Rect\+Regions.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Regions/\hyperlink{_rect_regions_8cpp}{Rect\+Regions.\+cpp}\end{DoxyCompactItemize}

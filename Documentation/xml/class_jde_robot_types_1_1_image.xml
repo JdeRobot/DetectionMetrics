@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_jde_robot_types_1_1_image" kind="class" language="C++" prot="public">
+    <compoundname>JdeRobotTypes::Image</compoundname>
+    <includes refid="image_8h" local="no">image.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_jde_robot_types_1_1_image_1ad3b073fd5f50c62c535d0083ca0f9ae9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int JdeRobotTypes::Image::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Image height [pixels] </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/types/include/jderobottypes/image.h" line="30" column="1" bodyfile="DeepLearningSuite/libs/types/include/jderobottypes/image.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1a74d06122ed0688df849d2de07bbd0a03" compoundref="camera_ice_client_8cpp" startline="110" endline="192">Comm::CameraIceClient::run</referencedby>
+        <referencedby refid="namespace_comm_1ad9eade500ada9cd99a62086a53986e36" compoundref="translators_8cpp" startline="31" endline="63">Comm::translate_image_messages</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_jde_robot_types_1_1_image_1ac377507ac13a54f523169f55911e3147" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int JdeRobotTypes::Image::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Image width [pixels] </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/types/include/jderobottypes/image.h" line="31" column="1" bodyfile="DeepLearningSuite/libs/types/include/jderobottypes/image.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1a74d06122ed0688df849d2de07bbd0a03" compoundref="camera_ice_client_8cpp" startline="110" endline="192">Comm::CameraIceClient::run</referencedby>
+        <referencedby refid="namespace_comm_1ad9eade500ada9cd99a62086a53986e36" compoundref="translators_8cpp" startline="31" endline="63">Comm::translate_image_messages</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_jde_robot_types_1_1_image_1a4557271a34c2a35e6a9c03946ed2332c" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double JdeRobotTypes::Image::timeStamp</definition>
+        <argsstring></argsstring>
+        <name>timeStamp</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Time stamp [s] </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/types/include/jderobottypes/image.h" line="32" column="1" bodyfile="DeepLearningSuite/libs/types/include/jderobottypes/image.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1a74d06122ed0688df849d2de07bbd0a03" compoundref="camera_ice_client_8cpp" startline="110" endline="192">Comm::CameraIceClient::run</referencedby>
+        <referencedby refid="namespace_comm_1ad9eade500ada9cd99a62086a53986e36" compoundref="translators_8cpp" startline="31" endline="63">Comm::translate_image_messages</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_jde_robot_types_1_1_image_1ac702a6dbc5f6d6009524159bcc4d07e4" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string JdeRobotTypes::Image::format</definition>
+        <argsstring></argsstring>
+        <name>format</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Image format string (RGB8, BGR,...) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/types/include/jderobottypes/image.h" line="33" column="1" bodyfile="DeepLearningSuite/libs/types/include/jderobottypes/image.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1a74d06122ed0688df849d2de07bbd0a03" compoundref="camera_ice_client_8cpp" startline="110" endline="192">Comm::CameraIceClient::run</referencedby>
+        <referencedby refid="namespace_comm_1ad9eade500ada9cd99a62086a53986e36" compoundref="translators_8cpp" startline="31" endline="63">Comm::translate_image_messages</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_jde_robot_types_1_1_image_1a00caf819fb206f75e125f9a63f78cb8a" prot="public" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat JdeRobotTypes::Image::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <initializer>= cv::Mat::zeros(3,3, CV_8UC3)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The image data itself </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/types/include/jderobottypes/image.h" line="34" column="1" bodyfile="DeepLearningSuite/libs/types/include/jderobottypes/image.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="class_jderobot_reader_1aef97b473c11e144fcf07e01c3181269b" compoundref="_jderobot_reader_8cpp" startline="78" endline="93">JderobotReader::getNextSample</referencedby>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1a74d06122ed0688df849d2de07bbd0a03" compoundref="camera_ice_client_8cpp" startline="110" endline="192">Comm::CameraIceClient::run</referencedby>
+        <referencedby refid="namespace_comm_1ad9eade500ada9cd99a62086a53986e36" compoundref="translators_8cpp" startline="31" endline="63">Comm::translate_image_messages</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/types/include/jderobottypes/image.h" line="27" column="1" bodyfile="DeepLearningSuite/libs/types/include/jderobottypes/image.h" bodystart="27" bodyend="35"/>
+    <listofallmembers>
+      <member refid="class_jde_robot_types_1_1_image_1a00caf819fb206f75e125f9a63f78cb8a" prot="public" virt="non-virtual"><scope>JdeRobotTypes::Image</scope><name>data</name></member>
+      <member refid="class_jde_robot_types_1_1_image_1ac702a6dbc5f6d6009524159bcc4d07e4" prot="public" virt="non-virtual"><scope>JdeRobotTypes::Image</scope><name>format</name></member>
+      <member refid="class_jde_robot_types_1_1_image_1ad3b073fd5f50c62c535d0083ca0f9ae9" prot="public" virt="non-virtual"><scope>JdeRobotTypes::Image</scope><name>height</name></member>
+      <member refid="class_jde_robot_types_1_1_image_1a4557271a34c2a35e6a9c03946ed2332c" prot="public" virt="non-virtual"><scope>JdeRobotTypes::Image</scope><name>timeStamp</name></member>
+      <member refid="class_jde_robot_types_1_1_image_1ac377507ac13a54f523169f55911e3147" prot="public" virt="non-virtual"><scope>JdeRobotTypes::Image</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

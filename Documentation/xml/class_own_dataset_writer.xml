@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_own_dataset_writer" kind="class" language="C++" prot="public">
+    <compoundname>OwnDatasetWriter</compoundname>
+    <basecompoundref refid="class_dataset_writer" prot="public" virt="non-virtual">DatasetWriter</basecompoundref>
+    <includes refid="_own_dataset_writer_8h" local="no">OwnDatasetWriter.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_own_dataset_writer_1a3adfa565a630b270f0cf36560e80f111" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OwnDatasetWriter::OwnDatasetWriter</definition>
+        <argsstring>(const std::string &amp;outPath, DatasetReaderPtr &amp;reader)</argsstring>
+        <name>OwnDatasetWriter</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outPath</declname>
+        </param>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref> &amp;</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/OwnDatasetWriter.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/OwnDatasetWriter.cpp" bodystart="7" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_own_dataset_writer_1a63b35dd2752ea15af5ab5b25693d135c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void OwnDatasetWriter::process</definition>
+        <argsstring>(bool writeImages=false, bool useDepth=false)</argsstring>
+        <name>process</name>
+        <reimplements refid="class_dataset_writer_1a97270b2e182e6c08d9342d8db42710fd">process</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>writeImages</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useDepth</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/OwnDatasetWriter.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/OwnDatasetWriter.cpp" bodystart="12" bodyend="17"/>
+        <references refid="class_dataset_writer_1a2edef70c0de507a2e056eb3984705811" compoundref="_dataset_writer_8h" startline="19">DatasetWriter::reader</references>
+        <references refid="struct_sample_1a2c873df91344017f41f144af9baa3b7c" compoundref="_sample_8cpp" startline="204" endline="209">Sample::save</references>
+        <references refid="class_dataset_writer_1ac19eabc3e69f6e9bc4c5185803eed626" compoundref="_dataset_writer_8h" startline="18">DatasetWriter::outPath</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="261">
+        <label>DatasetWriter</label>
+        <link refid="class_dataset_writer"/>
+      </node>
+      <node id="260">
+        <label>OwnDatasetWriter</label>
+        <link refid="class_own_dataset_writer"/>
+        <childnode refid="261" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="263">
+        <label>DatasetWriter</label>
+        <link refid="class_dataset_writer"/>
+      </node>
+      <node id="262">
+        <label>OwnDatasetWriter</label>
+        <link refid="class_own_dataset_writer"/>
+        <childnode refid="263" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/OwnDatasetWriter.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/OwnDatasetWriter.h" bodystart="12" bodyend="19"/>
+    <listofallmembers>
+      <member refid="class_dataset_writer_1a96cb64791602cd684ec3a05156a7c28e" prot="public" virt="non-virtual"><scope>OwnDatasetWriter</scope><name>DatasetWriter</name></member>
+      <member refid="class_dataset_writer_1a978c35196e9b3be5dcd7ef3cb7c968c5" prot="protected" virt="non-virtual"><scope>OwnDatasetWriter</scope><name>discarded_classes</name></member>
+      <member refid="class_dataset_writer_1a44b65963ebc0c9146e29802658627031" prot="protected" virt="non-virtual"><scope>OwnDatasetWriter</scope><name>mapped_classes</name></member>
+      <member refid="class_dataset_writer_1ac19eabc3e69f6e9bc4c5185803eed626" prot="protected" virt="non-virtual"><scope>OwnDatasetWriter</scope><name>outPath</name></member>
+      <member refid="class_dataset_writer_1a55b8888beec78365ed6ea9b057a2d17b" prot="protected" virt="non-virtual"><scope>OwnDatasetWriter</scope><name>outputClasses</name></member>
+      <member refid="class_own_dataset_writer_1a3adfa565a630b270f0cf36560e80f111" prot="public" virt="non-virtual"><scope>OwnDatasetWriter</scope><name>OwnDatasetWriter</name></member>
+      <member refid="class_own_dataset_writer_1a63b35dd2752ea15af5ab5b25693d135c" prot="public" virt="virtual"><scope>OwnDatasetWriter</scope><name>process</name></member>
+      <member refid="class_dataset_writer_1a2edef70c0de507a2e056eb3984705811" prot="protected" virt="non-virtual"><scope>OwnDatasetWriter</scope><name>reader</name></member>
+      <member refid="class_dataset_writer_1a2c5c9a2670a4acb12278284668af7970" prot="protected" virt="non-virtual"><scope>OwnDatasetWriter</scope><name>skip_count</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_class_type_8cpp" kind="file" language="C++">
+    <compoundname>ClassType.cpp</compoundname>
+    <includes refid="_class_type_8h" local="yes">ClassType.h</includes>
+    <incdepgraph>
+      <node id="1526">
+        <label>ClassType.h</label>
+        <link refid="_class_type_8h"/>
+        <childnode refid="1527" relation="include">
+        </childnode>
+      </node>
+      <node id="1527">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="1525">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.cpp</label>
+        <link refid="_class_type_8cpp"/>
+        <childnode refid="1526" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_class_type_8cpp_1a6ebe0267c19e141b5be9dc7cdf54d8ab" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float colorsClass[6][3]</definition>
+        <argsstring>[6][3]</argsstring>
+        <name>colorsClass</name>
+        <initializer>= { {1,0,1}, {0,0,1},{0,1,1},{0,1,0},{1,1,0},{1,0,0} }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.cpp" line="7" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.cpp" bodystart="7" bodyend="-1"/>
+        <referencedby refid="struct_class_type_1a37ea5c5449bc06ed3f2a327448abe02a" compoundref="_class_type_8cpp" startline="23" endline="32">ClassType::_get_color</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>2/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_class_type_8h" kindref="compound">ClassType.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="_class_type_8cpp_1a6ebe0267c19e141b5be9dc7cdf54d8ab" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="_class_type_8cpp_1a6ebe0267c19e141b5be9dc7cdf54d8ab" kindref="member">colorsClass</ref>[6][3]<sp/>=<sp/>{<sp/>{1,0,1},<sp/>{0,0,1},{0,1,1},{0,1,0},{1,1,0},{1,0,0}<sp/>};</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" refkind="member"><highlight class="normal">cv::Scalar<sp/><ref refid="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" kindref="member">ClassType::getColor</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itFind<sp/>=<sp/>std::find(this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.begin(),<sp/>this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.end(),this-&gt;<ref refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" kindref="member">classID</ref>);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>std::distance(this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.begin(),itFind);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>nClasses=<sp/>this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.size();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>offset<sp/>=<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">*123457<sp/>%<sp/>nClasses;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="namespaceload_image_1a7db8b47946ece3163cc9ba0da721af88" kindref="member">red</ref><sp/>=<sp/><ref refid="struct_class_type_1a37ea5c5449bc06ed3f2a327448abe02a" kindref="member">_get_color</ref>(2,offset,nClasses);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>green<sp/>=<sp/><ref refid="struct_class_type_1a37ea5c5449bc06ed3f2a327448abe02a" kindref="member">_get_color</ref>(1,offset,nClasses);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>blue<sp/>=<sp/><ref refid="struct_class_type_1a37ea5c5449bc06ed3f2a327448abe02a" kindref="member">_get_color</ref>(0,offset,nClasses);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cv::Scalar(red*255,<sp/>green*255,blue*255);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="struct_class_type_1a37ea5c5449bc06ed3f2a327448abe02a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_class_type_1a37ea5c5449bc06ed3f2a327448abe02a" kindref="member">ClassType::_get_color</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>max)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>ratio<sp/>=<sp/>((float)x/max)*5;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>floor(ratio);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>ceil(ratio);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>ratio<sp/>-=<sp/>i;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>r<sp/>=<sp/>(1-ratio)<sp/>*<sp/><ref refid="_class_type_8cpp_1a6ebe0267c19e141b5be9dc7cdf54d8ab" kindref="member">colorsClass</ref>[i][c]<sp/>+<sp/>ratio*<ref refid="_class_type_8cpp_1a6ebe0267c19e141b5be9dc7cdf54d8ab" kindref="member">colorsClass</ref>[j][c];</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;%f\n&quot;,<sp/>r);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>r;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//ClassType::ClassType(int<sp/>id)<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>fillStringClassesVector();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>this-&gt;classID=this-&gt;classes[id];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">//ClassType::ClassType(const<sp/>std::string<sp/>&amp;classID)<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>fillStringClassesVector();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>this-&gt;classID=classID;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" refkind="member"><highlight class="normal">std::string<sp/><ref refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" kindref="member">ClassType::getClassString</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" kindref="member">classID</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="struct_class_type_1ab5cc3bb3376a812d051d4726eb4ee063" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_class_type_1ab5cc3bb3376a812d051d4726eb4ee063" kindref="member">ClassType::getClassID</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itFind<sp/>=<sp/>std::find(this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.begin(),<sp/>this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.end(),this-&gt;<ref refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" kindref="member">classID</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>std::distance(this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.begin(),itFind);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>id;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="struct_class_type_1a867149836bb99711a7c14fbe7801c9e4" refkind="member"><highlight class="normal">std::vector&lt;std::string&gt;<sp/><ref refid="struct_class_type_1a867149836bb99711a7c14fbe7801c9e4" kindref="member">ClassType::getAllAvailableClasses</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.cpp"/>
+  </compounddef>
+</doxygen>

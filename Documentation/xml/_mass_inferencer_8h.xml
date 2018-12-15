@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_mass_inferencer_8h" kind="file" language="C++">
+    <compoundname>MassInferencer.h</compoundname>
+    <includes refid="_dataset_reader_8h" local="no">DatasetConverters/readers/DatasetReader.h</includes>
+    <includes refid="_framework_inferencer_8h" local="no">FrameworkEvaluator/FrameworkInferencer.h</includes>
+    <includedby refid="_deployer_8cpp" local="no">DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.cpp</includedby>
+    <includedby refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp" local="no">DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp</includedby>
+    <includedby refid="_mass_inferencer_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.cpp</includedby>
+    <includedby refid="auto_evaluator_8cpp" local="no">DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp</includedby>
+    <includedby refid="_tools_2_detector_2_detector_8cpp" local="no">DeepLearningSuite/Tools/Detector/detector.cpp</includedby>
+    <incdepgraph>
+      <node id="3742">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="3749">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="3754">
+        <label>glog/logging.h</label>
+      </node>
+      <node id="3747">
+        <label>Regions/RleRegions.h</label>
+        <link refid="_rle_regions_8h"/>
+        <childnode refid="3740" relation="include">
+        </childnode>
+        <childnode refid="3741" relation="include">
+        </childnode>
+        <childnode refid="3748" relation="include">
+        </childnode>
+      </node>
+      <node id="3739">
+        <label>Regions/RectRegions.h</label>
+        <link refid="_rect_regions_8h"/>
+        <childnode refid="3740" relation="include">
+        </childnode>
+        <childnode refid="3741" relation="include">
+        </childnode>
+        <childnode refid="3743" relation="include">
+        </childnode>
+        <childnode refid="3744" relation="include">
+        </childnode>
+      </node>
+      <node id="3741">
+        <label>Regions.h</label>
+        <link refid="_regions_8h"/>
+        <childnode refid="3740" relation="include">
+        </childnode>
+        <childnode refid="3742" relation="include">
+        </childnode>
+      </node>
+      <node id="3740">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="3737">
+        <label>string</label>
+      </node>
+      <node id="3750">
+        <label>Common/EvalMatrix.h</label>
+        <link refid="_eval_matrix_8h"/>
+        <childnode refid="3751" relation="include">
+        </childnode>
+        <childnode refid="3753" relation="include">
+        </childnode>
+      </node>
+      <node id="3753">
+        <label>map</label>
+      </node>
+      <node id="3745">
+        <label>Regions/ContourRegions.h</label>
+        <link refid="_contour_regions_8h"/>
+        <childnode refid="3740" relation="include">
+        </childnode>
+        <childnode refid="3741" relation="include">
+        </childnode>
+        <childnode refid="3746" relation="include">
+        </childnode>
+      </node>
+      <node id="3735">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h</label>
+        <link refid="_mass_inferencer_8h"/>
+        <childnode refid="3736" relation="include">
+        </childnode>
+        <childnode refid="3755" relation="include">
+        </childnode>
+      </node>
+      <node id="3757">
+        <label>boost/date_time/posix_time/posix_time.hpp</label>
+      </node>
+      <node id="3756">
+        <label>opencv2/imgproc/imgproc.hpp</label>
+      </node>
+      <node id="3748">
+        <label>RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="3742" relation="include">
+        </childnode>
+        <childnode refid="3749" relation="include">
+        </childnode>
+      </node>
+      <node id="3738">
+        <label>Common/Sample.h</label>
+        <link refid="_sample_8h"/>
+        <childnode refid="3739" relation="include">
+        </childnode>
+        <childnode refid="3745" relation="include">
+        </childnode>
+        <childnode refid="3747" relation="include">
+        </childnode>
+      </node>
+      <node id="3752">
+        <label>vector</label>
+      </node>
+      <node id="3751">
+        <label>Matrix.h</label>
+        <link refid="_matrix_8h"/>
+        <childnode refid="3752" relation="include">
+        </childnode>
+      </node>
+      <node id="3746">
+        <label>ContourRegion.h</label>
+        <link refid="_contour_region_8h"/>
+        <childnode refid="3740" relation="include">
+        </childnode>
+        <childnode refid="3742" relation="include">
+        </childnode>
+      </node>
+      <node id="3755">
+        <label>FrameworkEvaluator/FrameworkInferencer.h</label>
+        <link refid="_framework_inferencer_8h"/>
+        <childnode refid="3740" relation="include">
+        </childnode>
+        <childnode refid="3756" relation="include">
+        </childnode>
+        <childnode refid="3742" relation="include">
+        </childnode>
+        <childnode refid="3738" relation="include">
+        </childnode>
+        <childnode refid="3757" relation="include">
+        </childnode>
+        <childnode refid="3744" relation="include">
+        </childnode>
+      </node>
+      <node id="3743">
+        <label>RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="3740" relation="include">
+        </childnode>
+      </node>
+      <node id="3736">
+        <label>DatasetConverters/readers/DatasetReader.h</label>
+        <link refid="_dataset_reader_8h"/>
+        <childnode refid="3737" relation="include">
+        </childnode>
+        <childnode refid="3738" relation="include">
+        </childnode>
+        <childnode refid="3742" relation="include">
+        </childnode>
+        <childnode refid="3750" relation="include">
+        </childnode>
+        <childnode refid="3754" relation="include">
+        </childnode>
+      </node>
+      <node id="3744">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3759">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.cpp</label>
+        <link refid="_deployer_8cpp"/>
+      </node>
+      <node id="3758">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h</label>
+        <link refid="_mass_inferencer_8h"/>
+        <childnode refid="3759" relation="include">
+        </childnode>
+        <childnode refid="3760" relation="include">
+        </childnode>
+        <childnode refid="3761" relation="include">
+        </childnode>
+        <childnode refid="3762" relation="include">
+        </childnode>
+        <childnode refid="3763" relation="include">
+        </childnode>
+      </node>
+      <node id="3762">
+        <label>DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp</label>
+        <link refid="auto_evaluator_8cpp"/>
+      </node>
+      <node id="3761">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.cpp</label>
+        <link refid="_mass_inferencer_8cpp"/>
+      </node>
+      <node id="3760">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp"/>
+      </node>
+      <node id="3763">
+        <label>DeepLearningSuite/Tools/Detector/detector.cpp</label>
+        <link refid="_tools_2_detector_2_detector_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_mass_inferencer" prot="public">MassInferencer</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>1/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_MASSINFERENCER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_MASSINFERENCER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_dataset_reader_8h" kindref="compound">DatasetConverters/readers/DatasetReader.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_framework_inferencer_8h" kindref="compound">FrameworkEvaluator/FrameworkInferencer.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="class_mass_inferencer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mass_inferencer" kindref="compound">MassInferencer</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mass_inferencer_1aa1f9519adb814a99f8c20a5d28d2f4e9" kindref="member">MassInferencer</ref>(<ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref><sp/>reader,<sp/><ref refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" kindref="member">FrameworkInferencerPtr</ref><sp/>inferencer,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>resultsPath,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>confidence_threshold<sp/>=<sp/>NULL,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>debug=</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mass_inferencer_1aa1f9519adb814a99f8c20a5d28d2f4e9" kindref="member">MassInferencer</ref>(<ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref><sp/>reader,<sp/><ref refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" kindref="member">FrameworkInferencerPtr</ref><sp/>inferencer,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>resultsPath,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>debug=</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mass_inferencer_1aa1f9519adb814a99f8c20a5d28d2f4e9" kindref="member">MassInferencer</ref>(<ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref><sp/>reader,<sp/><ref refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" kindref="member">FrameworkInferencerPtr</ref><sp/>inferencer,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;resultsPath,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>stopDeployer,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>confidence_threshold<sp/>=<sp/>NULL,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>debug=</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mass_inferencer_1aa1f9519adb814a99f8c20a5d28d2f4e9" kindref="member">MassInferencer</ref>(<ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref><sp/>reader,<sp/><ref refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" kindref="member">FrameworkInferencerPtr</ref><sp/>inferencer,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>confidence_threshold<sp/>=<sp/>NULL,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>debug=</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mass_inferencer_1aa1f9519adb814a99f8c20a5d28d2f4e9" kindref="member">MassInferencer</ref>(<ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref><sp/>reader,<sp/><ref refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" kindref="member">FrameworkInferencerPtr</ref><sp/>inferencer,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>debug=</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" kindref="member">process</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>writeImages,<sp/><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref><sp/>readerDetection<sp/>=<sp/>NULL);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref><sp/>reader;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" kindref="member">FrameworkInferencerPtr</ref><sp/>inferencer;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>resultsPath;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>debug;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>saveOutput;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>alreadyProcessed;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>stopDeployer<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/>confidence_threshold<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>default_confidence_threshold<sp/>=<sp/>0.2;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_MASSINFERENCER_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h"/>
+  </compounddef>
+</doxygen>

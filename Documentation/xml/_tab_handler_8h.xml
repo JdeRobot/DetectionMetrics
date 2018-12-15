@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_tab_handler_8h" kind="file" language="C++">
+    <compoundname>TabHandler.h</compoundname>
+    <includes local="no">boost/shared_ptr.hpp</includes>
+    <includes refid="_configuration_8h" local="no">Utils/Configuration.h</includes>
+    <includes local="no">QtWidgets/QMainWindow</includes>
+    <includes refid="mainwindow_8h" local="no">mainwindow.h</includes>
+    <includedby refid="_tab_handler_8cpp" local="yes">DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.cpp</includedby>
+    <incdepgraph>
+      <node id="191">
+        <label>iomanip</label>
+      </node>
+      <node id="170">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="187">
+        <label>boost/algorithm/string/classification.hpp</label>
+      </node>
+      <node id="190">
+        <label>config/properties.hpp</label>
+        <link refid="properties_8hpp"/>
+        <childnode refid="183" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="175" relation="include">
+        </childnode>
+        <childnode refid="181" relation="include">
+        </childnode>
+        <childnode refid="184" relation="include">
+        </childnode>
+      </node>
+      <node id="172">
+        <label>string</label>
+      </node>
+      <node id="178">
+        <label>QMainWindow</label>
+      </node>
+      <node id="173">
+        <label>map</label>
+      </node>
+      <node id="171">
+        <label>Utils/Configuration.h</label>
+        <link refid="_configuration_8h"/>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+      </node>
+      <node id="180">
+        <label>config/config.h</label>
+        <link refid="config_8h"/>
+        <childnode refid="181" relation="include">
+        </childnode>
+        <childnode refid="182" relation="include">
+        </childnode>
+        <childnode refid="190" relation="include">
+        </childnode>
+      </node>
+      <node id="188">
+        <label>fstream</label>
+      </node>
+      <node id="181">
+        <label>yaml-cpp/yaml.h</label>
+      </node>
+      <node id="186">
+        <label>boost/algorithm/string/split.hpp</label>
+      </node>
+      <node id="179">
+        <label>Utils/SampleGenerationApp.h</label>
+        <link refid="_sample_generation_app_8h"/>
+        <childnode refid="180" relation="include">
+        </childnode>
+      </node>
+      <node id="184">
+        <label>config/stdutils.hpp</label>
+        <link refid="stdutils_8hpp"/>
+        <childnode refid="185" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="175" relation="include">
+        </childnode>
+        <childnode refid="186" relation="include">
+        </childnode>
+        <childnode refid="187" relation="include">
+        </childnode>
+        <childnode refid="188" relation="include">
+        </childnode>
+      </node>
+      <node id="175">
+        <label>vector</label>
+      </node>
+      <node id="192">
+        <label>sstream</label>
+      </node>
+      <node id="176">
+        <label>QtWidgets/QMainWindow</label>
+      </node>
+      <node id="185">
+        <label>cstdlib</label>
+      </node>
+      <node id="183">
+        <label>iostream</label>
+      </node>
+      <node id="174">
+        <label>Key.h</label>
+        <link refid="_key_8h"/>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="175" relation="include">
+        </childnode>
+      </node>
+      <node id="177">
+        <label>mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="178" relation="include">
+        </childnode>
+        <childnode refid="179" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+      </node>
+      <node id="182">
+        <label>config/loader.hpp</label>
+        <link refid="loader_8hpp"/>
+        <childnode refid="183" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="184" relation="include">
+        </childnode>
+        <childnode refid="181" relation="include">
+        </childnode>
+        <childnode refid="189" relation="include">
+        </childnode>
+        <childnode refid="190" relation="include">
+        </childnode>
+      </node>
+      <node id="169">
+        <label>DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h</label>
+        <link refid="_tab_handler_8h"/>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+      </node>
+      <node id="189">
+        <label>yaml-cpp/exceptions.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="193">
+        <label>DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h</label>
+        <link refid="_tab_handler_8h"/>
+        <childnode refid="194" relation="include">
+        </childnode>
+      </node>
+      <node id="194">
+        <label>DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.cpp</label>
+        <link refid="_tab_handler_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_tab_handler" prot="public">TabHandler</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_tab_handler_8h_1a93d09759af49b83368a66137a53451a1" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="class_tab_handler" kindref="compound">TabHandler</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;TabHandler&gt; TabHandlerPtr</definition>
+        <argsstring></argsstring>
+        <name>TabHandlerPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h" line="27" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>19/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_TABHANDLER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_TABHANDLER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/shared_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_configuration_8h" kindref="compound">Utils/Configuration.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QtWidgets/QMainWindow&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="mainwindow_8h" kindref="compound">mainwindow.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="class_tab_handler" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_tab_handler" kindref="compound">TabHandler</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_tab_handler_1a0db74769c062530015f118c22a4bce33" kindref="member">TabHandler</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_tab_handler_1afcefa94c308a90bba358dd371fa3c39b" kindref="member">getStringContext</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="class_tab_handler_1a58e032ec707727233e06ab8541de29a5" kindref="member">getAllContexts</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>contexts;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fillContexts();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="_tab_handler_8h_1a93d09759af49b83368a66137a53451a1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;TabHandler&gt;<sp/><ref refid="_tab_handler_8h_1a93d09759af49b83368a66137a53451a1" kindref="member">TabHandlerPtr</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_TABHANDLER_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h"/>
+  </compounddef>
+</doxygen>

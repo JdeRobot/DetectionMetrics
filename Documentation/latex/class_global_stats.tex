@@ -1,0 +1,85 @@
+\hypertarget{class_global_stats}{}\section{Global\+Stats Class Reference}
+\label{class_global_stats}\index{Global\+Stats@{Global\+Stats}}
+
+
+{\ttfamily \#include $<$Global\+Stats.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_global_stats_a75c399ee4fa74973ed52cc285cae94e4}{Global\+Stats} ()
+\item 
+void \hyperlink{class_global_stats_a43e9e950d3ab11dd07f7fe3ca76f91ee}{add\+True\+Positive} (const std\+::string \&class\+ID, double conf\+Score)
+\item 
+void \hyperlink{class_global_stats_ad3b7ccc1ad4191394357d7280b04d13c}{add\+False\+Positive} (const std\+::string \&class\+ID, double conf\+Score)
+\item 
+void \hyperlink{class_global_stats_a667d0c7293eadc152d9de17aa1b6d40e}{add\+False\+Negative} (const std\+::string \&class\+ID)
+\item 
+void \hyperlink{class_global_stats_a2c29f0dbc05606ac58ae49a1dedeef78}{add\+Ground\+Truth} (const std\+::string \&class\+ID, bool is\+Regular)
+\item 
+void \hyperlink{class_global_stats_a44ef2427549b0eb26c755b0a2e9a5ae9}{add\+Ignore} (const std\+::string \&class\+ID, double conf\+Score)
+\item 
+void \hyperlink{class_global_stats_a07078ad8a5909da138bb7d0571f461c3}{add\+I\+OU} (const std\+::string \&class\+ID, double value)
+\item 
+std\+::map$<$ std\+::string, \hyperlink{struct_class_statistics}{Class\+Statistics} $>$ \hyperlink{class_global_stats_a2a98ea3959dc7e104122a7839e6249fe}{get\+Stats} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_global_stats_a75c399ee4fa74973ed52cc285cae94e4}\label{class_global_stats_a75c399ee4fa74973ed52cc285cae94e4}} 
+\index{Global\+Stats@{Global\+Stats}!Global\+Stats@{Global\+Stats}}
+\index{Global\+Stats@{Global\+Stats}!Global\+Stats@{Global\+Stats}}
+\subsubsection{\texorpdfstring{Global\+Stats()}{GlobalStats()}}
+{\footnotesize\ttfamily Global\+Stats\+::\+Global\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_global_stats_a667d0c7293eadc152d9de17aa1b6d40e}\label{class_global_stats_a667d0c7293eadc152d9de17aa1b6d40e}} 
+\index{Global\+Stats@{Global\+Stats}!add\+False\+Negative@{add\+False\+Negative}}
+\index{add\+False\+Negative@{add\+False\+Negative}!Global\+Stats@{Global\+Stats}}
+\subsubsection{\texorpdfstring{add\+False\+Negative()}{addFalseNegative()}}
+{\footnotesize\ttfamily void Global\+Stats\+::add\+False\+Negative (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+ID }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_global_stats_ad3b7ccc1ad4191394357d7280b04d13c}\label{class_global_stats_ad3b7ccc1ad4191394357d7280b04d13c}} 
+\index{Global\+Stats@{Global\+Stats}!add\+False\+Positive@{add\+False\+Positive}}
+\index{add\+False\+Positive@{add\+False\+Positive}!Global\+Stats@{Global\+Stats}}
+\subsubsection{\texorpdfstring{add\+False\+Positive()}{addFalsePositive()}}
+{\footnotesize\ttfamily void Global\+Stats\+::add\+False\+Positive (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+ID,  }\item[{double}]{conf\+Score }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_global_stats_a2c29f0dbc05606ac58ae49a1dedeef78}\label{class_global_stats_a2c29f0dbc05606ac58ae49a1dedeef78}} 
+\index{Global\+Stats@{Global\+Stats}!add\+Ground\+Truth@{add\+Ground\+Truth}}
+\index{add\+Ground\+Truth@{add\+Ground\+Truth}!Global\+Stats@{Global\+Stats}}
+\subsubsection{\texorpdfstring{add\+Ground\+Truth()}{addGroundTruth()}}
+{\footnotesize\ttfamily void Global\+Stats\+::add\+Ground\+Truth (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+ID,  }\item[{bool}]{is\+Regular }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_global_stats_a44ef2427549b0eb26c755b0a2e9a5ae9}\label{class_global_stats_a44ef2427549b0eb26c755b0a2e9a5ae9}} 
+\index{Global\+Stats@{Global\+Stats}!add\+Ignore@{add\+Ignore}}
+\index{add\+Ignore@{add\+Ignore}!Global\+Stats@{Global\+Stats}}
+\subsubsection{\texorpdfstring{add\+Ignore()}{addIgnore()}}
+{\footnotesize\ttfamily void Global\+Stats\+::add\+Ignore (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+ID,  }\item[{double}]{conf\+Score }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_global_stats_a07078ad8a5909da138bb7d0571f461c3}\label{class_global_stats_a07078ad8a5909da138bb7d0571f461c3}} 
+\index{Global\+Stats@{Global\+Stats}!add\+I\+OU@{add\+I\+OU}}
+\index{add\+I\+OU@{add\+I\+OU}!Global\+Stats@{Global\+Stats}}
+\subsubsection{\texorpdfstring{add\+I\+O\+U()}{addIOU()}}
+{\footnotesize\ttfamily void Global\+Stats\+::add\+I\+OU (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+ID,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_global_stats_a43e9e950d3ab11dd07f7fe3ca76f91ee}\label{class_global_stats_a43e9e950d3ab11dd07f7fe3ca76f91ee}} 
+\index{Global\+Stats@{Global\+Stats}!add\+True\+Positive@{add\+True\+Positive}}
+\index{add\+True\+Positive@{add\+True\+Positive}!Global\+Stats@{Global\+Stats}}
+\subsubsection{\texorpdfstring{add\+True\+Positive()}{addTruePositive()}}
+{\footnotesize\ttfamily void Global\+Stats\+::add\+True\+Positive (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+ID,  }\item[{double}]{conf\+Score }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_global_stats_a2a98ea3959dc7e104122a7839e6249fe}\label{class_global_stats_a2a98ea3959dc7e104122a7839e6249fe}} 
+\index{Global\+Stats@{Global\+Stats}!get\+Stats@{get\+Stats}}
+\index{get\+Stats@{get\+Stats}!Global\+Stats@{Global\+Stats}}
+\subsubsection{\texorpdfstring{get\+Stats()}{getStats()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, \hyperlink{struct_class_statistics}{Class\+Statistics} $>$ Global\+Stats\+::get\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Framework\+Evaluator/\hyperlink{_global_stats_8h}{Global\+Stats.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Framework\+Evaluator/\hyperlink{_global_stats_8cpp}{Global\+Stats.\+cpp}\end{DoxyCompactItemize}

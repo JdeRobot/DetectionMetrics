@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_contour_regions" kind="struct" language="C++" prot="public">
+    <compoundname>ContourRegions</compoundname>
+    <basecompoundref refid="struct_regions" prot="public" virt="non-virtual">Regions</basecompoundref>
+    <includes refid="_contour_regions_8h" local="no">ContourRegions.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_contour_regions_1a83c5e91699fe55a1306426ddbbcce7b6" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="struct_contour_region" kindref="compound">ContourRegion</ref> &gt;</type>
+        <definition>std::vector&lt;ContourRegion&gt; ContourRegions::regions</definition>
+        <argsstring></argsstring>
+        <name>regions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="struct_contour_regions_1a5e20ac69cb42cdf4831527ca7bca4cca" compoundref="_contour_regions_8cpp" startline="13" endline="32">ContourRegions</referencedby>
+        <referencedby refid="struct_contour_regions_1aeb483510869f1dcb141b26043eaf12f0" compoundref="_contour_regions_8cpp" startline="38" endline="43">add</referencedby>
+        <referencedby refid="struct_contour_regions_1a78fc9a246628abb76f5765c4102847e4" compoundref="_contour_regions_8cpp" startline="54" endline="92">saveJson</referencedby>
+        <referencedby refid="struct_contour_regions_1a94961450720d9735337195dee1fd8b53" compoundref="_contour_regions_8cpp" startline="97" endline="102">getRegion</referencedby>
+        <referencedby refid="struct_contour_regions_1a4f77a669499f53d59e51aa30ec040bc6" compoundref="_contour_regions_8cpp" startline="104" endline="122">drawRegions</referencedby>
+        <referencedby refid="struct_contour_regions_1aa48956c2ee10e312023b721ca4adcd07" compoundref="_contour_regions_8cpp" startline="124" endline="126">getRegions</referencedby>
+        <referencedby refid="struct_contour_regions_1a8320d00da57b3362afb70f6886919534" compoundref="_contour_regions_8cpp" startline="128" endline="136">filterSamplesByID</referencedby>
+        <referencedby refid="struct_contour_regions_1ab8b13783859be86bdffa78c3a61e1387" compoundref="_contour_regions_8cpp" startline="138" endline="140">empty</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_contour_regions_1a5e20ac69cb42cdf4831527ca7bca4cca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ContourRegions::ContourRegions</definition>
+        <argsstring>(const std::string &amp;jsonPath)</argsstring>
+        <name>ContourRegions</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>jsonPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.cpp" bodystart="13" bodyend="32"/>
+        <references refid="struct_contour_regions_1a83c5e91699fe55a1306426ddbbcce7b6" compoundref="_contour_regions_8h" startline="25">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_contour_regions_1a75995164ca89b67bc5b34b59cd532056" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ContourRegions::ContourRegions</definition>
+        <argsstring>()</argsstring>
+        <name>ContourRegions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.cpp" bodystart="34" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_contour_regions_1a78fc9a246628abb76f5765c4102847e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ContourRegions::saveJson</definition>
+        <argsstring>(const std::string &amp;outPath)</argsstring>
+        <name>saveJson</name>
+        <reimplements refid="struct_regions_1a402078d4ff67e4aee31b231c2d1942c6">saveJson</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.cpp" bodystart="54" bodyend="92"/>
+        <references refid="struct_contour_regions_1a83c5e91699fe55a1306426ddbbcce7b6" compoundref="_contour_regions_8h" startline="25">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_contour_regions_1aeb483510869f1dcb141b26043eaf12f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ContourRegions::add</definition>
+        <argsstring>(const std::vector&lt; cv::Point &gt; &amp;detections, const std::string &amp;classId, const bool isCrowd=false)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const std::vector&lt; cv::Point &gt; &amp;</type>
+          <declname>detections</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classId</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isCrowd</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.cpp" bodystart="38" bodyend="43"/>
+        <references refid="struct_contour_regions_1a83c5e91699fe55a1306426ddbbcce7b6" compoundref="_contour_regions_8h" startline="25">regions</references>
+        <references refid="struct_contour_region_1a6b3027e2fcb6f62ec59d57073aac29ea" compoundref="_contour_region_8h" startline="47">ContourRegion::uniqObjectID</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_contour_regions_1a77160c9738d01939d6b99588da777be5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ContourRegions::add</definition>
+        <argsstring>(const std::vector&lt; cv::Point &gt; &amp;detections, const std::string &amp;classId, const double confidence_score, const bool isCrowd=false)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const std::vector&lt; cv::Point &gt; &amp;</type>
+          <declname>detections</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classId</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>confidence_score</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isCrowd</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.cpp" bodystart="45" bodyend="51"/>
+        <references refid="struct_contour_regions_1a83c5e91699fe55a1306426ddbbcce7b6" compoundref="_contour_regions_8h" startline="25">regions</references>
+        <references refid="struct_contour_region_1a6b3027e2fcb6f62ec59d57073aac29ea" compoundref="_contour_region_8h" startline="47">ContourRegion::uniqObjectID</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_contour_regions_1a94961450720d9735337195dee1fd8b53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_contour_region" kindref="compound">ContourRegion</ref></type>
+        <definition>ContourRegion ContourRegions::getRegion</definition>
+        <argsstring>(int idx)</argsstring>
+        <name>getRegion</name>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.cpp" bodystart="97" bodyend="102"/>
+        <references refid="struct_contour_regions_1a83c5e91699fe55a1306426ddbbcce7b6" compoundref="_contour_regions_8h" startline="25">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_contour_regions_1aa48956c2ee10e312023b721ca4adcd07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="struct_contour_region" kindref="compound">ContourRegion</ref> &gt;</type>
+        <definition>std::vector&lt; ContourRegion &gt; ContourRegions::getRegions</definition>
+        <argsstring>()</argsstring>
+        <name>getRegions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.cpp" bodystart="124" bodyend="126"/>
+        <references refid="struct_contour_regions_1a83c5e91699fe55a1306426ddbbcce7b6" compoundref="_contour_regions_8h" startline="25">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_contour_regions_1a4f77a669499f53d59e51aa30ec040bc6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ContourRegions::drawRegions</definition>
+        <argsstring>(cv::Mat &amp;image)</argsstring>
+        <name>drawRegions</name>
+        <reimplements refid="struct_regions_1adab32a2a00fc77abb6f4876939dc8505">drawRegions</reimplements>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.cpp" bodystart="104" bodyend="122"/>
+        <references refid="struct_contour_regions_1a83c5e91699fe55a1306426ddbbcce7b6" compoundref="_contour_regions_8h" startline="25">regions</references>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_contour_regions_1a8320d00da57b3362afb70f6886919534" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ContourRegions::filterSamplesByID</definition>
+        <argsstring>(std::vector&lt; std::string &gt; filteredIDS)</argsstring>
+        <name>filterSamplesByID</name>
+        <reimplements refid="struct_regions_1ae2bcea2b1c245a9d1ab1ff3abc23f2a0">filterSamplesByID</reimplements>
+        <param>
+          <type>std::vector&lt; std::string &gt;</type>
+          <declname>filteredIDS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.cpp" bodystart="128" bodyend="136"/>
+        <references refid="struct_contour_regions_1a83c5e91699fe55a1306426ddbbcce7b6" compoundref="_contour_regions_8h" startline="25">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_contour_regions_1ab8b13783859be86bdffa78c3a61e1387" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ContourRegions::empty</definition>
+        <argsstring>()</argsstring>
+        <name>empty</name>
+        <reimplements refid="struct_regions_1a5763d0526981f665356ac35734e8e505">empty</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.cpp" bodystart="138" bodyend="140"/>
+        <references refid="struct_contour_regions_1a83c5e91699fe55a1306426ddbbcce7b6" compoundref="_contour_regions_8h" startline="25">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_contour_regions_1a9bd987b6b8a1cc27f5ece5b321f1b9ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ContourRegions::print</definition>
+        <argsstring>()</argsstring>
+        <name>print</name>
+        <reimplements refid="struct_regions_1a5a19f40bc0d2226f244625b88fbf8e59">print</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.cpp" bodystart="142" bodyend="145"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="63">
+        <label>ContourRegions</label>
+        <link refid="struct_contour_regions"/>
+        <childnode refid="64" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>Regions</label>
+        <link refid="struct_regions"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="65">
+        <label>ContourRegions</label>
+        <link refid="struct_contour_regions"/>
+        <childnode refid="66" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>Regions</label>
+        <link refid="struct_regions"/>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/ContourRegions.h" bodystart="13" bodyend="26"/>
+    <listofallmembers>
+      <member refid="struct_contour_regions_1aeb483510869f1dcb141b26043eaf12f0" prot="public" virt="non-virtual"><scope>ContourRegions</scope><name>add</name></member>
+      <member refid="struct_contour_regions_1a77160c9738d01939d6b99588da777be5" prot="public" virt="non-virtual"><scope>ContourRegions</scope><name>add</name></member>
+      <member refid="struct_contour_regions_1a5e20ac69cb42cdf4831527ca7bca4cca" prot="public" virt="non-virtual"><scope>ContourRegions</scope><name>ContourRegions</name></member>
+      <member refid="struct_contour_regions_1a75995164ca89b67bc5b34b59cd532056" prot="public" virt="non-virtual"><scope>ContourRegions</scope><name>ContourRegions</name></member>
+      <member refid="struct_contour_regions_1a4f77a669499f53d59e51aa30ec040bc6" prot="public" virt="virtual"><scope>ContourRegions</scope><name>drawRegions</name></member>
+      <member refid="struct_contour_regions_1ab8b13783859be86bdffa78c3a61e1387" prot="public" virt="virtual"><scope>ContourRegions</scope><name>empty</name></member>
+      <member refid="struct_contour_regions_1a8320d00da57b3362afb70f6886919534" prot="public" virt="virtual"><scope>ContourRegions</scope><name>filterSamplesByID</name></member>
+      <member refid="struct_contour_regions_1a94961450720d9735337195dee1fd8b53" prot="public" virt="non-virtual"><scope>ContourRegions</scope><name>getRegion</name></member>
+      <member refid="struct_contour_regions_1aa48956c2ee10e312023b721ca4adcd07" prot="public" virt="non-virtual"><scope>ContourRegions</scope><name>getRegions</name></member>
+      <member refid="struct_contour_regions_1a9bd987b6b8a1cc27f5ece5b321f1b9ba" prot="public" virt="virtual"><scope>ContourRegions</scope><name>print</name></member>
+      <member refid="struct_regions_1aa3456e0ecf9b3a84be6a0b7705495929" prot="public" virt="non-virtual"><scope>ContourRegions</scope><name>Regions</name></member>
+      <member refid="struct_contour_regions_1a83c5e91699fe55a1306426ddbbcce7b6" prot="public" virt="non-virtual"><scope>ContourRegions</scope><name>regions</name></member>
+      <member refid="struct_contour_regions_1a78fc9a246628abb76f5765c4102847e4" prot="public" virt="virtual"><scope>ContourRegions</scope><name>saveJson</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,104 @@
+\hypertarget{class_c_o_c_o_dataset_reader}{}\section{C\+O\+C\+O\+Dataset\+Reader Class Reference}
+\label{class_c_o_c_o_dataset_reader}\index{C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}}
+
+
+{\ttfamily \#include $<$C\+O\+C\+O\+Dataset\+Reader.\+h$>$}
+
+Inheritance diagram for C\+O\+C\+O\+Dataset\+Reader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_o_c_o_dataset_reader}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_o_c_o_dataset_reader_aeb5609c8496c92013c5e6d551696f3c8}{C\+O\+C\+O\+Dataset\+Reader} (const std\+::string \&path, const std\+::string \&\hyperlink{class_dataset_reader_a45ded43b56539f1e37a24ca9c94b4611}{class\+Names\+File}, bool \hyperlink{class_dataset_reader_a71d04d25d58e0e9a0c05d69afcff03a1}{images\+Required})
+\item 
+bool \hyperlink{class_c_o_c_o_dataset_reader_a0b7e394c98b512e387952c7f7e39823d}{append\+Dataset} (const std\+::string \&dataset\+Path, const std\+::string \&dataset\+Prefix=\char`\"{}\char`\"{})
+\item 
+bool \hyperlink{class_c_o_c_o_dataset_reader_a081c7b899608f70981075a37b291a221}{find\+\_\+img\+\_\+directory} (const boost\+::filesystem\+::path \&dir\+\_\+path, boost\+::filesystem\+::path \&path\+\_\+found, std\+::string \&img\+\_\+filename)
+\item 
+void \hyperlink{class_c_o_c_o_dataset_reader_a2e9d81e9fa12aa9d0e5df202f53792f0}{append\+Segmentation\+Region} (const rapidjson\+::\+Value \&node, \hyperlink{struct_sample}{Sample} \&sample, \hyperlink{struct_class_type_generic}{Class\+Type\+Generic} type\+Converter, const bool is\+Crowd)
+\item 
+\hyperlink{struct_r_l_e}{R\+LE} \hyperlink{class_c_o_c_o_dataset_reader_ac1529b3cc125da893d089fa88c866a53}{from\+Segmentation\+List} (const rapidjson\+::\+Value \&seg, int im\+\_\+width, int im\+\_\+height, int size=1)
+\item 
+\hyperlink{struct_r_l_e}{R\+LE} \hyperlink{class_c_o_c_o_dataset_reader_a2fcb9bb8c21783596a9c77efb49ca509}{get\+Segmentation\+Region} (const rapidjson\+::\+Value \&seg, int im\+\_\+width, int im\+\_\+height)
+\item 
+\hyperlink{struct_r_l_e}{R\+LE} \hyperlink{class_c_o_c_o_dataset_reader_a0133d6cd0659f32bb96c52e5afee33e6}{from\+Segmentation\+Object} (const rapidjson\+::\+Value \&seg, int size=1)
+\item 
+\hyperlink{struct_r_l_e}{R\+LE} \hyperlink{class_c_o_c_o_dataset_reader_ad3dc79ff171b5df8677a0a66a5f97ebd}{from\+Uncompressed\+Rle} (const rapidjson\+::\+Value \&seg)
+\item 
+\hyperlink{struct_r_l_e}{R\+LE} \hyperlink{class_c_o_c_o_dataset_reader_aa88f5bc653084dd529950558ebd6322c}{from\+Rle} (const rapidjson\+::\+Value \&seg)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_o_c_o_dataset_reader_aeb5609c8496c92013c5e6d551696f3c8}\label{class_c_o_c_o_dataset_reader_aeb5609c8496c92013c5e6d551696f3c8}} 
+\index{C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}!C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}}
+\index{C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}!C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}}
+\subsubsection{\texorpdfstring{C\+O\+C\+O\+Dataset\+Reader()}{COCODatasetReader()}}
+{\footnotesize\ttfamily C\+O\+C\+O\+Dataset\+Reader\+::\+C\+O\+C\+O\+Dataset\+Reader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{class\+Names\+File,  }\item[{bool}]{images\+Required }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_o_c_o_dataset_reader_a0b7e394c98b512e387952c7f7e39823d}\label{class_c_o_c_o_dataset_reader_a0b7e394c98b512e387952c7f7e39823d}} 
+\index{C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}!append\+Dataset@{append\+Dataset}}
+\index{append\+Dataset@{append\+Dataset}!C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}}
+\subsubsection{\texorpdfstring{append\+Dataset()}{appendDataset()}}
+{\footnotesize\ttfamily bool C\+O\+C\+O\+Dataset\+Reader\+::append\+Dataset (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dataset\+Path,  }\item[{const std\+::string \&}]{dataset\+Prefix = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{class_dataset_reader_a732438244cec7c20294f93c6b635888c}{Dataset\+Reader}.
+
+\mbox{\Hypertarget{class_c_o_c_o_dataset_reader_a2e9d81e9fa12aa9d0e5df202f53792f0}\label{class_c_o_c_o_dataset_reader_a2e9d81e9fa12aa9d0e5df202f53792f0}} 
+\index{C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}!append\+Segmentation\+Region@{append\+Segmentation\+Region}}
+\index{append\+Segmentation\+Region@{append\+Segmentation\+Region}!C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}}
+\subsubsection{\texorpdfstring{append\+Segmentation\+Region()}{appendSegmentationRegion()}}
+{\footnotesize\ttfamily void C\+O\+C\+O\+Dataset\+Reader\+::append\+Segmentation\+Region (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{node,  }\item[{\hyperlink{struct_sample}{Sample} \&}]{sample,  }\item[{\hyperlink{struct_class_type_generic}{Class\+Type\+Generic}}]{type\+Converter,  }\item[{const bool}]{is\+Crowd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_o_c_o_dataset_reader_a081c7b899608f70981075a37b291a221}\label{class_c_o_c_o_dataset_reader_a081c7b899608f70981075a37b291a221}} 
+\index{C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}!find\+\_\+img\+\_\+directory@{find\+\_\+img\+\_\+directory}}
+\index{find\+\_\+img\+\_\+directory@{find\+\_\+img\+\_\+directory}!C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}}
+\subsubsection{\texorpdfstring{find\+\_\+img\+\_\+directory()}{find\_img\_directory()}}
+{\footnotesize\ttfamily bool C\+O\+C\+O\+Dataset\+Reader\+::find\+\_\+img\+\_\+directory (\begin{DoxyParamCaption}\item[{const boost\+::filesystem\+::path \&}]{dir\+\_\+path,  }\item[{boost\+::filesystem\+::path \&}]{path\+\_\+found,  }\item[{std\+::string \&}]{img\+\_\+filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_o_c_o_dataset_reader_aa88f5bc653084dd529950558ebd6322c}\label{class_c_o_c_o_dataset_reader_aa88f5bc653084dd529950558ebd6322c}} 
+\index{C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}!from\+Rle@{from\+Rle}}
+\index{from\+Rle@{from\+Rle}!C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}}
+\subsubsection{\texorpdfstring{from\+Rle()}{fromRle()}}
+{\footnotesize\ttfamily \hyperlink{struct_r_l_e}{R\+LE} C\+O\+C\+O\+Dataset\+Reader\+::from\+Rle (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{seg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_o_c_o_dataset_reader_ac1529b3cc125da893d089fa88c866a53}\label{class_c_o_c_o_dataset_reader_ac1529b3cc125da893d089fa88c866a53}} 
+\index{C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}!from\+Segmentation\+List@{from\+Segmentation\+List}}
+\index{from\+Segmentation\+List@{from\+Segmentation\+List}!C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}}
+\subsubsection{\texorpdfstring{from\+Segmentation\+List()}{fromSegmentationList()}}
+{\footnotesize\ttfamily \hyperlink{struct_r_l_e}{R\+LE} C\+O\+C\+O\+Dataset\+Reader\+::from\+Segmentation\+List (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{seg,  }\item[{int}]{im\+\_\+width,  }\item[{int}]{im\+\_\+height,  }\item[{int}]{size = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_o_c_o_dataset_reader_a0133d6cd0659f32bb96c52e5afee33e6}\label{class_c_o_c_o_dataset_reader_a0133d6cd0659f32bb96c52e5afee33e6}} 
+\index{C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}!from\+Segmentation\+Object@{from\+Segmentation\+Object}}
+\index{from\+Segmentation\+Object@{from\+Segmentation\+Object}!C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}}
+\subsubsection{\texorpdfstring{from\+Segmentation\+Object()}{fromSegmentationObject()}}
+{\footnotesize\ttfamily \hyperlink{struct_r_l_e}{R\+LE} C\+O\+C\+O\+Dataset\+Reader\+::from\+Segmentation\+Object (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{seg,  }\item[{int}]{size = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_o_c_o_dataset_reader_ad3dc79ff171b5df8677a0a66a5f97ebd}\label{class_c_o_c_o_dataset_reader_ad3dc79ff171b5df8677a0a66a5f97ebd}} 
+\index{C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}!from\+Uncompressed\+Rle@{from\+Uncompressed\+Rle}}
+\index{from\+Uncompressed\+Rle@{from\+Uncompressed\+Rle}!C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}}
+\subsubsection{\texorpdfstring{from\+Uncompressed\+Rle()}{fromUncompressedRle()}}
+{\footnotesize\ttfamily \hyperlink{struct_r_l_e}{R\+LE} C\+O\+C\+O\+Dataset\+Reader\+::from\+Uncompressed\+Rle (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{seg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_o_c_o_dataset_reader_a2fcb9bb8c21783596a9c77efb49ca509}\label{class_c_o_c_o_dataset_reader_a2fcb9bb8c21783596a9c77efb49ca509}} 
+\index{C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}!get\+Segmentation\+Region@{get\+Segmentation\+Region}}
+\index{get\+Segmentation\+Region@{get\+Segmentation\+Region}!C\+O\+C\+O\+Dataset\+Reader@{C\+O\+C\+O\+Dataset\+Reader}}
+\subsubsection{\texorpdfstring{get\+Segmentation\+Region()}{getSegmentationRegion()}}
+{\footnotesize\ttfamily \hyperlink{struct_r_l_e}{R\+LE} C\+O\+C\+O\+Dataset\+Reader\+::get\+Segmentation\+Region (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Value \&}]{seg,  }\item[{int}]{im\+\_\+width,  }\item[{int}]{im\+\_\+height }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Dataset\+Converters/readers/\hyperlink{_c_o_c_o_dataset_reader_8h}{C\+O\+C\+O\+Dataset\+Reader.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Dataset\+Converters/readers/\hyperlink{_c_o_c_o_dataset_reader_8cpp}{C\+O\+C\+O\+Dataset\+Reader.\+cpp}\end{DoxyCompactItemize}

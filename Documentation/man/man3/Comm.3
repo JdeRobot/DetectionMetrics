@@ -1,0 +1,143 @@
+.TH "Comm" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Comm
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBCameraClient\fP"
+.br
+.ti -1c
+.RI "class \fBCameraIceClient\fP"
+.br
+.ti -1c
+.RI "class \fBCommunicator\fP"
+.br
+.ti -1c
+.RI "class \fBListenerCamera\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCameraClient\fP * \fBgetCameraClient\fP (\fBComm::Communicator\fP *jdrc, std::string prefix)"
+.br
+.RI "make a \fBCameraClient\fP using propierties "
+.ti -1c
+.RI "\fBJdeRobotTypes::Image\fP \fBtranslate_image_messages\fP (const sensor_msgs::ImageConstPtr &image_msg)"
+.br
+.RI "translate ROS Image messages to JdeRobot Image "
+.ti -1c
+.RI "\fBJdeRobotTypes::Rgbd\fP \fBtranslate_rgbd\fP (const sensor_msgs::ImageConstPtr &rgb, const sensor_msgs::ImageConstPtr &d)"
+.br
+.RI "translate ROS images messages to JdeRobot Rgbd "
+.ti -1c
+.RI "void \fBdepthToRGB\fP (const cv::Mat &float_img, cv::Mat &rgb_img)"
+.br
+.RI "Translates from 32FC1 Image format to RGB\&. Inf values are represented by NaN, when converting to RGB, NaN passed to 0\&. "
+.ti -1c
+.RI "int \fBserver2int\fP (std::string server)"
+.br
+.ti -1c
+.RI "void \fBdepthToRGB\fP (const cv::Mat &float_img, cv::Mat &rgb_img, std::string type)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "float \fBPI\fP = 3\&.1415"
+.br
+.ti -1c
+.RI "int \fBMAXRANGEIMGD\fP = 8"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void Comm::depthToRGB (const cv::Mat & float_img, cv::Mat & rgb_img, std::string type)"
+
+.SS "void Comm::depthToRGB (const cv::Mat & float_img, cv::Mat & rgb_img)"
+
+.PP
+Translates from 32FC1 Image format to RGB\&. Inf values are represented by NaN, when converting to RGB, NaN passed to 0\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIROS\fP Image Message
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image translated from ROS Message 
+.RE
+.PP
+
+.SS "\fBCameraClient\fP * Comm::getCameraClient (\fBComm::Communicator\fP * jdrc, std::string prefix)"
+
+.PP
+make a \fBCameraClient\fP using propierties 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcommunicator\fP that contains properties 
+.br
+\fIprefix\fP of client Propierties (example: 'carViz\&.Camera')
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+null if propierties are wrong 
+.RE
+.PP
+
+.SS "int Comm::server2int (std::string server)"
+
+.SS "\fBJdeRobotTypes::Image\fP Comm::translate_image_messages (const sensor_msgs::ImageConstPtr & image_msg)"
+
+.PP
+translate ROS Image messages to JdeRobot Image 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIROS\fP Image Message
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Image translated from ROS Message 
+.RE
+.PP
+
+.SS "\fBJdeRobotTypes::Rgbd\fP Comm::translate_rgbd (const sensor_msgs::ImageConstPtr & rgb, const sensor_msgs::ImageConstPtr & d)"
+
+.PP
+translate ROS images messages to JdeRobot Rgbd 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIROS\fP Image Message 
+.br
+\fIROS\fP Image Message
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Rgbd translated from ROS Messages 
+.RE
+.PP
+
+.SH "Variable Documentation"
+.PP 
+.SS "int Comm::MAXRANGEIMGD = 8"
+
+.SS "float Comm::PI = 3\&.1415"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

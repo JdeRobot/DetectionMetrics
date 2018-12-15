@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_comm_1_1_listener_camera" kind="class" language="C++" prot="public">
+    <compoundname>Comm::ListenerCamera</compoundname>
+    <basecompoundref refid="class_comm_1_1_camera_client" prot="public" virt="non-virtual">Comm::CameraClient</basecompoundref>
+    <includes refid="listener_camera_8hpp" local="no">listenerCamera.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_comm_1_1_listener_camera_1aafc72c85529579a724fa420b58effe07" prot="private" static="no" mutable="no">
+        <type>pthread_mutex_t</type>
+        <definition>pthread_mutex_t Comm::ListenerCamera::mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="47" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_comm_1_1_listener_camera_1a00c9845d6bbc371145fb70c7f4abdc26" prot="private" static="no" mutable="no">
+        <type>ros::Subscriber</type>
+        <definition>ros::Subscriber Comm::ListenerCamera::sub</definition>
+        <argsstring></argsstring>
+        <name>sub</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="48" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_comm_1_1_listener_camera_1aa7c085953418554dde1de849f46a63f0" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Comm::ListenerCamera::topic</definition>
+        <argsstring></argsstring>
+        <name>topic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="49" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_comm_1_1_listener_camera_1a694d0be0320aa1b4bf71698ca98662a9" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Comm::ListenerCamera::nodeName</definition>
+        <argsstring></argsstring>
+        <name>nodeName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="50" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_comm_1_1_listener_camera_1a6c7d82dbcc80b667ccbf422d519846cb" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Comm::ListenerCamera::cont</definition>
+        <argsstring></argsstring>
+        <name>cont</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="52" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_comm_1_1_listener_camera_1a4ac13b8d6f784ce04c650d0aa9aa317d" prot="private" static="no" mutable="no">
+        <type>time_t</type>
+        <definition>time_t Comm::ListenerCamera::timer</definition>
+        <argsstring></argsstring>
+        <name>timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="53" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_comm_1_1_listener_camera_1a9cd4b38862060691eccc1d2be36544ce" prot="private" static="no" mutable="no">
+        <type>ros::AsyncSpinner *</type>
+        <definition>ros::AsyncSpinner* Comm::ListenerCamera::spinner</definition>
+        <argsstring></argsstring>
+        <name>spinner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="55" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_comm_1_1_listener_camera_1ab798ec9f70324e0b644edf14bfca443a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Comm::ListenerCamera::ListenerCamera</definition>
+        <argsstring>(int argc, char **argv, std::string nodeName, std::string topic)</argsstring>
+        <name>ListenerCamera</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char **</type>
+          <declname>argv</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>nodeName</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>topic</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="37" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ros/listenerCamera.cpp" bodystart="5" bodyend="26"/>
+        <references refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" compoundref="interfaces_2camera_client_8hpp" startline="32">Comm::CameraClient::on</references>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_listener_camera_1a7408151b2672fdf293226767b34f4992" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Comm::ListenerCamera::~ListenerCamera</definition>
+        <argsstring>()</argsstring>
+        <name>~ListenerCamera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="38" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ros/listenerCamera.cpp" bodystart="30" bodyend="32"/>
+        <references refid="class_comm_1_1_listener_camera_1a62683e72d06ba387aa19e4f213d1eada" compoundref="listener_camera_8cpp" startline="40" endline="43">stop</references>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_listener_camera_1afc4172a88e4f187bce8f809f91db7f0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Comm::ListenerCamera::start</definition>
+        <argsstring>()</argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="40" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ros/listenerCamera.cpp" bodystart="35" bodyend="37"/>
+        <referencedby refid="namespace_comm_1a488b3721b4d9a501e8cd38388ab30437" compoundref="camera_client_8cpp" startline="25" endline="80">Comm::getCameraClient</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_listener_camera_1a62683e72d06ba387aa19e4f213d1eada" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Comm::ListenerCamera::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="41" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ros/listenerCamera.cpp" bodystart="40" bodyend="43"/>
+        <references refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" compoundref="interfaces_2camera_client_8hpp" startline="34">Comm::CameraClient::image</references>
+        <references refid="namespace_comm_1ad9eade500ada9cd99a62086a53986e36" compoundref="translators_8cpp" startline="31" endline="63">Comm::translate_image_messages</references>
+        <references refid="class_comm_1_1_camera_client_1ac5499dca33e4d1bfd11f1ad1143bc8f6" compoundref="interfaces_2camera_client_8hpp" startline="35">Comm::CameraClient::refreshRate</references>
+        <referencedby refid="class_comm_1_1_listener_camera_1a7408151b2672fdf293226767b34f4992" compoundref="listener_camera_8cpp" startline="30" endline="32">~ListenerCamera</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_listener_camera_1a854d67843d55c98a0020661b8fb7fca9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_jde_robot_types_1_1_image" kindref="compound">JdeRobotTypes::Image</ref></type>
+        <definition>JdeRobotTypes::Image Comm::ListenerCamera::getImage</definition>
+        <argsstring>()</argsstring>
+        <name>getImage</name>
+        <reimplements refid="class_comm_1_1_camera_client_1a1947976aa6b31734b9938091e63782e2">getImage</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="42" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ros/listenerCamera.cpp" bodystart="61" bodyend="67"/>
+        <references refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" compoundref="interfaces_2camera_client_8hpp" startline="34">Comm::CameraClient::image</references>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_listener_camera_1a7ba9f0f4210d75cbedba5a016ac60175" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int Comm::ListenerCamera::getRefreshRate</definition>
+        <argsstring>()</argsstring>
+        <name>getRefreshRate</name>
+        <reimplements refid="class_comm_1_1_camera_client_1afa8d54f4d72921376ec35607897ab5bc">getRefreshRate</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="43" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ros/listenerCamera.cpp" bodystart="69" bodyend="77"/>
+        <references refid="class_comm_1_1_camera_client_1ac5499dca33e4d1bfd11f1ad1143bc8f6" compoundref="interfaces_2camera_client_8hpp" startline="35">Comm::CameraClient::refreshRate</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_comm_1_1_listener_camera_1ac54179c2429a35edfe98f0b95e260691" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Comm::ListenerCamera::imagecallback</definition>
+        <argsstring>(const sensor_msgs::ImageConstPtr &amp;image_msg)</argsstring>
+        <name>imagecallback</name>
+        <param>
+          <type>const sensor_msgs::ImageConstPtr &amp;</type>
+          <declname>image_msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="58" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ros/listenerCamera.cpp" bodystart="46" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="224">
+        <label>Comm::ListenerCamera</label>
+        <link refid="class_comm_1_1_listener_camera"/>
+        <childnode refid="225" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="225">
+        <label>Comm::CameraClient</label>
+        <link refid="class_comm_1_1_camera_client"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="226">
+        <label>Comm::ListenerCamera</label>
+        <link refid="class_comm_1_1_listener_camera"/>
+        <childnode refid="227" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="227">
+        <label>Comm::CameraClient</label>
+        <link refid="class_comm_1_1_camera_client"/>
+        <childnode refid="228" relation="usage">
+          <edgelabel>image</edgelabel>
+        </childnode>
+      </node>
+      <node id="228">
+        <label>JdeRobotTypes::Image</label>
+        <link refid="class_jde_robot_types_1_1_image"/>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" line="34" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp" bodystart="34" bodyend="64"/>
+    <listofallmembers>
+      <member refid="class_comm_1_1_listener_camera_1a6c7d82dbcc80b667ccbf422d519846cb" prot="private" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>cont</name></member>
+      <member refid="class_comm_1_1_listener_camera_1a854d67843d55c98a0020661b8fb7fca9" prot="public" virt="virtual"><scope>Comm::ListenerCamera</scope><name>getImage</name></member>
+      <member refid="class_comm_1_1_listener_camera_1a7ba9f0f4210d75cbedba5a016ac60175" prot="public" virt="virtual"><scope>Comm::ListenerCamera</scope><name>getRefreshRate</name></member>
+      <member refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" prot="protected" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>image</name></member>
+      <member refid="class_comm_1_1_listener_camera_1ac54179c2429a35edfe98f0b95e260691" prot="private" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>imagecallback</name></member>
+      <member refid="class_comm_1_1_listener_camera_1ab798ec9f70324e0b644edf14bfca443a" prot="public" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>ListenerCamera</name></member>
+      <member refid="class_comm_1_1_listener_camera_1aafc72c85529579a724fa420b58effe07" prot="private" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>mutex</name></member>
+      <member refid="class_comm_1_1_listener_camera_1a694d0be0320aa1b4bf71698ca98662a9" prot="private" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>nodeName</name></member>
+      <member refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" prot="public" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>on</name></member>
+      <member refid="class_comm_1_1_camera_client_1ac5499dca33e4d1bfd11f1ad1143bc8f6" prot="protected" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>refreshRate</name></member>
+      <member refid="class_comm_1_1_listener_camera_1a9cd4b38862060691eccc1d2be36544ce" prot="private" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>spinner</name></member>
+      <member refid="class_comm_1_1_listener_camera_1afc4172a88e4f187bce8f809f91db7f0f" prot="public" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>start</name></member>
+      <member refid="class_comm_1_1_listener_camera_1a62683e72d06ba387aa19e4f213d1eada" prot="public" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>stop</name></member>
+      <member refid="class_comm_1_1_listener_camera_1a00c9845d6bbc371145fb70c7f4abdc26" prot="private" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>sub</name></member>
+      <member refid="class_comm_1_1_listener_camera_1a4ac13b8d6f784ce04c650d0aa9aa317d" prot="private" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>timer</name></member>
+      <member refid="class_comm_1_1_listener_camera_1aa7c085953418554dde1de849f46a63f0" prot="private" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>topic</name></member>
+      <member refid="class_comm_1_1_listener_camera_1a7408151b2672fdf293226767b34f4992" prot="public" virt="non-virtual"><scope>Comm::ListenerCamera</scope><name>~ListenerCamera</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

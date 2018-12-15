@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="interfaces_2camera_client_8hpp" kind="file" language="C++">
+    <compoundname>cameraClient.hpp</compoundname>
+    <includes refid="image_8h" local="no">jderobottypes/image.h</includes>
+    <includedby refid="camera_client_8hpp" local="no">DeepLearningSuite/libs/comm/include/comm/cameraClient.hpp</includedby>
+    <includedby refid="camera_ice_client_8hpp" local="no">DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp</includedby>
+    <includedby refid="listener_camera_8hpp" local="no">DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp</includedby>
+    <incdepgraph>
+      <node id="5047">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="5046">
+        <label>jderobottypes/image.h</label>
+        <link refid="image_8h"/>
+        <childnode refid="5047" relation="include">
+        </childnode>
+      </node>
+      <node id="5045">
+        <label>DeepLearningSuite/libs/comm/include/comm/interfaces/cameraClient.hpp</label>
+        <link refid="interfaces_2camera_client_8hpp"/>
+        <childnode refid="5046" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5060">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.cpp</label>
+        <link refid="_generic_live_reader_8cpp"/>
+      </node>
+      <node id="5050">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h</label>
+        <link refid="_jderobot_reader_8h"/>
+        <childnode refid="5051" relation="include">
+        </childnode>
+        <childnode refid="5061" relation="include">
+        </childnode>
+      </node>
+      <node id="5049">
+        <label>DeepLearningSuite/libs/comm/include/comm/cameraClient.hpp</label>
+        <link refid="camera_client_8hpp"/>
+        <childnode refid="5050" relation="include">
+        </childnode>
+        <childnode refid="5062" relation="include">
+        </childnode>
+      </node>
+      <node id="5062">
+        <label>DeepLearningSuite/libs/comm/src/cameraClient.cpp</label>
+        <link refid="camera_client_8cpp"/>
+      </node>
+      <node id="5054">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_converter_8cpp"/>
+      </node>
+      <node id="5063">
+        <label>DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp</label>
+        <link refid="camera_ice_client_8hpp"/>
+        <childnode refid="5064" relation="include">
+        </childnode>
+      </node>
+      <node id="5066">
+        <label>DeepLearningSuite/libs/comm/src/ros/listenerCamera.cpp</label>
+        <link refid="listener_camera_8cpp"/>
+      </node>
+      <node id="5059">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Viewer.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp"/>
+      </node>
+      <node id="5065">
+        <label>DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp</label>
+        <link refid="listener_camera_8hpp"/>
+        <childnode refid="5066" relation="include">
+        </childnode>
+      </node>
+      <node id="5051">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h</label>
+        <link refid="_generic_live_reader_8h"/>
+        <childnode refid="5052" relation="include">
+        </childnode>
+        <childnode refid="5053" relation="include">
+        </childnode>
+        <childnode refid="5055" relation="include">
+        </childnode>
+        <childnode refid="5060" relation="include">
+        </childnode>
+      </node>
+      <node id="5064">
+        <label>DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp</label>
+        <link refid="camera_ice_client_8cpp"/>
+      </node>
+      <node id="5055">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.cpp</label>
+        <link refid="_deployer_8cpp"/>
+      </node>
+      <node id="5058">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.cpp</label>
+        <link refid="_sampler_generation_handler_8cpp"/>
+      </node>
+      <node id="5053">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.h</label>
+        <link refid="_sampler_generation_handler_8h"/>
+        <childnode refid="5054" relation="include">
+        </childnode>
+        <childnode refid="5055" relation="include">
+        </childnode>
+        <childnode refid="5056" relation="include">
+        </childnode>
+        <childnode refid="5057" relation="include">
+        </childnode>
+        <childnode refid="5058" relation="include">
+        </childnode>
+        <childnode refid="5059" relation="include">
+        </childnode>
+      </node>
+      <node id="5048">
+        <label>DeepLearningSuite/libs/comm/include/comm/interfaces/cameraClient.hpp</label>
+        <link refid="interfaces_2camera_client_8hpp"/>
+        <childnode refid="5049" relation="include">
+        </childnode>
+        <childnode refid="5063" relation="include">
+        </childnode>
+        <childnode refid="5065" relation="include">
+        </childnode>
+      </node>
+      <node id="5057">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_evaluator_8cpp"/>
+      </node>
+      <node id="5061">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.cpp</label>
+        <link refid="_jderobot_reader_8cpp"/>
+      </node>
+      <node id="5052">
+        <label>DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="5056">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_comm_1_1_camera_client" prot="public">Comm::CameraClient</innerclass>
+    <innernamespace refid="namespace_comm">Comm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>(C)<sp/>1997-2016<sp/>JDE<sp/>Developers<sp/>Team</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>http://www.gnu.org/licenses/.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>Authors<sp/>:</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Aitor<sp/>Martinez<sp/>Fernandez<sp/>&lt;aitor.martinez.fernandez@gmail.com&gt;</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>JDEROBOTCOMM_CAMERACLIENT_INTERFACE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JDEROBOTCOMM_CAMERACLIENT_INTERFACE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="image_8h" kindref="compound">jderobottypes/image.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_comm" kindref="compound">Comm</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="class_comm_1_1_camera_client" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_comm_1_1_camera_client" kindref="compound">CameraClient</ref><sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_jde_robot_types_1_1_image" kindref="compound">JdeRobotTypes::Image</ref><sp/><ref refid="class_comm_1_1_camera_client_1a1947976aa6b31734b9938091e63782e2" kindref="member">getImage</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_comm_1_1_camera_client_1afa8d54f4d72921376ec35607897ab5bc" kindref="member">getRefreshRate</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="32" refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" kindref="member">on</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34" refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_jde_robot_types_1_1_image" kindref="compound">JdeRobotTypes::Image</ref><sp/><ref refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" kindref="member">image</ref>;</highlight></codeline>
+<codeline lineno="35" refid="class_comm_1_1_camera_client_1ac5499dca33e4d1bfd11f1ad1143bc8f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_comm_1_1_camera_client_1ac5499dca33e4d1bfd11f1ad1143bc8f6" kindref="member">refreshRate</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}<sp/></highlight><highlight class="comment">//NS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>JDEROBOTCOMM_CAMERACLIENT_INTERFACE_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/libs/comm/include/comm/interfaces/cameraClient.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_recorder_reader" kind="class" language="C++" prot="public">
+    <compoundname>RecorderReader</compoundname>
+    <basecompoundref refid="class_dataset_reader" prot="public" virt="non-virtual">DatasetReader</basecompoundref>
+    <includes refid="_recorder_reader_8h" local="no">RecorderReader.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_recorder_reader_1a0a5dde0069910df08d8fdcc1114954dd" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string RecorderReader::depthPath</definition>
+        <argsstring></argsstring>
+        <name>depthPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recorder_reader_1a982dddddd2c906498bbe0561e13591cf" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string RecorderReader::colorPath</definition>
+        <argsstring></argsstring>
+        <name>colorPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recorder_reader_1a1225ead9adcadacc5dc92c8fdfecb564" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RecorderReader::syncedData</definition>
+        <argsstring></argsstring>
+        <name>syncedData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recorder_reader_1a9bfc53e1e38b3d5b17ca1aeb9fcf27a4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RecorderReader::currentIndex</definition>
+        <argsstring></argsstring>
+        <name>currentIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recorder_reader_1ad20e43ef3da524a86f03c6d9894858f0" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; RecorderReader::depthIndexes</definition>
+        <argsstring></argsstring>
+        <name>depthIndexes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recorder_reader_1a50bcf80232a770f6436f0bf163473be3" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; RecorderReader::colorIndexes</definition>
+        <argsstring></argsstring>
+        <name>colorIndexes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_recorder_reader_1acb4bf6e6d57e98f9d18735d9550568e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RecorderReader::RecorderReader</definition>
+        <argsstring>(const std::string &amp;colorImagesPath, const std::string &amp;depthImagesPath)</argsstring>
+        <name>RecorderReader</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>colorImagesPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>depthImagesPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.cpp" bodystart="14" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_recorder_reader_1a6870eb9da2db311ba366f60e602698b4" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RecorderReader::RecorderReader</definition>
+        <argsstring>(const std::string &amp;dataPath)</argsstring>
+        <name>RecorderReader</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>dataPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.cpp" bodystart="22" bodyend="27"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+        <references refid="class_path_helper_1a4f5f750586edd95d7095f0dc50052282" compoundref="_path_helper_8cpp" startline="8" endline="15">PathHelper::concatPaths</references>
+      </memberdef>
+      <memberdef kind="function" id="class_recorder_reader_1afc52cde597201a1838e6e31b8c801941" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool RecorderReader::getNextSample</definition>
+        <argsstring>(Sample &amp;sample) override</argsstring>
+        <name>getNextSample</name>
+        <reimplements refid="class_dataset_reader_1af50668f52c34f4620c44e91f26dd11ce">getNextSample</reimplements>
+        <param>
+          <type><ref refid="struct_sample" kindref="compound">Sample</ref> &amp;</type>
+          <declname>sample</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.cpp" bodystart="83" bodyend="99"/>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">Sample::setColorImage</references>
+        <references refid="struct_sample_1a1a140ca4aa294de160581251fe5072e5" compoundref="_sample_8cpp" startline="80" endline="82">Sample::setDepthImage</references>
+        <referencedby refid="class_my_app_1ab3cc458e74a9fc059504fa33983249ee" compoundref="generator_8cpp" startline="31" endline="209">MyApp::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_recorder_reader_1a5aba35af024680621c7af019049f0b6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int RecorderReader::getNumSamples</definition>
+        <argsstring>()</argsstring>
+        <name>getNumSamples</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.cpp" bodystart="101" bodyend="103"/>
+        <referencedby refid="class_my_app_1ab3cc458e74a9fc059504fa33983249ee" compoundref="generator_8cpp" startline="31" endline="209">MyApp::operator()</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_recorder_reader_1abd7d260362610ee8ddbe3896655e884d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RecorderReader::getImagesByIndexes</definition>
+        <argsstring>(const std::string &amp;path, std::vector&lt; int &gt; &amp;indexes, std::string sufix=&quot;&quot;)</argsstring>
+        <name>getImagesByIndexes</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; int &gt; &amp;</type>
+          <declname>indexes</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>sufix</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" line="30" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.cpp" bodystart="30" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="class_recorder_reader_1aaea7844f9f2d1084d84a8bdc75588c18" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string RecorderReader::getPathByIndex</definition>
+        <argsstring>(const std::string &amp;path, int id, std::string sufix=&quot;&quot;)</argsstring>
+        <name>getPathByIndex</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>sufix</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" line="31" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.cpp" bodystart="67" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="class_recorder_reader_1a6114f4f9af7d7ca4c73e06d2493fc612" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int RecorderReader::closest</definition>
+        <argsstring>(std::vector&lt; int &gt; const &amp;vec, int value)</argsstring>
+        <name>closest</name>
+        <param>
+          <type>std::vector&lt; int &gt; const &amp;</type>
+          <declname>vec</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" line="32" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.cpp" bodystart="76" bodyend="81"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="283">
+        <label>DatasetReader</label>
+        <link refid="class_dataset_reader"/>
+      </node>
+      <node id="282">
+        <label>RecorderReader</label>
+        <link refid="class_recorder_reader"/>
+        <childnode refid="283" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="285">
+        <label>DatasetReader</label>
+        <link refid="class_dataset_reader"/>
+      </node>
+      <node id="284">
+        <label>RecorderReader</label>
+        <link refid="class_recorder_reader"/>
+        <childnode refid="285" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h" bodystart="13" bodyend="35"/>
+    <listofallmembers>
+      <member refid="class_dataset_reader_1a03ceb33ec8ecd5fb73a4b17e9701cbb3" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>addSample</name></member>
+      <member refid="class_dataset_reader_1a732438244cec7c20294f93c6b635888c" prot="public" virt="virtual"><scope>RecorderReader</scope><name>appendDataset</name></member>
+      <member refid="class_dataset_reader_1a76c52c7db385a4a930021fe69d04fefb" prot="protected" virt="non-virtual"><scope>RecorderReader</scope><name>classNames</name></member>
+      <member refid="class_dataset_reader_1a45ded43b56539f1e37a24ca9c94b4611" prot="protected" virt="non-virtual"><scope>RecorderReader</scope><name>classNamesFile</name></member>
+      <member refid="class_recorder_reader_1a6114f4f9af7d7ca4c73e06d2493fc612" prot="private" virt="non-virtual"><scope>RecorderReader</scope><name>closest</name></member>
+      <member refid="class_recorder_reader_1a50bcf80232a770f6436f0bf163473be3" prot="private" virt="non-virtual"><scope>RecorderReader</scope><name>colorIndexes</name></member>
+      <member refid="class_recorder_reader_1a982dddddd2c906498bbe0561e13591cf" prot="private" virt="non-virtual"><scope>RecorderReader</scope><name>colorPath</name></member>
+      <member refid="class_recorder_reader_1a9bfc53e1e38b3d5b17ca1aeb9fcf27a4" prot="private" virt="non-virtual"><scope>RecorderReader</scope><name>currentIndex</name></member>
+      <member refid="class_dataset_reader_1a357a86043c584062497bbc0fcd3ea420" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>DatasetReader</name></member>
+      <member refid="class_dataset_reader_1ac94f1934639708dc2a29b1ba05e3cc0b" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>decrementReaderCounter</name></member>
+      <member refid="class_recorder_reader_1ad20e43ef3da524a86f03c6d9894858f0" prot="private" virt="non-virtual"><scope>RecorderReader</scope><name>depthIndexes</name></member>
+      <member refid="class_recorder_reader_1a0a5dde0069910df08d8fdcc1114954dd" prot="private" virt="non-virtual"><scope>RecorderReader</scope><name>depthPath</name></member>
+      <member refid="class_dataset_reader_1a17085ffacc392c459a95cd510f341a7d" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>filterSamplesByID</name></member>
+      <member refid="class_dataset_reader_1a2838c12e627e42e8394fd18011afa203" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>getClassNamesFile</name></member>
+      <member refid="class_recorder_reader_1abd7d260362610ee8ddbe3896655e884d" prot="private" virt="non-virtual"><scope>RecorderReader</scope><name>getImagesByIndexes</name></member>
+      <member refid="class_recorder_reader_1afc52cde597201a1838e6e31b8c801941" prot="public" virt="virtual"><scope>RecorderReader</scope><name>getNextSample</name></member>
+      <member refid="class_dataset_reader_1a4875a59f33227329ca93241add8370c0" prot="public" virt="virtual"><scope>RecorderReader</scope><name>getNextSamples</name></member>
+      <member refid="class_dataset_reader_1a67f4c1c3fdfcc0c6bf3b90d65d5fc7c5" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>getNumberOfElements</name></member>
+      <member refid="class_recorder_reader_1a5aba35af024680621c7af019049f0b6e" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>getNumSamples</name></member>
+      <member refid="class_recorder_reader_1aaea7844f9f2d1084d84a8bdc75588c18" prot="private" virt="non-virtual"><scope>RecorderReader</scope><name>getPathByIndex</name></member>
+      <member refid="class_dataset_reader_1aeff3413e85bbde9f1f755e36860c7f3a" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>getSampleBySampleID</name></member>
+      <member refid="class_dataset_reader_1a2cfa8b90e643a325b519a292c62d4460" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>getSampleBySampleID</name></member>
+      <member refid="class_dataset_reader_1a71d04d25d58e0e9a0c05d69afcff03a1" prot="protected" virt="non-virtual"><scope>RecorderReader</scope><name>imagesRequired</name></member>
+      <member refid="class_dataset_reader_1a951146f7949deff5e17c3482f4339672" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>incrementReaderCounter</name></member>
+      <member refid="class_dataset_reader_1ac662ff47f081f872d05ade9a33724a2a" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>overWriteClasses</name></member>
+      <member refid="class_dataset_reader_1a1e37cddfc448b548dc6ca40f629884cb" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>printDatasetStats</name></member>
+      <member refid="class_dataset_reader_1af0fd759568c5db7187d19bae8ebe1b6c" prot="protected" virt="non-virtual"><scope>RecorderReader</scope><name>readerCounter</name></member>
+      <member refid="class_recorder_reader_1acb4bf6e6d57e98f9d18735d9550568e5" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>RecorderReader</name></member>
+      <member refid="class_recorder_reader_1a6870eb9da2db311ba366f60e602698b4" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>RecorderReader</name></member>
+      <member refid="class_dataset_reader_1a528f4df5009c93efd37ff5cfafe4c778" prot="public" virt="non-virtual"><scope>RecorderReader</scope><name>resetReaderCounter</name></member>
+      <member refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" prot="protected" virt="non-virtual"><scope>RecorderReader</scope><name>samples</name></member>
+      <member refid="class_dataset_reader_1aae9a49629ae536c02b726e52a9def4ee" prot="protected" virt="non-virtual"><scope>RecorderReader</scope><name>skip_count</name></member>
+      <member refid="class_recorder_reader_1a1225ead9adcadacc5dc92c8fdfecb564" prot="private" virt="non-virtual"><scope>RecorderReader</scope><name>syncedData</name></member>
+      <member refid="class_dataset_reader_1af972d4b7460587b2292d3dd15e69827b" prot="public" virt="virtual"><scope>RecorderReader</scope><name>~DatasetReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

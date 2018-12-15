@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_435016fffeb65ac125a019123af23397" kind="dir">
+    <compoundname>DeepLearningSuite/libs/utils/colorspaces</compoundname>
+    <innerfile refid="colorspaces_8h">colorspaces.h</innerfile>
+    <innerfile refid="colorspacesmm_8h">colorspacesmm.h</innerfile>
+    <innerfile refid="imagecv_8cpp">imagecv.cpp</innerfile>
+    <innerfile refid="imagecv_8h">imagecv.h</innerfile>
+    <innerfile refid="rgb2hsv_8c">rgb2hsv.c</innerfile>
+    <innerfile refid="rgb2yuv_8c">rgb2yuv.c</innerfile>
+    <innerfile refid="uncopyable_8h">uncopyable.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/utils/colorspaces/"/>
+  </compounddef>
+</doxygen>

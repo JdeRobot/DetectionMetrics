@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_a95b58333541cf96452b02e1618cffd7" kind="dir">
+    <compoundname>DeepLearningSuite/test</compoundname>
+    <innerdir refid="dir_11269f3198bf1f3073dcddebfb0e3aee">DeepLearningSuite/test/GLOG</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/test/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_tab_handler" kind="class" language="C++" prot="public">
+    <compoundname>TabHandler</compoundname>
+    <includes refid="_tab_handler_8h" local="no">TabHandler.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_tab_handler_1a0e1ff871f753ca681369539da1024363" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; TabHandler::contexts</definition>
+        <argsstring></argsstring>
+        <name>contexts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h" line="21" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_tab_handler_1a0db74769c062530015f118c22a4bce33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TabHandler::TabHandler</definition>
+        <argsstring>()</argsstring>
+        <name>TabHandler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h" line="16" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.cpp" bodystart="11" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tab_handler_1afcefa94c308a90bba358dd371fa3c39b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string TabHandler::getStringContext</definition>
+        <argsstring>(int index)</argsstring>
+        <name>getStringContext</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h" line="17" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.cpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tab_handler_1a58e032ec707727233e06ab8541de29a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; TabHandler::getAllContexts</definition>
+        <argsstring>()</argsstring>
+        <name>getAllContexts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h" line="18" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.cpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_tab_handler_1a9cd1c446f30c214c1b2387d888628f9b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TabHandler::fillContexts</definition>
+        <argsstring>()</argsstring>
+        <name>fillContexts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h" line="23" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.cpp" bodystart="17" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h" line="14" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h" bodystart="14" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_tab_handler_1a0e1ff871f753ca681369539da1024363" prot="private" virt="non-virtual"><scope>TabHandler</scope><name>contexts</name></member>
+      <member refid="class_tab_handler_1a9cd1c446f30c214c1b2387d888628f9b" prot="private" virt="non-virtual"><scope>TabHandler</scope><name>fillContexts</name></member>
+      <member refid="class_tab_handler_1a58e032ec707727233e06ab8541de29a5" prot="public" virt="non-virtual"><scope>TabHandler</scope><name>getAllContexts</name></member>
+      <member refid="class_tab_handler_1afcefa94c308a90bba358dd371fa3c39b" prot="public" virt="non-virtual"><scope>TabHandler</scope><name>getStringContext</name></member>
+      <member refid="class_tab_handler_1a0db74769c062530015f118c22a4bce33" prot="public" virt="non-virtual"><scope>TabHandler</scope><name>TabHandler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

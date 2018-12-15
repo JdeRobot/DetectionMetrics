@@ -1,0 +1,37 @@
+.TH "MassBatchInferencer" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MassBatchInferencer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MassBatchInferencer\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMassBatchInferencer\fP (\fBDatasetReaderPtr\fP reader, \fBFrameworkInferencerPtr\fP inferencer, const std::string &resultsPath, double confidence_threshold=0\&.2, bool debug=true)"
+.br
+.ti -1c
+.RI "\fBMassBatchInferencer\fP (\fBDatasetReaderPtr\fP reader, \fBFrameworkInferencerPtr\fP inferencer, double confidence_threshold=0\&.2, bool debug=true)"
+.br
+.ti -1c
+.RI "void \fBprocess\fP (const int batchSize, bool writeImages, \fBDatasetReaderPtr\fP readerDetection=NULL)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MassBatchInferencer::MassBatchInferencer (\fBDatasetReaderPtr\fP reader, \fBFrameworkInferencerPtr\fP inferencer, const std::string & resultsPath, double confidence_threshold = \fC0\&.2\fP, bool debug = \fCtrue\fP)"
+
+.SS "MassBatchInferencer::MassBatchInferencer (\fBDatasetReaderPtr\fP reader, \fBFrameworkInferencerPtr\fP inferencer, double confidence_threshold = \fC0\&.2\fP, bool debug = \fCtrue\fP)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void MassBatchInferencer::process (const int batchSize, bool writeImages, \fBDatasetReaderPtr\fP readerDetection = \fCNULL\fP)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

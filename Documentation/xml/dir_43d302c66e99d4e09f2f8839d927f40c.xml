@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_43d302c66e99d4e09f2f8839d927f40c" kind="dir">
+    <compoundname>datasetGenerator</compoundname>
+    <innerfile refid="generator_8py">generator.py</innerfile>
+    <innerfile refid="load_image_8py">loadImage.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="datasetGenerator/"/>
+  </compounddef>
+</doxygen>

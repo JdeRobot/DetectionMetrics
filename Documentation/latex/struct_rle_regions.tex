@@ -1,0 +1,141 @@
+\hypertarget{struct_rle_regions}{}\section{Rle\+Regions Struct Reference}
+\label{struct_rle_regions}\index{Rle\+Regions@{Rle\+Regions}}
+
+
+{\ttfamily \#include $<$Rle\+Regions.\+h$>$}
+
+Inheritance diagram for Rle\+Regions\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_rle_regions}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_rle_regions_af02a61ff467f90320aa1980ec6924710}{Rle\+Regions} ()
+\item 
+void \hyperlink{struct_rle_regions_a643c55d59720ba45a78e0e6090018e05}{save\+Json} (const std\+::string \&out\+Path)
+\item 
+void \hyperlink{struct_rle_regions_a4d7fd1bdb03c494c5ebe66e940337a73}{add} (\hyperlink{struct_r_l_e}{R\+LE} region, const std\+::string \&class\+Id, const bool is\+Crowd=false)
+\item 
+void \hyperlink{struct_rle_regions_a537a1a2b789d4d95fd579a82baf89f2f}{add} (\hyperlink{struct_r_l_e}{R\+LE} region, const std\+::string \&class\+Id, const double confidence\+\_\+score, const bool is\+Crowd=false)
+\item 
+\hyperlink{struct_rle_region}{Rle\+Region} \hyperlink{struct_rle_regions_a0188b60eb616945a63ad9dd14a167392}{get\+Region} (int idx)
+\item 
+std\+::vector$<$ \hyperlink{struct_rle_region}{Rle\+Region} $>$ \hyperlink{struct_rle_regions_a66101430c60a2e954c9f9b197bbd4030}{get\+Regions} ()
+\item 
+void \hyperlink{struct_rle_regions_aedcc9f614d38a2882a589e3014799d91}{draw\+Regions} (cv\+::\+Mat \&image)
+\item 
+void \hyperlink{struct_rle_regions_a50e7df1873c11d5436cbe875593c331b}{filter\+Samples\+By\+ID} (std\+::vector$<$ std\+::string $>$ filtered\+I\+DS)
+\item 
+bool \hyperlink{struct_rle_regions_acaea73c92cdcff78a60d1e10bed62c3d}{empty} ()
+\item 
+void \hyperlink{struct_rle_regions_a83e335ebc08dd7029bdc76baa8b71b32}{print} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{struct_rle_region}{Rle\+Region} $>$ \hyperlink{struct_rle_regions_a49c81f3a73376196ac33e70d2a49b867}{regions}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_rle_regions_af02a61ff467f90320aa1980ec6924710}\label{struct_rle_regions_af02a61ff467f90320aa1980ec6924710}} 
+\index{Rle\+Regions@{Rle\+Regions}!Rle\+Regions@{Rle\+Regions}}
+\index{Rle\+Regions@{Rle\+Regions}!Rle\+Regions@{Rle\+Regions}}
+\subsubsection{\texorpdfstring{Rle\+Regions()}{RleRegions()}}
+{\footnotesize\ttfamily Rle\+Regions\+::\+Rle\+Regions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_rle_regions_a4d7fd1bdb03c494c5ebe66e940337a73}\label{struct_rle_regions_a4d7fd1bdb03c494c5ebe66e940337a73}} 
+\index{Rle\+Regions@{Rle\+Regions}!add@{add}}
+\index{add@{add}!Rle\+Regions@{Rle\+Regions}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Rle\+Regions\+::add (\begin{DoxyParamCaption}\item[{\hyperlink{struct_r_l_e}{R\+LE}}]{region,  }\item[{const std\+::string \&}]{class\+Id,  }\item[{const bool}]{is\+Crowd = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_rle_regions_a537a1a2b789d4d95fd579a82baf89f2f}\label{struct_rle_regions_a537a1a2b789d4d95fd579a82baf89f2f}} 
+\index{Rle\+Regions@{Rle\+Regions}!add@{add}}
+\index{add@{add}!Rle\+Regions@{Rle\+Regions}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Rle\+Regions\+::add (\begin{DoxyParamCaption}\item[{\hyperlink{struct_r_l_e}{R\+LE}}]{region,  }\item[{const std\+::string \&}]{class\+Id,  }\item[{const double}]{confidence\+\_\+score,  }\item[{const bool}]{is\+Crowd = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_rle_regions_aedcc9f614d38a2882a589e3014799d91}\label{struct_rle_regions_aedcc9f614d38a2882a589e3014799d91}} 
+\index{Rle\+Regions@{Rle\+Regions}!draw\+Regions@{draw\+Regions}}
+\index{draw\+Regions@{draw\+Regions}!Rle\+Regions@{Rle\+Regions}}
+\subsubsection{\texorpdfstring{draw\+Regions()}{drawRegions()}}
+{\footnotesize\ttfamily void Rle\+Regions\+::draw\+Regions (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_adab32a2a00fc77abb6f4876939dc8505}{Regions}.
+
+\mbox{\Hypertarget{struct_rle_regions_acaea73c92cdcff78a60d1e10bed62c3d}\label{struct_rle_regions_acaea73c92cdcff78a60d1e10bed62c3d}} 
+\index{Rle\+Regions@{Rle\+Regions}!empty@{empty}}
+\index{empty@{empty}!Rle\+Regions@{Rle\+Regions}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool Rle\+Regions\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_a5763d0526981f665356ac35734e8e505}{Regions}.
+
+\mbox{\Hypertarget{struct_rle_regions_a50e7df1873c11d5436cbe875593c331b}\label{struct_rle_regions_a50e7df1873c11d5436cbe875593c331b}} 
+\index{Rle\+Regions@{Rle\+Regions}!filter\+Samples\+By\+ID@{filter\+Samples\+By\+ID}}
+\index{filter\+Samples\+By\+ID@{filter\+Samples\+By\+ID}!Rle\+Regions@{Rle\+Regions}}
+\subsubsection{\texorpdfstring{filter\+Samples\+By\+I\+D()}{filterSamplesByID()}}
+{\footnotesize\ttfamily void Rle\+Regions\+::filter\+Samples\+By\+ID (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{filtered\+I\+DS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_ae2bcea2b1c245a9d1ab1ff3abc23f2a0}{Regions}.
+
+\mbox{\Hypertarget{struct_rle_regions_a0188b60eb616945a63ad9dd14a167392}\label{struct_rle_regions_a0188b60eb616945a63ad9dd14a167392}} 
+\index{Rle\+Regions@{Rle\+Regions}!get\+Region@{get\+Region}}
+\index{get\+Region@{get\+Region}!Rle\+Regions@{Rle\+Regions}}
+\subsubsection{\texorpdfstring{get\+Region()}{getRegion()}}
+{\footnotesize\ttfamily \hyperlink{struct_rle_region}{Rle\+Region} Rle\+Regions\+::get\+Region (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_rle_regions_a66101430c60a2e954c9f9b197bbd4030}\label{struct_rle_regions_a66101430c60a2e954c9f9b197bbd4030}} 
+\index{Rle\+Regions@{Rle\+Regions}!get\+Regions@{get\+Regions}}
+\index{get\+Regions@{get\+Regions}!Rle\+Regions@{Rle\+Regions}}
+\subsubsection{\texorpdfstring{get\+Regions()}{getRegions()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{struct_rle_region}{Rle\+Region} $>$ Rle\+Regions\+::get\+Regions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_rle_regions_a83e335ebc08dd7029bdc76baa8b71b32}\label{struct_rle_regions_a83e335ebc08dd7029bdc76baa8b71b32}} 
+\index{Rle\+Regions@{Rle\+Regions}!print@{print}}
+\index{print@{print}!Rle\+Regions@{Rle\+Regions}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Rle\+Regions\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_a5a19f40bc0d2226f244625b88fbf8e59}{Regions}.
+
+\mbox{\Hypertarget{struct_rle_regions_a643c55d59720ba45a78e0e6090018e05}\label{struct_rle_regions_a643c55d59720ba45a78e0e6090018e05}} 
+\index{Rle\+Regions@{Rle\+Regions}!save\+Json@{save\+Json}}
+\index{save\+Json@{save\+Json}!Rle\+Regions@{Rle\+Regions}}
+\subsubsection{\texorpdfstring{save\+Json()}{saveJson()}}
+{\footnotesize\ttfamily void Rle\+Regions\+::save\+Json (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{out\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_a402078d4ff67e4aee31b231c2d1942c6}{Regions}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_rle_regions_a49c81f3a73376196ac33e70d2a49b867}\label{struct_rle_regions_a49c81f3a73376196ac33e70d2a49b867}} 
+\index{Rle\+Regions@{Rle\+Regions}!regions@{regions}}
+\index{regions@{regions}!Rle\+Regions@{Rle\+Regions}}
+\subsubsection{\texorpdfstring{regions}{regions}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{struct_rle_region}{Rle\+Region}$>$ Rle\+Regions\+::regions}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Regions/\hyperlink{_rle_regions_8h}{Rle\+Regions.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Regions/\hyperlink{_rle_regions_8cpp}{Rle\+Regions.\+cpp}\end{DoxyCompactItemize}

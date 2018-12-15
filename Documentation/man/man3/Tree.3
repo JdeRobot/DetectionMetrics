@@ -1,0 +1,77 @@
+.TH "Tree" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Tree
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Tree\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTree\fP (std::string filename)"
+.br
+.ti -1c
+.RI "\fBTree\fP ()"
+.br
+.ti -1c
+.RI "void \fBfillSubTree\fP (boost::property_tree::ptree tree, \fBTree\fP *root)"
+.br
+.ti -1c
+.RI "void \fBprintClassName\fP ()"
+.br
+.ti -1c
+.RI "void \fBprintChildren\fP ()"
+.br
+.ti -1c
+.RI "void \fBprintChildrenRecursive\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetClassName\fP (std::string passedClassName)"
+.br
+.ti -1c
+.RI "void \fBinsertChild\fP (\fBTree\fP *child)"
+.br
+.ti -1c
+.RI "void \fBsetParent\fP (\fBTree\fP *parent)"
+.br
+.ti -1c
+.RI "\fBTree\fP * \fBsearchTree\fP (std::string className)"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBgetImmediateSynonmys\fP (std::string passedClassName)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Tree::Tree (std::string filename)"
+
+.SS "Tree::Tree ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void Tree::fillSubTree (boost::property_tree::ptree tree, \fBTree\fP * root)"
+
+.SS "std::vector< std::string > Tree::getImmediateSynonmys (std::string passedClassName)"
+
+.SS "void Tree::insertChild (\fBTree\fP * child)"
+
+.SS "void Tree::printChildren ()"
+
+.SS "void Tree::printChildrenRecursive ()"
+
+.SS "void Tree::printClassName ()"
+
+.SS "\fBTree\fP * Tree::searchTree (std::string className)"
+
+.SS "void Tree::setClassName (std::string passedClassName)"
+
+.SS "void Tree::setParent (\fBTree\fP * parent)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

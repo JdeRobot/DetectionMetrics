@@ -1,0 +1,557 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_dataset_reader" kind="class" language="C++" prot="public">
+    <compoundname>DatasetReader</compoundname>
+    <derivedcompoundref refid="class_camera_reader" prot="public" virt="non-virtual">CameraReader</derivedcompoundref>
+    <derivedcompoundref refid="class_c_o_c_o_dataset_reader" prot="public" virt="non-virtual">COCODatasetReader</derivedcompoundref>
+    <derivedcompoundref refid="class_image_net_dataset_reader" prot="public" virt="non-virtual">ImageNetDatasetReader</derivedcompoundref>
+    <derivedcompoundref refid="class_jderobot_reader" prot="public" virt="non-virtual">JderobotReader</derivedcompoundref>
+    <derivedcompoundref refid="class_own_dataset_reader" prot="public" virt="non-virtual">OwnDatasetReader</derivedcompoundref>
+    <derivedcompoundref refid="class_pascal_v_o_c_dataset_reader" prot="public" virt="non-virtual">PascalVOCDatasetReader</derivedcompoundref>
+    <derivedcompoundref refid="class_princeton_dataset_reader" prot="public" virt="non-virtual">PrincetonDatasetReader</derivedcompoundref>
+    <derivedcompoundref refid="class_recorder_reader" prot="public" virt="non-virtual">RecorderReader</derivedcompoundref>
+    <derivedcompoundref refid="class_samples_reader" prot="public" virt="non-virtual">SamplesReader</derivedcompoundref>
+    <derivedcompoundref refid="class_spinello_dataset_reader" prot="public" virt="non-virtual">SpinelloDatasetReader</derivedcompoundref>
+    <derivedcompoundref refid="class_video_reader" prot="public" virt="non-virtual">VideoReader</derivedcompoundref>
+    <derivedcompoundref refid="class_yolo_dataset_reader" prot="public" virt="non-virtual">YoloDatasetReader</derivedcompoundref>
+    <includes refid="_dataset_reader_8h" local="no">DatasetReader.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="struct_sample" kindref="compound">Sample</ref> &gt;</type>
+        <definition>std::vector&lt;Sample&gt; DatasetReader::samples</definition>
+        <argsstring></argsstring>
+        <name>samples</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="34" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">COCODatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_dataset_reader_1a17085ffacc392c459a95cd510f341a7d" compoundref="_dataset_reader_8cpp" startline="16" endline="30">filterSamplesByID</referencedby>
+        <referencedby refid="class_dataset_reader_1a67f4c1c3fdfcc0c6bf3b90d65d5fc7c5" compoundref="_dataset_reader_8cpp" startline="32" endline="34">getNumberOfElements</referencedby>
+        <referencedby refid="class_dataset_reader_1af50668f52c34f4620c44e91f26dd11ce" compoundref="_dataset_reader_8cpp" startline="49" endline="60">getNextSample</referencedby>
+        <referencedby refid="class_dataset_reader_1a4875a59f33227329ca93241add8370c0" compoundref="_dataset_reader_8cpp" startline="62" endline="79">getNextSamples</referencedby>
+        <referencedby refid="class_dataset_reader_1aeff3413e85bbde9f1f755e36860c7f3a" compoundref="_dataset_reader_8cpp" startline="81" endline="89">getSampleBySampleID</referencedby>
+        <referencedby refid="class_dataset_reader_1a1e37cddfc448b548dc6ca40f629884cb" compoundref="_dataset_reader_8cpp" startline="101" endline="137">printDatasetStats</referencedby>
+        <referencedby refid="class_dataset_reader_1a03ceb33ec8ecd5fb73a4b17e9701cbb3" compoundref="_dataset_reader_8cpp" startline="143" endline="150">addSample</referencedby>
+        <referencedby refid="class_image_net_dataset_reader_1ae9aa640c47637de8cf22ed3644c945c6" compoundref="_image_net_dataset_reader_8cpp" startline="73" endline="145">ImageNetDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_own_dataset_reader_1aaae1790f8ee3efd504fbf17ec717b640" compoundref="_own_dataset_reader_8cpp" startline="19" endline="45">OwnDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_reader_1a845b70b47078741f29d8e348c3c48467" compoundref="_pascal_v_o_c_dataset_reader_8cpp" startline="39" endline="121">PascalVOCDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_princeton_dataset_reader_1a078bdc2105cbef10ce0dc8c2fd12923e" compoundref="_princeton_dataset_reader_8cpp" startline="25" endline="75">PrincetonDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_samples_reader_1a482420431f30fab477b3c4fff5a63d67" compoundref="_samples_reader_8cpp" startline="6" endline="9">SamplesReader::SamplesReader</referencedby>
+        <referencedby refid="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9" compoundref="_spinello_dataset_reader_8cpp" startline="24" endline="113">SpinelloDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_yolo_dataset_reader_1adabb18f657d4e0dc7b03f7f1b77eb452" compoundref="_yolo_dataset_reader_8cpp" startline="29" endline="61">YoloDatasetReader::appendDataset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_dataset_reader_1af0fd759568c5db7187d19bae8ebe1b6c" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DatasetReader::readerCounter</definition>
+        <argsstring></argsstring>
+        <name>readerCounter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="36" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="class_dataset_reader_1a528f4df5009c93efd37ff5cfafe4c778" compoundref="_dataset_reader_8cpp" startline="36" endline="39">resetReaderCounter</referencedby>
+        <referencedby refid="class_dataset_reader_1ac94f1934639708dc2a29b1ba05e3cc0b" compoundref="_dataset_reader_8cpp" startline="41" endline="43">decrementReaderCounter</referencedby>
+        <referencedby refid="class_dataset_reader_1a951146f7949deff5e17c3482f4339672" compoundref="_dataset_reader_8cpp" startline="45" endline="47">incrementReaderCounter</referencedby>
+        <referencedby refid="class_dataset_reader_1af50668f52c34f4620c44e91f26dd11ce" compoundref="_dataset_reader_8cpp" startline="49" endline="60">getNextSample</referencedby>
+        <referencedby refid="class_dataset_reader_1a4875a59f33227329ca93241add8370c0" compoundref="_dataset_reader_8cpp" startline="62" endline="79">getNextSamples</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_dataset_reader_1a45ded43b56539f1e37a24ca9c94b4611" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string DatasetReader::classNamesFile</definition>
+        <argsstring></argsstring>
+        <name>classNamesFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="37" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1aeb5609c8496c92013c5e6d551696f3c8" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="16" endline="19">COCODatasetReader::COCODatasetReader</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">COCODatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_dataset_reader_1a2838c12e627e42e8394fd18011afa203" compoundref="_dataset_reader_8cpp" startline="139" endline="141">getClassNamesFile</referencedby>
+        <referencedby refid="class_image_net_dataset_reader_1aca1e379e9959ec441fc9f3cf51ae5af1" compoundref="_image_net_dataset_reader_8cpp" startline="64" endline="67">ImageNetDatasetReader::ImageNetDatasetReader</referencedby>
+        <referencedby refid="class_own_dataset_reader_1ac6307c8d373b58b757864594132e2973" compoundref="_own_dataset_reader_8cpp" startline="10" endline="13">OwnDatasetReader::OwnDatasetReader</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_reader_1ae0a8634aa9fbd308e6c1a1ecb60a7c89" compoundref="_pascal_v_o_c_dataset_reader_8cpp" startline="9" endline="12">PascalVOCDatasetReader::PascalVOCDatasetReader</referencedby>
+        <referencedby refid="class_princeton_dataset_reader_1ae488c4a477246dea380c715f04f39009" compoundref="_princeton_dataset_reader_8cpp" startline="20" endline="23">PrincetonDatasetReader::PrincetonDatasetReader</referencedby>
+        <referencedby refid="class_samples_reader_1a482420431f30fab477b3c4fff5a63d67" compoundref="_samples_reader_8cpp" startline="6" endline="9">SamplesReader::SamplesReader</referencedby>
+        <referencedby refid="class_spinello_dataset_reader_1a4ba79e9d888e4e23726b2f4d8c6d31db" compoundref="_spinello_dataset_reader_8cpp" startline="15" endline="18">SpinelloDatasetReader::SpinelloDatasetReader</referencedby>
+        <referencedby refid="class_yolo_dataset_reader_1a3f077b0b1ec33d690e2dbcd3a9942217" compoundref="_yolo_dataset_reader_8cpp" startline="20" endline="23">YoloDatasetReader::YoloDatasetReader</referencedby>
+        <referencedby refid="class_yolo_dataset_reader_1adabb18f657d4e0dc7b03f7f1b77eb452" compoundref="_yolo_dataset_reader_8cpp" startline="29" endline="61">YoloDatasetReader::appendDataset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_dataset_reader_1a76c52c7db385a4a930021fe69d04fefb" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; DatasetReader::classNames</definition>
+        <argsstring></argsstring>
+        <name>classNames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="38" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_dataset_reader_1a71d04d25d58e0e9a0c05d69afcff03a1" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool DatasetReader::imagesRequired</definition>
+        <argsstring></argsstring>
+        <name>imagesRequired</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="39" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">COCODatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_dataset_reader_1a03ceb33ec8ecd5fb73a4b17e9701cbb3" compoundref="_dataset_reader_8cpp" startline="143" endline="150">addSample</referencedby>
+        <referencedby refid="class_image_net_dataset_reader_1ae9aa640c47637de8cf22ed3644c945c6" compoundref="_image_net_dataset_reader_8cpp" startline="73" endline="145">ImageNetDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_reader_1a845b70b47078741f29d8e348c3c48467" compoundref="_pascal_v_o_c_dataset_reader_8cpp" startline="39" endline="121">PascalVOCDatasetReader::appendDataset</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_dataset_reader_1aae9a49629ae536c02b726e52a9def4ee" prot="protected" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DatasetReader::skip_count</definition>
+        <argsstring></argsstring>
+        <name>skip_count</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="40" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_dataset_reader_1a357a86043c584062497bbc0fcd3ea420" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DatasetReader::DatasetReader</definition>
+        <argsstring>(const bool imagesRequired)</argsstring>
+        <name>DatasetReader</name>
+        <param>
+          <type>const bool</type>
+          <declname>imagesRequired</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="10" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1af50668f52c34f4620c44e91f26dd11ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool DatasetReader::getNextSample</definition>
+        <argsstring>(Sample &amp;sample)</argsstring>
+        <name>getNextSample</name>
+        <reimplementedby refid="class_camera_reader_1a1b78cca892789abc2294d56afab3146d">getNextSample</reimplementedby>
+        <reimplementedby refid="class_recorder_reader_1afc52cde597201a1838e6e31b8c801941">getNextSample</reimplementedby>
+        <reimplementedby refid="class_video_reader_1ae2b1921c337b9e2543616017dbd551a7">getNextSample</reimplementedby>
+        <reimplementedby refid="class_jderobot_reader_1aef97b473c11e144fcf07e01c3181269b">getNextSample</reimplementedby>
+        <param>
+          <type><ref refid="struct_sample" kindref="compound">Sample</ref> &amp;</type>
+          <declname>sample</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="49" bodyend="60"/>
+        <references refid="class_dataset_reader_1af0fd759568c5db7187d19bae8ebe1b6c" compoundref="_dataset_reader_8h" startline="36">readerCounter</references>
+        <references refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" compoundref="_dataset_reader_8h" startline="34">samples</references>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1a4875a59f33227329ca93241add8370c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool DatasetReader::getNextSamples</definition>
+        <argsstring>(std::vector&lt; Sample &gt; &amp;samples, int size)</argsstring>
+        <name>getNextSamples</name>
+        <param>
+          <type>std::vector&lt; <ref refid="struct_sample" kindref="compound">Sample</ref> &gt; &amp;</type>
+          <declname>samples</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="62" bodyend="79"/>
+        <references refid="class_dataset_reader_1af0fd759568c5db7187d19bae8ebe1b6c" compoundref="_dataset_reader_8h" startline="36">readerCounter</references>
+        <references refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" compoundref="_dataset_reader_8h" startline="34">samples</references>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1a17085ffacc392c459a95cd510f341a7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DatasetReader::filterSamplesByID</definition>
+        <argsstring>(std::vector&lt; std::string &gt; filteredIDS)</argsstring>
+        <name>filterSamplesByID</name>
+        <param>
+          <type>std::vector&lt; std::string &gt;</type>
+          <declname>filteredIDS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="16" bodyend="30"/>
+        <references refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" compoundref="_dataset_reader_8h" startline="34">samples</references>
+        <references refid="struct_sample_1adbfe8d1087bd0ded0edcd572a7beb7e8" compoundref="_sample_8cpp" startline="311" endline="316">Sample::filterSamplesByID</references>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1ac662ff47f081f872d05ade9a33724a2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DatasetReader::overWriteClasses</definition>
+        <argsstring>(const std::string &amp;from, const std::string &amp;to)</argsstring>
+        <name>overWriteClasses</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>from</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>to</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="156" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1a67f4c1c3fdfcc0c6bf3b90d65d5fc7c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int DatasetReader::getNumberOfElements</definition>
+        <argsstring>()</argsstring>
+        <name>getNumberOfElements</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="32" bodyend="34"/>
+        <references refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" compoundref="_dataset_reader_8h" startline="34">samples</references>
+        <referencedby refid="class_dataset_reader_1a1e37cddfc448b548dc6ca40f629884cb" compoundref="_dataset_reader_8cpp" startline="101" endline="137">printDatasetStats</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1a528f4df5009c93efd37ff5cfafe4c778" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DatasetReader::resetReaderCounter</definition>
+        <argsstring>()</argsstring>
+        <name>resetReaderCounter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="36" bodyend="39"/>
+        <references refid="class_dataset_reader_1af0fd759568c5db7187d19bae8ebe1b6c" compoundref="_dataset_reader_8h" startline="36">readerCounter</references>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1ac94f1934639708dc2a29b1ba05e3cc0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DatasetReader::decrementReaderCounter</definition>
+        <argsstring>(const int decrement_by=1)</argsstring>
+        <name>decrementReaderCounter</name>
+        <param>
+          <type>const int</type>
+          <declname>decrement_by</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="41" bodyend="43"/>
+        <references refid="class_dataset_reader_1af0fd759568c5db7187d19bae8ebe1b6c" compoundref="_dataset_reader_8h" startline="36">readerCounter</references>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1a951146f7949deff5e17c3482f4339672" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DatasetReader::incrementReaderCounter</definition>
+        <argsstring>(const int increment_by=1)</argsstring>
+        <name>incrementReaderCounter</name>
+        <param>
+          <type>const int</type>
+          <declname>increment_by</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="45" bodyend="47"/>
+        <references refid="class_dataset_reader_1af0fd759568c5db7187d19bae8ebe1b6c" compoundref="_dataset_reader_8h" startline="36">readerCounter</references>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1aeff3413e85bbde9f1f755e36860c7f3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DatasetReader::getSampleBySampleID</definition>
+        <argsstring>(Sample **sample, const std::string &amp;sampleID)</argsstring>
+        <name>getSampleBySampleID</name>
+        <param>
+          <type><ref refid="struct_sample" kindref="compound">Sample</ref> **</type>
+          <declname>sample</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>sampleID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="81" bodyend="89"/>
+        <references refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" compoundref="_dataset_reader_8h" startline="34">samples</references>
+        <referencedby refid="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9" compoundref="_spinello_dataset_reader_8cpp" startline="24" endline="113">SpinelloDatasetReader::appendDataset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1a2cfa8b90e643a325b519a292c62d4460" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DatasetReader::getSampleBySampleID</definition>
+        <argsstring>(Sample **sample, const long long int sampleID)</argsstring>
+        <name>getSampleBySampleID</name>
+        <param>
+          <type><ref refid="struct_sample" kindref="compound">Sample</ref> **</type>
+          <declname>sample</declname>
+        </param>
+        <param>
+          <type>const long long int</type>
+          <declname>sampleID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="91" bodyend="99"/>
+        <references refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" compoundref="_dataset_reader_8h" startline="34">samples</references>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1a1e37cddfc448b548dc6ca40f629884cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DatasetReader::printDatasetStats</definition>
+        <argsstring>()</argsstring>
+        <name>printDatasetStats</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="101" bodyend="137"/>
+        <references refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" compoundref="_dataset_reader_8h" startline="34">samples</references>
+        <references refid="class_dataset_reader_1a67f4c1c3fdfcc0c6bf3b90d65d5fc7c5" compoundref="_dataset_reader_8cpp" startline="32" endline="34">getNumberOfElements</references>
+        <referencedby refid="class_image_net_dataset_reader_1ae9aa640c47637de8cf22ed3644c945c6" compoundref="_image_net_dataset_reader_8cpp" startline="73" endline="145">ImageNetDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_own_dataset_reader_1aaae1790f8ee3efd504fbf17ec717b640" compoundref="_own_dataset_reader_8cpp" startline="19" endline="45">OwnDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_reader_1a845b70b47078741f29d8e348c3c48467" compoundref="_pascal_v_o_c_dataset_reader_8cpp" startline="39" endline="121">PascalVOCDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_princeton_dataset_reader_1a078bdc2105cbef10ce0dc8c2fd12923e" compoundref="_princeton_dataset_reader_8cpp" startline="25" endline="75">PrincetonDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9" compoundref="_spinello_dataset_reader_8cpp" startline="24" endline="113">SpinelloDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_yolo_dataset_reader_1adabb18f657d4e0dc7b03f7f1b77eb452" compoundref="_yolo_dataset_reader_8cpp" startline="29" endline="61">YoloDatasetReader::appendDataset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1a732438244cec7c20294f93c6b635888c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool DatasetReader::appendDataset</definition>
+        <argsstring>(const std::string &amp;datasetPath, const std::string &amp;datasetPrefix=&quot;&quot;)</argsstring>
+        <name>appendDataset</name>
+        <reimplementedby refid="class_princeton_dataset_reader_1a078bdc2105cbef10ce0dc8c2fd12923e">appendDataset</reimplementedby>
+        <reimplementedby refid="class_own_dataset_reader_1aaae1790f8ee3efd504fbf17ec717b640">appendDataset</reimplementedby>
+        <reimplementedby refid="class_yolo_dataset_reader_1adabb18f657d4e0dc7b03f7f1b77eb452">appendDataset</reimplementedby>
+        <reimplementedby refid="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9">appendDataset</reimplementedby>
+        <reimplementedby refid="class_pascal_v_o_c_dataset_reader_1a845b70b47078741f29d8e348c3c48467">appendDataset</reimplementedby>
+        <reimplementedby refid="class_image_net_dataset_reader_1ae9aa640c47637de8cf22ed3644c945c6">appendDataset</reimplementedby>
+        <reimplementedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d">appendDataset</reimplementedby>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>datasetPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>datasetPrefix</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="152" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1a03ceb33ec8ecd5fb73a4b17e9701cbb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DatasetReader::addSample</definition>
+        <argsstring>(Sample sample)</argsstring>
+        <name>addSample</name>
+        <param>
+          <type><ref refid="struct_sample" kindref="compound">Sample</ref></type>
+          <declname>sample</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="29" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="143" bodyend="150"/>
+        <references refid="class_dataset_reader_1a71d04d25d58e0e9a0c05d69afcff03a1" compoundref="_dataset_reader_8h" startline="39">imagesRequired</references>
+        <references refid="struct_sample_1abf69bbc9b312c22d3ded30d30d1e278f" compoundref="_sample_8cpp" startline="149" endline="156">Sample::getColorImage</references>
+        <references refid="struct_sample_1a4d2e91f909467a974832c9359cc81c3c" compoundref="_sample_8cpp" startline="158" endline="165">Sample::getDepthImage</references>
+        <references refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" compoundref="_dataset_reader_8h" startline="34">samples</references>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1a2838c12e627e42e8394fd18011afa203" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string DatasetReader::getClassNamesFile</definition>
+        <argsstring>()</argsstring>
+        <name>getClassNamesFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="30" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="139" bodyend="141"/>
+        <references refid="class_dataset_reader_1a45ded43b56539f1e37a24ca9c94b4611" compoundref="_dataset_reader_8h" startline="37">classNamesFile</references>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_reader_1af972d4b7460587b2292d3dd15e69827b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>DatasetReader::~DatasetReader</definition>
+        <argsstring>()</argsstring>
+        <name>~DatasetReader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="31" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp" bodystart="13" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="76">
+        <label>CameraReader</label>
+        <link refid="class_camera_reader"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>PrincetonDatasetReader</label>
+        <link refid="class_princeton_dataset_reader"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>VideoReader</label>
+        <link refid="class_video_reader"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>DatasetReader</label>
+        <link refid="class_dataset_reader"/>
+      </node>
+      <node id="80">
+        <label>OwnDatasetReader</label>
+        <link refid="class_own_dataset_reader"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>ImageNetDatasetReader</label>
+        <link refid="class_image_net_dataset_reader"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>YoloDatasetReader</label>
+        <link refid="class_yolo_dataset_reader"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>PascalVOCDatasetReader</label>
+        <link refid="class_pascal_v_o_c_dataset_reader"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>COCODatasetReader</label>
+        <link refid="class_c_o_c_o_dataset_reader"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>JderobotReader</label>
+        <link refid="class_jderobot_reader"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>RecorderReader</label>
+        <link refid="class_recorder_reader"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="84">
+        <label>SamplesReader</label>
+        <link refid="class_samples_reader"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>SpinelloDatasetReader</label>
+        <link refid="class_spinello_dataset_reader"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h" bodystart="14" bodyend="41"/>
+    <listofallmembers>
+      <member refid="class_dataset_reader_1a03ceb33ec8ecd5fb73a4b17e9701cbb3" prot="public" virt="non-virtual"><scope>DatasetReader</scope><name>addSample</name></member>
+      <member refid="class_dataset_reader_1a732438244cec7c20294f93c6b635888c" prot="public" virt="virtual"><scope>DatasetReader</scope><name>appendDataset</name></member>
+      <member refid="class_dataset_reader_1a76c52c7db385a4a930021fe69d04fefb" prot="protected" virt="non-virtual"><scope>DatasetReader</scope><name>classNames</name></member>
+      <member refid="class_dataset_reader_1a45ded43b56539f1e37a24ca9c94b4611" prot="protected" virt="non-virtual"><scope>DatasetReader</scope><name>classNamesFile</name></member>
+      <member refid="class_dataset_reader_1a357a86043c584062497bbc0fcd3ea420" prot="public" virt="non-virtual"><scope>DatasetReader</scope><name>DatasetReader</name></member>
+      <member refid="class_dataset_reader_1ac94f1934639708dc2a29b1ba05e3cc0b" prot="public" virt="non-virtual"><scope>DatasetReader</scope><name>decrementReaderCounter</name></member>
+      <member refid="class_dataset_reader_1a17085ffacc392c459a95cd510f341a7d" prot="public" virt="non-virtual"><scope>DatasetReader</scope><name>filterSamplesByID</name></member>
+      <member refid="class_dataset_reader_1a2838c12e627e42e8394fd18011afa203" prot="public" virt="non-virtual"><scope>DatasetReader</scope><name>getClassNamesFile</name></member>
+      <member refid="class_dataset_reader_1af50668f52c34f4620c44e91f26dd11ce" prot="public" virt="virtual"><scope>DatasetReader</scope><name>getNextSample</name></member>
+      <member refid="class_dataset_reader_1a4875a59f33227329ca93241add8370c0" prot="public" virt="virtual"><scope>DatasetReader</scope><name>getNextSamples</name></member>
+      <member refid="class_dataset_reader_1a67f4c1c3fdfcc0c6bf3b90d65d5fc7c5" prot="public" virt="non-virtual"><scope>DatasetReader</scope><name>getNumberOfElements</name></member>
+      <member refid="class_dataset_reader_1aeff3413e85bbde9f1f755e36860c7f3a" prot="public" virt="non-virtual"><scope>DatasetReader</scope><name>getSampleBySampleID</name></member>
+      <member refid="class_dataset_reader_1a2cfa8b90e643a325b519a292c62d4460" prot="public" virt="non-virtual"><scope>DatasetReader</scope><name>getSampleBySampleID</name></member>
+      <member refid="class_dataset_reader_1a71d04d25d58e0e9a0c05d69afcff03a1" prot="protected" virt="non-virtual"><scope>DatasetReader</scope><name>imagesRequired</name></member>
+      <member refid="class_dataset_reader_1a951146f7949deff5e17c3482f4339672" prot="public" virt="non-virtual"><scope>DatasetReader</scope><name>incrementReaderCounter</name></member>
+      <member refid="class_dataset_reader_1ac662ff47f081f872d05ade9a33724a2a" prot="public" virt="non-virtual"><scope>DatasetReader</scope><name>overWriteClasses</name></member>
+      <member refid="class_dataset_reader_1a1e37cddfc448b548dc6ca40f629884cb" prot="public" virt="non-virtual"><scope>DatasetReader</scope><name>printDatasetStats</name></member>
+      <member refid="class_dataset_reader_1af0fd759568c5db7187d19bae8ebe1b6c" prot="protected" virt="non-virtual"><scope>DatasetReader</scope><name>readerCounter</name></member>
+      <member refid="class_dataset_reader_1a528f4df5009c93efd37ff5cfafe4c778" prot="public" virt="non-virtual"><scope>DatasetReader</scope><name>resetReaderCounter</name></member>
+      <member refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" prot="protected" virt="non-virtual"><scope>DatasetReader</scope><name>samples</name></member>
+      <member refid="class_dataset_reader_1aae9a49629ae536c02b726e52a9def4ee" prot="protected" virt="non-virtual"><scope>DatasetReader</scope><name>skip_count</name></member>
+      <member refid="class_dataset_reader_1af972d4b7460587b2292d3dd15e69827b" prot="public" virt="virtual"><scope>DatasetReader</scope><name>~DatasetReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

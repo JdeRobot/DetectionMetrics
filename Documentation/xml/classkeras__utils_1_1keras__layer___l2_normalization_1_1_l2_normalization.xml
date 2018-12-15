@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization" kind="class" language="Python" prot="public">
+    <compoundname>keras_utils::keras_layer_L2Normalization::L2Normalization</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Layer</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a14c9cb005b543eac21ce2ba17c1eb49e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_L2Normalization.L2Normalization::axis</definition>
+        <argsstring></argsstring>
+        <name>axis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" line="49" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1ac9f98847106a0787d750ef82b2bc702b" compoundref="keras__layer___l2_normalization_8py" startline="62" endline="65">keras_utils.keras_layer_L2Normalization.L2Normalization.call</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a692198f0ef32ded740d28f5e89684a0e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_L2Normalization.L2Normalization::gamma_init</definition>
+        <argsstring></argsstring>
+        <name>gamma_init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" line="52" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a7202c20f7a98115dfc7882062cbf61af" compoundref="keras__layer___l2_normalization_8py" startline="66" endline="72">keras_utils.keras_layer_L2Normalization.L2Normalization.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a1abbe639712dc72d6db7ff2074044ba4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_L2Normalization.L2Normalization::input_spec</definition>
+        <argsstring></argsstring>
+        <name>input_spec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" line="56" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1ab7b23065ad64ef9d19c8d869c914b417" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_L2Normalization.L2Normalization::gamma</definition>
+        <argsstring></argsstring>
+        <name>gamma</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" line="58" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" bodystart="58" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1ac9f98847106a0787d750ef82b2bc702b" compoundref="keras__layer___l2_normalization_8py" startline="62" endline="65">keras_utils.keras_layer_L2Normalization.L2Normalization.call</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a5cb4f097f087e58e797e8132c68b8d9d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_L2Normalization.L2Normalization::trainable_weights</definition>
+        <argsstring></argsstring>
+        <name>trainable_weights</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" line="59" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a44d3d7b777a42cb28b5bbbcead7b2725" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_layer_L2Normalization.L2Normalization.__init__</definition>
+        <argsstring>(self, gamma_init=20, kwargs)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a692198f0ef32ded740d28f5e89684a0e" kindref="member">gamma_init</ref></type>
+          <defname>gamma_init</defname>
+          <defval>20</defval>
+        </param>
+        <param>
+          <type>kwargs</type>
+          <defname>kwargs</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" line="47" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" bodystart="47" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a9111c56e1f9a28a8ab53389883587cd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_layer_L2Normalization.L2Normalization.build</definition>
+        <argsstring>(self, input_shape)</argsstring>
+        <name>build</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>input_shape</type>
+          <defname>input_shape</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" line="55" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" bodystart="55" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1ac9f98847106a0787d750ef82b2bc702b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_layer_L2Normalization.L2Normalization.call</definition>
+        <argsstring>(self, x, mask=None)</argsstring>
+        <name>call</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>mask</type>
+          <defname>mask</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" line="62" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" bodystart="62" bodyend="65"/>
+        <references refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a14c9cb005b543eac21ce2ba17c1eb49e" compoundref="keras__layer___l2_normalization_8py" startline="49">keras_utils.keras_layer_L2Normalization.L2Normalization.axis</references>
+        <references refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1ab7b23065ad64ef9d19c8d869c914b417" compoundref="keras__layer___l2_normalization_8py" startline="58">keras_utils.keras_layer_L2Normalization.L2Normalization.gamma</references>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a7202c20f7a98115dfc7882062cbf61af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_layer_L2Normalization.L2Normalization.get_config</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_config</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" line="66" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" bodystart="66" bodyend="72"/>
+        <references refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a692198f0ef32ded740d28f5e89684a0e" compoundref="keras__layer___l2_normalization_8py" startline="52">keras_utils.keras_layer_L2Normalization.L2Normalization.gamma_init</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Performs L2 normalization on the input tensor with a learnable scaling parameter
+as described in the paper &quot;Parsenet: Looking Wider to See Better&quot; (see references)
+and as used in the original SSD model.
+
+Arguments:
+    gamma_init (int): The initial scaling parameter. Defaults to 20 following the
+        SSD paper.
+
+Input shape:
+    4D tensor of shape `(batch, channels, height, width)` if `dim_ordering = &apos;th&apos;`
+    or `(batch, height, width, channels)` if `dim_ordering = &apos;tf&apos;`.
+
+Returns:
+    The scaled tensor. Same shape as the input tensor.
+
+References:
+    http://cs.unc.edu/~wliu/papers/parsenet.pdf
+</verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="221">
+        <label>Layer</label>
+      </node>
+      <node id="220">
+        <label>keras_utils.keras_layer_L2Normalization.L2Normalization</label>
+        <link refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization"/>
+        <childnode refid="221" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="223">
+        <label>Layer</label>
+      </node>
+      <node id="222">
+        <label>keras_utils.keras_layer_L2Normalization.L2Normalization</label>
+        <link refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization"/>
+        <childnode refid="223" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" bodystart="26" bodyend="72"/>
+    <listofallmembers>
+      <member refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a44d3d7b777a42cb28b5bbbcead7b2725" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_L2Normalization::L2Normalization</scope><name>__init__</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a14c9cb005b543eac21ce2ba17c1eb49e" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_L2Normalization::L2Normalization</scope><name>axis</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a9111c56e1f9a28a8ab53389883587cd4" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_L2Normalization::L2Normalization</scope><name>build</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1ac9f98847106a0787d750ef82b2bc702b" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_L2Normalization::L2Normalization</scope><name>call</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1ab7b23065ad64ef9d19c8d869c914b417" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_L2Normalization::L2Normalization</scope><name>gamma</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a692198f0ef32ded740d28f5e89684a0e" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_L2Normalization::L2Normalization</scope><name>gamma_init</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a7202c20f7a98115dfc7882062cbf61af" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_L2Normalization::L2Normalization</scope><name>get_config</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a1abbe639712dc72d6db7ff2074044ba4" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_L2Normalization::L2Normalization</scope><name>input_spec</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a5cb4f097f087e58e797e8132c68b8d9d" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_L2Normalization::L2Normalization</scope><name>trainable_weights</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

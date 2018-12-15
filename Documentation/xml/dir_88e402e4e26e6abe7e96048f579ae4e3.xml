@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_88e402e4e26e6abe7e96048f579ae4e3" kind="dir">
+    <compoundname>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers</compoundname>
+    <innerfile refid="_c_o_c_o_dataset_reader_8cpp">COCODatasetReader.cpp</innerfile>
+    <innerfile refid="_c_o_c_o_dataset_reader_8h">COCODatasetReader.h</innerfile>
+    <innerfile refid="_dataset_reader_8cpp">DatasetReader.cpp</innerfile>
+    <innerfile refid="_dataset_reader_8h">DatasetReader.h</innerfile>
+    <innerfile refid="_generic_dataset_reader_8cpp">GenericDatasetReader.cpp</innerfile>
+    <innerfile refid="_generic_dataset_reader_8h">GenericDatasetReader.h</innerfile>
+    <innerfile refid="_image_net_dataset_reader_8cpp">ImageNetDatasetReader.cpp</innerfile>
+    <innerfile refid="_image_net_dataset_reader_8h">ImageNetDatasetReader.h</innerfile>
+    <innerfile refid="_own_dataset_reader_8cpp">OwnDatasetReader.cpp</innerfile>
+    <innerfile refid="_own_dataset_reader_8h">OwnDatasetReader.h</innerfile>
+    <innerfile refid="_pascal_v_o_c_dataset_reader_8cpp">PascalVOCDatasetReader.cpp</innerfile>
+    <innerfile refid="_pascal_v_o_c_dataset_reader_8h">PascalVOCDatasetReader.h</innerfile>
+    <innerfile refid="_princeton_dataset_reader_8cpp">PrincetonDatasetReader.cpp</innerfile>
+    <innerfile refid="_princeton_dataset_reader_8h">PrincetonDatasetReader.h</innerfile>
+    <innerfile refid="_samples_reader_8cpp">SamplesReader.cpp</innerfile>
+    <innerfile refid="_samples_reader_8h">SamplesReader.h</innerfile>
+    <innerfile refid="_spinello_dataset_reader_8cpp">SpinelloDatasetReader.cpp</innerfile>
+    <innerfile refid="_spinello_dataset_reader_8h">SpinelloDatasetReader.h</innerfile>
+    <innerfile refid="_yolo_dataset_reader_8cpp">YoloDatasetReader.cpp</innerfile>
+    <innerfile refid="_yolo_dataset_reader_8h">YoloDatasetReader.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/"/>
+  </compounddef>
+</doxygen>

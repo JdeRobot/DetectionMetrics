@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_normalizations" kind="class" language="C++" prot="public">
+    <compoundname>Normalizations</compoundname>
+    <includes refid="_normalizations_8h" local="no">Normalizations.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_normalizations_1aa96f186b39b47d20b98da5cdb22217f2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Normalizations::normalizeRect</definition>
+        <argsstring>(cv::Rect &amp;region, cv::Size size)</argsstring>
+        <name>normalizeRect</name>
+        <param>
+          <type>cv::Rect &amp;</type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>cv::Size</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Normalizations.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Normalizations.cpp" bodystart="10" bodyend="16"/>
+        <referencedby refid="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9" compoundref="_spinello_dataset_reader_8cpp" startline="24" endline="113">SpinelloDatasetReader::appendDataset</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_normalizations_1a9954d5ccb83a7e2fea9d951babc25c6f" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Normalizations::normalizeLower</definition>
+        <argsstring>(int &amp;value, int min=0)</argsstring>
+        <name>normalizeLower</name>
+        <param>
+          <type>int &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>min</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Normalizations.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Normalizations.cpp" bodystart="18" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_normalizations_1ab2503db5898cdc6adb4040e9e7ffacde" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Normalizations::normalizeUpper</definition>
+        <argsstring>(int pos, int &amp;size, int max)</argsstring>
+        <name>normalizeUpper</name>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Normalizations.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Normalizations.cpp" bodystart="24" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Normalizations.h" line="10" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Normalizations.h" bodystart="10" bodyend="17"/>
+    <listofallmembers>
+      <member refid="class_normalizations_1a9954d5ccb83a7e2fea9d951babc25c6f" prot="private" virt="non-virtual"><scope>Normalizations</scope><name>normalizeLower</name></member>
+      <member refid="class_normalizations_1aa96f186b39b47d20b98da5cdb22217f2" prot="public" virt="non-virtual"><scope>Normalizations</scope><name>normalizeRect</name></member>
+      <member refid="class_normalizations_1ab2503db5898cdc6adb4040e9e7ffacde" prot="private" virt="non-virtual"><scope>Normalizations</scope><name>normalizeUpper</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

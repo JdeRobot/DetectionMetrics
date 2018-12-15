@@ -1,0 +1,121 @@
+.TH "DeepLearningSuite/build/CMakeFiles/3.12.2/CompilerIdC/CMakeCCompilerId.c" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DeepLearningSuite/build/CMakeFiles/3.12.2/CompilerIdC/CMakeCCompilerId.c
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBCOMPILER_ID\fP   ''"
+.br
+.ti -1c
+.RI "#define \fBSTRINGIFY_HELPER\fP(X)   #X"
+.br
+.ti -1c
+.RI "#define \fBSTRINGIFY\fP(X)   \fBSTRINGIFY_HELPER\fP(X)"
+.br
+.ti -1c
+.RI "#define \fBPLATFORM_ID\fP"
+.br
+.ti -1c
+.RI "#define \fBARCHITECTURE_ID\fP"
+.br
+.ti -1c
+.RI "#define \fBDEC\fP(n)"
+.br
+.ti -1c
+.RI "#define \fBHEX\fP(n)"
+.br
+.ti -1c
+.RI "#define \fBC_DIALECT\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "char const  * \fBinfo_compiler\fP = 'INFO' ':' 'compiler[' COMPILER_ID ']'"
+.br
+.ti -1c
+.RI "char const  * \fBinfo_platform\fP = 'INFO' ':' 'platform[' PLATFORM_ID ']'"
+.br
+.ti -1c
+.RI "char const  * \fBinfo_arch\fP = 'INFO' ':' 'arch[' ARCHITECTURE_ID ']'"
+.br
+.ti -1c
+.RI "const char * \fBinfo_language_dialect_default\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ARCHITECTURE_ID"
+
+.SS "#define C_DIALECT"
+
+.SS "#define COMPILER_ID   ''"
+
+.SS "#define DEC(n)"
+\fBValue:\fP
+.PP
+.nf
+('0' + (((n) / 10000000)%10)), \
+  ('0' + (((n) / 1000000)%10)),  \
+  ('0' + (((n) / 100000)%10)),   \
+  ('0' + (((n) / 10000)%10)),    \
+  ('0' + (((n) / 1000)%10)),     \
+  ('0' + (((n) / 100)%10)),      \
+  ('0' + (((n) / 10)%10)),       \
+  ('0' +  ((n) % 10))
+.fi
+.SS "#define HEX(n)"
+\fBValue:\fP
+.PP
+.nf
+('0' + ((n)>>28 & 0xF)), \
+  ('0' + ((n)>>24 & 0xF)), \
+  ('0' + ((n)>>20 & 0xF)), \
+  ('0' + ((n)>>16 & 0xF)), \
+  ('0' + ((n)>>12 & 0xF)), \
+  ('0' + ((n)>>8  & 0xF)), \
+  ('0' + ((n)>>4  & 0xF)), \
+  ('0' + ((n)     & 0xF))
+.fi
+.SS "#define PLATFORM_ID"
+
+.SS "#define STRINGIFY(X)   \fBSTRINGIFY_HELPER\fP(X)"
+
+.SS "#define STRINGIFY_HELPER(X)   #X"
+
+.SH "Function Documentation"
+.PP 
+.SS "int main (int argc, char * argv[])"
+
+.SH "Variable Documentation"
+.PP 
+.SS "char const* info_arch = 'INFO' ':' 'arch[' ARCHITECTURE_ID ']'"
+
+.SS "char const* info_compiler = 'INFO' ':' 'compiler[' COMPILER_ID ']'"
+
+.SS "const char* info_language_dialect_default"
+\fBInitial value:\fP
+.PP
+.nf
+=
+  "INFO" ":" "dialect_default[" C_DIALECT "]"
+.fi
+.SS "char const* info_platform = 'INFO' ':' 'platform[' PLATFORM_ID ']'"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

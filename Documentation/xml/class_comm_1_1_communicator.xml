@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_comm_1_1_communicator" kind="class" language="C++" prot="public">
+    <compoundname>Comm::Communicator</compoundname>
+    <includes refid="communicator_8hpp" local="no">communicator.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_comm_1_1_communicator_1ada6c3c3b9b62ee78af988defbe51d001" prot="private" static="no" mutable="no">
+        <type><ref refid="class_config_1_1_properties" kindref="compound">Config::Properties</ref></type>
+        <definition>Config::Properties Comm::Communicator::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/communicator.hpp" line="44" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/communicator.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_comm_1_1_communicator_1ad1be12b52b0e857d8a822669a73a13ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Comm::Communicator::Communicator</definition>
+        <argsstring>(Config::Properties config)</argsstring>
+        <name>Communicator</name>
+        <param>
+          <type><ref refid="class_config_1_1_properties" kindref="compound">Config::Properties</ref></type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/communicator.hpp" line="35" column="1" bodyfile="DeepLearningSuite/libs/comm/src/communicator.cpp" bodystart="23" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_communicator_1aff2c0066eaf03ff367dbcf45e85e4bff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Comm::Communicator::~Communicator</definition>
+        <argsstring>()</argsstring>
+        <name>~Communicator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/communicator.hpp" line="36" column="1" bodyfile="DeepLearningSuite/libs/comm/src/communicator.cpp" bodystart="31" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_communicator_1ab03173df851ed3eb0f84f83f1ecd455f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_config_1_1_properties" kindref="compound">Config::Properties</ref></type>
+        <definition>Config::Properties Comm::Communicator::getConfig</definition>
+        <argsstring>()</argsstring>
+        <name>getConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/communicator.hpp" line="38" column="1" bodyfile="DeepLearningSuite/libs/comm/src/communicator.cpp" bodystart="40" bodyend="42"/>
+        <referencedby refid="namespace_comm_1a488b3721b4d9a501e8cd38388ab30437" compoundref="camera_client_8cpp" startline="25" endline="80">Comm::getCameraClient</referencedby>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1aa59fe901fa8a7c4b0cb2404a0922905e" compoundref="camera_ice_client_8cpp" startline="30" endline="72">Comm::CameraIceClient::CameraIceClient</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/comm/include/comm/communicator.hpp" line="33" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/communicator.hpp" bodystart="33" bodyend="48"/>
+    <listofallmembers>
+      <member refid="class_comm_1_1_communicator_1ad1be12b52b0e857d8a822669a73a13ff" prot="public" virt="non-virtual"><scope>Comm::Communicator</scope><name>Communicator</name></member>
+      <member refid="class_comm_1_1_communicator_1ada6c3c3b9b62ee78af988defbe51d001" prot="private" virt="non-virtual"><scope>Comm::Communicator</scope><name>config</name></member>
+      <member refid="class_comm_1_1_communicator_1ab03173df851ed3eb0f84f83f1ecd455f" prot="public" virt="non-virtual"><scope>Comm::Communicator</scope><name>getConfig</name></member>
+      <member refid="class_comm_1_1_communicator_1aff2c0066eaf03ff367dbcf45e85e4bff" prot="public" virt="non-virtual"><scope>Comm::Communicator</scope><name>~Communicator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

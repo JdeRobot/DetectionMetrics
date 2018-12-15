@@ -1,0 +1,281 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_rect_regions_8cpp" kind="file" language="C++">
+    <compoundname>RectRegions.cpp</compoundname>
+    <includes refid="_rect_regions_8h" local="yes">RectRegions.h</includes>
+    <includes local="no">rapidjson/rapidjson.h</includes>
+    <includes local="no">rapidjson/document.h</includes>
+    <includes local="no">rapidjson/stringbuffer.h</includes>
+    <includes local="no">rapidjson/writer.h</includes>
+    <includes local="no">fstream</includes>
+    <includes local="yes">rapidjson/filereadstream.h</includes>
+    <includes refid="_class_type_own_8h" local="no">DatasetConverters/ClassTypeOwn.h</includes>
+    <incdepgraph>
+      <node id="4434">
+        <label>rapidjson/writer.h</label>
+      </node>
+      <node id="4428">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="4438">
+        <label>ClassType.h</label>
+        <link refid="_class_type_8h"/>
+        <childnode refid="4426" relation="include">
+        </childnode>
+      </node>
+      <node id="4425">
+        <label>RectRegions.h</label>
+        <link refid="_rect_regions_8h"/>
+        <childnode refid="4426" relation="include">
+        </childnode>
+        <childnode refid="4427" relation="include">
+        </childnode>
+        <childnode refid="4429" relation="include">
+        </childnode>
+        <childnode refid="4430" relation="include">
+        </childnode>
+      </node>
+      <node id="4437">
+        <label>DatasetConverters/ClassTypeOwn.h</label>
+        <link refid="_class_type_own_8h"/>
+        <childnode refid="4438" relation="include">
+        </childnode>
+      </node>
+      <node id="4427">
+        <label>Regions.h</label>
+        <link refid="_regions_8h"/>
+        <childnode refid="4426" relation="include">
+        </childnode>
+        <childnode refid="4428" relation="include">
+        </childnode>
+      </node>
+      <node id="4426">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="4431">
+        <label>rapidjson/rapidjson.h</label>
+      </node>
+      <node id="4432">
+        <label>rapidjson/document.h</label>
+      </node>
+      <node id="4435">
+        <label>fstream</label>
+      </node>
+      <node id="4433">
+        <label>rapidjson/stringbuffer.h</label>
+      </node>
+      <node id="4424">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp</label>
+        <link refid="_rect_regions_8cpp"/>
+        <childnode refid="4425" relation="include">
+        </childnode>
+        <childnode refid="4431" relation="include">
+        </childnode>
+        <childnode refid="4432" relation="include">
+        </childnode>
+        <childnode refid="4433" relation="include">
+        </childnode>
+        <childnode refid="4434" relation="include">
+        </childnode>
+        <childnode refid="4435" relation="include">
+        </childnode>
+        <childnode refid="4436" relation="include">
+        </childnode>
+        <childnode refid="4437" relation="include">
+        </childnode>
+      </node>
+      <node id="4436">
+        <label>rapidjson/filereadstream.h</label>
+      </node>
+      <node id="4429">
+        <label>RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="4426" relation="include">
+        </childnode>
+      </node>
+      <node id="4430">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>21/01/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_rect_regions_8h" kindref="compound">RectRegions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rapidjson/rapidjson.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rapidjson/document.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rapidjson/stringbuffer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rapidjson/writer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;rapidjson/filereadstream.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_class_type_own_8h" kindref="compound">DatasetConverters/ClassTypeOwn.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="struct_rect_regions_1a75fc4850d7b8caee61164658e47832fb" refkind="member"><highlight class="normal"><ref refid="struct_rect_regions_1af0c705b56314b41a80970fcd826b0600" kindref="member">RectRegions::RectRegions</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;jsonPath)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>FILE*<sp/>fp<sp/>=<sp/>fopen(jsonPath.c_str(),<sp/></highlight><highlight class="stringliteral">&quot;rb&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>non-Windows<sp/>use<sp/>&quot;r&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>readBuffer[65536];</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>rapidjson::FileReadStream<sp/>is(fp,<sp/>readBuffer,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(readBuffer));</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>rapidjson::Document<sp/>d;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>d.ParseStream(is);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>fclose(fp);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it=d.Begin(),<sp/>end<sp/>=<sp/>d.End();<sp/>it<sp/>!=<sp/>end;<sp/>++it){</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::Rect<sp/>reg((*it)[</highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">].GetInt(),(*it)[</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">].GetInt(),(*it)[</highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">].GetInt(),(*it)[</highlight><highlight class="stringliteral">&quot;h&quot;</highlight><highlight class="normal">].GetInt());</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>id;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">=<sp/>(*it)[</highlight><highlight class="stringliteral">&quot;id&quot;</highlight><highlight class="normal">].GetString();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.push_back(<ref refid="struct_rect_region" kindref="compound">RectRegion</ref>(reg,</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30" refid="struct_rect_regions_1af0c705b56314b41a80970fcd826b0600" refkind="member"><highlight class="normal"><ref refid="struct_rect_regions_1af0c705b56314b41a80970fcd826b0600" kindref="member">RectRegions::RectRegions</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="struct_rect_regions_1a84d6d3a2e3ee8faf775c69fcd3207767" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rect_regions_1a84d6d3a2e3ee8faf775c69fcd3207767" kindref="member">RectRegions::saveJson</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;outPath)<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>rapidjson::Document<sp/>d;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>d.SetArray();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.begin(),<sp/>end=<sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.end();<sp/>it<sp/>!=<sp/>end;<sp/>++it){</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rapidjson::Value<sp/>node;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node.SetObject();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rapidjson::Value<sp/>xValue(it-&gt;region.x);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node.AddMember(</highlight><highlight class="stringliteral">&quot;x&quot;</highlight><highlight class="normal">,xValue,d.GetAllocator());</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rapidjson::Value<sp/>yValue(it-&gt;region.y);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node.AddMember(</highlight><highlight class="stringliteral">&quot;y&quot;</highlight><highlight class="normal">,yValue,d.GetAllocator());</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rapidjson::Value<sp/>wValue(it-&gt;region.width);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node.AddMember(</highlight><highlight class="stringliteral">&quot;w&quot;</highlight><highlight class="normal">,wValue,d.GetAllocator());</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rapidjson::Value<sp/>hValue(it-&gt;region.height);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node.AddMember(</highlight><highlight class="stringliteral">&quot;h&quot;</highlight><highlight class="normal">,hValue,d.GetAllocator());</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rapidjson::Value<sp/>confValue(it-&gt;confidence_score);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node.AddMember(</highlight><highlight class="stringliteral">&quot;score&quot;</highlight><highlight class="normal">,confValue,d.GetAllocator());</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rapidjson::Value<sp/>idValue(it-&gt;classID.c_str(),<sp/>d.GetAllocator());</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>node.AddMember(</highlight><highlight class="stringliteral">&quot;id&quot;</highlight><highlight class="normal">,idValue,d.GetAllocator());</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d.PushBack(node,d.GetAllocator());</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>rapidjson::StringBuffer<sp/>buffer;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>buffer.Clear();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>rapidjson::Writer&lt;rapidjson::StringBuffer&gt;<sp/>writer(buffer);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>d.Accept(writer);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ofstream<sp/>outFile(outPath);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>outFile<sp/>&lt;&lt;<sp/>buffer.GetString()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>outFile.close();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="struct_rect_regions_1a949e327f668e731868a853b6331761be" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rect_regions_1a949e327f668e731868a853b6331761be" kindref="member">RectRegions::add</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Rect_&lt;double&gt;<sp/>rect,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>classId,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isCrowd){</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_rect_region" kindref="compound">RectRegion</ref><sp/>regionToInsert(rect,<sp/>classId,<sp/>isCrowd);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itr<sp/>=<sp/>std::upper_bound(<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.begin(),<sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.end(),<sp/>regionToInsert);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>regionToInsert.<ref refid="struct_rect_region_1a6701398d34833514dc6ab12b38d24e3a" kindref="member">uniqObjectID</ref><sp/>=<sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.size();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.insert(itr,<sp/>regionToInsert);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//regions.push_back(RectRegion(rect,classId));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="struct_rect_regions_1afebb1d6079ae2d0701b70c3c153a4a88" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rect_regions_1a949e327f668e731868a853b6331761be" kindref="member">RectRegions::add</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Rect_&lt;double&gt;<sp/>rect,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>classId,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>confidence_score,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isCrowd)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_rect_region" kindref="compound">RectRegion</ref><sp/>regionToInsert(rect,<sp/>classId,<sp/>confidence_score,<sp/>isCrowd);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itr<sp/>=<sp/>std::upper_bound(<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.begin(),<sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.end(),<sp/>regionToInsert);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>regionToInsert.<ref refid="struct_rect_region_1a6701398d34833514dc6ab12b38d24e3a" kindref="member">uniqObjectID</ref><sp/>=<sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.size();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.insert(itr,<sp/>regionToInsert);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//regions.push_back(RectRegion(rect,<sp/>classId,<sp/>confidence_score));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="struct_rect_regions_1a00afed1e298d77dd9dd722e590507586" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rect_regions_1a949e327f668e731868a853b6331761be" kindref="member">RectRegions::add</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;cv::Point_&lt;double&gt;&gt;<sp/>&amp;detections,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>classId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isCrowd)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.push_back(<ref refid="struct_rect_region" kindref="compound">RectRegion</ref>(cv::boundingRect(detections),classId,<sp/>isCrowd));</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="struct_rect_regions_1a988c804d33f2b8fc9dabe79c3259b267" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rect_regions_1a949e327f668e731868a853b6331761be" kindref="member">RectRegions::add</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>h,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>classId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isCrowd)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_rect_region" kindref="compound">RectRegion</ref><sp/>regionToInsert(cv::Rect_&lt;double&gt;(x,y,w,h),<sp/>classId,<sp/>isCrowd);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itr<sp/>=<sp/>std::upper_bound(<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.begin(),<sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.end(),<sp/>regionToInsert);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>regionToInsert.<ref refid="struct_rect_region_1a6701398d34833514dc6ab12b38d24e3a" kindref="member">uniqObjectID</ref><sp/>=<sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.size();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.insert(itr,<sp/>regionToInsert);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//regions.push_back(RectRegion(cv::Rect(x,y,w,h),classId));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="struct_rect_regions_1a009ff3de6ffc9c05e0cd3c87916d16be" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rect_regions_1a949e327f668e731868a853b6331761be" kindref="member">RectRegions::add</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>h,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>classId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>confidence_score,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isCrowd)<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_rect_region" kindref="compound">RectRegion</ref><sp/>regionToInsert(cv::Rect_&lt;double&gt;(x,y,w,h),<sp/>classId,<sp/>confidence_score,<sp/>isCrowd);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itr<sp/>=<sp/>std::upper_bound(<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.begin(),<sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.end(),<sp/>regionToInsert);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>regionToInsert.<ref refid="struct_rect_region_1a6701398d34833514dc6ab12b38d24e3a" kindref="member">uniqObjectID</ref><sp/>=<sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.size();</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.insert(itr,<sp/>regionToInsert);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="struct_rect_regions_1a4bbad55e0b6f3a8ece1d76402f16bfc2" refkind="member"><highlight class="normal"><ref refid="struct_rect_region" kindref="compound">RectRegion</ref><sp/><ref refid="struct_rect_regions_1a4bbad55e0b6f3a8ece1d76402f16bfc2" kindref="member">RectRegions::getRegion</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.size()<sp/>-1<sp/>&gt;=<sp/>id)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>[</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_rect_region" kindref="compound">RectRegion</ref>();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="struct_rect_regions_1a9f31dc6fd3d371417e2c9024d1fdeecb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rect_regions_1a9f31dc6fd3d371417e2c9024d1fdeecb" kindref="member">RectRegions::drawRegions</ref>(cv::Mat<sp/>&amp;image)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!image.empty())</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/><ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.begin(),<sp/>end=<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.end();<sp/>it<sp/>!=<sp/>end;<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_class_type_own" kindref="compound">ClassTypeOwn</ref><sp/>classType(it-&gt;classID);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::rectangle(image,<sp/>it-&gt;region,<sp/>classType.<ref refid="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" kindref="member">getColor</ref>(),<sp/>2);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::Size<sp/>rectSize(80,20);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::Rect<sp/>nameRectangle(it-&gt;region.x,<sp/>it-&gt;region.y<sp/>-<sp/>rectSize.height,<sp/>rectSize.width,rectSize.height);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nameRectangle.y<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nameRectangle.y=it-&gt;region.y;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nameRectangle.x<sp/>+<sp/>nameRectangle.width<sp/>&gt;<sp/>image.size().width){</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nameRectangle.x<sp/>=<sp/>image.size().width<sp/>-<sp/>nameRectangle.width<sp/>-1;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nameRectangle.y<sp/>+<sp/>nameRectangle.height<sp/>&gt;<sp/>image.size().height){</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nameRectangle.y<sp/>=<sp/>image.size().height<sp/>-<sp/>nameRectangle.height<sp/>-1;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nameRectangle.x&lt;0)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nameRectangle.x=0;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(nameRectangle.y&lt;0)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nameRectangle.y=0;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>image(nameRectangle)=cv::Scalar(classType.<ref refid="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" kindref="member">getColor</ref>());</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::putText(image,<sp/>classType.<ref refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" kindref="member">getClassString</ref>(),cv::Point(nameRectangle.x<sp/>-<sp/>nameRectangle.height/4<sp/>+<sp/>5<sp/>,nameRectangle.y<sp/>+<sp/>nameRectangle.height<sp/>-<sp/>5),cv::FONT_HERSHEY_TRIPLEX,0.4,cv::Scalar(0,0,0),1);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="struct_rect_regions_1ab1d9ba6a6a0087fd2db278a22162c63a" refkind="member"><highlight class="normal">std::vector&lt;RectRegion&gt;<sp/><ref refid="struct_rect_regions_1ab1d9ba6a6a0087fd2db278a22162c63a" kindref="member">RectRegions::getRegions</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="struct_rect_regions_1a8eff732b9c2308dae4e0ff45f147cb51" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rect_regions_1a8eff732b9c2308dae4e0ff45f147cb51" kindref="member">RectRegions::filterSamplesByID</ref>(std::vector&lt;std::string&gt;<sp/>filteredIDS)<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;RectRegion&gt;<sp/>oldRegions(this-&gt;<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.clear();</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>oldRegions.begin(),<sp/>end=oldRegions.end();<sp/>it<sp/>!=<sp/>end;<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::find(filteredIDS.begin(),<sp/>filteredIDS.end(),<sp/>it-&gt;classID)<sp/>!=<sp/>filteredIDS.end())<sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.push_back(*it);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162" refid="struct_rect_regions_1a4ec356e30d899d9a49fce3fe95f73d34" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_rect_regions_1a4ec356e30d899d9a49fce3fe95f73d34" kindref="member">RectRegions::empty</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.size()==0);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="struct_rect_regions_1a6ce45dd2b9d9f0f3424d4c6d656652c2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rect_regions_1a6ce45dd2b9d9f0f3424d4c6d656652c2" kindref="member">RectRegions::print</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;-------------------&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>this-&gt;<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.begin(),<sp/>end<sp/>=<sp/>this-&gt;<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.end();<sp/>it<sp/>!=<sp/>end;<sp/>++it){</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idx<sp/>=<sp/>std::distance(this-&gt;<ref refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" kindref="member">regions</ref>.begin(),it);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;[&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>idx<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;]:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>it-&gt;region<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>(&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>it-&gt;classID<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;-------------------&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,432 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="camera_ice_client_8cpp" kind="file" language="C++">
+    <compoundname>cameraIceClient.cpp</compoundname>
+    <includes refid="camera_ice_client_8hpp" local="no">comm/ice/cameraIceClient.hpp</includes>
+    <includes local="no">glog/logging.h</includes>
+    <includes local="no">exception</includes>
+    <incdepgraph>
+      <node id="5246">
+        <label>iomanip</label>
+      </node>
+      <node id="5268">
+        <label>glog/logging.h</label>
+      </node>
+      <node id="5264">
+        <label>uncopyable.h</label>
+        <link refid="uncopyable_8h"/>
+      </node>
+      <node id="5254">
+        <label>boost/algorithm/string/classification.hpp</label>
+      </node>
+      <node id="5237">
+        <label>comm/ice/cameraIceClient.hpp</label>
+        <link refid="camera_ice_client_8hpp"/>
+        <childnode refid="5238" relation="include">
+        </childnode>
+        <childnode refid="5239" relation="include">
+        </childnode>
+        <childnode refid="5240" relation="include">
+        </childnode>
+        <childnode refid="5241" relation="include">
+        </childnode>
+        <childnode refid="5243" relation="include">
+        </childnode>
+        <childnode refid="5257" relation="include">
+        </childnode>
+        <childnode refid="5260" relation="include">
+        </childnode>
+        <childnode refid="5265" relation="include">
+        </childnode>
+        <childnode refid="5266" relation="include">
+        </childnode>
+        <childnode refid="5267" relation="include">
+        </childnode>
+        <childnode refid="5258" relation="include">
+        </childnode>
+      </node>
+      <node id="5242">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="5236">
+        <label>DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp</label>
+        <link refid="camera_ice_client_8cpp"/>
+        <childnode refid="5237" relation="include">
+        </childnode>
+        <childnode refid="5268" relation="include">
+        </childnode>
+        <childnode refid="5262" relation="include">
+        </childnode>
+      </node>
+      <node id="5244">
+        <label>config/properties.hpp</label>
+        <link refid="properties_8hpp"/>
+        <childnode refid="5245" relation="include">
+        </childnode>
+        <childnode refid="5246" relation="include">
+        </childnode>
+        <childnode refid="5247" relation="include">
+        </childnode>
+        <childnode refid="5248" relation="include">
+        </childnode>
+        <childnode refid="5249" relation="include">
+        </childnode>
+        <childnode refid="5250" relation="include">
+        </childnode>
+        <childnode refid="5251" relation="include">
+        </childnode>
+      </node>
+      <node id="5248">
+        <label>string</label>
+      </node>
+      <node id="5261">
+        <label>imagecv.h</label>
+        <link refid="imagecv_8h"/>
+        <childnode refid="5242" relation="include">
+        </childnode>
+        <childnode refid="5262" relation="include">
+        </childnode>
+        <childnode refid="5249" relation="include">
+        </childnode>
+        <childnode refid="5245" relation="include">
+        </childnode>
+        <childnode refid="5263" relation="include">
+        </childnode>
+        <childnode refid="5264" relation="include">
+        </childnode>
+      </node>
+      <node id="5262">
+        <label>exception</label>
+      </node>
+      <node id="5255">
+        <label>fstream</label>
+      </node>
+      <node id="5257">
+        <label>CameraUtils.h</label>
+        <link refid="_camera_utils_8h"/>
+        <childnode refid="5242" relation="include">
+        </childnode>
+        <childnode refid="5258" relation="include">
+        </childnode>
+        <childnode refid="5259" relation="include">
+        </childnode>
+      </node>
+      <node id="5258">
+        <label>jderobot/image.h</label>
+      </node>
+      <node id="5250">
+        <label>yaml-cpp/yaml.h</label>
+      </node>
+      <node id="5267">
+        <label>jderobot/camera.h</label>
+      </node>
+      <node id="5253">
+        <label>boost/algorithm/string/split.hpp</label>
+      </node>
+      <node id="5241">
+        <label>image.h</label>
+        <link refid="image_8h"/>
+        <childnode refid="5242" relation="include">
+        </childnode>
+      </node>
+      <node id="5238">
+        <label>IceUtil/IceUtil.h</label>
+      </node>
+      <node id="5251">
+        <label>config/stdutils.hpp</label>
+        <link refid="stdutils_8hpp"/>
+        <childnode refid="5252" relation="include">
+        </childnode>
+        <childnode refid="5248" relation="include">
+        </childnode>
+        <childnode refid="5249" relation="include">
+        </childnode>
+        <childnode refid="5253" relation="include">
+        </childnode>
+        <childnode refid="5254" relation="include">
+        </childnode>
+        <childnode refid="5255" relation="include">
+        </childnode>
+      </node>
+      <node id="5249">
+        <label>vector</label>
+      </node>
+      <node id="5260">
+        <label>colorspaces/colorspacesmm.h</label>
+        <link refid="colorspacesmm_8h"/>
+        <childnode refid="5261" relation="include">
+        </childnode>
+      </node>
+      <node id="5256">
+        <label>comm/tools.hpp</label>
+        <link refid="tools_8hpp"/>
+        <childnode refid="5244" relation="include">
+        </childnode>
+      </node>
+      <node id="5247">
+        <label>sstream</label>
+      </node>
+      <node id="5240">
+        <label>cv.h</label>
+      </node>
+      <node id="5252">
+        <label>cstdlib</label>
+      </node>
+      <node id="5265">
+        <label>comm/interfaces/cameraClient.hpp</label>
+        <link refid="interfaces_2camera_client_8hpp"/>
+        <childnode refid="5241" relation="include">
+        </childnode>
+      </node>
+      <node id="5245">
+        <label>iostream</label>
+      </node>
+      <node id="5239">
+        <label>Ice/Ice.h</label>
+      </node>
+      <node id="5259">
+        <label>camera.h</label>
+      </node>
+      <node id="5266">
+        <label>zlib.h</label>
+      </node>
+      <node id="5263">
+        <label>memory</label>
+      </node>
+      <node id="5243">
+        <label>comm/communicator.hpp</label>
+        <link refid="communicator_8hpp"/>
+        <childnode refid="5244" relation="include">
+        </childnode>
+        <childnode refid="5256" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespace_comm">Comm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>(C)<sp/>1997-2016<sp/>JDE<sp/>Developers<sp/>TeamkinectViewer.camRGB</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>http://www.gnu.org/licenses/.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/>Author<sp/>:<sp/>Jose<sp/>María<sp/>Cañas<sp/>&lt;jmplaza@gsyc.es&gt;</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Francisco<sp/>Miguel<sp/>Rivas<sp/>Montero<sp/>&lt;franciscomiguel.rivas@urjc.es&gt;</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"></highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="camera_ice_client_8hpp" kindref="compound">comm/ice/cameraIceClient.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;glog/logging.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;exception&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_comm" kindref="compound">Comm</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_comm_1_1_camera_ice_client_1aa59fe901fa8a7c4b0cb2404a0922905e" refkind="member"><highlight class="normal"><ref refid="class_comm_1_1_camera_ice_client_1aa59fe901fa8a7c4b0cb2404a0922905e" kindref="member">CameraIceClient::CameraIceClient</ref>(<ref refid="class_comm_1_1_communicator" kindref="compound">Comm::Communicator</ref>*<sp/>jdrc,<sp/>std::string<sp/>prefix)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;prefix=prefix;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>Ice::ObjectPrx<sp/>baseCamera;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_comm_1_1_camera_client_1ac5499dca33e4d1bfd11f1ad1143bc8f6" kindref="member">refreshRate</ref>=0;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;mImageFormat.empty();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>fps=jdrc-&gt;<ref refid="class_comm_1_1_communicator_1ab03173df851ed3eb0f84f83f1ecd455f" kindref="member">getConfig</ref>().<ref refid="class_config_1_1_properties_1a30c642acc0904cf510825bf29034eb95" kindref="member">asFloatWithDefault</ref>(prefix+</highlight><highlight class="stringliteral">&quot;.Fps&quot;</highlight><highlight class="normal">,<sp/>30);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;cycle=(1/fps)*1000000;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>proxy<sp/>=<sp/>jdrc-&gt;<ref refid="class_comm_1_1_communicator_1ab03173df851ed3eb0f84f83f1ecd455f" kindref="member">getConfig</ref>().<ref refid="class_config_1_1_properties_1a87fb20ec94658e8ce0cce06b239019be" kindref="member">asString</ref>(prefix+</highlight><highlight class="stringliteral">&quot;.Proxy&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>baseCamera<sp/>=<sp/>jdrc-&gt;getIceComm()-&gt;stringToProxy(proxy);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(0==baseCamera){</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" kindref="member">on</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>prefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>create<sp/>proxy<sp/>with<sp/>Camera&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;prx=<sp/>jderobot::CameraPrx::checkedCast(baseCamera);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" kindref="member">on</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(0==this-&gt;prx){</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" kindref="member">on</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Invalid<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>prefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;.Proxy&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Ice::Exception&amp;<sp/>ex)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LOG(ERROR)<sp/>&lt;&lt;<sp/>ex<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>msg)<sp/>{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LOG(ERROR)<sp/>&lt;&lt;<sp/>msg<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LOG(ERROR)<sp/>&lt;&lt;prefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>Not<sp/>camera<sp/>provided&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//check<sp/>if<sp/>default<sp/>format<sp/>is<sp/>defined</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>definedFormat=jdrc-&gt;<ref refid="class_comm_1_1_communicator_1ab03173df851ed3eb0f84f83f1ecd455f" kindref="member">getConfig</ref>().<ref refid="class_config_1_1_properties_1a38019252713b2a815b78eab3a4e00e75" kindref="member">asStringWithDefault</ref>(prefix+</highlight><highlight class="stringliteral">&quot;.Format&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;RGB8&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;mImageFormat<sp/>=<sp/><ref refid="class_camera_utils_1a4eb121d34116f081d07a7cbf6994b43e" kindref="member">CameraUtils::negotiateDefaultFormat</ref>(this-&gt;prx,definedFormat);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>jderobot::ImageDataPtr<sp/>data<sp/>=<sp/>this-&gt;prx-&gt;getImageData(this-&gt;mImageFormat);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;pauseStatus=</highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="class_comm_1_1_camera_ice_client_1a2c506c1c710f2f9daae1a62bd743ffbc" refkind="member"><highlight class="normal"><ref refid="class_comm_1_1_camera_ice_client_1a2c506c1c710f2f9daae1a62bd743ffbc" kindref="member">CameraIceClient::~CameraIceClient</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" kindref="member">on</ref>=</highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="class_comm_1_1_camera_ice_client_1a9bae237053652d87942735619c15108a" refkind="member"><highlight class="normal">jderobot::ImageFormat<sp/><ref refid="class_comm_1_1_camera_ice_client_1a9bae237053652d87942735619c15108a" kindref="member">CameraIceClient::getImageFormat</ref>()</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(this-&gt;prx-&gt;getImageFormat());</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="class_comm_1_1_camera_ice_client_1a1d6d27613011cd14091c8162459b2388" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_comm_1_1_camera_ice_client_1a1d6d27613011cd14091c8162459b2388" kindref="member">CameraIceClient::setImageFormat</ref><sp/>(std::string<sp/>format)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>mImageFormat<sp/>=<sp/>format;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG(INFO)<sp/>&lt;&lt;</highlight><highlight class="stringliteral">&quot;Changed<sp/>format<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>this-&gt;mImageFormat<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>for<sp/>camera<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>this-&gt;prx-&gt;getCameraDescription()-&gt;name;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="class_comm_1_1_camera_ice_client_1af8e062a6dc719ea32e77a8ce86ef9880" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_comm_1_1_camera_ice_client_1af8e062a6dc719ea32e77a8ce86ef9880" kindref="member">CameraIceClient::reset</ref>(){</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;prx-&gt;reset();</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="class_comm_1_1_camera_ice_client_1a7ebc60a1d24250d7e5576cc31379d713" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_comm_1_1_camera_ice_client_1a7ebc60a1d24250d7e5576cc31379d713" kindref="member">CameraIceClient::pause</ref>(){</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;pauseStatus=</highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="class_comm_1_1_camera_ice_client_1aff6fbedebcb3952d1bd30b817566dede" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_comm_1_1_camera_ice_client_1aff6fbedebcb3952d1bd30b817566dede" kindref="member">CameraIceClient::resume</ref>(){</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;controlMutex.lock();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;pauseStatus=</highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;semWait.broadcast();</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;controlMutex.unlock();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="class_comm_1_1_camera_ice_client_1a74d06122ed0688df849d2de07bbd0a03" refkind="member"><highlight class="normal"><ref refid="class_comm_1_1_camera_ice_client_1a74d06122ed0688df849d2de07bbd0a03" kindref="member">CameraIceClient::run</ref>(){</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>jderobot::ImageDataPtr<sp/>dataPtr;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_1ab3978cc7acc2b5e855f8c715f09667d1" kindref="member">colorspaces::Image::FormatPtr</ref><sp/>fmt;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>IceUtil::Time<sp/>last;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iterIndex<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>totalRefreshRate<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>refrRate<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_jde_robot_types_1_1_image" kindref="compound">JdeRobotTypes::Image</ref><sp/>img;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>last=IceUtil::Time::now();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" kindref="member">on</ref>){</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iterIndex<sp/>++;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pauseStatus){</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>IceUtil::Mutex::Lock<sp/>sync(this-&gt;controlMutex);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;semWait.wait(sync);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dataPtr<sp/>=<sp/>this-&gt;prx-&gt;getImageData(this-&gt;mImageFormat);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Putting<sp/>image<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>img.<ref refid="class_jde_robot_types_1_1_image_1a00caf819fb206f75e125f9a63f78cb8a" kindref="member">data</ref><sp/>=<sp/><ref refid="class_camera_utils_1a926f945480f84f9a2078cfd651b15c33" kindref="member">CameraUtils::getImageFromCameraProxy</ref>(dataPtr);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>img.<ref refid="class_jde_robot_types_1_1_image_1ac702a6dbc5f6d6009524159bcc4d07e4" kindref="member">format</ref><sp/>=<sp/>dataPtr-&gt;description-&gt;format;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>img.<ref refid="class_jde_robot_types_1_1_image_1ac377507ac13a54f523169f55911e3147" kindref="member">width</ref><sp/>=<sp/>dataPtr-&gt;description-&gt;width;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>img.<ref refid="class_jde_robot_types_1_1_image_1ad3b073fd5f50c62c535d0083ca0f9ae9" kindref="member">height</ref><sp/>=<sp/>dataPtr-&gt;description-&gt;height;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>img.<ref refid="class_jde_robot_types_1_1_image_1a4557271a34c2a35e6a9c03946ed2332c" kindref="member">timeStamp</ref><sp/>=<sp/>dataPtr-&gt;timeStamp.seconds<sp/>+<sp/>dataPtr-&gt;timeStamp.useconds<sp/>*<sp/>1e-6;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">catch</highlight><highlight class="normal">(std::exception&amp;<sp/>e){</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LOG(WARNING)<sp/>&lt;&lt;<sp/>prefix<sp/>+</highlight><highlight class="stringliteral">&quot;error<sp/>during<sp/>request<sp/>(connection<sp/>error):<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>e.what()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>usleep(50000);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>process<sp/>=<sp/>(IceUtil::Time::now().toMicroSeconds()<sp/>-<sp/>last.toMicroSeconds());</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(process<sp/>&gt;<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)cycle<sp/>){</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DLOG(WARNING)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;--------&quot;</highlight><highlight class="normal"><sp/>+<sp/>prefix<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>adquisition<sp/>timeout-&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>delay<sp/>=<sp/>(int)cycle<sp/>-<sp/>process;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(delay<sp/>&lt;1<sp/>||<sp/>delay<sp/>&gt;<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)cycle)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delay<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>usleep(delay);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rate<sp/>=(int)(1000000/(IceUtil::Time::now().toMicroSeconds()<sp/>-<sp/>last.toMicroSeconds()));</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>totalRefreshRate<sp/>=<sp/><sp/>totalRefreshRate<sp/>+<sp/>rate;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>refrRate<sp/>=<sp/>totalRefreshRate<sp/>/<sp/>iterIndex;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>last=IceUtil::Time::now();</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(iterIndex<sp/>==<sp/>INT_MAX)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iterIndex<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DLOG(INFO)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;***<sp/>Counter<sp/>reset&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;controlMutex.lock();</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" kindref="member">image</ref><sp/>=<sp/>img;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_comm_1_1_camera_client_1ac5499dca33e4d1bfd11f1ad1143bc8f6" kindref="member">refreshRate</ref><sp/>=<sp/>refrRate;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;controlMutex.unlock();</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" kindref="member">image</ref>.<ref refid="class_jde_robot_types_1_1_image_1a00caf819fb206f75e125f9a63f78cb8a" kindref="member">data</ref>.release();</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194" refid="class_comm_1_1_camera_ice_client_1afde034cca2e5396b5c439069dfab4725" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_comm_1_1_camera_ice_client_1afde034cca2e5396b5c439069dfab4725" kindref="member">CameraIceClient::stop_thread</ref>()</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" kindref="member">on</ref>=</highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199" refid="class_comm_1_1_camera_ice_client_1aff1f3ff0d95d8a04aacfe5cfc9955740" refkind="member"><highlight class="normal"><ref refid="class_jde_robot_types_1_1_image" kindref="compound">JdeRobotTypes::Image</ref><sp/><ref refid="class_comm_1_1_camera_ice_client_1aff1f3ff0d95d8a04aacfe5cfc9955740" kindref="member">CameraIceClient::getImage</ref>(){</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_jde_robot_types_1_1_image" kindref="compound">JdeRobotTypes::Image</ref><sp/>img;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;controlMutex.lock();</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>img<sp/>=<sp/>this-&gt;<ref refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" kindref="member">image</ref>;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;controlMutex.unlock();</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>img;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209" refid="class_comm_1_1_camera_ice_client_1a4c6bcb1559bd04fe1b55461352056430" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_comm_1_1_camera_ice_client_1a4c6bcb1559bd04fe1b55461352056430" kindref="member">CameraIceClient::getRefreshRate</ref>(){</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rr;</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;controlMutex.lock();</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/>rr<sp/>=<sp/>this-&gt;<ref refid="class_comm_1_1_camera_client_1ac5499dca33e4d1bfd11f1ad1143bc8f6" kindref="member">refreshRate</ref>;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;controlMutex.unlock();</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rr;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>namespace<sp/>jderobot<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp"/>
+  </compounddef>
+</doxygen>

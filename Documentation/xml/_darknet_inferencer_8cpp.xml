@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_darknet_inferencer_8cpp" kind="file" language="C++">
+    <compoundname>DarknetInferencer.cpp</compoundname>
+    <includes refid="_sample_8h" local="no">Common/Sample.h</includes>
+    <includes refid="_class_type_generic_8h" local="no">DatasetConverters/ClassTypeGeneric.h</includes>
+    <includes refid="_darknet_inferencer_8h" local="yes">DarknetInferencer.h</includes>
+    <incdepgraph>
+      <node id="3355">
+        <label>DarknetAPI/DarknetAPI.h</label>
+      </node>
+      <node id="3344">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="3353">
+        <label>ClassType.h</label>
+        <link refid="_class_type_8h"/>
+        <childnode refid="3342" relation="include">
+        </childnode>
+      </node>
+      <node id="3351">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="3349">
+        <label>Regions/RleRegions.h</label>
+        <link refid="_rle_regions_8h"/>
+        <childnode refid="3342" relation="include">
+        </childnode>
+        <childnode refid="3343" relation="include">
+        </childnode>
+        <childnode refid="3350" relation="include">
+        </childnode>
+      </node>
+      <node id="3341">
+        <label>Regions/RectRegions.h</label>
+        <link refid="_rect_regions_8h"/>
+        <childnode refid="3342" relation="include">
+        </childnode>
+        <childnode refid="3343" relation="include">
+        </childnode>
+        <childnode refid="3345" relation="include">
+        </childnode>
+        <childnode refid="3346" relation="include">
+        </childnode>
+      </node>
+      <node id="3343">
+        <label>Regions.h</label>
+        <link refid="_regions_8h"/>
+        <childnode refid="3342" relation="include">
+        </childnode>
+        <childnode refid="3344" relation="include">
+        </childnode>
+      </node>
+      <node id="3342">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="3347">
+        <label>Regions/ContourRegions.h</label>
+        <link refid="_contour_regions_8h"/>
+        <childnode refid="3342" relation="include">
+        </childnode>
+        <childnode refid="3343" relation="include">
+        </childnode>
+        <childnode refid="3348" relation="include">
+        </childnode>
+      </node>
+      <node id="3352">
+        <label>DatasetConverters/ClassTypeGeneric.h</label>
+        <link refid="_class_type_generic_8h"/>
+        <childnode refid="3353" relation="include">
+        </childnode>
+      </node>
+      <node id="3358">
+        <label>boost/date_time/posix_time/posix_time.hpp</label>
+      </node>
+      <node id="3357">
+        <label>opencv2/imgproc/imgproc.hpp</label>
+      </node>
+      <node id="3350">
+        <label>RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="3344" relation="include">
+        </childnode>
+        <childnode refid="3351" relation="include">
+        </childnode>
+      </node>
+      <node id="3340">
+        <label>Common/Sample.h</label>
+        <link refid="_sample_8h"/>
+        <childnode refid="3341" relation="include">
+        </childnode>
+        <childnode refid="3347" relation="include">
+        </childnode>
+        <childnode refid="3349" relation="include">
+        </childnode>
+      </node>
+      <node id="3354">
+        <label>DarknetInferencer.h</label>
+        <link refid="_darknet_inferencer_8h"/>
+        <childnode refid="3355" relation="include">
+        </childnode>
+        <childnode refid="3344" relation="include">
+        </childnode>
+        <childnode refid="3356" relation="include">
+        </childnode>
+      </node>
+      <node id="3348">
+        <label>ContourRegion.h</label>
+        <link refid="_contour_region_8h"/>
+        <childnode refid="3342" relation="include">
+        </childnode>
+        <childnode refid="3344" relation="include">
+        </childnode>
+      </node>
+      <node id="3339">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.cpp</label>
+        <link refid="_darknet_inferencer_8cpp"/>
+        <childnode refid="3340" relation="include">
+        </childnode>
+        <childnode refid="3352" relation="include">
+        </childnode>
+        <childnode refid="3354" relation="include">
+        </childnode>
+      </node>
+      <node id="3356">
+        <label>FrameworkInferencer.h</label>
+        <link refid="_framework_inferencer_8h"/>
+        <childnode refid="3342" relation="include">
+        </childnode>
+        <childnode refid="3357" relation="include">
+        </childnode>
+        <childnode refid="3344" relation="include">
+        </childnode>
+        <childnode refid="3340" relation="include">
+        </childnode>
+        <childnode refid="3358" relation="include">
+        </childnode>
+        <childnode refid="3346" relation="include">
+        </childnode>
+      </node>
+      <node id="3345">
+        <label>RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="3342" relation="include">
+        </childnode>
+      </node>
+      <node id="3346">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>31/01/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_sample_8h" kindref="compound">Common/Sample.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_class_type_generic_8h" kindref="compound">DatasetConverters/ClassTypeGeneric.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_darknet_inferencer_8h" kindref="compound">DarknetInferencer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="class_darknet_inferencer_1ad3ec4de38c45a556057c93a14561e3b4" refkind="member"><highlight class="normal"><ref refid="class_darknet_inferencer_1ad3ec4de38c45a556057c93a14561e3b4" kindref="member">DarknetInferencer::DarknetInferencer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;netConfig,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;netWeights,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>classNamesFile):<sp/>netConfig(netConfig),netWeights(netWeights)<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;classNamesFile=<ref refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" kindref="member">classNamesFile</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;cnn<sp/>=<sp/>boost::shared_ptr&lt;DarknetAPI&gt;(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>DarknetAPI((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)this-&gt;netConfig.c_str(),<sp/>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)this-&gt;netWeights.c_str()));</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="class_darknet_inferencer_1a9fb53792b71055b3104e5a54a6190c50" refkind="member"><highlight class="normal"><ref refid="struct_sample" kindref="compound">Sample</ref><sp/><ref refid="class_darknet_inferencer_1a9fb53792b71055b3104e5a54a6190c50" kindref="member">DarknetInferencer::detectImp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat<sp/>&amp;image,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>confidence_threshold)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>rgbImage;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::cvtColor(image,rgbImage,cv::COLOR_RGB2BGR);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>DarknetDetections<sp/>detections<sp/>=<sp/>this-&gt;cnn-&gt;process(rgbImage,<sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)confidence_threshold);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_sample" kindref="compound">Sample</ref><sp/>sample;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_rect_regions_8h_1af395a1050a923eecf6862568feaf5d1d" kindref="member">RectRegionsPtr</ref><sp/>regions(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="struct_rect_regions" kindref="compound">RectRegions</ref>());</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_class_type_generic" kindref="compound">ClassTypeGeneric</ref><sp/>typeConverter(<ref refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" kindref="member">classNamesFile</ref>);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>detections.data.begin(),<sp/>end=detections.data.end();<sp/>it<sp/>!=end;<sp/>++it){</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>typeConverter.<ref refid="struct_class_type_generic_1abb29534e4b1c9e2b33c57df5e56ef2fb" kindref="member">setId</ref>(it-&gt;classId);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>regions-&gt;add(it-&gt;detectionBox,typeConverter.<ref refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" kindref="member">getClassString</ref>(),<sp/>it-&gt;probability);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;<sp/>typeConverter.<ref refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" kindref="member">getClassString</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>it-&gt;probability<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>sample.<ref refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" kindref="member">setColorImage</ref>(image);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>sample.<ref refid="struct_sample_1a9654dcf85e7a0b19b7b462cd7e6e1e6a" kindref="member">setRectRegions</ref>(regions);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sample;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.cpp"/>
+  </compounddef>
+</doxygen>

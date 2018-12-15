@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_7535d753a64d206e12b2d0c07db25649" kind="dir">
+    <compoundname>DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils</compoundname>
+    <innerfile refid="_deep_learning_suite_2_deep_learning_suite_lib_2python__modules_2keras__utils_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="bounding__box__utils_8py">bounding_box_utils.py</innerfile>
+    <innerfile refid="keras__layer___anchor_boxes_8py">keras_layer_AnchorBoxes.py</innerfile>
+    <innerfile refid="keras__layer___decode_detections_8py">keras_layer_DecodeDetections.py</innerfile>
+    <innerfile refid="keras__layer___l2_normalization_8py">keras_layer_L2Normalization.py</innerfile>
+    <innerfile refid="keras__ssd__loss_8py">keras_ssd_loss.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/"/>
+  </compounddef>
+</doxygen>

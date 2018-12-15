@@ -1,0 +1,373 @@
+\hypertarget{struct_sample}{}\section{Sample Struct Reference}
+\label{struct_sample}\index{Sample@{Sample}}
+
+
+{\ttfamily \#include $<$Sample.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_sample_a01a02e244812649a05144cca680a06bb}{Sample} (const std\+::string \&path, const std\+::string \&id, bool load\+Depth=true)
+\item 
+\hyperlink{struct_sample_a48a4cf559a1ff65b7d4776c262236e27}{Sample} ()
+\item 
+\hyperlink{struct_sample_a18364a41c55332c945504818d159f92c}{Sample} (const cv\+::\+Mat \&color\+Image)
+\item 
+\hyperlink{struct_sample_a54afae9ec8fb587733d941a9adbf701a}{Sample} (const cv\+::\+Mat \&color\+Image, const \hyperlink{_rect_regions_8h_af395a1050a923eecf6862568feaf5d1d}{Rect\+Regions\+Ptr} \&rect\+Regions)
+\item 
+\hyperlink{struct_sample_acf65866ea4db2e2e112ba93d5f6d52d7}{Sample} (const cv\+::\+Mat \&color\+Image, const \hyperlink{_contour_regions_8h_a3a7590ecfb061e3c09270d38b53671ef}{Contour\+Regions\+Ptr} \&contour\+Regions)
+\item 
+\hyperlink{struct_sample_a9a059f41dae3c5f434ab2f5477d0ee8b}{Sample} (const cv\+::\+Mat \&color\+Image, const \hyperlink{_rect_regions_8h_af395a1050a923eecf6862568feaf5d1d}{Rect\+Regions\+Ptr} \&rect\+Regions, const \hyperlink{_contour_regions_8h_a3a7590ecfb061e3c09270d38b53671ef}{Contour\+Regions\+Ptr} \&contour\+Regions)
+\item 
+\hyperlink{struct_sample_a4e51a8f368870b1d15bd44d52df31643}{Sample} (const cv\+::\+Mat \&color\+Image, const cv\+::\+Mat \&depth\+Image, const \hyperlink{_rect_regions_8h_af395a1050a923eecf6862568feaf5d1d}{Rect\+Regions\+Ptr} \&rect\+Regions)
+\item 
+\hyperlink{struct_sample_ae36ef0947cd02feb71d9d933bec1b3d9}{Sample} (const cv\+::\+Mat \&color\+Image, const cv\+::\+Mat \&depth\+Image, const \hyperlink{_contour_regions_8h_a3a7590ecfb061e3c09270d38b53671ef}{Contour\+Regions\+Ptr} \&contour\+Regions)
+\item 
+\hyperlink{struct_sample_a40041d82410fa312c6b1fa9f2ebb577b}{Sample} (const cv\+::\+Mat \&color\+Image, const cv\+::\+Mat \&depth\+Image, const \hyperlink{_rect_regions_8h_af395a1050a923eecf6862568feaf5d1d}{Rect\+Regions\+Ptr} \&rect\+Regions, const \hyperlink{_contour_regions_8h_a3a7590ecfb061e3c09270d38b53671ef}{Contour\+Regions\+Ptr} \&contour\+Regions)
+\item 
+\hyperlink{struct_sample_aea8a48c34d94596f6affbbd28938fb2c}{$\sim$\+Sample} ()
+\item 
+void \hyperlink{struct_sample_abf2406fa93155628a56b7087ff322ab4}{set\+Sample\+Dims} (const int width, const int height)
+\item 
+void \hyperlink{struct_sample_a37c84ccbf7cbc37823327da68037c51a}{set\+Color\+Image} (const std\+::string \&image\+Path)
+\item 
+void \hyperlink{struct_sample_a8a506a461c09213d2bcc87b00aafa420}{set\+Color\+Image} (const cv\+::\+Mat \&image)
+\item 
+void \hyperlink{struct_sample_a1a140ca4aa294de160581251fe5072e5}{set\+Depth\+Image} (const cv\+::\+Mat \&image)
+\item 
+void \hyperlink{struct_sample_aa56728d1891ddc907d6d379f44deada3}{set\+Depth\+Image} (const std\+::string \&image\+Path)
+\item 
+void \hyperlink{struct_sample_a9654dcf85e7a0b19b7b462cd7e6e1e6a}{set\+Rect\+Regions} (const \hyperlink{_rect_regions_8h_af395a1050a923eecf6862568feaf5d1d}{Rect\+Regions\+Ptr} \&regions)
+\item 
+void \hyperlink{struct_sample_afd5668ff78c7745c33b104cdf8ddddda}{set\+Contour\+Regions} (const \hyperlink{_contour_regions_8h_a3a7590ecfb061e3c09270d38b53671ef}{Contour\+Regions\+Ptr} \&regions)
+\item 
+void \hyperlink{struct_sample_a6716c8c1e8fdcd00d66b2a959a79b507}{set\+Rle\+Regions} (const \hyperlink{_rle_regions_8h_a9bcb41ed7094063e159a665178703e0f}{Rle\+Regions\+Ptr} \&regions)
+\item 
+void \hyperlink{struct_sample_a64fc306f85a0a1966f5f3b662efe95bb}{set\+Sample\+ID} (const std\+::string \&sample\+ID)
+\item 
+void \hyperlink{struct_sample_a54f7617fddaaa461fd46320e5bb19201}{clear\+Color\+Image} ()
+\item 
+void \hyperlink{struct_sample_a7e9518b37a26d5d3788f090808a691ba}{clear\+Depth\+Image} ()
+\item 
+int \hyperlink{struct_sample_a90e4c417c9b81664bd0027a7ea2aeedc}{get\+Sample\+Width} () const
+\item 
+int \hyperlink{struct_sample_a7e18614451f5a983bba865592b661eea}{get\+Sample\+Height} () const
+\item 
+\hyperlink{_rect_regions_8h_af395a1050a923eecf6862568feaf5d1d}{Rect\+Regions\+Ptr} \hyperlink{struct_sample_a5f1b7716e5c4e8f5217a18021169283f}{get\+Rect\+Regions} () const
+\item 
+\hyperlink{_contour_regions_8h_a3a7590ecfb061e3c09270d38b53671ef}{Contour\+Regions\+Ptr} \hyperlink{struct_sample_aa70ac3682cd06e667b4daab50ffc66fb}{get\+Contour\+Regions} () const
+\item 
+\hyperlink{_rle_regions_8h_a9bcb41ed7094063e159a665178703e0f}{Rle\+Regions\+Ptr} \hyperlink{struct_sample_aba47baeaed03136d0b63ca6609de25a7}{get\+Rle\+Regions} () const
+\item 
+std\+::string \hyperlink{struct_sample_a2991d3bc768b12e84c51f52381dad944}{get\+Color\+Image\+Path} () const
+\item 
+std\+::string \hyperlink{struct_sample_a7484f917e461198bd49138149920955e}{get\+Depth\+Image\+Path} () const
+\item 
+cv\+::\+Mat \hyperlink{struct_sample_abf69bbc9b312c22d3ded30d30d1e278f}{get\+Color\+Image} () const
+\item 
+cv\+::\+Mat \hyperlink{struct_sample_a4d2e91f909467a974832c9359cc81c3c}{get\+Depth\+Image} () const
+\item 
+cv\+::\+Mat \hyperlink{struct_sample_ac1506dc52a2f8b5bcb130c380492b784}{get\+Dept\+Image\+Gray\+R\+GB} () const
+\item 
+cv\+::\+Mat \hyperlink{struct_sample_a19aef3e998d244412a87c9d7760d0937}{get\+Sampled\+Color\+Image} () const
+\item 
+cv\+::\+Mat \hyperlink{struct_sample_a8e31cb70e624975d18e617dc7f71f9a1}{get\+Sampled\+Depth\+Image} () const
+\item 
+cv\+::\+Mat \hyperlink{struct_sample_a4bd0f24d929a2559152a88d7669c84a2}{get\+Sampled\+Depth\+Color\+Map\+Image} (double alpha=1, double beta=0) const
+\item 
+cv\+::\+Mat \hyperlink{struct_sample_ae6488ecd5c5996029a68915541b01245}{get\+Depth\+Color\+Map\+Image} (double alpha=1, double beta=0) const
+\item 
+void \hyperlink{struct_sample_a2c873df91344017f41f144af9baa3b7c}{save} (const std\+::string \&out\+Path, int id)
+\item 
+void \hyperlink{struct_sample_a8e2faad4265f473f102594897a06ae1d}{save} (const std\+::string \&out\+Path, const std\+::string \&filename)
+\item 
+void \hyperlink{struct_sample_a9bf371e9070c521390867961965e8c94}{save} (const std\+::string \&out\+Path)
+\item 
+void \hyperlink{struct_sample_a9d1fe0b4de7a046026520b5efa39aac8}{print} ()
+\item 
+bool \hyperlink{struct_sample_af210b104d04dd438902828102f3ff2f7}{show} (const std\+::string reader\+Implementation, const std\+::string window\+Name, const int wait\+Key, const bool show\+Depth)
+\item 
+bool \hyperlink{struct_sample_a081726861f4977cb88fcdf709dd58cc9}{is\+Depth\+Image\+Valid} ()
+\item 
+bool \hyperlink{struct_sample_a8dbfc18d3b69992cb7865437242e1f55}{is\+Valid} ()
+\item 
+void \hyperlink{struct_sample_adbfe8d1087bd0ded0edcd572a7beb7e8}{filter\+Samples\+By\+ID} (std\+::vector$<$ std\+::string $>$ filtered\+I\+DS)
+\item 
+std\+::string \hyperlink{struct_sample_adead1781500bbf8508eae6f983621d3a}{get\+Sample\+ID} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_sample_a01a02e244812649a05144cca680a06bb}\label{struct_sample_a01a02e244812649a05144cca680a06bb}} 
+\index{Sample@{Sample}!Sample@{Sample}}
+\index{Sample@{Sample}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{Sample()}{Sample()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily Sample\+::\+Sample (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{const std\+::string \&}]{id,  }\item[{bool}]{load\+Depth = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a48a4cf559a1ff65b7d4776c262236e27}\label{struct_sample_a48a4cf559a1ff65b7d4776c262236e27}} 
+\index{Sample@{Sample}!Sample@{Sample}}
+\index{Sample@{Sample}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{Sample()}{Sample()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily Sample\+::\+Sample (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a18364a41c55332c945504818d159f92c}\label{struct_sample_a18364a41c55332c945504818d159f92c}} 
+\index{Sample@{Sample}!Sample@{Sample}}
+\index{Sample@{Sample}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{Sample()}{Sample()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily Sample\+::\+Sample (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{color\+Image }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a54afae9ec8fb587733d941a9adbf701a}\label{struct_sample_a54afae9ec8fb587733d941a9adbf701a}} 
+\index{Sample@{Sample}!Sample@{Sample}}
+\index{Sample@{Sample}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{Sample()}{Sample()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily Sample\+::\+Sample (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{color\+Image,  }\item[{const \hyperlink{_rect_regions_8h_af395a1050a923eecf6862568feaf5d1d}{Rect\+Regions\+Ptr} \&}]{rect\+Regions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_acf65866ea4db2e2e112ba93d5f6d52d7}\label{struct_sample_acf65866ea4db2e2e112ba93d5f6d52d7}} 
+\index{Sample@{Sample}!Sample@{Sample}}
+\index{Sample@{Sample}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{Sample()}{Sample()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily Sample\+::\+Sample (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{color\+Image,  }\item[{const \hyperlink{_contour_regions_8h_a3a7590ecfb061e3c09270d38b53671ef}{Contour\+Regions\+Ptr} \&}]{contour\+Regions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a9a059f41dae3c5f434ab2f5477d0ee8b}\label{struct_sample_a9a059f41dae3c5f434ab2f5477d0ee8b}} 
+\index{Sample@{Sample}!Sample@{Sample}}
+\index{Sample@{Sample}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{Sample()}{Sample()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily Sample\+::\+Sample (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{color\+Image,  }\item[{const \hyperlink{_rect_regions_8h_af395a1050a923eecf6862568feaf5d1d}{Rect\+Regions\+Ptr} \&}]{rect\+Regions,  }\item[{const \hyperlink{_contour_regions_8h_a3a7590ecfb061e3c09270d38b53671ef}{Contour\+Regions\+Ptr} \&}]{contour\+Regions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a4e51a8f368870b1d15bd44d52df31643}\label{struct_sample_a4e51a8f368870b1d15bd44d52df31643}} 
+\index{Sample@{Sample}!Sample@{Sample}}
+\index{Sample@{Sample}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{Sample()}{Sample()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily Sample\+::\+Sample (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{color\+Image,  }\item[{const cv\+::\+Mat \&}]{depth\+Image,  }\item[{const \hyperlink{_rect_regions_8h_af395a1050a923eecf6862568feaf5d1d}{Rect\+Regions\+Ptr} \&}]{rect\+Regions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_ae36ef0947cd02feb71d9d933bec1b3d9}\label{struct_sample_ae36ef0947cd02feb71d9d933bec1b3d9}} 
+\index{Sample@{Sample}!Sample@{Sample}}
+\index{Sample@{Sample}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{Sample()}{Sample()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily Sample\+::\+Sample (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{color\+Image,  }\item[{const cv\+::\+Mat \&}]{depth\+Image,  }\item[{const \hyperlink{_contour_regions_8h_a3a7590ecfb061e3c09270d38b53671ef}{Contour\+Regions\+Ptr} \&}]{contour\+Regions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a40041d82410fa312c6b1fa9f2ebb577b}\label{struct_sample_a40041d82410fa312c6b1fa9f2ebb577b}} 
+\index{Sample@{Sample}!Sample@{Sample}}
+\index{Sample@{Sample}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{Sample()}{Sample()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily Sample\+::\+Sample (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{color\+Image,  }\item[{const cv\+::\+Mat \&}]{depth\+Image,  }\item[{const \hyperlink{_rect_regions_8h_af395a1050a923eecf6862568feaf5d1d}{Rect\+Regions\+Ptr} \&}]{rect\+Regions,  }\item[{const \hyperlink{_contour_regions_8h_a3a7590ecfb061e3c09270d38b53671ef}{Contour\+Regions\+Ptr} \&}]{contour\+Regions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_aea8a48c34d94596f6affbbd28938fb2c}\label{struct_sample_aea8a48c34d94596f6affbbd28938fb2c}} 
+\index{Sample@{Sample}!````~Sample@{$\sim$\+Sample}}
+\index{````~Sample@{$\sim$\+Sample}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{$\sim$\+Sample()}{~Sample()}}
+{\footnotesize\ttfamily Sample\+::$\sim$\+Sample (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_sample_a54f7617fddaaa461fd46320e5bb19201}\label{struct_sample_a54f7617fddaaa461fd46320e5bb19201}} 
+\index{Sample@{Sample}!clear\+Color\+Image@{clear\+Color\+Image}}
+\index{clear\+Color\+Image@{clear\+Color\+Image}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{clear\+Color\+Image()}{clearColorImage()}}
+{\footnotesize\ttfamily void Sample\+::clear\+Color\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a7e9518b37a26d5d3788f090808a691ba}\label{struct_sample_a7e9518b37a26d5d3788f090808a691ba}} 
+\index{Sample@{Sample}!clear\+Depth\+Image@{clear\+Depth\+Image}}
+\index{clear\+Depth\+Image@{clear\+Depth\+Image}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{clear\+Depth\+Image()}{clearDepthImage()}}
+{\footnotesize\ttfamily void Sample\+::clear\+Depth\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_adbfe8d1087bd0ded0edcd572a7beb7e8}\label{struct_sample_adbfe8d1087bd0ded0edcd572a7beb7e8}} 
+\index{Sample@{Sample}!filter\+Samples\+By\+ID@{filter\+Samples\+By\+ID}}
+\index{filter\+Samples\+By\+ID@{filter\+Samples\+By\+ID}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{filter\+Samples\+By\+I\+D()}{filterSamplesByID()}}
+{\footnotesize\ttfamily void Sample\+::filter\+Samples\+By\+ID (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{filtered\+I\+DS }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_abf69bbc9b312c22d3ded30d30d1e278f}\label{struct_sample_abf69bbc9b312c22d3ded30d30d1e278f}} 
+\index{Sample@{Sample}!get\+Color\+Image@{get\+Color\+Image}}
+\index{get\+Color\+Image@{get\+Color\+Image}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Color\+Image()}{getColorImage()}}
+{\footnotesize\ttfamily cv\+::\+Mat Sample\+::get\+Color\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_sample_a2991d3bc768b12e84c51f52381dad944}\label{struct_sample_a2991d3bc768b12e84c51f52381dad944}} 
+\index{Sample@{Sample}!get\+Color\+Image\+Path@{get\+Color\+Image\+Path}}
+\index{get\+Color\+Image\+Path@{get\+Color\+Image\+Path}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Color\+Image\+Path()}{getColorImagePath()}}
+{\footnotesize\ttfamily std\+::string Sample\+::get\+Color\+Image\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_sample_aa70ac3682cd06e667b4daab50ffc66fb}\label{struct_sample_aa70ac3682cd06e667b4daab50ffc66fb}} 
+\index{Sample@{Sample}!get\+Contour\+Regions@{get\+Contour\+Regions}}
+\index{get\+Contour\+Regions@{get\+Contour\+Regions}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Contour\+Regions()}{getContourRegions()}}
+{\footnotesize\ttfamily \hyperlink{_contour_regions_8h_a3a7590ecfb061e3c09270d38b53671ef}{Contour\+Regions\+Ptr} Sample\+::get\+Contour\+Regions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_sample_ae6488ecd5c5996029a68915541b01245}\label{struct_sample_ae6488ecd5c5996029a68915541b01245}} 
+\index{Sample@{Sample}!get\+Depth\+Color\+Map\+Image@{get\+Depth\+Color\+Map\+Image}}
+\index{get\+Depth\+Color\+Map\+Image@{get\+Depth\+Color\+Map\+Image}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Depth\+Color\+Map\+Image()}{getDepthColorMapImage()}}
+{\footnotesize\ttfamily cv\+::\+Mat Sample\+::get\+Depth\+Color\+Map\+Image (\begin{DoxyParamCaption}\item[{double}]{alpha = {\ttfamily 1},  }\item[{double}]{beta = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_sample_a4d2e91f909467a974832c9359cc81c3c}\label{struct_sample_a4d2e91f909467a974832c9359cc81c3c}} 
+\index{Sample@{Sample}!get\+Depth\+Image@{get\+Depth\+Image}}
+\index{get\+Depth\+Image@{get\+Depth\+Image}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Depth\+Image()}{getDepthImage()}}
+{\footnotesize\ttfamily cv\+::\+Mat Sample\+::get\+Depth\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_sample_a7484f917e461198bd49138149920955e}\label{struct_sample_a7484f917e461198bd49138149920955e}} 
+\index{Sample@{Sample}!get\+Depth\+Image\+Path@{get\+Depth\+Image\+Path}}
+\index{get\+Depth\+Image\+Path@{get\+Depth\+Image\+Path}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Depth\+Image\+Path()}{getDepthImagePath()}}
+{\footnotesize\ttfamily std\+::string Sample\+::get\+Depth\+Image\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_sample_ac1506dc52a2f8b5bcb130c380492b784}\label{struct_sample_ac1506dc52a2f8b5bcb130c380492b784}} 
+\index{Sample@{Sample}!get\+Dept\+Image\+Gray\+R\+GB@{get\+Dept\+Image\+Gray\+R\+GB}}
+\index{get\+Dept\+Image\+Gray\+R\+GB@{get\+Dept\+Image\+Gray\+R\+GB}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Dept\+Image\+Gray\+R\+G\+B()}{getDeptImageGrayRGB()}}
+{\footnotesize\ttfamily cv\+::\+Mat Sample\+::get\+Dept\+Image\+Gray\+R\+GB (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_sample_a5f1b7716e5c4e8f5217a18021169283f}\label{struct_sample_a5f1b7716e5c4e8f5217a18021169283f}} 
+\index{Sample@{Sample}!get\+Rect\+Regions@{get\+Rect\+Regions}}
+\index{get\+Rect\+Regions@{get\+Rect\+Regions}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Rect\+Regions()}{getRectRegions()}}
+{\footnotesize\ttfamily \hyperlink{_rect_regions_8h_af395a1050a923eecf6862568feaf5d1d}{Rect\+Regions\+Ptr} Sample\+::get\+Rect\+Regions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_sample_aba47baeaed03136d0b63ca6609de25a7}\label{struct_sample_aba47baeaed03136d0b63ca6609de25a7}} 
+\index{Sample@{Sample}!get\+Rle\+Regions@{get\+Rle\+Regions}}
+\index{get\+Rle\+Regions@{get\+Rle\+Regions}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Rle\+Regions()}{getRleRegions()}}
+{\footnotesize\ttfamily \hyperlink{_rle_regions_8h_a9bcb41ed7094063e159a665178703e0f}{Rle\+Regions\+Ptr} Sample\+::get\+Rle\+Regions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_sample_a19aef3e998d244412a87c9d7760d0937}\label{struct_sample_a19aef3e998d244412a87c9d7760d0937}} 
+\index{Sample@{Sample}!get\+Sampled\+Color\+Image@{get\+Sampled\+Color\+Image}}
+\index{get\+Sampled\+Color\+Image@{get\+Sampled\+Color\+Image}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Sampled\+Color\+Image()}{getSampledColorImage()}}
+{\footnotesize\ttfamily cv\+::\+Mat Sample\+::get\+Sampled\+Color\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_sample_a4bd0f24d929a2559152a88d7669c84a2}\label{struct_sample_a4bd0f24d929a2559152a88d7669c84a2}} 
+\index{Sample@{Sample}!get\+Sampled\+Depth\+Color\+Map\+Image@{get\+Sampled\+Depth\+Color\+Map\+Image}}
+\index{get\+Sampled\+Depth\+Color\+Map\+Image@{get\+Sampled\+Depth\+Color\+Map\+Image}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Sampled\+Depth\+Color\+Map\+Image()}{getSampledDepthColorMapImage()}}
+{\footnotesize\ttfamily cv\+::\+Mat Sample\+::get\+Sampled\+Depth\+Color\+Map\+Image (\begin{DoxyParamCaption}\item[{double}]{alpha = {\ttfamily 1},  }\item[{double}]{beta = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_sample_a8e31cb70e624975d18e617dc7f71f9a1}\label{struct_sample_a8e31cb70e624975d18e617dc7f71f9a1}} 
+\index{Sample@{Sample}!get\+Sampled\+Depth\+Image@{get\+Sampled\+Depth\+Image}}
+\index{get\+Sampled\+Depth\+Image@{get\+Sampled\+Depth\+Image}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Sampled\+Depth\+Image()}{getSampledDepthImage()}}
+{\footnotesize\ttfamily cv\+::\+Mat Sample\+::get\+Sampled\+Depth\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_sample_a7e18614451f5a983bba865592b661eea}\label{struct_sample_a7e18614451f5a983bba865592b661eea}} 
+\index{Sample@{Sample}!get\+Sample\+Height@{get\+Sample\+Height}}
+\index{get\+Sample\+Height@{get\+Sample\+Height}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Sample\+Height()}{getSampleHeight()}}
+{\footnotesize\ttfamily int Sample\+::get\+Sample\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_sample_adead1781500bbf8508eae6f983621d3a}\label{struct_sample_adead1781500bbf8508eae6f983621d3a}} 
+\index{Sample@{Sample}!get\+Sample\+ID@{get\+Sample\+ID}}
+\index{get\+Sample\+ID@{get\+Sample\+ID}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Sample\+I\+D()}{getSampleID()}}
+{\footnotesize\ttfamily std\+::string Sample\+::get\+Sample\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a90e4c417c9b81664bd0027a7ea2aeedc}\label{struct_sample_a90e4c417c9b81664bd0027a7ea2aeedc}} 
+\index{Sample@{Sample}!get\+Sample\+Width@{get\+Sample\+Width}}
+\index{get\+Sample\+Width@{get\+Sample\+Width}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{get\+Sample\+Width()}{getSampleWidth()}}
+{\footnotesize\ttfamily int Sample\+::get\+Sample\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_sample_a081726861f4977cb88fcdf709dd58cc9}\label{struct_sample_a081726861f4977cb88fcdf709dd58cc9}} 
+\index{Sample@{Sample}!is\+Depth\+Image\+Valid@{is\+Depth\+Image\+Valid}}
+\index{is\+Depth\+Image\+Valid@{is\+Depth\+Image\+Valid}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{is\+Depth\+Image\+Valid()}{isDepthImageValid()}}
+{\footnotesize\ttfamily bool Sample\+::is\+Depth\+Image\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a8dbfc18d3b69992cb7865437242e1f55}\label{struct_sample_a8dbfc18d3b69992cb7865437242e1f55}} 
+\index{Sample@{Sample}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily bool Sample\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a9d1fe0b4de7a046026520b5efa39aac8}\label{struct_sample_a9d1fe0b4de7a046026520b5efa39aac8}} 
+\index{Sample@{Sample}!print@{print}}
+\index{print@{print}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Sample\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a2c873df91344017f41f144af9baa3b7c}\label{struct_sample_a2c873df91344017f41f144af9baa3b7c}} 
+\index{Sample@{Sample}!save@{save}}
+\index{save@{save}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Sample\+::save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{out\+Path,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a8e2faad4265f473f102594897a06ae1d}\label{struct_sample_a8e2faad4265f473f102594897a06ae1d}} 
+\index{Sample@{Sample}!save@{save}}
+\index{save@{save}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Sample\+::save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{out\+Path,  }\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a9bf371e9070c521390867961965e8c94}\label{struct_sample_a9bf371e9070c521390867961965e8c94}} 
+\index{Sample@{Sample}!save@{save}}
+\index{save@{save}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{save()}{save()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Sample\+::save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{out\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a37c84ccbf7cbc37823327da68037c51a}\label{struct_sample_a37c84ccbf7cbc37823327da68037c51a}} 
+\index{Sample@{Sample}!set\+Color\+Image@{set\+Color\+Image}}
+\index{set\+Color\+Image@{set\+Color\+Image}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{set\+Color\+Image()}{setColorImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sample\+::set\+Color\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{image\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a8a506a461c09213d2bcc87b00aafa420}\label{struct_sample_a8a506a461c09213d2bcc87b00aafa420}} 
+\index{Sample@{Sample}!set\+Color\+Image@{set\+Color\+Image}}
+\index{set\+Color\+Image@{set\+Color\+Image}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{set\+Color\+Image()}{setColorImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sample\+::set\+Color\+Image (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_afd5668ff78c7745c33b104cdf8ddddda}\label{struct_sample_afd5668ff78c7745c33b104cdf8ddddda}} 
+\index{Sample@{Sample}!set\+Contour\+Regions@{set\+Contour\+Regions}}
+\index{set\+Contour\+Regions@{set\+Contour\+Regions}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{set\+Contour\+Regions()}{setContourRegions()}}
+{\footnotesize\ttfamily void Sample\+::set\+Contour\+Regions (\begin{DoxyParamCaption}\item[{const \hyperlink{_contour_regions_8h_a3a7590ecfb061e3c09270d38b53671ef}{Contour\+Regions\+Ptr} \&}]{regions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a1a140ca4aa294de160581251fe5072e5}\label{struct_sample_a1a140ca4aa294de160581251fe5072e5}} 
+\index{Sample@{Sample}!set\+Depth\+Image@{set\+Depth\+Image}}
+\index{set\+Depth\+Image@{set\+Depth\+Image}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{set\+Depth\+Image()}{setDepthImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Sample\+::set\+Depth\+Image (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_aa56728d1891ddc907d6d379f44deada3}\label{struct_sample_aa56728d1891ddc907d6d379f44deada3}} 
+\index{Sample@{Sample}!set\+Depth\+Image@{set\+Depth\+Image}}
+\index{set\+Depth\+Image@{set\+Depth\+Image}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{set\+Depth\+Image()}{setDepthImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Sample\+::set\+Depth\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{image\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a9654dcf85e7a0b19b7b462cd7e6e1e6a}\label{struct_sample_a9654dcf85e7a0b19b7b462cd7e6e1e6a}} 
+\index{Sample@{Sample}!set\+Rect\+Regions@{set\+Rect\+Regions}}
+\index{set\+Rect\+Regions@{set\+Rect\+Regions}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{set\+Rect\+Regions()}{setRectRegions()}}
+{\footnotesize\ttfamily void Sample\+::set\+Rect\+Regions (\begin{DoxyParamCaption}\item[{const \hyperlink{_rect_regions_8h_af395a1050a923eecf6862568feaf5d1d}{Rect\+Regions\+Ptr} \&}]{regions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a6716c8c1e8fdcd00d66b2a959a79b507}\label{struct_sample_a6716c8c1e8fdcd00d66b2a959a79b507}} 
+\index{Sample@{Sample}!set\+Rle\+Regions@{set\+Rle\+Regions}}
+\index{set\+Rle\+Regions@{set\+Rle\+Regions}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{set\+Rle\+Regions()}{setRleRegions()}}
+{\footnotesize\ttfamily void Sample\+::set\+Rle\+Regions (\begin{DoxyParamCaption}\item[{const \hyperlink{_rle_regions_8h_a9bcb41ed7094063e159a665178703e0f}{Rle\+Regions\+Ptr} \&}]{regions }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_abf2406fa93155628a56b7087ff322ab4}\label{struct_sample_abf2406fa93155628a56b7087ff322ab4}} 
+\index{Sample@{Sample}!set\+Sample\+Dims@{set\+Sample\+Dims}}
+\index{set\+Sample\+Dims@{set\+Sample\+Dims}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{set\+Sample\+Dims()}{setSampleDims()}}
+{\footnotesize\ttfamily void Sample\+::set\+Sample\+Dims (\begin{DoxyParamCaption}\item[{const int}]{width,  }\item[{const int}]{height }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_a64fc306f85a0a1966f5f3b662efe95bb}\label{struct_sample_a64fc306f85a0a1966f5f3b662efe95bb}} 
+\index{Sample@{Sample}!set\+Sample\+ID@{set\+Sample\+ID}}
+\index{set\+Sample\+ID@{set\+Sample\+ID}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{set\+Sample\+I\+D()}{setSampleID()}}
+{\footnotesize\ttfamily void Sample\+::set\+Sample\+ID (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sample\+ID }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_sample_af210b104d04dd438902828102f3ff2f7}\label{struct_sample_af210b104d04dd438902828102f3ff2f7}} 
+\index{Sample@{Sample}!show@{show}}
+\index{show@{show}!Sample@{Sample}}
+\subsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily bool Sample\+::show (\begin{DoxyParamCaption}\item[{const std\+::string}]{reader\+Implementation,  }\item[{const std\+::string}]{window\+Name,  }\item[{const int}]{wait\+Key,  }\item[{const bool}]{show\+Depth }\end{DoxyParamCaption})}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Common/\hyperlink{_sample_8h}{Sample.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Common/\hyperlink{_sample_8cpp}{Sample.\+cpp}\end{DoxyCompactItemize}

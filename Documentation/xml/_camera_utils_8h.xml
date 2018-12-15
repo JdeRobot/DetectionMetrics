@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_camera_utils_8h" kind="file" language="C++">
+    <compoundname>CameraUtils.h</compoundname>
+    <includes local="no">opencv2/core/core.hpp</includes>
+    <includes local="no">jderobot/image.h</includes>
+    <includes local="no">camera.h</includes>
+    <includedby refid="camera_ice_client_8hpp" local="no">DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp</includedby>
+    <includedby refid="_camera_utils_8cpp" local="yes">DeepLearningSuite/libs/utils/CameraUtils.cpp</includedby>
+    <incdepgraph>
+      <node id="5615">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="5614">
+        <label>DeepLearningSuite/libs/utils/CameraUtils.h</label>
+        <link refid="_camera_utils_8h"/>
+        <childnode refid="5615" relation="include">
+        </childnode>
+        <childnode refid="5616" relation="include">
+        </childnode>
+        <childnode refid="5617" relation="include">
+        </childnode>
+      </node>
+      <node id="5616">
+        <label>jderobot/image.h</label>
+      </node>
+      <node id="5617">
+        <label>camera.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5619">
+        <label>DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp</label>
+        <link refid="camera_ice_client_8hpp"/>
+        <childnode refid="5620" relation="include">
+        </childnode>
+      </node>
+      <node id="5620">
+        <label>DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp</label>
+        <link refid="camera_ice_client_8cpp"/>
+      </node>
+      <node id="5618">
+        <label>DeepLearningSuite/libs/utils/CameraUtils.h</label>
+        <link refid="_camera_utils_8h"/>
+        <childnode refid="5619" relation="include">
+        </childnode>
+        <childnode refid="5621" relation="include">
+        </childnode>
+      </node>
+      <node id="5621">
+        <label>DeepLearningSuite/libs/utils/CameraUtils.cpp</label>
+        <link refid="_camera_utils_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_camera_utils" prot="public">CameraUtils</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>4/04/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>JDEROBOT_CAMERAUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JDEROBOT_CAMERAUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/core/core.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;jderobot/image.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;camera.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="class_camera_utils" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_camera_utils" kindref="compound">CameraUtils</ref><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>cv::Mat<sp/><ref refid="class_camera_utils_1a926f945480f84f9a2078cfd651b15c33" kindref="member">getImageFromCameraProxy</ref>(jderobot::ImageDataPtr<sp/>dataPtr);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::string<sp/><ref refid="class_camera_utils_1a4eb121d34116f081d07a7cbf6994b43e" kindref="member">negotiateDefaultFormat</ref>(jderobot::CameraPrx<sp/>prx,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>definedFormat<sp/>);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_camera_utils_1a432aaed36b79f14f122991b883f6382c" kindref="member">compressImage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>image,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>compressed_data,</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal">&amp;<sp/>compress_len);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>jderobot::ImageDataPtr<sp/><ref refid="class_camera_utils_1a38071971e6fec4d3786223ebd972e778" kindref="member">convert</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>image);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//JDEROBOT_CAMERAUTILS_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/libs/utils/CameraUtils.h"/>
+  </compounddef>
+</doxygen>

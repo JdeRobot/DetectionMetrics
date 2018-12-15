@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_1fad0922ddd9df16ecac4a304ae308ee" kind="dir">
+    <compoundname>DeepLearningSuite/libs/comm/include/comm</compoundname>
+    <innerdir refid="dir_52b576a4ff2b4d3474068c3c77df4180">DeepLearningSuite/libs/comm/include/comm/ice</innerdir>
+    <innerdir refid="dir_8ac2eaa257287965cc3127618edd5f2f">DeepLearningSuite/libs/comm/include/comm/interfaces</innerdir>
+    <innerdir refid="dir_5bb1a0668c271979530d58023cf261a8">DeepLearningSuite/libs/comm/include/comm/ros</innerdir>
+    <innerfile refid="camera_client_8hpp">cameraClient.hpp</innerfile>
+    <innerfile refid="communicator_8hpp">communicator.hpp</innerfile>
+    <innerfile refid="tools_8hpp">tools.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/comm/include/comm/"/>
+  </compounddef>
+</doxygen>

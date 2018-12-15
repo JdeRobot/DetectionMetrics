@@ -1,0 +1,361 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_image_net_dataset_reader_8h" kind="file" language="C++">
+    <compoundname>ImageNetDatasetReader.h</compoundname>
+    <includes refid="_dataset_reader_8h" local="no">DatasetConverters/readers/DatasetReader.h</includes>
+    <includes local="no">boost/property_tree/ptree.hpp</includes>
+    <includes local="no">boost/property_tree/xml_parser.hpp</includes>
+    <includes local="no">boost/filesystem/path.hpp</includes>
+    <includes local="no">boost/filesystem/operations.hpp</includes>
+    <includes local="no">boost/foreach.hpp</includes>
+    <includedby refid="_generic_dataset_reader_8h" local="yes">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h</includedby>
+    <includedby refid="_image_net_dataset_reader_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/ImageNetDatasetReader.cpp</includedby>
+    <incdepgraph>
+      <node id="2379">
+        <label>boost/property_tree/xml_parser.hpp</label>
+      </node>
+      <node id="2365">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="2381">
+        <label>boost/filesystem/operations.hpp</label>
+      </node>
+      <node id="2372">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="2377">
+        <label>glog/logging.h</label>
+      </node>
+      <node id="2370">
+        <label>Regions/RleRegions.h</label>
+        <link refid="_rle_regions_8h"/>
+        <childnode refid="2363" relation="include">
+        </childnode>
+        <childnode refid="2364" relation="include">
+        </childnode>
+        <childnode refid="2371" relation="include">
+        </childnode>
+      </node>
+      <node id="2362">
+        <label>Regions/RectRegions.h</label>
+        <link refid="_rect_regions_8h"/>
+        <childnode refid="2363" relation="include">
+        </childnode>
+        <childnode refid="2364" relation="include">
+        </childnode>
+        <childnode refid="2366" relation="include">
+        </childnode>
+        <childnode refid="2367" relation="include">
+        </childnode>
+      </node>
+      <node id="2382">
+        <label>boost/foreach.hpp</label>
+      </node>
+      <node id="2364">
+        <label>Regions.h</label>
+        <link refid="_regions_8h"/>
+        <childnode refid="2363" relation="include">
+        </childnode>
+        <childnode refid="2365" relation="include">
+        </childnode>
+      </node>
+      <node id="2363">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="2360">
+        <label>string</label>
+      </node>
+      <node id="2373">
+        <label>Common/EvalMatrix.h</label>
+        <link refid="_eval_matrix_8h"/>
+        <childnode refid="2374" relation="include">
+        </childnode>
+        <childnode refid="2376" relation="include">
+        </childnode>
+      </node>
+      <node id="2376">
+        <label>map</label>
+      </node>
+      <node id="2368">
+        <label>Regions/ContourRegions.h</label>
+        <link refid="_contour_regions_8h"/>
+        <childnode refid="2363" relation="include">
+        </childnode>
+        <childnode refid="2364" relation="include">
+        </childnode>
+        <childnode refid="2369" relation="include">
+        </childnode>
+      </node>
+      <node id="2380">
+        <label>boost/filesystem/path.hpp</label>
+      </node>
+      <node id="2371">
+        <label>RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="2365" relation="include">
+        </childnode>
+        <childnode refid="2372" relation="include">
+        </childnode>
+      </node>
+      <node id="2361">
+        <label>Common/Sample.h</label>
+        <link refid="_sample_8h"/>
+        <childnode refid="2362" relation="include">
+        </childnode>
+        <childnode refid="2368" relation="include">
+        </childnode>
+        <childnode refid="2370" relation="include">
+        </childnode>
+      </node>
+      <node id="2375">
+        <label>vector</label>
+      </node>
+      <node id="2374">
+        <label>Matrix.h</label>
+        <link refid="_matrix_8h"/>
+        <childnode refid="2375" relation="include">
+        </childnode>
+      </node>
+      <node id="2358">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/ImageNetDatasetReader.h</label>
+        <link refid="_image_net_dataset_reader_8h"/>
+        <childnode refid="2359" relation="include">
+        </childnode>
+        <childnode refid="2378" relation="include">
+        </childnode>
+        <childnode refid="2379" relation="include">
+        </childnode>
+        <childnode refid="2380" relation="include">
+        </childnode>
+        <childnode refid="2381" relation="include">
+        </childnode>
+        <childnode refid="2382" relation="include">
+        </childnode>
+      </node>
+      <node id="2369">
+        <label>ContourRegion.h</label>
+        <link refid="_contour_region_8h"/>
+        <childnode refid="2363" relation="include">
+        </childnode>
+        <childnode refid="2365" relation="include">
+        </childnode>
+      </node>
+      <node id="2378">
+        <label>boost/property_tree/ptree.hpp</label>
+      </node>
+      <node id="2366">
+        <label>RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="2363" relation="include">
+        </childnode>
+      </node>
+      <node id="2359">
+        <label>DatasetConverters/readers/DatasetReader.h</label>
+        <link refid="_dataset_reader_8h"/>
+        <childnode refid="2360" relation="include">
+        </childnode>
+        <childnode refid="2361" relation="include">
+        </childnode>
+        <childnode refid="2365" relation="include">
+        </childnode>
+        <childnode refid="2373" relation="include">
+        </childnode>
+        <childnode refid="2377" relation="include">
+        </childnode>
+      </node>
+      <node id="2367">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2404">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/ImageNetDatasetReader.cpp</label>
+        <link refid="_image_net_dataset_reader_8cpp"/>
+      </node>
+      <node id="2403">
+        <label>DeepLearningSuite/Tools/Viewer/viewer.cpp</label>
+        <link refid="_tools_2_viewer_2_viewer_8cpp"/>
+      </node>
+      <node id="2394">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.cpp</label>
+        <link refid="_generic_dataset_reader_8cpp"/>
+      </node>
+      <node id="2396">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.cpp</label>
+        <link refid="_stats_writer_8cpp"/>
+      </node>
+      <node id="2388">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_converter_8cpp"/>
+      </node>
+      <node id="2393">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Viewer.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp"/>
+      </node>
+      <node id="2389">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.cpp</label>
+        <link refid="_deployer_8cpp"/>
+      </node>
+      <node id="2398">
+        <label>DeepLearningSuite/Tools/Evaluator/evaluator.cpp</label>
+        <link refid="_tools_2_evaluator_2_evaluator_8cpp"/>
+      </node>
+      <node id="2392">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.cpp</label>
+        <link refid="_sampler_generation_handler_8cpp"/>
+      </node>
+      <node id="2397">
+        <label>DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp</label>
+        <link refid="auto_evaluator_8cpp"/>
+      </node>
+      <node id="2400">
+        <label>DeepLearningSuite/Tools/Converter/converter.cpp</label>
+        <link refid="_tools_2_converter_2_converter_8cpp"/>
+      </node>
+      <node id="2384">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h</label>
+        <link refid="_generic_dataset_reader_8h"/>
+        <childnode refid="2385" relation="include">
+        </childnode>
+        <childnode refid="2386" relation="include">
+        </childnode>
+        <childnode refid="2387" relation="include">
+        </childnode>
+        <childnode refid="2390" relation="include">
+        </childnode>
+        <childnode refid="2393" relation="include">
+        </childnode>
+        <childnode refid="2394" relation="include">
+        </childnode>
+        <childnode refid="2395" relation="include">
+        </childnode>
+        <childnode refid="2399" relation="include">
+        </childnode>
+        <childnode refid="2397" relation="include">
+        </childnode>
+        <childnode refid="2400" relation="include">
+        </childnode>
+        <childnode refid="2401" relation="include">
+        </childnode>
+        <childnode refid="2398" relation="include">
+        </childnode>
+        <childnode refid="2402" relation="include">
+        </childnode>
+        <childnode refid="2403" relation="include">
+        </childnode>
+      </node>
+      <node id="2387">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.h</label>
+        <link refid="_sampler_generation_handler_8h"/>
+        <childnode refid="2388" relation="include">
+        </childnode>
+        <childnode refid="2389" relation="include">
+        </childnode>
+        <childnode refid="2390" relation="include">
+        </childnode>
+        <childnode refid="2391" relation="include">
+        </childnode>
+        <childnode refid="2392" relation="include">
+        </childnode>
+        <childnode refid="2393" relation="include">
+        </childnode>
+      </node>
+      <node id="2395">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h</label>
+        <link refid="_stats_writer_8h"/>
+        <childnode refid="2391" relation="include">
+        </childnode>
+        <childnode refid="2396" relation="include">
+        </childnode>
+        <childnode refid="2397" relation="include">
+        </childnode>
+        <childnode refid="2398" relation="include">
+        </childnode>
+      </node>
+      <node id="2383">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/ImageNetDatasetReader.h</label>
+        <link refid="_image_net_dataset_reader_8h"/>
+        <childnode refid="2384" relation="include">
+        </childnode>
+        <childnode refid="2404" relation="include">
+        </childnode>
+      </node>
+      <node id="2402">
+        <label>DeepLearningSuite/Tools/Splitter/splitter.cpp</label>
+        <link refid="splitter_8cpp"/>
+      </node>
+      <node id="2391">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_evaluator_8cpp"/>
+      </node>
+      <node id="2386">
+        <label>DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="2390">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp"/>
+      </node>
+      <node id="2401">
+        <label>DeepLearningSuite/Tools/Detector/detector.cpp</label>
+        <link refid="_tools_2_detector_2_detector_8cpp"/>
+      </node>
+      <node id="2399">
+        <label>DeepLearningSuite/SampleGenerationApp/generator.cpp</label>
+        <link refid="generator_8cpp"/>
+      </node>
+      <node id="2385">
+        <label>DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.cpp</label>
+        <link refid="_tab_handler_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_image_net_dataset_reader" prot="public">ImageNetDatasetReader</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_image_net_dataset_reader_8h_1a610d7f551907a484ab914c0142422f42" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="class_image_net_dataset_reader" kindref="compound">ImageNetDatasetReader</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;ImageNetDatasetReader&gt; ImageNetDatasetReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>ImageNetDatasetReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/ImageNetDatasetReader.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/ImageNetDatasetReader.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_IMAGENETDATASETREADER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_IMAGENETDATASETREADER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_dataset_reader_8h" kindref="compound">DatasetConverters/readers/DatasetReader.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/property_tree/ptree.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/property_tree/xml_parser.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/filesystem/path.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/filesystem/operations.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/foreach.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="class_image_net_dataset_reader" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_image_net_dataset_reader" kindref="compound">ImageNetDatasetReader</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_dataset_reader" kindref="compound">DatasetReader</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_image_net_dataset_reader_1aca1e379e9959ec441fc9f3cf51ae5af1" kindref="member">ImageNetDatasetReader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" kindref="member">path</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="class_dataset_reader_1a45ded43b56539f1e37a24ca9c94b4611" kindref="member">classNamesFile</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_dataset_reader_1a71d04d25d58e0e9a0c05d69afcff03a1" kindref="member">imagesRequired</ref>);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_image_net_dataset_reader_1aca1e379e9959ec441fc9f3cf51ae5af1" kindref="member">ImageNetDatasetReader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>classNamesFile,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>imagesRequired);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_image_net_dataset_reader_1ae9aa640c47637de8cf22ed3644c945c6" kindref="member">appendDataset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>datasetPath,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>datasetPrefix=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_image_net_dataset_reader_1ac9bbb0c47493ea984681d51be2e04b45" kindref="member">find_img_directory</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" kindref="member">boost::filesystem::path</ref><sp/>&amp;<sp/>ann_dir_path,<sp/><ref refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" kindref="member">boost::filesystem::path</ref><sp/>&amp;<sp/>path_found<sp/>);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_image_net_dataset_reader_1aaad29c493db0f08ad14a426aa900a000" kindref="member">find_directory</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" kindref="member">boost::filesystem::path</ref><sp/>&amp;<sp/>dir_path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>dir_name,<sp/><ref refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" kindref="member">boost::filesystem::path</ref><sp/>&amp;<sp/>path_found);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="_image_net_dataset_reader_8h_1a610d7f551907a484ab914c0142422f42" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;ImageNetDatasetReader&gt;<sp/><ref refid="_image_net_dataset_reader_8h_1a610d7f551907a484ab914c0142422f42" kindref="member">ImageNetDatasetReaderPtr</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_IMAGENETDATASETREADER_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/ImageNetDatasetReader.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,544 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="rgb2yuv_8c" kind="file" language="C++">
+    <compoundname>rgb2yuv.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes local="no">math.h</includes>
+    <includes local="no">pthread.h</includes>
+    <includes refid="colorspaces_8h" local="yes">colorspaces.h</includes>
+    <incdepgraph>
+      <node id="5705">
+        <label>stdlib.h</label>
+      </node>
+      <node id="5703">
+        <label>DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c</label>
+        <link refid="rgb2yuv_8c"/>
+        <childnode refid="5704" relation="include">
+        </childnode>
+        <childnode refid="5705" relation="include">
+        </childnode>
+        <childnode refid="5706" relation="include">
+        </childnode>
+        <childnode refid="5707" relation="include">
+        </childnode>
+        <childnode refid="5708" relation="include">
+        </childnode>
+      </node>
+      <node id="5707">
+        <label>pthread.h</label>
+      </node>
+      <node id="5706">
+        <label>math.h</label>
+      </node>
+      <node id="5708">
+        <label>colorspaces.h</label>
+        <link refid="colorspaces_8h"/>
+      </node>
+      <node id="5704">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int MAXIMUN_RGB</definition>
+        <argsstring></argsstring>
+        <name>MAXIMUN_RGB</name>
+        <initializer>= 255</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" line="29" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="29" bodyend="-1"/>
+        <referencedby refid="rgb2yuv_8c_1a3a13eec5805909b2257e309f187a8d67" compoundref="rgb2yuv_8c" startline="42" endline="60">rgb2yuv_wiki</referencedby>
+        <referencedby refid="rgb2yuv_8c_1aae0cea8e9df662fcb538c679a4049045" compoundref="rgb2yuv_8c" startline="108" endline="133">RGB2YUV_destroyTable</referencedby>
+        <referencedby refid="rgb2yuv_8c_1ab2b3287a0417bedece40b4bcc665265c" compoundref="rgb2yuv_8c" startline="155" endline="206">RGB2YUV_createTable</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="rgb2yuv_8c_1ae6bcabd09da17a93dcba1556dae20720" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="struct_y_u_v" kindref="compound">YUV</ref> *</type>
+        <definition>struct YUV* LUT_RGB2YUV[64][64][64]</definition>
+        <argsstring>[64][64][64]</argsstring>
+        <name>LUT_RGB2YUV</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" line="31" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="rgb2yuv_8c_1aaae0c312320c8f59fb2b072d84dcbc38" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int isInitTableYUV</definition>
+        <argsstring></argsstring>
+        <name>isInitTableYUV</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" line="37" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="37" bodyend="-1"/>
+        <referencedby refid="rgb2yuv_8c_1aae0cea8e9df662fcb538c679a4049045" compoundref="rgb2yuv_8c" startline="108" endline="133">RGB2YUV_destroyTable</referencedby>
+        <referencedby refid="rgb2yuv_8c_1a076be3570ea0ec2aba5811ee0c609361" compoundref="rgb2yuv_8c" startline="136" endline="151">RGB2YUV_init</referencedby>
+        <referencedby refid="rgb2yuv_8c_1ab2b3287a0417bedece40b4bcc665265c" compoundref="rgb2yuv_8c" startline="155" endline="206">RGB2YUV_createTable</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" prot="public" static="no" mutable="no">
+        <type>pthread_mutex_t</type>
+        <definition>pthread_mutex_t mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" line="40" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="40" bodyend="-1"/>
+        <referencedby refid="rgb2yuv_8c_1aae0cea8e9df662fcb538c679a4049045" compoundref="rgb2yuv_8c" startline="108" endline="133">RGB2YUV_destroyTable</referencedby>
+        <referencedby refid="rgb2yuv_8c_1a076be3570ea0ec2aba5811ee0c609361" compoundref="rgb2yuv_8c" startline="136" endline="151">RGB2YUV_init</referencedby>
+        <referencedby refid="rgb2yuv_8c_1ab2b3287a0417bedece40b4bcc665265c" compoundref="rgb2yuv_8c" startline="155" endline="206">RGB2YUV_createTable</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="rgb2yuv_8c_1a3a13eec5805909b2257e309f187a8d67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rgb2yuv_wiki</definition>
+        <argsstring>(double r, double g, double b, double *Y, double *U, double *V)</argsstring>
+        <name>rgb2yuv_wiki</name>
+        <param>
+          <type>double</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>Y</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>V</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" line="42" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="42" bodyend="60"/>
+        <references refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" compoundref="rgb2yuv_8c" startline="29">MAXIMUN_RGB</references>
+        <referencedby refid="rgb2yuv_8c_1ab2b3287a0417bedece40b4bcc665265c" compoundref="rgb2yuv_8c" startline="155" endline="206">RGB2YUV_createTable</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="rgb2yuv_8c_1ae80eb39e10fb510ac3d5be1c81671f0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void yuv2rgb</definition>
+        <argsstring>(double Y, double U, double V, double *r, double *g, double *b)</argsstring>
+        <name>yuv2rgb</name>
+        <param>
+          <type>double</type>
+          <declname>Y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>U</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>V</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+<para>Returns the translation from <ref refid="struct_y_u_v" kindref="compound">YUV</ref> to RGB. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" line="64" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="64" bodyend="82"/>
+        <references refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" compoundref="colorspaces_8h" startline="77">YUV::V</references>
+        <references refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" compoundref="colorspaces_8h" startline="76">YUV::U</references>
+      </memberdef>
+      <memberdef kind="function" id="rgb2yuv_8c_1a27570a02b90c39f6de2579bb79e5462f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void print_status_HSV</definition>
+        <argsstring>(unsigned long status)</argsstring>
+        <name>print_status_HSV</name>
+        <param>
+          <type>unsigned long</type>
+          <declname>status</declname>
+        </param>
+        <briefdescription>
+<para>Function to print unsiged int in binary. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" line="85" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="85" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="rgb2yuv_8c_1aae0cea8e9df662fcb538c679a4049045" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2YUV_destroyTable</definition>
+        <argsstring>()</argsstring>
+        <name>RGB2YUV_destroyTable</name>
+        <briefdescription>
+<para>Free de memory of RGB2YUV. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" line="108" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="108" bodyend="133"/>
+        <references refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" compoundref="rgb2yuv_8c" startline="29">MAXIMUN_RGB</references>
+        <references refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" compoundref="rgb2yuv_8c" startline="40">mutex</references>
+        <references refid="rgb2yuv_8c_1aaae0c312320c8f59fb2b072d84dcbc38" compoundref="rgb2yuv_8c" startline="37">isInitTableYUV</references>
+      </memberdef>
+      <memberdef kind="function" id="rgb2yuv_8c_1a076be3570ea0ec2aba5811ee0c609361" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2YUV_init</definition>
+        <argsstring>()</argsstring>
+        <name>RGB2YUV_init</name>
+        <briefdescription>
+<para>Init the RGB2YUV. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" line="136" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="136" bodyend="151"/>
+        <references refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" compoundref="rgb2yuv_8c" startline="40">mutex</references>
+        <references refid="rgb2yuv_8c_1aaae0c312320c8f59fb2b072d84dcbc38" compoundref="rgb2yuv_8c" startline="37">isInitTableYUV</references>
+        <references refid="colorspaces_8h_1a47f2e62c0dbebc787052c165afcada0e" compoundref="colorspaces_8h" startline="28">NAME</references>
+        <references refid="colorspaces_8h_1aee272dd28e234398015e21016d0693a2" compoundref="colorspaces_8h" startline="29">COLORSPACES_VERSION</references>
+      </memberdef>
+      <memberdef kind="function" id="rgb2yuv_8c_1ab2b3287a0417bedece40b4bcc665265c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2YUV_createTable</definition>
+        <argsstring>()</argsstring>
+        <name>RGB2YUV_createTable</name>
+        <briefdescription>
+<para>: Calculate values for create a generic table </para>        </briefdescription>
+        <detaileddescription>
+<para>Create a generic translate RGB2YUV table with resolution of 6bits (64x64x64) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" line="155" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="155" bodyend="206"/>
+        <references refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" compoundref="rgb2yuv_8c" startline="40">mutex</references>
+        <references refid="rgb2yuv_8c_1aaae0c312320c8f59fb2b072d84dcbc38" compoundref="rgb2yuv_8c" startline="37">isInitTableYUV</references>
+        <references refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" compoundref="rgb2yuv_8c" startline="29">MAXIMUN_RGB</references>
+        <references refid="rgb2yuv_8c_1a3a13eec5805909b2257e309f187a8d67" compoundref="rgb2yuv_8c" startline="42" endline="60">rgb2yuv_wiki</references>
+        <references refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" compoundref="colorspaces_8h" startline="75">YUV::Y</references>
+        <references refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" compoundref="colorspaces_8h" startline="76">YUV::U</references>
+        <references refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" compoundref="colorspaces_8h" startline="77">YUV::V</references>
+      </memberdef>
+      <memberdef kind="function" id="rgb2yuv_8c_1ad94bf56e9292976bbfdd28cb949a94fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2YUV_printYUV</definition>
+        <argsstring>(struct YUV *yuv)</argsstring>
+        <name>RGB2YUV_printYUV</name>
+        <param>
+          <type>struct <ref refid="struct_y_u_v" kindref="compound">YUV</ref> *</type>
+          <declname>yuv</declname>
+        </param>
+        <briefdescription>
+<para>Print the struct <ref refid="struct_y_u_v" kindref="compound">YUV</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" line="209" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="209" bodyend="212"/>
+        <references refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" compoundref="colorspaces_8h" startline="75">YUV::Y</references>
+        <references refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" compoundref="colorspaces_8h" startline="76">YUV::U</references>
+        <references refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" compoundref="colorspaces_8h" startline="77">YUV::V</references>
+      </memberdef>
+      <memberdef kind="function" id="rgb2yuv_8c_1a1c5da998be57be65228dbff14e0a9375" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RGB2YUV_test</definition>
+        <argsstring>(void)</argsstring>
+        <name>RGB2YUV_test</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Test. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" line="215" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" bodystart="215" bodyend="245"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>(C)<sp/>1997-2009<sp/>JDE<sp/>Developers<sp/>Team</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>http://www.gnu.org/licenses/.<sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/>Authors<sp/>:<sp/>Pablo<sp/>Miangolarra<sp/>Tejada<sp/>&lt;pablo.miangolarra@gmail.com&gt;</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;pthread.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="colorspaces_8h" kindref="compound">colorspaces.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" kindref="member">MAXIMUN_RGB</ref><sp/>=<sp/>255;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="rgb2yuv_8c_1ae6bcabd09da17a93dcba1556dae20720" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_y_u_v" kindref="compound">YUV</ref><sp/>*<sp/><ref refid="rgb2yuv_8c_1ae6bcabd09da17a93dcba1556dae20720" kindref="member">LUT_RGB2YUV</ref><sp/>[64][64][64];</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Condicional<sp/>variable:</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/><sp/><sp/>0:<sp/>The<sp/>table<sp/>RGB2YUV<sp/>don&apos;t<sp/>exists.</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/><sp/>1:<sp/>The<sp/>table<sp/>RGB2YUV<sp/>exists.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="rgb2yuv_8c_1aaae0c312320c8f59fb2b072d84dcbc38" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="rgb2yuv_8c_1aaae0c312320c8f59fb2b072d84dcbc38" kindref="member">isInitTableYUV</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>mutex<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" refkind="member"><highlight class="normal">pthread_mutex_t<sp/><ref refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="rgb2yuv_8c_1a3a13eec5805909b2257e309f187a8d67" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2yuv_8c_1a3a13eec5805909b2257e309f187a8d67" kindref="member">rgb2yuv_wiki</ref><sp/>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>r,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>g,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>b,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" kindref="member">Y</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" kindref="member">U</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*<ref refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" kindref="member">V</ref>)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>From<sp/>the<sp/>wikipedia:<sp/>yuv<sp/>color<sp/>space<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Transform<sp/>R,G,B<sp/>to<sp/>[0,1]<sp/>range*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>r<sp/>=<sp/>r<sp/>/<sp/><ref refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" kindref="member">MAXIMUN_RGB</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>g<sp/>=<sp/>g<sp/>/<sp/><ref refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" kindref="member">MAXIMUN_RGB</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>b<sp/>=<sp/>b<sp/>/<sp/><ref refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" kindref="member">MAXIMUN_RGB</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*Apply<sp/>formulas*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>*Y<sp/>=<sp/>r<sp/>*<sp/>0.299<sp/>+<sp/>g<sp/>*<sp/>0.587<sp/>+<sp/>b<sp/>*<sp/>0.114;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>*U<sp/>=<sp/>-0.14713*r<sp/>-<sp/>0.289*g<sp/>+<sp/>0.436*b;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>*V<sp/>=<sp/><sp/>0.615*r<sp/>-<sp/>0.515*g<sp/>-<sp/>0.100*b;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;<sp/>Valores<sp/>Y:<sp/>%.2f<sp/>U:<sp/>%.2f<sp/>V:<sp/>%.2f<sp/>----<sp/>R:<sp/>%.2f<sp/>G:<sp/>%.2f<sp/>B:<sp/>%.2f\n&quot;,*Y,*U,*V,r,g,b);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="rgb2yuv_8c_1ae80eb39e10fb510ac3d5be1c81671f0d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2yuv_8c_1ae80eb39e10fb510ac3d5be1c81671f0d" kindref="member">yuv2rgb</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" kindref="member">Y</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" kindref="member">U</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" kindref="member">V</ref>,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*r,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*g,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*b)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>From<sp/>the<sp/>wikipedia:<sp/>yuv<sp/>color<sp/>space*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>*r<sp/>=<sp/>Y<sp/>+<sp/>1.13983<sp/>*<sp/><ref refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" kindref="member">V</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>*g<sp/>=<sp/>Y<sp/>-<sp/>0.39465<sp/>*<sp/>U<sp/>-<sp/>0.58060<sp/>*<sp/><ref refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" kindref="member">V</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>*b<sp/>=<sp/>Y<sp/>+<sp/>2.03211<sp/>*<sp/><ref refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" kindref="member">U</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*r&gt;1.0){*r<sp/>=<sp/>1.0;}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*g&gt;1.0){*g<sp/>=<sp/>1.0;}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*b&gt;1.0){*b<sp/>=<sp/>1.0;}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*r&lt;0.0){*r<sp/>=<sp/>0.0;}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*g&lt;0.0){*g<sp/>=<sp/>0.0;}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*b&lt;0.0){*b<sp/>=<sp/>0.0;}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Return<sp/>r,g,b<sp/>in<sp/>[0,1]<sp/>range*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="rgb2yuv_8c_1a27570a02b90c39f6de2579bb79e5462f" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2yuv_8c_1a27570a02b90c39f6de2579bb79e5462f" kindref="member">print_status_HSV</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>status)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//const<sp/>int<sp/>BITS_PACK<sp/>=<sp/>4;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>t<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j=<sp/>1<sp/>&lt;&lt;<sp/>(t<sp/>-<sp/>1);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i=<sp/>t;<sp/>i<sp/>&gt;<sp/>0;<sp/>--i)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%d&quot;</highlight><highlight class="normal">,<sp/>(status<sp/>&amp;<sp/>j)<sp/>!=<sp/>0);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>j&gt;&gt;=<sp/>1;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>((i<sp/>-<sp/>1)<sp/>%<sp/>BITS_PACK<sp/>==<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i==3)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;<sp/>(%lu)\n&quot;</highlight><highlight class="normal">,status);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="rgb2yuv_8c_1aae0cea8e9df662fcb538c679a4049045" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2yuv_8c_1aae0cea8e9df662fcb538c679a4049045" kindref="member">RGB2YUV_destroyTable</ref><sp/>()</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r,g,b;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos_r,<sp/>pos_g,<sp/>pos_b;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Destroy<sp/>Table<sp/>LUT_RGB2YUV<sp/>....<sp/>OK\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(b=0;b&lt;=<ref refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" kindref="member">MAXIMUN_RGB</ref>;b=b+count)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(g=0;g&lt;=<ref refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" kindref="member">MAXIMUN_RGB</ref>;g=g+count)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(r=0;r&lt;=<ref refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" kindref="member">MAXIMUN_RGB</ref>;r=r+count)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r==0)<sp/>pos_r=0;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>pos_r<sp/>=<sp/>r/4;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g==0)<sp/>pos_g=0;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>pos_g<sp/>=<sp/>g/4;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b==0)<sp/>pos_b=0;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>pos_b<sp/>=<sp/>b/4;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(LUT_RGB2YUV[pos_r][pos_g][pos_b])</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>free(LUT_RGB2YUV[pos_r][pos_g][pos_b]);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;<ref refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="rgb2yuv_8c_1aaae0c312320c8f59fb2b072d84dcbc38" kindref="member">isInitTableYUV</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136" refid="rgb2yuv_8c_1a076be3570ea0ec2aba5811ee0c609361" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2yuv_8c_1a076be3570ea0ec2aba5811ee0c609361" kindref="member">RGB2YUV_init</ref>()</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Checking<sp/>exist<sp/>one<sp/>instance<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;<ref refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="rgb2yuv_8c_1aaae0c312320c8f59fb2b072d84dcbc38" kindref="member">isInitTableYUV</ref>==1)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Init<sp/>%s<sp/>v%s<sp/>...<sp/>\n&quot;</highlight><highlight class="normal">,<ref refid="colorspaces_8h_1a47f2e62c0dbebc787052c165afcada0e" kindref="member">NAME</ref>,<ref refid="colorspaces_8h_1aee272dd28e234398015e21016d0693a2" kindref="member">COLORSPACES_VERSION</ref>);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;<ref refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="rgb2yuv_8c_1aaae0c312320c8f59fb2b072d84dcbc38" kindref="member">isInitTableYUV</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="rgb2yuv_8c_1ab2b3287a0417bedece40b4bcc665265c" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2yuv_8c_1ab2b3287a0417bedece40b4bcc665265c" kindref="member">RGB2YUV_createTable</ref>()</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r,g,b;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count,<sp/>index;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pos_r,<sp/>pos_g,<sp/>pos_b;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_y_u_v" kindref="compound">YUV</ref>*<sp/>newYUV;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Checking<sp/>exist<sp/>one<sp/>instance<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;<ref refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="rgb2yuv_8c_1aaae0c312320c8f59fb2b072d84dcbc38" kindref="member">isInitTableYUV</ref>==1)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;YUV<sp/>table<sp/>already<sp/>exists\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>count<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>index<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(b=0;b&lt;=<ref refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" kindref="member">MAXIMUN_RGB</ref>;b=b+count)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(g=0;g&lt;=<ref refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" kindref="member">MAXIMUN_RGB</ref>;g=g+count)</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(r=0;r&lt;=<ref refid="rgb2yuv_8c_1af73ed8a1dc439668c497a41a38b5bddf" kindref="member">MAXIMUN_RGB</ref>;r=r+count)</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newYUV<sp/>=<sp/>(</highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_y_u_v" kindref="compound">YUV</ref>*)<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_y_u_v" kindref="compound">YUV</ref>));</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!newYUV)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Allocated<sp/>memory<sp/>error\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rgb2yuv_8c_1a3a13eec5805909b2257e309f187a8d67" kindref="member">rgb2yuv_wiki</ref>(r,g,b,&amp;(newYUV-&gt;<ref refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" kindref="member">Y</ref>),&amp;(newYUV-&gt;<ref refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" kindref="member">U</ref>),&amp;(newYUV-&gt;<ref refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" kindref="member">V</ref>));</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(r==0)<sp/>pos_r=0;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>pos_r<sp/>=<sp/>r/4;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(g==0)<sp/>pos_g=0;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>pos_g<sp/>=<sp/>g/4;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(b==0)<sp/>pos_b=0;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>pos_b<sp/>=<sp/>b/4;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//printf(&quot;[%d,%d,%d]<sp/>RGB=%d,%d,%d<sp/>-<sp/>%.1f,%.1f,%.1f<sp/>\n&quot;,pos_r,pos_g,pos_b,r,g,b,newYUV-&gt;H,newYUV-&gt;S,newYUV-&gt;I);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LUT_RGB2YUV[pos_r][pos_g][pos_b]<sp/>=<sp/>newYUV;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index++;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;Table<sp/>&apos;LUT_RGB2YUV&apos;<sp/>create<sp/>with<sp/>6<sp/>bits<sp/>(%d<sp/>values)\n&quot;</highlight><highlight class="normal">,index);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_lock(&amp;<ref refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="rgb2yuv_8c_1aaae0c312320c8f59fb2b072d84dcbc38" kindref="member">isInitTableYUV</ref>=1;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>pthread_mutex_unlock(&amp;<ref refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">mutex</ref>);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209" refid="rgb2yuv_8c_1ad94bf56e9292976bbfdd28cb949a94fd" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2yuv_8c_1ad94bf56e9292976bbfdd28cb949a94fd" kindref="member">RGB2YUV_printYUV</ref><sp/>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/><ref refid="struct_y_u_v" kindref="compound">YUV</ref>*<sp/>yuv)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;YUV:<sp/>%.1f,%.1f,%.1f\n&quot;</highlight><highlight class="normal">,yuv-&gt;<ref refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" kindref="member">Y</ref>,yuv-&gt;<ref refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" kindref="member">U</ref>,yuv-&gt;<ref refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" kindref="member">V</ref>);</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215" refid="rgb2yuv_8c_1a1c5da998be57be65228dbff14e0a9375" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="rgb2yuv_8c_1a1c5da998be57be65228dbff14e0a9375" kindref="member">RGB2YUV_test</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r,g,b;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_y_u_v" kindref="compound">YUV</ref>*<sp/>myYUV=NULL;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_y_u_v" kindref="compound">YUV</ref><sp/>myYUV2;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>line[16];</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;\nIntroduce<sp/>R,G,B:<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fgets(line,16,stdin);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>sscanf(line,</highlight><highlight class="stringliteral">&quot;%d,%d,%d&quot;</highlight><highlight class="normal">,&amp;r,&amp;g,&amp;b)!=<sp/>3)</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>myYUV<sp/>=<sp/>RGB2YUV_getYUV(r,g,b);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(myYUV==NULL)</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf<sp/>(</highlight><highlight class="stringliteral">&quot;Error<sp/>in<sp/>myYUV=NULL\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;[Table]<sp/>RGB:<sp/>%d,%d,%d<sp/>--<sp/>YUV:<sp/>%.1f,%.1f,%.1f\n&quot;</highlight><highlight class="normal">,r,g,b,myYUV-&gt;<ref refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" kindref="member">Y</ref>,myYUV-&gt;<ref refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" kindref="member">U</ref>,myYUV-&gt;<ref refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" kindref="member">V</ref>);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="rgb2yuv_8c_1a3a13eec5805909b2257e309f187a8d67" kindref="member">rgb2yuv_wiki</ref>(r,g,b,&amp;myYUV2.<ref refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" kindref="member">Y</ref>,&amp;myYUV2.<ref refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" kindref="member">U</ref>,&amp;myYUV2.<ref refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" kindref="member">V</ref>);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;[Algor]<sp/>RGB:<sp/>%d,%d,%d<sp/>--<sp/>YUV:<sp/>%.1f,%.1f,%.1f\n&quot;</highlight><highlight class="normal">,r,g,b,myYUV2.<ref refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" kindref="member">Y</ref>,myYUV2.<ref refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" kindref="member">U</ref>,myYUV2.<ref refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" kindref="member">V</ref>);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c"/>
+  </compounddef>
+</doxygen>

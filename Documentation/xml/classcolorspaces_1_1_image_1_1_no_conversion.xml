@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classcolorspaces_1_1_image_1_1_no_conversion" kind="class" language="C++" prot="public">
+    <compoundname>colorspaces::Image::NoConversion</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">exception</basecompoundref>
+    <includes refid="imagecv_8h" local="no">imagecv.h</includes>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcolorspaces_1_1_image_1_1_no_conversion_1a0dd3b31d581e66628ea0131926e6db78" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>const char *</type>
+        <definition>virtual const char* colorspaces::Image::NoConversion::what</definition>
+        <argsstring>() const</argsstring>
+        <name>what</name>
+        <exceptions> throw ()</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="52" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" bodystart="52" bodyend="55"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="250">
+        <label>colorspaces::Image::NoConversion</label>
+        <link refid="classcolorspaces_1_1_image_1_1_no_conversion"/>
+        <childnode refid="251" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="251">
+        <label>std::exception</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="252">
+        <label>colorspaces::Image::NoConversion</label>
+        <link refid="classcolorspaces_1_1_image_1_1_no_conversion"/>
+        <childnode refid="253" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="253">
+        <label>std::exception</label>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="51" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" bodystart="51" bodyend="56"/>
+    <listofallmembers>
+      <member refid="classcolorspaces_1_1_image_1_1_no_conversion_1a0dd3b31d581e66628ea0131926e6db78" prot="private" virt="virtual"><scope>colorspaces::Image::NoConversion</scope><name>what</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,292 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_caffe_inferencer" kind="class" language="C++" prot="public">
+    <compoundname>CaffeInferencer</compoundname>
+    <basecompoundref refid="class_framework_inferencer" prot="public" virt="non-virtual">FrameworkInferencer</basecompoundref>
+    <includes refid="_caffe_inferencer_8h" local="no">CaffeInferencer.h</includes>
+    <innerclass refid="struct_caffe_inferencer_1_1detection" prot="private">CaffeInferencer::detection</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_caffe_inferencer_1a54be0fda8c0a9ae84e2181beabd45271" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string CaffeInferencer::netConfig</definition>
+        <argsstring></argsstring>
+        <name>netConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_caffe_inferencer_1a6e2b9fa8a0410ba3bf325369f40767e7" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string CaffeInferencer::netWeights</definition>
+        <argsstring></argsstring>
+        <name>netWeights</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_caffe_inferencer_1a3ef51c2cd7552a00282690e88f9d37d7" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; detection &gt;</type>
+        <definition>std::vector&lt;detection&gt; CaffeInferencer::detections</definition>
+        <argsstring></argsstring>
+        <name>detections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="31" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_caffe_inferencer_1a9e0b5f196b7d01b4945a4eb09bf5a0b1" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; cv::String &gt;</type>
+        <definition>std::vector&lt;cv::String&gt; CaffeInferencer::names</definition>
+        <argsstring></argsstring>
+        <name>names</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="32" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_caffe_inferencer_1ab2b6f789f54608b8f0ac18d45027cddf" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double CaffeInferencer::scaling_factor</definition>
+        <argsstring></argsstring>
+        <name>scaling_factor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="33" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_caffe_inferencer_1ad723d261bf1a17aa0e135d6539a2d3cc" prot="private" static="no" mutable="no">
+        <type>cv::Scalar</type>
+        <definition>cv::Scalar CaffeInferencer::mean_sub</definition>
+        <argsstring></argsstring>
+        <name>mean_sub</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="34" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_caffe_inferencer_1a02f014efdd3c475d8364c242d59db27c" prot="private" static="no" mutable="no">
+        <type>cv::dnn::Net</type>
+        <definition>cv::dnn::Net CaffeInferencer::net</definition>
+        <argsstring></argsstring>
+        <name>net</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="35" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_caffe_inferencer_1a9bd2b4e14eaba74e2edec4181c0e2a97" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CaffeInferencer::inpWidth</definition>
+        <argsstring></argsstring>
+        <name>inpWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="36" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_caffe_inferencer_1aced22de522fe6e1c7b589e94347fafb0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int CaffeInferencer::inpHeight</definition>
+        <argsstring></argsstring>
+        <name>inpHeight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="37" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_caffe_inferencer_1a21b72c799bd103b23fdb58fc120b0ea1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool CaffeInferencer::swapRB</definition>
+        <argsstring></argsstring>
+        <name>swapRB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="38" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_caffe_inferencer_1a061bf73e8736135e292154d9fa50d13d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>CaffeInferencer::CaffeInferencer</definition>
+        <argsstring>(const std::string &amp;netConfig, const std::string &amp;netWeights, const std::string &amp;classNamesFile, std::map&lt; std::string, std::string &gt; *inferencerParamsMap)</argsstring>
+        <name>CaffeInferencer</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>netConfig</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>netWeights</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classNamesFile</declname>
+        </param>
+        <param>
+          <type>std::map&lt; std::string, std::string &gt; *</type>
+          <declname>inferencerParamsMap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.cpp" bodystart="5" bodyend="27"/>
+        <references refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" compoundref="_framework_inferencer_8h" startline="24">FrameworkInferencer::classNamesFile</references>
+      </memberdef>
+      <memberdef kind="function" id="class_caffe_inferencer_1a898f6d0e7106ac663a6c26ecdf799502" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="struct_sample" kindref="compound">Sample</ref></type>
+        <definition>Sample CaffeInferencer::detectImp</definition>
+        <argsstring>(const cv::Mat &amp;image, double confidence_threshold)</argsstring>
+        <name>detectImp</name>
+        <reimplements refid="class_framework_inferencer_1a8fd7e708c8be4471bc2b37a4193a9045">detectImp</reimplements>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>confidence_threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.cpp" bodystart="29" bodyend="76"/>
+        <references refid="class_caffe_inferencer_1a92db0b7b61f5f7bbfcee3c1905022082" compoundref="_caffe_inferencer_8cpp" startline="199" endline="211">getOutputsNames</references>
+        <references refid="class_caffe_inferencer_1a3eb860abbe252b50d6f17104bf751b62" compoundref="_caffe_inferencer_8cpp" startline="78" endline="197">postprocess</references>
+        <references refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" compoundref="_framework_inferencer_8h" startline="24">FrameworkInferencer::classNamesFile</references>
+        <references refid="struct_class_type_generic_1abb29534e4b1c9e2b33c57df5e56ef2fb" compoundref="_class_type_generic_8cpp" startline="26" endline="28">ClassTypeGeneric::setId</references>
+        <references refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" compoundref="_class_type_8cpp" startline="44" endline="46">ClassType::getClassString</references>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">Sample::setColorImage</references>
+        <references refid="struct_sample_1a9654dcf85e7a0b19b7b462cd7e6e1e6a" compoundref="_sample_8cpp" startline="84" endline="86">Sample::setRectRegions</references>
+      </memberdef>
+      <memberdef kind="function" id="class_caffe_inferencer_1a92db0b7b61f5f7bbfcee3c1905022082" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; cv::String &gt;</type>
+        <definition>std::vector&lt; cv::String &gt; CaffeInferencer::getOutputsNames</definition>
+        <argsstring>()</argsstring>
+        <name>getOutputsNames</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.cpp" bodystart="199" bodyend="211"/>
+        <referencedby refid="class_caffe_inferencer_1a898f6d0e7106ac663a6c26ecdf799502" compoundref="_caffe_inferencer_8cpp" startline="29" endline="76">detectImp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_caffe_inferencer_1a3eb860abbe252b50d6f17104bf751b62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CaffeInferencer::postprocess</definition>
+        <argsstring>(const std::vector&lt; cv::Mat &gt; &amp;outs, cv::Mat &amp;image, double confidence_threshold)</argsstring>
+        <name>postprocess</name>
+        <param>
+          <type>const std::vector&lt; cv::Mat &gt; &amp;</type>
+          <declname>outs</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>confidence_threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.cpp" bodystart="78" bodyend="197"/>
+        <referencedby refid="class_caffe_inferencer_1a898f6d0e7106ac663a6c26ecdf799502" compoundref="_caffe_inferencer_8cpp" startline="29" endline="76">detectImp</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="9">
+        <label>FrameworkInferencer</label>
+        <link refid="class_framework_inferencer"/>
+      </node>
+      <node id="8">
+        <label>CaffeInferencer</label>
+        <link refid="class_caffe_inferencer"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="11">
+        <label>FrameworkInferencer</label>
+        <link refid="class_framework_inferencer"/>
+      </node>
+      <node id="10">
+        <label>CaffeInferencer</label>
+        <link refid="class_caffe_inferencer"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h" bodystart="14" bodyend="40"/>
+    <listofallmembers>
+      <member refid="class_caffe_inferencer_1a061bf73e8736135e292154d9fa50d13d" prot="public" virt="non-virtual"><scope>CaffeInferencer</scope><name>CaffeInferencer</name></member>
+      <member refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" prot="protected" virt="non-virtual"><scope>CaffeInferencer</scope><name>classNamesFile</name></member>
+      <member refid="class_framework_inferencer_1a4c2b3b0ec03df5f97e7b32235422dc60" prot="public" virt="non-virtual"><scope>CaffeInferencer</scope><name>detect</name></member>
+      <member refid="class_caffe_inferencer_1a898f6d0e7106ac663a6c26ecdf799502" prot="public" virt="virtual"><scope>CaffeInferencer</scope><name>detectImp</name></member>
+      <member refid="class_caffe_inferencer_1a3ef51c2cd7552a00282690e88f9d37d7" prot="private" virt="non-virtual"><scope>CaffeInferencer</scope><name>detections</name></member>
+      <member refid="class_framework_inferencer_1adda91b1e8b6238e4cd3cc18e84675fea" prot="public" virt="non-virtual"><scope>CaffeInferencer</scope><name>FrameworkInferencer</name></member>
+      <member refid="class_framework_inferencer_1a51291e562ddc5a4b86c0c413439d59a5" prot="public" virt="non-virtual"><scope>CaffeInferencer</scope><name>getMeanDurationTime</name></member>
+      <member refid="class_caffe_inferencer_1a92db0b7b61f5f7bbfcee3c1905022082" prot="public" virt="non-virtual"><scope>CaffeInferencer</scope><name>getOutputsNames</name></member>
+      <member refid="class_caffe_inferencer_1aced22de522fe6e1c7b589e94347fafb0" prot="private" virt="non-virtual"><scope>CaffeInferencer</scope><name>inpHeight</name></member>
+      <member refid="class_caffe_inferencer_1a9bd2b4e14eaba74e2edec4181c0e2a97" prot="private" virt="non-virtual"><scope>CaffeInferencer</scope><name>inpWidth</name></member>
+      <member refid="class_caffe_inferencer_1ad723d261bf1a17aa0e135d6539a2d3cc" prot="private" virt="non-virtual"><scope>CaffeInferencer</scope><name>mean_sub</name></member>
+      <member refid="class_caffe_inferencer_1a9e0b5f196b7d01b4945a4eb09bf5a0b1" prot="private" virt="non-virtual"><scope>CaffeInferencer</scope><name>names</name></member>
+      <member refid="class_caffe_inferencer_1a02f014efdd3c475d8364c242d59db27c" prot="private" virt="non-virtual"><scope>CaffeInferencer</scope><name>net</name></member>
+      <member refid="class_caffe_inferencer_1a54be0fda8c0a9ae84e2181beabd45271" prot="private" virt="non-virtual"><scope>CaffeInferencer</scope><name>netConfig</name></member>
+      <member refid="class_caffe_inferencer_1a6e2b9fa8a0410ba3bf325369f40767e7" prot="private" virt="non-virtual"><scope>CaffeInferencer</scope><name>netWeights</name></member>
+      <member refid="class_caffe_inferencer_1a3eb860abbe252b50d6f17104bf751b62" prot="public" virt="non-virtual"><scope>CaffeInferencer</scope><name>postprocess</name></member>
+      <member refid="class_caffe_inferencer_1ab2b6f789f54608b8f0ac18d45027cddf" prot="private" virt="non-virtual"><scope>CaffeInferencer</scope><name>scaling_factor</name></member>
+      <member refid="class_caffe_inferencer_1a21b72c799bd103b23fdb58fc120b0ea1" prot="private" virt="non-virtual"><scope>CaffeInferencer</scope><name>swapRB</name></member>
+      <member refid="class_framework_inferencer_1a0a0ad89131a1f2a2377a3003b0c1d319" prot="public" virt="non-virtual"><scope>CaffeInferencer</scope><name>~ FrameworkInferencer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

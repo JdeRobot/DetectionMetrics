@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_r_l_e" kind="struct" language="C++" prot="public">
+    <compoundname>RLE</compoundname>
+    <includes refid="mask_api_8h" local="no">maskApi.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_r_l_e_1a0729872eb55bbc6269cc535d91b97db1" prot="public" static="no" mutable="no">
+        <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+        <definition>siz RLE::h</definition>
+        <argsstring></argsstring>
+        <name>h</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="6" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" bodystart="6" bodyend="-1"/>
+        <referencedby refid="mask_api_8h_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</referencedby>
+        <referencedby refid="mask_api_8h_1a74a6558465a0ea2511156cbf9b24b685" compoundref="mask_api_8cpp" startline="45" endline="66">rleMerge</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1aabf57b5d5eb0d1b6e89f28d5c0d97940" compoundref="sample_8py" startline="52" endline="58">sampleGenerator.sample.sample.getImageWithData</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab97e323c321d16a707d6dac1f9e06723" compoundref="sample_8py" startline="59" endline="68">sampleGenerator.sample.sample.applyScale</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a93fdd9624584a5452887a7efe5003849" compoundref="sample_8py" startline="69" endline="96">sampleGenerator.sample.sample.applyWarp</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a8bc9b0512da0a0056ecc6759ebcd8e97" compoundref="sample_8py" startline="121" endline="132">sampleGenerator.sample.sample.getResultStr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" prot="public" static="no" mutable="no">
+        <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+        <definition>siz RLE::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="6" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" bodystart="6" bodyend="-1"/>
+        <referencedby refid="mask_api_8h_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</referencedby>
+        <referencedby refid="mask_api_8h_1a74a6558465a0ea2511156cbf9b24b685" compoundref="mask_api_8cpp" startline="45" endline="66">rleMerge</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1aabf57b5d5eb0d1b6e89f28d5c0d97940" compoundref="sample_8py" startline="52" endline="58">sampleGenerator.sample.sample.getImageWithData</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab97e323c321d16a707d6dac1f9e06723" compoundref="sample_8py" startline="59" endline="68">sampleGenerator.sample.sample.applyScale</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a93fdd9624584a5452887a7efe5003849" compoundref="sample_8py" startline="69" endline="96">sampleGenerator.sample.sample.applyWarp</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a8bc9b0512da0a0056ecc6759ebcd8e97" compoundref="sample_8py" startline="121" endline="132">sampleGenerator.sample.sample.getResultStr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" prot="public" static="no" mutable="no">
+        <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+        <definition>siz RLE::m</definition>
+        <argsstring></argsstring>
+        <name>m</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="6" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" bodystart="6" bodyend="-1"/>
+        <referencedby refid="mask_api_8h_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</referencedby>
+        <referencedby refid="mask_api_8h_1a0a3e06e94c895fc67fb3ed2e6b765b37" compoundref="mask_api_8cpp" startline="39" endline="43">rleDecode</referencedby>
+        <referencedby refid="mask_api_8h_1a74a6558465a0ea2511156cbf9b24b685" compoundref="mask_api_8cpp" startline="45" endline="66">rleMerge</referencedby>
+        <referencedby refid="mask_api_8h_1a591e0537d851f6c473e1ce1759d804ab" compoundref="mask_api_8cpp" startline="68" endline="71">rleArea</referencedby>
+        <referencedby refid="mask_api_8h_1ac27f86dce9ee2ec00d2a7597ff903725" compoundref="mask_api_8cpp" startline="73" endline="92">rleIou</referencedby>
+        <referencedby refid="mask_api_8h_1a22db5078587ae7651fd590a90d249297" compoundref="mask_api_8cpp" startline="129" endline="143">rleToBbox</referencedby>
+        <referencedby refid="mask_api_8h_1a935356b85c9e3ff7faf6c0533fb94733" compoundref="mask_api_8cpp" startline="200" endline="212">rleToString</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" prot="public" static="no" mutable="no">
+        <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref> *</type>
+        <definition>uint* RLE::cnts</definition>
+        <argsstring></argsstring>
+        <name>cnts</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="6" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" bodystart="6" bodyend="-1"/>
+        <referencedby refid="mask_api_8h_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</referencedby>
+        <referencedby refid="mask_api_8h_1af63527a8e2b39cbc09d0337a2fe2e2d1" compoundref="mask_api_8cpp" startline="14" endline="16">rleFree</referencedby>
+        <referencedby refid="mask_api_8h_1a0a3e06e94c895fc67fb3ed2e6b765b37" compoundref="mask_api_8cpp" startline="39" endline="43">rleDecode</referencedby>
+        <referencedby refid="mask_api_8h_1a74a6558465a0ea2511156cbf9b24b685" compoundref="mask_api_8cpp" startline="45" endline="66">rleMerge</referencedby>
+        <referencedby refid="mask_api_8h_1ac27f86dce9ee2ec00d2a7597ff903725" compoundref="mask_api_8cpp" startline="73" endline="92">rleIou</referencedby>
+        <referencedby refid="mask_api_8h_1a22db5078587ae7651fd590a90d249297" compoundref="mask_api_8cpp" startline="129" endline="143">rleToBbox</referencedby>
+        <referencedby refid="mask_api_8h_1a935356b85c9e3ff7faf6c0533fb94733" compoundref="mask_api_8cpp" startline="200" endline="212">rleToString</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="6" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" bodystart="6" bodyend="6"/>
+    <listofallmembers>
+      <member refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" prot="public" virt="non-virtual"><scope>RLE</scope><name>cnts</name></member>
+      <member refid="struct_r_l_e_1a0729872eb55bbc6269cc535d91b97db1" prot="public" virt="non-virtual"><scope>RLE</scope><name>h</name></member>
+      <member refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" prot="public" virt="non-virtual"><scope>RLE</scope><name>m</name></member>
+      <member refid="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" prot="public" virt="non-virtual"><scope>RLE</scope><name>w</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

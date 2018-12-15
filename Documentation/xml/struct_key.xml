@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_key" kind="struct" language="C++" prot="public">
+    <compoundname>Key</compoundname>
+    <includes refid="_key_8h" local="no">Key.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="struct_key_1addaa0bf2f66a7aa14e88a4334852a908" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Key::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="29" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_key_1abe7eaef1349976f6a92dbc640dd84a36" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; Key::values</definition>
+        <argsstring></argsstring>
+        <name>values</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="30" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_key_1a7ed0f53a3e7466599e0daca187e92907" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Key::valid</definition>
+        <argsstring></argsstring>
+        <name>valid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="31" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_key_1a22e51dbebb18c1d33ee8bba93a1b3b4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Key::Key</definition>
+        <argsstring>()</argsstring>
+        <name>Key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.cpp" bodystart="52" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_key_1abc4ba925a8a8d807ae9671a058e4fd9d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Key::Key</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>Key</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.cpp" bodystart="9" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_key_1a23777b784264c6498efaa593bc29f48a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Key::isVector</definition>
+        <argsstring>()</argsstring>
+        <name>isVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.cpp" bodystart="14" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_key_1a8818b63b35d22713f32dc52a17c9b9a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Key::addValue</definition>
+        <argsstring>(const std::string &amp;value)</argsstring>
+        <name>addValue</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.cpp" bodystart="18" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_key_1aefe1fbf42b37b3559561945a78c7511c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Key::getValue</definition>
+        <argsstring>()</argsstring>
+        <name>getValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.cpp" bodystart="22" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_key_1a7a1b140dc635e6227516e8abdecba16c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Key::getKey</definition>
+        <argsstring>()</argsstring>
+        <name>getKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.cpp" bodystart="32" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_key_1a2be25595a7cc739ff609b439fc206fde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Key::getValue</definition>
+        <argsstring>(int id)</argsstring>
+        <name>getValue</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.cpp" bodystart="36" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_key_1a74d0f7686b859dabde58e729cf9f7b41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Key::getValueOrLast</definition>
+        <argsstring>(int id)</argsstring>
+        <name>getValueOrLast</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.cpp" bodystart="43" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_key_1ac97e2bba994c9571e32083e1fb91c4f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; Key::getValues</definition>
+        <argsstring>()</argsstring>
+        <name>getValues</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.cpp" bodystart="48" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_key_1a0633f6b820d00b10167344ca8796c26d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Key::getValueAsInt</definition>
+        <argsstring>()</argsstring>
+        <name>getValueAsInt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.cpp" bodystart="60" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_key_1a2164f5d7ff7dc435477fdab178f5557a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Key::getNValues</definition>
+        <argsstring>()</argsstring>
+        <name>getNValues</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.cpp" bodystart="56" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" line="11" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Key.h" bodystart="11" bodyend="32"/>
+    <listofallmembers>
+      <member refid="struct_key_1a8818b63b35d22713f32dc52a17c9b9a4" prot="public" virt="non-virtual"><scope>Key</scope><name>addValue</name></member>
+      <member refid="struct_key_1a7a1b140dc635e6227516e8abdecba16c" prot="public" virt="non-virtual"><scope>Key</scope><name>getKey</name></member>
+      <member refid="struct_key_1a2164f5d7ff7dc435477fdab178f5557a" prot="public" virt="non-virtual"><scope>Key</scope><name>getNValues</name></member>
+      <member refid="struct_key_1aefe1fbf42b37b3559561945a78c7511c" prot="public" virt="non-virtual"><scope>Key</scope><name>getValue</name></member>
+      <member refid="struct_key_1a2be25595a7cc739ff609b439fc206fde" prot="public" virt="non-virtual"><scope>Key</scope><name>getValue</name></member>
+      <member refid="struct_key_1a0633f6b820d00b10167344ca8796c26d" prot="public" virt="non-virtual"><scope>Key</scope><name>getValueAsInt</name></member>
+      <member refid="struct_key_1a74d0f7686b859dabde58e729cf9f7b41" prot="public" virt="non-virtual"><scope>Key</scope><name>getValueOrLast</name></member>
+      <member refid="struct_key_1ac97e2bba994c9571e32083e1fb91c4f5" prot="public" virt="non-virtual"><scope>Key</scope><name>getValues</name></member>
+      <member refid="struct_key_1a23777b784264c6498efaa593bc29f48a" prot="public" virt="non-virtual"><scope>Key</scope><name>isVector</name></member>
+      <member refid="struct_key_1a22e51dbebb18c1d33ee8bba93a1b3b4d" prot="public" virt="non-virtual"><scope>Key</scope><name>Key</name></member>
+      <member refid="struct_key_1abc4ba925a8a8d807ae9671a058e4fd9d" prot="public" virt="non-virtual"><scope>Key</scope><name>Key</name></member>
+      <member refid="struct_key_1addaa0bf2f66a7aa14e88a4334852a908" prot="private" virt="non-virtual"><scope>Key</scope><name>key</name></member>
+      <member refid="struct_key_1a7ed0f53a3e7466599e0daca187e92907" prot="private" virt="non-virtual"><scope>Key</scope><name>valid</name></member>
+      <member refid="struct_key_1abe7eaef1349976f6a92dbc640dd84a36" prot="private" virt="non-virtual"><scope>Key</scope><name>values</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

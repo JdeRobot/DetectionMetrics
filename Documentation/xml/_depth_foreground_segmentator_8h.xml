@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_depth_foreground_segmentator_8h" kind="file" language="C++">
+    <compoundname>DepthForegroundSegmentator.h</compoundname>
+    <includes local="no">opencv2/opencv.hpp</includes>
+    <includes local="no">boost/shared_ptr.hpp</includes>
+    <includes refid="_depth_filter_8h" local="no">DepthFilter.h</includes>
+    <includes local="no">opencv2/core/version.hpp</includes>
+    <includedby refid="_depth_foreground_segmentator_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.cpp</includedby>
+    <includedby refid="generator_8cpp" local="yes">DeepLearningSuite/SampleGenerationApp/generator.cpp</includedby>
+    <incdepgraph>
+      <node id="3968">
+        <label>list</label>
+      </node>
+      <node id="3966">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="3964">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h</label>
+        <link refid="_depth_foreground_segmentator_8h"/>
+        <childnode refid="3965" relation="include">
+        </childnode>
+        <childnode refid="3966" relation="include">
+        </childnode>
+        <childnode refid="3967" relation="include">
+        </childnode>
+        <childnode refid="3971" relation="include">
+        </childnode>
+      </node>
+      <node id="3965">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="3967">
+        <label>DepthFilter.h</label>
+        <link refid="_depth_filter_8h"/>
+        <childnode refid="3965" relation="include">
+        </childnode>
+        <childnode refid="3968" relation="include">
+        </childnode>
+        <childnode refid="3969" relation="include">
+        </childnode>
+        <childnode refid="3970" relation="include">
+        </childnode>
+      </node>
+      <node id="3970">
+        <label>iostream</label>
+      </node>
+      <node id="3969">
+        <label>mutex</label>
+      </node>
+      <node id="3971">
+        <label>opencv2/core/version.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3973">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.cpp</label>
+        <link refid="_depth_foreground_segmentator_8cpp"/>
+      </node>
+      <node id="3972">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h</label>
+        <link refid="_depth_foreground_segmentator_8h"/>
+        <childnode refid="3973" relation="include">
+        </childnode>
+        <childnode refid="3974" relation="include">
+        </childnode>
+      </node>
+      <node id="3974">
+        <label>DeepLearningSuite/SampleGenerationApp/generator.cpp</label>
+        <link refid="generator_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_depth_foreground_segmentator" prot="public">DepthForegroundSegmentator</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>17/11/16.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_DEPTHFOREGROUNDSEGMENTADOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_DEPTHFOREGROUNDSEGMENTADOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/opencv.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/shared_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_depth_filter_8h" kindref="compound">DepthFilter.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/core/version.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="class_depth_foreground_segmentator" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_depth_foreground_segmentator" kindref="compound">DepthForegroundSegmentator</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_depth_foreground_segmentator_1a0c7c752d0bdac12a3fe9bfdda5858f13" kindref="member">DepthForegroundSegmentator</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>filterActive=</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;cv::Point&gt;&gt;<ref refid="class_depth_foreground_segmentator_1a7ad8701ffcce41cf71694f02bbb5f40d" kindref="member">process</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>image);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/><ref refid="class_depth_foreground_segmentator_1ade5b418f591506a2e10bd05151d828c2" kindref="member">process2</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>image);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/><sp/>CV_MAJOR_VERSION<sp/>==<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::BackgroundSubtractorMOG2*<sp/>bg;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Ptr&lt;cv::BackgroundSubtractor&gt;<sp/>bg;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>fore;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>filterActive;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::shared_ptr&lt;jderobot::DepthFilter&gt;<sp/>filter;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>defaultLearningRate;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>minBlobArea;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_DEPTHFOREGROUNDSEGMENTADOR_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h"/>
+  </compounddef>
+</doxygen>

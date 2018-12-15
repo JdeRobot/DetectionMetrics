@@ -1,0 +1,162 @@
+.TH "keras_utils.keras_ssd_loss.SSDLoss" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+keras_utils.keras_ssd_loss.SSDLoss
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, \fBneg_pos_ratio\fP=3, \fBn_neg_min\fP=0, \fBalpha\fP=1\&.0)"
+.br
+.ti -1c
+.RI "def \fBsmooth_L1_loss\fP (self, y_true, y_pred)"
+.br
+.ti -1c
+.RI "def \fBlog_loss\fP (self, y_true, y_pred)"
+.br
+.ti -1c
+.RI "def \fBcompute_loss\fP (self, y_true, y_pred)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBneg_pos_ratio\fP"
+.br
+.ti -1c
+.RI "\fBn_neg_min\fP"
+.br
+.ti -1c
+.RI "\fBalpha\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The SSD loss, see https://arxiv.org/abs/1512.02325.
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def keras_utils\&.keras_ssd_loss\&.SSDLoss\&.__init__ ( self,  neg_pos_ratio = \fC3\fP,  n_neg_min = \fC0\fP,  alpha = \fC1\&.0\fP)"
+
+.PP
+.nf
+Arguments:
+    neg_pos_ratio (int, optional): The maximum ratio of negative (i.e. background)
+to positive ground truth boxes to include in the loss computation.
+There are no actual background ground truth boxes of course, but `y_true`
+contains anchor boxes labeled with the background class. Since
+the number of background boxes in `y_true` will usually exceed
+the number of positive boxes by far, it is necessary to balance
+their influence on the loss. Defaults to 3 following the paper.
+    n_neg_min (int, optional): The minimum number of negative ground truth boxes to
+enter the loss computation *per batch*. This argument can be used to make
+sure that the model learns from a minimum number of negatives in batches
+in which there are very few, or even none at all, positive ground truth
+boxes. It defaults to 0 and if used, it should be set to a value that
+stands in reasonable proportion to the batch size used for training.
+    alpha (float, optional): A factor to weight the localization loss in the
+computation of the total loss. Defaults to 1.0 following the paper.
+
+.fi
+.PP
+ 
+.SH "Member Function Documentation"
+.PP 
+.SS "def keras_utils\&.keras_ssd_loss\&.SSDLoss\&.compute_loss ( self,  y_true,  y_pred)"
+
+.PP
+.nf
+Compute the loss of the SSD model prediction against the ground truth.
+
+Arguments:
+    y_true (array): A Numpy array of shape `(batch_size, #boxes, #classes + 12)`,
+where `#boxes` is the total number of boxes that the model predicts
+per image. Be careful to make sure that the index of each given
+box in `y_true` is the same as the index for the corresponding
+box in `y_pred`. The last axis must have length `#classes + 12` and contain
+`[classes one-hot encoded, 4 ground truth box coordinate offsets, 8 arbitrary entries]`
+in this order, including the background class. The last eight entries of the
+last axis are not used by this function and therefore their contents are
+irrelevant, they only exist so that `y_true` has the same shape as `y_pred`,
+where the last four entries of the last axis contain the anchor box
+coordinates, which are needed during inference. Important: Boxes that
+you want the cost function to ignore need to have a one-hot
+class vector of all zeros.
+    y_pred (Keras tensor): The model prediction. The shape is identical
+to that of `y_true`, i.e. `(batch_size, #boxes, #classes + 12)`.
+The last axis must contain entries in the format
+`[classes one-hot encoded, 4 predicted box coordinate offsets, 8 arbitrary entries]`.
+
+Returns:
+    A scalar, the total multitask loss for classification and localization.
+
+.fi
+.PP
+ 
+.SS "def keras_utils\&.keras_ssd_loss\&.SSDLoss\&.log_loss ( self,  y_true,  y_pred)"
+
+.PP
+.nf
+Compute the softmax log loss.
+
+Arguments:
+    y_true (nD tensor): A TensorFlow tensor of any shape containing the ground truth data.
+In this context, the expected tensor has shape (batch_size, #boxes, #classes)
+and contains the ground truth bounding box categories.
+    y_pred (nD tensor): A TensorFlow tensor of identical structure to `y_true` containing
+the predicted data, in this context the predicted bounding box categories.
+
+Returns:
+    The softmax log loss, a nD-1 Tensorflow tensor. In this context a 2D tensor
+    of shape (batch, n_boxes_total).
+
+.fi
+.PP
+ 
+.SS "def keras_utils\&.keras_ssd_loss\&.SSDLoss\&.smooth_L1_loss ( self,  y_true,  y_pred)"
+
+.PP
+.nf
+Compute smooth L1 loss, see references.
+
+Arguments:
+    y_true (nD tensor): A TensorFlow tensor of any shape containing the ground truth data.
+In this context, the expected tensor has shape `(batch_size, #boxes, 4)` and
+contains the ground truth bounding box coordinates, where the last dimension
+contains `(xmin, xmax, ymin, ymax)`.
+    y_pred (nD tensor): A TensorFlow tensor of identical structure to `y_true` containing
+the predicted data, in this context the predicted bounding box coordinates.
+
+Returns:
+    The smooth L1 loss, a nD-1 Tensorflow tensor. In this context a 2D tensor
+    of shape (batch, n_boxes_total).
+
+References:
+    https://arxiv.org/abs/1504.08083
+
+.fi
+.PP
+ 
+.SH "Member Data Documentation"
+.PP 
+.SS "keras_utils\&.keras_ssd_loss\&.SSDLoss\&.alpha"
+
+.SS "keras_utils\&.keras_ssd_loss\&.SSDLoss\&.n_neg_min"
+
+.SS "keras_utils\&.keras_ssd_loss\&.SSDLoss\&.neg_pos_ratio"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

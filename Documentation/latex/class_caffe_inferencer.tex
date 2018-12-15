@@ -1,0 +1,64 @@
+\hypertarget{class_caffe_inferencer}{}\section{Caffe\+Inferencer Class Reference}
+\label{class_caffe_inferencer}\index{Caffe\+Inferencer@{Caffe\+Inferencer}}
+
+
+{\ttfamily \#include $<$Caffe\+Inferencer.\+h$>$}
+
+Inheritance diagram for Caffe\+Inferencer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_caffe_inferencer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_caffe_inferencer_a061bf73e8736135e292154d9fa50d13d}{Caffe\+Inferencer} (const std\+::string \&net\+Config, const std\+::string \&net\+Weights, const std\+::string \&\hyperlink{class_framework_inferencer_abdb304d43262f48e0438a55778c7540f}{class\+Names\+File}, std\+::map$<$ std\+::string, std\+::string $>$ $\ast$inferencer\+Params\+Map)
+\item 
+\hyperlink{struct_sample}{Sample} \hyperlink{class_caffe_inferencer_a898f6d0e7106ac663a6c26ecdf799502}{detect\+Imp} (const cv\+::\+Mat \&image, double confidence\+\_\+threshold)
+\item 
+std\+::vector$<$ cv\+::\+String $>$ \hyperlink{class_caffe_inferencer_a92db0b7b61f5f7bbfcee3c1905022082}{get\+Outputs\+Names} ()
+\item 
+void \hyperlink{class_caffe_inferencer_a3eb860abbe252b50d6f17104bf751b62}{postprocess} (const std\+::vector$<$ cv\+::\+Mat $>$ \&outs, cv\+::\+Mat \&image, double confidence\+\_\+threshold)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_caffe_inferencer_a061bf73e8736135e292154d9fa50d13d}\label{class_caffe_inferencer_a061bf73e8736135e292154d9fa50d13d}} 
+\index{Caffe\+Inferencer@{Caffe\+Inferencer}!Caffe\+Inferencer@{Caffe\+Inferencer}}
+\index{Caffe\+Inferencer@{Caffe\+Inferencer}!Caffe\+Inferencer@{Caffe\+Inferencer}}
+\subsubsection{\texorpdfstring{Caffe\+Inferencer()}{CaffeInferencer()}}
+{\footnotesize\ttfamily Caffe\+Inferencer\+::\+Caffe\+Inferencer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{net\+Config,  }\item[{const std\+::string \&}]{net\+Weights,  }\item[{const std\+::string \&}]{class\+Names\+File,  }\item[{std\+::map$<$ std\+::string, std\+::string $>$ $\ast$}]{inferencer\+Params\+Map }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_caffe_inferencer_a898f6d0e7106ac663a6c26ecdf799502}\label{class_caffe_inferencer_a898f6d0e7106ac663a6c26ecdf799502}} 
+\index{Caffe\+Inferencer@{Caffe\+Inferencer}!detect\+Imp@{detect\+Imp}}
+\index{detect\+Imp@{detect\+Imp}!Caffe\+Inferencer@{Caffe\+Inferencer}}
+\subsubsection{\texorpdfstring{detect\+Imp()}{detectImp()}}
+{\footnotesize\ttfamily \hyperlink{struct_sample}{Sample} Caffe\+Inferencer\+::detect\+Imp (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image,  }\item[{double}]{confidence\+\_\+threshold }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_framework_inferencer_a8fd7e708c8be4471bc2b37a4193a9045}{Framework\+Inferencer}.
+
+\mbox{\Hypertarget{class_caffe_inferencer_a92db0b7b61f5f7bbfcee3c1905022082}\label{class_caffe_inferencer_a92db0b7b61f5f7bbfcee3c1905022082}} 
+\index{Caffe\+Inferencer@{Caffe\+Inferencer}!get\+Outputs\+Names@{get\+Outputs\+Names}}
+\index{get\+Outputs\+Names@{get\+Outputs\+Names}!Caffe\+Inferencer@{Caffe\+Inferencer}}
+\subsubsection{\texorpdfstring{get\+Outputs\+Names()}{getOutputsNames()}}
+{\footnotesize\ttfamily std\+::vector$<$ cv\+::\+String $>$ Caffe\+Inferencer\+::get\+Outputs\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_caffe_inferencer_a3eb860abbe252b50d6f17104bf751b62}\label{class_caffe_inferencer_a3eb860abbe252b50d6f17104bf751b62}} 
+\index{Caffe\+Inferencer@{Caffe\+Inferencer}!postprocess@{postprocess}}
+\index{postprocess@{postprocess}!Caffe\+Inferencer@{Caffe\+Inferencer}}
+\subsubsection{\texorpdfstring{postprocess()}{postprocess()}}
+{\footnotesize\ttfamily void Caffe\+Inferencer\+::postprocess (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ cv\+::\+Mat $>$ \&}]{outs,  }\item[{cv\+::\+Mat \&}]{image,  }\item[{double}]{confidence\+\_\+threshold }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Framework\+Evaluator/\hyperlink{_caffe_inferencer_8h}{Caffe\+Inferencer.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Framework\+Evaluator/\hyperlink{_caffe_inferencer_8cpp}{Caffe\+Inferencer.\+cpp}\end{DoxyCompactItemize}

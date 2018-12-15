@@ -1,0 +1,58 @@
+\hypertarget{namespacejderobotconfig_1_1loader}{}\section{jderobotconfig\+:\+:loader Namespace Reference}
+\label{namespacejderobotconfig_1_1loader}\index{jderobotconfig\+::loader@{jderobotconfig\+::loader}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{namespacejderobotconfig_1_1loader_a521f15425002acf9d87a5857ac38268f}{find\+Config\+File} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Find filename into all defined search paths. Order is\+: \end{DoxyCompactList}\item 
+\hyperlink{class_config_1_1_properties}{Config\+::\+Properties} \hyperlink{namespacejderobotconfig_1_1loader_a20d680d49aae952308a601aefca96fa4}{load} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Loads File configuration from passed file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \hyperlink{namespacejderobotconfig_1_1loader_a5b2c5f0990c440ef22a49c12951c6969}{C\+O\+N\+F\+I\+G\+\_\+\+P\+A\+T\+H\+\_\+\+N\+A\+ME} = \char`\"{}J\+D\+E\+R\+O\+B\+O\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+P\+A\+T\+HS\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacejderobotconfig_1_1loader_a521f15425002acf9d87a5857ac38268f}\label{namespacejderobotconfig_1_1loader_a521f15425002acf9d87a5857ac38268f}} 
+\index{jderobotconfig\+::loader@{jderobotconfig\+::loader}!find\+Config\+File@{find\+Config\+File}}
+\index{find\+Config\+File@{find\+Config\+File}!jderobotconfig\+::loader@{jderobotconfig\+::loader}}
+\subsubsection{\texorpdfstring{find\+Config\+File()}{findConfigFile()}}
+{\footnotesize\ttfamily std\+::string jderobotconfig\+::loader\+::find\+Config\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Find filename into all defined search paths. Order is\+: 
+
+
+\begin{DoxyEnumerate}
+\item current dir
+\item jderobot paths ($\ast$)
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+empty if file was not found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacejderobotconfig_1_1loader_a20d680d49aae952308a601aefca96fa4}\label{namespacejderobotconfig_1_1loader_a20d680d49aae952308a601aefca96fa4}} 
+\index{jderobotconfig\+::loader@{jderobotconfig\+::loader}!load@{load}}
+\index{load@{load}!jderobotconfig\+::loader@{jderobotconfig\+::loader}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \hyperlink{class_config_1_1_properties}{Config\+::\+Properties} jderobotconfig\+::loader\+::load (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Loads File configuration from passed file. 
+
+\begin{DoxyReturn}{Returns}
+new Config\+::\+Config or passed one. 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacejderobotconfig_1_1loader_a5b2c5f0990c440ef22a49c12951c6969}\label{namespacejderobotconfig_1_1loader_a5b2c5f0990c440ef22a49c12951c6969}} 
+\index{jderobotconfig\+::loader@{jderobotconfig\+::loader}!C\+O\+N\+F\+I\+G\+\_\+\+P\+A\+T\+H\+\_\+\+N\+A\+ME@{C\+O\+N\+F\+I\+G\+\_\+\+P\+A\+T\+H\+\_\+\+N\+A\+ME}}
+\index{C\+O\+N\+F\+I\+G\+\_\+\+P\+A\+T\+H\+\_\+\+N\+A\+ME@{C\+O\+N\+F\+I\+G\+\_\+\+P\+A\+T\+H\+\_\+\+N\+A\+ME}!jderobotconfig\+::loader@{jderobotconfig\+::loader}}
+\subsubsection{\texorpdfstring{C\+O\+N\+F\+I\+G\+\_\+\+P\+A\+T\+H\+\_\+\+N\+A\+ME}{CONFIG\_PATH\_NAME}}
+{\footnotesize\ttfamily const std\+::string jderobotconfig\+::loader\+::\+C\+O\+N\+F\+I\+G\+\_\+\+P\+A\+T\+H\+\_\+\+N\+A\+ME = \char`\"{}J\+D\+E\+R\+O\+B\+O\+T\+\_\+\+C\+O\+N\+F\+I\+G\+\_\+\+P\+A\+T\+HS\char`\"{}}
+

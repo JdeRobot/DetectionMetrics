@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classtensorflow__detect_1_1_tensor_flow_detector" kind="class" language="Python" prot="public">
+    <compoundname>tensorflow_detect::TensorFlowDetector</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classtensorflow__detect_1_1_tensor_flow_detector_1a2cf3856b888126fcd80d48e88e666107" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>tensorflow_detect.TensorFlowDetector::dummy_tensor</definition>
+        <argsstring></argsstring>
+        <name>dummy_tensor</name>
+        <initializer>=  np.zeros((1,1,1,3), dtype=np.int32)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" line="69" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtensorflow__detect_1_1_tensor_flow_detector_1a8c873949217953989176a8cccaf97b54" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>tensorflow_detect.TensorFlowDetector::feed_dict</definition>
+        <argsstring></argsstring>
+        <name>feed_dict</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" line="71" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtensorflow__detect_1_1_tensor_flow_detector_1af28b6b2ea938da5a5fcfd755f22bdafe" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>tensorflow_detect.TensorFlowDetector::tensor_dict</definition>
+        <argsstring></argsstring>
+        <name>tensor_dict</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" line="31" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classtensorflow__detect_1_1_tensor_flow_detector_1a691b64feeb99ad6f9bc091c95bae01f1" compoundref="tensorflow__detect_8py" startline="78" endline="97">tensorflow_detect.TensorFlowDetector.run_inference_for_single_image</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classtensorflow__detect_1_1_tensor_flow_detector_1a185cf2de088861188c614957c31278fe" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>tensorflow_detect.TensorFlowDetector::image_tensor</definition>
+        <argsstring></argsstring>
+        <name>image_tensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" line="55" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" bodystart="55" bodyend="-1"/>
+        <referencedby refid="classtensorflow__detect_1_1_tensor_flow_detector_1a691b64feeb99ad6f9bc091c95bae01f1" compoundref="tensorflow__detect_8py" startline="78" endline="97">tensorflow_detect.TensorFlowDetector.run_inference_for_single_image</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classtensorflow__detect_1_1_tensor_flow_detector_1a65b0bb63ecdf52de6732e5f8d0efc533" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>tensorflow_detect.TensorFlowDetector::sess</definition>
+        <argsstring></argsstring>
+        <name>sess</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" line="65" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" bodystart="65" bodyend="-1"/>
+        <referencedby refid="classtensorflow__detect_1_1_tensor_flow_detector_1a691b64feeb99ad6f9bc091c95bae01f1" compoundref="tensorflow__detect_8py" startline="78" endline="97">tensorflow_detect.TensorFlowDetector.run_inference_for_single_image</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtensorflow__detect_1_1_tensor_flow_detector_1a93c5505340a2adfd4505a3299b8ae4b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def tensorflow_detect.TensorFlowDetector.__init__</definition>
+        <argsstring>(self, path_to_ckpt)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>path_to_ckpt</type>
+          <defname>path_to_ckpt</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" bodystart="20" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classtensorflow__detect_1_1_tensor_flow_detector_1a691b64feeb99ad6f9bc091c95bae01f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def tensorflow_detect.TensorFlowDetector.run_inference_for_single_image</definition>
+        <argsstring>(self, image)</argsstring>
+        <name>run_inference_for_single_image</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>image</type>
+          <defname>image</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" line="78" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" bodystart="78" bodyend="97"/>
+        <references refid="classtensorflow__detect_1_1_tensor_flow_detector_1a65b0bb63ecdf52de6732e5f8d0efc533" compoundref="tensorflow__detect_8py" startline="65">tensorflow_detect.TensorFlowDetector.sess</references>
+        <references refid="classtensorflow__detect_1_1_tensor_flow_detector_1af28b6b2ea938da5a5fcfd755f22bdafe" compoundref="tensorflow__detect_8py" startline="31">tensorflow_detect.TensorFlowDetector.tensor_dict</references>
+        <references refid="classtensorflow__detect_1_1_tensor_flow_detector_1a185cf2de088861188c614957c31278fe" compoundref="tensorflow__detect_8py" startline="55">tensorflow_detect.TensorFlowDetector.image_tensor</references>
+        <referencedby refid="classtensorflow__detect_1_1_tensor_flow_detector_1a6bc7adeea3ea117897cca495a46fb55a" compoundref="tensorflow__detect_8py" startline="98" endline="146">tensorflow_detect.TensorFlowDetector.detect</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classtensorflow__detect_1_1_tensor_flow_detector_1a6bc7adeea3ea117897cca495a46fb55a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def tensorflow_detect.TensorFlowDetector.detect</definition>
+        <argsstring>(self, img, threshold)</argsstring>
+        <name>detect</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>img</type>
+          <defname>img</defname>
+        </param>
+        <param>
+          <type><ref refid="namespacetensorflow__detect_1a92f27be303bb36c28ed99f95a89104b1" kindref="member">threshold</ref></type>
+          <defname>threshold</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" line="98" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" bodystart="98" bodyend="146"/>
+        <references refid="classtensorflow__detect_1_1_tensor_flow_detector_1a691b64feeb99ad6f9bc091c95bae01f1" compoundref="tensorflow__detect_8py" startline="78" endline="97">tensorflow_detect.TensorFlowDetector.run_inference_for_single_image</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" bodystart="18" bodyend="146"/>
+    <listofallmembers>
+      <member refid="classtensorflow__detect_1_1_tensor_flow_detector_1a93c5505340a2adfd4505a3299b8ae4b8" prot="public" virt="non-virtual"><scope>tensorflow_detect::TensorFlowDetector</scope><name>__init__</name></member>
+      <member refid="classtensorflow__detect_1_1_tensor_flow_detector_1a6bc7adeea3ea117897cca495a46fb55a" prot="public" virt="non-virtual"><scope>tensorflow_detect::TensorFlowDetector</scope><name>detect</name></member>
+      <member refid="classtensorflow__detect_1_1_tensor_flow_detector_1a2cf3856b888126fcd80d48e88e666107" prot="public" virt="non-virtual"><scope>tensorflow_detect::TensorFlowDetector</scope><name>dummy_tensor</name></member>
+      <member refid="classtensorflow__detect_1_1_tensor_flow_detector_1a8c873949217953989176a8cccaf97b54" prot="public" virt="non-virtual"><scope>tensorflow_detect::TensorFlowDetector</scope><name>feed_dict</name></member>
+      <member refid="classtensorflow__detect_1_1_tensor_flow_detector_1a185cf2de088861188c614957c31278fe" prot="public" virt="non-virtual"><scope>tensorflow_detect::TensorFlowDetector</scope><name>image_tensor</name></member>
+      <member refid="classtensorflow__detect_1_1_tensor_flow_detector_1a691b64feeb99ad6f9bc091c95bae01f1" prot="public" virt="non-virtual"><scope>tensorflow_detect::TensorFlowDetector</scope><name>run_inference_for_single_image</name></member>
+      <member refid="classtensorflow__detect_1_1_tensor_flow_detector_1a65b0bb63ecdf52de6732e5f8d0efc533" prot="public" virt="non-virtual"><scope>tensorflow_detect::TensorFlowDetector</scope><name>sess</name></member>
+      <member refid="classtensorflow__detect_1_1_tensor_flow_detector_1af28b6b2ea938da5a5fcfd755f22bdafe" prot="public" virt="non-virtual"><scope>tensorflow_detect::TensorFlowDetector</scope><name>tensor_dict</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

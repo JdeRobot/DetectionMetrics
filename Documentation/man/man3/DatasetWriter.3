@@ -1,0 +1,72 @@
+.TH "DatasetWriter" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DatasetWriter
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DatasetWriter\&.h>\fP
+.PP
+Inherited by \fBCOCODatasetWriter\fP, \fBOwnDatasetWriter\fP, \fBPascalVOCDatasetWriter\fP, and \fBYoloDatasetWriter\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDatasetWriter\fP (const std::string &\fBoutPath\fP, \fBDatasetReaderPtr\fP &\fBreader\fP)"
+.br
+.ti -1c
+.RI "virtual void \fBprocess\fP (bool writeImages=false, bool useDepth=false)=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBoutPath\fP"
+.br
+.ti -1c
+.RI "\fBDatasetReaderPtr\fP & \fBreader\fP"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBoutputClasses\fP"
+.br
+.ti -1c
+.RI "std::unordered_map< std::string, std::string > \fBmapped_classes\fP"
+.br
+.ti -1c
+.RI "std::unordered_map< std::string, long int > \fBdiscarded_classes\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBskip_count\fP = 10"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DatasetWriter::DatasetWriter (const std::string & outPath, \fBDatasetReaderPtr\fP & reader)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void DatasetWriter::process (bool writeImages = \fCfalse\fP, bool useDepth = \fCfalse\fP)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBOwnDatasetWriter\fP, \fBPascalVOCDatasetWriter\fP, \fBYoloDatasetWriter\fP, and \fBCOCODatasetWriter\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::unordered_map<std::string, long int> DatasetWriter::discarded_classes\fC [protected]\fP"
+
+.SS "std::unordered_map<std::string, std::string> DatasetWriter::mapped_classes\fC [protected]\fP"
+
+.SS "std::string DatasetWriter::outPath\fC [protected]\fP"
+
+.SS "std::vector<std::string> DatasetWriter::outputClasses\fC [protected]\fP"
+
+.SS "\fBDatasetReaderPtr\fP& DatasetWriter::reader\fC [protected]\fP"
+
+.SS "unsigned int DatasetWriter::skip_count = 10\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

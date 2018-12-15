@@ -1,0 +1,62 @@
+.TH "FrameworkInferencer" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FrameworkInferencer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <FrameworkInferencer\&.h>\fP
+.PP
+Inherited by \fBCaffeInferencer\fP, \fBDarknetInferencer\fP, \fBKerasInferencer\fP, and \fBTensorFlowInferencer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFrameworkInferencer\fP ()"
+.br
+.ti -1c
+.RI "\fB~ FrameworkInferencer\fP ()"
+.br
+.ti -1c
+.RI "\fBSample\fP \fBdetect\fP (const cv::Mat &image, double confidence_threshold)"
+.br
+.ti -1c
+.RI "int \fBgetMeanDurationTime\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBSample\fP \fBdetectImp\fP (const cv::Mat &image, double confidence_threshold)=0"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBclassNamesFile\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "FrameworkInferencer::FrameworkInferencer ()"
+
+.SS "FrameworkInferencer::~ \fBFrameworkInferencer\fP ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBSample\fP FrameworkInferencer::detect (const cv::Mat & image, double confidence_threshold)"
+
+.SS "virtual \fBSample\fP FrameworkInferencer::detectImp (const cv::Mat & image, double confidence_threshold)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBCaffeInferencer\fP, \fBDarknetInferencer\fP, \fBKerasInferencer\fP, and \fBTensorFlowInferencer\fP\&.
+.SS "int FrameworkInferencer::getMeanDurationTime ()"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string FrameworkInferencer::classNamesFile\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

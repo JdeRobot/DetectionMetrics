@@ -1,0 +1,133 @@
+.TH "colorspaces::Image" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+colorspaces::Image
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <imagecv\&.h>\fP
+.PP
+Inherits Mat\&.
+.PP
+Inherited by \fBcolorspaces::ImageGRAY8\fP, \fBcolorspaces::ImageHSV8\fP, \fBcolorspaces::ImageNV21\fP, \fBcolorspaces::ImageRGB8\fP, \fBcolorspaces::ImageYCRCB\fP, and \fBcolorspaces::ImageYUY2\fP\&.
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBFormat\fP"
+.br
+.ti -1c
+.RI "class \fBFormatMismatch\fP"
+.br
+.ti -1c
+.RI "class \fBNoConversion\fP"
+.br
+.in -1c
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBImage\fP *(* \fBimageCtor\fP) (const int \fBheight\fP, const int \fBwidth\fP, void *const data)"
+.br
+.ti -1c
+.RI "typedef \fBImage\fP &(* \fBimageCvt\fP) (const \fBImage\fP &src, \fBImage\fP &dst)"
+.br
+.ti -1c
+.RI "typedef std::shared_ptr< \fBFormat\fP > \fBFormatPtr\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImage\fP ()"
+.br
+.ti -1c
+.RI "\fBImage\fP (const int \fBwidth\fP, const int \fBheight\fP, const \fBFormatPtr\fP fmt)"
+.br
+.ti -1c
+.RI "\fBImage\fP (const int \fBwidth\fP, const int \fBheight\fP, const \fBFormatPtr\fP fmt, void *const data)"
+.br
+.ti -1c
+.RI "\fBImage\fP (const \fBImage\fP &i)"
+.br
+.ti -1c
+.RI "\fBImage\fP (const cv::Mat &m, const \fBFormatPtr\fP fmt)"
+.br
+.ti -1c
+.RI "virtual \fB~Image\fP ()"
+.br
+.ti -1c
+.RI "const \fBFormatPtr\fP \fBformat\fP () const"
+.br
+.ti -1c
+.RI "\fBImage\fP & \fBconvert\fP (\fBImage\fP &dst) const  throw (NoConversion)"
+.br
+.ti -1c
+.RI "\fBImage\fP \fBclone\fP () const"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBwidth\fP"
+.br
+.ti -1c
+.RI "int \fBheight\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const \fBFormatPtr\fP \fBFORMAT_NONE\fP = \fBImage::Format::createFormat\fP('NONE',0,0,0)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+An image 
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef std::shared_ptr<\fBFormat\fP> \fBcolorspaces::Image::FormatPtr\fP"
+
+.SS "typedef \fBImage\fP*(* colorspaces::Image::imageCtor) (const int \fBheight\fP, const int \fBwidth\fP, void *const data)"
+
+.SS "typedef \fBImage\fP&(* colorspaces::Image::imageCvt) (const \fBImage\fP &src, \fBImage\fP &dst)"
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "colorspaces::Image::Image ()"
+Constructor 
+.SS "colorspaces::Image::Image (const int width, const int height, const \fBFormatPtr\fP fmt)"
+Constructor 
+.SS "colorspaces::Image::Image (const int width, const int height, const \fBFormatPtr\fP fmt, void *const data)"
+Constructor from user data 
+.SS "colorspaces::Image::Image (const \fBImage\fP & i)"
+Copy onstructor 
+.SS "colorspaces::Image::Image (const cv::Mat & m, const \fBFormatPtr\fP fmt)"
+Copy onstructor from cv::Mat 
+.SS "virtual colorspaces::Image::~Image ()\fC [inline]\fP, \fC [virtual]\fP"
+\fBImage\fP destructor 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBImage\fP colorspaces::Image::clone () const"
+Clone image returning a new copy 
+.SS "\fBImage\fP & colorspaces::Image::convert (\fBImage\fP & dst) const\fBNoConversion\fP"
+Convert image to dst fmt 
+.SS "const \fBFormatPtr\fP colorspaces::Image::format () const\fC [inline]\fP"
+Get image's format 
+.SH "Member Data Documentation"
+.PP 
+.SS "const \fBImage::FormatPtr\fP colorspaces::Image::FORMAT_NONE = \fBImage::Format::createFormat\fP('NONE',0,0,0)\fC [static]\fP"
+
+.SS "int colorspaces::Image::height"
+
+.SS "int colorspaces::Image::width"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

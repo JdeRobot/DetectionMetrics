@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_6f87ac3418f776f89192232d28cb2d59" kind="dir">
+    <compoundname>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers</compoundname>
+    <innerfile refid="_c_o_c_o_dataset_writer_8cpp">COCODatasetWriter.cpp</innerfile>
+    <innerfile refid="_c_o_c_o_dataset_writer_8h">COCODatasetWriter.h</innerfile>
+    <innerfile refid="_dataset_writer_8cpp">DatasetWriter.cpp</innerfile>
+    <innerfile refid="_dataset_writer_8h">DatasetWriter.h</innerfile>
+    <innerfile refid="_generic_dataset_writer_8cpp">GenericDatasetWriter.cpp</innerfile>
+    <innerfile refid="_generic_dataset_writer_8h">GenericDatasetWriter.h</innerfile>
+    <innerfile refid="_own_dataset_writer_8cpp">OwnDatasetWriter.cpp</innerfile>
+    <innerfile refid="_own_dataset_writer_8h">OwnDatasetWriter.h</innerfile>
+    <innerfile refid="_pascal_v_o_c_dataset_writer_8cpp">PascalVOCDatasetWriter.cpp</innerfile>
+    <innerfile refid="_pascal_v_o_c_dataset_writer_8h">PascalVOCDatasetWriter.h</innerfile>
+    <innerfile refid="_yolo_dataset_writer_8cpp">YoloDatasetWriter.cpp</innerfile>
+    <innerfile refid="_yolo_dataset_writer_8h">YoloDatasetWriter.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/"/>
+  </compounddef>
+</doxygen>

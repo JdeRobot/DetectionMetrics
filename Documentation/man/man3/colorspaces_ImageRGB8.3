@@ -1,0 +1,113 @@
+.TH "colorspaces::ImageRGB8" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+colorspaces::ImageRGB8
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <imagecv\&.h>\fP
+.PP
+Inherits \fBcolorspaces::Image\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImageRGB8\fP (const int \fBwidth\fP, const int \fBheight\fP)"
+.br
+.ti -1c
+.RI "\fBImageRGB8\fP (const int \fBwidth\fP, const int \fBheight\fP, void *const data)"
+.br
+.ti -1c
+.RI "\fBImageRGB8\fP (const \fBImage\fP &i)"
+.br
+.ti -1c
+.RI "void \fBtoGRAY8\fP (\fBImage\fP &dst) const  throw (FormatMismatch)"
+.br
+.ti -1c
+.RI "void \fBtoYUY2\fP (\fBImage\fP &dst) const  throw (FormatMismatch)"
+.br
+.ti -1c
+.RI "void \fBtoHSV8\fP (\fBImage\fP &dst) const  throw (FormatMismatch)"
+.br
+.ti -1c
+.RI "void \fBtoYCRCB\fP (\fBImage\fP &dst) const  throw (FormatMismatch)"
+.br
+.ti -1c
+.RI "bool \fBwrite\fP (const std::string &filename, const std::vector< int > &params=std::vector< int >())"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBImageRGB8\fP \fBread\fP (const std::string &filename)"
+.br
+.ti -1c
+.RI "static \fBImage\fP * \fBcreateInstance\fP (const int \fBwidth\fP, const int \fBheight\fP, void *const data)"
+.br
+.ti -1c
+.RI "static \fBImage\fP & \fBimageCvt\fP (const \fBImage\fP &src, \fBImage\fP &dst)  throw (NoConversion)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const \fBFormatPtr\fP \fBFORMAT_RGB8\fP = \fBImage::Format::createFormat\fP('RGB8',CV_8UC3,&\fBImageRGB8::createInstance\fP,&\fBImageRGB8::imageCvt\fP)"
+.br
+.ti -1c
+.RI "static const \fBFormatPtr\fP \fBFORMAT_RGB8_Z\fP = \fBImage::Format::createFormat\fP('RGB8_Z',CV_8UC3,&\fBImageRGB8::createInstance\fP,&\fBImageRGB8::imageCvt\fP)"
+.br
+.ti -1c
+.RI "static const \fBFormatPtr\fP \fBFORMAT_DEPTH8_16\fP = \fBImage::Format::createFormat\fP('DEPTH8_16',CV_8UC3,&\fBImageRGB8::createInstance\fP,&\fBImageRGB8::imageCvt\fP)"
+.br
+.ti -1c
+.RI "static const \fBFormatPtr\fP \fBFORMAT_DEPTH8_16_Z\fP = \fBImage::Format::createFormat\fP('DEPTH8_16_Z',CV_8UC3,&\fBImageRGB8::createInstance\fP,&\fBImageRGB8::imageCvt\fP)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A RGB 24 bit image 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "colorspaces::ImageRGB8::ImageRGB8 (const int width, const int height)"
+Constructor 
+.SS "colorspaces::ImageRGB8::ImageRGB8 (const int width, const int height, void *const data)"
+Constructor from user data 
+.SS "colorspaces::ImageRGB8::ImageRGB8 (const \fBImage\fP & i)"
+Copy constructor from \fBImage\fP, conversion will happen if needed 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBImage\fP * colorspaces::ImageRGB8::createInstance (const int width, const int height, void *const data)\fC [static]\fP"
+Factory method 
+.SS "\fBImage\fP & colorspaces::ImageRGB8::imageCvt (const \fBImage\fP & src, \fBImage\fP & dst)\fBNoConversion\fP\fC [static]\fP"
+
+.SS "\fBImageRGB8\fP colorspaces::ImageRGB8::read (const std::string & filename)\fC [static]\fP"
+Read from a file See cv::imread for flags and params 
+.SS "void colorspaces::ImageRGB8::toGRAY8 (\fBImage\fP & dst) const\fBFormatMismatch\fP"
+Conversion methods\&. 
+.SS "void colorspaces::ImageRGB8::toHSV8 (\fBImage\fP & dst) const\fBFormatMismatch\fP"
+
+.SS "void colorspaces::ImageRGB8::toYCRCB (\fBImage\fP & dst) const\fBFormatMismatch\fP"
+
+.SS "void colorspaces::ImageRGB8::toYUY2 (\fBImage\fP & dst) const\fBFormatMismatch\fP"
+
+.SS "bool colorspaces::ImageRGB8::write (const std::string & filename, const std::vector< int > & params = \fCstd::vector<int>()\fP)"
+Write to a file See cv::imwrite for flags and params 
+.SH "Member Data Documentation"
+.PP 
+.SS "const \fBImage::FormatPtr\fP colorspaces::ImageRGB8::FORMAT_DEPTH8_16 = \fBImage::Format::createFormat\fP('DEPTH8_16',CV_8UC3,&\fBImageRGB8::createInstance\fP,&\fBImageRGB8::imageCvt\fP)\fC [static]\fP"
+
+.SS "const \fBImage::FormatPtr\fP colorspaces::ImageRGB8::FORMAT_DEPTH8_16_Z = \fBImage::Format::createFormat\fP('DEPTH8_16_Z',CV_8UC3,&\fBImageRGB8::createInstance\fP,&\fBImageRGB8::imageCvt\fP)\fC [static]\fP"
+
+.SS "const \fBImage::FormatPtr\fP colorspaces::ImageRGB8::FORMAT_RGB8 = \fBImage::Format::createFormat\fP('RGB8',CV_8UC3,&\fBImageRGB8::createInstance\fP,&\fBImageRGB8::imageCvt\fP)\fC [static]\fP"
+
+.SS "const \fBImage::FormatPtr\fP colorspaces::ImageRGB8::FORMAT_RGB8_Z = \fBImage::Format::createFormat\fP('RGB8_Z',CV_8UC3,&\fBImageRGB8::createInstance\fP,&\fBImageRGB8::imageCvt\fP)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_class_statistics_8cpp" kind="file" language="C++">
+    <compoundname>ClassStatistics.cpp</compoundname>
+    <includes local="no">numeric</includes>
+    <includes refid="_class_statistics_8h" local="yes">ClassStatistics.h</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">limits</includes>
+    <incdepgraph>
+      <node id="3313">
+        <label>functional</label>
+      </node>
+      <node id="3317">
+        <label>limits</label>
+      </node>
+      <node id="3309">
+        <label>ClassStatistics.h</label>
+        <link refid="_class_statistics_8h"/>
+        <childnode refid="3310" relation="include">
+        </childnode>
+        <childnode refid="3311" relation="include">
+        </childnode>
+        <childnode refid="3312" relation="include">
+        </childnode>
+        <childnode refid="3308" relation="include">
+        </childnode>
+        <childnode refid="3313" relation="include">
+        </childnode>
+        <childnode refid="3314" relation="include">
+        </childnode>
+        <childnode refid="3315" relation="include">
+        </childnode>
+      </node>
+      <node id="3308">
+        <label>numeric</label>
+      </node>
+      <node id="3311">
+        <label>string</label>
+      </node>
+      <node id="3310">
+        <label>vector</label>
+      </node>
+      <node id="3316">
+        <label>iostream</label>
+      </node>
+      <node id="3307">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.cpp</label>
+        <link refid="_class_statistics_8cpp"/>
+        <childnode refid="3308" relation="include">
+        </childnode>
+        <childnode refid="3309" relation="include">
+        </childnode>
+        <childnode refid="3316" relation="include">
+        </childnode>
+        <childnode refid="3317" relation="include">
+        </childnode>
+      </node>
+      <node id="3315">
+        <label>type_traits</label>
+      </node>
+      <node id="3312">
+        <label>set</label>
+      </node>
+      <node id="3314">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>1/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;numeric&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_class_statistics_8h" kindref="compound">ClassStatistics.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;limits&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="struct_class_statistics_1a0434f553802cd8ea436164281184c8e7" refkind="member"><highlight class="normal"><ref refid="struct_class_statistics_1ac5a27388db5ca1d9283096020a9b1aeb" kindref="member">ClassStatistics::ClassStatistics</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>classID):classID(classID),nSamples(0),truePositives(0),falsePositives(0),<sp/>falseNegatives(0),<sp/>trueNegatives(0){</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13" refid="struct_class_statistics_1ac5a27388db5ca1d9283096020a9b1aeb" refkind="member"><highlight class="normal"><ref refid="struct_class_statistics_1ac5a27388db5ca1d9283096020a9b1aeb" kindref="member">ClassStatistics::ClassStatistics</ref>():<ref refid="struct_class_statistics_1a4f06e2d800fde06ed4f6b77547d8dc06" kindref="member">classID</ref>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">),<ref refid="struct_class_statistics_1aa0b08fee8daa548214f4bcc3b2c5cc86" kindref="member">nSamples</ref>(0),<ref refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" kindref="member">truePositives</ref>(0),<ref refid="struct_class_statistics_1a0193beb26acd9dab5f7a1709b50c353c" kindref="member">falsePositives</ref>(0),<sp/><ref refid="struct_class_statistics_1a5485816a475a6cc554c2d9e5b442c96d" kindref="member">falseNegatives</ref>(0),<sp/><ref refid="struct_class_statistics_1a8b268ca669e6d982c8ce409330cf08f9" kindref="member">trueNegatives</ref>(0){</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="struct_class_statistics_1a66418a700e12730feb6ad54d81ba0a8e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_class_statistics_1a66418a700e12730feb6ad54d81ba0a8e" kindref="member">ClassStatistics::divide</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>y)<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(y<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/>=<sp/>std::numeric_limits&lt;double&gt;::min();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x/y;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="struct_class_statistics_1a22377aafdf557f655f500783fc5dc77f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_class_statistics_1a22377aafdf557f655f500783fc5dc77f" kindref="member">ClassStatistics::getMeanIOU</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::accumulate(<sp/>this-&gt;<ref refid="struct_class_statistics_1ac0495687ef1d08720c41612afbf49730" kindref="member">iou</ref>.begin(),<sp/>this-&gt;<ref refid="struct_class_statistics_1ac0495687ef1d08720c41612afbf49730" kindref="member">iou</ref>.end(),<sp/>0.0)/this-&gt;<ref refid="struct_class_statistics_1ac0495687ef1d08720c41612afbf49730" kindref="member">iou</ref>.size();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="struct_class_statistics_1af97e1c498a387e6762be460e61d0e610" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_class_statistics_1af97e1c498a387e6762be460e61d0e610" kindref="member">ClassStatistics::getAveragePrecision</ref>(std::vector&lt;double&gt;<sp/>recallThrs)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>pt_rc<sp/>=<sp/><ref refid="struct_class_statistics_1aa6b024d72444ea2b8d71f5f2a416655c" kindref="member">getPrecisionForDiffRecallThrs</ref>(recallThrs);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>precsion<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>precsionCount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>pt_rc.begin();<sp/>it<sp/>!=<sp/>pt_rc.end();<sp/>it++)<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>*it<sp/>&lt;&lt;<sp/>&apos;<sp/>&apos;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//count++;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>precsion<sp/>+=<sp/>*it;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>precsionCount++;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>precsion/precsionCount;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="struct_class_statistics_1aa6b024d72444ea2b8d71f5f2a416655c" refkind="member"><highlight class="normal">std::vector&lt;double&gt;<sp/><ref refid="struct_class_statistics_1aa6b024d72444ea2b8d71f5f2a416655c" kindref="member">ClassStatistics::getPrecisionForDiffRecallThrs</ref>(std::vector&lt;double&gt;<sp/>recallThrs)</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>precisionForDiffRecallThrs(recallThrs.size());</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::vector&lt;double&gt;<sp/>scoresForDiffRecallThrs;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>recallThrs.size()<sp/>&lt;&lt;<sp/>&apos;<sp/>&apos;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>precisionArrayOp<sp/>=<sp/><ref refid="struct_class_statistics_1a3fa2067c657166bcc5d6719575e64ddc" kindref="member">getPrecisionArrayOp</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>recallArray<sp/>=<sp/><ref refid="struct_class_statistics_1ae8fc780d72aca26b4dfc5af5992cb41b" kindref="member">getRecallArray</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//int<sp/>recallThrsSize<sp/>=<sp/>sizeof(recallThrs)<sp/>/<sp/>sizeof(recallThrs[0]);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>recallThrs.size()<sp/>&lt;&lt;<sp/>&apos;\n&apos;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isEmpty<sp/>=<sp/>precisionArrayOp.size()<sp/>==<sp/>0;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;::iterator<sp/>it;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>recallThrs.size();<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!isEmpty)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/>std::lower_bound(recallArray.begin(),<sp/>recallArray.end(),<sp/>recallThrs[i]);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>!=<sp/>recallArray.end())<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index<sp/>=<sp/>std::distance(recallArray.begin(),<sp/>it);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>index<sp/>&lt;&lt;<sp/>&apos;\n&apos;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*if<sp/>(i<sp/>==<sp/>49<sp/>||<sp/>i<sp/>==<sp/>50<sp/>||<sp/>i<sp/>==<sp/>51)<sp/>{</highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;<sp/>Index:<sp/>&quot;<sp/>&lt;&lt;<sp/>index<sp/>&lt;&lt;<sp/>&apos;<sp/>&apos;;</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>precisionForDiffRecallThrs[i]<sp/>=<sp/>precisionArrayOp[index];</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*if<sp/>(*(--it)<sp/>==<sp/>recallThrs[i])<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>index<sp/>=<sp/>std::distance(recallArray.begin(),<sp/>it);</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>precisionForDiffRecallThrs.push_back(precisionArrayOp[index]);</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/>else<sp/>{*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>precisionForDiffRecallThrs[i]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>precisionForDiffRecallThrs.push_back(0);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//scoresForDiffRecallThrs.push_back(*(this-&gt;confScores.begin()<sp/>+<sp/>index));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>precisionForDiffRecallThrs;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="struct_class_statistics_1a3fa2067c657166bcc5d6719575e64ddc" refkind="member"><highlight class="normal">std::vector&lt;double&gt;<sp/><ref refid="struct_class_statistics_1a3fa2067c657166bcc5d6719575e64ddc" kindref="member">ClassStatistics::getPrecisionArrayOp</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>precision_array<sp/>=<sp/><ref refid="struct_class_statistics_1a33a90034e90af43aa97e1b46e9c8567f" kindref="member">getPrecisionArray</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(precision_array.size()<sp/>==<sp/>0<sp/>||<sp/>precision_array.size()<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>precision_array;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::vector&lt;double&gt;::reverse_iterator<sp/>rit;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//int<sp/>i<sp/>=<sp/>0;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>++(precision_array.rbegin());<sp/>it<sp/>!=<sp/>precision_array.rend();<sp/>it++)<sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//rit<sp/>=<sp/>it;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//iter++;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>*it<sp/>&lt;&lt;<sp/>&apos;\n&apos;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*it<sp/>&lt;<sp/>*std::prev(it))<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*it<sp/>=<sp/>*std::prev(it);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>precision_array;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="struct_class_statistics_1a33a90034e90af43aa97e1b46e9c8567f" refkind="member"><highlight class="normal">std::vector&lt;double&gt;<sp/><ref refid="struct_class_statistics_1a33a90034e90af43aa97e1b46e9c8567f" kindref="member">ClassStatistics::getPrecisionArray</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>this-&gt;truePositives.size()<sp/>&lt;&lt;<sp/>&apos;\n&apos;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>this-&gt;falsePositives.size()<sp/>&lt;&lt;<sp/>&apos;\n&apos;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>cumulative_truePositives(this-&gt;<ref refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" kindref="member">truePositives</ref>.size());</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>std::partial_sum(this-&gt;<ref refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" kindref="member">truePositives</ref>.begin(),<sp/>this-&gt;<ref refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" kindref="member">truePositives</ref>.end(),<sp/>cumulative_truePositives.begin());</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>cumulative_falsePositives(this-&gt;<ref refid="struct_class_statistics_1a0193beb26acd9dab5f7a1709b50c353c" kindref="member">falsePositives</ref>.size());</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>std::partial_sum(this-&gt;<ref refid="struct_class_statistics_1a0193beb26acd9dab5f7a1709b50c353c" kindref="member">falsePositives</ref>.begin(),<sp/>this-&gt;<ref refid="struct_class_statistics_1a0193beb26acd9dab5f7a1709b50c353c" kindref="member">falsePositives</ref>.end(),<sp/>cumulative_falsePositives.begin());</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>cum_sum(this-&gt;<ref refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" kindref="member">truePositives</ref>.size());</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>std::transform<sp/>(cumulative_truePositives.begin(),<sp/>cumulative_truePositives.end(),<sp/>cumulative_falsePositives.begin(),<sp/>cum_sum.begin(),<sp/>std::plus&lt;int&gt;());</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>result(this-&gt;<ref refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" kindref="member">truePositives</ref>.size());</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>std::transform<sp/>(cumulative_truePositives.begin(),<sp/>cumulative_truePositives.end(),<sp/>cum_sum.begin(),<sp/>result.begin(),<sp/><ref refid="struct_class_statistics_1a66418a700e12730feb6ad54d81ba0a8e" kindref="member">divide</ref>);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*for<sp/>(auto<sp/>it<sp/>=<sp/>this-&gt;truePositives.begin();<sp/>it<sp/>!=<sp/>this-&gt;truePositives.end();<sp/>it++)<sp/>{</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>*it<sp/>&lt;&lt;<sp/>&apos;<sp/>&apos;;</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&apos;\n&apos;;</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/><sp/><sp/><sp/>for<sp/>(auto<sp/>it<sp/>=<sp/>this-&gt;falsePositives.begin();<sp/>it<sp/>!=<sp/>this-&gt;falsePositives.end();<sp/>it++)<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>*it<sp/>&lt;&lt;<sp/>&apos;<sp/>&apos;;</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&apos;\n&apos;;</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/><sp/><sp/><sp/>for<sp/>(auto<sp/>it<sp/>=<sp/>cumulative_truePositives.begin();<sp/>it<sp/>!=<sp/>cumulative_truePositives.end();<sp/>it++)<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>*it<sp/>&lt;&lt;<sp/>&apos;<sp/>&apos;;</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&apos;\n&apos;;</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/><sp/>for<sp/>(auto<sp/>it<sp/>=<sp/>cumulative_falsePositives.begin();<sp/>it<sp/>!=<sp/>cumulative_falsePositives.end();<sp/>it++)<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>*it<sp/>&lt;&lt;<sp/>&apos;<sp/>&apos;;</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&apos;\n&apos;;</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//result.push_back(2.4);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="struct_class_statistics_1a4b189bb3822f02cca79dbe1b59fce7b5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_class_statistics_1a4b189bb3822f02cca79dbe1b59fce7b5" kindref="member">ClassStatistics::getRecall</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>recall<sp/>=<sp/><ref refid="struct_class_statistics_1ae8fc780d72aca26b4dfc5af5992cb41b" kindref="member">getRecallArray</ref>();</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>recall.empty()<sp/>?<sp/>0<sp/>:<sp/>recall[recall.size()<sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="struct_class_statistics_1ae8fc780d72aca26b4dfc5af5992cb41b" refkind="member"><highlight class="normal">std::vector&lt;double&gt;<sp/><ref refid="struct_class_statistics_1ae8fc780d72aca26b4dfc5af5992cb41b" kindref="member">ClassStatistics::getRecallArray</ref>()</highlight><highlight class="keyword"><sp/>const</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;int&gt;<sp/>cumulative_truePositives(this-&gt;<ref refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" kindref="member">truePositives</ref>.size());</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>std::partial_sum(this-&gt;<ref refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" kindref="member">truePositives</ref>.begin(),<sp/>this-&gt;<ref refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" kindref="member">truePositives</ref>.end(),<sp/>cumulative_truePositives.begin());</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;double&gt;<sp/>result(this-&gt;<ref refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" kindref="member">truePositives</ref>.size());</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::transform<sp/>(cumulative_truePositives.begin(),<sp/>cumulative_truePositives.end(),<sp/>(double)this-&gt;numGroundTruths,<sp/>result.begin(),<sp/>std::divides&lt;double&gt;());</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::transform<sp/>(cumulative_truePositives.begin(),<sp/>cumulative_truePositives.end(),<sp/>result.begin(),</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::bind(std::divides&lt;double&gt;(),<sp/>std::placeholders::_1,<sp/>this-&gt;numGroundTruths));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>t<sp/>&lt;&lt;<sp/>&apos;\n&apos;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=0;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>cumulative_truePositives.begin();<sp/>it<sp/>!=<sp/>cumulative_truePositives.end();<sp/>it++)<sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result[i]<sp/>=<sp/>*it<sp/>/<sp/>(double)this-&gt;<ref refid="struct_class_statistics_1af869c91eda0b044c899797a3b10153ca" kindref="member">numGroundTruthsReg</ref>;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="comment">/*void<sp/>ClassStatistics::printStats()<sp/>const{</highlight></codeline>
+<codeline lineno="175"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;------------------------------&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="176"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;------------------------------&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="177"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;<sp/><sp/>Class<sp/>id:<sp/>&quot;<sp/>&lt;&lt;<sp/>classID<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;------------------------------&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;TP:<sp/>&quot;<sp/>&lt;&lt;<sp/>this-&gt;truePositives<sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="180"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;FP:<sp/>&quot;<sp/>&lt;&lt;<sp/>this-&gt;falsePositives<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;FN:<sp/>&quot;<sp/>&lt;&lt;<sp/>this-&gt;falseNegatives<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="182"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Mean<sp/>IOU:<sp/>&quot;<sp/>&lt;&lt;<sp/>getMeanIOU()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Precision:<sp/>&quot;<sp/>&lt;&lt;<sp/>getPrecision()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;Recall:<sp/>&quot;<sp/>&lt;&lt;<sp/>getRecall()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="185"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;------------------------------&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="186"><highlight class="comment"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>&quot;------------------------------&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="187"><highlight class="comment">}*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_detector" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Detector</compoundname>
+    <includes refid="_deep_learning_suite_lib_2_detectors_2_detector_8h" local="no">Detector.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_detector_1aa43b3d7bbd4b225855b4bcc93f70b225" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Detector::Detector</definition>
+        <argsstring>()</argsstring>
+        <name>Detector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Detectors/Detector.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Detectors/Detector.h" bodystart="12" bodyend="12"/>
+        <references refid="class_detector_1a2f86c9bdc9cacd3bbc4d62d9a142c455">inferImage</references>
+      </memberdef>
+      <memberdef kind="function" id="class_detector_1a2f86c9bdc9cacd3bbc4d62d9a142c455" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="struct_sample" kindref="compound">Sample</ref></type>
+        <definition>virtual Sample Detector::inferImage</definition>
+        <argsstring>(const cv::Mat &amp;image)=0</argsstring>
+        <name>inferImage</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Detectors/Detector.h" line="14" column="1"/>
+        <referencedby refid="class_detector_1aa43b3d7bbd4b225855b4bcc93f70b225" compoundref="_deep_learning_suite_lib_2_detectors_2_detector_8h" startline="12" endline="12">Detector</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Detectors/Detector.h" line="10" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Detectors/Detector.h" bodystart="10" bodyend="15"/>
+    <listofallmembers>
+      <member refid="class_detector_1aa43b3d7bbd4b225855b4bcc93f70b225" prot="public" virt="non-virtual"><scope>Detector</scope><name>Detector</name></member>
+      <member refid="class_detector_1a2f86c9bdc9cacd3bbc4d62d9a142c455" prot="public" virt="pure-virtual"><scope>Detector</scope><name>inferImage</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

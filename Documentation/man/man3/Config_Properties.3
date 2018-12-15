@@ -1,0 +1,190 @@
+.TH "Config::Properties" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Config::Properties
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <properties\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBProperties\fP ()"
+.br
+.ti -1c
+.RI "\fBProperties\fP (YAML::Node node)"
+.br
+.ti -1c
+.RI "void \fBshowConfig\fP ()"
+.br
+.ti -1c
+.RI "void \fBprintNode\fP (YAML::Node node, int nesting_level)"
+.br
+.ti -1c
+.RI "bool \fBkeyExists\fP (std::string element)"
+.br
+.ti -1c
+.RI "bool \fBNodeExists\fP (YAML::Node n, std::vector< std::string > names)"
+.br
+.ti -1c
+.RI "YAML::Node \fBgetNode\fP (std::string element)"
+.br
+.ti -1c
+.RI "std::string \fBasString\fP (std::string element)"
+.br
+.RI "returns as string the propery given "
+.ti -1c
+.RI "std::string \fBasStringWithDefault\fP (std::string element, std::string dataDefault)"
+.br
+.RI "returns as string the propery given "
+.ti -1c
+.RI "float \fBasFloat\fP (std::string element)"
+.br
+.RI "returns as float the propery given "
+.ti -1c
+.RI "float \fBasFloatWithDefault\fP (std::string element, float dataDefault)"
+.br
+.RI "returns as float the propery given "
+.ti -1c
+.RI "int \fBasInt\fP (std::string element)"
+.br
+.RI "returns as integer the propery given "
+.ti -1c
+.RI "int \fBasIntWithDefault\fP (std::string element, int dataDefault)"
+.br
+.RI "returns as integer the propery given "
+.ti -1c
+.RI "double \fBasDouble\fP (std::string element)"
+.br
+.RI "returns as double the propery given "
+.ti -1c
+.RI "double \fBasDoubleWithDefault\fP (std::string element, double dataDefault)"
+.br
+.RI "returns as double the propery given "
+.ti -1c
+.RI "YAML::Node \fBgetNode\fP ()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Config::Properties::Properties ()"
+
+.SS "Config::Properties::Properties (YAML::Node node)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "double Config::Properties::asDouble (std::string element)"
+
+.PP
+returns as double the propery given 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIroute\fP to element separated by dots (example: 'carViz\&.Camera\&.proxy') 
+.RE
+.PP
+
+.SS "double Config::Properties::asDoubleWithDefault (std::string element, double dataDefault)"
+
+.PP
+returns as double the propery given 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIroute\fP to element separated by dots (example: 'carViz\&.Camera\&.proxy') 
+.br
+\fIdefault\fP value 
+.RE
+.PP
+
+.SS "float Config::Properties::asFloat (std::string element)"
+
+.PP
+returns as float the propery given 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIroute\fP to element separated by dots (example: 'carViz\&.Camera\&.proxy') 
+.RE
+.PP
+
+.SS "float Config::Properties::asFloatWithDefault (std::string element, float dataDefault)"
+
+.PP
+returns as float the propery given 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIroute\fP to element separated by dots (example: 'carViz\&.Camera\&.proxy') 
+.br
+\fIdefault\fP value 
+.RE
+.PP
+
+.SS "int Config::Properties::asInt (std::string element)"
+
+.PP
+returns as integer the propery given 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIroute\fP to element separated by dots (example: 'carViz\&.Camera\&.proxy') 
+.RE
+.PP
+
+.SS "int Config::Properties::asIntWithDefault (std::string element, int dataDefault)"
+
+.PP
+returns as integer the propery given 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIroute\fP to element separated by dots (example: 'carViz\&.Camera\&.proxy') 
+.br
+\fIdefault\fP value 
+.RE
+.PP
+
+.SS "std::string Config::Properties::asString (std::string element)"
+
+.PP
+returns as string the propery given 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIroute\fP to element separated by dots (example: 'carViz\&.Camera\&.proxy') 
+.RE
+.PP
+
+.SS "std::string Config::Properties::asStringWithDefault (std::string element, std::string dataDefault)"
+
+.PP
+returns as string the propery given 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIroute\fP to element separated by dots (example: 'carViz\&.Camera\&.proxy') 
+.br
+\fIdefault\fP value 
+.RE
+.PP
+
+.SS "YAML::Node Config::Properties::getNode (std::string element)"
+
+.SS "YAML::Node Config::Properties::getNode ()"
+
+.SS "bool Config::Properties::keyExists (std::string element)"
+
+.SS "bool Config::Properties::NodeExists (YAML::Node n, std::vector< std::string > names)"
+
+.SS "void Config::Properties::printNode (YAML::Node node, int nesting_level)"
+
+.SS "void Config::Properties::showConfig ()"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

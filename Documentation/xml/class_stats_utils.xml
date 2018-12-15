@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_stats_utils" kind="class" language="C++" prot="public">
+    <compoundname>StatsUtils</compoundname>
+    <includes refid="_stats_utils_8h" local="no">StatsUtils.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_stats_utils_1a88224307181b4b86d5e611e34e77587e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double StatsUtils::getIOU</definition>
+        <argsstring>(const cv::Rect_&lt; double &gt; &amp;gt, const cv::Rect_&lt; double &gt; &amp;detection, bool isCrowd)</argsstring>
+        <name>getIOU</name>
+        <param>
+          <type>const cv::Rect_&lt; double &gt; &amp;</type>
+          <declname>gt</declname>
+        </param>
+        <param>
+          <type>const cv::Rect_&lt; double &gt; &amp;</type>
+          <declname>detection</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isCrowd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/StatsUtils.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/StatsUtils.cpp" bodystart="7" bodyend="56"/>
+        <references refid="namespacekeras__utils_1_1bounding__box__utils_1a2aa9711828ff2fd23f2769c95bfa3b52" compoundref="bounding__box__utils_8py" startline="253" endline="342">keras_utils.bounding_box_utils.iou</references>
+        <referencedby refid="class_stats_utils_1ab2ddaf474a74534ae5896d7d564d9a68" compoundref="_stats_utils_8cpp" startline="58" endline="140">computeIOUMatrix</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_stats_utils_1ab2ddaf474a74534ae5896d7d564d9a68" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StatsUtils::computeIOUMatrix</definition>
+        <argsstring>(Sample gt, Sample detection, Eval::EvalMatrix &amp;evalmatrix, bool isIouTypeBbox)</argsstring>
+        <name>computeIOUMatrix</name>
+        <param>
+          <type><ref refid="struct_sample" kindref="compound">Sample</ref></type>
+          <declname>gt</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_sample" kindref="compound">Sample</ref></type>
+          <declname>detection</declname>
+        </param>
+        <param>
+          <type><ref refid="namespace_eval_1a565709ccceb6f242086a1bab22551525" kindref="member">Eval::EvalMatrix</ref> &amp;</type>
+          <declname>evalmatrix</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isIouTypeBbox</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/StatsUtils.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/StatsUtils.cpp" bodystart="58" bodyend="140"/>
+        <references refid="struct_sample_1a5f1b7716e5c4e8f5217a18021169283f" compoundref="_sample_8cpp" startline="123" endline="125">Sample::getRectRegions</references>
+        <references refid="class_stats_utils_1a88224307181b4b86d5e611e34e77587e" compoundref="_stats_utils_8cpp" startline="7" endline="56">getIOU</references>
+        <references refid="struct_sample_1aba47baeaed03136d0b63ca6609de25a7" compoundref="_sample_8cpp" startline="131" endline="133">Sample::getRleRegions</references>
+        <references refid="mask_api_8cpp_1ac27f86dce9ee2ec00d2a7597ff903725" compoundref="mask_api_8cpp" startline="73" endline="92">rleIou</references>
+        <referencedby refid="class_detections_evaluator_1ae3047c04a1fbdce949f309373f1d81c5" compoundref="_detections_evaluator_8cpp" startline="109" endline="163">DetectionsEvaluator::evaluate</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/StatsUtils.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/StatsUtils.h" bodystart="12" bodyend="16"/>
+    <listofallmembers>
+      <member refid="class_stats_utils_1ab2ddaf474a74534ae5896d7d564d9a68" prot="public" virt="non-virtual"><scope>StatsUtils</scope><name>computeIOUMatrix</name></member>
+      <member refid="class_stats_utils_1a88224307181b4b86d5e611e34e77587e" prot="public" virt="non-virtual"><scope>StatsUtils</scope><name>getIOU</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

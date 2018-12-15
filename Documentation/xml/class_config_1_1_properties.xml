@@ -1,0 +1,489 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_config_1_1_properties" kind="class" language="C++" prot="public">
+    <compoundname>Config::Properties</compoundname>
+    <includes refid="properties_8hpp" local="no">properties.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_config_1_1_properties_1a2366d4c4fbd64bdd828434434f46a64d" prot="private" static="no" mutable="no">
+        <type>YAML::Node</type>
+        <definition>YAML::Node Config::Properties::node</definition>
+        <argsstring></argsstring>
+        <name>node</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="132" column="1" bodyfile="DeepLearningSuite/libs/config/include/config/properties.hpp" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_config_1_1_properties_1a86d9801a1b37443c70bd8985afe81a46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Config::Properties::Properties</definition>
+        <argsstring>()</argsstring>
+        <name>Properties</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="44" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="25" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1a78be1d1646141b99664c418744c6ec0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Config::Properties::Properties</definition>
+        <argsstring>(YAML::Node node)</argsstring>
+        <name>Properties</name>
+        <param>
+          <type>YAML::Node</type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="45" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="28" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1a4c09553d96770e465f62a9899c94120d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Config::Properties::showConfig</definition>
+        <argsstring>()</argsstring>
+        <name>showConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="48" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="33" bodyend="46"/>
+        <references refid="class_config_1_1_properties_1a04a44d109d5e9b34dd93b338e0754201" compoundref="properties_8cpp" startline="49" endline="76">printNode</references>
+        <referencedby refid="class_sample_generation_app_1adb5fa7f811a3177d7966981789b41f72" compoundref="_sample_generation_app_8cpp" startline="95" endline="107">SampleGenerationApp::verifyRequirements</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1a04a44d109d5e9b34dd93b338e0754201" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Config::Properties::printNode</definition>
+        <argsstring>(YAML::Node node, int nesting_level)</argsstring>
+        <name>printNode</name>
+        <param>
+          <type>YAML::Node</type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nesting_level</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="50" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="49" bodyend="76"/>
+        <referencedby refid="class_config_1_1_properties_1a4c09553d96770e465f62a9899c94120d" compoundref="properties_8cpp" startline="33" endline="46">showConfig</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1a93e257f371ab1cd5d87d96fc39983101" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Config::Properties::keyExists</definition>
+        <argsstring>(std::string element)</argsstring>
+        <name>keyExists</name>
+        <param>
+          <type>std::string</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="52" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="79" bodyend="84"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+        <references refid="class_config_1_1_properties_1a8b47d362e0c7b5a8dce7b3efdbdb16b2" compoundref="properties_8cpp" startline="87" endline="108">NodeExists</references>
+        <referencedby refid="class_sample_generation_app_1adb5fa7f811a3177d7966981789b41f72" compoundref="_sample_generation_app_8cpp" startline="95" endline="107">SampleGenerationApp::verifyRequirements</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1a8b47d362e0c7b5a8dce7b3efdbdb16b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Config::Properties::NodeExists</definition>
+        <argsstring>(YAML::Node n, std::vector&lt; std::string &gt; names)</argsstring>
+        <name>NodeExists</name>
+        <param>
+          <type>YAML::Node</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string &gt;</type>
+          <declname>names</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="54" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="87" bodyend="108"/>
+        <referencedby refid="class_config_1_1_properties_1a93e257f371ab1cd5d87d96fc39983101" compoundref="properties_8cpp" startline="79" endline="84">keyExists</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1abb18930b0431bd89e85ed0a5b9b7cac3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>YAML::Node</type>
+        <definition>YAML::Node Config::Properties::getNode</definition>
+        <argsstring>(std::string element)</argsstring>
+        <name>getNode</name>
+        <param>
+          <type>std::string</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="56" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="111" bodyend="116"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+        <referencedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" compoundref="_tools_2_converter_2_converter_8cpp" startline="37" endline="67">MyApp::operator()</referencedby>
+        <referencedby refid="namespace_config_1af48e0d12acc53c2d353939b563e472e2" compoundref="properties_8hpp" startline="153" endline="156">Config::operator&lt;&lt;</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1a87fb20ec94658e8ce0cce06b239019be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Config::Properties::asString</definition>
+        <argsstring>(std::string element)</argsstring>
+        <name>asString</name>
+        <param>
+          <type>std::string</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+<para>returns as string the propery given </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>route</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to element separated by dots (example: &quot;carViz.Camera.proxy&quot;) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="63" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="119" bodyend="124"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+        <referencedby refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" compoundref="mainwindow_8cpp" startline="51" endline="54">MainWindow::~MainWindow</referencedby>
+        <referencedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" compoundref="_tools_2_evaluator_2_evaluator_8cpp" startline="27" endline="65">MyApp::operator()</referencedby>
+        <referencedby refid="namespace_comm_1a488b3721b4d9a501e8cd38388ab30437" compoundref="camera_client_8cpp" startline="25" endline="80">Comm::getCameraClient</referencedby>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1aa59fe901fa8a7c4b0cb2404a0922905e" compoundref="camera_ice_client_8cpp" startline="30" endline="72">Comm::CameraIceClient::CameraIceClient</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1a38019252713b2a815b78eab3a4e00e75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Config::Properties::asStringWithDefault</definition>
+        <argsstring>(std::string element, std::string dataDefault)</argsstring>
+        <name>asStringWithDefault</name>
+        <param>
+          <type>std::string</type>
+          <declname>element</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>dataDefault</declname>
+        </param>
+        <briefdescription>
+<para>returns as string the propery given </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>route</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to element separated by dots (example: &quot;carViz.Camera.proxy&quot;) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>default</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="73" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="127" bodyend="138"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+        <referencedby refid="namespace_comm_1a488b3721b4d9a501e8cd38388ab30437" compoundref="camera_client_8cpp" startline="25" endline="80">Comm::getCameraClient</referencedby>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1aa59fe901fa8a7c4b0cb2404a0922905e" compoundref="camera_ice_client_8cpp" startline="30" endline="72">Comm::CameraIceClient::CameraIceClient</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1a82dc1305eac3b4e68d776b868d03c599" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Config::Properties::asFloat</definition>
+        <argsstring>(std::string element)</argsstring>
+        <name>asFloat</name>
+        <param>
+          <type>std::string</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+<para>returns as float the propery given </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>route</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to element separated by dots (example: &quot;carViz.Camera.proxy&quot;) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="81" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="141" bodyend="146"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1a30c642acc0904cf510825bf29034eb95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float Config::Properties::asFloatWithDefault</definition>
+        <argsstring>(std::string element, float dataDefault)</argsstring>
+        <name>asFloatWithDefault</name>
+        <param>
+          <type>std::string</type>
+          <declname>element</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>dataDefault</declname>
+        </param>
+        <briefdescription>
+<para>returns as float the propery given </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>route</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to element separated by dots (example: &quot;carViz.Camera.proxy&quot;) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>default</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="90" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="149" bodyend="160"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1aa59fe901fa8a7c4b0cb2404a0922905e" compoundref="camera_ice_client_8cpp" startline="30" endline="72">Comm::CameraIceClient::CameraIceClient</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1aa30deb695b2a7ca89332c9db746efc07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Config::Properties::asInt</definition>
+        <argsstring>(std::string element)</argsstring>
+        <name>asInt</name>
+        <param>
+          <type>std::string</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+<para>returns as integer the propery given </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>route</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to element separated by dots (example: &quot;carViz.Camera.proxy&quot;) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="98" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="163" bodyend="168"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1a513b23817b03c01443252a58aea17fc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Config::Properties::asIntWithDefault</definition>
+        <argsstring>(std::string element, int dataDefault)</argsstring>
+        <name>asIntWithDefault</name>
+        <param>
+          <type>std::string</type>
+          <declname>element</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dataDefault</declname>
+        </param>
+        <briefdescription>
+<para>returns as integer the propery given </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>route</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to element separated by dots (example: &quot;carViz.Camera.proxy&quot;) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>default</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="107" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="171" bodyend="182"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1a5577e668732a41e58b9852cb59f4400b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Config::Properties::asDouble</definition>
+        <argsstring>(std::string element)</argsstring>
+        <name>asDouble</name>
+        <param>
+          <type>std::string</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+<para>returns as double the propery given </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>route</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to element separated by dots (example: &quot;carViz.Camera.proxy&quot;) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="115" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="185" bodyend="190"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1ac482a248dab5d785c38a883ad6053062" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Config::Properties::asDoubleWithDefault</definition>
+        <argsstring>(std::string element, double dataDefault)</argsstring>
+        <name>asDoubleWithDefault</name>
+        <param>
+          <type>std::string</type>
+          <declname>element</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>dataDefault</declname>
+        </param>
+        <briefdescription>
+<para>returns as double the propery given </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>route</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to element separated by dots (example: &quot;carViz.Camera.proxy&quot;) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>default</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="124" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="193" bodyend="204"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+      </memberdef>
+      <memberdef kind="function" id="class_config_1_1_properties_1a78436b0ab5445a34caf14b7141046d8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>YAML::Node</type>
+        <definition>YAML::Node Config::Properties::getNode</definition>
+        <argsstring>()</argsstring>
+        <name>getNode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="128" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="207" bodyend="210"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_config_1_1_properties_1a42f5ad3ce96ba03751d1ecc19e739a54" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>YAML::Node</type>
+        <definition>YAML::Node Config::Properties::searchNode</definition>
+        <argsstring>(YAML::Node n, std::vector&lt; std::string &gt; names)</argsstring>
+        <name>searchNode</name>
+        <param>
+          <type>YAML::Node</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::string &gt;</type>
+          <declname>names</declname>
+        </param>
+        <briefdescription>
+<para>makes recursively sear for element given in names </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>yaml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>node in which search </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>of elements names (route to element of last position of vector)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>yaml node of element </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="144" column="1" bodyfile="DeepLearningSuite/libs/config/src/properties.cpp" bodystart="215" bodyend="224"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="42" column="1" bodyfile="DeepLearningSuite/libs/config/include/config/properties.hpp" bodystart="42" bodyend="146"/>
+    <listofallmembers>
+      <member refid="class_config_1_1_properties_1a5577e668732a41e58b9852cb59f4400b" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>asDouble</name></member>
+      <member refid="class_config_1_1_properties_1ac482a248dab5d785c38a883ad6053062" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>asDoubleWithDefault</name></member>
+      <member refid="class_config_1_1_properties_1a82dc1305eac3b4e68d776b868d03c599" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>asFloat</name></member>
+      <member refid="class_config_1_1_properties_1a30c642acc0904cf510825bf29034eb95" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>asFloatWithDefault</name></member>
+      <member refid="class_config_1_1_properties_1aa30deb695b2a7ca89332c9db746efc07" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>asInt</name></member>
+      <member refid="class_config_1_1_properties_1a513b23817b03c01443252a58aea17fc1" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>asIntWithDefault</name></member>
+      <member refid="class_config_1_1_properties_1a87fb20ec94658e8ce0cce06b239019be" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>asString</name></member>
+      <member refid="class_config_1_1_properties_1a38019252713b2a815b78eab3a4e00e75" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>asStringWithDefault</name></member>
+      <member refid="class_config_1_1_properties_1abb18930b0431bd89e85ed0a5b9b7cac3" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>getNode</name></member>
+      <member refid="class_config_1_1_properties_1a78436b0ab5445a34caf14b7141046d8a" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>getNode</name></member>
+      <member refid="class_config_1_1_properties_1a93e257f371ab1cd5d87d96fc39983101" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>keyExists</name></member>
+      <member refid="class_config_1_1_properties_1a2366d4c4fbd64bdd828434434f46a64d" prot="private" virt="non-virtual"><scope>Config::Properties</scope><name>node</name></member>
+      <member refid="class_config_1_1_properties_1a8b47d362e0c7b5a8dce7b3efdbdb16b2" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>NodeExists</name></member>
+      <member refid="class_config_1_1_properties_1a04a44d109d5e9b34dd93b338e0754201" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>printNode</name></member>
+      <member refid="class_config_1_1_properties_1a86d9801a1b37443c70bd8985afe81a46" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>Properties</name></member>
+      <member refid="class_config_1_1_properties_1a78be1d1646141b99664c418744c6ec0d" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>Properties</name></member>
+      <member refid="class_config_1_1_properties_1a42f5ad3ce96ba03751d1ecc19e739a54" prot="private" virt="non-virtual"><scope>Config::Properties</scope><name>searchNode</name></member>
+      <member refid="class_config_1_1_properties_1a4c09553d96770e465f62a9899c94120d" prot="public" virt="non-virtual"><scope>Config::Properties</scope><name>showConfig</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

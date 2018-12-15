@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacesample_generator_1_1sample" kind="namespace" language="Python">
+    <compoundname>sampleGenerator::sample</compoundname>
+    <innerclass refid="classsample_generator_1_1sample_1_1sample" prot="public">sampleGenerator::sample::sample</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacesample_generator_1_1sample_1afc792ca26f5edd4d3ce028df1741d795" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string sampleGenerator::sample.__author__</definition>
+        <argsstring></argsstring>
+        <name>__author__</name>
+        <initializer>=  &apos;frivas&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="1" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="1" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacesample_generator_1_1sample_1a0b9ff0e06d76ca8c0aeb429aa9e87f68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.checkRange</definition>
+        <argsstring>(data_in)</argsstring>
+        <name>checkRange</name>
+        <param>
+          <type>data_in</type>
+          <defname>data_in</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="10" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="10" bodyend="15"/>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a8bc9b0512da0a0056ecc6759ebcd8e97" compoundref="sample_8py" startline="121" endline="132">sampleGenerator.sample.sample.getResultStr</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

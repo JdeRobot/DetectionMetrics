@@ -1,0 +1,93 @@
+\hypertarget{class_detections_evaluator}{}\section{Detections\+Evaluator Class Reference}
+\label{class_detections_evaluator}\index{Detections\+Evaluator@{Detections\+Evaluator}}
+
+
+{\ttfamily \#include $<$Detections\+Evaluator.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_detections_evaluator_aea7893610a1924fc827b1140f4d64644}{Detections\+Evaluator} (\hyperlink{_dataset_reader_8h_a30d89cba514a220d64d04535c0465f1c}{Dataset\+Reader\+Ptr} gt, \hyperlink{_dataset_reader_8h_a30d89cba514a220d64d04535c0465f1c}{Dataset\+Reader\+Ptr} detections, bool debug=false)
+\item 
+void \hyperlink{class_detections_evaluator_ae3047c04a1fbdce949f309373f1d81c5}{evaluate} (bool is\+Iou\+Type\+Bbox)
+\item 
+void \hyperlink{class_detections_evaluator_ae5bd9702b49c12f39d09243b2d00ee74}{accumulate\+Results} ()
+\item 
+void \hyperlink{class_detections_evaluator_ac71c60dd93e3afdf7ccdc69353afbed7}{add\+Valid\+Mix\+Class} (const std\+::string classA, const std\+::string classB)
+\item 
+void \hyperlink{class_detections_evaluator_a4dd79b8b2b45a8f035a2ce5d447d5738}{add\+Class\+To\+Display} (const std\+::string \&class\+ID)
+\item 
+std\+::map$<$ std\+::string, double $>$ \hyperlink{class_detections_evaluator_a8e45b894c4bd12036b06d661b22cfad3}{get\+Class\+Wise\+AP} ()
+\item 
+std\+::map$<$ std\+::string, double $>$ \hyperlink{class_detections_evaluator_a721ab693346076a18bf7dbdfa9a52c35}{get\+Class\+Wise\+AR} ()
+\item 
+double \hyperlink{class_detections_evaluator_a593969daae1eb92721cbf6b4d58e480c}{get\+Overallm\+AP} ()
+\item 
+double \hyperlink{class_detections_evaluator_a33ecd969977924ce1385fc64109e619c}{get\+Overallm\+AR} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_detections_evaluator_aea7893610a1924fc827b1140f4d64644}\label{class_detections_evaluator_aea7893610a1924fc827b1140f4d64644}} 
+\index{Detections\+Evaluator@{Detections\+Evaluator}!Detections\+Evaluator@{Detections\+Evaluator}}
+\index{Detections\+Evaluator@{Detections\+Evaluator}!Detections\+Evaluator@{Detections\+Evaluator}}
+\subsubsection{\texorpdfstring{Detections\+Evaluator()}{DetectionsEvaluator()}}
+{\footnotesize\ttfamily Detections\+Evaluator\+::\+Detections\+Evaluator (\begin{DoxyParamCaption}\item[{\hyperlink{_dataset_reader_8h_a30d89cba514a220d64d04535c0465f1c}{Dataset\+Reader\+Ptr}}]{gt,  }\item[{\hyperlink{_dataset_reader_8h_a30d89cba514a220d64d04535c0465f1c}{Dataset\+Reader\+Ptr}}]{detections,  }\item[{bool}]{debug = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_detections_evaluator_ae5bd9702b49c12f39d09243b2d00ee74}\label{class_detections_evaluator_ae5bd9702b49c12f39d09243b2d00ee74}} 
+\index{Detections\+Evaluator@{Detections\+Evaluator}!accumulate\+Results@{accumulate\+Results}}
+\index{accumulate\+Results@{accumulate\+Results}!Detections\+Evaluator@{Detections\+Evaluator}}
+\subsubsection{\texorpdfstring{accumulate\+Results()}{accumulateResults()}}
+{\footnotesize\ttfamily void Detections\+Evaluator\+::accumulate\+Results (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_detections_evaluator_a4dd79b8b2b45a8f035a2ce5d447d5738}\label{class_detections_evaluator_a4dd79b8b2b45a8f035a2ce5d447d5738}} 
+\index{Detections\+Evaluator@{Detections\+Evaluator}!add\+Class\+To\+Display@{add\+Class\+To\+Display}}
+\index{add\+Class\+To\+Display@{add\+Class\+To\+Display}!Detections\+Evaluator@{Detections\+Evaluator}}
+\subsubsection{\texorpdfstring{add\+Class\+To\+Display()}{addClassToDisplay()}}
+{\footnotesize\ttfamily void Detections\+Evaluator\+::add\+Class\+To\+Display (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+ID }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_detections_evaluator_ac71c60dd93e3afdf7ccdc69353afbed7}\label{class_detections_evaluator_ac71c60dd93e3afdf7ccdc69353afbed7}} 
+\index{Detections\+Evaluator@{Detections\+Evaluator}!add\+Valid\+Mix\+Class@{add\+Valid\+Mix\+Class}}
+\index{add\+Valid\+Mix\+Class@{add\+Valid\+Mix\+Class}!Detections\+Evaluator@{Detections\+Evaluator}}
+\subsubsection{\texorpdfstring{add\+Valid\+Mix\+Class()}{addValidMixClass()}}
+{\footnotesize\ttfamily void Detections\+Evaluator\+::add\+Valid\+Mix\+Class (\begin{DoxyParamCaption}\item[{const std\+::string}]{classA,  }\item[{const std\+::string}]{classB }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_detections_evaluator_ae3047c04a1fbdce949f309373f1d81c5}\label{class_detections_evaluator_ae3047c04a1fbdce949f309373f1d81c5}} 
+\index{Detections\+Evaluator@{Detections\+Evaluator}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!Detections\+Evaluator@{Detections\+Evaluator}}
+\subsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily void Detections\+Evaluator\+::evaluate (\begin{DoxyParamCaption}\item[{bool}]{is\+Iou\+Type\+Bbox }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_detections_evaluator_a8e45b894c4bd12036b06d661b22cfad3}\label{class_detections_evaluator_a8e45b894c4bd12036b06d661b22cfad3}} 
+\index{Detections\+Evaluator@{Detections\+Evaluator}!get\+Class\+Wise\+AP@{get\+Class\+Wise\+AP}}
+\index{get\+Class\+Wise\+AP@{get\+Class\+Wise\+AP}!Detections\+Evaluator@{Detections\+Evaluator}}
+\subsubsection{\texorpdfstring{get\+Class\+Wise\+A\+P()}{getClassWiseAP()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, double $>$ Detections\+Evaluator\+::get\+Class\+Wise\+AP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_detections_evaluator_a721ab693346076a18bf7dbdfa9a52c35}\label{class_detections_evaluator_a721ab693346076a18bf7dbdfa9a52c35}} 
+\index{Detections\+Evaluator@{Detections\+Evaluator}!get\+Class\+Wise\+AR@{get\+Class\+Wise\+AR}}
+\index{get\+Class\+Wise\+AR@{get\+Class\+Wise\+AR}!Detections\+Evaluator@{Detections\+Evaluator}}
+\subsubsection{\texorpdfstring{get\+Class\+Wise\+A\+R()}{getClassWiseAR()}}
+{\footnotesize\ttfamily std\+::map$<$ std\+::string, double $>$ Detections\+Evaluator\+::get\+Class\+Wise\+AR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_detections_evaluator_a593969daae1eb92721cbf6b4d58e480c}\label{class_detections_evaluator_a593969daae1eb92721cbf6b4d58e480c}} 
+\index{Detections\+Evaluator@{Detections\+Evaluator}!get\+Overallm\+AP@{get\+Overallm\+AP}}
+\index{get\+Overallm\+AP@{get\+Overallm\+AP}!Detections\+Evaluator@{Detections\+Evaluator}}
+\subsubsection{\texorpdfstring{get\+Overallm\+A\+P()}{getOverallmAP()}}
+{\footnotesize\ttfamily double Detections\+Evaluator\+::get\+Overallm\+AP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_detections_evaluator_a33ecd969977924ce1385fc64109e619c}\label{class_detections_evaluator_a33ecd969977924ce1385fc64109e619c}} 
+\index{Detections\+Evaluator@{Detections\+Evaluator}!get\+Overallm\+AR@{get\+Overallm\+AR}}
+\index{get\+Overallm\+AR@{get\+Overallm\+AR}!Detections\+Evaluator@{Detections\+Evaluator}}
+\subsubsection{\texorpdfstring{get\+Overallm\+A\+R()}{getOverallmAR()}}
+{\footnotesize\ttfamily double Detections\+Evaluator\+::get\+Overallm\+AR (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Framework\+Evaluator/\hyperlink{_detections_evaluator_8h}{Detections\+Evaluator.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Framework\+Evaluator/\hyperlink{_detections_evaluator_8cpp}{Detections\+Evaluator.\+cpp}\end{DoxyCompactItemize}

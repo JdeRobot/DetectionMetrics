@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="rgbd_8h" kind="file" language="C++">
+    <compoundname>rgbd.h</compoundname>
+    <includes refid="image_8h" local="no">jderobottypes/image.h</includes>
+    <includedby refid="translators_8hpp" local="no">DeepLearningSuite/libs/comm/include/comm/ros/translators.hpp</includedby>
+    <incdepgraph>
+      <node id="5593">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="5591">
+        <label>DeepLearningSuite/libs/types/include/jderobottypes/rgbd.h</label>
+        <link refid="rgbd_8h"/>
+        <childnode refid="5592" relation="include">
+        </childnode>
+      </node>
+      <node id="5592">
+        <label>jderobottypes/image.h</label>
+        <link refid="image_8h"/>
+        <childnode refid="5593" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5597">
+        <label>DeepLearningSuite/libs/comm/src/ros/listenerCamera.cpp</label>
+        <link refid="listener_camera_8cpp"/>
+      </node>
+      <node id="5596">
+        <label>DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp</label>
+        <link refid="listener_camera_8hpp"/>
+        <childnode refid="5597" relation="include">
+        </childnode>
+      </node>
+      <node id="5594">
+        <label>DeepLearningSuite/libs/types/include/jderobottypes/rgbd.h</label>
+        <link refid="rgbd_8h"/>
+        <childnode refid="5595" relation="include">
+        </childnode>
+      </node>
+      <node id="5598">
+        <label>DeepLearningSuite/libs/comm/src/ros/translators.cpp</label>
+        <link refid="translators_8cpp"/>
+      </node>
+      <node id="5595">
+        <label>DeepLearningSuite/libs/comm/include/comm/ros/translators.hpp</label>
+        <link refid="translators_8hpp"/>
+        <childnode refid="5596" relation="include">
+        </childnode>
+        <childnode refid="5598" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_jde_robot_types_1_1_rgbd" prot="public">JdeRobotTypes::Rgbd</innerclass>
+    <innernamespace refid="namespace_jde_robot_types">JdeRobotTypes</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>(C)<sp/>1997-2017<sp/>JDE<sp/>JdeRobot<sp/>Developers<sp/>Team</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>http://www.gnu.org/licenses/.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>Authors<sp/>:</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Aitor<sp/>Martinez<sp/>Fernandez<sp/>&lt;aitor.martinez.fernandez@gmail.com&gt;</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>JDEROBOTTYPES_RGBD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JDEROBOTTYPES_RGBD_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="image_8h" kindref="compound">jderobottypes/image.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_jde_robot_types" kindref="compound">JdeRobotTypes</ref><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="class_jde_robot_types_1_1_rgbd" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_jde_robot_types_1_1_rgbd" kindref="compound">Rgbd</ref><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="class_jde_robot_types_1_1_rgbd_1ab90a8a0c675991336bca7deabe85d36f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_jde_robot_types_1_1_image" kindref="compound">Image</ref><sp/><ref refid="class_jde_robot_types_1_1_rgbd_1ab90a8a0c675991336bca7deabe85d36f" kindref="member">color</ref>;<sp/></highlight></codeline>
+<codeline lineno="31" refid="class_jde_robot_types_1_1_rgbd_1adf553911edf4bcd1dadea9409261ba49" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_jde_robot_types_1_1_image" kindref="compound">Image</ref><sp/><ref refid="class_jde_robot_types_1_1_rgbd_1adf553911edf4bcd1dadea9409261ba49" kindref="member">depth</ref>;<sp/></highlight></codeline>
+<codeline lineno="32" refid="class_jde_robot_types_1_1_rgbd_1a6cf1e3e9b469df3c599b711a2edcf6ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_jde_robot_types_1_1_rgbd_1a6cf1e3e9b469df3c599b711a2edcf6ba" kindref="member">timeStamp</ref><sp/>=<sp/>0;<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}<sp/></highlight><highlight class="comment">//NS<sp/>JdeRobotTypes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>JDEROBOTTYPES_RGBD_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/libs/types/include/jderobottypes/rgbd.h"/>
+  </compounddef>
+</doxygen>

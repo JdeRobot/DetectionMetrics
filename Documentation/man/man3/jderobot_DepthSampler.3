@@ -1,0 +1,92 @@
+.TH "jderobot::DepthSampler" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jderobot::DepthSampler
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DepthSampler\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDepthSampler\fP (int nBins, int maxDistance, int minInd, float step)"
+.br
+.ti -1c
+.RI "\fBDepthSampler\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~DepthSampler\fP ()"
+.br
+.ti -1c
+.RI "void \fBcalculateLayers\fP (cv::Mat source, std::vector< cv::Mat > &layers)"
+.br
+.ti -1c
+.RI "void \fBevalSample\fP (cv::Mat source, std::vector< cv::Mat > layers, int samplingRate, cv::Mat &outSNormal, cv::Mat &outSLayers)"
+.br
+.ti -1c
+.RI "void \fBsample\fP (cv::Mat source, std::vector< cv::Mat > layers, std::vector< cv::Point2i > &out)"
+.br
+.ti -1c
+.RI "void \fBsetnBins\fP (int value)"
+.br
+.ti -1c
+.RI "int \fBgetnBins\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetMaxDistance\fP (int value)"
+.br
+.ti -1c
+.RI "int \fBgetMaxDistance\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetMinInd\fP (int value)"
+.br
+.ti -1c
+.RI "int \fBgetMinInd\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetStep\fP (double value)"
+.br
+.ti -1c
+.RI "double \fBgetStep\fP ()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "jderobot::DepthSampler::DepthSampler (int nBins, int maxDistance, int minInd, float step)"
+
+.SS "jderobot::DepthSampler::DepthSampler ()"
+
+.SS "jderobot::DepthSampler::~DepthSampler ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void jderobot::DepthSampler::calculateLayers (cv::Mat source, std::vector< cv::Mat > & layers)"
+
+.SS "void jderobot::DepthSampler::evalSample (cv::Mat source, std::vector< cv::Mat > layers, int samplingRate, cv::Mat & outSNormal, cv::Mat & outSLayers)"
+
+.SS "int jderobot::DepthSampler::getMaxDistance ()\fC [inline]\fP"
+
+.SS "int jderobot::DepthSampler::getMinInd ()\fC [inline]\fP"
+
+.SS "int jderobot::DepthSampler::getnBins ()\fC [inline]\fP"
+
+.SS "double jderobot::DepthSampler::getStep ()\fC [inline]\fP"
+
+.SS "void jderobot::DepthSampler::sample (cv::Mat source, std::vector< cv::Mat > layers, std::vector< cv::Point2i > & out)"
+
+.SS "void jderobot::DepthSampler::setMaxDistance (int value)\fC [inline]\fP"
+
+.SS "void jderobot::DepthSampler::setMinInd (int value)\fC [inline]\fP"
+
+.SS "void jderobot::DepthSampler::setnBins (int value)\fC [inline]\fP"
+
+.SS "void jderobot::DepthSampler::setStep (double value)\fC [inline]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

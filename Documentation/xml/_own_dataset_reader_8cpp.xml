@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_own_dataset_reader_8cpp" kind="file" language="C++">
+    <compoundname>OwnDatasetReader.cpp</compoundname>
+    <includes local="no">boost/filesystem.hpp</includes>
+    <includes local="no">glog/logging.h</includes>
+    <includes local="no">boost/lexical_cast.hpp</includes>
+    <includes refid="_own_dataset_reader_8h" local="yes">DatasetConverters/readers/OwnDatasetReader.h</includes>
+    <incdepgraph>
+      <node id="2416">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="2409">
+        <label>DatasetConverters/readers/OwnDatasetReader.h</label>
+        <link refid="_own_dataset_reader_8h"/>
+        <childnode refid="2410" relation="include">
+        </childnode>
+      </node>
+      <node id="2423">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="2407">
+        <label>glog/logging.h</label>
+      </node>
+      <node id="2408">
+        <label>boost/lexical_cast.hpp</label>
+      </node>
+      <node id="2421">
+        <label>Regions/RleRegions.h</label>
+        <link refid="_rle_regions_8h"/>
+        <childnode refid="2414" relation="include">
+        </childnode>
+        <childnode refid="2415" relation="include">
+        </childnode>
+        <childnode refid="2422" relation="include">
+        </childnode>
+      </node>
+      <node id="2405">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/OwnDatasetReader.cpp</label>
+        <link refid="_own_dataset_reader_8cpp"/>
+        <childnode refid="2406" relation="include">
+        </childnode>
+        <childnode refid="2407" relation="include">
+        </childnode>
+        <childnode refid="2408" relation="include">
+        </childnode>
+        <childnode refid="2409" relation="include">
+        </childnode>
+      </node>
+      <node id="2413">
+        <label>Regions/RectRegions.h</label>
+        <link refid="_rect_regions_8h"/>
+        <childnode refid="2414" relation="include">
+        </childnode>
+        <childnode refid="2415" relation="include">
+        </childnode>
+        <childnode refid="2417" relation="include">
+        </childnode>
+        <childnode refid="2418" relation="include">
+        </childnode>
+      </node>
+      <node id="2415">
+        <label>Regions.h</label>
+        <link refid="_regions_8h"/>
+        <childnode refid="2414" relation="include">
+        </childnode>
+        <childnode refid="2416" relation="include">
+        </childnode>
+      </node>
+      <node id="2414">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="2411">
+        <label>string</label>
+      </node>
+      <node id="2424">
+        <label>Common/EvalMatrix.h</label>
+        <link refid="_eval_matrix_8h"/>
+        <childnode refid="2425" relation="include">
+        </childnode>
+        <childnode refid="2427" relation="include">
+        </childnode>
+      </node>
+      <node id="2427">
+        <label>map</label>
+      </node>
+      <node id="2419">
+        <label>Regions/ContourRegions.h</label>
+        <link refid="_contour_regions_8h"/>
+        <childnode refid="2414" relation="include">
+        </childnode>
+        <childnode refid="2415" relation="include">
+        </childnode>
+        <childnode refid="2420" relation="include">
+        </childnode>
+      </node>
+      <node id="2422">
+        <label>RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="2416" relation="include">
+        </childnode>
+        <childnode refid="2423" relation="include">
+        </childnode>
+      </node>
+      <node id="2412">
+        <label>Common/Sample.h</label>
+        <link refid="_sample_8h"/>
+        <childnode refid="2413" relation="include">
+        </childnode>
+        <childnode refid="2419" relation="include">
+        </childnode>
+        <childnode refid="2421" relation="include">
+        </childnode>
+      </node>
+      <node id="2426">
+        <label>vector</label>
+      </node>
+      <node id="2406">
+        <label>boost/filesystem.hpp</label>
+      </node>
+      <node id="2425">
+        <label>Matrix.h</label>
+        <link refid="_matrix_8h"/>
+        <childnode refid="2426" relation="include">
+        </childnode>
+      </node>
+      <node id="2420">
+        <label>ContourRegion.h</label>
+        <link refid="_contour_region_8h"/>
+        <childnode refid="2414" relation="include">
+        </childnode>
+        <childnode refid="2416" relation="include">
+        </childnode>
+      </node>
+      <node id="2417">
+        <label>RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="2414" relation="include">
+        </childnode>
+      </node>
+      <node id="2410">
+        <label>DatasetConverters/readers/DatasetReader.h</label>
+        <link refid="_dataset_reader_8h"/>
+        <childnode refid="2411" relation="include">
+        </childnode>
+        <childnode refid="2412" relation="include">
+        </childnode>
+        <childnode refid="2416" relation="include">
+        </childnode>
+        <childnode refid="2424" relation="include">
+        </childnode>
+        <childnode refid="2407" relation="include">
+        </childnode>
+      </node>
+      <node id="2418">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>22/01/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/filesystem.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;glog/logging.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/lexical_cast.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_own_dataset_reader_8h" kindref="compound">DatasetConverters/readers/OwnDatasetReader.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_own_dataset_reader_1ac6307c8d373b58b757864594132e2973" refkind="member"><highlight class="normal"><ref refid="class_own_dataset_reader_1ac6307c8d373b58b757864594132e2973" kindref="member">OwnDatasetReader::OwnDatasetReader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<ref refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" kindref="member">path</ref>,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>classNamesFile,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>imagesRequired):<ref refid="class_dataset_reader" kindref="compound">DatasetReader</ref>(imagesRequired){</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;classNamesFile=<ref refid="class_dataset_reader_1a45ded43b56539f1e37a24ca9c94b4611" kindref="member">classNamesFile</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_own_dataset_reader_1aaae1790f8ee3efd504fbf17ec717b640" kindref="member">appendDataset</ref>(path);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_own_dataset_reader_1afdc8088f6fa4482075c3c61bd2b96aab" refkind="member"><highlight class="normal"><ref refid="class_own_dataset_reader_1ac6307c8d373b58b757864594132e2973" kindref="member">OwnDatasetReader::OwnDatasetReader</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_dataset_reader_1a71d04d25d58e0e9a0c05d69afcff03a1" kindref="member">imagesRequired</ref>):<ref refid="class_dataset_reader" kindref="compound">DatasetReader</ref>(imagesRequired)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="class_own_dataset_reader_1aaae1790f8ee3efd504fbf17ec717b640" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_own_dataset_reader_1aaae1790f8ee3efd504fbf17ec717b640" kindref="member">OwnDatasetReader::appendDataset</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;datasetPath,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;datasetPrefix)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::filesystem::directory_iterator<sp/>end_itr;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" kindref="member">boost::filesystem::path</ref><sp/>boostPath(datasetPath);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>filesID;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(boost::filesystem::directory_iterator<sp/>itr(boostPath);<sp/>itr!=end_itr;<sp/>++itr)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((is_regular_file(itr-&gt;status())<sp/>&amp;&amp;<sp/>itr-&gt;path().extension()==</highlight><highlight class="stringliteral">&quot;.json&quot;</highlight><highlight class="normal">)<sp/>&amp;&amp;<sp/>(itr-&gt;path().string().find(</highlight><highlight class="stringliteral">&quot;-region&quot;</highlight><highlight class="normal">)<sp/>==<sp/>std::string::npos))<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filesID.push_back(itr-&gt;path().filename().stem().string());</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>std::sort(filesID.begin(),filesID.end());</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>filesID.begin(),<sp/>end=filesID.end();<sp/>it<sp/>!=<sp/>end;<sp/>++it){</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_sample" kindref="compound">Sample</ref><sp/>sample(datasetPath,*it);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sample.<ref refid="struct_sample_1a64fc306f85a0a1966f5f3b662efe95bb" kindref="member">setSampleID</ref>(datasetPrefix<sp/>+<sp/><ref refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" kindref="member">boost::filesystem::path</ref>(*it).filename().stem().string());</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" kindref="member">samples</ref>.push_back(sample);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>LOG(INFO)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Loaded:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>boost::lexical_cast&lt;std::string&gt;(this-&gt;<ref refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" kindref="member">samples</ref>.size())<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>samples&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_dataset_reader_1a1e37cddfc448b548dc6ca40f629884cb" kindref="member">printDatasetStats</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/OwnDatasetReader.cpp"/>
+  </compounddef>
+</doxygen>

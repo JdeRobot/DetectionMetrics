@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_3bddbe18ea337d47dd63a9b87e1d9f69" kind="dir">
+    <compoundname>DeepLearningSuite</compoundname>
+    <innerdir refid="dir_0213ba76a474af25a6f6bc67c93bb40c">DeepLearningSuite/build</innerdir>
+    <innerdir refid="dir_2c3a2622e0f20560ec178489d4beb2b4">DeepLearningSuite/DatasetEvaluationApp</innerdir>
+    <innerdir refid="dir_8c00a869414b9e919643eb0a9e9f41b6">DeepLearningSuite/DeepLearningSuiteLib</innerdir>
+    <innerdir refid="dir_87c483b8957e0d8438d32e51ad7f5e3f">DeepLearningSuite/libs</innerdir>
+    <innerdir refid="dir_aa2b1d6a27a38baf7ff31ee18101912c">DeepLearningSuite/SampleGenerationApp</innerdir>
+    <innerdir refid="dir_a95b58333541cf96452b02e1618cffd7">DeepLearningSuite/test</innerdir>
+    <innerdir refid="dir_70d9c1af7f1944856e05b11059eda18e">DeepLearningSuite/Tools</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/"/>
+  </compounddef>
+</doxygen>

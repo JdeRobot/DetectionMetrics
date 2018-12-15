@@ -1,0 +1,144 @@
+.TH "DatasetReader" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DatasetReader
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DatasetReader\&.h>\fP
+.PP
+Inherited by \fBCameraReader\fP, \fBCOCODatasetReader\fP, \fBImageNetDatasetReader\fP, \fBJderobotReader\fP, \fBOwnDatasetReader\fP, \fBPascalVOCDatasetReader\fP, \fBPrincetonDatasetReader\fP, \fBRecorderReader\fP, \fBSamplesReader\fP, \fBSpinelloDatasetReader\fP, \fBVideoReader\fP, and \fBYoloDatasetReader\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDatasetReader\fP (const bool \fBimagesRequired\fP)"
+.br
+.ti -1c
+.RI "virtual bool \fBgetNextSample\fP (\fBSample\fP &sample)"
+.br
+.ti -1c
+.RI "virtual bool \fBgetNextSamples\fP (std::vector< \fBSample\fP > &\fBsamples\fP, int size)"
+.br
+.ti -1c
+.RI "void \fBfilterSamplesByID\fP (std::vector< std::string > filteredIDS)"
+.br
+.ti -1c
+.RI "void \fBoverWriteClasses\fP (const std::string &from, const std::string &to)"
+.br
+.ti -1c
+.RI "int \fBgetNumberOfElements\fP ()"
+.br
+.ti -1c
+.RI "void \fBresetReaderCounter\fP ()"
+.br
+.ti -1c
+.RI "void \fBdecrementReaderCounter\fP (const int decrement_by=1)"
+.br
+.ti -1c
+.RI "void \fBincrementReaderCounter\fP (const int increment_by=1)"
+.br
+.ti -1c
+.RI "bool \fBgetSampleBySampleID\fP (\fBSample\fP **sample, const std::string &sampleID)"
+.br
+.ti -1c
+.RI "bool \fBgetSampleBySampleID\fP (\fBSample\fP **sample, const long long int sampleID)"
+.br
+.ti -1c
+.RI "void \fBprintDatasetStats\fP ()"
+.br
+.ti -1c
+.RI "virtual bool \fBappendDataset\fP (const std::string &datasetPath, const std::string &datasetPrefix='')"
+.br
+.ti -1c
+.RI "void \fBaddSample\fP (\fBSample\fP sample)"
+.br
+.ti -1c
+.RI "std::string \fBgetClassNamesFile\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~DatasetReader\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBSample\fP > \fBsamples\fP"
+.br
+.ti -1c
+.RI "int \fBreaderCounter\fP"
+.br
+.ti -1c
+.RI "std::string \fBclassNamesFile\fP"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBclassNames\fP"
+.br
+.ti -1c
+.RI "bool \fBimagesRequired\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBskip_count\fP = 10"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DatasetReader::DatasetReader (const bool imagesRequired)"
+
+.SS "DatasetReader::~DatasetReader ()\fC [virtual]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void DatasetReader::addSample (\fBSample\fP sample)"
+
+.SS "bool DatasetReader::appendDataset (const std::string & datasetPath, const std::string & datasetPrefix = \fC''\fP)\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBCOCODatasetReader\fP, \fBImageNetDatasetReader\fP, \fBPascalVOCDatasetReader\fP, \fBSpinelloDatasetReader\fP, \fBYoloDatasetReader\fP, \fBOwnDatasetReader\fP, and \fBPrincetonDatasetReader\fP\&.
+.SS "void DatasetReader::decrementReaderCounter (const int decrement_by = \fC1\fP)"
+
+.SS "void DatasetReader::filterSamplesByID (std::vector< std::string > filteredIDS)"
+
+.SS "std::string DatasetReader::getClassNamesFile ()"
+
+.SS "bool DatasetReader::getNextSample (\fBSample\fP & sample)\fC [virtual]\fP"
+
+.PP
+Reimplemented in \fBJderobotReader\fP, \fBVideoReader\fP, \fBRecorderReader\fP, and \fBCameraReader\fP\&.
+.SS "bool DatasetReader::getNextSamples (std::vector< \fBSample\fP > & samples, int size)\fC [virtual]\fP"
+
+.SS "int DatasetReader::getNumberOfElements ()"
+
+.SS "bool DatasetReader::getSampleBySampleID (\fBSample\fP ** sample, const std::string & sampleID)"
+
+.SS "bool DatasetReader::getSampleBySampleID (\fBSample\fP ** sample, const long long int sampleID)"
+
+.SS "void DatasetReader::incrementReaderCounter (const int increment_by = \fC1\fP)"
+
+.SS "void DatasetReader::overWriteClasses (const std::string & from, const std::string & to)"
+
+.SS "void DatasetReader::printDatasetStats ()"
+
+.SS "void DatasetReader::resetReaderCounter ()"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<std::string> DatasetReader::classNames\fC [protected]\fP"
+
+.SS "std::string DatasetReader::classNamesFile\fC [protected]\fP"
+
+.SS "bool DatasetReader::imagesRequired\fC [protected]\fP"
+
+.SS "int DatasetReader::readerCounter\fC [protected]\fP"
+
+.SS "std::vector<\fBSample\fP> DatasetReader::samples\fC [protected]\fP"
+
+.SS "unsigned int DatasetReader::skip_count = 10\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

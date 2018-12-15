@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_yolo_dataset_writer" kind="class" language="C++" prot="public">
+    <compoundname>YoloDatasetWriter</compoundname>
+    <basecompoundref refid="class_dataset_writer" prot="public" virt="non-virtual">DatasetWriter</basecompoundref>
+    <includes refid="_yolo_dataset_writer_8h" local="no">YoloDatasetWriter.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_yolo_dataset_writer_1af1903cc6c336bdc4a3ed14bbf56b64f6" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string YoloDatasetWriter::fullImagesPath</definition>
+        <argsstring></argsstring>
+        <name>fullImagesPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_dataset_writer_1a9e8103c904380adb0bd9d3040b70c910" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string YoloDatasetWriter::fullLabelsPath</definition>
+        <argsstring></argsstring>
+        <name>fullLabelsPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_dataset_writer_1adf92eafd9141f0048306fe481e62c21e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool YoloDatasetWriter::overWriteclassWithZero</definition>
+        <argsstring></argsstring>
+        <name>overWriteclassWithZero</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_yolo_dataset_writer_1a759e0ab21548b9219970fca5e02001f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>YoloDatasetWriter::YoloDatasetWriter</definition>
+        <argsstring>(const std::string &amp;outPath, DatasetReaderPtr &amp;reader, bool overWriteclassWithZero=true)</argsstring>
+        <name>YoloDatasetWriter</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outPath</declname>
+        </param>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref> &amp;</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>overWriteclassWithZero</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.cpp" bodystart="14" bodyend="33"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+      </memberdef>
+      <memberdef kind="function" id="class_yolo_dataset_writer_1a29ecb0d94701fc78b0b800d9665ca70d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void YoloDatasetWriter::process</definition>
+        <argsstring>(bool writeImages=false, bool useDepth=false)</argsstring>
+        <name>process</name>
+        <reimplements refid="class_dataset_writer_1a97270b2e182e6c08d9342d8db42710fd">process</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>writeImages</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useDepth</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.cpp" bodystart="35" bodyend="109"/>
+        <references refid="class_dataset_writer_1a2c5c9a2670a4acb12278284668af7970" compoundref="_dataset_writer_8h" startline="23">DatasetWriter::skip_count</references>
+        <references refid="class_dataset_writer_1ac19eabc3e69f6e9bc4c5185803eed626" compoundref="_dataset_writer_8h" startline="18">DatasetWriter::outPath</references>
+        <references refid="class_dataset_writer_1a2edef70c0de507a2e056eb3984705811" compoundref="_dataset_writer_8h" startline="19">DatasetWriter::reader</references>
+        <references refid="struct_sample_1a5f1b7716e5c4e8f5217a18021169283f" compoundref="_sample_8cpp" startline="123" endline="125">Sample::getRectRegions</references>
+        <references refid="struct_sample_1a4d2e91f909467a974832c9359cc81c3c" compoundref="_sample_8cpp" startline="158" endline="165">Sample::getDepthImage</references>
+        <references refid="struct_sample_1abf69bbc9b312c22d3ded30d30d1e278f" compoundref="_sample_8cpp" startline="149" endline="156">Sample::getColorImage</references>
+        <references refid="struct_class_type_1ab5cc3bb3376a812d051d4726eb4ee063" compoundref="_class_type_8cpp" startline="48" endline="52">ClassType::getClassID</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="364">
+        <label>DatasetWriter</label>
+        <link refid="class_dataset_writer"/>
+      </node>
+      <node id="363">
+        <label>YoloDatasetWriter</label>
+        <link refid="class_yolo_dataset_writer"/>
+        <childnode refid="364" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="366">
+        <label>DatasetWriter</label>
+        <link refid="class_dataset_writer"/>
+      </node>
+      <node id="365">
+        <label>YoloDatasetWriter</label>
+        <link refid="class_yolo_dataset_writer"/>
+        <childnode refid="366" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.h" line="11" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.h" bodystart="11" bodyend="20"/>
+    <listofallmembers>
+      <member refid="class_dataset_writer_1a96cb64791602cd684ec3a05156a7c28e" prot="public" virt="non-virtual"><scope>YoloDatasetWriter</scope><name>DatasetWriter</name></member>
+      <member refid="class_dataset_writer_1a978c35196e9b3be5dcd7ef3cb7c968c5" prot="protected" virt="non-virtual"><scope>YoloDatasetWriter</scope><name>discarded_classes</name></member>
+      <member refid="class_yolo_dataset_writer_1af1903cc6c336bdc4a3ed14bbf56b64f6" prot="private" virt="non-virtual"><scope>YoloDatasetWriter</scope><name>fullImagesPath</name></member>
+      <member refid="class_yolo_dataset_writer_1a9e8103c904380adb0bd9d3040b70c910" prot="private" virt="non-virtual"><scope>YoloDatasetWriter</scope><name>fullLabelsPath</name></member>
+      <member refid="class_dataset_writer_1a44b65963ebc0c9146e29802658627031" prot="protected" virt="non-virtual"><scope>YoloDatasetWriter</scope><name>mapped_classes</name></member>
+      <member refid="class_dataset_writer_1ac19eabc3e69f6e9bc4c5185803eed626" prot="protected" virt="non-virtual"><scope>YoloDatasetWriter</scope><name>outPath</name></member>
+      <member refid="class_dataset_writer_1a55b8888beec78365ed6ea9b057a2d17b" prot="protected" virt="non-virtual"><scope>YoloDatasetWriter</scope><name>outputClasses</name></member>
+      <member refid="class_yolo_dataset_writer_1adf92eafd9141f0048306fe481e62c21e" prot="private" virt="non-virtual"><scope>YoloDatasetWriter</scope><name>overWriteclassWithZero</name></member>
+      <member refid="class_yolo_dataset_writer_1a29ecb0d94701fc78b0b800d9665ca70d" prot="public" virt="virtual"><scope>YoloDatasetWriter</scope><name>process</name></member>
+      <member refid="class_dataset_writer_1a2edef70c0de507a2e056eb3984705811" prot="protected" virt="non-virtual"><scope>YoloDatasetWriter</scope><name>reader</name></member>
+      <member refid="class_dataset_writer_1a2c5c9a2670a4acb12278284668af7970" prot="protected" virt="non-virtual"><scope>YoloDatasetWriter</scope><name>skip_count</name></member>
+      <member refid="class_yolo_dataset_writer_1a759e0ab21548b9219970fca5e02001f9" prot="public" virt="non-virtual"><scope>YoloDatasetWriter</scope><name>YoloDatasetWriter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

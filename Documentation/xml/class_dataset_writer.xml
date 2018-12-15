@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_dataset_writer" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>DatasetWriter</compoundname>
+    <derivedcompoundref refid="class_c_o_c_o_dataset_writer" prot="public" virt="non-virtual">COCODatasetWriter</derivedcompoundref>
+    <derivedcompoundref refid="class_own_dataset_writer" prot="public" virt="non-virtual">OwnDatasetWriter</derivedcompoundref>
+    <derivedcompoundref refid="class_pascal_v_o_c_dataset_writer" prot="public" virt="non-virtual">PascalVOCDatasetWriter</derivedcompoundref>
+    <derivedcompoundref refid="class_yolo_dataset_writer" prot="public" virt="non-virtual">YoloDatasetWriter</derivedcompoundref>
+    <includes refid="_dataset_writer_8h" local="no">DatasetWriter.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_dataset_writer_1ac19eabc3e69f6e9bc4c5185803eed626" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string DatasetWriter::outPath</definition>
+        <argsstring></argsstring>
+        <name>outPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" bodystart="18" bodyend="-1"/>
+        <referencedby refid="class_own_dataset_writer_1a63b35dd2752ea15af5ab5b25693d135c" compoundref="_own_dataset_writer_8cpp" startline="12" endline="17">OwnDatasetWriter::process</referencedby>
+        <referencedby refid="class_yolo_dataset_writer_1a29ecb0d94701fc78b0b800d9665ca70d" compoundref="_yolo_dataset_writer_8cpp" startline="35" endline="109">YoloDatasetWriter::process</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_dataset_writer_1a2edef70c0de507a2e056eb3984705811" prot="protected" static="no" mutable="no">
+        <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref> &amp;</type>
+        <definition>DatasetReaderPtr&amp; DatasetWriter::reader</definition>
+        <argsstring></argsstring>
+        <name>reader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" bodystart="19" bodyend="-1"/>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+        <referencedby refid="class_own_dataset_writer_1a63b35dd2752ea15af5ab5b25693d135c" compoundref="_own_dataset_writer_8cpp" startline="12" endline="17">OwnDatasetWriter::process</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_writer_1a93b4aa44b217491ddf99348b2517e6ea" compoundref="_pascal_v_o_c_dataset_writer_8cpp" startline="29" endline="171">PascalVOCDatasetWriter::process</referencedby>
+        <referencedby refid="class_yolo_dataset_writer_1a29ecb0d94701fc78b0b800d9665ca70d" compoundref="_yolo_dataset_writer_8cpp" startline="35" endline="109">YoloDatasetWriter::process</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_dataset_writer_1a55b8888beec78365ed6ea9b057a2d17b" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; DatasetWriter::outputClasses</definition>
+        <argsstring></argsstring>
+        <name>outputClasses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_writer_1a93b4aa44b217491ddf99348b2517e6ea" compoundref="_pascal_v_o_c_dataset_writer_8cpp" startline="29" endline="171">PascalVOCDatasetWriter::process</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_dataset_writer_1a44b65963ebc0c9146e29802658627031" prot="protected" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; DatasetWriter::mapped_classes</definition>
+        <argsstring></argsstring>
+        <name>mapped_classes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_writer_1a93b4aa44b217491ddf99348b2517e6ea" compoundref="_pascal_v_o_c_dataset_writer_8cpp" startline="29" endline="171">PascalVOCDatasetWriter::process</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_dataset_writer_1a978c35196e9b3be5dcd7ef3cb7c968c5" prot="protected" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, long int &gt;</type>
+        <definition>std::unordered_map&lt;std::string, long int&gt; DatasetWriter::discarded_classes</definition>
+        <argsstring></argsstring>
+        <name>discarded_classes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" bodystart="22" bodyend="-1"/>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_writer_1a93b4aa44b217491ddf99348b2517e6ea" compoundref="_pascal_v_o_c_dataset_writer_8cpp" startline="29" endline="171">PascalVOCDatasetWriter::process</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_dataset_writer_1a2c5c9a2670a4acb12278284668af7970" prot="protected" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int DatasetWriter::skip_count</definition>
+        <argsstring></argsstring>
+        <name>skip_count</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" bodystart="23" bodyend="-1"/>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_writer_1a93b4aa44b217491ddf99348b2517e6ea" compoundref="_pascal_v_o_c_dataset_writer_8cpp" startline="29" endline="171">PascalVOCDatasetWriter::process</referencedby>
+        <referencedby refid="class_yolo_dataset_writer_1a29ecb0d94701fc78b0b800d9665ca70d" compoundref="_yolo_dataset_writer_8cpp" startline="35" endline="109">YoloDatasetWriter::process</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_dataset_writer_1a96cb64791602cd684ec3a05156a7c28e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DatasetWriter::DatasetWriter</definition>
+        <argsstring>(const std::string &amp;outPath, DatasetReaderPtr &amp;reader)</argsstring>
+        <name>DatasetWriter</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outPath</declname>
+        </param>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref> &amp;</type>
+          <declname>reader</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.cpp" bodystart="10" bodyend="24"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+      </memberdef>
+      <memberdef kind="function" id="class_dataset_writer_1a97270b2e182e6c08d9342d8db42710fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void DatasetWriter::process</definition>
+        <argsstring>(bool writeImages=false, bool useDepth=false)=0</argsstring>
+        <name>process</name>
+        <reimplementedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6">process</reimplementedby>
+        <reimplementedby refid="class_yolo_dataset_writer_1a29ecb0d94701fc78b0b800d9665ca70d">process</reimplementedby>
+        <reimplementedby refid="class_pascal_v_o_c_dataset_writer_1a93b4aa44b217491ddf99348b2517e6ea">process</reimplementedby>
+        <reimplementedby refid="class_own_dataset_writer_1a63b35dd2752ea15af5ab5b25693d135c">process</reimplementedby>
+        <param>
+          <type>bool</type>
+          <declname>writeImages</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useDepth</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" line="15" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="92">
+        <label>PascalVOCDatasetWriter</label>
+        <link refid="class_pascal_v_o_c_dataset_writer"/>
+        <childnode refid="89" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>COCODatasetWriter</label>
+        <link refid="class_c_o_c_o_dataset_writer"/>
+        <childnode refid="89" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="89">
+        <label>DatasetWriter</label>
+        <link refid="class_dataset_writer"/>
+      </node>
+      <node id="93">
+        <label>YoloDatasetWriter</label>
+        <link refid="class_yolo_dataset_writer"/>
+        <childnode refid="89" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>OwnDatasetWriter</label>
+        <link refid="class_own_dataset_writer"/>
+        <childnode refid="89" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h" bodystart="12" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_dataset_writer_1a96cb64791602cd684ec3a05156a7c28e" prot="public" virt="non-virtual"><scope>DatasetWriter</scope><name>DatasetWriter</name></member>
+      <member refid="class_dataset_writer_1a978c35196e9b3be5dcd7ef3cb7c968c5" prot="protected" virt="non-virtual"><scope>DatasetWriter</scope><name>discarded_classes</name></member>
+      <member refid="class_dataset_writer_1a44b65963ebc0c9146e29802658627031" prot="protected" virt="non-virtual"><scope>DatasetWriter</scope><name>mapped_classes</name></member>
+      <member refid="class_dataset_writer_1ac19eabc3e69f6e9bc4c5185803eed626" prot="protected" virt="non-virtual"><scope>DatasetWriter</scope><name>outPath</name></member>
+      <member refid="class_dataset_writer_1a55b8888beec78365ed6ea9b057a2d17b" prot="protected" virt="non-virtual"><scope>DatasetWriter</scope><name>outputClasses</name></member>
+      <member refid="class_dataset_writer_1a97270b2e182e6c08d9342d8db42710fd" prot="public" virt="pure-virtual"><scope>DatasetWriter</scope><name>process</name></member>
+      <member refid="class_dataset_writer_1a2edef70c0de507a2e056eb3984705811" prot="protected" virt="non-virtual"><scope>DatasetWriter</scope><name>reader</name></member>
+      <member refid="class_dataset_writer_1a2c5c9a2670a4acb12278284668af7970" prot="protected" virt="non-virtual"><scope>DatasetWriter</scope><name>skip_count</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

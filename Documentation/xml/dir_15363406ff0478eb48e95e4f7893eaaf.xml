@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_15363406ff0478eb48e95e4f7893eaaf" kind="dir">
+    <compoundname>DeepLearningSuite/libs/comm/include</compoundname>
+    <innerdir refid="dir_1fad0922ddd9df16ecac4a304ae308ee">DeepLearningSuite/libs/comm/include/comm</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/comm/include/"/>
+  </compounddef>
+</doxygen>

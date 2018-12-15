@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_depth_foreground_segmentator" kind="class" language="C++" prot="public">
+    <compoundname>DepthForegroundSegmentator</compoundname>
+    <includes refid="_depth_foreground_segmentator_8h" local="no">DepthForegroundSegmentator.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_depth_foreground_segmentator_1aea8f5ea0410c1ee3799aae02b6a55906" prot="private" static="no" mutable="no">
+        <type>cv::Ptr&lt; cv::BackgroundSubtractor &gt;</type>
+        <definition>cv::Ptr&lt;cv::BackgroundSubtractor&gt; DepthForegroundSegmentator::bg</definition>
+        <argsstring></argsstring>
+        <name>bg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_depth_foreground_segmentator_1a456af627f04b78384593d253276889c0" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat DepthForegroundSegmentator::fore</definition>
+        <argsstring></argsstring>
+        <name>fore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_depth_foreground_segmentator_1a937bbc095ce95480a4d4b24f881d9632" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool DepthForegroundSegmentator::filterActive</definition>
+        <argsstring></argsstring>
+        <name>filterActive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_depth_foreground_segmentator_1af89b79307b21ba2d7d84599a4b4ee10f" prot="private" static="no" mutable="no">
+        <type>boost::shared_ptr&lt; <ref refid="classjderobot_1_1_depth_filter" kindref="compound">jderobot::DepthFilter</ref> &gt;</type>
+        <definition>boost::shared_ptr&lt;jderobot::DepthFilter&gt; DepthForegroundSegmentator::filter</definition>
+        <argsstring></argsstring>
+        <name>filter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_depth_foreground_segmentator_1a1b97048bf7fea831cf8f00e5753bcbff" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double DepthForegroundSegmentator::defaultLearningRate</definition>
+        <argsstring></argsstring>
+        <name>defaultLearningRate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" line="29" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_depth_foreground_segmentator_1a79a11b651ad92958e69396c7dfb52eac" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double DepthForegroundSegmentator::minBlobArea</definition>
+        <argsstring></argsstring>
+        <name>minBlobArea</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" line="30" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_depth_foreground_segmentator_1a0c7c752d0bdac12a3fe9bfdda5858f13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DepthForegroundSegmentator::DepthForegroundSegmentator</definition>
+        <argsstring>(bool filterActive=true)</argsstring>
+        <name>DepthForegroundSegmentator</name>
+        <param>
+          <type>bool</type>
+          <declname>filterActive</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.cpp" bodystart="9" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_depth_foreground_segmentator_1a7ad8701ffcce41cf71694f02bbb5f40d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::vector&lt; cv::Point &gt; &gt;</type>
+        <definition>std::vector&lt; std::vector&lt; cv::Point &gt; &gt; DepthForegroundSegmentator::process</definition>
+        <argsstring>(const cv::Mat &amp;image)</argsstring>
+        <name>process</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.cpp" bodystart="26" bodyend="121"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+        <referencedby refid="class_my_app_1ab3cc458e74a9fc059504fa33983249ee" compoundref="generator_8cpp" startline="31" endline="209">MyApp::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_depth_foreground_segmentator_1ade5b418f591506a2e10bd05151d828c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat DepthForegroundSegmentator::process2</definition>
+        <argsstring>(const cv::Mat &amp;image)</argsstring>
+        <name>process2</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.cpp" bodystart="125" bodyend="214"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h" bodystart="12" bodyend="31"/>
+    <listofallmembers>
+      <member refid="class_depth_foreground_segmentator_1aea8f5ea0410c1ee3799aae02b6a55906" prot="private" virt="non-virtual"><scope>DepthForegroundSegmentator</scope><name>bg</name></member>
+      <member refid="class_depth_foreground_segmentator_1a1b97048bf7fea831cf8f00e5753bcbff" prot="private" virt="non-virtual"><scope>DepthForegroundSegmentator</scope><name>defaultLearningRate</name></member>
+      <member refid="class_depth_foreground_segmentator_1a0c7c752d0bdac12a3fe9bfdda5858f13" prot="public" virt="non-virtual"><scope>DepthForegroundSegmentator</scope><name>DepthForegroundSegmentator</name></member>
+      <member refid="class_depth_foreground_segmentator_1af89b79307b21ba2d7d84599a4b4ee10f" prot="private" virt="non-virtual"><scope>DepthForegroundSegmentator</scope><name>filter</name></member>
+      <member refid="class_depth_foreground_segmentator_1a937bbc095ce95480a4d4b24f881d9632" prot="private" virt="non-virtual"><scope>DepthForegroundSegmentator</scope><name>filterActive</name></member>
+      <member refid="class_depth_foreground_segmentator_1a456af627f04b78384593d253276889c0" prot="private" virt="non-virtual"><scope>DepthForegroundSegmentator</scope><name>fore</name></member>
+      <member refid="class_depth_foreground_segmentator_1a79a11b651ad92958e69396c7dfb52eac" prot="private" virt="non-virtual"><scope>DepthForegroundSegmentator</scope><name>minBlobArea</name></member>
+      <member refid="class_depth_foreground_segmentator_1a7ad8701ffcce41cf71694f02bbb5f40d" prot="public" virt="non-virtual"><scope>DepthForegroundSegmentator</scope><name>process</name></member>
+      <member refid="class_depth_foreground_segmentator_1ade5b418f591506a2e10bd05151d828c2" prot="public" virt="non-virtual"><scope>DepthForegroundSegmentator</scope><name>process2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

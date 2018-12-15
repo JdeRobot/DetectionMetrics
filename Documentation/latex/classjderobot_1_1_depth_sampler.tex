@@ -1,0 +1,133 @@
+\hypertarget{classjderobot_1_1_depth_sampler}{}\section{jderobot\+:\+:Depth\+Sampler Class Reference}
+\label{classjderobot_1_1_depth_sampler}\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+
+
+{\ttfamily \#include $<$Depth\+Sampler.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classjderobot_1_1_depth_sampler_accca5c92982fbcdab35b077be7ec4171}{Depth\+Sampler} (int n\+Bins, int max\+Distance, int min\+Ind, float step)
+\item 
+\hyperlink{classjderobot_1_1_depth_sampler_a77a5834945c0d4aaf9024b77ff08c3ae}{Depth\+Sampler} ()
+\item 
+virtual \hyperlink{classjderobot_1_1_depth_sampler_a7423eb098eeab7f2e58e375389b72bcd}{$\sim$\+Depth\+Sampler} ()
+\item 
+void \hyperlink{classjderobot_1_1_depth_sampler_abd92df0e1e72431b2297344ff6d7dd78}{calculate\+Layers} (cv\+::\+Mat source, std\+::vector$<$ cv\+::\+Mat $>$ \&layers)
+\item 
+void \hyperlink{classjderobot_1_1_depth_sampler_a208a3898c54c443647ad5116044041e8}{eval\+Sample} (cv\+::\+Mat source, std\+::vector$<$ cv\+::\+Mat $>$ layers, int sampling\+Rate, cv\+::\+Mat \&out\+S\+Normal, cv\+::\+Mat \&out\+S\+Layers)
+\item 
+void \hyperlink{classjderobot_1_1_depth_sampler_ac8dda5c26e30a21ad5a23d9421eb732e}{sample} (cv\+::\+Mat source, std\+::vector$<$ cv\+::\+Mat $>$ layers, std\+::vector$<$ cv\+::\+Point2i $>$ \&out)
+\item 
+void \hyperlink{classjderobot_1_1_depth_sampler_ac3c4d83a723a16b2c66f5999de69fadb}{setn\+Bins} (int value)
+\item 
+int \hyperlink{classjderobot_1_1_depth_sampler_a2d2b5c3abfa476965341cf7d4246d654}{getn\+Bins} ()
+\item 
+void \hyperlink{classjderobot_1_1_depth_sampler_a33513f22328330f20c574d5d95f094ce}{set\+Max\+Distance} (int value)
+\item 
+int \hyperlink{classjderobot_1_1_depth_sampler_afcd72cfcec0c2858676e5d2de9c1a447}{get\+Max\+Distance} ()
+\item 
+void \hyperlink{classjderobot_1_1_depth_sampler_a56f8d0604fb9e97cc295baad9092d3b6}{set\+Min\+Ind} (int value)
+\item 
+int \hyperlink{classjderobot_1_1_depth_sampler_a158f58f94935280fa5eedaab9356b51e}{get\+Min\+Ind} ()
+\item 
+void \hyperlink{classjderobot_1_1_depth_sampler_ad5dc4b9beb677e517e7c7ad87b16720b}{set\+Step} (double value)
+\item 
+double \hyperlink{classjderobot_1_1_depth_sampler_a6694d0f60a6bacd72d304cb6b0dd46bc}{get\+Step} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classjderobot_1_1_depth_sampler_accca5c92982fbcdab35b077be7ec4171}\label{classjderobot_1_1_depth_sampler_accca5c92982fbcdab35b077be7ec4171}} 
+\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}!Depth\+Sampler@{Depth\+Sampler}}
+\index{Depth\+Sampler@{Depth\+Sampler}!jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+\subsubsection{\texorpdfstring{Depth\+Sampler()}{DepthSampler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily jderobot\+::\+Depth\+Sampler\+::\+Depth\+Sampler (\begin{DoxyParamCaption}\item[{int}]{n\+Bins,  }\item[{int}]{max\+Distance,  }\item[{int}]{min\+Ind,  }\item[{float}]{step }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_sampler_a77a5834945c0d4aaf9024b77ff08c3ae}\label{classjderobot_1_1_depth_sampler_a77a5834945c0d4aaf9024b77ff08c3ae}} 
+\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}!Depth\+Sampler@{Depth\+Sampler}}
+\index{Depth\+Sampler@{Depth\+Sampler}!jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+\subsubsection{\texorpdfstring{Depth\+Sampler()}{DepthSampler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily jderobot\+::\+Depth\+Sampler\+::\+Depth\+Sampler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_sampler_a7423eb098eeab7f2e58e375389b72bcd}\label{classjderobot_1_1_depth_sampler_a7423eb098eeab7f2e58e375389b72bcd}} 
+\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}!````~Depth\+Sampler@{$\sim$\+Depth\+Sampler}}
+\index{````~Depth\+Sampler@{$\sim$\+Depth\+Sampler}!jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+\subsubsection{\texorpdfstring{$\sim$\+Depth\+Sampler()}{~DepthSampler()}}
+{\footnotesize\ttfamily jderobot\+::\+Depth\+Sampler\+::$\sim$\+Depth\+Sampler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classjderobot_1_1_depth_sampler_abd92df0e1e72431b2297344ff6d7dd78}\label{classjderobot_1_1_depth_sampler_abd92df0e1e72431b2297344ff6d7dd78}} 
+\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}!calculate\+Layers@{calculate\+Layers}}
+\index{calculate\+Layers@{calculate\+Layers}!jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+\subsubsection{\texorpdfstring{calculate\+Layers()}{calculateLayers()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Sampler\+::calculate\+Layers (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{source,  }\item[{std\+::vector$<$ cv\+::\+Mat $>$ \&}]{layers }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_sampler_a208a3898c54c443647ad5116044041e8}\label{classjderobot_1_1_depth_sampler_a208a3898c54c443647ad5116044041e8}} 
+\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}!eval\+Sample@{eval\+Sample}}
+\index{eval\+Sample@{eval\+Sample}!jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+\subsubsection{\texorpdfstring{eval\+Sample()}{evalSample()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Sampler\+::eval\+Sample (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{source,  }\item[{std\+::vector$<$ cv\+::\+Mat $>$}]{layers,  }\item[{int}]{sampling\+Rate,  }\item[{cv\+::\+Mat \&}]{out\+S\+Normal,  }\item[{cv\+::\+Mat \&}]{out\+S\+Layers }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_sampler_afcd72cfcec0c2858676e5d2de9c1a447}\label{classjderobot_1_1_depth_sampler_afcd72cfcec0c2858676e5d2de9c1a447}} 
+\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}!get\+Max\+Distance@{get\+Max\+Distance}}
+\index{get\+Max\+Distance@{get\+Max\+Distance}!jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+\subsubsection{\texorpdfstring{get\+Max\+Distance()}{getMaxDistance()}}
+{\footnotesize\ttfamily int jderobot\+::\+Depth\+Sampler\+::get\+Max\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_sampler_a158f58f94935280fa5eedaab9356b51e}\label{classjderobot_1_1_depth_sampler_a158f58f94935280fa5eedaab9356b51e}} 
+\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}!get\+Min\+Ind@{get\+Min\+Ind}}
+\index{get\+Min\+Ind@{get\+Min\+Ind}!jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+\subsubsection{\texorpdfstring{get\+Min\+Ind()}{getMinInd()}}
+{\footnotesize\ttfamily int jderobot\+::\+Depth\+Sampler\+::get\+Min\+Ind (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_sampler_a2d2b5c3abfa476965341cf7d4246d654}\label{classjderobot_1_1_depth_sampler_a2d2b5c3abfa476965341cf7d4246d654}} 
+\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}!getn\+Bins@{getn\+Bins}}
+\index{getn\+Bins@{getn\+Bins}!jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+\subsubsection{\texorpdfstring{getn\+Bins()}{getnBins()}}
+{\footnotesize\ttfamily int jderobot\+::\+Depth\+Sampler\+::getn\+Bins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_sampler_a6694d0f60a6bacd72d304cb6b0dd46bc}\label{classjderobot_1_1_depth_sampler_a6694d0f60a6bacd72d304cb6b0dd46bc}} 
+\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}!get\+Step@{get\+Step}}
+\index{get\+Step@{get\+Step}!jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+\subsubsection{\texorpdfstring{get\+Step()}{getStep()}}
+{\footnotesize\ttfamily double jderobot\+::\+Depth\+Sampler\+::get\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_sampler_ac8dda5c26e30a21ad5a23d9421eb732e}\label{classjderobot_1_1_depth_sampler_ac8dda5c26e30a21ad5a23d9421eb732e}} 
+\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}!sample@{sample}}
+\index{sample@{sample}!jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+\subsubsection{\texorpdfstring{sample()}{sample()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Sampler\+::sample (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{source,  }\item[{std\+::vector$<$ cv\+::\+Mat $>$}]{layers,  }\item[{std\+::vector$<$ cv\+::\+Point2i $>$ \&}]{out }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_sampler_a33513f22328330f20c574d5d95f094ce}\label{classjderobot_1_1_depth_sampler_a33513f22328330f20c574d5d95f094ce}} 
+\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}!set\+Max\+Distance@{set\+Max\+Distance}}
+\index{set\+Max\+Distance@{set\+Max\+Distance}!jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+\subsubsection{\texorpdfstring{set\+Max\+Distance()}{setMaxDistance()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Sampler\+::set\+Max\+Distance (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_sampler_a56f8d0604fb9e97cc295baad9092d3b6}\label{classjderobot_1_1_depth_sampler_a56f8d0604fb9e97cc295baad9092d3b6}} 
+\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}!set\+Min\+Ind@{set\+Min\+Ind}}
+\index{set\+Min\+Ind@{set\+Min\+Ind}!jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+\subsubsection{\texorpdfstring{set\+Min\+Ind()}{setMinInd()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Sampler\+::set\+Min\+Ind (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_sampler_ac3c4d83a723a16b2c66f5999de69fadb}\label{classjderobot_1_1_depth_sampler_ac3c4d83a723a16b2c66f5999de69fadb}} 
+\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}!setn\+Bins@{setn\+Bins}}
+\index{setn\+Bins@{setn\+Bins}!jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+\subsubsection{\texorpdfstring{setn\+Bins()}{setnBins()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Sampler\+::setn\+Bins (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classjderobot_1_1_depth_sampler_ad5dc4b9beb677e517e7c7ad87b16720b}\label{classjderobot_1_1_depth_sampler_ad5dc4b9beb677e517e7c7ad87b16720b}} 
+\index{jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}!set\+Step@{set\+Step}}
+\index{set\+Step@{set\+Step}!jderobot\+::\+Depth\+Sampler@{jderobot\+::\+Depth\+Sampler}}
+\subsubsection{\texorpdfstring{set\+Step()}{setStep()}}
+{\footnotesize\ttfamily void jderobot\+::\+Depth\+Sampler\+::set\+Step (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/libs/depth\+Lib/\hyperlink{_depth_sampler_8h}{Depth\+Sampler.\+h}\item 
+Deep\+Learning\+Suite/libs/depth\+Lib/\hyperlink{_depth_sampler_8cpp}{Depth\+Sampler.\+cpp}\end{DoxyCompactItemize}

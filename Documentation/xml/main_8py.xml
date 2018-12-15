@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="main_8py" kind="file" language="Python">
+    <compoundname>main.py</compoundname>
+    <innernamespace refid="namespacemain">main</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacemain" refkind="compound"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>cv2</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>json</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespacesample_generator_1_1sample" kindref="compound">sampleGenerator.sample</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sample</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="namespacemain_1a562ba179d38eb6abbb9a1c3cc2b71de9" refkind="member"><highlight class="normal">input_folder<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;/mnt/large/pentalo/sample/data/images/&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="namespacemain_1a272479fd8bcaf9c622140557411310ab" refkind="member"><highlight class="normal">output_folder<sp/>=<sp/></highlight><highlight class="stringliteral">&apos;./out/&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="namespacemain_1a79057ea90b8e9ec6d19aa60668910f91" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacemain_1a79057ea90b8e9ec6d19aa60668910f91" kindref="member">getIfPropertyToTest</ref>(sampleNumber,<sp/>testRatio):</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/>sampleNumber<sp/>%<sp/>10<sp/>&lt;<sp/>testRatio*10</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="namespacemain_1aec122b8c24a18ea2a68a0a902474a048" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacemain_1aec122b8c24a18ea2a68a0a902474a048" kindref="member">mainDepth</ref>():</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>imagesList<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>fileLists<sp/>=<sp/>os.listdir(input_folder<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/camera2/&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>imagesList<sp/>+=<sp/>[each<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>each<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>fileLists<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>each.endswith(</highlight><highlight class="stringliteral">&apos;.png&apos;</highlight><highlight class="normal">)]</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>sorted_files<sp/>=<sp/>sorted(imagesList,<sp/>key=</highlight><highlight class="keyword">lambda</highlight><highlight class="normal"><sp/>x:<sp/>int(x.split(</highlight><highlight class="stringliteral">&apos;.&apos;</highlight><highlight class="normal">)[0]))</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>imageIn=cv2.imread(input_folder<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/camera2/&apos;</highlight><highlight class="normal"><sp/>+<sp/><sp/>sorted_files[1])</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>bkg,<sp/>_,_<sp/>=<sp/>cv2.split(imageIn)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>fundo<sp/>=<sp/>cv2.blur(bkg,<sp/>(5,<sp/>5))</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">,<sp/>fundo)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>cv2.waitKey(0)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>image<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>sorted_files[2:-1]:</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagePath<sp/>=<sp/>input_folder<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/camera2/&apos;</highlight><highlight class="normal"><sp/>+<sp/>image</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imageIn<sp/>=<sp/>cv2.imread(imagePath)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagem,_,_<sp/>=<sp/>cv2.split(imageIn)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mascara<sp/>=<sp/>imagem.copy()</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cinza<sp/>=<sp/>imagem.copy()</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>cv2.imshow(&quot;Webcam&quot;,<sp/>imagem)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagem<sp/>=<sp/>cv2.blur(imagem,<sp/>(5,<sp/>5))</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.absdiff(imagem,<sp/>fundo,<sp/>mascara)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gray<sp/>=<sp/>mascara</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret,<sp/>thresh1<sp/>=<sp/>cv2.threshold(gray,<sp/>50<sp/>,<sp/>255,<sp/>cv2.THRESH_BINARY<sp/>+<sp/>cv2.THRESH_OTSU)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kernel<sp/>=<sp/>cv2.getStructuringElement(cv2.MORPH_RECT,<sp/>(5,<sp/>5))</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cinza<sp/>=<sp/>cv2.morphologyEx(thresh1,<sp/>cv2.MORPH_CLOSE,<sp/>kernel)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cinza<sp/>=<sp/>cv2.blur(cinza,<sp/>(9,<sp/>9))</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;a&quot;</highlight><highlight class="normal">,<sp/>cinza)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.waitKey(0)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>contorno,<sp/>heir<sp/>=<sp/>cv2.findContours(cinza,<sp/>cv2.RETR_TREE,<sp/>cv2.CHAIN_APPROX_NONE)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maiorArea=0</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>cnt<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>contorno:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cv2.contourArea(cnt)<sp/>&gt;<sp/>maiorArea):</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maiorArea<sp/>=<sp/>cv2.contourArea(cnt)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cntInterest=cnt</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>len(contorno)<sp/>!=<sp/>0<sp/>:</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vertices_do_retangulo<sp/>=<sp/>cv2.boundingRect(cntInterest)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retangulo_de_interesse<sp/>=<sp/>vertices_do_retangulo</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ponto1<sp/>=<sp/>(retangulo_de_interesse[0],<sp/>retangulo_de_interesse[1])</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ponto2<sp/>=<sp/>(</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retangulo_de_interesse[0]<sp/>+<sp/>retangulo_de_interesse[2],<sp/>retangulo_de_interesse[1]<sp/>+<sp/>retangulo_de_interesse[3])</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.rectangle(imagem,<sp/>ponto1,<sp/>ponto2,<sp/>(100),<sp/>2)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.rectangle(cinza,<sp/>ponto1,<sp/>ponto2,<sp/>(255),<sp/>1)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>largura<sp/>=<sp/>ponto2[0]<sp/>-<sp/>ponto1[0]</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>altura<sp/>=<sp/>ponto2[1]<sp/>-<sp/>ponto1[1]</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.line(cinza,<sp/>(ponto1[0]<sp/>+<sp/>largura<sp/>/<sp/>2,<sp/>ponto1[1]),<sp/>(ponto1[0]<sp/>+<sp/>largura<sp/>/<sp/>2,<sp/>ponto2[1]),<sp/>(255),<sp/>1)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.line(cinza,<sp/>(ponto1[0],<sp/>ponto1[1]<sp/>+<sp/>altura<sp/>/<sp/>2),<sp/>(ponto2[0],<sp/>ponto1[1]<sp/>+<sp/>altura<sp/>/<sp/>2),<sp/>(255),<sp/>1)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;Mascara&quot;</highlight><highlight class="normal">,<sp/>mascara)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;Cinza&quot;</highlight><highlight class="normal">,<sp/>cinza)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;Webcam&quot;</highlight><highlight class="normal">,<sp/>imagem)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>cv2.imshow(&quot;Thresholded&quot;,<sp/>thresh1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>cv2.imshow(&quot;Fundo&quot;,<sp/>fundo)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>cv2.waitKey(1)<sp/>&amp;<sp/>0xFF<sp/>==<sp/>ord(</highlight><highlight class="stringliteral">&apos;q&apos;</highlight><highlight class="normal">):</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="namespacemain_1a4dd127bf5aff068f91de46dfc931a62f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacemain_1a4dd127bf5aff068f91de46dfc931a62f" kindref="member">maincolor</ref>():</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>imagesList<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>fileLists<sp/>=<sp/>os.listdir(input_folder<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/camera1/&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>imagesList<sp/>+=<sp/>[each<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>each<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>fileLists<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>each.endswith(</highlight><highlight class="stringliteral">&apos;.png&apos;</highlight><highlight class="normal">)]</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>sorted_files<sp/>=<sp/>sorted(imagesList,<sp/>key=</highlight><highlight class="keyword">lambda</highlight><highlight class="normal"><sp/>x:<sp/>int(x.split(</highlight><highlight class="stringliteral">&apos;.&apos;</highlight><highlight class="normal">)[0]))</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>bkg=cv2.imread(input_folder<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/camera1/&apos;</highlight><highlight class="normal"><sp/>+<sp/><sp/>sorted_files[1])</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>fundo<sp/>=<sp/>cv2.blur(bkg,<sp/>(5,<sp/>5))</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">,<sp/>fundo)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>cv2.waitKey(0)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>image<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>sorted_files[2:-1]:</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagePath<sp/>=<sp/>input_folder<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/camera1/&apos;</highlight><highlight class="normal"><sp/>+<sp/>image</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagem<sp/>=<sp/>cv2.imread(imagePath)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mascara<sp/>=<sp/>imagem.copy()</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cinza<sp/>=<sp/>imagem.copy()</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>cv2.imshow(&quot;Webcam&quot;,<sp/>imagem)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagem<sp/>=<sp/>cv2.blur(imagem,<sp/>(7,<sp/>7<sp/>))</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.absdiff(imagem,<sp/>fundo,<sp/>mascara)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gray<sp/>=<sp/>cv2.cvtColor(mascara,<sp/>cv2.COLOR_BGR2GRAY)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret,<sp/>thresh1<sp/>=<sp/>cv2.threshold(gray,<sp/>150,<sp/>255,<sp/>cv2.THRESH_BINARY<sp/>+<sp/>cv2.THRESH_OTSU)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kernel<sp/>=<sp/>cv2.getStructuringElement(cv2.MORPH_RECT,<sp/>(5,<sp/>5))</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cinza<sp/>=<sp/>cv2.morphologyEx(thresh1,<sp/>cv2.MORPH_CLOSE,<sp/>kernel)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cinza<sp/>=<sp/>cv2.blur(cinza,<sp/>(9,<sp/>9))</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;a&quot;</highlight><highlight class="normal">,<sp/>cinza)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.waitKey(0)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>contorno,<sp/>heir<sp/>=<sp/>cv2.findContours(cinza,<sp/>cv2.RETR_TREE,<sp/>cv2.CHAIN_APPROX_NONE)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maiorArea=0</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>cnt<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>contorno:</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cv2.contourArea(cnt)<sp/>&gt;<sp/>maiorArea):</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maiorArea<sp/>=<sp/>cv2.contourArea(cnt)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cntInterest=cnt</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>len(contorno)<sp/>!=<sp/>0<sp/>:</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vertices_do_retangulo<sp/>=<sp/>cv2.boundingRect(cntInterest)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retangulo_de_interesse<sp/>=<sp/>vertices_do_retangulo</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ponto1<sp/>=<sp/>(retangulo_de_interesse[0],<sp/>retangulo_de_interesse[1])</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ponto2<sp/>=<sp/>(</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>retangulo_de_interesse[0]<sp/>+<sp/>retangulo_de_interesse[2],<sp/>retangulo_de_interesse[1]<sp/>+<sp/>retangulo_de_interesse[3])</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.rectangle(imagem,<sp/>ponto1,<sp/>ponto2,<sp/>(0,<sp/>0,<sp/>0),<sp/>2)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.rectangle(cinza,<sp/>ponto1,<sp/>ponto2,<sp/>(255,<sp/>255,<sp/>255),<sp/>1)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>largura<sp/>=<sp/>ponto2[0]<sp/>-<sp/>ponto1[0]</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>altura<sp/>=<sp/>ponto2[1]<sp/>-<sp/>ponto1[1]</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.line(cinza,<sp/>(ponto1[0]<sp/>+<sp/>largura<sp/>/<sp/>2,<sp/>ponto1[1]),<sp/>(ponto1[0]<sp/>+<sp/>largura<sp/>/<sp/>2,<sp/>ponto2[1]),<sp/>(255,<sp/>255,<sp/>255),<sp/>1)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.line(cinza,<sp/>(ponto1[0],<sp/>ponto1[1]<sp/>+<sp/>altura<sp/>/<sp/>2),<sp/>(ponto2[0],<sp/>ponto1[1]<sp/>+<sp/>altura<sp/>/<sp/>2),<sp/>(255,<sp/>255,<sp/>255),<sp/>1)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;Mascara&quot;</highlight><highlight class="normal">,<sp/>mascara)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;Cinza&quot;</highlight><highlight class="normal">,<sp/>cinza)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;Webcam&quot;</highlight><highlight class="normal">,<sp/>imagem)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>cv2.imshow(&quot;Thresholded&quot;,<sp/>thresh1)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>cv2.imshow(&quot;Fundo&quot;,<sp/>fundo)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>cv2.waitKey(1)<sp/>&amp;<sp/>0xFF<sp/>==<sp/>ord(</highlight><highlight class="stringliteral">&apos;q&apos;</highlight><highlight class="normal">):</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1)</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="namespacemain_1af613cea4cba4fb7de8e40896b3368945" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacemain_1af613cea4cba4fb7de8e40896b3368945" kindref="member">main</ref>():</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>minPoints=400</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>index=0</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>imagesList=[]</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>fileLists=<sp/>os.listdir(input_folder+</highlight><highlight class="stringliteral">&apos;/camera1/&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>imagesList<sp/>+=<sp/>[each<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>each<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>fileLists<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>each.endswith(</highlight><highlight class="stringliteral">&apos;.png&apos;</highlight><highlight class="normal">)]</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>sorted_files<sp/>=<sp/>sorted(imagesList,<sp/>key=</highlight><highlight class="keyword">lambda</highlight><highlight class="normal"><sp/>x:<sp/>int(x.split(</highlight><highlight class="stringliteral">&apos;.&apos;</highlight><highlight class="normal">)[0]))</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&apos;source<sp/>&apos;</highlight><highlight class="normal">,<sp/>input_folder<sp/>+<sp/><sp/></highlight><highlight class="stringliteral">&apos;/camera1/&apos;</highlight><highlight class="normal"><sp/>+<sp/>sorted_files[1]</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>sourceImage=cv2.imread(input_folder<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/camera1/&apos;</highlight><highlight class="normal"><sp/>+<sp/><sp/>sorted_files[1])</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>sourceImage=cv2.cvtColor(sourceImage,cv2.COLOR_BGR2RGB)</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">,sourceImage)</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>sourceGray<sp/>=<sp/>cv2.cvtColor(sourceImage,<sp/>cv2.COLOR_BGR2GRAY)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>sourceGray<sp/>=<sp/>cv2.GaussianBlur(sourceGray,<sp/>(21,<sp/>21),<sp/>0)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>(H,W,c)<sp/>=<sp/>np.shape(sourceImage)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>cv2.waitKey(0)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#warps=[0,90,180,270]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#scales=[1,1.5,2]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>warps=[0]</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>scales=[1]</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>testRatio=0.3</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>imagesCounter=0</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>th=60</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>image<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>sorted_files[2:-1]:</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>testImage=</highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>warp<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>warps:</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;w:<sp/>&quot;</highlight><highlight class="normal">,<sp/>warp</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>scale<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>scales:</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagePath<sp/>=<sp/>input_folder<sp/>+<sp/><sp/></highlight><highlight class="stringliteral">&apos;/camera1/&apos;</highlight><highlight class="normal"><sp/>+<sp/>image</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currImage=cv2.imread(imagePath)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currImage=cv2.cvtColor(currImage,cv2.COLOR_BGR2RGB)</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gray<sp/>=<sp/>cv2.cvtColor(currImage,<sp/>cv2.COLOR_BGR2GRAY)</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gray<sp/>=<sp/>cv2.GaussianBlur(gray,<sp/>(21,<sp/>21),<sp/>0)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frameDelta<sp/>=<sp/>cv2.absdiff(sourceGray,<sp/>gray)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thresh<sp/>=<sp/>cv2.threshold(frameDelta,<sp/>th,<sp/>255,<sp/>cv2.THRESH_BINARY)[1]</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>dilate<sp/>the<sp/>thresholded<sp/>image<sp/>to<sp/>fill<sp/>in<sp/>holes,<sp/>then<sp/>find<sp/>contours</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>on<sp/>thresholded<sp/>image</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>thresh<sp/>=<sp/>cv2.dilate(thresh,<sp/>None,<sp/>iterations=2)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kernel<sp/>=<sp/>np.ones((5,5),np.uint8)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thresh=cv2.morphologyEx(thresh,<sp/>cv2.MORPH_CLOSE,<sp/>kernel)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;th&quot;</highlight><highlight class="normal">,thresh)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nPoints<sp/>=<sp/>cv2.countNonZero(thresh)</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>nPoints<sp/>&lt;<sp/>minPoints<sp/>*<sp/>scale:</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nPoints=0</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>nPoints:</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>filename,<sp/>file_extension<sp/>=<sp/>os.path.splitext(image)</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(warp<sp/>==<sp/>warps[0]<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>scale<sp/>==<sp/>scales[0]):</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagesCounter+=1</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>testImage=<ref refid="namespacemain_1a79057ea90b8e9ec6d19aa60668910f91" kindref="member">getIfPropertyToTest</ref>(imagesCounter,testRatio)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>testImage</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>testImage:</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imwrite(</highlight><highlight class="stringliteral">&quot;test/&quot;</highlight><highlight class="normal"><sp/>+<sp/>image,currImage)</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>points<sp/>=<sp/>cv2.findNonZero(thresh)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>roi<sp/>=<sp/>cv2.boundingRect(points)</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s<sp/>=<sp/><ref refid="classsample_generator_1_1sample_1_1sample" kindref="compound">sample</ref>(currImage,roi)</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.applyScale(scale)</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.applyWarp(warp)</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s.printResult()</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>maskedImage<sp/>=<sp/>s.getImageWithData()</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;current&quot;</highlight><highlight class="normal">,maskedImage)</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>testImage:</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imwrite(</highlight><highlight class="stringliteral">&quot;test/&quot;</highlight><highlight class="normal"><sp/>+<sp/>filename<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;-mask.png&apos;</highlight><highlight class="normal">,maskedImage)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imwrite(output_folder<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/angle&apos;</highlight><highlight class="normal"><sp/>+<sp/>str(warp)<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;_scale&apos;</highlight><highlight class="normal">+<sp/>str(scale)<sp/>+</highlight><highlight class="stringliteral">&apos;_&apos;</highlight><highlight class="normal"><sp/>+<sp/>filename<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;-mask.png&quot;</highlight><highlight class="normal">,maskedImage)</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imwrite(output_folder<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/angle&apos;</highlight><highlight class="normal"><sp/>+<sp/>str(warp)<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;_scale&apos;</highlight><highlight class="normal">+<sp/>str(scale)<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;_&apos;</highlight><highlight class="normal"><sp/>+<sp/>filename<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;.png&apos;</highlight><highlight class="normal">,s.getImage())</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f<sp/>=<sp/>open(output_folder<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/angle&apos;</highlight><highlight class="normal"><sp/>+<sp/>str(warp)<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;_scale&apos;</highlight><highlight class="normal">+<sp/>str(scale)<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;_&apos;</highlight><highlight class="normal"><sp/>+<sp/>filename<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;.txt&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&apos;w&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f.write(s.getResultStr())</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f.close()</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.waitKey(1)</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>testImage:</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>testImage:</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>imagesCounter</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233" refid="namespacemain_1a80860d59bdf4a47bf23d077b5646b8c5" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacemain_1a80860d59bdf4a47bf23d077b5646b8c5" kindref="member">main2</ref>():</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>min_area=50</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/>imagesList<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>fileLists<sp/>=<sp/>os.listdir(input_folder<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/camera1/&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>imagesList<sp/>+=<sp/>[each<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>each<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>fileLists<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>each.endswith(</highlight><highlight class="stringliteral">&apos;.png&apos;</highlight><highlight class="normal">)]</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>sorted_files<sp/>=<sp/>sorted(imagesList,<sp/>key=</highlight><highlight class="keyword">lambda</highlight><highlight class="normal"><sp/>x:<sp/>int(x.split(</highlight><highlight class="stringliteral">&apos;.&apos;</highlight><highlight class="normal">)[0]))</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/>frame=cv2.imread(input_folder<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/camera1/&apos;</highlight><highlight class="normal"><sp/>+<sp/><sp/>sorted_files[1])</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>gray<sp/>=<sp/>cv2.cvtColor(frame,<sp/>cv2.COLOR_BGR2GRAY)</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>gray<sp/>=<sp/>cv2.GaussianBlur(gray,<sp/>(21,<sp/>21),<sp/>0)</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">,<sp/>gray)</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>cv2.waitKey(0)</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>image<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>sorted_files[2:-1]:</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagePath<sp/>=<sp/>input_folder<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;/camera1/&apos;</highlight><highlight class="normal"><sp/>+<sp/>image</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>imagem<sp/>=<sp/>cv2.imread(imagePath)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rameDelta<sp/>=<sp/>cv2.absdiff(firstFrame,<sp/>gray)</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thresh<sp/>=<sp/>cv2.threshold(frameDelta,<sp/>25,<sp/>255,<sp/>cv2.THRESH_BINARY)[1]</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>dilate<sp/>the<sp/>thresholded<sp/>image<sp/>to<sp/>fill<sp/>in<sp/>holes,<sp/>then<sp/>find<sp/>contours</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>on<sp/>thresholded<sp/>image</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thresh<sp/>=<sp/>cv2.dilate(thresh,<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal">,<sp/>iterations=2)</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(cnts,<sp/>_)<sp/>=<sp/>cv2.findContours(thresh.copy(),<sp/>cv2.RETR_EXTERNAL,</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.CHAIN_APPROX_SIMPLE)</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>loop<sp/>over<sp/>the<sp/>contours</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>majorArea=0</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>c<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>cnts:</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>if<sp/>the<sp/>contour<sp/>is<sp/>too<sp/>small,<sp/>ignore<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>cv2.contourArea(c)<sp/>&lt;<sp/>min_area:</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>cv2.contourArea(c)<sp/>&gt;<sp/>majorArea:</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>majorArea=cv2.contourArea(c)</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bestCnt=c</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>compute<sp/>the<sp/>bounding<sp/>box<sp/>for<sp/>the<sp/>contour,<sp/>draw<sp/>it<sp/>on<sp/>the<sp/>frame,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>and<sp/>update<sp/>the<sp/>text</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(x,<sp/>y,<sp/>w,<sp/>h)<sp/>=<sp/>cv2.boundingRect(bestCnt)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.rectangle(frame,<sp/>(x,<sp/>y),<sp/>(x<sp/>+<sp/>w,<sp/>y<sp/>+<sp/>h),<sp/>(0,<sp/>255,<sp/>0),<sp/>2)</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>text<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Occupied&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>draw<sp/>the<sp/>text<sp/>and<sp/>timestamp<sp/>on<sp/>the<sp/>frame</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.putText(frame,<sp/></highlight><highlight class="stringliteral">&quot;Room<sp/>Status:<sp/>{}&quot;</highlight><highlight class="normal">.format(text),<sp/>(10,<sp/>20),</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.FONT_HERSHEY_SIMPLEX,<sp/>0.5,<sp/>(0,<sp/>0,<sp/>255),<sp/>2)</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.putText(frame,<sp/>datetime.datetime.now().strftime(</highlight><highlight class="stringliteral">&quot;%A<sp/>%d<sp/>%B<sp/>%Y<sp/>%I:%M:%S%p&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(10,<sp/>frame.shape[0]<sp/>-<sp/>10),<sp/>cv2.FONT_HERSHEY_SIMPLEX,<sp/>0.35,<sp/>(0,<sp/>0,<sp/>255),<sp/>1)</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>show<sp/>the<sp/>frame<sp/>and<sp/>record<sp/>if<sp/>the<sp/>user<sp/>presses<sp/>a<sp/>key</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;Security<sp/>Feed&quot;</highlight><highlight class="normal">,<sp/>frame)</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;Thresh&quot;</highlight><highlight class="normal">,<sp/>thresh)</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv2.imshow(</highlight><highlight class="stringliteral">&quot;Frame<sp/>Delta&quot;</highlight><highlight class="normal">,<sp/>frameDelta)</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>key<sp/>=<sp/>cv2.waitKey(1)<sp/>&amp;<sp/>0xFF</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>if<sp/>the<sp/>`q`<sp/>key<sp/>is<sp/>pressed,<sp/>break<sp/>from<sp/>the<sp/>lop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>key<sp/>==<sp/>ord(</highlight><highlight class="stringliteral">&quot;q&quot;</highlight><highlight class="normal">):</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemain" kindref="compound">main</ref>()</highlight></codeline>
+    </programlisting>
+    <location file="sampleGenerator/simpleSampleGenerator/main.py"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_a5dda850a6138703cfe5c3a8e247a98d" kind="dir">
+    <compoundname>DeepLearningSuite/build/DatasetEvaluationApp</compoundname>
+    <innerdir refid="dir_3ee86440faed8e19ad34e85750346dd2">DeepLearningSuite/build/DatasetEvaluationApp/DatasetEvaluationApp_autogen</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/build/DatasetEvaluationApp/"/>
+  </compounddef>
+</doxygen>

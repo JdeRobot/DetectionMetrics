@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="translators_8hpp" kind="file" language="C++">
+    <compoundname>translators.hpp</compoundname>
+    <includes local="no">ros/ros.h</includes>
+    <includes local="no">cv.h</includes>
+    <includes local="no">vector</includes>
+    <includes refid="image_8h" local="no">jderobottypes/image.h</includes>
+    <includes refid="rgbd_8h" local="no">jderobottypes/rgbd.h</includes>
+    <includes local="yes">image_transport/image_transport.h</includes>
+    <includes local="yes">cv_bridge/cv_bridge.h</includes>
+    <includes local="yes">sensor_msgs/image_encodings.h</includes>
+    <includedby refid="listener_camera_8hpp" local="no">DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp</includedby>
+    <includedby refid="translators_8cpp" local="no">DeepLearningSuite/libs/comm/src/ros/translators.cpp</includedby>
+    <incdepgraph>
+      <node id="5155">
+        <label>image_transport/image_transport.h</label>
+      </node>
+      <node id="5153">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="5156">
+        <label>cv_bridge/cv_bridge.h</label>
+      </node>
+      <node id="5154">
+        <label>jderobottypes/rgbd.h</label>
+        <link refid="rgbd_8h"/>
+        <childnode refid="5152" relation="include">
+        </childnode>
+      </node>
+      <node id="5157">
+        <label>sensor_msgs/image_encodings.h</label>
+      </node>
+      <node id="5152">
+        <label>jderobottypes/image.h</label>
+        <link refid="image_8h"/>
+        <childnode refid="5153" relation="include">
+        </childnode>
+      </node>
+      <node id="5151">
+        <label>vector</label>
+      </node>
+      <node id="5148">
+        <label>DeepLearningSuite/libs/comm/include/comm/ros/translators.hpp</label>
+        <link refid="translators_8hpp"/>
+        <childnode refid="5149" relation="include">
+        </childnode>
+        <childnode refid="5150" relation="include">
+        </childnode>
+        <childnode refid="5151" relation="include">
+        </childnode>
+        <childnode refid="5152" relation="include">
+        </childnode>
+        <childnode refid="5154" relation="include">
+        </childnode>
+        <childnode refid="5155" relation="include">
+        </childnode>
+        <childnode refid="5156" relation="include">
+        </childnode>
+        <childnode refid="5157" relation="include">
+        </childnode>
+      </node>
+      <node id="5150">
+        <label>cv.h</label>
+      </node>
+      <node id="5149">
+        <label>ros/ros.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5160">
+        <label>DeepLearningSuite/libs/comm/src/ros/listenerCamera.cpp</label>
+        <link refid="listener_camera_8cpp"/>
+      </node>
+      <node id="5159">
+        <label>DeepLearningSuite/libs/comm/include/comm/ros/listenerCamera.hpp</label>
+        <link refid="listener_camera_8hpp"/>
+        <childnode refid="5160" relation="include">
+        </childnode>
+      </node>
+      <node id="5161">
+        <label>DeepLearningSuite/libs/comm/src/ros/translators.cpp</label>
+        <link refid="translators_8cpp"/>
+      </node>
+      <node id="5158">
+        <label>DeepLearningSuite/libs/comm/include/comm/ros/translators.hpp</label>
+        <link refid="translators_8hpp"/>
+        <childnode refid="5159" relation="include">
+        </childnode>
+        <childnode refid="5161" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespace_comm">Comm</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>(C)<sp/>1997-2016<sp/>JDE<sp/>Developers<sp/>Team</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>http://www.gnu.org/licenses/.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>Authors<sp/>:</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>Aitor<sp/>Martinez<sp/>Fernandez<sp/>&lt;aitor.martinez.fernandez@gmail.com&gt;</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>JDEROBOTCOMM_TRANSLATORSROS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>JDEROBOTCOMM_TRANSLATORSROS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;ros/ros.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cv.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="image_8h" kindref="compound">jderobottypes/image.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="rgbd_8h" kindref="compound">jderobottypes/rgbd.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;image_transport/image_transport.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;cv_bridge/cv_bridge.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;sensor_msgs/image_encodings.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_comm" kindref="compound">Comm</ref><sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_jde_robot_types_1_1_image" kindref="compound">JdeRobotTypes::Image</ref><sp/><ref refid="namespace_comm_1ad9eade500ada9cd99a62086a53986e36" kindref="member">translate_image_messages</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sensor_msgs::ImageConstPtr&amp;<sp/>image_msg);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_jde_robot_types_1_1_rgbd" kindref="compound">JdeRobotTypes::Rgbd</ref><sp/><ref refid="namespace_comm_1a7e4e8f50789805802aea4d68670a495c" kindref="member">translate_rgbd</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sensor_msgs::ImageConstPtr&amp;<sp/>rgb,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sensor_msgs::ImageConstPtr&amp;<sp/>d);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="namespace_comm_1afe46bbd9c6bec183b93879e39e21fcbc" kindref="member">depthToRGB</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>float_img,<sp/>cv::Mat&amp;<sp/>rgb_img);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>NS<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//JDEROBOTCOMM_TRANSLATORSROS_H_</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/libs/comm/include/comm/ros/translators.hpp"/>
+  </compounddef>
+</doxygen>

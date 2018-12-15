@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_sample_generator_handler_1_1_converter" kind="class" language="C++" prot="public">
+    <compoundname>SampleGeneratorHandler::Converter</compoundname>
+    <includes refid="_converter_8h" local="no">Converter.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_sample_generator_handler_1_1_converter_1aa81680abc717a733101b6cddd7aa69f7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SampleGeneratorHandler::Converter::process</definition>
+        <argsstring>(QListView *datasetList, QListView *namesList, QListView *readerImpList, QListView *filterClasses, QListView *writerImpList, QListView *writerNamesList, bool useWriterNames, const std::string &amp;datasetPath, const std::string &amp;namesPath, const std::string &amp;outputPath, bool splitActive, double splitRatio, bool writeImages)</argsstring>
+        <name>process</name>
+        <param>
+          <type>QListView *</type>
+          <declname>datasetList</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>namesList</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>readerImpList</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>filterClasses</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>writerImpList</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>writerNamesList</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useWriterNames</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>datasetPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>namesPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outputPath</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>splitActive</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>splitRatio</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>writeImages</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.h" line="13" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.cpp" bodystart="10" bodyend="99"/>
+        <references refid="class_sample_generator_handler_1_1_sampler_generation_handler_1af7e70df7bcf3189d20278f31c82c4c02" compoundref="_sampler_generation_handler_8cpp" startline="9" endline="55">SampleGeneratorHandler::SamplerGenerationHandler::createDatasetReaderPtr</references>
+        <references refid="class_utils_1af7234a751d8a81bd01774e9af9e403be" compoundref="_utils_8cpp" startline="7" endline="21">Utils::getListViewContent</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.h" line="11" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.h" bodystart="11" bodyend="15"/>
+    <listofallmembers>
+      <member refid="class_sample_generator_handler_1_1_converter_1aa81680abc717a733101b6cddd7aa69f7" prot="public" virt="non-virtual"><scope>SampleGeneratorHandler::Converter</scope><name>process</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

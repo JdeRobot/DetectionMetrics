@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_y_u_v" kind="struct" language="C++" prot="public">
+    <compoundname>YUV</compoundname>
+    <includes refid="colorspaces_8h" local="no">colorspaces.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double YUV::Y</definition>
+        <argsstring></argsstring>
+        <name>Y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="75" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" bodystart="75" bodyend="-1"/>
+        <referencedby refid="rgb2yuv_8c_1ab2b3287a0417bedece40b4bcc665265c" compoundref="rgb2yuv_8c" startline="155" endline="206">RGB2YUV_createTable</referencedby>
+        <referencedby refid="rgb2yuv_8c_1ad94bf56e9292976bbfdd28cb949a94fd" compoundref="rgb2yuv_8c" startline="209" endline="212">RGB2YUV_printYUV</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double YUV::U</definition>
+        <argsstring></argsstring>
+        <name>U</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="76" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" bodystart="76" bodyend="-1"/>
+        <referencedby refid="rgb2yuv_8c_1ae80eb39e10fb510ac3d5be1c81671f0d" compoundref="rgb2yuv_8c" startline="64" endline="82">yuv2rgb</referencedby>
+        <referencedby refid="rgb2yuv_8c_1ab2b3287a0417bedece40b4bcc665265c" compoundref="rgb2yuv_8c" startline="155" endline="206">RGB2YUV_createTable</referencedby>
+        <referencedby refid="rgb2yuv_8c_1ad94bf56e9292976bbfdd28cb949a94fd" compoundref="rgb2yuv_8c" startline="209" endline="212">RGB2YUV_printYUV</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_y_u_v_1a423a8053664584441466d69f809fde43" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double YUV::V</definition>
+        <argsstring></argsstring>
+        <name>V</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="77" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" bodystart="77" bodyend="-1"/>
+        <referencedby refid="rgb2yuv_8c_1ae80eb39e10fb510ac3d5be1c81671f0d" compoundref="rgb2yuv_8c" startline="64" endline="82">yuv2rgb</referencedby>
+        <referencedby refid="rgb2yuv_8c_1ab2b3287a0417bedece40b4bcc665265c" compoundref="rgb2yuv_8c" startline="155" endline="206">RGB2YUV_createTable</referencedby>
+        <referencedby refid="rgb2yuv_8c_1ad94bf56e9292976bbfdd28cb949a94fd" compoundref="rgb2yuv_8c" startline="209" endline="212">RGB2YUV_printYUV</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>*** RGB to <ref refid="struct_y_u_v" kindref="compound">YUV</ref> *** /// </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" line="74" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/colorspaces.h" bodystart="73" bodyend="78"/>
+    <listofallmembers>
+      <member refid="struct_y_u_v_1abaedc9ade54a0c762f07c0f9cf034643" prot="public" virt="non-virtual"><scope>YUV</scope><name>U</name></member>
+      <member refid="struct_y_u_v_1a423a8053664584441466d69f809fde43" prot="public" virt="non-virtual"><scope>YUV</scope><name>V</name></member>
+      <member refid="struct_y_u_v_1a4d1d3671a68d8b66418f0eb4a73d8a8a" prot="public" virt="non-virtual"><scope>YUV</scope><name>Y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

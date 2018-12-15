@@ -1,0 +1,90 @@
+.TH "colorspaces::ImageNV21" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+colorspaces::ImageNV21
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <imagecv\&.h>\fP
+.PP
+Inherits \fBcolorspaces::Image\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImageNV21\fP (const int \fBwidth\fP, const int \fBheight\fP)"
+.br
+.ti -1c
+.RI "\fBImageNV21\fP (const int \fBwidth\fP, const int \fBheight\fP, void *const data)"
+.br
+.ti -1c
+.RI "\fBImageNV21\fP (const \fBImage\fP &i)"
+.br
+.ti -1c
+.RI "void \fBtoGRAY8\fP (\fBImage\fP &dst) const  throw (FormatMismatch)"
+.br
+.ti -1c
+.RI "void \fBtoRGB8\fP (\fBImage\fP &dst) const  throw (FormatMismatch)"
+.br
+.ti -1c
+.RI "void \fBtoYCRCB\fP (\fBImage\fP &dst) const  throw (FormatMismatch)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBImage\fP * \fBcreateInstance\fP (const int \fBwidth\fP, const int \fBheight\fP, void *const data)"
+.br
+.ti -1c
+.RI "static \fBImage\fP & \fBimageCvt\fP (const \fBImage\fP &src, \fBImage\fP &dst)  throw (NoConversion)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const \fBFormatPtr\fP \fBFORMAT_NV21\fP = \fBImage::Format::createFormat\fP('NV21',CV_8UC2,&\fBImageNV21::createInstance\fP,&\fBImageNV21::imageCvt\fP)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A NV21 image 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "colorspaces::ImageNV21::ImageNV21 (const int width, const int height)"
+Constructor Width have to be an even number\&. 
+.SS "colorspaces::ImageNV21::ImageNV21 (const int width, const int height, void *const data)"
+Constructor from user data Width have to be an even number\&. 
+.SS "colorspaces::ImageNV21::ImageNV21 (const \fBImage\fP & i)"
+Copy constructor\&. if 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP doesn't match format a conversion will happen\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBImage\fP * colorspaces::ImageNV21::createInstance (const int width, const int height, void *const data)\fC [static]\fP"
+Factory method 
+.SS "\fBImage\fP & colorspaces::ImageNV21::imageCvt (const \fBImage\fP & src, \fBImage\fP & dst)\fBNoConversion\fP\fC [static]\fP"
+
+.SS "void colorspaces::ImageNV21::toGRAY8 (\fBImage\fP & dst) const\fBFormatMismatch\fP"
+Conversion methods\&. Returns a copy 
+.SS "void colorspaces::ImageNV21::toRGB8 (\fBImage\fP & dst) const\fBFormatMismatch\fP"
+
+.SS "void colorspaces::ImageNV21::toYCRCB (\fBImage\fP & dst) const\fBFormatMismatch\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "const \fBImage::FormatPtr\fP colorspaces::ImageNV21::FORMAT_NV21 = \fBImage::Format::createFormat\fP('NV21',CV_8UC2,&\fBImageNV21::createInstance\fP,&\fBImageNV21::imageCvt\fP)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

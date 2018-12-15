@@ -1,0 +1,116 @@
+\hypertarget{classcolorspaces_1_1_image_1_1_format}{}\section{colorspaces\+:\+:Image\+:\+:Format Class Reference}
+\label{classcolorspaces_1_1_image_1_1_format}\index{colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}}
+
+
+{\ttfamily \#include $<$imagecv.\+h$>$}
+
+Inheritance diagram for colorspaces\+:\+:Image\+:\+:Format\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcolorspaces_1_1_image_1_1_format}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcolorspaces_1_1_image}{Image} $\ast$ \hyperlink{classcolorspaces_1_1_image_1_1_format_acfd0aa30bcf044ff947f07c15478cc97}{create\+Instance} (const int \hyperlink{classcolorspaces_1_1_image_ab80af7d4797110c23ed575b329ec7c4f}{width}, const int \hyperlink{classcolorspaces_1_1_image_a99a05ebd37f61215b2c3042ecaefdbfc}{height}, void $\ast$const data)
+\item 
+int \hyperlink{classcolorspaces_1_1_image_1_1_format_a0ff066e47cb663980d8fe186994a4686}{bytes\+Per\+Pixel} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classcolorspaces_1_1_image_ab3978cc7acc2b5e855f8c715f09667d1}{Format\+Ptr} \hyperlink{classcolorspaces_1_1_image_1_1_format_ae79208f237b72cf596331ebcec2ff58b}{create\+Format} (const std\+::string \hyperlink{classcolorspaces_1_1_image_1_1_format_a0b2fef0398d48a881a56d38e04ad94b8}{name}, const int \hyperlink{classcolorspaces_1_1_image_1_1_format_a98396a43290ed1b2530caf35e858daa9}{cv\+Type}, \hyperlink{classcolorspaces_1_1_image_a5d086f8bb03d6eab9c3accfd0040e28d}{image\+Ctor} \hyperlink{classcolorspaces_1_1_image_1_1_format_a8aab62c6ca6ae1280cb4ba07702a5991}{ctor}, \hyperlink{classcolorspaces_1_1_image_a8d8b6c8b517caac4cb685f4d73e2c8dc}{image\+Cvt} \hyperlink{classcolorspaces_1_1_image_1_1_format_ab7b83a3ddf1666e728782722dc3c081f}{cvt})
+\item 
+static const \hyperlink{classcolorspaces_1_1_image_ab3978cc7acc2b5e855f8c715f09667d1}{Format\+Ptr} \hyperlink{classcolorspaces_1_1_image_1_1_format_afce4bc32d3c2827791b13a7c92a5c22f}{get\+Format} (const int fmt\+Id)
+\item 
+static const \hyperlink{classcolorspaces_1_1_image_ab3978cc7acc2b5e855f8c715f09667d1}{Format\+Ptr} \hyperlink{classcolorspaces_1_1_image_1_1_format_a6aab83855bf18ba00c86bccc79075d0c}{search\+Format} (const std\+::string \hyperlink{classcolorspaces_1_1_image_1_1_format_a0b2fef0398d48a881a56d38e04ad94b8}{name})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{classcolorspaces_1_1_image_1_1_format_a0b2fef0398d48a881a56d38e04ad94b8}{name}
+\item 
+int \hyperlink{classcolorspaces_1_1_image_1_1_format_af1ffb2ff3d465a7bcd608f35c01d11de}{id}
+\item 
+int \hyperlink{classcolorspaces_1_1_image_1_1_format_a98396a43290ed1b2530caf35e858daa9}{cv\+Type}
+\item 
+\hyperlink{classcolorspaces_1_1_image_a5d086f8bb03d6eab9c3accfd0040e28d}{image\+Ctor} \hyperlink{classcolorspaces_1_1_image_1_1_format_a8aab62c6ca6ae1280cb4ba07702a5991}{ctor}
+\item 
+\hyperlink{classcolorspaces_1_1_image_a8d8b6c8b517caac4cb685f4d73e2c8dc}{image\+Cvt} \hyperlink{classcolorspaces_1_1_image_1_1_format_ab7b83a3ddf1666e728782722dc3c081f}{cvt}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define the pixel format of an image 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcolorspaces_1_1_image_1_1_format_a0ff066e47cb663980d8fe186994a4686}\label{classcolorspaces_1_1_image_1_1_format_a0ff066e47cb663980d8fe186994a4686}} 
+\index{colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}!bytes\+Per\+Pixel@{bytes\+Per\+Pixel}}
+\index{bytes\+Per\+Pixel@{bytes\+Per\+Pixel}!colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}}
+\subsubsection{\texorpdfstring{bytes\+Per\+Pixel()}{bytesPerPixel()}}
+{\footnotesize\ttfamily int colorspaces\+::\+Image\+::\+Format\+::bytes\+Per\+Pixel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcolorspaces_1_1_image_1_1_format_ae79208f237b72cf596331ebcec2ff58b}\label{classcolorspaces_1_1_image_1_1_format_ae79208f237b72cf596331ebcec2ff58b}} 
+\index{colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}!create\+Format@{create\+Format}}
+\index{create\+Format@{create\+Format}!colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}}
+\subsubsection{\texorpdfstring{create\+Format()}{createFormat()}}
+{\footnotesize\ttfamily const \hyperlink{classcolorspaces_1_1_image_ab3978cc7acc2b5e855f8c715f09667d1}{Image\+::\+Format\+Ptr} colorspaces\+::\+Image\+::\+Format\+::create\+Format (\begin{DoxyParamCaption}\item[{const std\+::string}]{name,  }\item[{const int}]{cv\+Type,  }\item[{\hyperlink{classcolorspaces_1_1_image_a5d086f8bb03d6eab9c3accfd0040e28d}{image\+Ctor}}]{ctor,  }\item[{\hyperlink{classcolorspaces_1_1_image_a8d8b6c8b517caac4cb685f4d73e2c8dc}{image\+Cvt}}]{cvt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcolorspaces_1_1_image_1_1_format_acfd0aa30bcf044ff947f07c15478cc97}\label{classcolorspaces_1_1_image_1_1_format_acfd0aa30bcf044ff947f07c15478cc97}} 
+\index{colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}!create\+Instance@{create\+Instance}}
+\index{create\+Instance@{create\+Instance}!colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}}
+\subsubsection{\texorpdfstring{create\+Instance()}{createInstance()}}
+{\footnotesize\ttfamily \hyperlink{classcolorspaces_1_1_image}{Image} $\ast$ colorspaces\+::\+Image\+::\+Format\+::create\+Instance (\begin{DoxyParamCaption}\item[{const int}]{width,  }\item[{const int}]{height,  }\item[{void $\ast$const}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcolorspaces_1_1_image_1_1_format_afce4bc32d3c2827791b13a7c92a5c22f}\label{classcolorspaces_1_1_image_1_1_format_afce4bc32d3c2827791b13a7c92a5c22f}} 
+\index{colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}!get\+Format@{get\+Format}}
+\index{get\+Format@{get\+Format}!colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}}
+\subsubsection{\texorpdfstring{get\+Format()}{getFormat()}}
+{\footnotesize\ttfamily static const \hyperlink{classcolorspaces_1_1_image_ab3978cc7acc2b5e855f8c715f09667d1}{Format\+Ptr} colorspaces\+::\+Image\+::\+Format\+::get\+Format (\begin{DoxyParamCaption}\item[{const int}]{fmt\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcolorspaces_1_1_image_1_1_format_a6aab83855bf18ba00c86bccc79075d0c}\label{classcolorspaces_1_1_image_1_1_format_a6aab83855bf18ba00c86bccc79075d0c}} 
+\index{colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}!search\+Format@{search\+Format}}
+\index{search\+Format@{search\+Format}!colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}}
+\subsubsection{\texorpdfstring{search\+Format()}{searchFormat()}}
+{\footnotesize\ttfamily const \hyperlink{classcolorspaces_1_1_image_ab3978cc7acc2b5e855f8c715f09667d1}{Image\+::\+Format\+Ptr} colorspaces\+::\+Image\+::\+Format\+::search\+Format (\begin{DoxyParamCaption}\item[{const std\+::string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classcolorspaces_1_1_image_1_1_format_a8aab62c6ca6ae1280cb4ba07702a5991}\label{classcolorspaces_1_1_image_1_1_format_a8aab62c6ca6ae1280cb4ba07702a5991}} 
+\index{colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}!ctor@{ctor}}
+\index{ctor@{ctor}!colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}}
+\subsubsection{\texorpdfstring{ctor}{ctor}}
+{\footnotesize\ttfamily \hyperlink{classcolorspaces_1_1_image_a5d086f8bb03d6eab9c3accfd0040e28d}{image\+Ctor} colorspaces\+::\+Image\+::\+Format\+::ctor}
+
+Contructor \mbox{\Hypertarget{classcolorspaces_1_1_image_1_1_format_ab7b83a3ddf1666e728782722dc3c081f}\label{classcolorspaces_1_1_image_1_1_format_ab7b83a3ddf1666e728782722dc3c081f}} 
+\index{colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}!cvt@{cvt}}
+\index{cvt@{cvt}!colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}}
+\subsubsection{\texorpdfstring{cvt}{cvt}}
+{\footnotesize\ttfamily \hyperlink{classcolorspaces_1_1_image_a8d8b6c8b517caac4cb685f4d73e2c8dc}{image\+Cvt} colorspaces\+::\+Image\+::\+Format\+::cvt}
+
+conversion function \mbox{\Hypertarget{classcolorspaces_1_1_image_1_1_format_a98396a43290ed1b2530caf35e858daa9}\label{classcolorspaces_1_1_image_1_1_format_a98396a43290ed1b2530caf35e858daa9}} 
+\index{colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}!cv\+Type@{cv\+Type}}
+\index{cv\+Type@{cv\+Type}!colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}}
+\subsubsection{\texorpdfstring{cv\+Type}{cvType}}
+{\footnotesize\ttfamily int colorspaces\+::\+Image\+::\+Format\+::cv\+Type}
+
+Opencv data type used for pixel data \mbox{\Hypertarget{classcolorspaces_1_1_image_1_1_format_af1ffb2ff3d465a7bcd608f35c01d11de}\label{classcolorspaces_1_1_image_1_1_format_af1ffb2ff3d465a7bcd608f35c01d11de}} 
+\index{colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}!id@{id}}
+\index{id@{id}!colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}}
+\subsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int colorspaces\+::\+Image\+::\+Format\+::id}
+
+\hyperlink{classcolorspaces_1_1_image_1_1_format}{Format} identification \mbox{\Hypertarget{classcolorspaces_1_1_image_1_1_format_a0b2fef0398d48a881a56d38e04ad94b8}\label{classcolorspaces_1_1_image_1_1_format_a0b2fef0398d48a881a56d38e04ad94b8}} 
+\index{colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}!name@{name}}
+\index{name@{name}!colorspaces\+::\+Image\+::\+Format@{colorspaces\+::\+Image\+::\+Format}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily std\+::string colorspaces\+::\+Image\+::\+Format\+::name}
+
+String that represents this format 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/libs/utils/colorspaces/\hyperlink{imagecv_8h}{imagecv.\+h}\item 
+Deep\+Learning\+Suite/libs/utils/colorspaces/\hyperlink{imagecv_8cpp}{imagecv.\+cpp}\end{DoxyCompactItemize}

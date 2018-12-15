@@ -1,0 +1,492 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections" kind="class" language="Python" prot="public">
+    <compoundname>keras_utils::keras_layer_DecodeDetections::DecodeDetections</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Layer</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a56313f9908567eefb31bdd7553434c62" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::confidence_thresh</definition>
+        <argsstring></argsstring>
+        <name>confidence_thresh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="86" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="86" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" compoundref="keras__layer___decode_detections_8py" startline="272" endline="285">keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aa9e9991f7389356f60596453e3184bf0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::iou_threshold</definition>
+        <argsstring></argsstring>
+        <name>iou_threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="87" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="87" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ac9e205b2c83a7b062ab128175cebe77b" compoundref="keras__layer___decode_detections_8py" startline="110" endline="267">keras_utils.keras_layer_DecodeDetections.DecodeDetections.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" compoundref="keras__layer___decode_detections_8py" startline="272" endline="285">keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1af6b9c9a1dea2ff88cd16075225005405" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::top_k</definition>
+        <argsstring></argsstring>
+        <name>top_k</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="88" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="88" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ac9e205b2c83a7b062ab128175cebe77b" compoundref="keras__layer___decode_detections_8py" startline="110" endline="267">keras_utils.keras_layer_DecodeDetections.DecodeDetections.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" compoundref="keras__layer___decode_detections_8py" startline="272" endline="285">keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a4641efb5a8eaefba8efa2165aa536052" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::normalize_coords</definition>
+        <argsstring></argsstring>
+        <name>normalize_coords</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="89" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="89" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" compoundref="keras__layer___decode_detections_8py" startline="272" endline="285">keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a08d45ba6d76897c87e5e9ec86bd84ada" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::img_height</definition>
+        <argsstring></argsstring>
+        <name>img_height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="90" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="90" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" compoundref="keras__layer___decode_detections_8py" startline="272" endline="285">keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aeeb7ac85061a9dade6ef75db8ecf3193" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::img_width</definition>
+        <argsstring></argsstring>
+        <name>img_width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="91" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="91" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" compoundref="keras__layer___decode_detections_8py" startline="272" endline="285">keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1adb3a9b9790ad9bf786e7f42c2092a6e7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::coords</definition>
+        <argsstring></argsstring>
+        <name>coords</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="92" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="92" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" compoundref="keras__layer___decode_detections_8py" startline="272" endline="285">keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a187a376e17641f323dc1ce8ee21123e3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::nms_max_output_size</definition>
+        <argsstring></argsstring>
+        <name>nms_max_output_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="93" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="93" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" compoundref="keras__layer___decode_detections_8py" startline="272" endline="285">keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a88d5353fc73d56cbb1892fc044f2d2d9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::tf_confidence_thresh</definition>
+        <argsstring></argsstring>
+        <name>tf_confidence_thresh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="96" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="96" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ac9e205b2c83a7b062ab128175cebe77b" compoundref="keras__layer___decode_detections_8py" startline="110" endline="267">keras_utils.keras_layer_DecodeDetections.DecodeDetections.call</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a020f083a9dcaeb2e7ac2cf4fa1c9ca38" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::tf_iou_threshold</definition>
+        <argsstring></argsstring>
+        <name>tf_iou_threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="97" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ae35fbc96d0e33cd5c0bb01d4af424dfa" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::tf_top_k</definition>
+        <argsstring></argsstring>
+        <name>tf_top_k</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="98" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="98" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ac9e205b2c83a7b062ab128175cebe77b" compoundref="keras__layer___decode_detections_8py" startline="110" endline="267">keras_utils.keras_layer_DecodeDetections.DecodeDetections.call</referencedby>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a4b270e5cfe3592ad27791b73adacf679" compoundref="keras__layer___decode_detections_8py" startline="268" endline="271">keras_utils.keras_layer_DecodeDetections.DecodeDetections.compute_output_shape</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a8a3ffd734b8f4c461fb5354207d8578e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::tf_normalize_coords</definition>
+        <argsstring></argsstring>
+        <name>tf_normalize_coords</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="99" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="99" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ac9e205b2c83a7b062ab128175cebe77b" compoundref="keras__layer___decode_detections_8py" startline="110" endline="267">keras_utils.keras_layer_DecodeDetections.DecodeDetections.call</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a1c2b144c85cf22aaf4ceed592c9fa4c6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::tf_img_height</definition>
+        <argsstring></argsstring>
+        <name>tf_img_height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="100" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="100" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ac9e205b2c83a7b062ab128175cebe77b" compoundref="keras__layer___decode_detections_8py" startline="110" endline="267">keras_utils.keras_layer_DecodeDetections.DecodeDetections.call</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a5f25fd4c14f3842a416faf0a6c910c83" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::tf_img_width</definition>
+        <argsstring></argsstring>
+        <name>tf_img_width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="101" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="101" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ac9e205b2c83a7b062ab128175cebe77b" compoundref="keras__layer___decode_detections_8py" startline="110" endline="267">keras_utils.keras_layer_DecodeDetections.DecodeDetections.call</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a7dfdb5fee748112e94d86ca0e4a9bd00" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::tf_nms_max_output_size</definition>
+        <argsstring></argsstring>
+        <name>tf_nms_max_output_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="102" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="102" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ac9e205b2c83a7b062ab128175cebe77b" compoundref="keras__layer___decode_detections_8py" startline="110" endline="267">keras_utils.keras_layer_DecodeDetections.DecodeDetections.call</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a3091a5032bc80c90d0cc23d521c6a2ea" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_layer_DecodeDetections.DecodeDetections::input_spec</definition>
+        <argsstring></argsstring>
+        <name>input_spec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="107" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ad194afad463d90638fbf361e995c7c37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_layer_DecodeDetections.DecodeDetections.__init__</definition>
+        <argsstring>(self, confidence_thresh=0.01, iou_threshold=0.45, top_k=200, nms_max_output_size=400, coords=&apos;centroids&apos;, normalize_coords=True, img_height=None, img_width=None, kwargs)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a56313f9908567eefb31bdd7553434c62" kindref="member">confidence_thresh</ref></type>
+          <defname>confidence_thresh</defname>
+          <defval>0.01</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aa9e9991f7389356f60596453e3184bf0" kindref="member">iou_threshold</ref></type>
+          <defname>iou_threshold</defname>
+          <defval>0.45</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1af6b9c9a1dea2ff88cd16075225005405" kindref="member">top_k</ref></type>
+          <defname>top_k</defname>
+          <defval>200</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a187a376e17641f323dc1ce8ee21123e3" kindref="member">nms_max_output_size</ref></type>
+          <defname>nms_max_output_size</defname>
+          <defval>400</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1adb3a9b9790ad9bf786e7f42c2092a6e7" kindref="member">coords</ref></type>
+          <defname>coords</defname>
+          <defval>&apos;centroids&apos;</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a4641efb5a8eaefba8efa2165aa536052" kindref="member">normalize_coords</ref></type>
+          <defname>normalize_coords</defname>
+          <defval>True</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a08d45ba6d76897c87e5e9ec86bd84ada" kindref="member">img_height</ref></type>
+          <defname>img_height</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aeeb7ac85061a9dade6ef75db8ecf3193" kindref="member">img_width</ref></type>
+          <defname>img_width</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>kwargs</type>
+          <defname>kwargs</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>All default argument values follow the Caffe implementation.
+
+Arguments:
+    confidence_thresh (float, optional): A float in [0,1), the minimum classification confidence in a specific
+positive class in order to be considered for the non-maximum suppression stage for the respective class.
+A lower value will result in a larger part of the selection process being done by the non-maximum suppression
+stage, while a larger value will result in a larger part of the selection process happening in the confidence
+thresholding stage.
+    iou_threshold (float, optional): A float in [0,1]. All boxes with a Jaccard similarity of greater than `iou_threshold`
+with a locally maximal box will be removed from the set of predictions for a given class, where &apos;maximal&apos; refers
+to the box score.
+    top_k (int, optional): The number of highest scoring predictions to be kept for each batch item after the
+non-maximum suppression stage.
+    nms_max_output_size (int, optional): The maximum number of predictions that will be left after performing non-maximum
+suppression.
+    coords (str, optional): The box coordinate format that the model outputs. Must be &apos;centroids&apos;
+i.e. the format `(cx, cy, w, h)` (box center coordinates, width, and height). Other coordinate formats are
+currently not supported.
+    normalize_coords (bool, optional): Set to `True` if the model outputs relative coordinates (i.e. coordinates in [0,1])
+and you wish to transform these relative coordinates back to absolute coordinates. If the model outputs
+relative coordinates, but you do not want to convert them back to absolute coordinates, set this to `False`.
+Do not set this to `True` if the model already outputs absolute coordinates, as that would result in incorrect
+coordinates. Requires `img_height` and `img_width` if set to `True`.
+    img_height (int, optional): The height of the input images. Only needed if `normalize_coords` is `True`.
+    img_width (int, optional): The width of the input images. Only needed if `normalize_coords` is `True`.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="39" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="48" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aee76a1042409f7e2393853887d432690" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_layer_DecodeDetections.DecodeDetections.build</definition>
+        <argsstring>(self, input_shape)</argsstring>
+        <name>build</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>input_shape</type>
+          <defname>input_shape</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="106" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="106" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ac9e205b2c83a7b062ab128175cebe77b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_layer_DecodeDetections.DecodeDetections.call</definition>
+        <argsstring>(self, y_pred, mask=None)</argsstring>
+        <name>call</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>y_pred</type>
+          <defname>y_pred</defname>
+        </param>
+        <param>
+          <type>mask</type>
+          <defname>mask</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Returns:
+    3D tensor of shape `(batch_size, top_k, 6)`. The second axis is zero-padded
+    to always yield `top_k` predictions per batch item. The last axis contains
+    the coordinates for each predicted box in the format
+    `[class_id, confidence, xmin, ymin, xmax, ymax]`.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="110" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="110" bodyend="267"/>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a5f25fd4c14f3842a416faf0a6c910c83" compoundref="keras__layer___decode_detections_8py" startline="101">keras_utils.keras_layer_DecodeDetections.DecodeDetections.tf_img_width</references>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a1c2b144c85cf22aaf4ceed592c9fa4c6" compoundref="keras__layer___decode_detections_8py" startline="100">keras_utils.keras_layer_DecodeDetections.DecodeDetections.tf_img_height</references>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a8a3ffd734b8f4c461fb5354207d8578e" compoundref="keras__layer___decode_detections_8py" startline="99">keras_utils.keras_layer_DecodeDetections.DecodeDetections.tf_normalize_coords</references>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a88d5353fc73d56cbb1892fc044f2d2d9" compoundref="keras__layer___decode_detections_8py" startline="96">keras_utils.keras_layer_DecodeDetections.DecodeDetections.tf_confidence_thresh</references>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a7dfdb5fee748112e94d86ca0e4a9bd00" compoundref="keras__layer___decode_detections_8py" startline="102">keras_utils.keras_layer_DecodeDetections.DecodeDetections.tf_nms_max_output_size</references>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aa9e9991f7389356f60596453e3184bf0" compoundref="keras__layer___decode_detections_8py" startline="87">keras_utils.keras_layer_DecodeDetections.DecodeDetections.iou_threshold</references>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1af6b9c9a1dea2ff88cd16075225005405" compoundref="keras__layer___decode_detections_8py" startline="88">keras_utils.keras_layer_DecodeDetections.DecodeDetections.top_k</references>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ae35fbc96d0e33cd5c0bb01d4af424dfa" compoundref="keras__layer___decode_detections_8py" startline="98">keras_utils.keras_layer_DecodeDetections.DecodeDetections.tf_top_k</references>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a4b270e5cfe3592ad27791b73adacf679" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_layer_DecodeDetections.DecodeDetections.compute_output_shape</definition>
+        <argsstring>(self, input_shape)</argsstring>
+        <name>compute_output_shape</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>input_shape</type>
+          <defname>input_shape</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="268" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="268" bodyend="271"/>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ae35fbc96d0e33cd5c0bb01d4af424dfa" compoundref="keras__layer___decode_detections_8py" startline="98">keras_utils.keras_layer_DecodeDetections.DecodeDetections.tf_top_k</references>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_layer_DecodeDetections.DecodeDetections.get_config</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_config</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="272" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="272" bodyend="285"/>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a56313f9908567eefb31bdd7553434c62" compoundref="keras__layer___decode_detections_8py" startline="86">keras_utils.keras_layer_DecodeDetections.DecodeDetections.confidence_thresh</references>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aa9e9991f7389356f60596453e3184bf0" compoundref="keras__layer___decode_detections_8py" startline="87">keras_utils.keras_layer_DecodeDetections.DecodeDetections.iou_threshold</references>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1af6b9c9a1dea2ff88cd16075225005405" compoundref="keras__layer___decode_detections_8py" startline="88">keras_utils.keras_layer_DecodeDetections.DecodeDetections.top_k</references>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a187a376e17641f323dc1ce8ee21123e3" compoundref="keras__layer___decode_detections_8py" startline="93">keras_utils.keras_layer_DecodeDetections.DecodeDetections.nms_max_output_size</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a5aa6cd27c22879f898243f55a833d21a" compoundref="keras__layer___anchor_boxes_8py" startline="121">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.coords</references>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1adb3a9b9790ad9bf786e7f42c2092a6e7" compoundref="keras__layer___decode_detections_8py" startline="92">keras_utils.keras_layer_DecodeDetections.DecodeDetections.coords</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a3c2c020df03cacc182a84c96140b3e95" compoundref="keras__layer___anchor_boxes_8py" startline="122">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.normalize_coords</references>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a4641efb5a8eaefba8efa2165aa536052" compoundref="keras__layer___decode_detections_8py" startline="89">keras_utils.keras_layer_DecodeDetections.DecodeDetections.normalize_coords</references>
+        <references refid="classkeras__detect_1_1_keras_detector_1a6c60b5ed2f4149d396ce410e307d7cd2" compoundref="keras__detect_8py" startline="32">keras_detect.KerasDetector.img_height</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a2f760ca34099ac8be9e8869362f95295" compoundref="keras__layer___anchor_boxes_8py" startline="111">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.img_height</references>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a08d45ba6d76897c87e5e9ec86bd84ada" compoundref="keras__layer___decode_detections_8py" startline="90">keras_utils.keras_layer_DecodeDetections.DecodeDetections.img_height</references>
+        <references refid="classkeras__detect_1_1_keras_detector_1ad52720474febcb0bbaed74f51d7bab04" compoundref="keras__detect_8py" startline="33">keras_detect.KerasDetector.img_width</references>
+        <references refid="classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes_1a1e80e372b9345dfd2792b038ee496de9" compoundref="keras__layer___anchor_boxes_8py" startline="112">keras_utils.keras_layer_AnchorBoxes.AnchorBoxes.img_width</references>
+        <references refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aeeb7ac85061a9dade6ef75db8ecf3193" compoundref="keras__layer___decode_detections_8py" startline="91">keras_utils.keras_layer_DecodeDetections.DecodeDetections.img_width</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>A Keras layer to decode the raw SSD prediction output.
+
+Input shape:
+    3D tensor of shape `(batch_size, n_boxes, n_classes + 12)`.
+
+Output shape:
+    3D tensor of shape `(batch_size, top_k, 6)`.
+</verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="95">
+        <label>keras_utils.keras_layer_DecodeDetections.DecodeDetections</label>
+        <link refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections"/>
+        <childnode refid="96" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>Layer</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="97">
+        <label>keras_utils.keras_layer_DecodeDetections.DecodeDetections</label>
+        <link refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections"/>
+        <childnode refid="98" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="98">
+        <label>Layer</label>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_DecodeDetections.py" bodystart="28" bodyend="285"/>
+    <listofallmembers>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ad194afad463d90638fbf361e995c7c37" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>__init__</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aee76a1042409f7e2393853887d432690" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>build</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ac9e205b2c83a7b062ab128175cebe77b" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>call</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a4b270e5cfe3592ad27791b73adacf679" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>compute_output_shape</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a56313f9908567eefb31bdd7553434c62" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>confidence_thresh</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1adb3a9b9790ad9bf786e7f42c2092a6e7" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>coords</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aaf52c3f762382734da0ff2ff3c3166a7" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>get_config</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a08d45ba6d76897c87e5e9ec86bd84ada" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>img_height</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aeeb7ac85061a9dade6ef75db8ecf3193" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>img_width</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a3091a5032bc80c90d0cc23d521c6a2ea" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>input_spec</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1aa9e9991f7389356f60596453e3184bf0" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>iou_threshold</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a187a376e17641f323dc1ce8ee21123e3" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>nms_max_output_size</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a4641efb5a8eaefba8efa2165aa536052" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>normalize_coords</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a88d5353fc73d56cbb1892fc044f2d2d9" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>tf_confidence_thresh</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a1c2b144c85cf22aaf4ceed592c9fa4c6" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>tf_img_height</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a5f25fd4c14f3842a416faf0a6c910c83" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>tf_img_width</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a020f083a9dcaeb2e7ac2cf4fa1c9ca38" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>tf_iou_threshold</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a7dfdb5fee748112e94d86ca0e4a9bd00" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>tf_nms_max_output_size</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1a8a3ffd734b8f4c461fb5354207d8578e" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>tf_normalize_coords</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1ae35fbc96d0e33cd5c0bb01d4af424dfa" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>tf_top_k</name></member>
+      <member refid="classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections_1af6b9c9a1dea2ff88cd16075225005405" prot="public" virt="non-virtual"><scope>keras_utils::keras_layer_DecodeDetections::DecodeDetections</scope><name>top_k</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

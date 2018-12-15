@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceload_image" kind="namespace" language="Python">
+    <compoundname>loadImage</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string loadImage.path</definition>
+        <argsstring></argsstring>
+        <name>path</name>
+        <initializer>= &quot;/mnt/large/pentalo/deep/external_datasets/princeton/EvaluationSet/bag1/depth/d-0-1.png&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="datasetGenerator/loadImage.py" line="4" column="1" bodyfile="datasetGenerator/loadImage.py" bodystart="4" bodyend="-1"/>
+        <referencedby refid="class_list_view_config_1a018c9bf8ec0f705ebc40076b54aec658" compoundref="_list_view_config_8cpp" startline="13" endline="51">ListViewConfig::configureDatasetInput</referencedby>
+        <referencedby refid="class_list_view_config_1aa280ece932674550644df1b827f768b0" compoundref="_list_view_config_8cpp" startline="176" endline="211">ListViewConfig::configureInputByFile</referencedby>
+        <referencedby refid="class_sample_generator_handler_1_1_deployer_1ad9964a4e64b6d51ce7cd63083929ac42" compoundref="_deployer_8cpp" startline="13" endline="89">SampleGeneratorHandler::Deployer::process</referencedby>
+        <referencedby refid="struct_sample_1a01a02e244812649a05144cca680a06bb" compoundref="_sample_8cpp" startline="167" endline="182">Sample::Sample</referencedby>
+        <referencedby refid="struct_sample_1a8e2faad4265f473f102594897a06ae1d" compoundref="_sample_8cpp" startline="211" endline="245">Sample::save</referencedby>
+        <referencedby refid="class_recorder_reader_1a6870eb9da2db311ba366f60e602698b4" compoundref="_recorder_reader_8cpp" startline="22" endline="27">RecorderReader::RecorderReader</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">COCODatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_image_net_dataset_reader_1ac9bbb0c47493ea984681d51be2e04b45" compoundref="_image_net_dataset_reader_8cpp" startline="9" endline="39">ImageNetDatasetReader::find_img_directory</referencedby>
+        <referencedby refid="class_image_net_dataset_reader_1ae9aa640c47637de8cf22ed3644c945c6" compoundref="_image_net_dataset_reader_8cpp" startline="73" endline="145">ImageNetDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_own_dataset_reader_1aaae1790f8ee3efd504fbf17ec717b640" compoundref="_own_dataset_reader_8cpp" startline="19" endline="45">OwnDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_reader_1a845b70b47078741f29d8e348c3c48467" compoundref="_pascal_v_o_c_dataset_reader_8cpp" startline="39" endline="121">PascalVOCDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_princeton_dataset_reader_1a078bdc2105cbef10ce0dc8c2fd12923e" compoundref="_princeton_dataset_reader_8cpp" startline="25" endline="75">PrincetonDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9" compoundref="_spinello_dataset_reader_8cpp" startline="24" endline="113">SpinelloDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_yolo_dataset_reader_1adabb18f657d4e0dc7b03f7f1b77eb452" compoundref="_yolo_dataset_reader_8cpp" startline="29" endline="61">YoloDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1adec3d112a29a894f380b0e72ffde9f93" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="13" endline="32">COCODatasetWriter::COCODatasetWriter</referencedby>
+        <referencedby refid="class_dataset_writer_1a96cb64791602cd684ec3a05156a7c28e" compoundref="_dataset_writer_8cpp" startline="10" endline="24">DatasetWriter::DatasetWriter</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_writer_1af6fb8a8d61b6b9fced7415d2de4becc0" compoundref="_pascal_v_o_c_dataset_writer_8cpp" startline="8" endline="27">PascalVOCDatasetWriter::PascalVOCDatasetWriter</referencedby>
+        <referencedby refid="class_yolo_dataset_writer_1a759e0ab21548b9219970fca5e02001f9" compoundref="_yolo_dataset_writer_8cpp" startline="14" endline="33">YoloDatasetWriter::YoloDatasetWriter</referencedby>
+        <referencedby refid="class_mass_batch_inferencer_1aee29772d0c4a4ee0f34196cdd0fab6ad" compoundref="_mass_batch_inferencer_8cpp" startline="6" endline="40">MassBatchInferencer::MassBatchInferencer</referencedby>
+        <referencedby refid="class_mass_inferencer_1aa1f9519adb814a99f8c20a5d28d2f4e9" compoundref="_mass_inferencer_8cpp" startline="16" endline="45">MassInferencer::MassInferencer</referencedby>
+        <referencedby refid="class_detections_validator_1a85eb7bc41a47b9672c6dec768fd39ad5" compoundref="_detections_validator_8cpp" startline="15" endline="45">DetectionsValidator::DetectionsValidator</referencedby>
+        <referencedby refid="class_configuration_1a30714cf8b087e25ae72f5acd49355885" compoundref="_configuration_8cpp" startline="14" endline="51">Configuration::Configuration</referencedby>
+        <referencedby refid="namespacejderobotconfig_1_1loader_1a521f15425002acf9d87a5857ac38268f" compoundref="loader_8cpp" startline="27" endline="44">jderobotconfig::loader::findConfigFile</referencedby>
+        <referencedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" compoundref="auto_evaluator_8cpp" startline="31" endline="171">MyApp::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceload_image_1a35a31d7c34c8aef3518b668b7c7b3cc1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>loadImage.im</definition>
+        <argsstring></argsstring>
+        <name>im</name>
+        <initializer>=  Image.open(<ref refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" kindref="member">path</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="datasetGenerator/loadImage.py" line="5" column="1" bodyfile="datasetGenerator/loadImage.py" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceload_image_1a7db8b47946ece3163cc9ba0da721af88" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>loadImage.red</definition>
+        <argsstring></argsstring>
+        <name>red</name>
+        <initializer>=  im.getextrema()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="datasetGenerator/loadImage.py" line="6" column="1" bodyfile="datasetGenerator/loadImage.py" bodystart="6" bodyend="-1"/>
+        <referencedby refid="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" compoundref="_class_type_8cpp" startline="10" endline="21">ClassType::getColor</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="datasetGenerator/loadImage.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

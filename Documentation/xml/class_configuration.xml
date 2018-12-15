@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_configuration" kind="class" language="C++" prot="public">
+    <compoundname>Configuration</compoundname>
+    <includes refid="_configuration_8h" local="no">Configuration.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_configuration_1ad3f429a629bd628080bbb44325aa13a4" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Configuration::configFilePath</definition>
+        <argsstring></argsstring>
+        <name>configFilePath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_configuration_1a4fd1a7cee1204e878bf97ce813ee744c" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, <ref refid="struct_key" kindref="compound">Key</ref> &gt;</type>
+        <definition>std::map&lt;std::string, Key&gt; Configuration::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_configuration_1a779947337bf652f0e773cb29f37f14ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Configuration::Configuration</definition>
+        <argsstring>()</argsstring>
+        <name>Configuration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.cpp" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_configuration_1a30714cf8b087e25ae72f5acd49355885" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Configuration::Configuration</definition>
+        <argsstring>(const std::string &amp;configFilePath)</argsstring>
+        <name>Configuration</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>configFilePath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.cpp" bodystart="14" bodyend="51"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+        <references refid="class_configuration_1a73507806e263d80e7ef3c0ae33bb460f" compoundref="_configuration_8cpp" startline="53" endline="65">showConfig</references>
+      </memberdef>
+      <memberdef kind="function" id="class_configuration_1a73507806e263d80e7ef3c0ae33bb460f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Configuration::showConfig</definition>
+        <argsstring>()</argsstring>
+        <name>showConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.cpp" bodystart="53" bodyend="65"/>
+        <referencedby refid="class_configuration_1a30714cf8b087e25ae72f5acd49355885" compoundref="_configuration_8cpp" startline="14" endline="51">Configuration</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_configuration_1a8997893ed1c7d6e26bf426150e7476ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_key" kindref="compound">Key</ref></type>
+        <definition>Key Configuration::getKey</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>getKey</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.cpp" bodystart="71" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_configuration_1a12fe6160c0d9e22d1349378e56141706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Configuration::keyExists</definition>
+        <argsstring>(const std::string &amp;key)</argsstring>
+        <name>keyExists</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.cpp" bodystart="80" bodyend="82"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/Configuration.h" bodystart="13" bodyend="24"/>
+    <listofallmembers>
+      <member refid="class_configuration_1a4fd1a7cee1204e878bf97ce813ee744c" prot="private" virt="non-virtual"><scope>Configuration</scope><name>config</name></member>
+      <member refid="class_configuration_1ad3f429a629bd628080bbb44325aa13a4" prot="private" virt="non-virtual"><scope>Configuration</scope><name>configFilePath</name></member>
+      <member refid="class_configuration_1a779947337bf652f0e773cb29f37f14ba" prot="public" virt="non-virtual"><scope>Configuration</scope><name>Configuration</name></member>
+      <member refid="class_configuration_1a30714cf8b087e25ae72f5acd49355885" prot="public" virt="non-virtual"><scope>Configuration</scope><name>Configuration</name></member>
+      <member refid="class_configuration_1a8997893ed1c7d6e26bf426150e7476ac" prot="public" virt="non-virtual"><scope>Configuration</scope><name>getKey</name></member>
+      <member refid="class_configuration_1a12fe6160c0d9e22d1349378e56141706" prot="public" virt="non-virtual"><scope>Configuration</scope><name>keyExists</name></member>
+      <member refid="class_configuration_1a73507806e263d80e7ef3c0ae33bb460f" prot="public" virt="non-virtual"><scope>Configuration</scope><name>showConfig</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

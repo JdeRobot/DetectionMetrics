@@ -1,0 +1,42 @@
+.TH "DeepLearningSuite/libs/comm/src/ros/translators.cpp" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DeepLearningSuite/libs/comm/src/ros/translators.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <comm/ros/translators\&.hpp>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBComm\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBComm::depthToRGB\fP (const cv::Mat &float_img, cv::Mat &rgb_img, std::string type)"
+.br
+.ti -1c
+.RI "\fBJdeRobotTypes::Image\fP \fBComm::translate_image_messages\fP (const sensor_msgs::ImageConstPtr &image_msg)"
+.br
+.RI "translate ROS Image messages to JdeRobot Image "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "float \fBComm::PI\fP = 3\&.1415"
+.br
+.ti -1c
+.RI "int \fBComm::MAXRANGEIMGD\fP = 8"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

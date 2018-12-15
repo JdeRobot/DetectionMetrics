@@ -1,0 +1,877 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="mask_api_8cpp" kind="file" language="C++">
+    <compoundname>maskApi.cpp</compoundname>
+    <includes refid="mask_api_8h" local="yes">maskApi.h</includes>
+    <includes local="no">math.h</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">stdlib.h</includes>
+    <incdepgraph>
+      <node id="4232">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="4231">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp</label>
+        <link refid="mask_api_8cpp"/>
+        <childnode refid="4232" relation="include">
+        </childnode>
+        <childnode refid="4233" relation="include">
+        </childnode>
+        <childnode refid="4234" relation="include">
+        </childnode>
+        <childnode refid="4235" relation="include">
+        </childnode>
+      </node>
+      <node id="4235">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4233">
+        <label>math.h</label>
+      </node>
+      <node id="4234">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="mask_api_8cpp_1a5c0e4f361c48b1c5104f09da66583ff8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+        <definition>uint umin</definition>
+        <argsstring>(uint a, uint b)</argsstring>
+        <name>umin</name>
+        <param>
+          <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="6" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="6" bodyend="6"/>
+        <referencedby refid="mask_api_8h_1a74a6558465a0ea2511156cbf9b24b685" compoundref="mask_api_8cpp" startline="45" endline="66">rleMerge</referencedby>
+        <referencedby refid="mask_api_8h_1ac27f86dce9ee2ec00d2a7597ff903725" compoundref="mask_api_8cpp" startline="73" endline="92">rleIou</referencedby>
+        <referencedby refid="mask_api_8h_1a22db5078587ae7651fd590a90d249297" compoundref="mask_api_8cpp" startline="129" endline="143">rleToBbox</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1a86b36117ab160918373dd52966fabc72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+        <definition>uint umax</definition>
+        <argsstring>(uint a, uint b)</argsstring>
+        <name>umax</name>
+        <param>
+          <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref></type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="7" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="7" bodyend="7"/>
+        <referencedby refid="mask_api_8h_1a22db5078587ae7651fd590a90d249297" compoundref="mask_api_8cpp" startline="129" endline="143">rleToBbox</referencedby>
+        <referencedby refid="mask_api_8h_1a084dece6a0cb5f2a8f16b921ad3f7e4b" compoundref="mask_api_8cpp" startline="158" endline="198">rleFrPoly</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleInit</definition>
+        <argsstring>(RLE *R, siz h, siz w, siz m, uint *cnts)</argsstring>
+        <name>rleInit</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref> *</type>
+          <declname>cnts</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="9" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="9" bodyend="12"/>
+        <references refid="struct_r_l_e_1a0729872eb55bbc6269cc535d91b97db1" compoundref="mask_api_8h" startline="6">RLE::h</references>
+        <references refid="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" compoundref="mask_api_8h" startline="6">RLE::w</references>
+        <references refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" compoundref="mask_api_8h" startline="6">RLE::m</references>
+        <references refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" compoundref="mask_api_8h" startline="6">RLE::cnts</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1ad3dc79ff171b5df8677a0a66a5f97ebd" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="353" endline="394">COCODatasetReader::fromUncompressedRle</referencedby>
+        <referencedby refid="mask_api_8h_1a32c5da9d1f7dcf59262e5c8af4bd8525" compoundref="mask_api_8cpp" startline="18" endline="21">rlesInit</referencedby>
+        <referencedby refid="mask_api_8h_1af3823da2745ad1e0783e2ddb00c63ea1" compoundref="mask_api_8cpp" startline="28" endline="37">rleEncode</referencedby>
+        <referencedby refid="mask_api_8h_1a74a6558465a0ea2511156cbf9b24b685" compoundref="mask_api_8cpp" startline="45" endline="66">rleMerge</referencedby>
+        <referencedby refid="mask_api_8h_1a084dece6a0cb5f2a8f16b921ad3f7e4b" compoundref="mask_api_8cpp" startline="158" endline="198">rleFrPoly</referencedby>
+        <referencedby refid="mask_api_8h_1af7769ad8a8d4a37dca02ec731213e2e3" compoundref="mask_api_8cpp" startline="214" endline="227">rleFrString</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1af63527a8e2b39cbc09d0337a2fe2e2d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleFree</definition>
+        <argsstring>(RLE *R)</argsstring>
+        <name>rleFree</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="14" bodyend="16"/>
+        <references refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" compoundref="mask_api_8h" startline="6">RLE::cnts</references>
+        <referencedby refid="mask_api_8h_1a8f4a62edceb041bc08c1fbc94a339c82" compoundref="mask_api_8cpp" startline="23" endline="25">rlesFree</referencedby>
+        <referencedby refid="mask_api_8h_1a74a6558465a0ea2511156cbf9b24b685" compoundref="mask_api_8cpp" startline="45" endline="66">rleMerge</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1a32c5da9d1f7dcf59262e5c8af4bd8525" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rlesInit</definition>
+        <argsstring>(RLE **R, siz n)</argsstring>
+        <name>rlesInit</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> **</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="18" bodyend="21"/>
+        <references refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0133d6cd0659f32bb96c52e5afee33e6" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="303" endline="351">COCODatasetReader::fromSegmentationObject</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1ac1529b3cc125da893d089fa88c866a53" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="396" endline="457">COCODatasetReader::fromSegmentationList</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1a8f4a62edceb041bc08c1fbc94a339c82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rlesFree</definition>
+        <argsstring>(RLE **R, siz n)</argsstring>
+        <name>rlesFree</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> **</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="23" bodyend="25"/>
+        <references refid="mask_api_8cpp_1af63527a8e2b39cbc09d0337a2fe2e2d1" compoundref="mask_api_8cpp" startline="14" endline="16">rleFree</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0133d6cd0659f32bb96c52e5afee33e6" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="303" endline="351">COCODatasetReader::fromSegmentationObject</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1ad8f4231081925e13e5464ed07b1bbb08" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleEncode</definition>
+        <argsstring>(RLE *R, const byte *M, siz h, siz w, siz n)</argsstring>
+        <name>rleEncode</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type>const <ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref> *</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="28" bodyend="37"/>
+        <references refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</references>
+        <referencedby refid="class_tensor_flow_inferencer_1a57f6622a03e8ee69e6f2ef17e09b3545" compoundref="_tensor_flow_inferencer_8cpp" startline="116" endline="213">TensorFlowInferencer::output_result</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1a04f96b392b2f316fce42e8c86fc77d51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleDecode</definition>
+        <argsstring>(const RLE *R, byte *M, siz n)</argsstring>
+        <name>rleDecode</name>
+        <param>
+          <type>const <ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref> *</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="39" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="39" bodyend="43"/>
+        <references refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" compoundref="mask_api_8h" startline="6">RLE::m</references>
+        <references refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" compoundref="mask_api_8h" startline="6">RLE::cnts</references>
+        <referencedby refid="struct_rle_regions_1aedcc9f614d38a2882a589e3014799d91" compoundref="_rle_regions_8cpp" startline="81" endline="113">RleRegions::drawRegions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1a74a6558465a0ea2511156cbf9b24b685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleMerge</definition>
+        <argsstring>(const RLE *R, RLE *M, siz n, int intersect)</argsstring>
+        <name>rleMerge</name>
+        <param>
+          <type>const <ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>intersect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="45" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="45" bodyend="66"/>
+        <references refid="struct_r_l_e_1a0729872eb55bbc6269cc535d91b97db1" compoundref="mask_api_8h" startline="6">RLE::h</references>
+        <references refid="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" compoundref="mask_api_8h" startline="6">RLE::w</references>
+        <references refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" compoundref="mask_api_8h" startline="6">RLE::m</references>
+        <references refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</references>
+        <references refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" compoundref="mask_api_8h" startline="6">RLE::cnts</references>
+        <references refid="mask_api_8cpp_1a5c0e4f361c48b1c5104f09da66583ff8" compoundref="mask_api_8cpp" startline="6" endline="6">umin</references>
+        <references refid="mask_api_8cpp_1af63527a8e2b39cbc09d0337a2fe2e2d1" compoundref="mask_api_8cpp" startline="14" endline="16">rleFree</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0133d6cd0659f32bb96c52e5afee33e6" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="303" endline="351">COCODatasetReader::fromSegmentationObject</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1ac1529b3cc125da893d089fa88c866a53" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="396" endline="457">COCODatasetReader::fromSegmentationList</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1a591e0537d851f6c473e1ce1759d804ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleArea</definition>
+        <argsstring>(const RLE *R, siz n, uint *a)</argsstring>
+        <name>rleArea</name>
+        <param>
+          <type>const <ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="68" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="68" bodyend="71"/>
+        <references refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" compoundref="mask_api_8h" startline="6">RLE::m</references>
+        <referencedby refid="mask_api_8h_1ac27f86dce9ee2ec00d2a7597ff903725" compoundref="mask_api_8cpp" startline="73" endline="92">rleIou</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1ac27f86dce9ee2ec00d2a7597ff903725" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleIou</definition>
+        <argsstring>(RLE *dt, RLE *gt, siz m, siz n, byte *iscrowd, double *o)</argsstring>
+        <name>rleIou</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>gt</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref> *</type>
+          <declname>iscrowd</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>o</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="73" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="73" bodyend="92"/>
+        <references refid="mask_api_8cpp_1a22db5078587ae7651fd590a90d249297" compoundref="mask_api_8cpp" startline="129" endline="143">rleToBbox</references>
+        <references refid="mask_api_8cpp_1ad8523ea3a8f927b4cbe7e938ffcb69b9" compoundref="mask_api_8cpp" startline="105" endline="116">bbIou</references>
+        <references refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" compoundref="mask_api_8h" startline="6">RLE::cnts</references>
+        <references refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" compoundref="mask_api_8h" startline="6">RLE::m</references>
+        <references refid="mask_api_8cpp_1a5c0e4f361c48b1c5104f09da66583ff8" compoundref="mask_api_8cpp" startline="6" endline="6">umin</references>
+        <references refid="mask_api_8cpp_1a591e0537d851f6c473e1ce1759d804ab" compoundref="mask_api_8cpp" startline="68" endline="71">rleArea</references>
+        <referencedby refid="mask_api_8h_1ad7c6fa2b354edd4fa7c37f58af8e5cb3" compoundref="mask_api_8cpp" startline="94" endline="103">rleNms</referencedby>
+        <referencedby refid="class_stats_utils_1ab2ddaf474a74534ae5896d7d564d9a68" compoundref="_stats_utils_8cpp" startline="58" endline="140">StatsUtils::computeIOUMatrix</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1ad7c6fa2b354edd4fa7c37f58af8e5cb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleNms</definition>
+        <argsstring>(RLE *dt, siz n, uint *keep, double thr)</argsstring>
+        <name>rleNms</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref> *</type>
+          <declname>keep</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>thr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="94" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="94" bodyend="103"/>
+        <references refid="mask_api_8cpp_1ac27f86dce9ee2ec00d2a7597ff903725" compoundref="mask_api_8cpp" startline="73" endline="92">rleIou</references>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1ad8523ea3a8f927b4cbe7e938ffcb69b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bbIou</definition>
+        <argsstring>(BB dt, BB gt, siz m, siz n, byte *iscrowd, double *o)</argsstring>
+        <name>bbIou</name>
+        <param>
+          <type><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref></type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref></type>
+          <declname>gt</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref> *</type>
+          <declname>iscrowd</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>o</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="105" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="105" bodyend="116"/>
+        <referencedby refid="mask_api_8h_1ac27f86dce9ee2ec00d2a7597ff903725" compoundref="mask_api_8cpp" startline="73" endline="92">rleIou</referencedby>
+        <referencedby refid="mask_api_8h_1ad626232505f457a5bfbfe18f6802cddb" compoundref="mask_api_8cpp" startline="118" endline="127">bbNms</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1ad626232505f457a5bfbfe18f6802cddb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bbNms</definition>
+        <argsstring>(BB dt, siz n, uint *keep, double thr)</argsstring>
+        <name>bbNms</name>
+        <param>
+          <type><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref></type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref> *</type>
+          <declname>keep</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>thr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="118" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="118" bodyend="127"/>
+        <references refid="mask_api_8cpp_1ad8523ea3a8f927b4cbe7e938ffcb69b9" compoundref="mask_api_8cpp" startline="105" endline="116">bbIou</references>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1a22db5078587ae7651fd590a90d249297" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleToBbox</definition>
+        <argsstring>(const RLE *R, BB bb, siz n)</argsstring>
+        <name>rleToBbox</name>
+        <param>
+          <type>const <ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref></type>
+          <declname>bb</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="129" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="129" bodyend="143"/>
+        <references refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" compoundref="mask_api_8h" startline="6">RLE::m</references>
+        <references refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" compoundref="mask_api_8h" startline="6">RLE::cnts</references>
+        <references refid="mask_api_8cpp_1a5c0e4f361c48b1c5104f09da66583ff8" compoundref="mask_api_8cpp" startline="6" endline="6">umin</references>
+        <references refid="mask_api_8cpp_1a86b36117ab160918373dd52966fabc72" compoundref="mask_api_8cpp" startline="7" endline="7">umax</references>
+        <referencedby refid="mask_api_8h_1ac27f86dce9ee2ec00d2a7597ff903725" compoundref="mask_api_8cpp" startline="73" endline="92">rleIou</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1a74fd6cb9e29361751f25697ab5f1911c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleFrBbox</definition>
+        <argsstring>(RLE *R, const BB bb, siz h, siz w, siz n)</argsstring>
+        <name>rleFrBbox</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type>const <ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref></type>
+          <declname>bb</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="145" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="145" bodyend="152"/>
+        <references refid="mask_api_8cpp_1a084dece6a0cb5f2a8f16b921ad3f7e4b" compoundref="mask_api_8cpp" startline="158" endline="198">rleFrPoly</references>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1a8c265d7243e8206bfc0fb114d1f741e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int uintCompare</definition>
+        <argsstring>(const void *a, const void *b)</argsstring>
+        <name>uintCompare</name>
+        <param>
+          <type>const void *</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="154" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="154" bodyend="156"/>
+        <referencedby refid="mask_api_8h_1a084dece6a0cb5f2a8f16b921ad3f7e4b" compoundref="mask_api_8cpp" startline="158" endline="198">rleFrPoly</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1a084dece6a0cb5f2a8f16b921ad3f7e4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleFrPoly</definition>
+        <argsstring>(RLE *R, const double *xy, siz k, siz h, siz w)</argsstring>
+        <name>rleFrPoly</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type>const double *</type>
+          <declname>xy</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="158" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="158" bodyend="198"/>
+        <references refid="mask_api_8cpp_1a86b36117ab160918373dd52966fabc72" compoundref="mask_api_8cpp" startline="7" endline="7">umax</references>
+        <references refid="mask_api_8cpp_1a8c265d7243e8206bfc0fb114d1f741e5" compoundref="mask_api_8cpp" startline="154" endline="156">uintCompare</references>
+        <references refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1ac1529b3cc125da893d089fa88c866a53" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="396" endline="457">COCODatasetReader::fromSegmentationList</referencedby>
+        <referencedby refid="mask_api_8h_1a74fd6cb9e29361751f25697ab5f1911c" compoundref="mask_api_8cpp" startline="145" endline="152">rleFrBbox</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1a935356b85c9e3ff7faf6c0533fb94733" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* rleToString</definition>
+        <argsstring>(const RLE *R)</argsstring>
+        <name>rleToString</name>
+        <param>
+          <type>const <ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="200" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="200" bodyend="212"/>
+        <references refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" compoundref="mask_api_8h" startline="6">RLE::m</references>
+        <references refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" compoundref="mask_api_8h" startline="6">RLE::cnts</references>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8cpp_1af7769ad8a8d4a37dca02ec731213e2e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleFrString</definition>
+        <argsstring>(RLE *R, char *s, siz h, siz w)</argsstring>
+        <name>rleFrString</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" line="214" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="214" bodyend="227"/>
+        <references refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1aa88f5bc653084dd529950558ebd6322c" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="459" endline="479">COCODatasetReader::fromRle</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mask_api_8h" kindref="compound">maskApi.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;math.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="mask_api_8cpp_1a5c0e4f361c48b1c5104f09da66583ff8" refkind="member"><highlight class="normal"><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/><ref refid="mask_api_8cpp_1a5c0e4f361c48b1c5104f09da66583ff8" kindref="member">umin</ref>(<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>a,<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>b<sp/>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(a&lt;b)<sp/>?<sp/>a<sp/>:<sp/>b;<sp/>}</highlight></codeline>
+<codeline lineno="7" refid="mask_api_8cpp_1a86b36117ab160918373dd52966fabc72" refkind="member"><highlight class="normal"><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/><ref refid="mask_api_8cpp_1a86b36117ab160918373dd52966fabc72" kindref="member">umax</ref>(<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>a,<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>b<sp/>)<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(a&gt;b)<sp/>?<sp/>a<sp/>:<sp/>b;<sp/>}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="mask_api_8h_1a426476ca7bc162435c9b4b351556d9e6" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" kindref="member">rleInit</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>h,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>w,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>m,<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>*cnts<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/>R-&gt;<ref refid="struct_r_l_e_1a0729872eb55bbc6269cc535d91b97db1" kindref="member">h</ref>=h;<sp/>R-&gt;<ref refid="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" kindref="member">w</ref>=w;<sp/>R-&gt;<ref refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" kindref="member">m</ref>=m;<sp/>R-&gt;<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>=(m==0)?0:(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>)*m);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>j;<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(cnts)<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(j=0;<sp/>j&lt;m;<sp/>j++)<sp/>R-&gt;<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>[j]=cnts[j];</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="mask_api_8h_1af63527a8e2b39cbc09d0337a2fe2e2d1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1af63527a8e2b39cbc09d0337a2fe2e2d1" kindref="member">rleFree</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/>free(R-&gt;<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>);<sp/>R-&gt;<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>=0;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="mask_api_8h_1a32c5da9d1f7dcf59262e5c8af4bd8525" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1a32c5da9d1f7dcf59262e5c8af4bd8525" kindref="member">rlesInit</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>**R,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>i;<sp/>*R<sp/>=<sp/>(<ref refid="struct_r_l_e" kindref="compound">RLE</ref>*)<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="struct_r_l_e" kindref="compound">RLE</ref>)*n);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i&lt;n;<sp/>i++)<sp/><ref refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" kindref="member">rleInit</ref>((*R)+i,0,0,0,0);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="mask_api_8h_1a8f4a62edceb041bc08c1fbc94a339c82" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1a8f4a62edceb041bc08c1fbc94a339c82" kindref="member">rlesFree</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>**R,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>i;<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i&lt;n;<sp/>i++)<sp/><ref refid="mask_api_8cpp_1af63527a8e2b39cbc09d0337a2fe2e2d1" kindref="member">rleFree</ref>((*R)+i);<sp/>free(*R);<sp/>*R=0;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="mask_api_8h_1af3823da2745ad1e0783e2ddb00c63ea1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1ad8f4231081925e13e5464ed07b1bbb08" kindref="member">rleEncode</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref><sp/>*M,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>h,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>w,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>i,<sp/>j,<sp/>k,<sp/>a=w*h;<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>c,<sp/>*cnts;<sp/><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref><sp/>p;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>cnts<sp/>=<sp/>(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>)*(a+1));</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(i=0;<sp/>i&lt;n;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref><sp/>*T=M+a*i;<sp/>k=0;<sp/>p=0;<sp/>c=0;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(j=0;<sp/>j&lt;a;<sp/>j++)<sp/>{<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(T[j]!=p)<sp/>{<sp/>cnts[k++]=c;<sp/>c=0;<sp/>p=T[j];<sp/>}<sp/>c++;<sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>cnts[k++]=c;<sp/><ref refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" kindref="member">rleInit</ref>(R+i,h,w,k,cnts);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>free(cnts);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="mask_api_8h_1a0a3e06e94c895fc67fb3ed2e6b765b37" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1a04f96b392b2f316fce42e8c86fc77d51" kindref="member">rleDecode</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref><sp/>*M,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>i,<sp/>j,<sp/>k;<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i=0;<sp/>i&lt;n;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref><sp/>v=0;<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>j=0;<sp/>j&lt;R[i].<ref refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" kindref="member">m</ref>;<sp/>j++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>k=0;<sp/>k&lt;R[i].<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>[j];<sp/>k++<sp/>)<sp/>*(M++)=v;<sp/>v=!v;<sp/>}}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="mask_api_8h_1a74a6558465a0ea2511156cbf9b24b685" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1a74a6558465a0ea2511156cbf9b24b685" kindref="member">rleMerge</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*M,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>intersect<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>*cnts,<sp/>c,<sp/>ca,<sp/>cb,<sp/>cc,<sp/>ct;<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>v,<sp/>va,<sp/>vb,<sp/>vp;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>i,<sp/>a,<sp/>b,<sp/>h=R[0].<ref refid="struct_r_l_e_1a0729872eb55bbc6269cc535d91b97db1" kindref="member">h</ref>,<sp/>w=R[0].<ref refid="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" kindref="member">w</ref>,<sp/>m=R[0].<ref refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" kindref="member">m</ref>;<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>A,<sp/>B;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(n==0)<sp/>{<sp/><ref refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" kindref="member">rleInit</ref>(M,0,0,0,0);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(n==1)<sp/>{<sp/><ref refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" kindref="member">rleInit</ref>(M,h,w,m,R[0].cnts);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>cnts<sp/>=<sp/>(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>)*(h*w+1));</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>a=0;<sp/>a&lt;m;<sp/>a++<sp/>)<sp/>cnts[a]=R[0].cnts[a];</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i=1;<sp/>i&lt;n;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>B=R[i];<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(B.<ref refid="struct_r_l_e_1a0729872eb55bbc6269cc535d91b97db1" kindref="member">h</ref>!=h||B.<ref refid="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" kindref="member">w</ref>!=w)<sp/>{<sp/>h=w=m=0;<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" kindref="member">rleInit</ref>(&amp;A,h,w,m,cnts);<sp/>ca=A.<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>[0];<sp/>cb=B.<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>[0];</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>v=va=vb=0;<sp/>m=0;<sp/>a=b=1;<sp/>cc=0;<sp/>ct=1;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>ct&gt;0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>c=<ref refid="mask_api_8cpp_1a5c0e4f361c48b1c5104f09da66583ff8" kindref="member">umin</ref>(ca,cb);<sp/>cc+=c;<sp/>ct=0;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ca-=c;<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!ca<sp/>&amp;&amp;<sp/>a&lt;A.<ref refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" kindref="member">m</ref>)<sp/>{<sp/>ca=A.<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>[a++];<sp/>va=!va;<sp/>}<sp/>ct+=ca;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>cb-=c;<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!cb<sp/>&amp;&amp;<sp/>b&lt;B.<ref refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" kindref="member">m</ref>)<sp/>{<sp/>cb=B.<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>[b++];<sp/>vb=!vb;<sp/>}<sp/>ct+=cb;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vp=v;<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(intersect)<sp/>v=va&amp;&amp;vb;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>v=va||vb;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>v!=vp||ct==0<sp/>)<sp/>{<sp/>cnts[m++]=cc;<sp/>cc=0;<sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mask_api_8cpp_1af63527a8e2b39cbc09d0337a2fe2e2d1" kindref="member">rleFree</ref>(&amp;A);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" kindref="member">rleInit</ref>(M,h,w,m,cnts);<sp/>free(cnts);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="mask_api_8h_1a591e0537d851f6c473e1ce1759d804ab" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1a591e0537d851f6c473e1ce1759d804ab" kindref="member">rleArea</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n,<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>*a<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>i,<sp/>j;<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i=0;<sp/>i&lt;n;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>a[i]=0;<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>j=1;<sp/>j&lt;R[i].<ref refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" kindref="member">m</ref>;<sp/>j+=2<sp/>)<sp/>a[i]+=R[i].cnts[j];<sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="mask_api_8h_1ac27f86dce9ee2ec00d2a7597ff903725" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1ac27f86dce9ee2ec00d2a7597ff903725" kindref="member">rleIou</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*dt,<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*gt,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>m,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n,<sp/><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref><sp/>*iscrowd,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*o<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>g,<sp/>d;<sp/><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref><sp/>db,<sp/>gb;<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>crowd;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>db=(<ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref>)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)*m*4);<sp/><ref refid="mask_api_8cpp_1a22db5078587ae7651fd590a90d249297" kindref="member">rleToBbox</ref>(dt,db,m);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>gb=(<ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref>)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)*n*4);<sp/><ref refid="mask_api_8cpp_1a22db5078587ae7651fd590a90d249297" kindref="member">rleToBbox</ref>(gt,gb,n);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8cpp_1ad8523ea3a8f927b4cbe7e938ffcb69b9" kindref="member">bbIou</ref>(db,gb,m,n,iscrowd,o);<sp/>free(db);<sp/>free(gb);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>g=0;<sp/>g&lt;n;<sp/>g++<sp/>)<sp/>for(<sp/>d=0;<sp/>d&lt;m;<sp/>d++<sp/>)<sp/>if(o[g*m+d]&gt;0)<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>crowd=iscrowd!=NULL<sp/>&amp;&amp;<sp/>iscrowd[g];</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(dt[d].h!=gt[g].h<sp/>||<sp/>dt[d].w!=gt[g].w)<sp/>{<sp/>o[g*m+d]=-1;<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>ka,<sp/>kb,<sp/>a,<sp/>b;<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>c,<sp/>ca,<sp/>cb,<sp/>ct,<sp/>i,<sp/>u;<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>va,<sp/>vb;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>ca=dt[d].<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>[0];<sp/>ka=dt[d].<ref refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" kindref="member">m</ref>;<sp/>va=vb=0;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>cb=gt[g].<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>[0];<sp/>kb=gt[g].<ref refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" kindref="member">m</ref>;<sp/>a=b=1;<sp/>i=u=0;<sp/>ct=1;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>ct&gt;0<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>c=<ref refid="mask_api_8cpp_1a5c0e4f361c48b1c5104f09da66583ff8" kindref="member">umin</ref>(ca,cb);<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(va||vb)<sp/>{<sp/>u+=c;<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(va&amp;&amp;vb)<sp/>i+=c;<sp/>}<sp/>ct=0;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>ca-=c;<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!ca<sp/>&amp;&amp;<sp/>a&lt;ka)<sp/>{<sp/>ca=dt[d].<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>[a++];<sp/>va=!va;<sp/>}<sp/>ct+=ca;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>cb-=c;<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!cb<sp/>&amp;&amp;<sp/>b&lt;kb)<sp/>{<sp/>cb=gt[g].<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>[b++];<sp/>vb=!vb;<sp/>}<sp/>ct+=cb;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(i==0)<sp/>u=1;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(crowd)<sp/><ref refid="mask_api_8cpp_1a591e0537d851f6c473e1ce1759d804ab" kindref="member">rleArea</ref>(dt+d,1,&amp;u);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>o[g*m+d]<sp/>=<sp/>(double)i/(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)u;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="mask_api_8h_1ad7c6fa2b354edd4fa7c37f58af8e5cb3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1ad7c6fa2b354edd4fa7c37f58af8e5cb3" kindref="member">rleNms</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*dt,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n,<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>*keep,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>thr<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>i,<sp/>j;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>u;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i=0;<sp/>i&lt;n;<sp/>i++<sp/>)<sp/>keep[i]=1;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i=0;<sp/>i&lt;n;<sp/>i++<sp/>)<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(keep[i])<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>j=i+1;<sp/>j&lt;n;<sp/>j++<sp/>)<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(keep[j])<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mask_api_8cpp_1ac27f86dce9ee2ec00d2a7597ff903725" kindref="member">rleIou</ref>(dt+i,dt+j,1,1,0,&amp;u);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(u&gt;thr)<sp/>keep[j]=0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="mask_api_8h_1ad8523ea3a8f927b4cbe7e938ffcb69b9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1ad8523ea3a8f927b4cbe7e938ffcb69b9" kindref="member">bbIou</ref>(<sp/><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref><sp/>dt,<sp/><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref><sp/>gt,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>m,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n,<sp/><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref><sp/>*iscrowd,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*o<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>h,<sp/>w,<sp/>i,<sp/>u,<sp/>ga,<sp/>da;<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>g,<sp/>d;<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>crowd;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>g=0;<sp/>g&lt;n;<sp/>g++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref><sp/>G=gt+g*4;<sp/>ga=G[2]*G[3];<sp/>crowd=iscrowd!=NULL<sp/>&amp;&amp;<sp/>iscrowd[g];</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>d=0;<sp/>d&lt;m;<sp/>d++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref><sp/>D=dt+d*4;<sp/>da=D[2]*D[3];<sp/>o[g*m+d]=0;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>w=fmin(D[2]+D[0],G[2]+G[0])-fmax(D[0],G[0]);<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(w&lt;=0)<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>h=fmin(D[3]+D[1],G[3]+G[1])-fmax(D[1],G[1]);<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(h&lt;=0)<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>i=w*h;<sp/>u<sp/>=<sp/>crowd<sp/>?<sp/>da<sp/>:<sp/>da+ga-i;<sp/>o[g*m+d]=i/u;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="mask_api_8h_1ad626232505f457a5bfbfe18f6802cddb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1ad626232505f457a5bfbfe18f6802cddb" kindref="member">bbNms</ref>(<sp/><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref><sp/>dt,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n,<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>*keep,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>thr<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>i,<sp/>j;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>u;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i=0;<sp/>i&lt;n;<sp/>i++<sp/>)<sp/>keep[i]=1;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i=0;<sp/>i&lt;n;<sp/>i++<sp/>)<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(keep[i])<sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>j=i+1;<sp/>j&lt;n;<sp/>j++<sp/>)<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(keep[j])<sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mask_api_8cpp_1ad8523ea3a8f927b4cbe7e938ffcb69b9" kindref="member">bbIou</ref>(dt+i*4,dt+j*4,1,1,0,&amp;u);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(u&gt;thr)<sp/>keep[j]=0;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="mask_api_8h_1a22db5078587ae7651fd590a90d249297" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1a22db5078587ae7651fd590a90d249297" kindref="member">rleToBbox</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref><sp/>bb,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>i;<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i=0;<sp/>i&lt;n;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>h,<sp/>w,<sp/>x,<sp/>y,<sp/>xs,<sp/>ys,<sp/>xe,<sp/>ye,<sp/>xp,<sp/>cc,<sp/>t;<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>j,<sp/>m;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>h=(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>)R[i].h;<sp/>w=(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>)R[i].w;<sp/>m=R[i].<ref refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" kindref="member">m</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>m=((<ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref>)(m/2))*2;<sp/>xs=w;<sp/>ys=h;<sp/>xe=ye=0;<sp/>cc=0;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(m==0)<sp/>{<sp/>bb[4*i+0]=bb[4*i+1]=bb[4*i+2]=bb[4*i+3]=0;<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>j=0;<sp/>j&lt;m;<sp/>j++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>cc+=R[i].<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>[j];<sp/>t=cc-j%2;<sp/>y=t%h;<sp/>x=(t-y)/h;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(j%2==0)<sp/>xp=x;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(xp&lt;x)<sp/>{<sp/>ys=0;<sp/>ye=h-1;<sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>xs=<ref refid="mask_api_8cpp_1a5c0e4f361c48b1c5104f09da66583ff8" kindref="member">umin</ref>(xs,x);<sp/>xe=<ref refid="mask_api_8cpp_1a86b36117ab160918373dd52966fabc72" kindref="member">umax</ref>(xe,x);<sp/>ys=<ref refid="mask_api_8cpp_1a5c0e4f361c48b1c5104f09da66583ff8" kindref="member">umin</ref>(ys,y);<sp/>ye=<ref refid="mask_api_8cpp_1a86b36117ab160918373dd52966fabc72" kindref="member">umax</ref>(ye,y);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>bb[4*i+0]=xs;<sp/>bb[4*i+2]=xe-xs+1;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>bb[4*i+1]=ys;<sp/>bb[4*i+3]=ye-ys+1;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="mask_api_8h_1a74fd6cb9e29361751f25697ab5f1911c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1a74fd6cb9e29361751f25697ab5f1911c" kindref="member">rleFrBbox</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref><sp/>bb,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>h,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>w,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>i;<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i=0;<sp/>i&lt;n;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>xs=bb[4*i+0],<sp/>xe=xs+bb[4*i+2];</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ys=bb[4*i+1],<sp/>ye=ys+bb[4*i+3];</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>xy[8]<sp/>=<sp/>{xs,ys,xs,ye,xe,ye,xe,ys};</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mask_api_8cpp_1a084dece6a0cb5f2a8f16b921ad3f7e4b" kindref="member">rleFrPoly</ref>(<sp/>R+i,<sp/>xy,<sp/>4,<sp/>h,<sp/>w<sp/>);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="mask_api_8cpp_1a8c265d7243e8206bfc0fb114d1f741e5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1a8c265d7243e8206bfc0fb114d1f741e5" kindref="member">uintCompare</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*a,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*b)<sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>c=*((<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>*)a),<sp/>d=*((<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>*)b);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>c&gt;d?1:c&lt;d?-1:0;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158" refid="mask_api_8h_1a084dece6a0cb5f2a8f16b921ad3f7e4b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1a084dece6a0cb5f2a8f16b921ad3f7e4b" kindref="member">rleFrPoly</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*xy,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>k,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>h,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>w<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>upsample<sp/>and<sp/>get<sp/>discrete<sp/>points<sp/>densely<sp/>along<sp/>entire<sp/>boundary<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>j,<sp/>m=0;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scale=5;<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*x,<sp/>*y,<sp/>*u,<sp/>*v;<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>*a,<sp/>*b;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>x=(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)*(k+1));<sp/>y=(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)*(k+1));</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(j=0;<sp/>j&lt;k;<sp/>j++)<sp/>x[j]=(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)(scale*xy[j*2+0]+.5);<sp/>x[k]=x[0];</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(j=0;<sp/>j&lt;k;<sp/>j++)<sp/>y[j]=(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)(scale*xy[j*2+1]+.5);<sp/>y[k]=y[0];</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(j=0;<sp/>j&lt;k;<sp/>j++)<sp/>m+=<ref refid="mask_api_8cpp_1a86b36117ab160918373dd52966fabc72" kindref="member">umax</ref>(abs(x[j]-x[j+1]),abs(y[j]-y[j+1]))+1;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>u=(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)*m);<sp/>v=(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)*m);<sp/>m=0;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>j=0;<sp/>j&lt;k;<sp/>j++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>xs=x[j],<sp/>xe=x[j+1],<sp/>ys=y[j],<sp/>ye=y[j+1],<sp/>dx,<sp/>dy,<sp/>t,<sp/>d;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>flip;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>s;<sp/>dx=abs(xe-xs);<sp/>dy=abs(ys-ye);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>flip<sp/>=<sp/>(dx&gt;=dy<sp/>&amp;&amp;<sp/>xs&gt;xe)<sp/>||<sp/>(dx&lt;dy<sp/>&amp;&amp;<sp/>ys&gt;ye);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(flip)<sp/>{<sp/>t=xs;<sp/>xs=xe;<sp/>xe=t;<sp/>t=ys;<sp/>ys=ye;<sp/>ye=t;<sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>s<sp/>=<sp/>dx&gt;=dy<sp/>?<sp/>(double)(ye-ys)/dx<sp/>:<sp/>(double)(xe-xs)/dy;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(dx&gt;=dy)<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>d=0;<sp/>d&lt;=dx;<sp/>d++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>t=flip?dx-d:d;<sp/>u[m]=t+xs;<sp/>v[m]=(int)(ys+s*t+.5);<sp/>m++;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>d=0;<sp/>d&lt;=dy;<sp/>d++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>t=flip?dy-d:d;<sp/>v[m]=t+ys;<sp/>u[m]=(int)(xs+s*t+.5);<sp/>m++;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>get<sp/>points<sp/>along<sp/>y-boundary<sp/>and<sp/>downsample<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/>free(x);<sp/>free(y);<sp/>k=m;<sp/>m=0;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>xd,<sp/>yd;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/>x=(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)*k);<sp/>y=(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)*k);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>j=1;<sp/>j&lt;k;<sp/>j++<sp/>)<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(u[j]!=u[j-1])<sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>xd=(double)(u[j]&lt;u[j-1]?u[j]:u[j]-1);<sp/>xd=(xd+.5)/scale-.5;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>floor(xd)!=xd<sp/>||<sp/>xd&lt;0<sp/>||<sp/>xd&gt;w-1<sp/>)<sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>yd=(double)(v[j]&lt;v[j-1]?v[j]:v[j-1]);<sp/>yd=(yd+.5)/scale-.5;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(yd&lt;0)<sp/>yd=0;<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(yd&gt;h)<sp/>yd=h;<sp/>yd=ceil(yd);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>x[m]=(int)<sp/>xd;<sp/>y[m]=(int)<sp/>yd;<sp/>m++;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>compute<sp/>rle<sp/>encoding<sp/>given<sp/>y-boundary<sp/>points<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/>k=m;<sp/>a=(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>)*(k+1));</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>j=0;<sp/>j&lt;k;<sp/>j++<sp/>)<sp/>a[j]=(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>)(x[j]*(int)(h)+y[j]);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>a[k++]=(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>)(h*w);<sp/>free(u);<sp/>free(v);<sp/>free(x);<sp/>free(y);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/>qsort(a,k,</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>),<ref refid="mask_api_8cpp_1a8c265d7243e8206bfc0fb114d1f741e5" kindref="member">uintCompare</ref>);<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>p=0;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>j=0;<sp/>j&lt;k;<sp/>j++<sp/>)<sp/>{<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>t=a[j];<sp/>a[j]-=p;<sp/>p=t;<sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/>b=(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>)*k);<sp/>j=m=0;<sp/>b[m++]=a[j++];</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(j&lt;k)<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(a[j]&gt;0)<sp/>b[m++]=a[j++];<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>j++;<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(j&lt;k)<sp/>b[m-1]+=a[j++];<sp/>}</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" kindref="member">rleInit</ref>(R,h,w,m,b);<sp/>free(a);<sp/>free(b);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200" refid="mask_api_8h_1a935356b85c9e3ff7faf6c0533fb94733" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="mask_api_8cpp_1a935356b85c9e3ff7faf6c0533fb94733" kindref="member">rleToString</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Similar<sp/>to<sp/>LEB128<sp/>but<sp/>using<sp/>6<sp/>bits/char<sp/>and<sp/>ascii<sp/>chars<sp/>48-111.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>i,<sp/>m=R-&gt;<ref refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" kindref="member">m</ref>,<sp/>p=0;<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>x;<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>more;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s=(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)*m*6);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/>i=0;<sp/>i&lt;m;<sp/>i++<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>x=(long)<sp/>R-&gt;<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>[i];<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(i&gt;2)<sp/>x-=(long)<sp/>R-&gt;<ref refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" kindref="member">cnts</ref>[i-2];<sp/>more=1;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>more<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c=x<sp/>&amp;<sp/>0x1f;<sp/>x<sp/>&gt;&gt;=<sp/>5;<sp/>more=(c<sp/>&amp;<sp/>0x10)<sp/>?<sp/>x!=-1<sp/>:<sp/>x!=0;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(more)<sp/>c<sp/>|=<sp/>0x20;<sp/>c+=48;<sp/>s[p++]=c;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/>s[p]=0;<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>s;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214" refid="mask_api_8h_1af7769ad8a8d4a37dca02ec731213e2e3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8cpp_1af7769ad8a8d4a37dca02ec731213e2e3" kindref="member">rleFrString</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>h,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>w<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>m=0,<sp/>p=0,<sp/>k;<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>x;<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>more;<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>*cnts;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>s[m]<sp/>)<sp/>m++;<sp/>cnts=(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>*)malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>)*m);<sp/>m=0;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>s[p]<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>x=0;<sp/>k=0;<sp/>more=1;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(<sp/>more<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c=s[p]-48;<sp/>x<sp/>|=<sp/>(c<sp/>&amp;<sp/>0x1f)<sp/>&lt;&lt;<sp/>5*k;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>more<sp/>=<sp/>c<sp/>&amp;<sp/>0x20;<sp/>p++;<sp/>k++;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!more<sp/>&amp;&amp;<sp/>(c<sp/>&amp;<sp/>0x10))<sp/>x<sp/>|=<sp/>-1<sp/>&lt;&lt;<sp/>5*k;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(m&gt;2)<sp/>x+=(long)<sp/>cnts[m-2];<sp/>cnts[m++]=(<ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>)<sp/>x;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><ref refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" kindref="member">rleInit</ref>(R,h,w,m,cnts);<sp/>free(cnts);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp"/>
+  </compounddef>
+</doxygen>

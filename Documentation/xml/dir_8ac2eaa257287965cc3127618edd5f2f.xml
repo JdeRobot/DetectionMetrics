@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_8ac2eaa257287965cc3127618edd5f2f" kind="dir">
+    <compoundname>DeepLearningSuite/libs/comm/include/comm/interfaces</compoundname>
+    <innerfile refid="interfaces_2camera_client_8hpp">cameraClient.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/comm/include/comm/interfaces/"/>
+  </compounddef>
+</doxygen>

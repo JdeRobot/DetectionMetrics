@@ -1,0 +1,53 @@
+.TH "DeepLearningSuite/libs/config/include/config/loader.hpp" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DeepLearningSuite/libs/config/include/config/loader.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <config/stdutils\&.hpp>\fP
+.br
+\fC#include <yaml\-cpp/yaml\&.h>\fP
+.br
+\fC#include <yaml\-cpp/exceptions\&.h>\fP
+.br
+\fC#include <config/properties\&.hpp>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBjderobotconfig\fP"
+.br
+.ti -1c
+.RI " \fBjderobotconfig::loader\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBjderobotconfig::loader::findConfigFile\fP (const std::string &filename)"
+.br
+.RI "Find filename into all defined search paths\&. Order is: "
+.ti -1c
+.RI "\fBConfig::Properties\fP \fBjderobotconfig::loader::load\fP (std::string filename)"
+.br
+.RI "Loads File configuration from passed file\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const std::string \fBjderobotconfig::loader::CONFIG_PATH_NAME\fP = 'JDEROBOT_CONFIG_PATHS'"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

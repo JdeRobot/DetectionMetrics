@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classcolorspaces_1_1_image_n_v21" kind="class" language="C++" prot="public">
+    <compoundname>colorspaces::ImageNV21</compoundname>
+    <basecompoundref refid="classcolorspaces_1_1_image" prot="public" virt="non-virtual">colorspaces::Image</basecompoundref>
+    <includes refid="imagecv_8h" local="no">imagecv.h</includes>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcolorspaces_1_1_image_n_v21_1aa7e4ffadaba25b5b888123c955c63499" prot="public" static="yes" mutable="no">
+        <type>const <ref refid="classcolorspaces_1_1_image_1ab3978cc7acc2b5e855f8c715f09667d1" kindref="member">FormatPtr</ref></type>
+        <definition>const Image::FormatPtr colorspaces::ImageNV21::FORMAT_NV21</definition>
+        <argsstring></argsstring>
+        <name>FORMAT_NV21</name>
+        <initializer>= <ref refid="classcolorspaces_1_1_image_1_1_format_1ae79208f237b72cf596331ebcec2ff58b" kindref="member">Image::Format::createFormat</ref>(&quot;NV21&quot;,CV_8UC2,&amp;<ref refid="classcolorspaces_1_1_image_n_v21_1abbde9b9d723828ab4885274347b6e24c" kindref="member">ImageNV21::createInstance</ref>,&amp;<ref refid="classcolorspaces_1_1_image_n_v21_1a5ffbf749cb0a371b5f83246b994e5dc8" kindref="member">ImageNV21::imageCvt</ref>)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="388" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" bodystart="388" bodyend="-1"/>
+        <referencedby refid="classcolorspaces_1_1_image_1a1bf62f4371700005a8f9581b2f70f31f" compoundref="imagecv_8cpp" startline="50" endline="53">colorspaces::Image::clone</referencedby>
+        <referencedby refid="classcolorspaces_1_1_image_n_v21_1a5ffbf749cb0a371b5f83246b994e5dc8" compoundref="imagecv_8cpp" startline="407" endline="423">imageCvt</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcolorspaces_1_1_image_n_v21_1a11da1ed1be50dc0c03ebe5816bf3f820" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>colorspaces::ImageNV21::ImageNV21</definition>
+        <argsstring>(const int width, const int height)</argsstring>
+        <name>ImageNV21</name>
+        <param>
+          <type>const int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor Width have to be an even number. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="360" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="396" bodyend="397"/>
+        <referencedby refid="classcolorspaces_1_1_image_n_v21_1abbde9b9d723828ab4885274347b6e24c" compoundref="imagecv_8cpp" startline="471" endline="476">createInstance</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcolorspaces_1_1_image_n_v21_1a95633670978884b2b8cef8faa1a2be18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>colorspaces::ImageNV21::ImageNV21</definition>
+        <argsstring>(const int width, const int height, void *const data)</argsstring>
+        <name>ImageNV21</name>
+        <param>
+          <type>const int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>void *const</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor from user data Width have to be an even number. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="366" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="399" bodyend="400"/>
+      </memberdef>
+      <memberdef kind="function" id="classcolorspaces_1_1_image_n_v21_1a0802dcb928ee0130217bd94c52e3accc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>colorspaces::ImageNV21::ImageNV21</definition>
+        <argsstring>(const Image &amp;i)</argsstring>
+        <name>ImageNV21</name>
+        <param>
+          <type>const <ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref> &amp;</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy constructor. if <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>doesn&apos;t match format a conversion will happen. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="372" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="402" bodyend="405"/>
+        <references refid="classcolorspaces_1_1_image_1af33b3aeb1a668b64f3ae4e00b90058a5" compoundref="imagecv_8cpp" startline="45" endline="48">colorspaces::Image::convert</references>
+      </memberdef>
+      <memberdef kind="function" id="classcolorspaces_1_1_image_n_v21_1a0df5a2e9fb72b96e27926690be766b64" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void colorspaces::ImageNV21::toGRAY8</definition>
+        <argsstring>(Image &amp;dst) const</argsstring>
+        <name>toGRAY8</name>
+        <param>
+          <type><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref> &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <exceptions> throw (<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Conversion methods. Returns a copy </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="379" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="425" bodyend="431"/>
+        <references refid="classcolorspaces_1_1_image_g_r_a_y8_1a9bfb4420590a581d76aaaffb3a22806a" compoundref="imagecv_8h" startline="275">colorspaces::ImageGRAY8::FORMAT_GRAY8</references>
+      </memberdef>
+      <memberdef kind="function" id="classcolorspaces_1_1_image_n_v21_1a2f516ceb85bd1151bed2fa940fee133c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void colorspaces::ImageNV21::toRGB8</definition>
+        <argsstring>(Image &amp;dst) const</argsstring>
+        <name>toRGB8</name>
+        <param>
+          <type><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref> &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <exceptions> throw (<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="380" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="433" bodyend="461"/>
+        <references refid="classcolorspaces_1_1_image_r_g_b8_1abb2bd76934dd71bb401db29cd5082b5c" compoundref="imagecv_8h" startline="185">colorspaces::ImageRGB8::FORMAT_RGB8</references>
+        <references refid="classcolorspaces_1_1_image_1ab80af7d4797110c23ed575b329ec7c4f" compoundref="imagecv_8h" startline="130">colorspaces::Image::width</references>
+        <references refid="classcolorspaces_1_1_image_1a99a05ebd37f61215b2c3042ecaefdbfc" compoundref="imagecv_8h" startline="131">colorspaces::Image::height</references>
+        <referencedby refid="classcolorspaces_1_1_image_n_v21_1a5ffbf749cb0a371b5f83246b994e5dc8" compoundref="imagecv_8cpp" startline="407" endline="423">imageCvt</referencedby>
+        <referencedby refid="classcolorspaces_1_1_image_n_v21_1accca097e4cca85e511a1bedcba198549" compoundref="imagecv_8cpp" startline="463" endline="469">toYCRCB</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcolorspaces_1_1_image_n_v21_1accca097e4cca85e511a1bedcba198549" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void colorspaces::ImageNV21::toYCRCB</definition>
+        <argsstring>(Image &amp;dst) const</argsstring>
+        <name>toYCRCB</name>
+        <param>
+          <type><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref> &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <exceptions> throw (<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="381" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="463" bodyend="469"/>
+        <references refid="classcolorspaces_1_1_image_y_c_r_c_b_1a9423fb6d470113987bd078e88ff46cb8" compoundref="imagecv_8h" startline="348">colorspaces::ImageYCRCB::FORMAT_YCRCB</references>
+        <references refid="classcolorspaces_1_1_image_n_v21_1a2f516ceb85bd1151bed2fa940fee133c" compoundref="imagecv_8cpp" startline="433" endline="461">toRGB8</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classcolorspaces_1_1_image_n_v21_1abbde9b9d723828ab4885274347b6e24c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref> *</type>
+        <definition>Image * colorspaces::ImageNV21::createInstance</definition>
+        <argsstring>(const int width, const int height, void *const data)</argsstring>
+        <name>createInstance</name>
+        <param>
+          <type>const int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>const int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>void *const</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Factory method </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="386" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="471" bodyend="476"/>
+        <references refid="classcolorspaces_1_1_image_n_v21_1a11da1ed1be50dc0c03ebe5816bf3f820" compoundref="imagecv_8cpp" startline="396" endline="397">ImageNV21</references>
+        <referencedby refid="classcolorspaces_1_1_image_1a1bf62f4371700005a8f9581b2f70f31f" compoundref="imagecv_8cpp" startline="50" endline="53">colorspaces::Image::clone</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classcolorspaces_1_1_image_n_v21_1a5ffbf749cb0a371b5f83246b994e5dc8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref> &amp;</type>
+        <definition>Image &amp; colorspaces::ImageNV21::imageCvt</definition>
+        <argsstring>(const Image &amp;src, Image &amp;dst)</argsstring>
+        <name>imageCvt</name>
+        <param>
+          <type>const <ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref> &amp;</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref> &amp;</type>
+          <declname>dst</declname>
+        </param>
+        <exceptions> throw (<ref refid="classcolorspaces_1_1_image_1_1_no_conversion" kindref="compound">NoConversion</ref>)</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="387" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="407" bodyend="423"/>
+        <references refid="classcolorspaces_1_1_image_n_v21_1aa7e4ffadaba25b5b888123c955c63499" compoundref="imagecv_8h" startline="388">FORMAT_NV21</references>
+        <references refid="classcolorspaces_1_1_image_r_g_b8_1abb2bd76934dd71bb401db29cd5082b5c" compoundref="imagecv_8h" startline="185">colorspaces::ImageRGB8::FORMAT_RGB8</references>
+        <references refid="classcolorspaces_1_1_image_n_v21_1a2f516ceb85bd1151bed2fa940fee133c" compoundref="imagecv_8cpp" startline="433" endline="461">toRGB8</references>
+        <referencedby refid="classcolorspaces_1_1_image_1a1bf62f4371700005a8f9581b2f70f31f" compoundref="imagecv_8cpp" startline="50" endline="53">colorspaces::Image::clone</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A NV21 image </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="183">
+        <label>colorspaces::Image</label>
+        <link refid="classcolorspaces_1_1_image"/>
+        <childnode refid="184" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="182">
+        <label>colorspaces::ImageNV21</label>
+        <link refid="classcolorspaces_1_1_image_n_v21"/>
+        <childnode refid="183" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="184">
+        <label>cv::Mat</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="186">
+        <label>colorspaces::Image</label>
+        <link refid="classcolorspaces_1_1_image"/>
+        <childnode refid="187" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="185">
+        <label>colorspaces::ImageNV21</label>
+        <link refid="classcolorspaces_1_1_image_n_v21"/>
+        <childnode refid="186" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="187">
+        <label>cv::Mat</label>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="354" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" bodystart="354" bodyend="389"/>
+    <listofallmembers>
+      <member refid="classcolorspaces_1_1_image_1a1bf62f4371700005a8f9581b2f70f31f" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>clone</name></member>
+      <member refid="classcolorspaces_1_1_image_1af33b3aeb1a668b64f3ae4e00b90058a5" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>convert</name></member>
+      <member refid="classcolorspaces_1_1_image_n_v21_1abbde9b9d723828ab4885274347b6e24c" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>createInstance</name></member>
+      <member refid="classcolorspaces_1_1_image_1a1bd416764e9349d73ab57154c0eebcc7" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>format</name></member>
+      <member refid="classcolorspaces_1_1_image_1a53b533100b5fd24fae3617f271c73271" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>FORMAT_NONE</name></member>
+      <member refid="classcolorspaces_1_1_image_n_v21_1aa7e4ffadaba25b5b888123c955c63499" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>FORMAT_NV21</name></member>
+      <member refid="classcolorspaces_1_1_image_1ab3978cc7acc2b5e855f8c715f09667d1" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>FormatPtr</name></member>
+      <member refid="classcolorspaces_1_1_image_1a99a05ebd37f61215b2c3042ecaefdbfc" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>height</name></member>
+      <member refid="classcolorspaces_1_1_image_1ac5cf4664b2cd2c67bb83624c14d92b5f" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>Image</name></member>
+      <member refid="classcolorspaces_1_1_image_1a814ba81329dd867cc29ad784cb99e533" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>Image</name></member>
+      <member refid="classcolorspaces_1_1_image_1ac2f208a6668b26a5db23c4c5a42b0b13" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>Image</name></member>
+      <member refid="classcolorspaces_1_1_image_1a1db9485ca9972ed04c2eef084bde5c42" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>Image</name></member>
+      <member refid="classcolorspaces_1_1_image_1a1d662eee2751a2f4980efe083e6d8f32" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>Image</name></member>
+      <member refid="classcolorspaces_1_1_image_1a5d086f8bb03d6eab9c3accfd0040e28d" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>imageCtor</name></member>
+      <member refid="classcolorspaces_1_1_image_n_v21_1a5ffbf749cb0a371b5f83246b994e5dc8" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>imageCvt</name></member>
+      <member refid="classcolorspaces_1_1_image_1a8d8b6c8b517caac4cb685f4d73e2c8dc" prot="public" virt="non-virtual" ambiguityscope="colorspaces::Image::"><scope>colorspaces::ImageNV21</scope><name>imageCvt</name></member>
+      <member refid="classcolorspaces_1_1_image_n_v21_1a11da1ed1be50dc0c03ebe5816bf3f820" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>ImageNV21</name></member>
+      <member refid="classcolorspaces_1_1_image_n_v21_1a95633670978884b2b8cef8faa1a2be18" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>ImageNV21</name></member>
+      <member refid="classcolorspaces_1_1_image_n_v21_1a0802dcb928ee0130217bd94c52e3accc" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>ImageNV21</name></member>
+      <member refid="classcolorspaces_1_1_image_n_v21_1a0df5a2e9fb72b96e27926690be766b64" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>toGRAY8</name></member>
+      <member refid="classcolorspaces_1_1_image_n_v21_1a2f516ceb85bd1151bed2fa940fee133c" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>toRGB8</name></member>
+      <member refid="classcolorspaces_1_1_image_n_v21_1accca097e4cca85e511a1bedcba198549" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>toYCRCB</name></member>
+      <member refid="classcolorspaces_1_1_image_1ab80af7d4797110c23ed575b329ec7c4f" prot="public" virt="non-virtual"><scope>colorspaces::ImageNV21</scope><name>width</name></member>
+      <member refid="classcolorspaces_1_1_image_1ad5463e8cae11b572cd10a92734216f8a" prot="public" virt="virtual"><scope>colorspaces::ImageNV21</scope><name>~Image</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

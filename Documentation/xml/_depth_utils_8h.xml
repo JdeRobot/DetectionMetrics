@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_depth_utils_8h" kind="file" language="C++">
+    <compoundname>DepthUtils.h</compoundname>
+    <includes local="no">opencv2/core/core.hpp</includes>
+    <includedby refid="_princeton_dataset_reader_8cpp" local="no">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/PrincetonDatasetReader.cpp</includedby>
+    <includedby refid="_spinello_dataset_reader_8cpp" local="no">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/SpinelloDatasetReader.cpp</includedby>
+    <includedby refid="_depth_utils_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/Utils/DepthUtils.cpp</includedby>
+    <incdepgraph>
+      <node id="4862">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="4861">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Utils/DepthUtils.h</label>
+        <link refid="_depth_utils_8h"/>
+        <childnode refid="4862" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4864">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/PrincetonDatasetReader.cpp</label>
+        <link refid="_princeton_dataset_reader_8cpp"/>
+      </node>
+      <node id="4866">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Utils/DepthUtils.cpp</label>
+        <link refid="_depth_utils_8cpp"/>
+      </node>
+      <node id="4863">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Utils/DepthUtils.h</label>
+        <link refid="_depth_utils_8h"/>
+        <childnode refid="4864" relation="include">
+        </childnode>
+        <childnode refid="4865" relation="include">
+        </childnode>
+        <childnode refid="4866" relation="include">
+        </childnode>
+      </node>
+      <node id="4865">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/SpinelloDatasetReader.cpp</label>
+        <link refid="_spinello_dataset_reader_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_depth_utils" prot="public">DepthUtils</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>30/07/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_DEPTHUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_DEPTHUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/core/core.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_depth_utils" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_depth_utils" kindref="compound">DepthUtils</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_depth_utils_1a5ba9ff6bb47e9810c8832ab733ada879" kindref="member">mat16_to_ownFormat</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>inputImage,<sp/>cv::Mat&amp;<sp/>outImage);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_depth_utils_1aa27c57f9882e66c600a03a5378c00110" kindref="member">spinello_mat16_to_viewable</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat<sp/>&amp;inputImage,<sp/>cv::Mat&amp;<sp/>outImage);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_DEPTHUTILS_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/DepthUtils.h"/>
+  </compounddef>
+</doxygen>

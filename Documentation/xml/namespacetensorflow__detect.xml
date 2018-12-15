@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacetensorflow__detect" kind="namespace" language="Python">
+    <compoundname>tensorflow_detect</compoundname>
+    <innerclass refid="classtensorflow__detect_1_1_tensor_flow_detector" prot="public">tensorflow_detect::TensorFlowDetector</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacetensorflow__detect_1ab9f0bcfda000c7664a363cdb90e34c4f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>tensorflow_detect.argv</definition>
+        <argsstring></argsstring>
+        <name>argv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" line="6" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" bodystart="6" bodyend="-1"/>
+        <referencedby refid="class_jderobot_reader_1a89dde6b225b901d5b55926437be46d54" compoundref="_jderobot_reader_8cpp" startline="8" endline="76">JderobotReader::JderobotReader</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="namespacetensorflow__detect_1a92f27be303bb36c28ed99f95a89104b1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>tensorflow_detect.threshold</definition>
+        <argsstring></argsstring>
+        <name>threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" bodystart="12" bodyend="-1"/>
+        <referencedby refid="struct_sample_1ae6488ecd5c5996029a68915541b01245" compoundref="_sample_8cpp" startline="360" endline="377">Sample::getDepthColorMapImage</referencedby>
+        <referencedby refid="class_tensor_flow_inferencer_1a57f6622a03e8ee69e6f2ef17e09b3545" compoundref="_tensor_flow_inferencer_8cpp" startline="116" endline="213">TensorFlowInferencer::output_result</referencedby>
+        <referencedby refid="classjderobot_1_1_depth_filter_1a6bc39bb21bc8a8685e910ddbc70bef20" compoundref="_depth_filter_8cpp" startline="30" endline="32">jderobot::DepthFilter::~DepthFilter</referencedby>
+        <referencedby refid="classjderobot_1_1_depth_sampler_1abd92df0e1e72431b2297344ff6d7dd78" compoundref="_depth_sampler_8cpp" startline="31" endline="52">jderobot::DepthSampler::calculateLayers</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/tensorflow_detect.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

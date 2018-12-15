@@ -1,0 +1,217 @@
+\hypertarget{class_dataset_reader}{}\section{Dataset\+Reader Class Reference}
+\label{class_dataset_reader}\index{Dataset\+Reader@{Dataset\+Reader}}
+
+
+{\ttfamily \#include $<$Dataset\+Reader.\+h$>$}
+
+Inheritance diagram for Dataset\+Reader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_dataset_reader}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_dataset_reader_a357a86043c584062497bbc0fcd3ea420}{Dataset\+Reader} (const bool \hyperlink{class_dataset_reader_a71d04d25d58e0e9a0c05d69afcff03a1}{images\+Required})
+\item 
+virtual bool \hyperlink{class_dataset_reader_af50668f52c34f4620c44e91f26dd11ce}{get\+Next\+Sample} (\hyperlink{struct_sample}{Sample} \&sample)
+\item 
+virtual bool \hyperlink{class_dataset_reader_a4875a59f33227329ca93241add8370c0}{get\+Next\+Samples} (std\+::vector$<$ \hyperlink{struct_sample}{Sample} $>$ \&\hyperlink{class_dataset_reader_adeafe74d71d96205e2920f76d3fc6a72}{samples}, int size)
+\item 
+void \hyperlink{class_dataset_reader_a17085ffacc392c459a95cd510f341a7d}{filter\+Samples\+By\+ID} (std\+::vector$<$ std\+::string $>$ filtered\+I\+DS)
+\item 
+void \hyperlink{class_dataset_reader_ac662ff47f081f872d05ade9a33724a2a}{over\+Write\+Classes} (const std\+::string \&from, const std\+::string \&to)
+\item 
+int \hyperlink{class_dataset_reader_a67f4c1c3fdfcc0c6bf3b90d65d5fc7c5}{get\+Number\+Of\+Elements} ()
+\item 
+void \hyperlink{class_dataset_reader_a528f4df5009c93efd37ff5cfafe4c778}{reset\+Reader\+Counter} ()
+\item 
+void \hyperlink{class_dataset_reader_ac94f1934639708dc2a29b1ba05e3cc0b}{decrement\+Reader\+Counter} (const int decrement\+\_\+by=1)
+\item 
+void \hyperlink{class_dataset_reader_a951146f7949deff5e17c3482f4339672}{increment\+Reader\+Counter} (const int increment\+\_\+by=1)
+\item 
+bool \hyperlink{class_dataset_reader_aeff3413e85bbde9f1f755e36860c7f3a}{get\+Sample\+By\+Sample\+ID} (\hyperlink{struct_sample}{Sample} $\ast$$\ast$sample, const std\+::string \&sample\+ID)
+\item 
+bool \hyperlink{class_dataset_reader_a2cfa8b90e643a325b519a292c62d4460}{get\+Sample\+By\+Sample\+ID} (\hyperlink{struct_sample}{Sample} $\ast$$\ast$sample, const long long int sample\+ID)
+\item 
+void \hyperlink{class_dataset_reader_a1e37cddfc448b548dc6ca40f629884cb}{print\+Dataset\+Stats} ()
+\item 
+virtual bool \hyperlink{class_dataset_reader_a732438244cec7c20294f93c6b635888c}{append\+Dataset} (const std\+::string \&dataset\+Path, const std\+::string \&dataset\+Prefix=\char`\"{}\char`\"{})
+\item 
+void \hyperlink{class_dataset_reader_a03ceb33ec8ecd5fb73a4b17e9701cbb3}{add\+Sample} (\hyperlink{struct_sample}{Sample} sample)
+\item 
+std\+::string \hyperlink{class_dataset_reader_a2838c12e627e42e8394fd18011afa203}{get\+Class\+Names\+File} ()
+\item 
+virtual \hyperlink{class_dataset_reader_af972d4b7460587b2292d3dd15e69827b}{$\sim$\+Dataset\+Reader} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{struct_sample}{Sample} $>$ \hyperlink{class_dataset_reader_adeafe74d71d96205e2920f76d3fc6a72}{samples}
+\item 
+int \hyperlink{class_dataset_reader_af0fd759568c5db7187d19bae8ebe1b6c}{reader\+Counter}
+\item 
+std\+::string \hyperlink{class_dataset_reader_a45ded43b56539f1e37a24ca9c94b4611}{class\+Names\+File}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_dataset_reader_a76c52c7db385a4a930021fe69d04fefb}{class\+Names}
+\item 
+bool \hyperlink{class_dataset_reader_a71d04d25d58e0e9a0c05d69afcff03a1}{images\+Required}
+\item 
+unsigned int \hyperlink{class_dataset_reader_aae9a49629ae536c02b726e52a9def4ee}{skip\+\_\+count} = 10
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dataset_reader_a357a86043c584062497bbc0fcd3ea420}\label{class_dataset_reader_a357a86043c584062497bbc0fcd3ea420}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!Dataset\+Reader@{Dataset\+Reader}}
+\index{Dataset\+Reader@{Dataset\+Reader}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{Dataset\+Reader()}{DatasetReader()}}
+{\footnotesize\ttfamily Dataset\+Reader\+::\+Dataset\+Reader (\begin{DoxyParamCaption}\item[{const bool}]{images\+Required }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dataset_reader_af972d4b7460587b2292d3dd15e69827b}\label{class_dataset_reader_af972d4b7460587b2292d3dd15e69827b}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!````~Dataset\+Reader@{$\sim$\+Dataset\+Reader}}
+\index{````~Dataset\+Reader@{$\sim$\+Dataset\+Reader}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{$\sim$\+Dataset\+Reader()}{~DatasetReader()}}
+{\footnotesize\ttfamily Dataset\+Reader\+::$\sim$\+Dataset\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dataset_reader_a03ceb33ec8ecd5fb73a4b17e9701cbb3}\label{class_dataset_reader_a03ceb33ec8ecd5fb73a4b17e9701cbb3}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!add\+Sample@{add\+Sample}}
+\index{add\+Sample@{add\+Sample}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{add\+Sample()}{addSample()}}
+{\footnotesize\ttfamily void Dataset\+Reader\+::add\+Sample (\begin{DoxyParamCaption}\item[{\hyperlink{struct_sample}{Sample}}]{sample }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dataset_reader_a732438244cec7c20294f93c6b635888c}\label{class_dataset_reader_a732438244cec7c20294f93c6b635888c}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!append\+Dataset@{append\+Dataset}}
+\index{append\+Dataset@{append\+Dataset}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{append\+Dataset()}{appendDataset()}}
+{\footnotesize\ttfamily bool Dataset\+Reader\+::append\+Dataset (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dataset\+Path,  }\item[{const std\+::string \&}]{dataset\+Prefix = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \hyperlink{class_c_o_c_o_dataset_reader_a0b7e394c98b512e387952c7f7e39823d}{C\+O\+C\+O\+Dataset\+Reader}, \hyperlink{class_image_net_dataset_reader_ae9aa640c47637de8cf22ed3644c945c6}{Image\+Net\+Dataset\+Reader}, \hyperlink{class_pascal_v_o_c_dataset_reader_a845b70b47078741f29d8e348c3c48467}{Pascal\+V\+O\+C\+Dataset\+Reader}, \hyperlink{class_spinello_dataset_reader_a2313fdf01fb702337dda812f0c341cd9}{Spinello\+Dataset\+Reader}, \hyperlink{class_yolo_dataset_reader_adabb18f657d4e0dc7b03f7f1b77eb452}{Yolo\+Dataset\+Reader}, \hyperlink{class_own_dataset_reader_aaae1790f8ee3efd504fbf17ec717b640}{Own\+Dataset\+Reader}, and \hyperlink{class_princeton_dataset_reader_a078bdc2105cbef10ce0dc8c2fd12923e}{Princeton\+Dataset\+Reader}.
+
+\mbox{\Hypertarget{class_dataset_reader_ac94f1934639708dc2a29b1ba05e3cc0b}\label{class_dataset_reader_ac94f1934639708dc2a29b1ba05e3cc0b}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!decrement\+Reader\+Counter@{decrement\+Reader\+Counter}}
+\index{decrement\+Reader\+Counter@{decrement\+Reader\+Counter}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{decrement\+Reader\+Counter()}{decrementReaderCounter()}}
+{\footnotesize\ttfamily void Dataset\+Reader\+::decrement\+Reader\+Counter (\begin{DoxyParamCaption}\item[{const int}]{decrement\+\_\+by = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dataset_reader_a17085ffacc392c459a95cd510f341a7d}\label{class_dataset_reader_a17085ffacc392c459a95cd510f341a7d}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!filter\+Samples\+By\+ID@{filter\+Samples\+By\+ID}}
+\index{filter\+Samples\+By\+ID@{filter\+Samples\+By\+ID}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{filter\+Samples\+By\+I\+D()}{filterSamplesByID()}}
+{\footnotesize\ttfamily void Dataset\+Reader\+::filter\+Samples\+By\+ID (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{filtered\+I\+DS }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dataset_reader_a2838c12e627e42e8394fd18011afa203}\label{class_dataset_reader_a2838c12e627e42e8394fd18011afa203}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!get\+Class\+Names\+File@{get\+Class\+Names\+File}}
+\index{get\+Class\+Names\+File@{get\+Class\+Names\+File}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{get\+Class\+Names\+File()}{getClassNamesFile()}}
+{\footnotesize\ttfamily std\+::string Dataset\+Reader\+::get\+Class\+Names\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dataset_reader_af50668f52c34f4620c44e91f26dd11ce}\label{class_dataset_reader_af50668f52c34f4620c44e91f26dd11ce}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!get\+Next\+Sample@{get\+Next\+Sample}}
+\index{get\+Next\+Sample@{get\+Next\+Sample}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{get\+Next\+Sample()}{getNextSample()}}
+{\footnotesize\ttfamily bool Dataset\+Reader\+::get\+Next\+Sample (\begin{DoxyParamCaption}\item[{\hyperlink{struct_sample}{Sample} \&}]{sample }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \hyperlink{class_jderobot_reader_aef97b473c11e144fcf07e01c3181269b}{Jderobot\+Reader}, \hyperlink{class_video_reader_ae2b1921c337b9e2543616017dbd551a7}{Video\+Reader}, \hyperlink{class_recorder_reader_afc52cde597201a1838e6e31b8c801941}{Recorder\+Reader}, and \hyperlink{class_camera_reader_a1b78cca892789abc2294d56afab3146d}{Camera\+Reader}.
+
+\mbox{\Hypertarget{class_dataset_reader_a4875a59f33227329ca93241add8370c0}\label{class_dataset_reader_a4875a59f33227329ca93241add8370c0}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!get\+Next\+Samples@{get\+Next\+Samples}}
+\index{get\+Next\+Samples@{get\+Next\+Samples}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{get\+Next\+Samples()}{getNextSamples()}}
+{\footnotesize\ttfamily bool Dataset\+Reader\+::get\+Next\+Samples (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{struct_sample}{Sample} $>$ \&}]{samples,  }\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_dataset_reader_a67f4c1c3fdfcc0c6bf3b90d65d5fc7c5}\label{class_dataset_reader_a67f4c1c3fdfcc0c6bf3b90d65d5fc7c5}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!get\+Number\+Of\+Elements@{get\+Number\+Of\+Elements}}
+\index{get\+Number\+Of\+Elements@{get\+Number\+Of\+Elements}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{get\+Number\+Of\+Elements()}{getNumberOfElements()}}
+{\footnotesize\ttfamily int Dataset\+Reader\+::get\+Number\+Of\+Elements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dataset_reader_aeff3413e85bbde9f1f755e36860c7f3a}\label{class_dataset_reader_aeff3413e85bbde9f1f755e36860c7f3a}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!get\+Sample\+By\+Sample\+ID@{get\+Sample\+By\+Sample\+ID}}
+\index{get\+Sample\+By\+Sample\+ID@{get\+Sample\+By\+Sample\+ID}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{get\+Sample\+By\+Sample\+I\+D()}{getSampleBySampleID()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Dataset\+Reader\+::get\+Sample\+By\+Sample\+ID (\begin{DoxyParamCaption}\item[{\hyperlink{struct_sample}{Sample} $\ast$$\ast$}]{sample,  }\item[{const std\+::string \&}]{sample\+ID }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dataset_reader_a2cfa8b90e643a325b519a292c62d4460}\label{class_dataset_reader_a2cfa8b90e643a325b519a292c62d4460}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!get\+Sample\+By\+Sample\+ID@{get\+Sample\+By\+Sample\+ID}}
+\index{get\+Sample\+By\+Sample\+ID@{get\+Sample\+By\+Sample\+ID}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{get\+Sample\+By\+Sample\+I\+D()}{getSampleBySampleID()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Dataset\+Reader\+::get\+Sample\+By\+Sample\+ID (\begin{DoxyParamCaption}\item[{\hyperlink{struct_sample}{Sample} $\ast$$\ast$}]{sample,  }\item[{const long long int}]{sample\+ID }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dataset_reader_a951146f7949deff5e17c3482f4339672}\label{class_dataset_reader_a951146f7949deff5e17c3482f4339672}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!increment\+Reader\+Counter@{increment\+Reader\+Counter}}
+\index{increment\+Reader\+Counter@{increment\+Reader\+Counter}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{increment\+Reader\+Counter()}{incrementReaderCounter()}}
+{\footnotesize\ttfamily void Dataset\+Reader\+::increment\+Reader\+Counter (\begin{DoxyParamCaption}\item[{const int}]{increment\+\_\+by = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dataset_reader_ac662ff47f081f872d05ade9a33724a2a}\label{class_dataset_reader_ac662ff47f081f872d05ade9a33724a2a}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!over\+Write\+Classes@{over\+Write\+Classes}}
+\index{over\+Write\+Classes@{over\+Write\+Classes}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{over\+Write\+Classes()}{overWriteClasses()}}
+{\footnotesize\ttfamily void Dataset\+Reader\+::over\+Write\+Classes (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{from,  }\item[{const std\+::string \&}]{to }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dataset_reader_a1e37cddfc448b548dc6ca40f629884cb}\label{class_dataset_reader_a1e37cddfc448b548dc6ca40f629884cb}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!print\+Dataset\+Stats@{print\+Dataset\+Stats}}
+\index{print\+Dataset\+Stats@{print\+Dataset\+Stats}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{print\+Dataset\+Stats()}{printDatasetStats()}}
+{\footnotesize\ttfamily void Dataset\+Reader\+::print\+Dataset\+Stats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dataset_reader_a528f4df5009c93efd37ff5cfafe4c778}\label{class_dataset_reader_a528f4df5009c93efd37ff5cfafe4c778}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!reset\+Reader\+Counter@{reset\+Reader\+Counter}}
+\index{reset\+Reader\+Counter@{reset\+Reader\+Counter}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{reset\+Reader\+Counter()}{resetReaderCounter()}}
+{\footnotesize\ttfamily void Dataset\+Reader\+::reset\+Reader\+Counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_dataset_reader_a76c52c7db385a4a930021fe69d04fefb}\label{class_dataset_reader_a76c52c7db385a4a930021fe69d04fefb}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!class\+Names@{class\+Names}}
+\index{class\+Names@{class\+Names}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{class\+Names}{classNames}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Dataset\+Reader\+::class\+Names\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dataset_reader_a45ded43b56539f1e37a24ca9c94b4611}\label{class_dataset_reader_a45ded43b56539f1e37a24ca9c94b4611}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!class\+Names\+File@{class\+Names\+File}}
+\index{class\+Names\+File@{class\+Names\+File}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{class\+Names\+File}{classNamesFile}}
+{\footnotesize\ttfamily std\+::string Dataset\+Reader\+::class\+Names\+File\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dataset_reader_a71d04d25d58e0e9a0c05d69afcff03a1}\label{class_dataset_reader_a71d04d25d58e0e9a0c05d69afcff03a1}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!images\+Required@{images\+Required}}
+\index{images\+Required@{images\+Required}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{images\+Required}{imagesRequired}}
+{\footnotesize\ttfamily bool Dataset\+Reader\+::images\+Required\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dataset_reader_af0fd759568c5db7187d19bae8ebe1b6c}\label{class_dataset_reader_af0fd759568c5db7187d19bae8ebe1b6c}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!reader\+Counter@{reader\+Counter}}
+\index{reader\+Counter@{reader\+Counter}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{reader\+Counter}{readerCounter}}
+{\footnotesize\ttfamily int Dataset\+Reader\+::reader\+Counter\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dataset_reader_adeafe74d71d96205e2920f76d3fc6a72}\label{class_dataset_reader_adeafe74d71d96205e2920f76d3fc6a72}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!samples@{samples}}
+\index{samples@{samples}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{samples}{samples}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{struct_sample}{Sample}$>$ Dataset\+Reader\+::samples\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dataset_reader_aae9a49629ae536c02b726e52a9def4ee}\label{class_dataset_reader_aae9a49629ae536c02b726e52a9def4ee}} 
+\index{Dataset\+Reader@{Dataset\+Reader}!skip\+\_\+count@{skip\+\_\+count}}
+\index{skip\+\_\+count@{skip\+\_\+count}!Dataset\+Reader@{Dataset\+Reader}}
+\subsubsection{\texorpdfstring{skip\+\_\+count}{skip\_count}}
+{\footnotesize\ttfamily unsigned int Dataset\+Reader\+::skip\+\_\+count = 10\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Dataset\+Converters/readers/\hyperlink{_dataset_reader_8h}{Dataset\+Reader.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Dataset\+Converters/readers/\hyperlink{_dataset_reader_8cpp}{Dataset\+Reader.\+cpp}\end{DoxyCompactItemize}

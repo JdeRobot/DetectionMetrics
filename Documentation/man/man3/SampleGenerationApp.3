@@ -1,0 +1,93 @@
+.TH "SampleGenerationApp" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SampleGenerationApp
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SampleGenerationApp\&.h>\fP
+.PP
+Inherited by \fBMyApp\fP, \fBMyApp\fP, \fBMyApp\fP, \fBMyApp\fP, \fBMyApp\fP, \fBMyApp\fP, \fBMyApp\fP, and \fBMyApp\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSampleGenerationApp\fP (int \fBargc\fP, char *\fBargv\fP[])"
+.br
+.ti -1c
+.RI "virtual void \fBoperator()\fP ()=0"
+.br
+.ti -1c
+.RI "void \fBprocess\fP ()"
+.br
+.ti -1c
+.RI "\fBConfig::Properties\fP \fBgetConfig\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBverifyRequirements\fP ()"
+.br
+.ti -1c
+.RI "int \fBparse_arguments\fP (const int \fBargc\fP, char *\fBargv\fP[], std::string &configFile)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBConfig::Properties\fP \fBconfig\fP"
+.br
+.ti -1c
+.RI "std::string \fBconfigFilePath\fP"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBrequiredArguments\fP"
+.br
+.ti -1c
+.RI "int \fBargc\fP"
+.br
+.ti -1c
+.RI "char ** \fBargv\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SampleGenerationApp::SampleGenerationApp (int argc, char * argv[])"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBConfig::Properties\fP SampleGenerationApp::getConfig ()"
+
+.SS "virtual void SampleGenerationApp::operator() ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBMyApp\fP, \fBMyApp\fP, \fBMyApp\fP, \fBMyApp\fP, \fBMyApp\fP, \fBMyApp\fP, \fBMyApp\fP, and \fBMyApp\fP\&.
+.SS "int SampleGenerationApp::parse_arguments (const int argc, char * argv[], std::string & configFile)\fC [protected]\fP"
+Define and parse the program options
+.PP
+--help option
+.SS "void SampleGenerationApp::process ()"
+
+.SS "bool SampleGenerationApp::verifyRequirements ()\fC [protected]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "int SampleGenerationApp::argc\fC [protected]\fP"
+
+.SS "char** SampleGenerationApp::argv\fC [protected]\fP"
+
+.SS "\fBConfig::Properties\fP SampleGenerationApp::config\fC [protected]\fP"
+
+.SS "std::string SampleGenerationApp::configFilePath\fC [protected]\fP"
+
+.SS "std::vector<std::string> SampleGenerationApp::requiredArguments\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

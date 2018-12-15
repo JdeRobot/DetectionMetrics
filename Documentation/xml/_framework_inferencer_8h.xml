@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_framework_inferencer_8h" kind="file" language="C++">
+    <compoundname>FrameworkInferencer.h</compoundname>
+    <includes local="no">opencv2/opencv.hpp</includes>
+    <includes local="no">opencv2/imgproc/imgproc.hpp</includes>
+    <includes local="no">boost/shared_ptr.hpp</includes>
+    <includes refid="_sample_8h" local="no">Common/Sample.h</includes>
+    <includes local="no">boost/date_time/posix_time/posix_time.hpp</includes>
+    <includes local="no">algorithm</includes>
+    <includedby refid="_caffe_inferencer_8h" local="yes">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h</includedby>
+    <includedby refid="_darknet_inferencer_8h" local="yes">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.h</includedby>
+    <includedby refid="_framework_inferencer_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.cpp</includedby>
+    <includedby refid="_generic_inferencer_8h" local="yes">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h</includedby>
+    <includedby refid="_keras_inferencer_8h" local="yes">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h</includedby>
+    <includedby refid="_mass_batch_inferencer_8h" local="no">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassBatchInferencer.h</includedby>
+    <includedby refid="_mass_inferencer_8h" local="no">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h</includedby>
+    <includedby refid="_tensor_flow_inferencer_8h" local="yes">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h</includedby>
+    <includedby refid="generator_8cpp" local="no">DeepLearningSuite/SampleGenerationApp/generator.cpp</includedby>
+    <incdepgraph>
+      <node id="3482">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="3492">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="3490">
+        <label>Regions/RleRegions.h</label>
+        <link refid="_rle_regions_8h"/>
+        <childnode refid="3480" relation="include">
+        </childnode>
+        <childnode refid="3485" relation="include">
+        </childnode>
+        <childnode refid="3491" relation="include">
+        </childnode>
+      </node>
+      <node id="3484">
+        <label>Regions/RectRegions.h</label>
+        <link refid="_rect_regions_8h"/>
+        <childnode refid="3480" relation="include">
+        </childnode>
+        <childnode refid="3485" relation="include">
+        </childnode>
+        <childnode refid="3486" relation="include">
+        </childnode>
+        <childnode refid="3487" relation="include">
+        </childnode>
+      </node>
+      <node id="3485">
+        <label>Regions.h</label>
+        <link refid="_regions_8h"/>
+        <childnode refid="3480" relation="include">
+        </childnode>
+        <childnode refid="3482" relation="include">
+        </childnode>
+      </node>
+      <node id="3480">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="3488">
+        <label>Regions/ContourRegions.h</label>
+        <link refid="_contour_regions_8h"/>
+        <childnode refid="3480" relation="include">
+        </childnode>
+        <childnode refid="3485" relation="include">
+        </childnode>
+        <childnode refid="3489" relation="include">
+        </childnode>
+      </node>
+      <node id="3493">
+        <label>boost/date_time/posix_time/posix_time.hpp</label>
+      </node>
+      <node id="3481">
+        <label>opencv2/imgproc/imgproc.hpp</label>
+      </node>
+      <node id="3491">
+        <label>RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="3482" relation="include">
+        </childnode>
+        <childnode refid="3492" relation="include">
+        </childnode>
+      </node>
+      <node id="3483">
+        <label>Common/Sample.h</label>
+        <link refid="_sample_8h"/>
+        <childnode refid="3484" relation="include">
+        </childnode>
+        <childnode refid="3488" relation="include">
+        </childnode>
+        <childnode refid="3490" relation="include">
+        </childnode>
+      </node>
+      <node id="3489">
+        <label>ContourRegion.h</label>
+        <link refid="_contour_region_8h"/>
+        <childnode refid="3480" relation="include">
+        </childnode>
+        <childnode refid="3482" relation="include">
+        </childnode>
+      </node>
+      <node id="3479">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h</label>
+        <link refid="_framework_inferencer_8h"/>
+        <childnode refid="3480" relation="include">
+        </childnode>
+        <childnode refid="3481" relation="include">
+        </childnode>
+        <childnode refid="3482" relation="include">
+        </childnode>
+        <childnode refid="3483" relation="include">
+        </childnode>
+        <childnode refid="3493" relation="include">
+        </childnode>
+        <childnode refid="3487" relation="include">
+        </childnode>
+      </node>
+      <node id="3486">
+        <label>RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="3480" relation="include">
+        </childnode>
+      </node>
+      <node id="3487">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3496">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.cpp</label>
+        <link refid="_caffe_inferencer_8cpp"/>
+      </node>
+      <node id="3509">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassBatchInferencer.h</label>
+        <link refid="_mass_batch_inferencer_8h"/>
+        <childnode refid="3510" relation="include">
+        </childnode>
+      </node>
+      <node id="3508">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.cpp</label>
+        <link refid="_keras_inferencer_8cpp"/>
+      </node>
+      <node id="3500">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h</label>
+        <link refid="_generic_inferencer_8h"/>
+        <childnode refid="3501" relation="include">
+        </childnode>
+        <childnode refid="3502" relation="include">
+        </childnode>
+        <childnode refid="3503" relation="include">
+        </childnode>
+        <childnode refid="3504" relation="include">
+        </childnode>
+        <childnode refid="3505" relation="include">
+        </childnode>
+        <childnode refid="3506" relation="include">
+        </childnode>
+      </node>
+      <node id="3510">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassBatchInferencer.cpp</label>
+        <link refid="_mass_batch_inferencer_8cpp"/>
+      </node>
+      <node id="3502">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.cpp</label>
+        <link refid="_deployer_8cpp"/>
+      </node>
+      <node id="3499">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.cpp</label>
+        <link refid="_framework_inferencer_8cpp"/>
+      </node>
+      <node id="3513">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h</label>
+        <link refid="_tensor_flow_inferencer_8h"/>
+        <childnode refid="3500" relation="include">
+        </childnode>
+        <childnode refid="3514" relation="include">
+        </childnode>
+      </node>
+      <node id="3511">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h</label>
+        <link refid="_mass_inferencer_8h"/>
+        <childnode refid="3502" relation="include">
+        </childnode>
+        <childnode refid="3503" relation="include">
+        </childnode>
+        <childnode refid="3512" relation="include">
+        </childnode>
+        <childnode refid="3505" relation="include">
+        </childnode>
+        <childnode refid="3506" relation="include">
+        </childnode>
+      </node>
+      <node id="3495">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h</label>
+        <link refid="_caffe_inferencer_8h"/>
+        <childnode refid="3496" relation="include">
+        </childnode>
+      </node>
+      <node id="3505">
+        <label>DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp</label>
+        <link refid="auto_evaluator_8cpp"/>
+      </node>
+      <node id="3514">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.cpp</label>
+        <link refid="_tensor_flow_inferencer_8cpp"/>
+      </node>
+      <node id="3497">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.h</label>
+        <link refid="_darknet_inferencer_8h"/>
+        <childnode refid="3498" relation="include">
+        </childnode>
+      </node>
+      <node id="3507">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h</label>
+        <link refid="_keras_inferencer_8h"/>
+        <childnode refid="3500" relation="include">
+        </childnode>
+        <childnode refid="3508" relation="include">
+        </childnode>
+      </node>
+      <node id="3512">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.cpp</label>
+        <link refid="_mass_inferencer_8cpp"/>
+      </node>
+      <node id="3498">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.cpp</label>
+        <link refid="_darknet_inferencer_8cpp"/>
+      </node>
+      <node id="3504">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.cpp</label>
+        <link refid="_generic_inferencer_8cpp"/>
+      </node>
+      <node id="3494">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h</label>
+        <link refid="_framework_inferencer_8h"/>
+        <childnode refid="3495" relation="include">
+        </childnode>
+        <childnode refid="3497" relation="include">
+        </childnode>
+        <childnode refid="3499" relation="include">
+        </childnode>
+        <childnode refid="3500" relation="include">
+        </childnode>
+        <childnode refid="3507" relation="include">
+        </childnode>
+        <childnode refid="3509" relation="include">
+        </childnode>
+        <childnode refid="3511" relation="include">
+        </childnode>
+        <childnode refid="3513" relation="include">
+        </childnode>
+        <childnode refid="3515" relation="include">
+        </childnode>
+      </node>
+      <node id="3501">
+        <label>DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="3503">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp"/>
+      </node>
+      <node id="3506">
+        <label>DeepLearningSuite/Tools/Detector/detector.cpp</label>
+        <link refid="_tools_2_detector_2_detector_8cpp"/>
+      </node>
+      <node id="3515">
+        <label>DeepLearningSuite/SampleGenerationApp/generator.cpp</label>
+        <link refid="generator_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_framework_inferencer" prot="public">FrameworkInferencer</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="class_framework_inferencer" kindref="compound">FrameworkInferencer</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;FrameworkInferencer&gt; FrameworkInferencerPtr</definition>
+        <argsstring></argsstring>
+        <name>FrameworkInferencerPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h" line="33" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>29/01/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_FRAMEWORKEVALUATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_FRAMEWORKEVALUATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/opencv.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/imgproc/imgproc.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/shared_ptr.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_sample_8h" kindref="compound">Common/Sample.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/date_time/posix_time/posix_time.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_framework_inferencer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_framework_inferencer" kindref="compound">FrameworkInferencer</ref>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_framework_inferencer_1adda91b1e8b6238e4cd3cc18e84675fea" kindref="member">FrameworkInferencer</ref>();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_framework_inferencer_1a0a0ad89131a1f2a2377a3003b0c1d319" kindref="member">~   FrameworkInferencer</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_sample" kindref="compound">Sample</ref><sp/><ref refid="class_framework_inferencer_1a4c2b3b0ec03df5f97e7b32235422dc60" kindref="member">detect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>image,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>confidence_threshold);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_framework_inferencer_1a51291e562ddc5a4b86c0c413439d59a5" kindref="member">getMeanDurationTime</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="struct_sample" kindref="compound">Sample</ref><sp/><ref refid="class_framework_inferencer_1a8fd7e708c8be4471bc2b37a4193a9045" kindref="member">detectImp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>image,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>confidence_threshold)<sp/>=0;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24" refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" kindref="member">classNamesFile</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;long&gt;<sp/>durationVector;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;FrameworkInferencer&gt;<sp/><ref refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" kindref="member">FrameworkInferencerPtr</ref>;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_FRAMEWORKEVALUATOR_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h"/>
+  </compounddef>
+</doxygen>

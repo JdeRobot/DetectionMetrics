@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_bounding_rect_gui_mover_8h" kind="file" language="C++">
+    <compoundname>BoundingRectGuiMover.h</compoundname>
+    <includes local="no">opencv2/opencv.hpp</includes>
+    <includedby refid="_bounding_rect_gui_mover_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.cpp</includedby>
+    <includedby refid="_bounding_validator_8h" local="yes">DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h</includedby>
+    <incdepgraph>
+      <node id="3935">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="3934">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h</label>
+        <link refid="_bounding_rect_gui_mover_8h"/>
+        <childnode refid="3935" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3937">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.cpp</label>
+        <link refid="_bounding_rect_gui_mover_8cpp"/>
+      </node>
+      <node id="3940">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.cpp</label>
+        <link refid="_detections_validator_8cpp"/>
+      </node>
+      <node id="3936">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h</label>
+        <link refid="_bounding_rect_gui_mover_8h"/>
+        <childnode refid="3937" relation="include">
+        </childnode>
+        <childnode refid="3938" relation="include">
+        </childnode>
+      </node>
+      <node id="3938">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h</label>
+        <link refid="_bounding_validator_8h"/>
+        <childnode refid="3939" relation="include">
+        </childnode>
+        <childnode refid="3940" relation="include">
+        </childnode>
+      </node>
+      <node id="3939">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.cpp</label>
+        <link refid="_bounding_validator_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_bounding_rect_gui_mover" prot="public">BoundingRectGuiMover</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>22/11/16.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_BOUDINGRECT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_BOUDINGRECT_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/opencv.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="struct_bounding_rect_gui_mover" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_bounding_rect_gui_mover" kindref="compound">BoundingRectGuiMover</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12" refid="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493a3965bc68b15cffd59d6d4cf842e0578c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493" kindref="member">MovementType</ref>{<sp/><ref refid="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493abf66fc6c222bd5db76829f8b8a227202" kindref="member">LOCAL_MOVEMENT</ref>,<sp/><ref refid="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493a1703ea806817f5f686511ed4c49f6eb7" kindref="member">GLOBAL_MOVEMENT</ref>,<sp/><ref refid="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493a3965bc68b15cffd59d6d4cf842e0578c" kindref="member">NONE</ref>};</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bounding_rect_gui_mover_1ab11a7dba1cae9cb635258daae2b161eb" kindref="member">BoundingRectGuiMover</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;cv::Point&gt;&amp;<sp/>points);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_bounding_rect_gui_mover_1ab11a7dba1cae9cb635258daae2b161eb" kindref="member">BoundingRectGuiMover</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Rect_&lt;double&gt;&amp;<sp/>rectangle);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;cv::Point&gt;<sp/><ref refid="struct_bounding_rect_gui_mover_1a72ff4270c2c100aab98125ca381aab10" kindref="member">getPoints</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_bounding_rect_gui_mover_1a86c01942e7a57a0cec7d757592b40c41" kindref="member">move</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Point&amp;<sp/>from,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Point&amp;<sp/>to,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><sp/><ref refid="struct_bounding_rect_gui_mover_1a76ac02999d4012d5a8ba60853d2c6493" kindref="member">MovementType</ref>&amp;<sp/>type);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Rect_&lt;double&gt;<sp/><ref refid="struct_bounding_rect_gui_mover_1a5e242d1bbc84714da0fa04b0adee0e5d" kindref="member">getRect</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>scale=1);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;cv::Point&gt;<sp/>points;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>getClosestsLinePoints(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Point<sp/>&amp;from,</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>p1,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&amp;<sp/>p2);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isVertical(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Point&amp;<sp/>from,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Point&amp;<sp/>to);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_BOUDINGRECT_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingRectGuiMover.h"/>
+  </compounddef>
+</doxygen>

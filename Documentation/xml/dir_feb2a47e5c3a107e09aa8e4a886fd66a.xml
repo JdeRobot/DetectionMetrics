@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_feb2a47e5c3a107e09aa8e4a886fd66a" kind="dir">
+    <compoundname>DeepLearningSuite/Tools/Converter</compoundname>
+    <innerfile refid="_tools_2_converter_2_converter_8cpp">converter.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/Tools/Converter/"/>
+  </compounddef>
+</doxygen>

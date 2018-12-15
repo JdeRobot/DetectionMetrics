@@ -1,0 +1,67 @@
+.TH "ClassType" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ClassType
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ClassType\&.h>\fP
+.PP
+Inherited by \fBClassTypeGeneric\fP, \fBClassTypeMapper\fP, and \fBClassTypeOwn\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "cv::Scalar \fBgetColor\fP ()"
+.br
+.ti -1c
+.RI "std::string \fBgetClassString\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetClassID\fP ()"
+.br
+.ti -1c
+.RI "std::vector< std::string > \fBgetAllAvailableClasses\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "float \fB_get_color\fP (int c, int x, int max)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< std::string > \fBclasses\fP"
+.br
+.ti -1c
+.RI "std::string \fBclassID\fP"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "float ClassType::_get_color (int c, int x, int max)\fC [protected]\fP"
+
+.SS "std::vector< std::string > ClassType::getAllAvailableClasses ()"
+
+.SS "int ClassType::getClassID ()"
+
+.SS "std::string ClassType::getClassString ()"
+
+.SS "cv::Scalar ClassType::getColor ()"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<std::string> ClassType::classes\fC [protected]\fP"
+
+.SS "std::string ClassType::classID\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

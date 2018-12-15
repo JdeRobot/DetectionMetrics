@@ -1,0 +1,95 @@
+.TH "RleRegions" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RleRegions
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RleRegions\&.h>\fP
+.PP
+Inherits \fBRegions\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRleRegions\fP ()"
+.br
+.ti -1c
+.RI "void \fBsaveJson\fP (const std::string &outPath)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (\fBRLE\fP region, const std::string &classId, const bool isCrowd=false)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (\fBRLE\fP region, const std::string &classId, const double confidence_score, const bool isCrowd=false)"
+.br
+.ti -1c
+.RI "\fBRleRegion\fP \fBgetRegion\fP (int idx)"
+.br
+.ti -1c
+.RI "std::vector< \fBRleRegion\fP > \fBgetRegions\fP ()"
+.br
+.ti -1c
+.RI "void \fBdrawRegions\fP (cv::Mat &image)"
+.br
+.ti -1c
+.RI "void \fBfilterSamplesByID\fP (std::vector< std::string > filteredIDS)"
+.br
+.ti -1c
+.RI "bool \fBempty\fP ()"
+.br
+.ti -1c
+.RI "void \fBprint\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBRleRegion\fP > \fBregions\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RleRegions::RleRegions ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RleRegions::add (\fBRLE\fP region, const std::string & classId, const bool isCrowd = \fCfalse\fP)"
+
+.SS "void RleRegions::add (\fBRLE\fP region, const std::string & classId, const double confidence_score, const bool isCrowd = \fCfalse\fP)"
+
+.SS "void RleRegions::drawRegions (cv::Mat & image)\fC [virtual]\fP"
+
+.PP
+Implements \fBRegions\fP\&.
+.SS "bool RleRegions::empty ()\fC [virtual]\fP"
+
+.PP
+Implements \fBRegions\fP\&.
+.SS "void RleRegions::filterSamplesByID (std::vector< std::string > filteredIDS)\fC [virtual]\fP"
+
+.PP
+Implements \fBRegions\fP\&.
+.SS "\fBRleRegion\fP RleRegions::getRegion (int idx)"
+
+.SS "std::vector< \fBRleRegion\fP > RleRegions::getRegions ()"
+
+.SS "void RleRegions::print ()\fC [virtual]\fP"
+
+.PP
+Implements \fBRegions\fP\&.
+.SS "void RleRegions::saveJson (const std::string & outPath)\fC [virtual]\fP"
+
+.PP
+Implements \fBRegions\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBRleRegion\fP> RleRegions::regions"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

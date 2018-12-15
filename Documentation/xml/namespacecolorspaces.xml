@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacecolorspaces" kind="namespace" language="C++">
+    <compoundname>colorspaces</compoundname>
+    <innerclass refid="classcolorspaces_1_1_image" prot="public">colorspaces::Image</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_g_r_a_y8" prot="public">colorspaces::ImageGRAY8</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_h_s_v8" prot="public">colorspaces::ImageHSV8</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_n_v21" prot="public">colorspaces::ImageNV21</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_r_g_b8" prot="public">colorspaces::ImageRGB8</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_y_c_r_c_b" prot="public">colorspaces::ImageYCRCB</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_y_u_y2" prot="public">colorspaces::ImageYUY2</innerclass>
+    <innerclass refid="classcolorspaces_1_1_uncopyable" prot="public">colorspaces::Uncopyable</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" line="13" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespace_comm" kind="namespace" language="C++">
+    <compoundname>Comm</compoundname>
+    <innerclass refid="class_comm_1_1_camera_client" prot="public">Comm::CameraClient</innerclass>
+    <innerclass refid="class_comm_1_1_camera_ice_client" prot="public">Comm::CameraIceClient</innerclass>
+    <innerclass refid="class_comm_1_1_communicator" prot="public">Comm::Communicator</innerclass>
+    <innerclass refid="class_comm_1_1_listener_camera" prot="public">Comm::ListenerCamera</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespace_comm_1a7d4da4b3fc818fb4d75a7df90df80152" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Comm::PI</definition>
+        <argsstring></argsstring>
+        <name>PI</name>
+        <initializer>= 3.1415</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/src/ros/translators.cpp" line="4" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ros/translators.cpp" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespace_comm_1a8f60d778070dabbe4b6fa39157309097" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Comm::MAXRANGEIMGD</definition>
+        <argsstring></argsstring>
+        <name>MAXRANGEIMGD</name>
+        <initializer>= 8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/src/ros/translators.cpp" line="6" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ros/translators.cpp" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_comm_1a488b3721b4d9a501e8cd38388ab30437" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_comm_1_1_camera_client" kindref="compound">CameraClient</ref> *</type>
+        <definition>CameraClient * Comm::getCameraClient</definition>
+        <argsstring>(Comm::Communicator *jdrc, std::string prefix)</argsstring>
+        <name>getCameraClient</name>
+        <param>
+          <type><ref refid="class_comm_1_1_communicator" kindref="compound">Comm::Communicator</ref> *</type>
+          <declname>jdrc</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+<para>make a <ref refid="class_comm_1_1_camera_client" kindref="compound">CameraClient</ref> using propierties </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>communicator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>that contains properties </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prefix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>of client Propierties (example: &quot;carViz.Camera&quot;)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>null if propierties are wrong </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/cameraClient.hpp" line="53" column="1" bodyfile="DeepLearningSuite/libs/comm/src/cameraClient.cpp" bodystart="25" bodyend="80"/>
+        <references refid="class_comm_1_1_communicator_1ab03173df851ed3eb0f84f83f1ecd455f" compoundref="communicator_8cpp" startline="40" endline="42">Comm::Communicator::getConfig</references>
+        <references refid="class_config_1_1_properties_1a87fb20ec94658e8ce0cce06b239019be" compoundref="properties_8cpp" startline="119" endline="124">Config::Properties::asString</references>
+        <references refid="namespace_comm_1ab6b021c81a3c5ebabd75caaffa9f16da" compoundref="tools_8cpp" startline="22" endline="31">server2int</references>
+        <references refid="class_config_1_1_properties_1a38019252713b2a815b78eab3a4e00e75" compoundref="properties_8cpp" startline="127" endline="138">Config::Properties::asStringWithDefault</references>
+        <references refid="class_comm_1_1_listener_camera_1afc4172a88e4f187bce8f809f91db7f0f" compoundref="listener_camera_8cpp" startline="35" endline="37">Comm::ListenerCamera::start</references>
+        <referencedby refid="class_jderobot_reader_1a89dde6b225b901d5b55926437be46d54" compoundref="_jderobot_reader_8cpp" startline="8" endline="76">JderobotReader::JderobotReader</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_comm_1ad9eade500ada9cd99a62086a53986e36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_jde_robot_types_1_1_image" kindref="compound">JdeRobotTypes::Image</ref></type>
+        <definition>JdeRobotTypes::Image Comm::translate_image_messages</definition>
+        <argsstring>(const sensor_msgs::ImageConstPtr &amp;image_msg)</argsstring>
+        <name>translate_image_messages</name>
+        <param>
+          <type>const sensor_msgs::ImageConstPtr &amp;</type>
+          <declname>image_msg</declname>
+        </param>
+        <briefdescription>
+<para>translate ROS Image messages to JdeRobot Image </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ROS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Image Message</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Image translated from ROS Message </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/translators.hpp" line="46" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ros/translators.cpp" bodystart="31" bodyend="63"/>
+        <references refid="class_jde_robot_types_1_1_image_1a4557271a34c2a35e6a9c03946ed2332c" compoundref="image_8h" startline="32">JdeRobotTypes::Image::timeStamp</references>
+        <references refid="class_jde_robot_types_1_1_image_1ac702a6dbc5f6d6009524159bcc4d07e4" compoundref="image_8h" startline="33">JdeRobotTypes::Image::format</references>
+        <references refid="class_jde_robot_types_1_1_image_1ac377507ac13a54f523169f55911e3147" compoundref="image_8h" startline="31">JdeRobotTypes::Image::width</references>
+        <references refid="class_jde_robot_types_1_1_image_1ad3b073fd5f50c62c535d0083ca0f9ae9" compoundref="image_8h" startline="30">JdeRobotTypes::Image::height</references>
+        <references refid="namespace_comm_1afe46bbd9c6bec183b93879e39e21fcbc">depthToRGB</references>
+        <references refid="class_jde_robot_types_1_1_image_1a00caf819fb206f75e125f9a63f78cb8a" compoundref="image_8h" startline="34">JdeRobotTypes::Image::data</references>
+        <referencedby refid="class_comm_1_1_listener_camera_1a62683e72d06ba387aa19e4f213d1eada" compoundref="listener_camera_8cpp" startline="40" endline="43">Comm::ListenerCamera::stop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_comm_1a7e4e8f50789805802aea4d68670a495c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_jde_robot_types_1_1_rgbd" kindref="compound">JdeRobotTypes::Rgbd</ref></type>
+        <definition>JdeRobotTypes::Rgbd Comm::translate_rgbd</definition>
+        <argsstring>(const sensor_msgs::ImageConstPtr &amp;rgb, const sensor_msgs::ImageConstPtr &amp;d)</argsstring>
+        <name>translate_rgbd</name>
+        <param>
+          <type>const sensor_msgs::ImageConstPtr &amp;</type>
+          <declname>rgb</declname>
+        </param>
+        <param>
+          <type>const sensor_msgs::ImageConstPtr &amp;</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+<para>translate ROS images messages to JdeRobot Rgbd </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ROS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Image Message </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ROS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Image Message</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rgbd translated from ROS Messages </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/translators.hpp" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_comm_1afe46bbd9c6bec183b93879e39e21fcbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Comm::depthToRGB</definition>
+        <argsstring>(const cv::Mat &amp;float_img, cv::Mat &amp;rgb_img)</argsstring>
+        <name>depthToRGB</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>float_img</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>rgb_img</declname>
+        </param>
+        <briefdescription>
+<para>Translates from 32FC1 Image format to RGB. Inf values are represented by NaN, when converting to RGB, NaN passed to 0. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ROS</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Image Message</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Image translated from ROS Message </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ros/translators.hpp" line="70" column="1"/>
+        <referencedby refid="namespace_comm_1ad9eade500ada9cd99a62086a53986e36" compoundref="translators_8cpp" startline="31" endline="63">translate_image_messages</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_comm_1ab6b021c81a3c5ebabd75caaffa9f16da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int Comm::server2int</definition>
+        <argsstring>(std::string server)</argsstring>
+        <name>server2int</name>
+        <param>
+          <type>std::string</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/tools.hpp" line="28" column="1" bodyfile="DeepLearningSuite/libs/comm/src/tools.cpp" bodystart="22" bodyend="31"/>
+        <referencedby refid="namespace_comm_1a488b3721b4d9a501e8cd38388ab30437" compoundref="camera_client_8cpp" startline="25" endline="80">getCameraClient</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_comm_1ad99fee34a48e5331dfa18b2b766e7df2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Comm::depthToRGB</definition>
+        <argsstring>(const cv::Mat &amp;float_img, cv::Mat &amp;rgb_img, std::string type)</argsstring>
+        <name>depthToRGB</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>float_img</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>rgb_img</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/src/ros/translators.cpp" line="11" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ros/translators.cpp" bodystart="11" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/comm/include/comm/cameraClient.hpp" line="41" column="1"/>
+  </compounddef>
+</doxygen>

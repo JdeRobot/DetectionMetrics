@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_0213ba76a474af25a6f6bc67c93bb40c" kind="dir">
+    <compoundname>DeepLearningSuite/build</compoundname>
+    <innerdir refid="dir_5a24b30a48732c7e10bb30ef66cf8e67">DeepLearningSuite/build/CMakeFiles</innerdir>
+    <innerdir refid="dir_a5dda850a6138703cfe5c3a8e247a98d">DeepLearningSuite/build/DatasetEvaluationApp</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/build/"/>
+  </compounddef>
+</doxygen>

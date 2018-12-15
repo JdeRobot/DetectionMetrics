@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_generic_live_reader" kind="class" language="C++" prot="public">
+    <compoundname>GenericLiveReader</compoundname>
+    <includes refid="_generic_live_reader_8h" local="no">GenericLiveReader.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_generic_live_reader_1a26778e349313aad53769dec697fd7b72" prot="private" static="no" mutable="no">
+        <type><ref refid="_generic_live_reader_8h_1a9ac73e7f971f7df3c96edd221272de41" kindref="member">LIVEREADER_IMPLEMENTATIONS</ref></type>
+        <definition>LIVEREADER_IMPLEMENTATIONS GenericLiveReader::imp</definition>
+        <argsstring></argsstring>
+        <name>imp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_live_reader_1a77fe5291f39aca19b584b0e108aaf12c" prot="private" static="no" mutable="no">
+        <type><ref refid="_video_reader_8h_1a919d4f26d02fadf2d9fa163373311fbf" kindref="member">VideoReaderPtr</ref></type>
+        <definition>VideoReaderPtr GenericLiveReader::videoReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>videoReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_live_reader_1af4b24056023333dde1e6dac875469085" prot="private" static="no" mutable="no">
+        <type><ref refid="_camera_reader_8h_1a29e3dbc3fdc6af679babae485e359faa" kindref="member">CameraReaderPtr</ref></type>
+        <definition>CameraReaderPtr GenericLiveReader::cameraReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>cameraReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" line="29" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_live_reader_1a9b30f990d662302ed243f1ddcddbc431" prot="private" static="no" mutable="no">
+        <type><ref refid="_jderobot_reader_8h_1a8ba9a6449b78871a7512886c1b53dfc0" kindref="member">JderobotReaderPtr</ref></type>
+        <definition>JderobotReaderPtr GenericLiveReader::jderobotReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>jderobotReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" line="30" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_live_reader_1a340060a6662e59429eb3ed029b584b53" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; GenericLiveReader::availableImplementations</definition>
+        <argsstring></argsstring>
+        <name>availableImplementations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" line="32" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_generic_live_reader_1ac343dea4449fb634fd50d8f3f345e324" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GenericLiveReader::GenericLiveReader</definition>
+        <argsstring>(const std::string &amp;path, const std::string &amp;classNamesFile, const std::string &amp;readerImplementation, std::map&lt; std::string, std::string &gt; *deployer_params_map=NULL, int cameraID=-1)</argsstring>
+        <name>GenericLiveReader</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classNamesFile</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>readerImplementation</declname>
+        </param>
+        <param>
+          <type>std::map&lt; std::string, std::string &gt; *</type>
+          <declname>deployer_params_map</declname>
+          <defval>NULL</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>cameraID</declname>
+          <defval>-1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.cpp" bodystart="9" bodyend="37"/>
+        <references refid="_generic_live_reader_8h_1a9ac73e7f971f7df3c96edd221272de41a0e1e918a80f84992ae08463f076d5dc8" compoundref="_generic_live_reader_8h" startline="14">VIDEO</references>
+        <references refid="_generic_live_reader_8h_1a9ac73e7f971f7df3c96edd221272de41ada31f516cdf218b68b790fb31e8a6956" compoundref="_generic_live_reader_8h" startline="14">CAMERA</references>
+        <references refid="_generic_live_reader_8h_1a9ac73e7f971f7df3c96edd221272de41a5fbbb70faa90e614c7cd5a487e85ced5" compoundref="_generic_live_reader_8h" startline="14">STREAM</references>
+      </memberdef>
+      <memberdef kind="function" id="class_generic_live_reader_1a93d5a40fbeb5f241553aa0eca08c3191" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GenericLiveReader::GenericLiveReader</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;paths, const std::string &amp;classNamesFile, const std::string &amp;readerImplementation)</argsstring>
+        <name>GenericLiveReader</name>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>paths</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classNamesFile</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>readerImplementation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.cpp" bodystart="40" bodyend="83"/>
+        <references refid="_generic_live_reader_8h_1a9ac73e7f971f7df3c96edd221272de41a0e1e918a80f84992ae08463f076d5dc8" compoundref="_generic_live_reader_8h" startline="14">VIDEO</references>
+        <references refid="_generic_live_reader_8h_1a9ac73e7f971f7df3c96edd221272de41ada31f516cdf218b68b790fb31e8a6956" compoundref="_generic_live_reader_8h" startline="14">CAMERA</references>
+        <references refid="_generic_live_reader_8h_1a9ac73e7f971f7df3c96edd221272de41a5fbbb70faa90e614c7cd5a487e85ced5" compoundref="_generic_live_reader_8h" startline="14">STREAM</references>
+      </memberdef>
+      <memberdef kind="function" id="class_generic_live_reader_1affd8e47c049501f8e83ab12aafb482ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref></type>
+        <definition>DatasetReaderPtr GenericLiveReader::getReader</definition>
+        <argsstring>()</argsstring>
+        <name>getReader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.cpp" bodystart="116" bodyend="132"/>
+        <references refid="_generic_live_reader_8h_1a9ac73e7f971f7df3c96edd221272de41a0e1e918a80f84992ae08463f076d5dc8" compoundref="_generic_live_reader_8h" startline="14">VIDEO</references>
+        <references refid="_generic_live_reader_8h_1a9ac73e7f971f7df3c96edd221272de41ada31f516cdf218b68b790fb31e8a6956" compoundref="_generic_live_reader_8h" startline="14">CAMERA</references>
+        <references refid="_generic_live_reader_8h_1a9ac73e7f971f7df3c96edd221272de41a5fbbb70faa90e614c7cd5a487e85ced5" compoundref="_generic_live_reader_8h" startline="14">STREAM</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_generic_live_reader_1aaec6f0e9697d31fe2b9f836b22805aa0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; GenericLiveReader::getAvailableImplementations</definition>
+        <argsstring>()</argsstring>
+        <name>getAvailableImplementations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.cpp" bodystart="134" bodyend="139"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_generic_live_reader_1a50712c48614aa7d0c0004d9910724fba" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GenericLiveReader::configureAvailablesImplementations</definition>
+        <argsstring>(std::vector&lt; std::string &gt; &amp;data)</argsstring>
+        <name>configureAvailablesImplementations</name>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" line="34" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.cpp" bodystart="86" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_generic_live_reader_1a90a695adcb4e17bea16a479062b0ee9e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_generic_live_reader_8h_1a9ac73e7f971f7df3c96edd221272de41" kindref="member">LIVEREADER_IMPLEMENTATIONS</ref></type>
+        <definition>LIVEREADER_IMPLEMENTATIONS GenericLiveReader::getImplementation</definition>
+        <argsstring>(const std::string &amp;readerImplementation)</argsstring>
+        <name>getImplementation</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>readerImplementation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" line="35" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.cpp" bodystart="95" bodyend="114"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h" bodystart="17" bodyend="36"/>
+    <listofallmembers>
+      <member refid="class_generic_live_reader_1a340060a6662e59429eb3ed029b584b53" prot="private" virt="non-virtual"><scope>GenericLiveReader</scope><name>availableImplementations</name></member>
+      <member refid="class_generic_live_reader_1af4b24056023333dde1e6dac875469085" prot="private" virt="non-virtual"><scope>GenericLiveReader</scope><name>cameraReaderPtr</name></member>
+      <member refid="class_generic_live_reader_1a50712c48614aa7d0c0004d9910724fba" prot="private" virt="non-virtual"><scope>GenericLiveReader</scope><name>configureAvailablesImplementations</name></member>
+      <member refid="class_generic_live_reader_1ac343dea4449fb634fd50d8f3f345e324" prot="public" virt="non-virtual"><scope>GenericLiveReader</scope><name>GenericLiveReader</name></member>
+      <member refid="class_generic_live_reader_1a93d5a40fbeb5f241553aa0eca08c3191" prot="public" virt="non-virtual"><scope>GenericLiveReader</scope><name>GenericLiveReader</name></member>
+      <member refid="class_generic_live_reader_1aaec6f0e9697d31fe2b9f836b22805aa0" prot="public" virt="non-virtual"><scope>GenericLiveReader</scope><name>getAvailableImplementations</name></member>
+      <member refid="class_generic_live_reader_1a90a695adcb4e17bea16a479062b0ee9e" prot="private" virt="non-virtual"><scope>GenericLiveReader</scope><name>getImplementation</name></member>
+      <member refid="class_generic_live_reader_1affd8e47c049501f8e83ab12aafb482ee" prot="public" virt="non-virtual"><scope>GenericLiveReader</scope><name>getReader</name></member>
+      <member refid="class_generic_live_reader_1a26778e349313aad53769dec697fd7b72" prot="private" virt="non-virtual"><scope>GenericLiveReader</scope><name>imp</name></member>
+      <member refid="class_generic_live_reader_1a9b30f990d662302ed243f1ddcddbc431" prot="private" virt="non-virtual"><scope>GenericLiveReader</scope><name>jderobotReaderPtr</name></member>
+      <member refid="class_generic_live_reader_1a77fe5291f39aca19b584b0e108aaf12c" prot="private" virt="non-virtual"><scope>GenericLiveReader</scope><name>videoReaderPtr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

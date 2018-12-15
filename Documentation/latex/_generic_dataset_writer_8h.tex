@@ -1,0 +1,63 @@
+\hypertarget{_generic_dataset_writer_8h}{}\section{Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Dataset\+Converters/writers/\+Generic\+Dataset\+Writer.h File Reference}
+\label{_generic_dataset_writer_8h}\index{Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Dataset\+Converters/writers/\+Generic\+Dataset\+Writer.\+h@{Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Dataset\+Converters/writers/\+Generic\+Dataset\+Writer.\+h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Dataset\+Writer.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Dataset\+Converters/writers/\+Own\+Dataset\+Writer.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Yolo\+Dataset\+Writer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+O\+C\+O\+Dataset\+Writer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Pascal\+V\+O\+C\+Dataset\+Writer.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_generic_dataset_writer}{Generic\+Dataset\+Writer}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::shared\+\_\+ptr$<$ \hyperlink{class_generic_dataset_writer}{Generic\+Dataset\+Writer} $>$ \hyperlink{_generic_dataset_writer_8h_a191a7e32d151b8c7ca9a3ec4e34dfa53}{Generic\+Dataset\+Writer\+Ptr}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066}{W\+R\+I\+T\+E\+R\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+NS} \{ \hyperlink{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066ab82371b187856d4de3e8112c9da18445}{W\+R\+\_\+\+O\+WN}, 
+\hyperlink{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066a7aca064476488e9f3ee5ca08c924466d}{W\+R\+\_\+\+Y\+O\+LO}, 
+\hyperlink{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066ac6207bdc21aae7a73c7ae7e766c75ac4}{W\+R\+\_\+\+P\+A\+S\+C\+A\+L\+V\+OC}, 
+\hyperlink{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066a3a7c589b65404eb923a50b874ba3f25c}{W\+R\+\_\+\+C\+O\+CO}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{_generic_dataset_writer_8h_a191a7e32d151b8c7ca9a3ec4e34dfa53}\label{_generic_dataset_writer_8h_a191a7e32d151b8c7ca9a3ec4e34dfa53}} 
+\index{Generic\+Dataset\+Writer.\+h@{Generic\+Dataset\+Writer.\+h}!Generic\+Dataset\+Writer\+Ptr@{Generic\+Dataset\+Writer\+Ptr}}
+\index{Generic\+Dataset\+Writer\+Ptr@{Generic\+Dataset\+Writer\+Ptr}!Generic\+Dataset\+Writer.\+h@{Generic\+Dataset\+Writer.\+h}}
+\subsubsection{\texorpdfstring{Generic\+Dataset\+Writer\+Ptr}{GenericDatasetWriterPtr}}
+{\footnotesize\ttfamily typedef boost\+::shared\+\_\+ptr$<$\hyperlink{class_generic_dataset_writer}{Generic\+Dataset\+Writer}$>$ \hyperlink{_generic_dataset_writer_8h_a191a7e32d151b8c7ca9a3ec4e34dfa53}{Generic\+Dataset\+Writer\+Ptr}}
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066}\label{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066}} 
+\index{Generic\+Dataset\+Writer.\+h@{Generic\+Dataset\+Writer.\+h}!W\+R\+I\+T\+E\+R\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+NS@{W\+R\+I\+T\+E\+R\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+NS}}
+\index{W\+R\+I\+T\+E\+R\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+NS@{W\+R\+I\+T\+E\+R\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+NS}!Generic\+Dataset\+Writer.\+h@{Generic\+Dataset\+Writer.\+h}}
+\subsubsection{\texorpdfstring{W\+R\+I\+T\+E\+R\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+NS}{WRITER\_IMPLEMENTATIONS}}
+{\footnotesize\ttfamily enum \hyperlink{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066}{W\+R\+I\+T\+E\+R\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+NS}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+R\+\_\+\+O\+WN@{W\+R\+\_\+\+O\+WN}!Generic\+Dataset\+Writer.\+h@{Generic\+Dataset\+Writer.\+h}}\index{Generic\+Dataset\+Writer.\+h@{Generic\+Dataset\+Writer.\+h}!W\+R\+\_\+\+O\+WN@{W\+R\+\_\+\+O\+WN}}}\mbox{\Hypertarget{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066ab82371b187856d4de3e8112c9da18445}\label{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066ab82371b187856d4de3e8112c9da18445}} 
+W\+R\+\_\+\+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+R\+\_\+\+Y\+O\+LO@{W\+R\+\_\+\+Y\+O\+LO}!Generic\+Dataset\+Writer.\+h@{Generic\+Dataset\+Writer.\+h}}\index{Generic\+Dataset\+Writer.\+h@{Generic\+Dataset\+Writer.\+h}!W\+R\+\_\+\+Y\+O\+LO@{W\+R\+\_\+\+Y\+O\+LO}}}\mbox{\Hypertarget{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066a7aca064476488e9f3ee5ca08c924466d}\label{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066a7aca064476488e9f3ee5ca08c924466d}} 
+W\+R\+\_\+\+Y\+O\+LO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+R\+\_\+\+P\+A\+S\+C\+A\+L\+V\+OC@{W\+R\+\_\+\+P\+A\+S\+C\+A\+L\+V\+OC}!Generic\+Dataset\+Writer.\+h@{Generic\+Dataset\+Writer.\+h}}\index{Generic\+Dataset\+Writer.\+h@{Generic\+Dataset\+Writer.\+h}!W\+R\+\_\+\+P\+A\+S\+C\+A\+L\+V\+OC@{W\+R\+\_\+\+P\+A\+S\+C\+A\+L\+V\+OC}}}\mbox{\Hypertarget{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066ac6207bdc21aae7a73c7ae7e766c75ac4}\label{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066ac6207bdc21aae7a73c7ae7e766c75ac4}} 
+W\+R\+\_\+\+P\+A\+S\+C\+A\+L\+V\+OC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+R\+\_\+\+C\+O\+CO@{W\+R\+\_\+\+C\+O\+CO}!Generic\+Dataset\+Writer.\+h@{Generic\+Dataset\+Writer.\+h}}\index{Generic\+Dataset\+Writer.\+h@{Generic\+Dataset\+Writer.\+h}!W\+R\+\_\+\+C\+O\+CO@{W\+R\+\_\+\+C\+O\+CO}}}\mbox{\Hypertarget{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066a3a7c589b65404eb923a50b874ba3f25c}\label{_generic_dataset_writer_8h_a3c441c5b830d4fcd6d5bdd79b15f4066a3a7c589b65404eb923a50b874ba3f25c}} 
+W\+R\+\_\+\+C\+O\+CO&\\
+\hline
+
+\end{DoxyEnumFields}

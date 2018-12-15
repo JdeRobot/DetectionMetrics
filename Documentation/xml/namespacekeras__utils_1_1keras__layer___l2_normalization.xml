@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacekeras__utils_1_1keras__layer___l2_normalization" kind="namespace" language="Python">
+    <compoundname>keras_utils::keras_layer_L2Normalization</compoundname>
+    <innerclass refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization" prot="public">keras_utils::keras_layer_L2Normalization::L2Normalization</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>A custom Keras layer to perform L2-normalization.
+
+Copyright (C) 2017 Pierluigi Ferrari
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</verbatim> </para>    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_rect_region_8cpp" kind="file" language="C++">
+    <compoundname>RectRegion.cpp</compoundname>
+    <includes refid="_rect_region_8h" local="yes">RectRegion.h</includes>
+    <incdepgraph>
+      <node id="4330">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="4328">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegion.cpp</label>
+        <link refid="_rect_region_8cpp"/>
+        <childnode refid="4329" relation="include">
+        </childnode>
+      </node>
+      <node id="4329">
+        <label>RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="4330" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>25/01/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_rect_region_8h" kindref="compound">RectRegion.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegion.cpp"/>
+  </compounddef>
+</doxygen>

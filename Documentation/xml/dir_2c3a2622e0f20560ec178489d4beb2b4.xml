@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_2c3a2622e0f20560ec178489d4beb2b4" kind="dir">
+    <compoundname>DeepLearningSuite/DatasetEvaluationApp</compoundname>
+    <innerdir refid="dir_f5639b98007a08348e88250c8bbe3b60">DeepLearningSuite/DatasetEvaluationApp/gui</innerdir>
+    <innerdir refid="dir_ef3a148e0ae3a855b110d50627de4d6c">DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler</innerdir>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <innerfile refid="mainwindow_8cpp">mainwindow.cpp</innerfile>
+    <innerfile refid="mainwindow_8h">mainwindow.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/"/>
+  </compounddef>
+</doxygen>

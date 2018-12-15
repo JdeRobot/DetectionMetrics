@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_camera_utils" kind="class" language="C++" prot="public">
+    <compoundname>CameraUtils</compoundname>
+    <includes refid="_camera_utils_8h" local="no">CameraUtils.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_camera_utils_1a926f945480f84f9a2078cfd651b15c33" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat CameraUtils::getImageFromCameraProxy</definition>
+        <argsstring>(jderobot::ImageDataPtr dataPtr)</argsstring>
+        <name>getImageFromCameraProxy</name>
+        <param>
+          <type>jderobot::ImageDataPtr</type>
+          <declname>dataPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/CameraUtils.h" line="15" column="1" bodyfile="DeepLearningSuite/libs/utils/CameraUtils.cpp" bodystart="11" bodyend="112"/>
+        <references refid="classcolorspaces_1_1_image_1_1_format_1a6aab83855bf18ba00c86bccc79075d0c" compoundref="imagecv_8cpp" startline="22" endline="30">colorspaces::Image::Format::searchFormat</references>
+        <references refid="classcolorspaces_1_1_image_r_g_b8_1a02a89815364677755b02998334820324" compoundref="imagecv_8h" startline="185">colorspaces::ImageRGB8::FORMAT_RGB8_Z</references>
+        <references refid="classcolorspaces_1_1_image_r_g_b8_1accd7299575ca7ba2e2c1f339c00fe102" compoundref="imagecv_8h" startline="185">colorspaces::ImageRGB8::FORMAT_DEPTH8_16_Z</references>
+        <references refid="classcolorspaces_1_1_image_r_g_b8_1abb2bd76934dd71bb401db29cd5082b5c" compoundref="imagecv_8h" startline="185">colorspaces::ImageRGB8::FORMAT_RGB8</references>
+        <references refid="classcolorspaces_1_1_image_1ab80af7d4797110c23ed575b329ec7c4f" compoundref="imagecv_8h" startline="130">colorspaces::Image::width</references>
+        <references refid="classcolorspaces_1_1_image_1a99a05ebd37f61215b2c3042ecaefdbfc" compoundref="imagecv_8h" startline="131">colorspaces::Image::height</references>
+        <references refid="classcolorspaces_1_1_image_r_g_b8_1a9425bfababa3570fc70730c4ec76ae51" compoundref="imagecv_8h" startline="185">colorspaces::ImageRGB8::FORMAT_DEPTH8_16</references>
+        <references refid="classcolorspaces_1_1_image_g_r_a_y8_1af37dcabe8bbf5ef6f73ed790c88e4896" compoundref="imagecv_8h" startline="275">colorspaces::ImageGRAY8::FORMAT_GRAY8_Z</references>
+        <references refid="classcolorspaces_1_1_image_g_r_a_y8_1a9bfb4420590a581d76aaaffb3a22806a" compoundref="imagecv_8h" startline="275">colorspaces::ImageGRAY8::FORMAT_GRAY8</references>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1a74d06122ed0688df849d2de07bbd0a03" compoundref="camera_ice_client_8cpp" startline="110" endline="192">Comm::CameraIceClient::run</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_utils_1a4eb121d34116f081d07a7cbf6994b43e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string CameraUtils::negotiateDefaultFormat</definition>
+        <argsstring>(jderobot::CameraPrx prx, const std::string &amp;definedFormat)</argsstring>
+        <name>negotiateDefaultFormat</name>
+        <param>
+          <type>jderobot::CameraPrx</type>
+          <declname>prx</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>definedFormat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/CameraUtils.h" line="16" column="1" bodyfile="DeepLearningSuite/libs/utils/CameraUtils.cpp" bodystart="114" bodyend="155"/>
+        <references refid="classcolorspaces_1_1_image_r_g_b8_1abb2bd76934dd71bb401db29cd5082b5c" compoundref="imagecv_8h" startline="185">colorspaces::ImageRGB8::FORMAT_RGB8</references>
+        <references refid="classcolorspaces_1_1_image_r_g_b8_1a02a89815364677755b02998334820324" compoundref="imagecv_8h" startline="185">colorspaces::ImageRGB8::FORMAT_RGB8_Z</references>
+        <references refid="classcolorspaces_1_1_image_r_g_b8_1a9425bfababa3570fc70730c4ec76ae51" compoundref="imagecv_8h" startline="185">colorspaces::ImageRGB8::FORMAT_DEPTH8_16</references>
+        <references refid="classcolorspaces_1_1_image_r_g_b8_1accd7299575ca7ba2e2c1f339c00fe102" compoundref="imagecv_8h" startline="185">colorspaces::ImageRGB8::FORMAT_DEPTH8_16_Z</references>
+        <references refid="classcolorspaces_1_1_image_g_r_a_y8_1a9bfb4420590a581d76aaaffb3a22806a" compoundref="imagecv_8h" startline="275">colorspaces::ImageGRAY8::FORMAT_GRAY8</references>
+        <references refid="classcolorspaces_1_1_image_g_r_a_y8_1af37dcabe8bbf5ef6f73ed790c88e4896" compoundref="imagecv_8h" startline="275">colorspaces::ImageGRAY8::FORMAT_GRAY8_Z</references>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1aa59fe901fa8a7c4b0cb2404a0922905e" compoundref="camera_ice_client_8cpp" startline="30" endline="72">Comm::CameraIceClient::CameraIceClient</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_utils_1a432aaed36b79f14f122991b883f6382c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool CameraUtils::compressImage</definition>
+        <argsstring>(const cv::Mat &amp;image, unsigned char **compressed_data, unsigned long &amp;compress_len)</argsstring>
+        <name>compressImage</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>unsigned char **</type>
+          <declname>compressed_data</declname>
+        </param>
+        <param>
+          <type>unsigned long &amp;</type>
+          <declname>compress_len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/CameraUtils.h" line="17" column="1" bodyfile="DeepLearningSuite/libs/utils/CameraUtils.cpp" bodystart="157" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="class_camera_utils_1a38071971e6fec4d3786223ebd972e778" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>jderobot::ImageDataPtr</type>
+        <definition>jderobot::ImageDataPtr CameraUtils::convert</definition>
+        <argsstring>(const cv::Mat &amp;image)</argsstring>
+        <name>convert</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/CameraUtils.h" line="18" column="1" bodyfile="DeepLearningSuite/libs/utils/CameraUtils.cpp" bodystart="182" bodyend="195"/>
+        <references refid="classcolorspaces_1_1_image_r_g_b8_1abb2bd76934dd71bb401db29cd5082b5c" compoundref="imagecv_8h" startline="185">colorspaces::ImageRGB8::FORMAT_RGB8</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/utils/CameraUtils.h" line="13" column="1" bodyfile="DeepLearningSuite/libs/utils/CameraUtils.h" bodystart="13" bodyend="19"/>
+    <listofallmembers>
+      <member refid="class_camera_utils_1a432aaed36b79f14f122991b883f6382c" prot="public" virt="non-virtual"><scope>CameraUtils</scope><name>compressImage</name></member>
+      <member refid="class_camera_utils_1a38071971e6fec4d3786223ebd972e778" prot="public" virt="non-virtual"><scope>CameraUtils</scope><name>convert</name></member>
+      <member refid="class_camera_utils_1a926f945480f84f9a2078cfd651b15c33" prot="public" virt="non-virtual"><scope>CameraUtils</scope><name>getImageFromCameraProxy</name></member>
+      <member refid="class_camera_utils_1a4eb121d34116f081d07a7cbf6994b43e" prot="public" virt="non-virtual"><scope>CameraUtils</scope><name>negotiateDefaultFormat</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

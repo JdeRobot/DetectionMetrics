@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_stats_utils_8h" kind="file" language="C++">
+    <compoundname>StatsUtils.h</compoundname>
+    <includes local="no">opencv2/opencv.hpp</includes>
+    <includes refid="_sample_8h" local="no">Common/Sample.h</includes>
+    <includes refid="_eval_matrix_8h" local="no">Common/EvalMatrix.h</includes>
+    <includedby refid="_detections_evaluator_8cpp" local="no">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp</includedby>
+    <includedby refid="_stats_utils_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/Utils/StatsUtils.cpp</includedby>
+    <incdepgraph>
+      <node id="4986">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="4993">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="4991">
+        <label>Regions/RleRegions.h</label>
+        <link refid="_rle_regions_8h"/>
+        <childnode refid="4982" relation="include">
+        </childnode>
+        <childnode refid="4985" relation="include">
+        </childnode>
+        <childnode refid="4992" relation="include">
+        </childnode>
+      </node>
+      <node id="4984">
+        <label>Regions/RectRegions.h</label>
+        <link refid="_rect_regions_8h"/>
+        <childnode refid="4982" relation="include">
+        </childnode>
+        <childnode refid="4985" relation="include">
+        </childnode>
+        <childnode refid="4987" relation="include">
+        </childnode>
+        <childnode refid="4988" relation="include">
+        </childnode>
+      </node>
+      <node id="4985">
+        <label>Regions.h</label>
+        <link refid="_regions_8h"/>
+        <childnode refid="4982" relation="include">
+        </childnode>
+        <childnode refid="4986" relation="include">
+        </childnode>
+      </node>
+      <node id="4982">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="4994">
+        <label>Common/EvalMatrix.h</label>
+        <link refid="_eval_matrix_8h"/>
+        <childnode refid="4995" relation="include">
+        </childnode>
+        <childnode refid="4997" relation="include">
+        </childnode>
+      </node>
+      <node id="4997">
+        <label>map</label>
+      </node>
+      <node id="4989">
+        <label>Regions/ContourRegions.h</label>
+        <link refid="_contour_regions_8h"/>
+        <childnode refid="4982" relation="include">
+        </childnode>
+        <childnode refid="4985" relation="include">
+        </childnode>
+        <childnode refid="4990" relation="include">
+        </childnode>
+      </node>
+      <node id="4992">
+        <label>RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="4986" relation="include">
+        </childnode>
+        <childnode refid="4993" relation="include">
+        </childnode>
+      </node>
+      <node id="4983">
+        <label>Common/Sample.h</label>
+        <link refid="_sample_8h"/>
+        <childnode refid="4984" relation="include">
+        </childnode>
+        <childnode refid="4989" relation="include">
+        </childnode>
+        <childnode refid="4991" relation="include">
+        </childnode>
+      </node>
+      <node id="4996">
+        <label>vector</label>
+      </node>
+      <node id="4981">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Utils/StatsUtils.h</label>
+        <link refid="_stats_utils_8h"/>
+        <childnode refid="4982" relation="include">
+        </childnode>
+        <childnode refid="4983" relation="include">
+        </childnode>
+        <childnode refid="4994" relation="include">
+        </childnode>
+      </node>
+      <node id="4995">
+        <label>Matrix.h</label>
+        <link refid="_matrix_8h"/>
+        <childnode refid="4996" relation="include">
+        </childnode>
+      </node>
+      <node id="4990">
+        <label>ContourRegion.h</label>
+        <link refid="_contour_region_8h"/>
+        <childnode refid="4982" relation="include">
+        </childnode>
+        <childnode refid="4986" relation="include">
+        </childnode>
+      </node>
+      <node id="4987">
+        <label>RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="4982" relation="include">
+        </childnode>
+      </node>
+      <node id="4988">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4998">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Utils/StatsUtils.h</label>
+        <link refid="_stats_utils_8h"/>
+        <childnode refid="4999" relation="include">
+        </childnode>
+        <childnode refid="5000" relation="include">
+        </childnode>
+      </node>
+      <node id="5000">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Utils/StatsUtils.cpp</label>
+        <link refid="_stats_utils_8cpp"/>
+      </node>
+      <node id="4999">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp</label>
+        <link refid="_detections_evaluator_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_stats_utils" prot="public">StatsUtils</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>7/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_STATSUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_STATSUTILS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/opencv.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_sample_8h" kindref="compound">Common/Sample.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_eval_matrix_8h" kindref="compound">Common/EvalMatrix.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="class_stats_utils" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_stats_utils" kindref="compound">StatsUtils</ref><sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_stats_utils_1a88224307181b4b86d5e611e34e77587e" kindref="member">getIOU</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Rect_&lt;double&gt;<sp/>&amp;gt,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Rect_&lt;double&gt;<sp/>&amp;detection,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isCrowd);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_stats_utils_1ab2ddaf474a74534ae5896d7d564d9a68" kindref="member">computeIOUMatrix</ref>(<ref refid="struct_sample" kindref="compound">Sample</ref><sp/>gt,<sp/><ref refid="struct_sample" kindref="compound">Sample</ref><sp/>detection,<sp/><ref refid="namespace_eval_1a565709ccceb6f242086a1bab22551525" kindref="member">Eval::EvalMatrix</ref>&amp;<sp/>evalmatrix,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isIouTypeBbox);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_STATSUTILS_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/StatsUtils.h"/>
+  </compounddef>
+</doxygen>

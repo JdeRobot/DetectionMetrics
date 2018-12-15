@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="load_image_8py" kind="file" language="Python">
+    <compoundname>loadImage.py</compoundname>
+    <innernamespace refid="namespaceload_image">loadImage</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespaceload_image" refkind="compound"><highlight class="keyword">from</highlight><highlight class="normal"><sp/>PIL<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Image</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" refkind="member"><highlight class="normal">path=</highlight><highlight class="stringliteral">&quot;/mnt/large/pentalo/deep/external_datasets/princeton/EvaluationSet/bag1/depth/d-0-1.png&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="namespaceload_image_1a35a31d7c34c8aef3518b668b7c7b3cc1" refkind="member"><highlight class="normal">im<sp/>=<sp/>Image.open(path)</highlight></codeline>
+<codeline lineno="6" refid="namespaceload_image_1a7db8b47946ece3163cc9ba0da721af88" refkind="member"><highlight class="normal">red<sp/>=<sp/>im.getextrema()</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordflow">print</highlight><highlight class="normal"><sp/>red</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">im.show()</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="datasetGenerator/loadImage.py"/>
+  </compounddef>
+</doxygen>

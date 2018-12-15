@@ -1,0 +1,64 @@
+.TH "DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string>\fP
+.br
+\fC#include 'DatasetWriter\&.h'\fP
+.br
+\fC#include <DatasetConverters/writers/OwnDatasetWriter\&.h>\fP
+.br
+\fC#include 'YoloDatasetWriter\&.h'\fP
+.br
+\fC#include 'COCODatasetWriter\&.h'\fP
+.br
+\fC#include 'PascalVOCDatasetWriter\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBGenericDatasetWriter\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef boost::shared_ptr< \fBGenericDatasetWriter\fP > \fBGenericDatasetWriterPtr\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBWRITER_IMPLEMENTATIONS\fP { \fBWR_OWN\fP, \fBWR_YOLO\fP, \fBWR_PASCALVOC\fP, \fBWR_COCO\fP }"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef boost::shared_ptr<\fBGenericDatasetWriter\fP> \fBGenericDatasetWriterPtr\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBWRITER_IMPLEMENTATIONS\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIWR_OWN \fP\fP
+.TP
+\fB\fIWR_YOLO \fP\fP
+.TP
+\fB\fIWR_PASCALVOC \fP\fP
+.TP
+\fB\fIWR_COCO \fP\fP
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

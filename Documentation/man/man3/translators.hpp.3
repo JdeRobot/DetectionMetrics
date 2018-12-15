@@ -1,0 +1,51 @@
+.TH "DeepLearningSuite/libs/comm/include/comm/ros/translators.hpp" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DeepLearningSuite/libs/comm/include/comm/ros/translators.hpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ros/ros\&.h>\fP
+.br
+\fC#include <cv\&.h>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <jderobottypes/image\&.h>\fP
+.br
+\fC#include <jderobottypes/rgbd\&.h>\fP
+.br
+\fC#include 'image_transport/image_transport\&.h'\fP
+.br
+\fC#include 'cv_bridge/cv_bridge\&.h'\fP
+.br
+\fC#include 'sensor_msgs/image_encodings\&.h'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBComm\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBJdeRobotTypes::Image\fP \fBComm::translate_image_messages\fP (const sensor_msgs::ImageConstPtr &image_msg)"
+.br
+.RI "translate ROS Image messages to JdeRobot Image "
+.ti -1c
+.RI "\fBJdeRobotTypes::Rgbd\fP \fBComm::translate_rgbd\fP (const sensor_msgs::ImageConstPtr &rgb, const sensor_msgs::ImageConstPtr &d)"
+.br
+.RI "translate ROS images messages to JdeRobot Rgbd "
+.ti -1c
+.RI "void \fBComm::depthToRGB\fP (const cv::Mat &float_img, cv::Mat &rgb_img)"
+.br
+.RI "Translates from 32FC1 Image format to RGB\&. Inf values are represented by NaN, when converting to RGB, NaN passed to 0\&. "
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

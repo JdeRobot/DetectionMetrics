@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_dataset_converter" kind="class" language="C++" prot="public">
+    <compoundname>DatasetConverter</compoundname>
+    <includes refid="_dataset_converter_8h" local="no">DatasetConverter.h</includes>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/DatasetConverter.h" line="9" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/DatasetConverter.h" bodystart="9" bodyend="11"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

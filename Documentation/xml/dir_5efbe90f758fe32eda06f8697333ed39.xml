@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_5efbe90f758fe32eda06f8697333ed39" kind="dir">
+    <compoundname>DeepLearningSuite/build/DatasetEvaluationApp/DatasetEvaluationApp_autogen/EWIEGA46WW</compoundname>
+    <innerfile refid="moc__mainwindow_8cpp">moc_mainwindow.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/build/DatasetEvaluationApp/DatasetEvaluationApp_autogen/EWIEGA46WW/"/>
+  </compounddef>
+</doxygen>

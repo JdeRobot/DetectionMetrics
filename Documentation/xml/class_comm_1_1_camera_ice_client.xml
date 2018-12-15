@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_comm_1_1_camera_ice_client" kind="class" language="C++" prot="public">
+    <compoundname>Comm::CameraIceClient</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Thread</basecompoundref>
+    <basecompoundref refid="class_comm_1_1_camera_client" prot="public" virt="non-virtual">Comm::CameraClient</basecompoundref>
+    <includes refid="camera_ice_client_8hpp" local="no">cameraIceClient.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_comm_1_1_camera_ice_client_1ad7413d03d6bf65604b43e9bd7f3726ed" prot="private" static="no" mutable="no">
+        <type>jderobot::CameraPrx</type>
+        <definition>jderobot::CameraPrx Comm::CameraIceClient::prx</definition>
+        <argsstring></argsstring>
+        <name>prx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="61" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_comm_1_1_camera_ice_client_1a1e7b17b40379bbdb16c8e5b9ae4c1444" prot="private" static="no" mutable="no">
+        <type>long long int</type>
+        <definition>long long int Comm::CameraIceClient::cycle</definition>
+        <argsstring></argsstring>
+        <name>cycle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="62" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_comm_1_1_camera_ice_client_1a8d4ecb1aa1c8d72c304bea96d56cb000" prot="private" static="no" mutable="no">
+        <type>IceUtil::Mutex</type>
+        <definition>IceUtil::Mutex Comm::CameraIceClient::controlMutex</definition>
+        <argsstring></argsstring>
+        <name>controlMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="64" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_comm_1_1_camera_ice_client_1a6540ebcfda26165121e742a5c022ace5" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Comm::CameraIceClient::prefix</definition>
+        <argsstring></argsstring>
+        <name>prefix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="65" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_comm_1_1_camera_ice_client_1af2c3e8d2c00e59b6fe3f91d59cf987b5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Comm::CameraIceClient::pauseStatus</definition>
+        <argsstring></argsstring>
+        <name>pauseStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="67" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_comm_1_1_camera_ice_client_1ac04e9c850d93013f85991d63260c3e04" prot="private" static="no" mutable="no">
+        <type>IceUtil::Cond</type>
+        <definition>IceUtil::Cond Comm::CameraIceClient::semWait</definition>
+        <argsstring></argsstring>
+        <name>semWait</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="69" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_comm_1_1_camera_ice_client_1a616edea5577e5006d541aa5cdc44dc4b" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Comm::CameraIceClient::mImageFormat</definition>
+        <argsstring></argsstring>
+        <name>mImageFormat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="70" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_comm_1_1_camera_ice_client_1aa59fe901fa8a7c4b0cb2404a0922905e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Comm::CameraIceClient::CameraIceClient</definition>
+        <argsstring>(Comm::Communicator *jdrc, std::string prefix)</argsstring>
+        <name>CameraIceClient</name>
+        <param>
+          <type><ref refid="class_comm_1_1_communicator" kindref="compound">Comm::Communicator</ref> *</type>
+          <declname>jdrc</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>prefix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="41" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp" bodystart="30" bodyend="72"/>
+        <references refid="class_comm_1_1_camera_client_1ac5499dca33e4d1bfd11f1ad1143bc8f6" compoundref="interfaces_2camera_client_8hpp" startline="35">Comm::CameraClient::refreshRate</references>
+        <references refid="class_comm_1_1_communicator_1ab03173df851ed3eb0f84f83f1ecd455f" compoundref="communicator_8cpp" startline="40" endline="42">Comm::Communicator::getConfig</references>
+        <references refid="class_config_1_1_properties_1a30c642acc0904cf510825bf29034eb95" compoundref="properties_8cpp" startline="149" endline="160">Config::Properties::asFloatWithDefault</references>
+        <references refid="class_config_1_1_properties_1a87fb20ec94658e8ce0cce06b239019be" compoundref="properties_8cpp" startline="119" endline="124">Config::Properties::asString</references>
+        <references refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" compoundref="interfaces_2camera_client_8hpp" startline="32">Comm::CameraClient::on</references>
+        <references refid="class_config_1_1_properties_1a38019252713b2a815b78eab3a4e00e75" compoundref="properties_8cpp" startline="127" endline="138">Config::Properties::asStringWithDefault</references>
+        <references refid="class_camera_utils_1a4eb121d34116f081d07a7cbf6994b43e" compoundref="_camera_utils_8cpp" startline="114" endline="155">CameraUtils::negotiateDefaultFormat</references>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_camera_ice_client_1a2c506c1c710f2f9daae1a62bd743ffbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>Comm::CameraIceClient::~CameraIceClient</definition>
+        <argsstring>()</argsstring>
+        <name>~CameraIceClient</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="42" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp" bodystart="75" bodyend="77"/>
+        <references refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" compoundref="interfaces_2camera_client_8hpp" startline="32">Comm::CameraClient::on</references>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_camera_ice_client_1a74d06122ed0688df849d2de07bbd0a03" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Comm::CameraIceClient::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="43" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp" bodystart="110" bodyend="192"/>
+        <references refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" compoundref="interfaces_2camera_client_8hpp" startline="32">Comm::CameraClient::on</references>
+        <references refid="class_jde_robot_types_1_1_image_1a00caf819fb206f75e125f9a63f78cb8a" compoundref="image_8h" startline="34">JdeRobotTypes::Image::data</references>
+        <references refid="class_camera_utils_1a926f945480f84f9a2078cfd651b15c33" compoundref="_camera_utils_8cpp" startline="11" endline="112">CameraUtils::getImageFromCameraProxy</references>
+        <references refid="class_jde_robot_types_1_1_image_1ac702a6dbc5f6d6009524159bcc4d07e4" compoundref="image_8h" startline="33">JdeRobotTypes::Image::format</references>
+        <references refid="class_jde_robot_types_1_1_image_1ac377507ac13a54f523169f55911e3147" compoundref="image_8h" startline="31">JdeRobotTypes::Image::width</references>
+        <references refid="class_jde_robot_types_1_1_image_1ad3b073fd5f50c62c535d0083ca0f9ae9" compoundref="image_8h" startline="30">JdeRobotTypes::Image::height</references>
+        <references refid="class_jde_robot_types_1_1_image_1a4557271a34c2a35e6a9c03946ed2332c" compoundref="image_8h" startline="32">JdeRobotTypes::Image::timeStamp</references>
+        <references refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" compoundref="interfaces_2camera_client_8hpp" startline="34">Comm::CameraClient::image</references>
+        <references refid="class_comm_1_1_camera_client_1ac5499dca33e4d1bfd11f1ad1143bc8f6" compoundref="interfaces_2camera_client_8hpp" startline="35">Comm::CameraClient::refreshRate</references>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_camera_ice_client_1aff1f3ff0d95d8a04aacfe5cfc9955740" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_jde_robot_types_1_1_image" kindref="compound">JdeRobotTypes::Image</ref></type>
+        <definition>JdeRobotTypes::Image Comm::CameraIceClient::getImage</definition>
+        <argsstring>()</argsstring>
+        <name>getImage</name>
+        <reimplements refid="class_comm_1_1_camera_client_1a1947976aa6b31734b9938091e63782e2">getImage</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="46" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp" bodystart="199" bodyend="207"/>
+        <references refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" compoundref="interfaces_2camera_client_8hpp" startline="34">Comm::CameraClient::image</references>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_camera_ice_client_1a4c6bcb1559bd04fe1b55461352056430" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int Comm::CameraIceClient::getRefreshRate</definition>
+        <argsstring>()</argsstring>
+        <name>getRefreshRate</name>
+        <reimplements refid="class_comm_1_1_camera_client_1afa8d54f4d72921376ec35607897ab5bc">getRefreshRate</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="47" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp" bodystart="209" bodyend="216"/>
+        <references refid="class_comm_1_1_camera_client_1ac5499dca33e4d1bfd11f1ad1143bc8f6" compoundref="interfaces_2camera_client_8hpp" startline="35">Comm::CameraClient::refreshRate</references>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_camera_ice_client_1a7ebc60a1d24250d7e5576cc31379d713" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Comm::CameraIceClient::pause</definition>
+        <argsstring>()</argsstring>
+        <name>pause</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="50" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp" bodystart="97" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_camera_ice_client_1aff6fbedebcb3952d1bd30b817566dede" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Comm::CameraIceClient::resume</definition>
+        <argsstring>()</argsstring>
+        <name>resume</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="51" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp" bodystart="101" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_camera_ice_client_1af8e062a6dc719ea32e77a8ce86ef9880" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Comm::CameraIceClient::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="52" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp" bodystart="93" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_camera_ice_client_1afde034cca2e5396b5c439069dfab4725" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Comm::CameraIceClient::stop_thread</definition>
+        <argsstring>()</argsstring>
+        <name>stop_thread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="53" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp" bodystart="194" bodyend="197"/>
+        <references refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" compoundref="interfaces_2camera_client_8hpp" startline="32">Comm::CameraClient::on</references>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_camera_ice_client_1abedbd7e2e8c3cd30a98e021ed32b669b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Comm::CameraIceClient::getPause</definition>
+        <argsstring>()</argsstring>
+        <name>getPause</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="54" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" bodystart="54" bodyend="54"/>
+        <references refid="class_comm_1_1_camera_ice_client_1a9bae237053652d87942735619c15108a" compoundref="camera_ice_client_8cpp" startline="80" endline="83">getImageFormat</references>
+        <references refid="class_comm_1_1_camera_ice_client_1a1d6d27613011cd14091c8162459b2388" compoundref="camera_ice_client_8cpp" startline="85" endline="90">setImageFormat</references>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_camera_ice_client_1a9bae237053652d87942735619c15108a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>jderobot::ImageFormat</type>
+        <definition>jderobot::ImageFormat Comm::CameraIceClient::getImageFormat</definition>
+        <argsstring>()</argsstring>
+        <name>getImageFormat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="56" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp" bodystart="80" bodyend="83"/>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1abedbd7e2e8c3cd30a98e021ed32b669b" compoundref="camera_ice_client_8hpp" startline="54" endline="54">getPause</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_comm_1_1_camera_ice_client_1a1d6d27613011cd14091c8162459b2388" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Comm::CameraIceClient::setImageFormat</definition>
+        <argsstring>(std::string format)</argsstring>
+        <name>setImageFormat</name>
+        <param>
+          <type>std::string</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="57" column="1" bodyfile="DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp" bodystart="85" bodyend="90"/>
+        <referencedby refid="class_comm_1_1_camera_ice_client_1abedbd7e2e8c3cd30a98e021ed32b669b" compoundref="camera_ice_client_8hpp" startline="54" endline="54">getPause</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="17">
+        <label>Comm::CameraIceClient</label>
+        <link refid="class_comm_1_1_camera_ice_client"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Comm::CameraClient</label>
+        <link refid="class_comm_1_1_camera_client"/>
+      </node>
+      <node id="18">
+        <label>IceUtil::Thread</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="20">
+        <label>Comm::CameraIceClient</label>
+        <link refid="class_comm_1_1_camera_ice_client"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>Comm::CameraClient</label>
+        <link refid="class_comm_1_1_camera_client"/>
+        <childnode refid="23" relation="usage">
+          <edgelabel>image</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>JdeRobotTypes::Image</label>
+        <link refid="class_jde_robot_types_1_1_image"/>
+      </node>
+      <node id="21">
+        <label>IceUtil::Thread</label>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" line="39" column="1" bodyfile="DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp" bodystart="39" bodyend="72"/>
+    <listofallmembers>
+      <member refid="class_comm_1_1_camera_ice_client_1aa59fe901fa8a7c4b0cb2404a0922905e" prot="public" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>CameraIceClient</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1a8d4ecb1aa1c8d72c304bea96d56cb000" prot="private" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>controlMutex</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1a1e7b17b40379bbdb16c8e5b9ae4c1444" prot="private" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>cycle</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1aff1f3ff0d95d8a04aacfe5cfc9955740" prot="public" virt="virtual"><scope>Comm::CameraIceClient</scope><name>getImage</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1a9bae237053652d87942735619c15108a" prot="public" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>getImageFormat</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1abedbd7e2e8c3cd30a98e021ed32b669b" prot="public" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>getPause</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1a4c6bcb1559bd04fe1b55461352056430" prot="public" virt="virtual"><scope>Comm::CameraIceClient</scope><name>getRefreshRate</name></member>
+      <member refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" prot="protected" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>image</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1a616edea5577e5006d541aa5cdc44dc4b" prot="private" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>mImageFormat</name></member>
+      <member refid="class_comm_1_1_camera_client_1a72b2845560d1aa56b52cd8d8c191645a" prot="public" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>on</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1a7ebc60a1d24250d7e5576cc31379d713" prot="public" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>pause</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1af2c3e8d2c00e59b6fe3f91d59cf987b5" prot="private" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>pauseStatus</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1a6540ebcfda26165121e742a5c022ace5" prot="private" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>prefix</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1ad7413d03d6bf65604b43e9bd7f3726ed" prot="private" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>prx</name></member>
+      <member refid="class_comm_1_1_camera_client_1ac5499dca33e4d1bfd11f1ad1143bc8f6" prot="protected" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>refreshRate</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1af8e062a6dc719ea32e77a8ce86ef9880" prot="public" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>reset</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1aff6fbedebcb3952d1bd30b817566dede" prot="public" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>resume</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1a74d06122ed0688df849d2de07bbd0a03" prot="public" virt="virtual"><scope>Comm::CameraIceClient</scope><name>run</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1ac04e9c850d93013f85991d63260c3e04" prot="private" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>semWait</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1a1d6d27613011cd14091c8162459b2388" prot="public" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>setImageFormat</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1afde034cca2e5396b5c439069dfab4725" prot="public" virt="non-virtual"><scope>Comm::CameraIceClient</scope><name>stop_thread</name></member>
+      <member refid="class_comm_1_1_camera_ice_client_1a2c506c1c710f2f9daae1a62bd743ffbc" prot="public" virt="virtual"><scope>Comm::CameraIceClient</scope><name>~CameraIceClient</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

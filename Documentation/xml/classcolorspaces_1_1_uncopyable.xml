@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classcolorspaces_1_1_uncopyable" kind="class" language="C++" prot="public">
+    <compoundname>colorspaces::Uncopyable</compoundname>
+    <derivedcompoundref refid="classcolorspaces_1_1_image_1_1_format" prot="public" virt="non-virtual">colorspaces::Image::Format</derivedcompoundref>
+    <includes refid="uncopyable_8h" local="no">uncopyable.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcolorspaces_1_1_uncopyable_1a9269ace107d3f5f8fe3e164af452e775" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>colorspaces::Uncopyable::Uncopyable</definition>
+        <argsstring>()</argsstring>
+        <name>Uncopyable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/uncopyable.h" line="29" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/uncopyable.h" bodystart="29" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcolorspaces_1_1_uncopyable_1a911d55d2c3242fa01568a8756f248068" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>colorspaces::Uncopyable::Uncopyable</definition>
+        <argsstring>(const Uncopyable &amp;)</argsstring>
+        <name>Uncopyable</name>
+        <param>
+          <type>const <ref refid="classcolorspaces_1_1_uncopyable" kindref="compound">Uncopyable</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/uncopyable.h" line="31" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classcolorspaces_1_1_uncopyable_1a92e963817c1ed24f0d19908d592f673b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classcolorspaces_1_1_uncopyable" kindref="compound">Uncopyable</ref> &amp;</type>
+        <definition>Uncopyable&amp; colorspaces::Uncopyable::operator=</definition>
+        <argsstring>(const Uncopyable &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classcolorspaces_1_1_uncopyable" kindref="compound">Uncopyable</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/uncopyable.h" line="32" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="348">
+        <label>colorspaces::Uncopyable</label>
+        <link refid="classcolorspaces_1_1_uncopyable"/>
+      </node>
+      <node id="349">
+        <label>colorspaces::Image::Format</label>
+        <link refid="classcolorspaces_1_1_image_1_1_format"/>
+        <childnode refid="348" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="DeepLearningSuite/libs/utils/colorspaces/uncopyable.h" line="27" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/uncopyable.h" bodystart="27" bodyend="33"/>
+    <listofallmembers>
+      <member refid="classcolorspaces_1_1_uncopyable_1a92e963817c1ed24f0d19908d592f673b" prot="private" virt="non-virtual"><scope>colorspaces::Uncopyable</scope><name>operator=</name></member>
+      <member refid="classcolorspaces_1_1_uncopyable_1a9269ace107d3f5f8fe3e164af452e775" prot="public" virt="non-virtual"><scope>colorspaces::Uncopyable</scope><name>Uncopyable</name></member>
+      <member refid="classcolorspaces_1_1_uncopyable_1a911d55d2c3242fa01568a8756f248068" prot="private" virt="non-virtual"><scope>colorspaces::Uncopyable</scope><name>Uncopyable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_class_type_generic_8cpp" kind="file" language="C++">
+    <compoundname>ClassTypeGeneric.cpp</compoundname>
+    <includes local="no">fstream</includes>
+    <includes refid="_class_type_generic_8h" local="yes">ClassTypeGeneric.h</includes>
+    <incdepgraph>
+      <node id="1578">
+        <label>ClassType.h</label>
+        <link refid="_class_type_8h"/>
+        <childnode refid="1579" relation="include">
+        </childnode>
+      </node>
+      <node id="1579">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="1576">
+        <label>fstream</label>
+      </node>
+      <node id="1575">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.cpp</label>
+        <link refid="_class_type_generic_8cpp"/>
+        <childnode refid="1576" relation="include">
+        </childnode>
+        <childnode refid="1577" relation="include">
+        </childnode>
+      </node>
+      <node id="1577">
+        <label>ClassTypeGeneric.h</label>
+        <link refid="_class_type_generic_8h"/>
+        <childnode refid="1578" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>9/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_class_type_generic_8h" kindref="compound">ClassTypeGeneric.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="struct_class_type_generic_1a6f6c4bdaff0c95b705261e7d98db6c10" refkind="member"><highlight class="normal"><ref refid="struct_class_type_generic_1a6f6c4bdaff0c95b705261e7d98db6c10" kindref="member">ClassTypeGeneric::ClassTypeGeneric</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;classesFile)<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_class_type_generic_1aff4300aa3e2616422062c5ad88f3209a" kindref="member">fillStringClassesVector</ref>(classesFile);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="struct_class_type_generic_1adee43b8b4a2c707e92aabb8483541c2e" refkind="member"><highlight class="normal"><ref refid="struct_class_type_generic_1a6f6c4bdaff0c95b705261e7d98db6c10" kindref="member">ClassTypeGeneric::ClassTypeGeneric</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;classesFile,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_class_type_generic_1aff4300aa3e2616422062c5ad88f3209a" kindref="member">fillStringClassesVector</ref>(classesFile);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" kindref="member">classID</ref>=this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>[id];</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="struct_class_type_generic_1aff4300aa3e2616422062c5ad88f3209a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_class_type_generic_1aff4300aa3e2616422062c5ad88f3209a" kindref="member">ClassTypeGeneric::fillStringClassesVector</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;classesFile)<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ifstream<sp/>labelFile(classesFile);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>data;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(getline(labelFile,data))<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>.push_back(data);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="struct_class_type_generic_1abb29534e4b1c9e2b33c57df5e56ef2fb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_class_type_generic_1abb29534e4b1c9e2b33c57df5e56ef2fb" kindref="member">ClassTypeGeneric::setId</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" kindref="member">classID</ref>=this-&gt;<ref refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" kindref="member">classes</ref>[id];</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.cpp"/>
+  </compounddef>
+</doxygen>

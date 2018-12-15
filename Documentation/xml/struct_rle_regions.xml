@@ -1,0 +1,265 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_rle_regions" kind="struct" language="C++" prot="public">
+    <compoundname>RleRegions</compoundname>
+    <basecompoundref refid="struct_regions" prot="public" virt="non-virtual">Regions</basecompoundref>
+    <includes refid="_rle_regions_8h" local="no">RleRegions.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="struct_rle_region" kindref="compound">RleRegion</ref> &gt;</type>
+        <definition>std::vector&lt;RleRegion&gt; RleRegions::regions</definition>
+        <argsstring></argsstring>
+        <name>regions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="struct_rle_regions_1a4d7fd1bdb03c494c5ebe66e940337a73" compoundref="_rle_regions_8cpp" startline="15" endline="20">add</referencedby>
+        <referencedby refid="struct_rle_regions_1a0188b60eb616945a63ad9dd14a167392" compoundref="_rle_regions_8cpp" startline="74" endline="79">getRegion</referencedby>
+        <referencedby refid="struct_rle_regions_1aedcc9f614d38a2882a589e3014799d91" compoundref="_rle_regions_8cpp" startline="81" endline="113">drawRegions</referencedby>
+        <referencedby refid="struct_rle_regions_1a66101430c60a2e954c9f9b197bbd4030" compoundref="_rle_regions_8cpp" startline="115" endline="117">getRegions</referencedby>
+        <referencedby refid="struct_rle_regions_1a50e7df1873c11d5436cbe875593c331b" compoundref="_rle_regions_8cpp" startline="119" endline="127">filterSamplesByID</referencedby>
+        <referencedby refid="struct_rle_regions_1acaea73c92cdcff78a60d1e10bed62c3d" compoundref="_rle_regions_8cpp" startline="129" endline="131">empty</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_rle_regions_1af02a61ff467f90320aa1980ec6924710" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RleRegions::RleRegions</definition>
+        <argsstring>()</argsstring>
+        <name>RleRegions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h" line="10" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.cpp" bodystart="11" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_rle_regions_1a643c55d59720ba45a78e0e6090018e05" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RleRegions::saveJson</definition>
+        <argsstring>(const std::string &amp;outPath)</argsstring>
+        <name>saveJson</name>
+        <reimplements refid="struct_regions_1a402078d4ff67e4aee31b231c2d1942c6">saveJson</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h" line="11" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.cpp" bodystart="31" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_rle_regions_1a4d7fd1bdb03c494c5ebe66e940337a73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RleRegions::add</definition>
+        <argsstring>(RLE region, const std::string &amp;classId, const bool isCrowd=false)</argsstring>
+        <name>add</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref></type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classId</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isCrowd</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.cpp" bodystart="15" bodyend="20"/>
+        <references refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" compoundref="_rle_regions_8h" startline="20">regions</references>
+        <references refid="struct_rle_region_1a3e9536b27f34bb3932c5b3d3f60a416b" compoundref="_rle_region_8h" startline="42">RleRegion::uniqObjectID</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rle_regions_1a537a1a2b789d4d95fd579a82baf89f2f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RleRegions::add</definition>
+        <argsstring>(RLE region, const std::string &amp;classId, const double confidence_score, const bool isCrowd=false)</argsstring>
+        <name>add</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref></type>
+          <declname>region</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classId</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>confidence_score</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isCrowd</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.cpp" bodystart="22" bodyend="28"/>
+        <references refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" compoundref="_rle_regions_8h" startline="20">regions</references>
+        <references refid="struct_rle_region_1a3e9536b27f34bb3932c5b3d3f60a416b" compoundref="_rle_region_8h" startline="42">RleRegion::uniqObjectID</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rle_regions_1a0188b60eb616945a63ad9dd14a167392" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_rle_region" kindref="compound">RleRegion</ref></type>
+        <definition>RleRegion RleRegions::getRegion</definition>
+        <argsstring>(int idx)</argsstring>
+        <name>getRegion</name>
+        <param>
+          <type>int</type>
+          <declname>idx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.cpp" bodystart="74" bodyend="79"/>
+        <references refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" compoundref="_rle_regions_8h" startline="20">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rle_regions_1a66101430c60a2e954c9f9b197bbd4030" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="struct_rle_region" kindref="compound">RleRegion</ref> &gt;</type>
+        <definition>std::vector&lt; RleRegion &gt; RleRegions::getRegions</definition>
+        <argsstring>()</argsstring>
+        <name>getRegions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.cpp" bodystart="115" bodyend="117"/>
+        <references refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" compoundref="_rle_regions_8h" startline="20">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rle_regions_1aedcc9f614d38a2882a589e3014799d91" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RleRegions::drawRegions</definition>
+        <argsstring>(cv::Mat &amp;image)</argsstring>
+        <name>drawRegions</name>
+        <reimplements refid="struct_regions_1adab32a2a00fc77abb6f4876939dc8505">drawRegions</reimplements>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.cpp" bodystart="81" bodyend="113"/>
+        <references refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" compoundref="_rle_regions_8h" startline="20">regions</references>
+        <references refid="mask_api_8cpp_1a04f96b392b2f316fce42e8c86fc77d51" compoundref="mask_api_8cpp" startline="39" endline="43">rleDecode</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rle_regions_1a50e7df1873c11d5436cbe875593c331b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RleRegions::filterSamplesByID</definition>
+        <argsstring>(std::vector&lt; std::string &gt; filteredIDS)</argsstring>
+        <name>filterSamplesByID</name>
+        <reimplements refid="struct_regions_1ae2bcea2b1c245a9d1ab1ff3abc23f2a0">filterSamplesByID</reimplements>
+        <param>
+          <type>std::vector&lt; std::string &gt;</type>
+          <declname>filteredIDS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.cpp" bodystart="119" bodyend="127"/>
+        <references refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" compoundref="_rle_regions_8h" startline="20">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rle_regions_1acaea73c92cdcff78a60d1e10bed62c3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool RleRegions::empty</definition>
+        <argsstring>()</argsstring>
+        <name>empty</name>
+        <reimplements refid="struct_regions_1a5763d0526981f665356ac35734e8e505">empty</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.cpp" bodystart="129" bodyend="131"/>
+        <references refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" compoundref="_rle_regions_8h" startline="20">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rle_regions_1a83e335ebc08dd7029bdc76baa8b71b32" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RleRegions::print</definition>
+        <argsstring>()</argsstring>
+        <name>print</name>
+        <reimplements refid="struct_regions_1a5a19f40bc0d2226f244625b88fbf8e59">print</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.cpp" bodystart="133" bodyend="136"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="305">
+        <label>RleRegions</label>
+        <link refid="struct_rle_regions"/>
+        <childnode refid="306" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="306">
+        <label>Regions</label>
+        <link refid="struct_regions"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="307">
+        <label>RleRegions</label>
+        <link refid="struct_rle_regions"/>
+        <childnode refid="308" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="308">
+        <label>Regions</label>
+        <link refid="struct_regions"/>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h" line="9" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h" bodystart="9" bodyend="21"/>
+    <listofallmembers>
+      <member refid="struct_rle_regions_1a4d7fd1bdb03c494c5ebe66e940337a73" prot="public" virt="non-virtual"><scope>RleRegions</scope><name>add</name></member>
+      <member refid="struct_rle_regions_1a537a1a2b789d4d95fd579a82baf89f2f" prot="public" virt="non-virtual"><scope>RleRegions</scope><name>add</name></member>
+      <member refid="struct_rle_regions_1aedcc9f614d38a2882a589e3014799d91" prot="public" virt="virtual"><scope>RleRegions</scope><name>drawRegions</name></member>
+      <member refid="struct_rle_regions_1acaea73c92cdcff78a60d1e10bed62c3d" prot="public" virt="virtual"><scope>RleRegions</scope><name>empty</name></member>
+      <member refid="struct_rle_regions_1a50e7df1873c11d5436cbe875593c331b" prot="public" virt="virtual"><scope>RleRegions</scope><name>filterSamplesByID</name></member>
+      <member refid="struct_rle_regions_1a0188b60eb616945a63ad9dd14a167392" prot="public" virt="non-virtual"><scope>RleRegions</scope><name>getRegion</name></member>
+      <member refid="struct_rle_regions_1a66101430c60a2e954c9f9b197bbd4030" prot="public" virt="non-virtual"><scope>RleRegions</scope><name>getRegions</name></member>
+      <member refid="struct_rle_regions_1a83e335ebc08dd7029bdc76baa8b71b32" prot="public" virt="virtual"><scope>RleRegions</scope><name>print</name></member>
+      <member refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" prot="public" virt="non-virtual"><scope>RleRegions</scope><name>regions</name></member>
+      <member refid="struct_regions_1aa3456e0ecf9b3a84be6a0b7705495929" prot="public" virt="non-virtual"><scope>RleRegions</scope><name>Regions</name></member>
+      <member refid="struct_rle_regions_1af02a61ff467f90320aa1980ec6924710" prot="public" virt="non-virtual"><scope>RleRegions</scope><name>RleRegions</name></member>
+      <member refid="struct_rle_regions_1a643c55d59720ba45a78e0e6090018e05" prot="public" virt="virtual"><scope>RleRegions</scope><name>saveJson</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

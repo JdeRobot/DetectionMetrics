@@ -1,0 +1,121 @@
+\hypertarget{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization}{}\section{keras\+\_\+utils.\+keras\+\_\+layer\+\_\+\+L2\+Normalization.\+L2\+Normalization Class Reference}
+\label{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization}\index{keras\+\_\+utils.\+keras\+\_\+layer\+\_\+\+L2\+Normalization.\+L2\+Normalization@{keras\+\_\+utils.\+keras\+\_\+layer\+\_\+\+L2\+Normalization.\+L2\+Normalization}}
+Inheritance diagram for keras\+\_\+utils.\+keras\+\_\+layer\+\_\+\+L2\+Normalization.\+L2\+Normalization\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a44d3d7b777a42cb28b5bbbcead7b2725}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a692198f0ef32ded740d28f5e89684a0e}{gamma\+\_\+init}=20, kwargs)
+\item 
+def \hyperlink{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a9111c56e1f9a28a8ab53389883587cd4}{build} (self, input\+\_\+shape)
+\item 
+def \hyperlink{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_ac9f98847106a0787d750ef82b2bc702b}{call} (self, x, mask=None)
+\item 
+def \hyperlink{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a7202c20f7a98115dfc7882062cbf61af}{get\+\_\+config} (self)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a14c9cb005b543eac21ce2ba17c1eb49e}{axis}
+\item 
+\hyperlink{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a692198f0ef32ded740d28f5e89684a0e}{gamma\+\_\+init}
+\item 
+\hyperlink{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a1abbe639712dc72d6db7ff2074044ba4}{input\+\_\+spec}
+\item 
+\hyperlink{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_ab7b23065ad64ef9d19c8d869c914b417}{gamma}
+\item 
+\hyperlink{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a5cb4f097f087e58e797e8132c68b8d9d}{trainable\+\_\+weights}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Performs L2 normalization on the input tensor with a learnable scaling parameter
+as described in the paper "Parsenet: Looking Wider to See Better" (see references)
+and as used in the original SSD model.
+
+Arguments:
+    gamma_init (int): The initial scaling parameter. Defaults to 20 following the
+        SSD paper.
+
+Input shape:
+    4D tensor of shape `(batch, channels, height, width)` if `dim_ordering = 'th'`
+    or `(batch, height, width, channels)` if `dim_ordering = 'tf'`.
+
+Returns:
+    The scaled tensor. Same shape as the input tensor.
+
+References:
+    http://cs.unc.edu/~wliu/papers/parsenet.pdf
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a44d3d7b777a42cb28b5bbbcead7b2725}\label{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a44d3d7b777a42cb28b5bbbcead7b2725}} 
+\index{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def keras\+\_\+utils.\+keras\+\_\+layer\+\_\+\+L2\+Normalization.\+L2\+Normalization.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{gamma\+\_\+init = {\ttfamily 20},  }\item[{}]{kwargs }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a9111c56e1f9a28a8ab53389883587cd4}\label{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a9111c56e1f9a28a8ab53389883587cd4}} 
+\index{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}!build@{build}}
+\index{build@{build}!keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}}
+\subsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily def keras\+\_\+utils.\+keras\+\_\+layer\+\_\+\+L2\+Normalization.\+L2\+Normalization.\+build (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{input\+\_\+shape }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_ac9f98847106a0787d750ef82b2bc702b}\label{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_ac9f98847106a0787d750ef82b2bc702b}} 
+\index{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}!call@{call}}
+\index{call@{call}!keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}}
+\subsubsection{\texorpdfstring{call()}{call()}}
+{\footnotesize\ttfamily def keras\+\_\+utils.\+keras\+\_\+layer\+\_\+\+L2\+Normalization.\+L2\+Normalization.\+call (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{mask = {\ttfamily None} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a7202c20f7a98115dfc7882062cbf61af}\label{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a7202c20f7a98115dfc7882062cbf61af}} 
+\index{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}!get\+\_\+config@{get\+\_\+config}}
+\index{get\+\_\+config@{get\+\_\+config}!keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}}
+\subsubsection{\texorpdfstring{get\+\_\+config()}{get\_config()}}
+{\footnotesize\ttfamily def keras\+\_\+utils.\+keras\+\_\+layer\+\_\+\+L2\+Normalization.\+L2\+Normalization.\+get\+\_\+config (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a14c9cb005b543eac21ce2ba17c1eb49e}\label{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a14c9cb005b543eac21ce2ba17c1eb49e}} 
+\index{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}!axis@{axis}}
+\index{axis@{axis}!keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}}
+\subsubsection{\texorpdfstring{axis}{axis}}
+{\footnotesize\ttfamily keras\+\_\+utils.\+keras\+\_\+layer\+\_\+\+L2\+Normalization.\+L2\+Normalization.\+axis}
+
+\mbox{\Hypertarget{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_ab7b23065ad64ef9d19c8d869c914b417}\label{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_ab7b23065ad64ef9d19c8d869c914b417}} 
+\index{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}!gamma@{gamma}}
+\index{gamma@{gamma}!keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}}
+\subsubsection{\texorpdfstring{gamma}{gamma}}
+{\footnotesize\ttfamily keras\+\_\+utils.\+keras\+\_\+layer\+\_\+\+L2\+Normalization.\+L2\+Normalization.\+gamma}
+
+\mbox{\Hypertarget{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a692198f0ef32ded740d28f5e89684a0e}\label{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a692198f0ef32ded740d28f5e89684a0e}} 
+\index{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}!gamma\+\_\+init@{gamma\+\_\+init}}
+\index{gamma\+\_\+init@{gamma\+\_\+init}!keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}}
+\subsubsection{\texorpdfstring{gamma\+\_\+init}{gamma\_init}}
+{\footnotesize\ttfamily keras\+\_\+utils.\+keras\+\_\+layer\+\_\+\+L2\+Normalization.\+L2\+Normalization.\+gamma\+\_\+init}
+
+\mbox{\Hypertarget{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a1abbe639712dc72d6db7ff2074044ba4}\label{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a1abbe639712dc72d6db7ff2074044ba4}} 
+\index{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}!input\+\_\+spec@{input\+\_\+spec}}
+\index{input\+\_\+spec@{input\+\_\+spec}!keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}}
+\subsubsection{\texorpdfstring{input\+\_\+spec}{input\_spec}}
+{\footnotesize\ttfamily keras\+\_\+utils.\+keras\+\_\+layer\+\_\+\+L2\+Normalization.\+L2\+Normalization.\+input\+\_\+spec}
+
+\mbox{\Hypertarget{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a5cb4f097f087e58e797e8132c68b8d9d}\label{classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_a5cb4f097f087e58e797e8132c68b8d9d}} 
+\index{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}!trainable\+\_\+weights@{trainable\+\_\+weights}}
+\index{trainable\+\_\+weights@{trainable\+\_\+weights}!keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization@{keras\+\_\+utils\+::keras\+\_\+layer\+\_\+\+L2\+Normalization\+::\+L2\+Normalization}}
+\subsubsection{\texorpdfstring{trainable\+\_\+weights}{trainable\_weights}}
+{\footnotesize\ttfamily keras\+\_\+utils.\+keras\+\_\+layer\+\_\+\+L2\+Normalization.\+L2\+Normalization.\+trainable\+\_\+weights}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/python\+\_\+modules/keras\+\_\+utils/\hyperlink{keras__layer___l2_normalization_8py}{keras\+\_\+layer\+\_\+\+L2\+Normalization.\+py}\end{DoxyCompactItemize}

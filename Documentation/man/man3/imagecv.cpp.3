@@ -1,0 +1,55 @@
+.TH "DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'imagecv\&.h'\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <cmath>\fP
+.br
+\fC#include <algorithm>\fP
+.br
+\fC#include <opencv2/highgui/highgui\&.hpp>\fP
+.br
+\fC#include <opencv2/imgproc/imgproc\&.hpp>\fP
+.br
+\fC#include <sys/types\&.h>\fP
+.br
+\fC#include <sys/stat\&.h>\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+\fC#include <stdexcept>\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBcolorspaces\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &stream, const \fBcolorspaces::Image::Format\fP &fmt)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &stream, const \fBcolorspaces::Image\fP &img)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream & stream, const \fBcolorspaces::Image::Format\fP & fmt)"
+Insert a format in an output stream\&. Only debugging, output could be truncated 
+.SS "std::ostream& operator<< (std::ostream & stream, const \fBcolorspaces::Image\fP & img)"
+Insert an image in an output stream\&. Only debugging, output could be truncated 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

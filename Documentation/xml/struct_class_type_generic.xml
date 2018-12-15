@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_class_type_generic" kind="struct" language="C++" prot="public">
+    <compoundname>ClassTypeGeneric</compoundname>
+    <basecompoundref refid="struct_class_type" prot="public" virt="non-virtual">ClassType</basecompoundref>
+    <includes refid="_class_type_generic_8h" local="no">ClassTypeGeneric.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_class_type_generic_1a6f6c4bdaff0c95b705261e7d98db6c10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ClassTypeGeneric::ClassTypeGeneric</definition>
+        <argsstring>(const std::string &amp;classesFile)</argsstring>
+        <name>ClassTypeGeneric</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classesFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.cpp" bodystart="9" bodyend="11"/>
+        <references refid="struct_class_type_generic_1aff4300aa3e2616422062c5ad88f3209a" compoundref="_class_type_generic_8cpp" startline="18" endline="24">fillStringClassesVector</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_type_generic_1adee43b8b4a2c707e92aabb8483541c2e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ClassTypeGeneric::ClassTypeGeneric</definition>
+        <argsstring>(const std::string &amp;classesFile, int id)</argsstring>
+        <name>ClassTypeGeneric</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classesFile</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.cpp" bodystart="13" bodyend="16"/>
+        <references refid="struct_class_type_generic_1aff4300aa3e2616422062c5ad88f3209a" compoundref="_class_type_generic_8cpp" startline="18" endline="24">fillStringClassesVector</references>
+        <references refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" compoundref="_class_type_8h" startline="19">ClassType::classID</references>
+        <references refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" compoundref="_class_type_8h" startline="18">ClassType::classes</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_type_generic_1abb29534e4b1c9e2b33c57df5e56ef2fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ClassTypeGeneric::setId</definition>
+        <argsstring>(int id)</argsstring>
+        <name>setId</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.cpp" bodystart="26" bodyend="28"/>
+        <references refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" compoundref="_class_type_8h" startline="19">ClassType::classID</references>
+        <references refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" compoundref="_class_type_8h" startline="18">ClassType::classes</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">COCODatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_yolo_dataset_reader_1adabb18f657d4e0dc7b03f7f1b77eb452" compoundref="_yolo_dataset_reader_8cpp" startline="29" endline="61">YoloDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_caffe_inferencer_1a898f6d0e7106ac663a6c26ecdf799502" compoundref="_caffe_inferencer_8cpp" startline="29" endline="76">CaffeInferencer::detectImp</referencedby>
+        <referencedby refid="class_darknet_inferencer_1a9fb53792b71055b3104e5a54a6190c50" compoundref="_darknet_inferencer_8cpp" startline="14" endline="31">DarknetInferencer::detectImp</referencedby>
+        <referencedby refid="class_keras_inferencer_1a4c944e963e3ec3ca8fa0bd4b229a8931" compoundref="_keras_inferencer_8cpp" startline="71" endline="103">KerasInferencer::detectImp</referencedby>
+        <referencedby refid="class_tensor_flow_inferencer_1ae8b603ab05273a9ec5fee720f23d0c58" compoundref="_tensor_flow_inferencer_8cpp" startline="72" endline="108">TensorFlowInferencer::detectImp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_type_generic_1aff4300aa3e2616422062c5ad88f3209a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ClassTypeGeneric::fillStringClassesVector</definition>
+        <argsstring>(const std::string &amp;classesFile)</argsstring>
+        <name>fillStringClassesVector</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classesFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.cpp" bodystart="18" bodyend="24"/>
+        <references refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" compoundref="_class_type_8h" startline="18">ClassType::classes</references>
+        <referencedby refid="struct_class_type_generic_1a6f6c4bdaff0c95b705261e7d98db6c10" compoundref="_class_type_generic_8cpp" startline="9" endline="11">ClassTypeGeneric</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="37">
+        <label>ClassTypeGeneric</label>
+        <link refid="struct_class_type_generic"/>
+        <childnode refid="38" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>ClassType</label>
+        <link refid="struct_class_type"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="39">
+        <label>ClassTypeGeneric</label>
+        <link refid="struct_class_type_generic"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>ClassType</label>
+        <link refid="struct_class_type"/>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.h" line="11" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeGeneric.h" bodystart="11" bodyend="17"/>
+    <listofallmembers>
+      <member refid="struct_class_type_1a37ea5c5449bc06ed3f2a327448abe02a" prot="protected" virt="non-virtual"><scope>ClassTypeGeneric</scope><name>_get_color</name></member>
+      <member refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" prot="protected" virt="non-virtual"><scope>ClassTypeGeneric</scope><name>classes</name></member>
+      <member refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" prot="protected" virt="non-virtual"><scope>ClassTypeGeneric</scope><name>classID</name></member>
+      <member refid="struct_class_type_generic_1a6f6c4bdaff0c95b705261e7d98db6c10" prot="public" virt="non-virtual"><scope>ClassTypeGeneric</scope><name>ClassTypeGeneric</name></member>
+      <member refid="struct_class_type_generic_1adee43b8b4a2c707e92aabb8483541c2e" prot="public" virt="non-virtual"><scope>ClassTypeGeneric</scope><name>ClassTypeGeneric</name></member>
+      <member refid="struct_class_type_generic_1aff4300aa3e2616422062c5ad88f3209a" prot="public" virt="non-virtual"><scope>ClassTypeGeneric</scope><name>fillStringClassesVector</name></member>
+      <member refid="struct_class_type_1a867149836bb99711a7c14fbe7801c9e4" prot="public" virt="non-virtual"><scope>ClassTypeGeneric</scope><name>getAllAvailableClasses</name></member>
+      <member refid="struct_class_type_1ab5cc3bb3376a812d051d4726eb4ee063" prot="public" virt="non-virtual"><scope>ClassTypeGeneric</scope><name>getClassID</name></member>
+      <member refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" prot="public" virt="non-virtual"><scope>ClassTypeGeneric</scope><name>getClassString</name></member>
+      <member refid="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" prot="public" virt="non-virtual"><scope>ClassTypeGeneric</scope><name>getColor</name></member>
+      <member refid="struct_class_type_generic_1abb29534e4b1c9e2b33c57df5e56ef2fb" prot="public" virt="non-virtual"><scope>ClassTypeGeneric</scope><name>setId</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

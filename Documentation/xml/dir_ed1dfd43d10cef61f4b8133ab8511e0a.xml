@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_ed1dfd43d10cef61f4b8133ab8511e0a" kind="dir">
+    <compoundname>sampleGenerator</compoundname>
+    <innerdir refid="dir_1aa689cfc554a3ce5814066a2b9f110f">sampleGenerator/simpleSampleGenerator</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sampleGenerator/"/>
+  </compounddef>
+</doxygen>

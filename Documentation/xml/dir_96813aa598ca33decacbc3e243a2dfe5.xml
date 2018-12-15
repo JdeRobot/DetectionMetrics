@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_96813aa598ca33decacbc3e243a2dfe5" kind="dir">
+    <compoundname>sampleGenerator/simpleSampleGenerator/sampleGenerator</compoundname>
+    <innerfile refid="sample_generator_2simple_sample_generator_2sample_generator_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="sample_8py">sample.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/"/>
+  </compounddef>
+</doxygen>

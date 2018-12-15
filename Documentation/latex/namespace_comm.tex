@@ -1,0 +1,141 @@
+\hypertarget{namespace_comm}{}\section{Comm Namespace Reference}
+\label{namespace_comm}\index{Comm@{Comm}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_comm_1_1_camera_client}{Camera\+Client}
+\item 
+class \hyperlink{class_comm_1_1_camera_ice_client}{Camera\+Ice\+Client}
+\item 
+class \hyperlink{class_comm_1_1_communicator}{Communicator}
+\item 
+class \hyperlink{class_comm_1_1_listener_camera}{Listener\+Camera}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_comm_1_1_camera_client}{Camera\+Client} $\ast$ \hyperlink{namespace_comm_a488b3721b4d9a501e8cd38388ab30437}{get\+Camera\+Client} (\hyperlink{class_comm_1_1_communicator}{Comm\+::\+Communicator} $\ast$jdrc, std\+::string prefix)
+\begin{DoxyCompactList}\small\item\em make a \hyperlink{class_comm_1_1_camera_client}{Camera\+Client} using propierties \end{DoxyCompactList}\item 
+\hyperlink{class_jde_robot_types_1_1_image}{Jde\+Robot\+Types\+::\+Image} \hyperlink{namespace_comm_ad9eade500ada9cd99a62086a53986e36}{translate\+\_\+image\+\_\+messages} (const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&image\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em translate R\+OS Image messages to Jde\+Robot Image \end{DoxyCompactList}\item 
+\hyperlink{class_jde_robot_types_1_1_rgbd}{Jde\+Robot\+Types\+::\+Rgbd} \hyperlink{namespace_comm_a7e4e8f50789805802aea4d68670a495c}{translate\+\_\+rgbd} (const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&rgb, const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&d)
+\begin{DoxyCompactList}\small\item\em translate R\+OS images messages to Jde\+Robot Rgbd \end{DoxyCompactList}\item 
+void \hyperlink{namespace_comm_afe46bbd9c6bec183b93879e39e21fcbc}{depth\+To\+R\+GB} (const cv\+::\+Mat \&float\+\_\+img, cv\+::\+Mat \&rgb\+\_\+img)
+\begin{DoxyCompactList}\small\item\em Translates from 32\+F\+C1 Image format to R\+GB. Inf values are represented by NaN, when converting to R\+GB, NaN passed to 0. \end{DoxyCompactList}\item 
+int \hyperlink{namespace_comm_ab6b021c81a3c5ebabd75caaffa9f16da}{server2int} (std\+::string server)
+\item 
+void \hyperlink{namespace_comm_ad99fee34a48e5331dfa18b2b766e7df2}{depth\+To\+R\+GB} (const cv\+::\+Mat \&float\+\_\+img, cv\+::\+Mat \&rgb\+\_\+img, std\+::string type)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{namespace_comm_a7d4da4b3fc818fb4d75a7df90df80152}{PI} = 3.\+1415
+\item 
+int \hyperlink{namespace_comm_a8f60d778070dabbe4b6fa39157309097}{M\+A\+X\+R\+A\+N\+G\+E\+I\+M\+GD} = 8
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespace_comm_ad99fee34a48e5331dfa18b2b766e7df2}\label{namespace_comm_ad99fee34a48e5331dfa18b2b766e7df2}} 
+\index{Comm@{Comm}!depth\+To\+R\+GB@{depth\+To\+R\+GB}}
+\index{depth\+To\+R\+GB@{depth\+To\+R\+GB}!Comm@{Comm}}
+\subsubsection{\texorpdfstring{depth\+To\+R\+G\+B()}{depthToRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Comm\+::depth\+To\+R\+GB (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{float\+\_\+img,  }\item[{cv\+::\+Mat \&}]{rgb\+\_\+img,  }\item[{std\+::string}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_comm_afe46bbd9c6bec183b93879e39e21fcbc}\label{namespace_comm_afe46bbd9c6bec183b93879e39e21fcbc}} 
+\index{Comm@{Comm}!depth\+To\+R\+GB@{depth\+To\+R\+GB}}
+\index{depth\+To\+R\+GB@{depth\+To\+R\+GB}!Comm@{Comm}}
+\subsubsection{\texorpdfstring{depth\+To\+R\+G\+B()}{depthToRGB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Comm\+::depth\+To\+R\+GB (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{float\+\_\+img,  }\item[{cv\+::\+Mat \&}]{rgb\+\_\+img }\end{DoxyParamCaption})}
+
+
+
+Translates from 32\+F\+C1 Image format to R\+GB. Inf values are represented by NaN, when converting to R\+GB, NaN passed to 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R\+OS} & Image Message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Image translated from R\+OS Message 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_comm_a488b3721b4d9a501e8cd38388ab30437}\label{namespace_comm_a488b3721b4d9a501e8cd38388ab30437}} 
+\index{Comm@{Comm}!get\+Camera\+Client@{get\+Camera\+Client}}
+\index{get\+Camera\+Client@{get\+Camera\+Client}!Comm@{Comm}}
+\subsubsection{\texorpdfstring{get\+Camera\+Client()}{getCameraClient()}}
+{\footnotesize\ttfamily \hyperlink{class_comm_1_1_camera_client}{Camera\+Client} $\ast$ Comm\+::get\+Camera\+Client (\begin{DoxyParamCaption}\item[{\hyperlink{class_comm_1_1_communicator}{Comm\+::\+Communicator} $\ast$}]{jdrc,  }\item[{std\+::string}]{prefix }\end{DoxyParamCaption})}
+
+
+
+make a \hyperlink{class_comm_1_1_camera_client}{Camera\+Client} using propierties 
+
+
+\begin{DoxyParams}{Parameters}
+{\em communicator} & that contains properties \\
+\hline
+{\em prefix} & of client Propierties (example\+: \char`\"{}car\+Viz.\+Camera\char`\"{})\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+null if propierties are wrong 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_comm_ab6b021c81a3c5ebabd75caaffa9f16da}\label{namespace_comm_ab6b021c81a3c5ebabd75caaffa9f16da}} 
+\index{Comm@{Comm}!server2int@{server2int}}
+\index{server2int@{server2int}!Comm@{Comm}}
+\subsubsection{\texorpdfstring{server2int()}{server2int()}}
+{\footnotesize\ttfamily int Comm\+::server2int (\begin{DoxyParamCaption}\item[{std\+::string}]{server }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_comm_ad9eade500ada9cd99a62086a53986e36}\label{namespace_comm_ad9eade500ada9cd99a62086a53986e36}} 
+\index{Comm@{Comm}!translate\+\_\+image\+\_\+messages@{translate\+\_\+image\+\_\+messages}}
+\index{translate\+\_\+image\+\_\+messages@{translate\+\_\+image\+\_\+messages}!Comm@{Comm}}
+\subsubsection{\texorpdfstring{translate\+\_\+image\+\_\+messages()}{translate\_image\_messages()}}
+{\footnotesize\ttfamily \hyperlink{class_jde_robot_types_1_1_image}{Jde\+Robot\+Types\+::\+Image} Comm\+::translate\+\_\+image\+\_\+messages (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&}]{image\+\_\+msg }\end{DoxyParamCaption})}
+
+
+
+translate R\+OS Image messages to Jde\+Robot Image 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R\+OS} & Image Message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Image translated from R\+OS Message 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespace_comm_a7e4e8f50789805802aea4d68670a495c}\label{namespace_comm_a7e4e8f50789805802aea4d68670a495c}} 
+\index{Comm@{Comm}!translate\+\_\+rgbd@{translate\+\_\+rgbd}}
+\index{translate\+\_\+rgbd@{translate\+\_\+rgbd}!Comm@{Comm}}
+\subsubsection{\texorpdfstring{translate\+\_\+rgbd()}{translate\_rgbd()}}
+{\footnotesize\ttfamily \hyperlink{class_jde_robot_types_1_1_rgbd}{Jde\+Robot\+Types\+::\+Rgbd} Comm\+::translate\+\_\+rgbd (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&}]{rgb,  }\item[{const sensor\+\_\+msgs\+::\+Image\+Const\+Ptr \&}]{d }\end{DoxyParamCaption})}
+
+
+
+translate R\+OS images messages to Jde\+Robot Rgbd 
+
+
+\begin{DoxyParams}{Parameters}
+{\em R\+OS} & Image Message \\
+\hline
+{\em R\+OS} & Image Message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rgbd translated from R\+OS Messages 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespace_comm_a8f60d778070dabbe4b6fa39157309097}\label{namespace_comm_a8f60d778070dabbe4b6fa39157309097}} 
+\index{Comm@{Comm}!M\+A\+X\+R\+A\+N\+G\+E\+I\+M\+GD@{M\+A\+X\+R\+A\+N\+G\+E\+I\+M\+GD}}
+\index{M\+A\+X\+R\+A\+N\+G\+E\+I\+M\+GD@{M\+A\+X\+R\+A\+N\+G\+E\+I\+M\+GD}!Comm@{Comm}}
+\subsubsection{\texorpdfstring{M\+A\+X\+R\+A\+N\+G\+E\+I\+M\+GD}{MAXRANGEIMGD}}
+{\footnotesize\ttfamily int Comm\+::\+M\+A\+X\+R\+A\+N\+G\+E\+I\+M\+GD = 8}
+
+\mbox{\Hypertarget{namespace_comm_a7d4da4b3fc818fb4d75a7df90df80152}\label{namespace_comm_a7d4da4b3fc818fb4d75a7df90df80152}} 
+\index{Comm@{Comm}!PI@{PI}}
+\index{PI@{PI}!Comm@{Comm}}
+\subsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily float Comm\+::\+PI = 3.\+1415}
+

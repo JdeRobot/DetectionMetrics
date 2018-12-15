@@ -1,0 +1,299 @@
+.TH "md__r_e_a_d_m_e" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__r_e_a_d_m_eDeepLearningSuite 
+ \- \fC\fP
+.PP
+DeepLearning Suite is a set of tool that simplify the evaluation of most common object detection datasets with several object detection neural networks\&.
+.PP
+The idea is to offer a generic infrastructure to evaluates object detection algorithms againts a dataset and compute most common statistics:
+.IP "\(bu" 2
+Intersecion Over Union
+.IP "\(bu" 2
+Precision
+.IP "\(bu" 2
+Recall
+.PP
+.PP
+.SS "Supported Operating Systems:"
+.PP
+.IP "\(bu" 2
+Linux
+.IP "\(bu" 2
+MacOS
+.PP
+.PP
+.SS "Supported datasets formats:"
+.PP
+.IP "\(bu" 2
+YOLO
+.IP "\(bu" 2
+COCO
+.IP "\(bu" 2
+ImageNet
+.IP "\(bu" 2
+Pascal VOC
+.IP "\(bu" 2
+Jderobot recorder logs
+.IP "\(bu" 2
+Princeton RGB dataset [1]
+.IP "\(bu" 2
+Spinello dataset [2]
+.PP
+.PP
+.SS "Supported object detection frameworks/algorithms"
+.PP
+.IP "\(bu" 2
+YOLO (darknet)
+.IP "\(bu" 2
+TensorFlow
+.IP "\(bu" 2
+Keras
+.IP "\(bu" 2
+Caffe
+.IP "\(bu" 2
+Background substraction
+.PP
+.PP
+.SS "Supported Inputs for Deploying Networks"
+.PP
+.IP "\(bu" 2
+WebCamera/ USB Camera
+.IP "\(bu" 2
+Videos
+.IP "\(bu" 2
+Streams from ROS
+.IP "\(bu" 2
+Streams from ICE
+.IP "\(bu" 2
+JdeRobot Recorder Logs
+.PP
+.PP
+.SS "\fBSample\fP generation Tool"
+.PP
+\fBSample\fP Generation Tool has been developed in order to simply the process of generation samples for datasets focused on object detection\&. The tools provides some features to reduce the time on labelling objects as rectangles\&.
+.PP
+.SH "Installation"
+.PP
+.PP
+.SS "We have AppImages !!!"
+.PP
+.SS "\fCDownload from here\fP"
+.PP
+To run, First give executable permissions by running \fCchmod a+x DetectionSuitexxxxx\&.AppImage\fP And Run it by \fC\&./DetectionSuitexxxxx -c configFile\fP
+.PP
+Though you would need \fCpython\fP in your system installed with \fCnumpy\fP\&. Also, for using TensorFlow, you would need to tensorflow, and similaraly for keras you would need to install Keras\&.
+.PP
+If required they can be installed by 
+.PP
+.nf
+pip install tensorflow
+
+.fi
+.PP
+ or
+.PP
+.PP
+.nf
+pip install tensorflow-gpu
+.fi
+.PP
+ Similrarly for keras: 
+.PP
+.nf
+pip install keras
+
+.fi
+.PP
+.PP
+.SH "Requirements"
+.PP
+.PP
+.SS "Common deps"
+.PP
+\fBUbuntu\fP  \fBMacOS\fP   
+.PP
+.nf
+
+sudo apt install build-essential git cmake rapidjson-dev libssl-dev
+sudo apt install libboost-dev libboost-filesystem-dev libboost-system-dev libboost-program-options-dev
+.fi
+.PP
+  
+.PP
+.nf
+
+sudo easy_install numpy
+brew install cmake boost rapidjson
+.fi
+.PP
+   
+.PP
+.nf
+
+sudo apt install libgoogle-glog-dev libyaml-cpp-dev qt5-default libqt5svg5-dev
+.fi
+.PP
+  
+.PP
+.nf
+
+brew install glog yaml-cpp qt
+.fi
+.PP
+ 
+.br
+ Also, just add qt in your PATH by running:
+.br
+ 
+.PP
+.nf
+
+echo 'export PATH='/usr/local/opt/qt/bin:$PATH'' >> ~/\&.bash_profile
+.fi
+.PP
+   Install OpenCV 3\&.4 
+.PP
+.nf
+
+git clone https://github.com/opencv/opencv.git
+git checkout 3\&.4
+cmake -D WITH_QT=ON -D WITH_GTK=OFF \&.\&.
+make -j4
+sudo make install
+.fi
+.PP
+  
+.PP
+.nf
+
+brew install opencv
+.fi
+.PP
+.PP
+.PP
+.SS "Optional Dependencies"
+.PP
+.SS "CUDA (For GPU support)"
+.PP
+.PP
+.nf
+NVIDIA_GPGKEY_SUM=d1be581509378368edeec8c1eb2958702feedf3bc3d17011adbf24efacce4ab5 && \
+
+  NVIDIA_GPGKEY_FPR=ae09fe4bbd223a84b2ccfce3f60f4b3d7fa2af80 && \
+ sudo apt-key adv --fetch-keys http://developer\&.download\&.nvidia\&.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80\&.pub && \
+ sudo apt-key adv --export --no-emit-version -a $NVIDIA_GPGKEY_FPR | tail -n +5 > cudasign\&.pub && \
+  echo "$NVIDIA_GPGKEY_SUM  cudasign\&.pub" | sha256sum -c --strict - && rm cudasign\&.pub && \
+
+  sudo sh -c 'echo "deb http://developer\&.download\&.nvidia\&.com/compute/cuda/repos/ubuntu1604/x86_64 /" > /etc/apt/sources\&.list\&.d/cuda\&.list' && \
+  sudo sh -c 'echo "deb http://developer\&.download\&.nvidia\&.com/compute/machine-learning/repos/ubuntu1604/x86_64 /" > /etc/apt/sources\&.list\&.d/nvidia-ml\&.list'
+.fi
+.PP
+.PP
+Update and Install
+.PP
+.PP
+.nf
+sudo apt-get update
+sudo apt-get install -y cuda
+.fi
+.PP
+.PP
+Below is a list of Optional Dependencies you may require depending on your Usage\&.
+.PP
+.IP "\(bu" 2
+### Camera Streaming Support Detectionsuite can currently read ROS and ICE Camera Streams\&. So, to enable Streaming support install any one of them\&.
+.IP "\(bu" 2
+### Inferencing FrameWorks DetectionSuite currently supports many Inferencing FrameWorks namely Darknet, TensorFlow, Keras and Caffe\&. Each one of them has some Dependencies, and are mentioned below\&.
+.PP
+Choose your Favourite one and go ahead\&.
+.IP "  \(bu" 4
+#### Darknet (jderobot fork) Darknet supports both GPU and CPU builds, and GPU build is enabled by default\&. If your Computer doesn't have a NVIDIA Graphics card, then it is necessary to turn of GPU build in cmake by passing \fC-DUSE_GPU=OFF\fP as an option in cmake\&.
+.PP
+
+.PP
+.PP
+.PP
+.nf
+git clone https://github\&.com/JdeRobot/darknet
+cd darknet
+mkdir build && cd build
+.fi
+.PP
+.PP
+For \fBGPU\fP users:
+.br
+ 
+.PP
+.nf
+cmake -DCMAKE_INSTALL_PREFIX=<DARKNET_DIR> \&.\&.
+
+.fi
+.PP
+ For \fBNon-GPU\fP users (CPU build):
+.PP
+.PP
+.nf
+cmake -DCMAKE_INSTALL_PREFIX=<DARKNET_DIR> -DUSE_GPU=OFF \&.\&.
+.fi
+.PP
+ Change \fC<DARKNET_DIR>\fP to your custom installation path\&.
+.PP
+.PP
+.nf
+``` sudo make -j4 install
+.fi
+.PP
+.PP
+.IP "\(bu" 2
+#### TensorFlow Only depedency for using TensorFlow as an Inferencing framework is TensorFlow\&. So, just install TensorFlow\&. Though it should be 1\&.4\&.1 or greater\&.
+.IP "\(bu" 2
+#### Keras Similarly, only dependency for using Keras as an Inferencing is Keras only\&.
+.IP "\(bu" 2
+#### Caffe For using Caffe as an inferencing framework, it is necessary to install OpenCV 3\&.4 or greater\&.
+.PP
+.PP
+\fBNote:\fP Be Sure to checkout the Wiki Pages for tutorials on how to use the above mentioned functionalities and frameworks\&.
+.PP
+.SH "How to compile DL_DetectionSuite:"
+.PP
+.PP
+Once you have all the required Dependencies installed just:
+.PP
+.PP
+.nf
+git clone https://github\&.com/JdeRobot/DeepLearningSuite
+cd DeepLearningSuite/
+mkdir build && cd build
+.fi
+.PP
+ 
+.PP
+.nf
+cmake \&.\&.
+
+.fi
+.PP
+ To enable Darknet support with GPU: 
+.PP
+.nf
+cmake -DARKNET_PATH=<DARKNET_INSTALLETION_DIR> -DUSE_GPU_DARKNET=ON \&.\&.
+
+.fi
+.PP
+ \fBNote:\fP GPU support is enabled by default for other Frameworks 
+.PP
+.nf
+make -j4
+
+.fi
+.PP
+.PP
+\fBNOTE:\fP To enable Darknet support just pass an optinal parameter in cmake \fC-D DARKNET_PATH\fP equal to Darknet installation directory, and is same as \fC<DARKNET_DIR>\fP passed above in darknet installation\&.
+.PP
+Once it is build you will find various executables in different folders ready to be executed :smile:\&.
+.PP
+.SS "Starting with DetectionSuite"
+.PP
+The best way to start is with our [beginner's tutorial](https://github.com/JdeRobot/dl-DetectionSuite/wiki/Beginner's-Tutorial-to-DetectionSuite-Part-1) for DetectionSuite\&. If you have any issue feel free to drop a mail vinay04sharma@icloud.com or create an issue for the same\&. 

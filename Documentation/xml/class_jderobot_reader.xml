@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_jderobot_reader" kind="class" language="C++" prot="public">
+    <compoundname>JderobotReader</compoundname>
+    <basecompoundref refid="class_dataset_reader" prot="public" virt="non-virtual">DatasetReader</basecompoundref>
+    <includes refid="_jderobot_reader_8h" local="no">JderobotReader.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_jderobot_reader_1a91c5bb5d6e27d3aaeb3975836ea5d1f6" prot="private" static="no" mutable="no">
+        <type><ref refid="class_comm_1_1_communicator" kindref="compound">Comm::Communicator</ref> *</type>
+        <definition>Comm::Communicator* JderobotReader::jdrc</definition>
+        <argsstring></argsstring>
+        <name>jdrc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_jderobot_reader_1ad7193a5fd38092f2417be8d40e800d64" prot="private" static="no" mutable="no">
+        <type><ref refid="class_comm_1_1_camera_client" kindref="compound">Comm::CameraClient</ref> *</type>
+        <definition>Comm::CameraClient* JderobotReader::camera</definition>
+        <argsstring></argsstring>
+        <name>camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_jderobot_reader_1a100ce06ef75dab9662b63c6aa335d279" prot="private" static="no" mutable="no">
+        <type>long long int</type>
+        <definition>long long int JderobotReader::sample_count</definition>
+        <argsstring></argsstring>
+        <name>sample_count</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_jderobot_reader_1a89dde6b225b901d5b55926437be46d54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>JderobotReader::JderobotReader</definition>
+        <argsstring>(std::map&lt; std::string, std::string &gt; *deployer_params_map, const std::string &amp;path)</argsstring>
+        <name>JderobotReader</name>
+        <param>
+          <type>std::map&lt; std::string, std::string &gt; *</type>
+          <declname>deployer_params_map</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.cpp" bodystart="8" bodyend="76"/>
+        <references refid="namespacetensorflow__detect_1ab9f0bcfda000c7664a363cdb90e34c4f" compoundref="tensorflow__detect_8py" startline="6">tensorflow_detect.argv</references>
+        <references refid="namespace_config_1a845ed902425e4e06b984e0ecd861fa18" compoundref="config_8h" startline="49" endline="52">Config::load</references>
+        <references refid="namespace_comm_1a488b3721b4d9a501e8cd38388ab30437" compoundref="camera_client_8cpp" startline="25" endline="80">Comm::getCameraClient</references>
+      </memberdef>
+      <memberdef kind="function" id="class_jderobot_reader_1aef97b473c11e144fcf07e01c3181269b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool JderobotReader::getNextSample</definition>
+        <argsstring>(Sample &amp;sample)</argsstring>
+        <name>getNextSample</name>
+        <reimplements refid="class_dataset_reader_1af50668f52c34f4620c44e91f26dd11ce">getNextSample</reimplements>
+        <param>
+          <type><ref refid="struct_sample" kindref="compound">Sample</ref> &amp;</type>
+          <declname>sample</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.cpp" bodystart="78" bodyend="93"/>
+        <references refid="class_comm_1_1_camera_client_1a1947976aa6b31734b9938091e63782e2">Comm::CameraClient::getImage</references>
+        <references refid="class_jde_robot_types_1_1_image_1a00caf819fb206f75e125f9a63f78cb8a" compoundref="image_8h" startline="34">JdeRobotTypes::Image::data</references>
+        <references refid="struct_sample_1a64fc306f85a0a1966f5f3b662efe95bb" compoundref="_sample_8cpp" startline="326" endline="328">Sample::setSampleID</references>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">Sample::setColorImage</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="207">
+        <label>DatasetReader</label>
+        <link refid="class_dataset_reader"/>
+      </node>
+      <node id="206">
+        <label>JderobotReader</label>
+        <link refid="class_jderobot_reader"/>
+        <childnode refid="207" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="209">
+        <label>DatasetReader</label>
+        <link refid="class_dataset_reader"/>
+      </node>
+      <node id="208">
+        <label>JderobotReader</label>
+        <link refid="class_jderobot_reader"/>
+        <childnode refid="209" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h" bodystart="16" bodyend="26"/>
+    <listofallmembers>
+      <member refid="class_dataset_reader_1a03ceb33ec8ecd5fb73a4b17e9701cbb3" prot="public" virt="non-virtual"><scope>JderobotReader</scope><name>addSample</name></member>
+      <member refid="class_dataset_reader_1a732438244cec7c20294f93c6b635888c" prot="public" virt="virtual"><scope>JderobotReader</scope><name>appendDataset</name></member>
+      <member refid="class_jderobot_reader_1ad7193a5fd38092f2417be8d40e800d64" prot="private" virt="non-virtual"><scope>JderobotReader</scope><name>camera</name></member>
+      <member refid="class_dataset_reader_1a76c52c7db385a4a930021fe69d04fefb" prot="protected" virt="non-virtual"><scope>JderobotReader</scope><name>classNames</name></member>
+      <member refid="class_dataset_reader_1a45ded43b56539f1e37a24ca9c94b4611" prot="protected" virt="non-virtual"><scope>JderobotReader</scope><name>classNamesFile</name></member>
+      <member refid="class_dataset_reader_1a357a86043c584062497bbc0fcd3ea420" prot="public" virt="non-virtual"><scope>JderobotReader</scope><name>DatasetReader</name></member>
+      <member refid="class_dataset_reader_1ac94f1934639708dc2a29b1ba05e3cc0b" prot="public" virt="non-virtual"><scope>JderobotReader</scope><name>decrementReaderCounter</name></member>
+      <member refid="class_dataset_reader_1a17085ffacc392c459a95cd510f341a7d" prot="public" virt="non-virtual"><scope>JderobotReader</scope><name>filterSamplesByID</name></member>
+      <member refid="class_dataset_reader_1a2838c12e627e42e8394fd18011afa203" prot="public" virt="non-virtual"><scope>JderobotReader</scope><name>getClassNamesFile</name></member>
+      <member refid="class_jderobot_reader_1aef97b473c11e144fcf07e01c3181269b" prot="public" virt="virtual"><scope>JderobotReader</scope><name>getNextSample</name></member>
+      <member refid="class_dataset_reader_1a4875a59f33227329ca93241add8370c0" prot="public" virt="virtual"><scope>JderobotReader</scope><name>getNextSamples</name></member>
+      <member refid="class_dataset_reader_1a67f4c1c3fdfcc0c6bf3b90d65d5fc7c5" prot="public" virt="non-virtual"><scope>JderobotReader</scope><name>getNumberOfElements</name></member>
+      <member refid="class_dataset_reader_1aeff3413e85bbde9f1f755e36860c7f3a" prot="public" virt="non-virtual"><scope>JderobotReader</scope><name>getSampleBySampleID</name></member>
+      <member refid="class_dataset_reader_1a2cfa8b90e643a325b519a292c62d4460" prot="public" virt="non-virtual"><scope>JderobotReader</scope><name>getSampleBySampleID</name></member>
+      <member refid="class_dataset_reader_1a71d04d25d58e0e9a0c05d69afcff03a1" prot="protected" virt="non-virtual"><scope>JderobotReader</scope><name>imagesRequired</name></member>
+      <member refid="class_dataset_reader_1a951146f7949deff5e17c3482f4339672" prot="public" virt="non-virtual"><scope>JderobotReader</scope><name>incrementReaderCounter</name></member>
+      <member refid="class_jderobot_reader_1a89dde6b225b901d5b55926437be46d54" prot="public" virt="non-virtual"><scope>JderobotReader</scope><name>JderobotReader</name></member>
+      <member refid="class_jderobot_reader_1a91c5bb5d6e27d3aaeb3975836ea5d1f6" prot="private" virt="non-virtual"><scope>JderobotReader</scope><name>jdrc</name></member>
+      <member refid="class_dataset_reader_1ac662ff47f081f872d05ade9a33724a2a" prot="public" virt="non-virtual"><scope>JderobotReader</scope><name>overWriteClasses</name></member>
+      <member refid="class_dataset_reader_1a1e37cddfc448b548dc6ca40f629884cb" prot="public" virt="non-virtual"><scope>JderobotReader</scope><name>printDatasetStats</name></member>
+      <member refid="class_dataset_reader_1af0fd759568c5db7187d19bae8ebe1b6c" prot="protected" virt="non-virtual"><scope>JderobotReader</scope><name>readerCounter</name></member>
+      <member refid="class_dataset_reader_1a528f4df5009c93efd37ff5cfafe4c778" prot="public" virt="non-virtual"><scope>JderobotReader</scope><name>resetReaderCounter</name></member>
+      <member refid="class_jderobot_reader_1a100ce06ef75dab9662b63c6aa335d279" prot="private" virt="non-virtual"><scope>JderobotReader</scope><name>sample_count</name></member>
+      <member refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" prot="protected" virt="non-virtual"><scope>JderobotReader</scope><name>samples</name></member>
+      <member refid="class_dataset_reader_1aae9a49629ae536c02b726e52a9def4ee" prot="protected" virt="non-virtual"><scope>JderobotReader</scope><name>skip_count</name></member>
+      <member refid="class_dataset_reader_1af972d4b7460587b2292d3dd15e69827b" prot="public" virt="virtual"><scope>JderobotReader</scope><name>~DatasetReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

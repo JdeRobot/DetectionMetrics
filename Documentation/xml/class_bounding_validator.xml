@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_bounding_validator" kind="class" language="C++" prot="public">
+    <compoundname>BoundingValidator</compoundname>
+    <includes refid="_bounding_validator_8h" local="no">BoundingValidator.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_bounding_validator_1a7c3c5800996e1695d7d3edfc2d01bb53" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double BoundingValidator::scale</definition>
+        <argsstring></argsstring>
+        <name>scale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab97e323c321d16a707d6dac1f9e06723" compoundref="sample_8py" startline="59" endline="68">sampleGenerator.sample.sample.applyScale</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1abad33069f3e1539735ea8ac428d1a510" compoundref="sample_8py" startline="110" endline="112">sampleGenerator.sample.sample.getScale</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_bounding_validator_1a4e8823105033fa527c5e634b49beaeab" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat BoundingValidator::image</definition>
+        <argsstring></argsstring>
+        <name>image</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a7cd149af483afe13533c9572ded173ae" compoundref="sample_8py" startline="30" endline="33">sampleGenerator.sample.sample.getImage</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab1d8c7ea79c8874ae0bdf808bc67e9e6" compoundref="sample_8py" startline="34" endline="36">sampleGenerator.sample.sample.getImageWidth</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a06106232d720b3f6b169461f34469cfd" compoundref="sample_8py" startline="37" endline="39">sampleGenerator.sample.sample.getImageHeight</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1aabf57b5d5eb0d1b6e89f28d5c0d97940" compoundref="sample_8py" startline="52" endline="58">sampleGenerator.sample.sample.getImageWithData</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab97e323c321d16a707d6dac1f9e06723" compoundref="sample_8py" startline="59" endline="68">sampleGenerator.sample.sample.applyScale</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a93fdd9624584a5452887a7efe5003849" compoundref="sample_8py" startline="69" endline="96">sampleGenerator.sample.sample.applyWarp</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a13629bd805c34f9847ded8720650d37b" compoundref="sample_8py" startline="97" endline="106">sampleGenerator.sample.sample.applyFlip</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_bounding_validator_1ae697e066d8c9d8bc0edb60282cec3324" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>BoundingValidator::BoundingValidator</definition>
+        <argsstring>(const cv::Mat &amp;image_in, double scale=3)</argsstring>
+        <name>BoundingValidator</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image_in</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+          <defval>3</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.cpp" bodystart="7" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bounding_validator_1af81f3b37170e45eb241667604a47fece" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool BoundingValidator::validate</definition>
+        <argsstring>(std::vector&lt; cv::Point &gt; &amp;bounding, cv::Rect_&lt; double &gt; &amp;validatedBound, int &amp;key)</argsstring>
+        <name>validate</name>
+        <param>
+          <type>std::vector&lt; cv::Point &gt; &amp;</type>
+          <declname>bounding</declname>
+        </param>
+        <param>
+          <type>cv::Rect_&lt; double &gt; &amp;</type>
+          <declname>validatedBound</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.cpp" bodystart="17" bodyend="23"/>
+        <referencedby refid="class_detections_validator_1a105c1bda43fee24887005840fccb7576" compoundref="_detections_validator_8cpp" startline="51" endline="103">DetectionsValidator::validate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_bounding_validator_1aeb223a7f1fcd5f62503c22167c4051dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool BoundingValidator::validate</definition>
+        <argsstring>(const cv::Rect_&lt; double &gt; &amp;bounding, cv::Rect_&lt; double &gt; &amp;validatedBound, int &amp;key)</argsstring>
+        <name>validate</name>
+        <param>
+          <type>const cv::Rect_&lt; double &gt; &amp;</type>
+          <declname>bounding</declname>
+        </param>
+        <param>
+          <type>cv::Rect_&lt; double &gt; &amp;</type>
+          <declname>validatedBound</declname>
+        </param>
+        <param>
+          <type>int &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.cpp" bodystart="80" bodyend="109"/>
+        <references refid="struct_bounding_rect_gui_mover_1a5e242d1bbc84714da0fa04b0adee0e5d" compoundref="_bounding_rect_gui_mover_8cpp" startline="88" endline="90">BoundingRectGuiMover::getRect</references>
+      </memberdef>
+      <memberdef kind="function" id="class_bounding_validator_1a490e960e21fae4b4e695314eb014fe22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool BoundingValidator::validateNDetections</definition>
+        <argsstring>(std::vector&lt; RectRegion &gt; &amp;regions)</argsstring>
+        <name>validateNDetections</name>
+        <param>
+          <type>std::vector&lt; <ref refid="struct_rect_region" kindref="compound">RectRegion</ref> &gt; &amp;</type>
+          <declname>regions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.cpp" bodystart="111" bodyend="144"/>
+        <referencedby refid="class_detections_validator_1a742df9d44127fa19a919e985b7ad6953" compoundref="_detections_validator_8cpp" startline="135" endline="192">DetectionsValidator::validate</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_bounding_validator_1a291d5f0de81326f531c21f1dffeca6de" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BoundingValidator::CallBackFunc</definition>
+        <argsstring>(int event, int x, int y, int flags, void *userdata)</argsstring>
+        <name>CallBackFunc</name>
+        <param>
+          <type>int</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="31" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.cpp" bodystart="29" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_bounding_validator_1af67730b4331ed309665c7996f1c77025" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BoundingValidator::CallBackFuncNumberDetections</definition>
+        <argsstring>(int event, int x, int y, int flags, void *userdata)</argsstring>
+        <name>CallBackFuncNumberDetections</name>
+        <param>
+          <type>int</type>
+          <declname>event</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>flags</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>userdata</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="32" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.cpp" bodystart="148" bodyend="183"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_bounding_validator_1aca88d2a74c70490b18ff61ee03961def" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat BoundingValidator::updateRegionsImage</definition>
+        <argsstring>(const std::vector&lt; RectRegion &gt; &amp;regions)</argsstring>
+        <name>updateRegionsImage</name>
+        <param>
+          <type>const std::vector&lt; <ref refid="struct_rect_region" kindref="compound">RectRegion</ref> &gt; &amp;</type>
+          <declname>regions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="38" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.cpp" bodystart="185" bodyend="196"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/BoundingValidator.h" bodystart="18" bodyend="41"/>
+    <listofallmembers>
+      <member refid="class_bounding_validator_1ae697e066d8c9d8bc0edb60282cec3324" prot="public" virt="non-virtual"><scope>BoundingValidator</scope><name>BoundingValidator</name></member>
+      <member refid="class_bounding_validator_1a291d5f0de81326f531c21f1dffeca6de" prot="private" virt="non-virtual"><scope>BoundingValidator</scope><name>CallBackFunc</name></member>
+      <member refid="class_bounding_validator_1af67730b4331ed309665c7996f1c77025" prot="private" virt="non-virtual"><scope>BoundingValidator</scope><name>CallBackFuncNumberDetections</name></member>
+      <member refid="class_bounding_validator_1a4e8823105033fa527c5e634b49beaeab" prot="private" virt="non-virtual"><scope>BoundingValidator</scope><name>image</name></member>
+      <member refid="class_bounding_validator_1a7c3c5800996e1695d7d3edfc2d01bb53" prot="private" virt="non-virtual"><scope>BoundingValidator</scope><name>scale</name></member>
+      <member refid="class_bounding_validator_1aca88d2a74c70490b18ff61ee03961def" prot="private" virt="non-virtual"><scope>BoundingValidator</scope><name>updateRegionsImage</name></member>
+      <member refid="class_bounding_validator_1af81f3b37170e45eb241667604a47fece" prot="public" virt="non-virtual"><scope>BoundingValidator</scope><name>validate</name></member>
+      <member refid="class_bounding_validator_1aeb223a7f1fcd5f62503c22167c4051dd" prot="public" virt="non-virtual"><scope>BoundingValidator</scope><name>validate</name></member>
+      <member refid="class_bounding_validator_1a490e960e21fae4b4e695314eb014fe22" prot="public" virt="non-virtual"><scope>BoundingValidator</scope><name>validateNDetections</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

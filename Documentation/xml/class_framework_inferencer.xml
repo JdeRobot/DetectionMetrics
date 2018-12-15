@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_framework_inferencer" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>FrameworkInferencer</compoundname>
+    <derivedcompoundref refid="class_caffe_inferencer" prot="public" virt="non-virtual">CaffeInferencer</derivedcompoundref>
+    <derivedcompoundref refid="class_darknet_inferencer" prot="public" virt="non-virtual">DarknetInferencer</derivedcompoundref>
+    <derivedcompoundref refid="class_keras_inferencer" prot="public" virt="non-virtual">KerasInferencer</derivedcompoundref>
+    <derivedcompoundref refid="class_tensor_flow_inferencer" prot="public" virt="non-virtual">TensorFlowInferencer</derivedcompoundref>
+    <includes refid="_framework_inferencer_8h" local="no">FrameworkInferencer.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string FrameworkInferencer::classNamesFile</definition>
+        <argsstring></argsstring>
+        <name>classNamesFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="class_caffe_inferencer_1a061bf73e8736135e292154d9fa50d13d" compoundref="_caffe_inferencer_8cpp" startline="5" endline="27">CaffeInferencer::CaffeInferencer</referencedby>
+        <referencedby refid="class_caffe_inferencer_1a898f6d0e7106ac663a6c26ecdf799502" compoundref="_caffe_inferencer_8cpp" startline="29" endline="76">CaffeInferencer::detectImp</referencedby>
+        <referencedby refid="class_darknet_inferencer_1ad3ec4de38c45a556057c93a14561e3b4" compoundref="_darknet_inferencer_8cpp" startline="9" endline="12">DarknetInferencer::DarknetInferencer</referencedby>
+        <referencedby refid="class_darknet_inferencer_1a9fb53792b71055b3104e5a54a6190c50" compoundref="_darknet_inferencer_8cpp" startline="14" endline="31">DarknetInferencer::detectImp</referencedby>
+        <referencedby refid="class_keras_inferencer_1a086ecb2ca8beafba15acdfca0e3ede00" compoundref="_keras_inferencer_8cpp" startline="5" endline="64">KerasInferencer::KerasInferencer</referencedby>
+        <referencedby refid="class_keras_inferencer_1a4c944e963e3ec3ca8fa0bd4b229a8931" compoundref="_keras_inferencer_8cpp" startline="71" endline="103">KerasInferencer::detectImp</referencedby>
+        <referencedby refid="class_tensor_flow_inferencer_1a78ef7a49464aeb0d846910cda36b33cc" compoundref="_tensor_flow_inferencer_8cpp" startline="5" endline="65">TensorFlowInferencer::TensorFlowInferencer</referencedby>
+        <referencedby refid="class_tensor_flow_inferencer_1ae8b603ab05273a9ec5fee720f23d0c58" compoundref="_tensor_flow_inferencer_8cpp" startline="72" endline="108">TensorFlowInferencer::detectImp</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_framework_inferencer_1a20ba53255bacdca45f581bb1a737f75a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; long &gt;</type>
+        <definition>std::vector&lt;long&gt; FrameworkInferencer::durationVector</definition>
+        <argsstring></argsstring>
+        <name>durationVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_framework_inferencer_1adda91b1e8b6238e4cd3cc18e84675fea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FrameworkInferencer::FrameworkInferencer</definition>
+        <argsstring>()</argsstring>
+        <name>FrameworkInferencer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.cpp" bodystart="30" bodyend="32"/>
+        <references refid="class_framework_inferencer_1a51291e562ddc5a4b86c0c413439d59a5" compoundref="_framework_inferencer_8cpp" startline="20" endline="28">getMeanDurationTime</references>
+      </memberdef>
+      <memberdef kind="function" id="class_framework_inferencer_1a0a0ad89131a1f2a2377a3003b0c1d319" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FrameworkInferencer::~ FrameworkInferencer</definition>
+        <argsstring>()</argsstring>
+        <name>~ FrameworkInferencer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h" line="18" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_framework_inferencer_1a4c2b3b0ec03df5f97e7b32235422dc60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_sample" kindref="compound">Sample</ref></type>
+        <definition>Sample FrameworkInferencer::detect</definition>
+        <argsstring>(const cv::Mat &amp;image, double confidence_threshold)</argsstring>
+        <name>detect</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>confidence_threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.cpp" bodystart="10" bodyend="18"/>
+        <references refid="class_framework_inferencer_1a8fd7e708c8be4471bc2b37a4193a9045">detectImp</references>
+      </memberdef>
+      <memberdef kind="function" id="class_framework_inferencer_1a51291e562ddc5a4b86c0c413439d59a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int FrameworkInferencer::getMeanDurationTime</definition>
+        <argsstring>()</argsstring>
+        <name>getMeanDurationTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.cpp" bodystart="20" bodyend="28"/>
+        <referencedby refid="class_framework_inferencer_1adda91b1e8b6238e4cd3cc18e84675fea" compoundref="_framework_inferencer_8cpp" startline="30" endline="32">FrameworkInferencer</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_framework_inferencer_1a8fd7e708c8be4471bc2b37a4193a9045" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="struct_sample" kindref="compound">Sample</ref></type>
+        <definition>virtual Sample FrameworkInferencer::detectImp</definition>
+        <argsstring>(const cv::Mat &amp;image, double confidence_threshold)=0</argsstring>
+        <name>detectImp</name>
+        <reimplementedby refid="class_tensor_flow_inferencer_1ae8b603ab05273a9ec5fee720f23d0c58">detectImp</reimplementedby>
+        <reimplementedby refid="class_keras_inferencer_1a4c944e963e3ec3ca8fa0bd4b229a8931">detectImp</reimplementedby>
+        <reimplementedby refid="class_darknet_inferencer_1a9fb53792b71055b3104e5a54a6190c50">detectImp</reimplementedby>
+        <reimplementedby refid="class_caffe_inferencer_1a898f6d0e7106ac663a6c26ecdf799502">detectImp</reimplementedby>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>confidence_threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h" line="21" column="1"/>
+        <referencedby refid="class_framework_inferencer_1a4c2b3b0ec03df5f97e7b32235422dc60" compoundref="_framework_inferencer_8cpp" startline="10" endline="18">detect</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="136">
+        <label>FrameworkInferencer</label>
+        <link refid="class_framework_inferencer"/>
+      </node>
+      <node id="140">
+        <label>TensorFlowInferencer</label>
+        <link refid="class_tensor_flow_inferencer"/>
+        <childnode refid="136" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="137">
+        <label>CaffeInferencer</label>
+        <link refid="class_caffe_inferencer"/>
+        <childnode refid="136" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="139">
+        <label>KerasInferencer</label>
+        <link refid="class_keras_inferencer"/>
+        <childnode refid="136" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="138">
+        <label>DarknetInferencer</label>
+        <link refid="class_darknet_inferencer"/>
+        <childnode refid="136" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h" bodystart="15" bodyend="28"/>
+    <listofallmembers>
+      <member refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" prot="protected" virt="non-virtual"><scope>FrameworkInferencer</scope><name>classNamesFile</name></member>
+      <member refid="class_framework_inferencer_1a4c2b3b0ec03df5f97e7b32235422dc60" prot="public" virt="non-virtual"><scope>FrameworkInferencer</scope><name>detect</name></member>
+      <member refid="class_framework_inferencer_1a8fd7e708c8be4471bc2b37a4193a9045" prot="public" virt="pure-virtual"><scope>FrameworkInferencer</scope><name>detectImp</name></member>
+      <member refid="class_framework_inferencer_1a20ba53255bacdca45f581bb1a737f75a" prot="private" virt="non-virtual"><scope>FrameworkInferencer</scope><name>durationVector</name></member>
+      <member refid="class_framework_inferencer_1adda91b1e8b6238e4cd3cc18e84675fea" prot="public" virt="non-virtual"><scope>FrameworkInferencer</scope><name>FrameworkInferencer</name></member>
+      <member refid="class_framework_inferencer_1a51291e562ddc5a4b86c0c413439d59a5" prot="public" virt="non-virtual"><scope>FrameworkInferencer</scope><name>getMeanDurationTime</name></member>
+      <member refid="class_framework_inferencer_1a0a0ad89131a1f2a2377a3003b0c1d319" prot="public" virt="non-virtual"><scope>FrameworkInferencer</scope><name>~ FrameworkInferencer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

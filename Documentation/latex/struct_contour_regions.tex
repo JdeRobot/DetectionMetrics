@@ -1,0 +1,149 @@
+\hypertarget{struct_contour_regions}{}\section{Contour\+Regions Struct Reference}
+\label{struct_contour_regions}\index{Contour\+Regions@{Contour\+Regions}}
+
+
+{\ttfamily \#include $<$Contour\+Regions.\+h$>$}
+
+Inheritance diagram for Contour\+Regions\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_contour_regions}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_contour_regions_a5e20ac69cb42cdf4831527ca7bca4cca}{Contour\+Regions} (const std\+::string \&json\+Path)
+\item 
+\hyperlink{struct_contour_regions_a75995164ca89b67bc5b34b59cd532056}{Contour\+Regions} ()
+\item 
+void \hyperlink{struct_contour_regions_a78fc9a246628abb76f5765c4102847e4}{save\+Json} (const std\+::string \&out\+Path)
+\item 
+void \hyperlink{struct_contour_regions_aeb483510869f1dcb141b26043eaf12f0}{add} (const std\+::vector$<$ cv\+::\+Point $>$ \&detections, const std\+::string \&class\+Id, const bool is\+Crowd=false)
+\item 
+void \hyperlink{struct_contour_regions_a77160c9738d01939d6b99588da777be5}{add} (const std\+::vector$<$ cv\+::\+Point $>$ \&detections, const std\+::string \&class\+Id, const double confidence\+\_\+score, const bool is\+Crowd=false)
+\item 
+\hyperlink{struct_contour_region}{Contour\+Region} \hyperlink{struct_contour_regions_a94961450720d9735337195dee1fd8b53}{get\+Region} (int idx)
+\item 
+std\+::vector$<$ \hyperlink{struct_contour_region}{Contour\+Region} $>$ \hyperlink{struct_contour_regions_aa48956c2ee10e312023b721ca4adcd07}{get\+Regions} ()
+\item 
+void \hyperlink{struct_contour_regions_a4f77a669499f53d59e51aa30ec040bc6}{draw\+Regions} (cv\+::\+Mat \&image)
+\item 
+void \hyperlink{struct_contour_regions_a8320d00da57b3362afb70f6886919534}{filter\+Samples\+By\+ID} (std\+::vector$<$ std\+::string $>$ filtered\+I\+DS)
+\item 
+bool \hyperlink{struct_contour_regions_ab8b13783859be86bdffa78c3a61e1387}{empty} ()
+\item 
+void \hyperlink{struct_contour_regions_a9bd987b6b8a1cc27f5ece5b321f1b9ba}{print} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{struct_contour_region}{Contour\+Region} $>$ \hyperlink{struct_contour_regions_a83c5e91699fe55a1306426ddbbcce7b6}{regions}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_contour_regions_a5e20ac69cb42cdf4831527ca7bca4cca}\label{struct_contour_regions_a5e20ac69cb42cdf4831527ca7bca4cca}} 
+\index{Contour\+Regions@{Contour\+Regions}!Contour\+Regions@{Contour\+Regions}}
+\index{Contour\+Regions@{Contour\+Regions}!Contour\+Regions@{Contour\+Regions}}
+\subsubsection{\texorpdfstring{Contour\+Regions()}{ContourRegions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Contour\+Regions\+::\+Contour\+Regions (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{json\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_contour_regions_a75995164ca89b67bc5b34b59cd532056}\label{struct_contour_regions_a75995164ca89b67bc5b34b59cd532056}} 
+\index{Contour\+Regions@{Contour\+Regions}!Contour\+Regions@{Contour\+Regions}}
+\index{Contour\+Regions@{Contour\+Regions}!Contour\+Regions@{Contour\+Regions}}
+\subsubsection{\texorpdfstring{Contour\+Regions()}{ContourRegions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Contour\+Regions\+::\+Contour\+Regions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_contour_regions_aeb483510869f1dcb141b26043eaf12f0}\label{struct_contour_regions_aeb483510869f1dcb141b26043eaf12f0}} 
+\index{Contour\+Regions@{Contour\+Regions}!add@{add}}
+\index{add@{add}!Contour\+Regions@{Contour\+Regions}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Contour\+Regions\+::add (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ cv\+::\+Point $>$ \&}]{detections,  }\item[{const std\+::string \&}]{class\+Id,  }\item[{const bool}]{is\+Crowd = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_contour_regions_a77160c9738d01939d6b99588da777be5}\label{struct_contour_regions_a77160c9738d01939d6b99588da777be5}} 
+\index{Contour\+Regions@{Contour\+Regions}!add@{add}}
+\index{add@{add}!Contour\+Regions@{Contour\+Regions}}
+\subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Contour\+Regions\+::add (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ cv\+::\+Point $>$ \&}]{detections,  }\item[{const std\+::string \&}]{class\+Id,  }\item[{const double}]{confidence\+\_\+score,  }\item[{const bool}]{is\+Crowd = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_contour_regions_a4f77a669499f53d59e51aa30ec040bc6}\label{struct_contour_regions_a4f77a669499f53d59e51aa30ec040bc6}} 
+\index{Contour\+Regions@{Contour\+Regions}!draw\+Regions@{draw\+Regions}}
+\index{draw\+Regions@{draw\+Regions}!Contour\+Regions@{Contour\+Regions}}
+\subsubsection{\texorpdfstring{draw\+Regions()}{drawRegions()}}
+{\footnotesize\ttfamily void Contour\+Regions\+::draw\+Regions (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_adab32a2a00fc77abb6f4876939dc8505}{Regions}.
+
+\mbox{\Hypertarget{struct_contour_regions_ab8b13783859be86bdffa78c3a61e1387}\label{struct_contour_regions_ab8b13783859be86bdffa78c3a61e1387}} 
+\index{Contour\+Regions@{Contour\+Regions}!empty@{empty}}
+\index{empty@{empty}!Contour\+Regions@{Contour\+Regions}}
+\subsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool Contour\+Regions\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_a5763d0526981f665356ac35734e8e505}{Regions}.
+
+\mbox{\Hypertarget{struct_contour_regions_a8320d00da57b3362afb70f6886919534}\label{struct_contour_regions_a8320d00da57b3362afb70f6886919534}} 
+\index{Contour\+Regions@{Contour\+Regions}!filter\+Samples\+By\+ID@{filter\+Samples\+By\+ID}}
+\index{filter\+Samples\+By\+ID@{filter\+Samples\+By\+ID}!Contour\+Regions@{Contour\+Regions}}
+\subsubsection{\texorpdfstring{filter\+Samples\+By\+I\+D()}{filterSamplesByID()}}
+{\footnotesize\ttfamily void Contour\+Regions\+::filter\+Samples\+By\+ID (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{filtered\+I\+DS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_ae2bcea2b1c245a9d1ab1ff3abc23f2a0}{Regions}.
+
+\mbox{\Hypertarget{struct_contour_regions_a94961450720d9735337195dee1fd8b53}\label{struct_contour_regions_a94961450720d9735337195dee1fd8b53}} 
+\index{Contour\+Regions@{Contour\+Regions}!get\+Region@{get\+Region}}
+\index{get\+Region@{get\+Region}!Contour\+Regions@{Contour\+Regions}}
+\subsubsection{\texorpdfstring{get\+Region()}{getRegion()}}
+{\footnotesize\ttfamily \hyperlink{struct_contour_region}{Contour\+Region} Contour\+Regions\+::get\+Region (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_contour_regions_aa48956c2ee10e312023b721ca4adcd07}\label{struct_contour_regions_aa48956c2ee10e312023b721ca4adcd07}} 
+\index{Contour\+Regions@{Contour\+Regions}!get\+Regions@{get\+Regions}}
+\index{get\+Regions@{get\+Regions}!Contour\+Regions@{Contour\+Regions}}
+\subsubsection{\texorpdfstring{get\+Regions()}{getRegions()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{struct_contour_region}{Contour\+Region} $>$ Contour\+Regions\+::get\+Regions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_contour_regions_a9bd987b6b8a1cc27f5ece5b321f1b9ba}\label{struct_contour_regions_a9bd987b6b8a1cc27f5ece5b321f1b9ba}} 
+\index{Contour\+Regions@{Contour\+Regions}!print@{print}}
+\index{print@{print}!Contour\+Regions@{Contour\+Regions}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Contour\+Regions\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_a5a19f40bc0d2226f244625b88fbf8e59}{Regions}.
+
+\mbox{\Hypertarget{struct_contour_regions_a78fc9a246628abb76f5765c4102847e4}\label{struct_contour_regions_a78fc9a246628abb76f5765c4102847e4}} 
+\index{Contour\+Regions@{Contour\+Regions}!save\+Json@{save\+Json}}
+\index{save\+Json@{save\+Json}!Contour\+Regions@{Contour\+Regions}}
+\subsubsection{\texorpdfstring{save\+Json()}{saveJson()}}
+{\footnotesize\ttfamily void Contour\+Regions\+::save\+Json (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{out\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{struct_regions_a402078d4ff67e4aee31b231c2d1942c6}{Regions}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_contour_regions_a83c5e91699fe55a1306426ddbbcce7b6}\label{struct_contour_regions_a83c5e91699fe55a1306426ddbbcce7b6}} 
+\index{Contour\+Regions@{Contour\+Regions}!regions@{regions}}
+\index{regions@{regions}!Contour\+Regions@{Contour\+Regions}}
+\subsubsection{\texorpdfstring{regions}{regions}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{struct_contour_region}{Contour\+Region}$>$ Contour\+Regions\+::regions}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Regions/\hyperlink{_contour_regions_8h}{Contour\+Regions.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Regions/\hyperlink{_contour_regions_8cpp}{Contour\+Regions.\+cpp}\end{DoxyCompactItemize}

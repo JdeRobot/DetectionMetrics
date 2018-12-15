@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_c8ed0e67b28de8e6e5093400dba9b08a" kind="dir">
+    <compoundname>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils</compoundname>
+    <innerfile refid="_bounding_rect_gui_mover_8cpp">BoundingRectGuiMover.cpp</innerfile>
+    <innerfile refid="_bounding_rect_gui_mover_8h">BoundingRectGuiMover.h</innerfile>
+    <innerfile refid="_bounding_validator_8cpp">BoundingValidator.cpp</innerfile>
+    <innerfile refid="_bounding_validator_8h">BoundingValidator.h</innerfile>
+    <innerfile refid="_depth_foreground_segmentator_8cpp">DepthForegroundSegmentator.cpp</innerfile>
+    <innerfile refid="_depth_foreground_segmentator_8h">DepthForegroundSegmentator.h</innerfile>
+    <innerfile refid="_detections_validator_8cpp">DetectionsValidator.cpp</innerfile>
+    <innerfile refid="_detections_validator_8h">DetectionsValidator.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/"/>
+  </compounddef>
+</doxygen>

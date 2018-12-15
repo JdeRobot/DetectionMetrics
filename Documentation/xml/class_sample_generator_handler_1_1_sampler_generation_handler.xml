@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_sample_generator_handler_1_1_sampler_generation_handler" kind="class" language="C++" prot="public">
+    <compoundname>SampleGeneratorHandler::SamplerGenerationHandler</compoundname>
+    <includes refid="_sampler_generation_handler_8h" local="no">SamplerGenerationHandler.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_sample_generator_handler_1_1_sampler_generation_handler_1af7e70df7bcf3189d20278f31c82c4c02" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_generic_dataset_reader_8h_1aee69804c49b311360ba65543d4111f58" kindref="member">GenericDatasetReaderPtr</ref></type>
+        <definition>GenericDatasetReaderPtr SampleGeneratorHandler::SamplerGenerationHandler::createDatasetReaderPtr</definition>
+        <argsstring>(const QListView *datasetList, const QListView *namesList, const QListView *readerImpList, const QListView *filterClasses, const std::string &amp;datasetPath, const std::string &amp;namesPath, const bool imagesRequired)</argsstring>
+        <name>createDatasetReaderPtr</name>
+        <param>
+          <type>const QListView *</type>
+          <declname>datasetList</declname>
+        </param>
+        <param>
+          <type>const QListView *</type>
+          <declname>namesList</declname>
+        </param>
+        <param>
+          <type>const QListView *</type>
+          <declname>readerImpList</declname>
+        </param>
+        <param>
+          <type>const QListView *</type>
+          <declname>filterClasses</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>datasetPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>namesPath</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>imagesRequired</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.h" line="18" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.cpp" bodystart="9" bodyend="55"/>
+        <references refid="class_utils_1af7234a751d8a81bd01774e9af9e403be" compoundref="_utils_8cpp" startline="7" endline="21">Utils::getListViewContent</references>
+        <referencedby refid="class_sample_generator_handler_1_1_converter_1aa81680abc717a733101b6cddd7aa69f7" compoundref="_dataset_evaluation_app_2_sampler_generator_handler_2_converter_8cpp" startline="10" endline="99">SampleGeneratorHandler::Converter::process</referencedby>
+        <referencedby refid="class_sample_generator_handler_1_1_detector_1a9444b20f47b9b07fa4800bc283ab5c8a" compoundref="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp" startline="14" endline="83">SampleGeneratorHandler::Detector::process</referencedby>
+        <referencedby refid="class_sample_generator_handler_1_1_evaluator_1aea0f0fd9a50055382e4c44f45f61c4f0" compoundref="_dataset_evaluation_app_2_sampler_generator_handler_2_evaluator_8cpp" startline="11" endline="61">SampleGeneratorHandler::Evaluator::process</referencedby>
+        <referencedby refid="class_sample_generator_handler_1_1_viewer_1a49261aa867217f568842e0d460743691" compoundref="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp" startline="15" endline="40">SampleGeneratorHandler::Viewer::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_generator_handler_1_1_sampler_generation_handler_1ad840c7f9b5a3281f62829933308e7e18" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_generic_live_reader_8h_1ad27d78f1cc13a4eb75ca3d14b6188a1a" kindref="member">GenericLiveReaderPtr</ref></type>
+        <definition>GenericLiveReaderPtr SampleGeneratorHandler::SamplerGenerationHandler::createLiveReaderPtr</definition>
+        <argsstring>(const QListView *namesList, const QListView *readerImpList, const QGroupBox *deployer_params, const QGroupBox *camera_params, const std::string &amp;infoPath, const std::string &amp;namesPath)</argsstring>
+        <name>createLiveReaderPtr</name>
+        <param>
+          <type>const QListView *</type>
+          <declname>namesList</declname>
+        </param>
+        <param>
+          <type>const QListView *</type>
+          <declname>readerImpList</declname>
+        </param>
+        <param>
+          <type>const QGroupBox *</type>
+          <declname>deployer_params</declname>
+        </param>
+        <param>
+          <type>const QGroupBox *</type>
+          <declname>camera_params</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>infoPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>namesPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.h" line="25" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.cpp" bodystart="57" bodyend="102"/>
+        <references refid="class_utils_1af7234a751d8a81bd01774e9af9e403be" compoundref="_utils_8cpp" startline="7" endline="21">Utils::getListViewContent</references>
+        <references refid="class_utils_1a70525e7417b0c195534a64403d25bf13" compoundref="_utils_8cpp" startline="88" endline="98">Utils::getCameraParamsContent</references>
+        <references refid="class_utils_1a67febf7d08f4b9e5e8a105317556c22b" compoundref="_utils_8cpp" startline="23" endline="50">Utils::getDeployerParamsContent</references>
+        <referencedby refid="class_sample_generator_handler_1_1_deployer_1ad9964a4e64b6d51ce7cd63083929ac42" compoundref="_deployer_8cpp" startline="13" endline="89">SampleGeneratorHandler::Deployer::process</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.h" line="16" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.h" bodystart="16" bodyend="31"/>
+    <listofallmembers>
+      <member refid="class_sample_generator_handler_1_1_sampler_generation_handler_1af7e70df7bcf3189d20278f31c82c4c02" prot="public" virt="non-virtual"><scope>SampleGeneratorHandler::SamplerGenerationHandler</scope><name>createDatasetReaderPtr</name></member>
+      <member refid="class_sample_generator_handler_1_1_sampler_generation_handler_1ad840c7f9b5a3281f62829933308e7e18" prot="public" virt="non-virtual"><scope>SampleGeneratorHandler::SamplerGenerationHandler</scope><name>createLiveReaderPtr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

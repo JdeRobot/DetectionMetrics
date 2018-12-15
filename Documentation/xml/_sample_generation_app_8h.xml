@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_sample_generation_app_8h" kind="file" language="C++">
+    <compoundname>SampleGenerationApp.h</compoundname>
+    <includes refid="config_8h" local="no">config/config.h</includes>
+    <includedby refid="mainwindow_8h" local="no">DeepLearningSuite/DatasetEvaluationApp/mainwindow.h</includedby>
+    <includedby refid="main_8cpp" local="no">DeepLearningSuite/DatasetEvaluationApp/main.cpp</includedby>
+    <includedby refid="_sample_generation_app_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.cpp</includedby>
+    <includedby refid="generator_8cpp" local="no">DeepLearningSuite/SampleGenerationApp/generator.cpp</includedby>
+    <includedby refid="auto_evaluator_8cpp" local="no">DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp</includedby>
+    <includedby refid="_tools_2_converter_2_converter_8cpp" local="no">DeepLearningSuite/Tools/Converter/converter.cpp</includedby>
+    <includedby refid="_tools_2_detector_2_detector_8cpp" local="no">DeepLearningSuite/Tools/Detector/detector.cpp</includedby>
+    <includedby refid="_tools_2_evaluator_2_evaluator_8cpp" local="no">DeepLearningSuite/Tools/Evaluator/evaluator.cpp</includedby>
+    <includedby refid="splitter_8cpp" local="no">DeepLearningSuite/Tools/Splitter/splitter.cpp</includedby>
+    <includedby refid="_tools_2_viewer_2_viewer_8cpp" local="no">DeepLearningSuite/Tools/Viewer/viewer.cpp</includedby>
+    <incdepgraph>
+      <node id="4944">
+        <label>iomanip</label>
+      </node>
+      <node id="4940">
+        <label>boost/algorithm/string/classification.hpp</label>
+      </node>
+      <node id="4943">
+        <label>config/properties.hpp</label>
+        <link refid="properties_8hpp"/>
+        <childnode refid="4934" relation="include">
+        </childnode>
+        <childnode refid="4944" relation="include">
+        </childnode>
+        <childnode refid="4945" relation="include">
+        </childnode>
+        <childnode refid="4935" relation="include">
+        </childnode>
+        <childnode refid="4938" relation="include">
+        </childnode>
+        <childnode refid="4932" relation="include">
+        </childnode>
+        <childnode refid="4936" relation="include">
+        </childnode>
+      </node>
+      <node id="4935">
+        <label>string</label>
+      </node>
+      <node id="4931">
+        <label>config/config.h</label>
+        <link refid="config_8h"/>
+        <childnode refid="4932" relation="include">
+        </childnode>
+        <childnode refid="4933" relation="include">
+        </childnode>
+        <childnode refid="4943" relation="include">
+        </childnode>
+      </node>
+      <node id="4941">
+        <label>fstream</label>
+      </node>
+      <node id="4932">
+        <label>yaml-cpp/yaml.h</label>
+      </node>
+      <node id="4939">
+        <label>boost/algorithm/string/split.hpp</label>
+      </node>
+      <node id="4930">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h</label>
+        <link refid="_sample_generation_app_8h"/>
+        <childnode refid="4931" relation="include">
+        </childnode>
+      </node>
+      <node id="4936">
+        <label>config/stdutils.hpp</label>
+        <link refid="stdutils_8hpp"/>
+        <childnode refid="4937" relation="include">
+        </childnode>
+        <childnode refid="4935" relation="include">
+        </childnode>
+        <childnode refid="4938" relation="include">
+        </childnode>
+        <childnode refid="4939" relation="include">
+        </childnode>
+        <childnode refid="4940" relation="include">
+        </childnode>
+        <childnode refid="4941" relation="include">
+        </childnode>
+      </node>
+      <node id="4938">
+        <label>vector</label>
+      </node>
+      <node id="4945">
+        <label>sstream</label>
+      </node>
+      <node id="4937">
+        <label>cstdlib</label>
+      </node>
+      <node id="4934">
+        <label>iostream</label>
+      </node>
+      <node id="4933">
+        <label>config/loader.hpp</label>
+        <link refid="loader_8hpp"/>
+        <childnode refid="4934" relation="include">
+        </childnode>
+        <childnode refid="4935" relation="include">
+        </childnode>
+        <childnode refid="4936" relation="include">
+        </childnode>
+        <childnode refid="4932" relation="include">
+        </childnode>
+        <childnode refid="4942" relation="include">
+        </childnode>
+        <childnode refid="4943" relation="include">
+        </childnode>
+      </node>
+      <node id="4942">
+        <label>yaml-cpp/exceptions.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4961">
+        <label>DeepLearningSuite/Tools/Viewer/viewer.cpp</label>
+        <link refid="_tools_2_viewer_2_viewer_8cpp"/>
+      </node>
+      <node id="4954">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.cpp</label>
+        <link refid="_sample_generation_app_8cpp"/>
+      </node>
+      <node id="4959">
+        <label>DeepLearningSuite/Tools/Evaluator/evaluator.cpp</label>
+        <link refid="_tools_2_evaluator_2_evaluator_8cpp"/>
+      </node>
+      <node id="4956">
+        <label>DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp</label>
+        <link refid="auto_evaluator_8cpp"/>
+      </node>
+      <node id="4957">
+        <label>DeepLearningSuite/Tools/Converter/converter.cpp</label>
+        <link refid="_tools_2_converter_2_converter_8cpp"/>
+      </node>
+      <node id="4946">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h</label>
+        <link refid="_sample_generation_app_8h"/>
+        <childnode refid="4947" relation="include">
+        </childnode>
+        <childnode refid="4952" relation="include">
+        </childnode>
+        <childnode refid="4954" relation="include">
+        </childnode>
+        <childnode refid="4955" relation="include">
+        </childnode>
+        <childnode refid="4956" relation="include">
+        </childnode>
+        <childnode refid="4957" relation="include">
+        </childnode>
+        <childnode refid="4958" relation="include">
+        </childnode>
+        <childnode refid="4959" relation="include">
+        </childnode>
+        <childnode refid="4960" relation="include">
+        </childnode>
+        <childnode refid="4961" relation="include">
+        </childnode>
+      </node>
+      <node id="4949">
+        <label>DeepLearningSuite/build/DatasetEvaluationApp/DatasetEvaluationApp_autogen/mocs_compilation.cpp</label>
+        <link refid="mocs__compilation_8cpp"/>
+      </node>
+      <node id="4952">
+        <label>DeepLearningSuite/DatasetEvaluationApp/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="4948">
+        <label>DeepLearningSuite/build/DatasetEvaluationApp/DatasetEvaluationApp_autogen/EWIEGA46WW/moc_mainwindow.cpp</label>
+        <link refid="moc__mainwindow_8cpp"/>
+        <childnode refid="4949" relation="include">
+        </childnode>
+      </node>
+      <node id="4960">
+        <label>DeepLearningSuite/Tools/Splitter/splitter.cpp</label>
+        <link refid="splitter_8cpp"/>
+      </node>
+      <node id="4947">
+        <label>DeepLearningSuite/DatasetEvaluationApp/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="4948" relation="include">
+        </childnode>
+        <childnode refid="4950" relation="include">
+        </childnode>
+        <childnode refid="4952" relation="include">
+        </childnode>
+        <childnode refid="4953" relation="include">
+        </childnode>
+      </node>
+      <node id="4953">
+        <label>DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="4950">
+        <label>DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h</label>
+        <link refid="_tab_handler_8h"/>
+        <childnode refid="4951" relation="include">
+        </childnode>
+      </node>
+      <node id="4958">
+        <label>DeepLearningSuite/Tools/Detector/detector.cpp</label>
+        <link refid="_tools_2_detector_2_detector_8cpp"/>
+      </node>
+      <node id="4955">
+        <label>DeepLearningSuite/SampleGenerationApp/generator.cpp</label>
+        <link refid="generator_8cpp"/>
+      </node>
+      <node id="4951">
+        <label>DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.cpp</label>
+        <link refid="_tab_handler_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_sample_generation_app" prot="public">SampleGenerationApp</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>4/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_SAMPLEGENERATIOAPP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_SAMPLEGENERATIOAPP_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="config_8h" kindref="compound">config/config.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="class_sample_generation_app" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_sample_generation_app" kindref="compound">SampleGenerationApp</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_sample_generation_app_1ac7359b551057127947243e1251237a90" kindref="member">SampleGenerationApp</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_sample_generation_app_1af98f6187cc8eb62fc3fe0ff53df76b6e" kindref="member">argc</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="class_sample_generation_app_1a7e490e3711491c2bc58351f9e9dd9945" kindref="member">argv</ref>[]);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_sample_generation_app_1a351fe6cfe624aeeee9ba4fb04d80ca0f" kindref="member">operator()</ref>()<sp/>=0;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_sample_generation_app_1acec58569149ac1fc8af9525d35b9e88a" kindref="member">process</ref>();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_config_1_1_properties" kindref="compound">Config::Properties</ref><sp/><ref refid="class_sample_generation_app_1a2c13df2c47ec917170e0b995218bb31b" kindref="member">getConfig</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20" refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_config_1_1_properties" kindref="compound">Config::Properties</ref><sp/><ref refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" kindref="member">config</ref>;</highlight></codeline>
+<codeline lineno="21" refid="class_sample_generation_app_1ad40fd006cd4f887a6458054152bf3592" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="class_sample_generation_app_1ad40fd006cd4f887a6458054152bf3592" kindref="member">configFilePath</ref>;</highlight></codeline>
+<codeline lineno="22" refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" kindref="member">requiredArguments</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_sample_generation_app_1adb5fa7f811a3177d7966981789b41f72" kindref="member">verifyRequirements</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_sample_generation_app_1a4304bff49d553420b6cf436fad6f5e6a" kindref="member">parse_arguments</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>argv[],<sp/>std::string&amp;<sp/>configFile);</highlight></codeline>
+<codeline lineno="26" refid="class_sample_generation_app_1af98f6187cc8eb62fc3fe0ff53df76b6e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_sample_generation_app_1af98f6187cc8eb62fc3fe0ff53df76b6e" kindref="member">argc</ref>;</highlight></codeline>
+<codeline lineno="27" refid="class_sample_generation_app_1a7e490e3711491c2bc58351f9e9dd9945" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/><ref refid="class_sample_generation_app_1a7e490e3711491c2bc58351f9e9dd9945" kindref="member">argv</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_SAMPLEGENERATIOAPP_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h"/>
+  </compounddef>
+</doxygen>

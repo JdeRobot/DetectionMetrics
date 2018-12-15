@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_class_type" kind="struct" language="C++" prot="public">
+    <compoundname>ClassType</compoundname>
+    <derivedcompoundref refid="struct_class_type_generic" prot="public" virt="non-virtual">ClassTypeGeneric</derivedcompoundref>
+    <derivedcompoundref refid="struct_class_type_mapper" prot="public" virt="non-virtual">ClassTypeMapper</derivedcompoundref>
+    <derivedcompoundref refid="struct_class_type_own" prot="public" virt="non-virtual">ClassTypeOwn</derivedcompoundref>
+    <includes refid="_class_type_8h" local="no">ClassType.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; ClassType::classes</definition>
+        <argsstring></argsstring>
+        <name>classes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.h" bodystart="18" bodyend="-1"/>
+        <referencedby refid="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" compoundref="_class_type_8cpp" startline="10" endline="21">getColor</referencedby>
+        <referencedby refid="struct_class_type_1ab5cc3bb3376a812d051d4726eb4ee063" compoundref="_class_type_8cpp" startline="48" endline="52">getClassID</referencedby>
+        <referencedby refid="struct_class_type_1a867149836bb99711a7c14fbe7801c9e4" compoundref="_class_type_8cpp" startline="54" endline="56">getAllAvailableClasses</referencedby>
+        <referencedby refid="struct_class_type_generic_1adee43b8b4a2c707e92aabb8483541c2e" compoundref="_class_type_generic_8cpp" startline="13" endline="16">ClassTypeGeneric::ClassTypeGeneric</referencedby>
+        <referencedby refid="struct_class_type_generic_1aff4300aa3e2616422062c5ad88f3209a" compoundref="_class_type_generic_8cpp" startline="18" endline="24">ClassTypeGeneric::fillStringClassesVector</referencedby>
+        <referencedby refid="struct_class_type_generic_1abb29534e4b1c9e2b33c57df5e56ef2fb" compoundref="_class_type_generic_8cpp" startline="26" endline="28">ClassTypeGeneric::setId</referencedby>
+        <referencedby refid="struct_class_type_mapper_1a999c63158f2d0093de9d60734e6605fb" compoundref="_class_type_mapper_8cpp" startline="16" endline="22">ClassTypeMapper::fillStringClassesVector</referencedby>
+        <referencedby refid="struct_class_type_mapper_1af76d00ce9a2267710ee9119f0bb2e607" compoundref="_class_type_mapper_8cpp" startline="24" endline="49">ClassTypeMapper::mapString</referencedby>
+        <referencedby refid="struct_class_type_own_1a1224d96cba263c903f2943477fd25273" compoundref="_class_type_own_8cpp" startline="14" endline="17">ClassTypeOwn::ClassTypeOwn</referencedby>
+        <referencedby refid="struct_class_type_own_1a4328aa6d88335c50ea33e1bbe6584d7e" compoundref="_class_type_own_8cpp" startline="19" endline="103">ClassTypeOwn::fillStringClassesVector</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ClassType::classID</definition>
+        <argsstring></argsstring>
+        <name>classID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.h" bodystart="19" bodyend="-1"/>
+        <referencedby refid="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" compoundref="_class_type_8cpp" startline="10" endline="21">getColor</referencedby>
+        <referencedby refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" compoundref="_class_type_8cpp" startline="44" endline="46">getClassString</referencedby>
+        <referencedby refid="struct_class_type_1ab5cc3bb3376a812d051d4726eb4ee063" compoundref="_class_type_8cpp" startline="48" endline="52">getClassID</referencedby>
+        <referencedby refid="struct_class_type_generic_1adee43b8b4a2c707e92aabb8483541c2e" compoundref="_class_type_generic_8cpp" startline="13" endline="16">ClassTypeGeneric::ClassTypeGeneric</referencedby>
+        <referencedby refid="struct_class_type_generic_1abb29534e4b1c9e2b33c57df5e56ef2fb" compoundref="_class_type_generic_8cpp" startline="26" endline="28">ClassTypeGeneric::setId</referencedby>
+        <referencedby refid="struct_class_type_mapper_1af76d00ce9a2267710ee9119f0bb2e607" compoundref="_class_type_mapper_8cpp" startline="24" endline="49">ClassTypeMapper::mapString</referencedby>
+        <referencedby refid="struct_class_type_own_1a1224d96cba263c903f2943477fd25273" compoundref="_class_type_own_8cpp" startline="14" endline="17">ClassTypeOwn::ClassTypeOwn</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Scalar</type>
+        <definition>cv::Scalar ClassType::getColor</definition>
+        <argsstring>()</argsstring>
+        <name>getColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.cpp" bodystart="10" bodyend="21"/>
+        <references refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" compoundref="_class_type_8h" startline="18">classes</references>
+        <references refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" compoundref="_class_type_8h" startline="19">classID</references>
+        <references refid="namespaceload_image_1a7db8b47946ece3163cc9ba0da721af88" compoundref="load_image_8py" startline="6">loadImage.red</references>
+        <references refid="struct_class_type_1a37ea5c5449bc06ed3f2a327448abe02a" compoundref="_class_type_8cpp" startline="23" endline="32">_get_color</references>
+        <referencedby refid="struct_rect_regions_1a9f31dc6fd3d371417e2c9024d1fdeecb" compoundref="_rect_regions_8cpp" startline="120" endline="146">RectRegions::drawRegions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ClassType::getClassString</definition>
+        <argsstring>()</argsstring>
+        <name>getClassString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.cpp" bodystart="44" bodyend="46"/>
+        <references refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" compoundref="_class_type_8h" startline="19">classID</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0b7e394c98b512e387952c7f7e39823d" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="49" endline="248">COCODatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a2e9d81e9fa12aa9d0e5df202f53792f0" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="251" endline="265">COCODatasetReader::appendSegmentationRegion</referencedby>
+        <referencedby refid="class_yolo_dataset_reader_1adabb18f657d4e0dc7b03f7f1b77eb452" compoundref="_yolo_dataset_reader_8cpp" startline="29" endline="61">YoloDatasetReader::appendDataset</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+        <referencedby refid="class_pascal_v_o_c_dataset_writer_1a93b4aa44b217491ddf99348b2517e6ea" compoundref="_pascal_v_o_c_dataset_writer_8cpp" startline="29" endline="171">PascalVOCDatasetWriter::process</referencedby>
+        <referencedby refid="class_caffe_inferencer_1a898f6d0e7106ac663a6c26ecdf799502" compoundref="_caffe_inferencer_8cpp" startline="29" endline="76">CaffeInferencer::detectImp</referencedby>
+        <referencedby refid="class_darknet_inferencer_1a9fb53792b71055b3104e5a54a6190c50" compoundref="_darknet_inferencer_8cpp" startline="14" endline="31">DarknetInferencer::detectImp</referencedby>
+        <referencedby refid="class_keras_inferencer_1a4c944e963e3ec3ca8fa0bd4b229a8931" compoundref="_keras_inferencer_8cpp" startline="71" endline="103">KerasInferencer::detectImp</referencedby>
+        <referencedby refid="class_tensor_flow_inferencer_1ae8b603ab05273a9ec5fee720f23d0c58" compoundref="_tensor_flow_inferencer_8cpp" startline="72" endline="108">TensorFlowInferencer::detectImp</referencedby>
+        <referencedby refid="struct_rect_regions_1a9f31dc6fd3d371417e2c9024d1fdeecb" compoundref="_rect_regions_8cpp" startline="120" endline="146">RectRegions::drawRegions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_type_1ab5cc3bb3376a812d051d4726eb4ee063" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ClassType::getClassID</definition>
+        <argsstring>()</argsstring>
+        <name>getClassID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.cpp" bodystart="48" bodyend="52"/>
+        <references refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" compoundref="_class_type_8h" startline="18">classes</references>
+        <references refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" compoundref="_class_type_8h" startline="19">classID</references>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+        <referencedby refid="class_yolo_dataset_writer_1a29ecb0d94701fc78b0b800d9665ca70d" compoundref="_yolo_dataset_writer_8cpp" startline="35" endline="109">YoloDatasetWriter::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_type_1a867149836bb99711a7c14fbe7801c9e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; ClassType::getAllAvailableClasses</definition>
+        <argsstring>()</argsstring>
+        <name>getAllAvailableClasses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.cpp" bodystart="54" bodyend="56"/>
+        <references refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" compoundref="_class_type_8h" startline="18">classes</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="struct_class_type_1a37ea5c5449bc06ed3f2a327448abe02a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float ClassType::_get_color</definition>
+        <argsstring>(int c, int x, int max)</argsstring>
+        <name>_get_color</name>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.cpp" bodystart="23" bodyend="32"/>
+        <references refid="_class_type_8cpp_1a6ebe0267c19e141b5be9dc7cdf54d8ab" compoundref="_class_type_8cpp" startline="7">colorsClass</references>
+        <referencedby refid="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" compoundref="_class_type_8cpp" startline="10" endline="21">getColor</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="33">
+        <label>ClassTypeGeneric</label>
+        <link refid="struct_class_type_generic"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>ClassTypeOwn</label>
+        <link refid="struct_class_type_own"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>ClassTypeMapper</label>
+        <link refid="struct_class_type_mapper"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>ClassType</label>
+        <link refid="struct_class_type"/>
+      </node>
+    </inheritancegraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.h" line="10" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassType.h" bodystart="10" bodyend="22"/>
+    <listofallmembers>
+      <member refid="struct_class_type_1a37ea5c5449bc06ed3f2a327448abe02a" prot="protected" virt="non-virtual"><scope>ClassType</scope><name>_get_color</name></member>
+      <member refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" prot="protected" virt="non-virtual"><scope>ClassType</scope><name>classes</name></member>
+      <member refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" prot="protected" virt="non-virtual"><scope>ClassType</scope><name>classID</name></member>
+      <member refid="struct_class_type_1a867149836bb99711a7c14fbe7801c9e4" prot="public" virt="non-virtual"><scope>ClassType</scope><name>getAllAvailableClasses</name></member>
+      <member refid="struct_class_type_1ab5cc3bb3376a812d051d4726eb4ee063" prot="public" virt="non-virtual"><scope>ClassType</scope><name>getClassID</name></member>
+      <member refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" prot="public" virt="non-virtual"><scope>ClassType</scope><name>getClassString</name></member>
+      <member refid="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" prot="public" virt="non-virtual"><scope>ClassType</scope><name>getColor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

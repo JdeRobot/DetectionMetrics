@@ -1,0 +1,564 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classsample_generator_1_1sample_1_1sample" kind="class" language="Python" prot="public">
+    <compoundname>sampleGenerator::sample::sample</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classsample_generator_1_1sample_1_1sample_1a6ce5140cd9b1e8a992decaec244ffab3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>sampleGenerator.sample.sample::image</definition>
+        <argsstring></argsstring>
+        <name>image</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="18" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="18" bodyend="-1"/>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a7cd149af483afe13533c9572ded173ae" compoundref="sample_8py" startline="30" endline="33">sampleGenerator.sample.sample.getImage</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab1d8c7ea79c8874ae0bdf808bc67e9e6" compoundref="sample_8py" startline="34" endline="36">sampleGenerator.sample.sample.getImageWidth</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a06106232d720b3f6b169461f34469cfd" compoundref="sample_8py" startline="37" endline="39">sampleGenerator.sample.sample.getImageHeight</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1aabf57b5d5eb0d1b6e89f28d5c0d97940" compoundref="sample_8py" startline="52" endline="58">sampleGenerator.sample.sample.getImageWithData</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab97e323c321d16a707d6dac1f9e06723" compoundref="sample_8py" startline="59" endline="68">sampleGenerator.sample.sample.applyScale</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a93fdd9624584a5452887a7efe5003849" compoundref="sample_8py" startline="69" endline="96">sampleGenerator.sample.sample.applyWarp</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a13629bd805c34f9847ded8720650d37b" compoundref="sample_8py" startline="97" endline="106">sampleGenerator.sample.sample.applyFlip</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsample_generator_1_1sample_1_1sample_1adb77f64e0cd95e72a350bdbbc9721ea3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>sampleGenerator.sample.sample::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="19" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="19" bodyend="-1"/>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1aabf57b5d5eb0d1b6e89f28d5c0d97940" compoundref="sample_8py" startline="52" endline="58">sampleGenerator.sample.sample.getImageWithData</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab97e323c321d16a707d6dac1f9e06723" compoundref="sample_8py" startline="59" endline="68">sampleGenerator.sample.sample.applyScale</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a93fdd9624584a5452887a7efe5003849" compoundref="sample_8py" startline="69" endline="96">sampleGenerator.sample.sample.applyWarp</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a8bc9b0512da0a0056ecc6759ebcd8e97" compoundref="sample_8py" startline="121" endline="132">sampleGenerator.sample.sample.getResultStr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsample_generator_1_1sample_1_1sample_1aafe18daa5e07bcd4c13a3c142d2a9ec6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>sampleGenerator.sample.sample::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="20" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="20" bodyend="-1"/>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1aabf57b5d5eb0d1b6e89f28d5c0d97940" compoundref="sample_8py" startline="52" endline="58">sampleGenerator.sample.sample.getImageWithData</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab97e323c321d16a707d6dac1f9e06723" compoundref="sample_8py" startline="59" endline="68">sampleGenerator.sample.sample.applyScale</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a93fdd9624584a5452887a7efe5003849" compoundref="sample_8py" startline="69" endline="96">sampleGenerator.sample.sample.applyWarp</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a13629bd805c34f9847ded8720650d37b" compoundref="sample_8py" startline="97" endline="106">sampleGenerator.sample.sample.applyFlip</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a8bc9b0512da0a0056ecc6759ebcd8e97" compoundref="sample_8py" startline="121" endline="132">sampleGenerator.sample.sample.getResultStr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsample_generator_1_1sample_1_1sample_1a5df07f1716ac15a606bd2173e9a8c4ce" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>sampleGenerator.sample.sample::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="21" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="21" bodyend="-1"/>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1aabf57b5d5eb0d1b6e89f28d5c0d97940" compoundref="sample_8py" startline="52" endline="58">sampleGenerator.sample.sample.getImageWithData</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab97e323c321d16a707d6dac1f9e06723" compoundref="sample_8py" startline="59" endline="68">sampleGenerator.sample.sample.applyScale</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a93fdd9624584a5452887a7efe5003849" compoundref="sample_8py" startline="69" endline="96">sampleGenerator.sample.sample.applyWarp</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a8bc9b0512da0a0056ecc6759ebcd8e97" compoundref="sample_8py" startline="121" endline="132">sampleGenerator.sample.sample.getResultStr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsample_generator_1_1sample_1_1sample_1affc54a1c75e13feaa03da08c39c63d22" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>sampleGenerator.sample.sample::h</definition>
+        <argsstring></argsstring>
+        <name>h</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="22" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="22" bodyend="-1"/>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1aabf57b5d5eb0d1b6e89f28d5c0d97940" compoundref="sample_8py" startline="52" endline="58">sampleGenerator.sample.sample.getImageWithData</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab97e323c321d16a707d6dac1f9e06723" compoundref="sample_8py" startline="59" endline="68">sampleGenerator.sample.sample.applyScale</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a93fdd9624584a5452887a7efe5003849" compoundref="sample_8py" startline="69" endline="96">sampleGenerator.sample.sample.applyWarp</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a8bc9b0512da0a0056ecc6759ebcd8e97" compoundref="sample_8py" startline="121" endline="132">sampleGenerator.sample.sample.getResultStr</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsample_generator_1_1sample_1_1sample_1a30515bba1d64f66e13e5eb8cc7b4cae4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>sampleGenerator.sample.sample::scale</definition>
+        <argsstring></argsstring>
+        <name>scale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="23" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="23" bodyend="-1"/>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ab97e323c321d16a707d6dac1f9e06723" compoundref="sample_8py" startline="59" endline="68">sampleGenerator.sample.sample.applyScale</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1abad33069f3e1539735ea8ac428d1a510" compoundref="sample_8py" startline="110" endline="112">sampleGenerator.sample.sample.getScale</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsample_generator_1_1sample_1_1sample_1ac472f4cf88aaab6e0d42f082a54d9d01" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>sampleGenerator.sample.sample::angle</definition>
+        <argsstring></argsstring>
+        <name>angle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="24" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="24" bodyend="-1"/>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a93fdd9624584a5452887a7efe5003849" compoundref="sample_8py" startline="69" endline="96">sampleGenerator.sample.sample.applyWarp</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a1e181c79a730200bfda7152af9b7e913" compoundref="sample_8py" startline="113" endline="115">sampleGenerator.sample.sample.getAngle</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsample_generator_1_1sample_1_1sample_1aa0e2b87b21de450d7b58874866858580" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>sampleGenerator.sample.sample::loaded</definition>
+        <argsstring></argsstring>
+        <name>loaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="25" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsample_generator_1_1sample_1_1sample_1a6a4f4a7b71afef026e82edb51a5bf340" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>sampleGenerator.sample.sample::flipped</definition>
+        <argsstring></argsstring>
+        <name>flipped</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="26" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a13629bd805c34f9847ded8720650d37b" compoundref="sample_8py" startline="97" endline="106">sampleGenerator.sample.sample.applyFlip</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ac19fa7a0cafb1b32d1aceb67684bd25d" compoundref="sample_8py" startline="107" endline="109">sampleGenerator.sample.sample.getFlip</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1addf374bb19797cca911962fcd108a568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.__init__</definition>
+        <argsstring>(self, image, roi)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsample_generator_1_1sample_1_1sample_1a6ce5140cd9b1e8a992decaec244ffab3" kindref="member">image</ref></type>
+          <defname>image</defname>
+        </param>
+        <param>
+          <type>roi</type>
+          <defname>roi</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="17" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="17" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1a7cd149af483afe13533c9572ded173ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.getImage</definition>
+        <argsstring>(self)</argsstring>
+        <name>getImage</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="30" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="30" bodyend="33"/>
+        <references refid="class_bounding_validator_1a4e8823105033fa527c5e634b49beaeab" compoundref="_bounding_validator_8h" startline="28">BoundingValidator::image</references>
+        <references refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" compoundref="interfaces_2camera_client_8hpp" startline="34">Comm::CameraClient::image</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a6ce5140cd9b1e8a992decaec244ffab3" compoundref="sample_8py" startline="18">sampleGenerator.sample.sample.image</references>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1ab1d8c7ea79c8874ae0bdf808bc67e9e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.getImageWidth</definition>
+        <argsstring>(self)</argsstring>
+        <name>getImageWidth</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="34" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="34" bodyend="36"/>
+        <references refid="class_bounding_validator_1a4e8823105033fa527c5e634b49beaeab" compoundref="_bounding_validator_8h" startline="28">BoundingValidator::image</references>
+        <references refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" compoundref="interfaces_2camera_client_8hpp" startline="34">Comm::CameraClient::image</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a6ce5140cd9b1e8a992decaec244ffab3" compoundref="sample_8py" startline="18">sampleGenerator.sample.sample.image</references>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a93fdd9624584a5452887a7efe5003849" compoundref="sample_8py" startline="69" endline="96">sampleGenerator.sample.sample.applyWarp</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a8bc9b0512da0a0056ecc6759ebcd8e97" compoundref="sample_8py" startline="121" endline="132">sampleGenerator.sample.sample.getResultStr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1a06106232d720b3f6b169461f34469cfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.getImageHeight</definition>
+        <argsstring>(self)</argsstring>
+        <name>getImageHeight</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="37" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="37" bodyend="39"/>
+        <references refid="class_bounding_validator_1a4e8823105033fa527c5e634b49beaeab" compoundref="_bounding_validator_8h" startline="28">BoundingValidator::image</references>
+        <references refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" compoundref="interfaces_2camera_client_8hpp" startline="34">Comm::CameraClient::image</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a6ce5140cd9b1e8a992decaec244ffab3" compoundref="sample_8py" startline="18">sampleGenerator.sample.sample.image</references>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a93fdd9624584a5452887a7efe5003849" compoundref="sample_8py" startline="69" endline="96">sampleGenerator.sample.sample.applyWarp</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a13629bd805c34f9847ded8720650d37b" compoundref="sample_8py" startline="97" endline="106">sampleGenerator.sample.sample.applyFlip</referencedby>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1a8bc9b0512da0a0056ecc6759ebcd8e97" compoundref="sample_8py" startline="121" endline="132">sampleGenerator.sample.sample.getResultStr</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1a438b1769d947de7ed27398144b6c990a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.getManualSegments</definition>
+        <argsstring>(self)</argsstring>
+        <name>getManualSegments</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="40" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1a7b1db0cd88b4e16937f628a1ce468853" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.getAutoSegments</definition>
+        <argsstring>(self)</argsstring>
+        <name>getAutoSegments</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="43" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1a85de1984f20f2c3457791c09c274ae6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.getAllSegments</definition>
+        <argsstring>(self)</argsstring>
+        <name>getAllSegments</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="46" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="46" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1aeec69654bd793c5b54df3483d4926df1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.getInvalidRegions</definition>
+        <argsstring>(self)</argsstring>
+        <name>getInvalidRegions</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="49" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="49" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1aabf57b5d5eb0d1b6e89f28d5c0d97940" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.getImageWithData</definition>
+        <argsstring>(self)</argsstring>
+        <name>getImageWithData</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="52" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="52" bodyend="58"/>
+        <references refid="class_bounding_validator_1a4e8823105033fa527c5e634b49beaeab" compoundref="_bounding_validator_8h" startline="28">BoundingValidator::image</references>
+        <references refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" compoundref="interfaces_2camera_client_8hpp" startline="34">Comm::CameraClient::image</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a6ce5140cd9b1e8a992decaec244ffab3" compoundref="sample_8py" startline="18">sampleGenerator.sample.sample.image</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1adb77f64e0cd95e72a350bdbbc9721ea3" compoundref="sample_8py" startline="19">sampleGenerator.sample.sample.x</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1aafe18daa5e07bcd4c13a3c142d2a9ec6" compoundref="sample_8py" startline="20">sampleGenerator.sample.sample.y</references>
+        <references refid="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" compoundref="mask_api_8h" startline="6">RLE::w</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a5df07f1716ac15a606bd2173e9a8c4ce" compoundref="sample_8py" startline="21">sampleGenerator.sample.sample.w</references>
+        <references refid="struct_r_l_e_1a0729872eb55bbc6269cc535d91b97db1" compoundref="mask_api_8h" startline="6">RLE::h</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1affc54a1c75e13feaa03da08c39c63d22" compoundref="sample_8py" startline="22">sampleGenerator.sample.sample.h</references>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1ab97e323c321d16a707d6dac1f9e06723" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.applyScale</definition>
+        <argsstring>(self, scale)</argsstring>
+        <name>applyScale</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsample_generator_1_1sample_1_1sample_1a30515bba1d64f66e13e5eb8cc7b4cae4" kindref="member">scale</ref></type>
+          <defname>scale</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="59" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="59" bodyend="68"/>
+        <references refid="class_bounding_validator_1a7c3c5800996e1695d7d3edfc2d01bb53" compoundref="_bounding_validator_8h" startline="27">BoundingValidator::scale</references>
+        <references refid="class_detections_validator_1a88261b1fbcaff404b65183fcfaebf8e1" compoundref="_detections_validator_8h" startline="22">DetectionsValidator::scale</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a30515bba1d64f66e13e5eb8cc7b4cae4" compoundref="sample_8py" startline="23">sampleGenerator.sample.sample.scale</references>
+        <references refid="class_bounding_validator_1a4e8823105033fa527c5e634b49beaeab" compoundref="_bounding_validator_8h" startline="28">BoundingValidator::image</references>
+        <references refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" compoundref="interfaces_2camera_client_8hpp" startline="34">Comm::CameraClient::image</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a6ce5140cd9b1e8a992decaec244ffab3" compoundref="sample_8py" startline="18">sampleGenerator.sample.sample.image</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1adb77f64e0cd95e72a350bdbbc9721ea3" compoundref="sample_8py" startline="19">sampleGenerator.sample.sample.x</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1aafe18daa5e07bcd4c13a3c142d2a9ec6" compoundref="sample_8py" startline="20">sampleGenerator.sample.sample.y</references>
+        <references refid="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" compoundref="mask_api_8h" startline="6">RLE::w</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a5df07f1716ac15a606bd2173e9a8c4ce" compoundref="sample_8py" startline="21">sampleGenerator.sample.sample.w</references>
+        <references refid="struct_r_l_e_1a0729872eb55bbc6269cc535d91b97db1" compoundref="mask_api_8h" startline="6">RLE::h</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1affc54a1c75e13feaa03da08c39c63d22" compoundref="sample_8py" startline="22">sampleGenerator.sample.sample.h</references>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1a93fdd9624584a5452887a7efe5003849" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.applyWarp</definition>
+        <argsstring>(self, angle)</argsstring>
+        <name>applyWarp</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classsample_generator_1_1sample_1_1sample_1ac472f4cf88aaab6e0d42f082a54d9d01" kindref="member">angle</ref></type>
+          <defname>angle</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="69" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="69" bodyend="96"/>
+        <references refid="classsample_generator_1_1sample_1_1sample_1ac472f4cf88aaab6e0d42f082a54d9d01" compoundref="sample_8py" startline="24">sampleGenerator.sample.sample.angle</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a06106232d720b3f6b169461f34469cfd" compoundref="sample_8py" startline="37" endline="39">sampleGenerator.sample.sample.getImageHeight</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1ab1d8c7ea79c8874ae0bdf808bc67e9e6" compoundref="sample_8py" startline="34" endline="36">sampleGenerator.sample.sample.getImageWidth</references>
+        <references refid="class_bounding_validator_1a4e8823105033fa527c5e634b49beaeab" compoundref="_bounding_validator_8h" startline="28">BoundingValidator::image</references>
+        <references refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" compoundref="interfaces_2camera_client_8hpp" startline="34">Comm::CameraClient::image</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a6ce5140cd9b1e8a992decaec244ffab3" compoundref="sample_8py" startline="18">sampleGenerator.sample.sample.image</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1adb77f64e0cd95e72a350bdbbc9721ea3" compoundref="sample_8py" startline="19">sampleGenerator.sample.sample.x</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1aafe18daa5e07bcd4c13a3c142d2a9ec6" compoundref="sample_8py" startline="20">sampleGenerator.sample.sample.y</references>
+        <references refid="struct_r_l_e_1a0729872eb55bbc6269cc535d91b97db1" compoundref="mask_api_8h" startline="6">RLE::h</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1affc54a1c75e13feaa03da08c39c63d22" compoundref="sample_8py" startline="22">sampleGenerator.sample.sample.h</references>
+        <references refid="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" compoundref="mask_api_8h" startline="6">RLE::w</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a5df07f1716ac15a606bd2173e9a8c4ce" compoundref="sample_8py" startline="21">sampleGenerator.sample.sample.w</references>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1a13629bd805c34f9847ded8720650d37b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.applyFlip</definition>
+        <argsstring>(self)</argsstring>
+        <name>applyFlip</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="97" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="97" bodyend="106"/>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a6a4f4a7b71afef026e82edb51a5bf340" compoundref="sample_8py" startline="26">sampleGenerator.sample.sample.flipped</references>
+        <references refid="class_bounding_validator_1a4e8823105033fa527c5e634b49beaeab" compoundref="_bounding_validator_8h" startline="28">BoundingValidator::image</references>
+        <references refid="class_comm_1_1_camera_client_1a401c8c553be78d6479668490768d5d72" compoundref="interfaces_2camera_client_8hpp" startline="34">Comm::CameraClient::image</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a6ce5140cd9b1e8a992decaec244ffab3" compoundref="sample_8py" startline="18">sampleGenerator.sample.sample.image</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1aafe18daa5e07bcd4c13a3c142d2a9ec6" compoundref="sample_8py" startline="20">sampleGenerator.sample.sample.y</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a06106232d720b3f6b169461f34469cfd" compoundref="sample_8py" startline="37" endline="39">sampleGenerator.sample.sample.getImageHeight</references>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1ac19fa7a0cafb1b32d1aceb67684bd25d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.getFlip</definition>
+        <argsstring>(self)</argsstring>
+        <name>getFlip</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="107" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="107" bodyend="109"/>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a6a4f4a7b71afef026e82edb51a5bf340" compoundref="sample_8py" startline="26">sampleGenerator.sample.sample.flipped</references>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1abad33069f3e1539735ea8ac428d1a510" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.getScale</definition>
+        <argsstring>(self)</argsstring>
+        <name>getScale</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="110" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="110" bodyend="112"/>
+        <references refid="class_bounding_validator_1a7c3c5800996e1695d7d3edfc2d01bb53" compoundref="_bounding_validator_8h" startline="27">BoundingValidator::scale</references>
+        <references refid="class_detections_validator_1a88261b1fbcaff404b65183fcfaebf8e1" compoundref="_detections_validator_8h" startline="22">DetectionsValidator::scale</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a30515bba1d64f66e13e5eb8cc7b4cae4" compoundref="sample_8py" startline="23">sampleGenerator.sample.sample.scale</references>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1a1e181c79a730200bfda7152af9b7e913" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.getAngle</definition>
+        <argsstring>(self)</argsstring>
+        <name>getAngle</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="113" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="113" bodyend="115"/>
+        <references refid="classsample_generator_1_1sample_1_1sample_1ac472f4cf88aaab6e0d42f082a54d9d01" compoundref="sample_8py" startline="24">sampleGenerator.sample.sample.angle</references>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1ad303cd515503d840a5bcb49115b3bced" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.printResult</definition>
+        <argsstring>(self)</argsstring>
+        <name>printResult</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="116" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="116" bodyend="120"/>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a8bc9b0512da0a0056ecc6759ebcd8e97" compoundref="sample_8py" startline="121" endline="132">sampleGenerator.sample.sample.getResultStr</references>
+      </memberdef>
+      <memberdef kind="function" id="classsample_generator_1_1sample_1_1sample_1a8bc9b0512da0a0056ecc6759ebcd8e97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sampleGenerator.sample.sample.getResultStr</definition>
+        <argsstring>(self)</argsstring>
+        <name>getResultStr</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="121" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="121" bodyend="132"/>
+        <references refid="namespacesample_generator_1_1sample_1a0b9ff0e06d76ca8c0aeb429aa9e87f68" compoundref="sample_8py" startline="10" endline="15">sampleGenerator.sample.checkRange</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1adb77f64e0cd95e72a350bdbbc9721ea3" compoundref="sample_8py" startline="19">sampleGenerator.sample.sample.x</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1ab1d8c7ea79c8874ae0bdf808bc67e9e6" compoundref="sample_8py" startline="34" endline="36">sampleGenerator.sample.sample.getImageWidth</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1aafe18daa5e07bcd4c13a3c142d2a9ec6" compoundref="sample_8py" startline="20">sampleGenerator.sample.sample.y</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a06106232d720b3f6b169461f34469cfd" compoundref="sample_8py" startline="37" endline="39">sampleGenerator.sample.sample.getImageHeight</references>
+        <references refid="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" compoundref="mask_api_8h" startline="6">RLE::w</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1a5df07f1716ac15a606bd2173e9a8c4ce" compoundref="sample_8py" startline="21">sampleGenerator.sample.sample.w</references>
+        <references refid="struct_r_l_e_1a0729872eb55bbc6269cc535d91b97db1" compoundref="mask_api_8h" startline="6">RLE::h</references>
+        <references refid="classsample_generator_1_1sample_1_1sample_1affc54a1c75e13feaa03da08c39c63d22" compoundref="sample_8py" startline="22">sampleGenerator.sample.sample.h</references>
+        <referencedby refid="classsample_generator_1_1sample_1_1sample_1ad303cd515503d840a5bcb49115b3bced" compoundref="sample_8py" startline="116" endline="120">sampleGenerator.sample.sample.printResult</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" line="16" column="1" bodyfile="sampleGenerator/simpleSampleGenerator/sampleGenerator/sample.py" bodystart="16" bodyend="132"/>
+    <listofallmembers>
+      <member refid="classsample_generator_1_1sample_1_1sample_1addf374bb19797cca911962fcd108a568" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>__init__</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1ac472f4cf88aaab6e0d42f082a54d9d01" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>angle</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1a13629bd805c34f9847ded8720650d37b" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>applyFlip</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1ab97e323c321d16a707d6dac1f9e06723" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>applyScale</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1a93fdd9624584a5452887a7efe5003849" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>applyWarp</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1a6a4f4a7b71afef026e82edb51a5bf340" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>flipped</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1a85de1984f20f2c3457791c09c274ae6f" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>getAllSegments</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1a1e181c79a730200bfda7152af9b7e913" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>getAngle</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1a7b1db0cd88b4e16937f628a1ce468853" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>getAutoSegments</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1ac19fa7a0cafb1b32d1aceb67684bd25d" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>getFlip</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1a7cd149af483afe13533c9572ded173ae" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>getImage</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1a06106232d720b3f6b169461f34469cfd" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>getImageHeight</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1ab1d8c7ea79c8874ae0bdf808bc67e9e6" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>getImageWidth</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1aabf57b5d5eb0d1b6e89f28d5c0d97940" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>getImageWithData</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1aeec69654bd793c5b54df3483d4926df1" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>getInvalidRegions</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1a438b1769d947de7ed27398144b6c990a" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>getManualSegments</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1a8bc9b0512da0a0056ecc6759ebcd8e97" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>getResultStr</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1abad33069f3e1539735ea8ac428d1a510" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>getScale</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1affc54a1c75e13feaa03da08c39c63d22" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>h</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1a6ce5140cd9b1e8a992decaec244ffab3" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>image</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1aa0e2b87b21de450d7b58874866858580" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>loaded</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1ad303cd515503d840a5bcb49115b3bced" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>printResult</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1a30515bba1d64f66e13e5eb8cc7b4cae4" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>scale</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1a5df07f1716ac15a606bd2173e9a8c4ce" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>w</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1adb77f64e0cd95e72a350bdbbc9721ea3" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>x</name></member>
+      <member refid="classsample_generator_1_1sample_1_1sample_1aafe18daa5e07bcd4c13a3c142d2a9ec6" prot="public" virt="non-virtual"><scope>sampleGenerator::sample::sample</scope><name>y</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

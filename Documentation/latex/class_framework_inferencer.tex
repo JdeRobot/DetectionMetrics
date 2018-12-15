@@ -1,0 +1,85 @@
+\hypertarget{class_framework_inferencer}{}\section{Framework\+Inferencer Class Reference}
+\label{class_framework_inferencer}\index{Framework\+Inferencer@{Framework\+Inferencer}}
+
+
+{\ttfamily \#include $<$Framework\+Inferencer.\+h$>$}
+
+Inheritance diagram for Framework\+Inferencer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.931034cm]{class_framework_inferencer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_framework_inferencer_adda91b1e8b6238e4cd3cc18e84675fea}{Framework\+Inferencer} ()
+\item 
+\hyperlink{class_framework_inferencer_a0a0ad89131a1f2a2377a3003b0c1d319}{$\sim$ Framework\+Inferencer} ()
+\item 
+\hyperlink{struct_sample}{Sample} \hyperlink{class_framework_inferencer_a4c2b3b0ec03df5f97e7b32235422dc60}{detect} (const cv\+::\+Mat \&image, double confidence\+\_\+threshold)
+\item 
+int \hyperlink{class_framework_inferencer_a51291e562ddc5a4b86c0c413439d59a5}{get\+Mean\+Duration\+Time} ()
+\item 
+virtual \hyperlink{struct_sample}{Sample} \hyperlink{class_framework_inferencer_a8fd7e708c8be4471bc2b37a4193a9045}{detect\+Imp} (const cv\+::\+Mat \&image, double confidence\+\_\+threshold)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_framework_inferencer_abdb304d43262f48e0438a55778c7540f}{class\+Names\+File}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_framework_inferencer_adda91b1e8b6238e4cd3cc18e84675fea}\label{class_framework_inferencer_adda91b1e8b6238e4cd3cc18e84675fea}} 
+\index{Framework\+Inferencer@{Framework\+Inferencer}!Framework\+Inferencer@{Framework\+Inferencer}}
+\index{Framework\+Inferencer@{Framework\+Inferencer}!Framework\+Inferencer@{Framework\+Inferencer}}
+\subsubsection{\texorpdfstring{Framework\+Inferencer()}{FrameworkInferencer()}}
+{\footnotesize\ttfamily Framework\+Inferencer\+::\+Framework\+Inferencer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_framework_inferencer_a0a0ad89131a1f2a2377a3003b0c1d319}\label{class_framework_inferencer_a0a0ad89131a1f2a2377a3003b0c1d319}} 
+\index{Framework\+Inferencer@{Framework\+Inferencer}!````~ Framework\+Inferencer@{$\sim$ Framework\+Inferencer}}
+\index{````~ Framework\+Inferencer@{$\sim$ Framework\+Inferencer}!Framework\+Inferencer@{Framework\+Inferencer}}
+\subsubsection{\texorpdfstring{$\sim$ Framework\+Inferencer()}{~ FrameworkInferencer()}}
+{\footnotesize\ttfamily Framework\+Inferencer\+::$\sim$ \hyperlink{class_framework_inferencer}{Framework\+Inferencer} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_framework_inferencer_a4c2b3b0ec03df5f97e7b32235422dc60}\label{class_framework_inferencer_a4c2b3b0ec03df5f97e7b32235422dc60}} 
+\index{Framework\+Inferencer@{Framework\+Inferencer}!detect@{detect}}
+\index{detect@{detect}!Framework\+Inferencer@{Framework\+Inferencer}}
+\subsubsection{\texorpdfstring{detect()}{detect()}}
+{\footnotesize\ttfamily \hyperlink{struct_sample}{Sample} Framework\+Inferencer\+::detect (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image,  }\item[{double}]{confidence\+\_\+threshold }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_framework_inferencer_a8fd7e708c8be4471bc2b37a4193a9045}\label{class_framework_inferencer_a8fd7e708c8be4471bc2b37a4193a9045}} 
+\index{Framework\+Inferencer@{Framework\+Inferencer}!detect\+Imp@{detect\+Imp}}
+\index{detect\+Imp@{detect\+Imp}!Framework\+Inferencer@{Framework\+Inferencer}}
+\subsubsection{\texorpdfstring{detect\+Imp()}{detectImp()}}
+{\footnotesize\ttfamily virtual \hyperlink{struct_sample}{Sample} Framework\+Inferencer\+::detect\+Imp (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image,  }\item[{double}]{confidence\+\_\+threshold }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{class_caffe_inferencer_a898f6d0e7106ac663a6c26ecdf799502}{Caffe\+Inferencer}, \hyperlink{class_darknet_inferencer_a9fb53792b71055b3104e5a54a6190c50}{Darknet\+Inferencer}, \hyperlink{class_keras_inferencer_a4c944e963e3ec3ca8fa0bd4b229a8931}{Keras\+Inferencer}, and \hyperlink{class_tensor_flow_inferencer_ae8b603ab05273a9ec5fee720f23d0c58}{Tensor\+Flow\+Inferencer}.
+
+\mbox{\Hypertarget{class_framework_inferencer_a51291e562ddc5a4b86c0c413439d59a5}\label{class_framework_inferencer_a51291e562ddc5a4b86c0c413439d59a5}} 
+\index{Framework\+Inferencer@{Framework\+Inferencer}!get\+Mean\+Duration\+Time@{get\+Mean\+Duration\+Time}}
+\index{get\+Mean\+Duration\+Time@{get\+Mean\+Duration\+Time}!Framework\+Inferencer@{Framework\+Inferencer}}
+\subsubsection{\texorpdfstring{get\+Mean\+Duration\+Time()}{getMeanDurationTime()}}
+{\footnotesize\ttfamily int Framework\+Inferencer\+::get\+Mean\+Duration\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_framework_inferencer_abdb304d43262f48e0438a55778c7540f}\label{class_framework_inferencer_abdb304d43262f48e0438a55778c7540f}} 
+\index{Framework\+Inferencer@{Framework\+Inferencer}!class\+Names\+File@{class\+Names\+File}}
+\index{class\+Names\+File@{class\+Names\+File}!Framework\+Inferencer@{Framework\+Inferencer}}
+\subsubsection{\texorpdfstring{class\+Names\+File}{classNamesFile}}
+{\footnotesize\ttfamily std\+::string Framework\+Inferencer\+::class\+Names\+File\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Framework\+Evaluator/\hyperlink{_framework_inferencer_8h}{Framework\+Inferencer.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Framework\+Evaluator/\hyperlink{_framework_inferencer_8cpp}{Framework\+Inferencer.\+cpp}\end{DoxyCompactItemize}

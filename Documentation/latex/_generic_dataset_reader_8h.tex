@@ -1,0 +1,84 @@
+\hypertarget{_generic_dataset_reader_8h}{}\section{Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Dataset\+Converters/readers/\+Generic\+Dataset\+Reader.h File Reference}
+\label{_generic_dataset_reader_8h}\index{Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Dataset\+Converters/readers/\+Generic\+Dataset\+Reader.\+h@{Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Dataset\+Converters/readers/\+Generic\+Dataset\+Reader.\+h}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}Spinello\+Dataset\+Reader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Yolo\+Dataset\+Reader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}C\+O\+C\+O\+Dataset\+Reader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Pascal\+V\+O\+C\+Dataset\+Reader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Image\+Net\+Dataset\+Reader.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Dataset\+Converters/readers/\+Dataset\+Reader.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Own\+Dataset\+Reader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Princeton\+Dataset\+Reader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Samples\+Reader.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_generic_dataset_reader}{Generic\+Dataset\+Reader}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef boost\+::shared\+\_\+ptr$<$ \hyperlink{class_generic_dataset_reader}{Generic\+Dataset\+Reader} $>$ \hyperlink{_generic_dataset_reader_8h_aee69804c49b311360ba65543d4111f58}{Generic\+Dataset\+Reader\+Ptr}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1}{R\+E\+A\+D\+E\+R\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+NS} \{ \newline
+\hyperlink{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1ab146bb15e05cc9c4321b2dc436a2b5a8}{O\+WN}, 
+\hyperlink{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1a9978ae637d842594509ef7eaf8d62fa9}{S\+P\+I\+N\+E\+L\+LO}, 
+\hyperlink{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1a1be61c9ee9d521c3c8234128f51acf63}{P\+A\+S\+C\+A\+L\+V\+OC}, 
+\hyperlink{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1afc963c7cc007485f66dcc57674cb6dc6}{C\+O\+CO}, 
+\newline
+\hyperlink{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1ae1415ff4e0db966f5aa0bf656e9d8c1f}{I\+M\+A\+G\+E\+N\+ET}, 
+\hyperlink{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1a05354d7be491a5c0eb8beaf1cbe6fae0}{Y\+O\+LO}, 
+\hyperlink{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1aecbeb0b2d5071f39eeb569b99cf78be5}{P\+R\+I\+N\+C\+E\+T\+ON}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{_generic_dataset_reader_8h_aee69804c49b311360ba65543d4111f58}\label{_generic_dataset_reader_8h_aee69804c49b311360ba65543d4111f58}} 
+\index{Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}!Generic\+Dataset\+Reader\+Ptr@{Generic\+Dataset\+Reader\+Ptr}}
+\index{Generic\+Dataset\+Reader\+Ptr@{Generic\+Dataset\+Reader\+Ptr}!Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}}
+\subsubsection{\texorpdfstring{Generic\+Dataset\+Reader\+Ptr}{GenericDatasetReaderPtr}}
+{\footnotesize\ttfamily typedef boost\+::shared\+\_\+ptr$<$\hyperlink{class_generic_dataset_reader}{Generic\+Dataset\+Reader}$>$ \hyperlink{_generic_dataset_reader_8h_aee69804c49b311360ba65543d4111f58}{Generic\+Dataset\+Reader\+Ptr}}
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1}\label{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1}} 
+\index{Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}!R\+E\+A\+D\+E\+R\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+NS@{R\+E\+A\+D\+E\+R\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+NS}}
+\index{R\+E\+A\+D\+E\+R\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+NS@{R\+E\+A\+D\+E\+R\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+NS}!Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}}
+\subsubsection{\texorpdfstring{R\+E\+A\+D\+E\+R\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+NS}{READER\_IMPLEMENTATIONS}}
+{\footnotesize\ttfamily enum \hyperlink{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1}{R\+E\+A\+D\+E\+R\+\_\+\+I\+M\+P\+L\+E\+M\+E\+N\+T\+A\+T\+I\+O\+NS}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{O\+WN@{O\+WN}!Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}}\index{Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}!O\+WN@{O\+WN}}}\mbox{\Hypertarget{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1ab146bb15e05cc9c4321b2dc436a2b5a8}\label{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1ab146bb15e05cc9c4321b2dc436a2b5a8}} 
+O\+WN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+P\+I\+N\+E\+L\+LO@{S\+P\+I\+N\+E\+L\+LO}!Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}}\index{Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}!S\+P\+I\+N\+E\+L\+LO@{S\+P\+I\+N\+E\+L\+LO}}}\mbox{\Hypertarget{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1a9978ae637d842594509ef7eaf8d62fa9}\label{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1a9978ae637d842594509ef7eaf8d62fa9}} 
+S\+P\+I\+N\+E\+L\+LO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+A\+S\+C\+A\+L\+V\+OC@{P\+A\+S\+C\+A\+L\+V\+OC}!Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}}\index{Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}!P\+A\+S\+C\+A\+L\+V\+OC@{P\+A\+S\+C\+A\+L\+V\+OC}}}\mbox{\Hypertarget{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1a1be61c9ee9d521c3c8234128f51acf63}\label{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1a1be61c9ee9d521c3c8234128f51acf63}} 
+P\+A\+S\+C\+A\+L\+V\+OC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+CO@{C\+O\+CO}!Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}}\index{Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}!C\+O\+CO@{C\+O\+CO}}}\mbox{\Hypertarget{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1afc963c7cc007485f66dcc57674cb6dc6}\label{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1afc963c7cc007485f66dcc57674cb6dc6}} 
+C\+O\+CO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{I\+M\+A\+G\+E\+N\+ET@{I\+M\+A\+G\+E\+N\+ET}!Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}}\index{Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}!I\+M\+A\+G\+E\+N\+ET@{I\+M\+A\+G\+E\+N\+ET}}}\mbox{\Hypertarget{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1ae1415ff4e0db966f5aa0bf656e9d8c1f}\label{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1ae1415ff4e0db966f5aa0bf656e9d8c1f}} 
+I\+M\+A\+G\+E\+N\+ET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Y\+O\+LO@{Y\+O\+LO}!Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}}\index{Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}!Y\+O\+LO@{Y\+O\+LO}}}\mbox{\Hypertarget{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1a05354d7be491a5c0eb8beaf1cbe6fae0}\label{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1a05354d7be491a5c0eb8beaf1cbe6fae0}} 
+Y\+O\+LO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+R\+I\+N\+C\+E\+T\+ON@{P\+R\+I\+N\+C\+E\+T\+ON}!Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}}\index{Generic\+Dataset\+Reader.\+h@{Generic\+Dataset\+Reader.\+h}!P\+R\+I\+N\+C\+E\+T\+ON@{P\+R\+I\+N\+C\+E\+T\+ON}}}\mbox{\Hypertarget{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1aecbeb0b2d5071f39eeb569b99cf78be5}\label{_generic_dataset_reader_8h_a6c62196be3f03d5ecd0dd961de2f76f1aecbeb0b2d5071f39eeb569b99cf78be5}} 
+P\+R\+I\+N\+C\+E\+T\+ON&\\
+\hline
+
+\end{DoxyEnumFields}

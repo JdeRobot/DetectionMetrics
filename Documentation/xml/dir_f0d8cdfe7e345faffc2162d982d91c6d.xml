@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_f0d8cdfe7e345faffc2162d982d91c6d" kind="dir">
+    <compoundname>DeepLearningSuite/DeepLearningSuiteLib/Utils</compoundname>
+    <innerfile refid="_configuration_8cpp">Configuration.cpp</innerfile>
+    <innerfile refid="_configuration_8h">Configuration.h</innerfile>
+    <innerfile refid="_depth_utils_8cpp">DepthUtils.cpp</innerfile>
+    <innerfile refid="_depth_utils_8h">DepthUtils.h</innerfile>
+    <innerfile refid="_json_helper_8h">JsonHelper.h</innerfile>
+    <innerfile refid="_key_8cpp">Key.cpp</innerfile>
+    <innerfile refid="_key_8h">Key.h</innerfile>
+    <innerfile refid="_normalizations_8cpp">Normalizations.cpp</innerfile>
+    <innerfile refid="_normalizations_8h">Normalizations.h</innerfile>
+    <innerfile refid="_path_helper_8cpp">PathHelper.cpp</innerfile>
+    <innerfile refid="_path_helper_8h">PathHelper.h</innerfile>
+    <innerfile refid="_sample_generation_app_8cpp">SampleGenerationApp.cpp</innerfile>
+    <innerfile refid="_sample_generation_app_8h">SampleGenerationApp.h</innerfile>
+    <innerfile refid="_stats_utils_8cpp">StatsUtils.cpp</innerfile>
+    <innerfile refid="_stats_utils_8h">StatsUtils.h</innerfile>
+    <innerfile refid="_string_handler_8h">StringHandler.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/"/>
+  </compounddef>
+</doxygen>

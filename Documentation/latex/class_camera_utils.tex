@@ -1,0 +1,50 @@
+\hypertarget{class_camera_utils}{}\section{Camera\+Utils Class Reference}
+\label{class_camera_utils}\index{Camera\+Utils@{Camera\+Utils}}
+
+
+{\ttfamily \#include $<$Camera\+Utils.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static cv\+::\+Mat \hyperlink{class_camera_utils_a926f945480f84f9a2078cfd651b15c33}{get\+Image\+From\+Camera\+Proxy} (jderobot\+::\+Image\+Data\+Ptr data\+Ptr)
+\item 
+static std\+::string \hyperlink{class_camera_utils_a4eb121d34116f081d07a7cbf6994b43e}{negotiate\+Default\+Format} (jderobot\+::\+Camera\+Prx prx, const std\+::string \&defined\+Format)
+\item 
+static bool \hyperlink{class_camera_utils_a432aaed36b79f14f122991b883f6382c}{compress\+Image} (const cv\+::\+Mat \&image, unsigned char $\ast$$\ast$compressed\+\_\+data, unsigned long \&compress\+\_\+len)
+\item 
+static jderobot\+::\+Image\+Data\+Ptr \hyperlink{class_camera_utils_a38071971e6fec4d3786223ebd972e778}{convert} (const cv\+::\+Mat \&image)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_camera_utils_a432aaed36b79f14f122991b883f6382c}\label{class_camera_utils_a432aaed36b79f14f122991b883f6382c}} 
+\index{Camera\+Utils@{Camera\+Utils}!compress\+Image@{compress\+Image}}
+\index{compress\+Image@{compress\+Image}!Camera\+Utils@{Camera\+Utils}}
+\subsubsection{\texorpdfstring{compress\+Image()}{compressImage()}}
+{\footnotesize\ttfamily bool Camera\+Utils\+::compress\+Image (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image,  }\item[{unsigned char $\ast$$\ast$}]{compressed\+\_\+data,  }\item[{unsigned long \&}]{compress\+\_\+len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_camera_utils_a38071971e6fec4d3786223ebd972e778}\label{class_camera_utils_a38071971e6fec4d3786223ebd972e778}} 
+\index{Camera\+Utils@{Camera\+Utils}!convert@{convert}}
+\index{convert@{convert}!Camera\+Utils@{Camera\+Utils}}
+\subsubsection{\texorpdfstring{convert()}{convert()}}
+{\footnotesize\ttfamily jderobot\+::\+Image\+Data\+Ptr Camera\+Utils\+::convert (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_camera_utils_a926f945480f84f9a2078cfd651b15c33}\label{class_camera_utils_a926f945480f84f9a2078cfd651b15c33}} 
+\index{Camera\+Utils@{Camera\+Utils}!get\+Image\+From\+Camera\+Proxy@{get\+Image\+From\+Camera\+Proxy}}
+\index{get\+Image\+From\+Camera\+Proxy@{get\+Image\+From\+Camera\+Proxy}!Camera\+Utils@{Camera\+Utils}}
+\subsubsection{\texorpdfstring{get\+Image\+From\+Camera\+Proxy()}{getImageFromCameraProxy()}}
+{\footnotesize\ttfamily cv\+::\+Mat Camera\+Utils\+::get\+Image\+From\+Camera\+Proxy (\begin{DoxyParamCaption}\item[{jderobot\+::\+Image\+Data\+Ptr}]{data\+Ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_camera_utils_a4eb121d34116f081d07a7cbf6994b43e}\label{class_camera_utils_a4eb121d34116f081d07a7cbf6994b43e}} 
+\index{Camera\+Utils@{Camera\+Utils}!negotiate\+Default\+Format@{negotiate\+Default\+Format}}
+\index{negotiate\+Default\+Format@{negotiate\+Default\+Format}!Camera\+Utils@{Camera\+Utils}}
+\subsubsection{\texorpdfstring{negotiate\+Default\+Format()}{negotiateDefaultFormat()}}
+{\footnotesize\ttfamily std\+::string Camera\+Utils\+::negotiate\+Default\+Format (\begin{DoxyParamCaption}\item[{jderobot\+::\+Camera\+Prx}]{prx,  }\item[{const std\+::string \&}]{defined\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/libs/utils/\hyperlink{_camera_utils_8h}{Camera\+Utils.\+h}\item 
+Deep\+Learning\+Suite/libs/utils/\hyperlink{_camera_utils_8cpp}{Camera\+Utils.\+cpp}\end{DoxyCompactItemize}

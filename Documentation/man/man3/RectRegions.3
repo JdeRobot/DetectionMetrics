@@ -1,0 +1,115 @@
+.TH "RectRegions" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RectRegions
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RectRegions\&.h>\fP
+.PP
+Inherits \fBRegions\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRectRegions\fP (const std::string &jsonPath)"
+.br
+.ti -1c
+.RI "\fBRectRegions\fP ()"
+.br
+.ti -1c
+.RI "void \fBadd\fP (const cv::Rect_< double > rect, const std::string classId, const bool isCrowd=false)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (const cv::Rect_< double > rect, const std::string classId, const double confidence_score, const bool isCrowd=false)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (const std::vector< cv::Point_< double >> &detections, const std::string classId, const bool isCrowd=false)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (double x, double y, double w, double h, const std::string classId, const bool isCrowd=false)"
+.br
+.ti -1c
+.RI "void \fBadd\fP (double x, double y, double w, double h, const std::string classId, const double confidence_score, const bool isCrowd=false)"
+.br
+.ti -1c
+.RI "void \fBsaveJson\fP (const std::string &outPath)"
+.br
+.ti -1c
+.RI "\fBRectRegion\fP \fBgetRegion\fP (int id)"
+.br
+.ti -1c
+.RI "std::vector< \fBRectRegion\fP > \fBgetRegions\fP ()"
+.br
+.ti -1c
+.RI "void \fBdrawRegions\fP (cv::Mat &image)"
+.br
+.ti -1c
+.RI "void \fBfilterSamplesByID\fP (std::vector< std::string > filteredIDS)"
+.br
+.ti -1c
+.RI "bool \fBempty\fP ()"
+.br
+.ti -1c
+.RI "void \fBprint\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBRectRegion\fP > \fBregions\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RectRegions::RectRegions (const std::string & jsonPath)"
+
+.SS "RectRegions::RectRegions ()"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void RectRegions::add (const cv::Rect_< double > rect, const std::string classId, const bool isCrowd = \fCfalse\fP)"
+
+.SS "void RectRegions::add (const cv::Rect_< double > rect, const std::string classId, const double confidence_score, const bool isCrowd = \fCfalse\fP)"
+
+.SS "void RectRegions::add (const std::vector< cv::Point_< double >> & detections, const std::string classId, const bool isCrowd = \fCfalse\fP)"
+
+.SS "void RectRegions::add (double x, double y, double w, double h, const std::string classId, const bool isCrowd = \fCfalse\fP)"
+
+.SS "void RectRegions::add (double x, double y, double w, double h, const std::string classId, const double confidence_score, const bool isCrowd = \fCfalse\fP)"
+
+.SS "void RectRegions::drawRegions (cv::Mat & image)\fC [virtual]\fP"
+
+.PP
+Implements \fBRegions\fP\&.
+.SS "bool RectRegions::empty ()\fC [virtual]\fP"
+
+.PP
+Implements \fBRegions\fP\&.
+.SS "void RectRegions::filterSamplesByID (std::vector< std::string > filteredIDS)\fC [virtual]\fP"
+
+.PP
+Implements \fBRegions\fP\&.
+.SS "\fBRectRegion\fP RectRegions::getRegion (int id)"
+
+.SS "std::vector< \fBRectRegion\fP > RectRegions::getRegions ()"
+
+.SS "void RectRegions::print ()\fC [virtual]\fP"
+
+.PP
+Implements \fBRegions\fP\&.
+.SS "void RectRegions::saveJson (const std::string & outPath)\fC [virtual]\fP"
+
+.PP
+Implements \fBRegions\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBRectRegion\fP> RectRegions::regions"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

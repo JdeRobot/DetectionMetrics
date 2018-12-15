@@ -1,0 +1,476 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_detections_evaluator" kind="class" language="C++" prot="public">
+    <compoundname>DetectionsEvaluator</compoundname>
+    <includes refid="_detections_evaluator_8h" local="no">DetectionsEvaluator.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_detections_evaluator_1abed56e5a3701e4f445546c2bf12dfb4d" prot="private" static="no" mutable="no">
+        <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref></type>
+        <definition>DatasetReaderPtr DetectionsEvaluator::gt</definition>
+        <argsstring></argsstring>
+        <name>gt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="30" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1a4930424fbd0d699e8815d04081fb7487" prot="private" static="no" mutable="no">
+        <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref></type>
+        <definition>DatasetReaderPtr DetectionsEvaluator::detections</definition>
+        <argsstring></argsstring>
+        <name>detections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="31" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1ae6f967cd2c995c80af33ac57ac0409fe" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool DetectionsEvaluator::debug</definition>
+        <argsstring></argsstring>
+        <name>debug</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="32" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1a65fdfe3f3dcd1fa660dd538e34ea4f0d" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::pair&lt; std::string, std::string &gt; &gt;</type>
+        <definition>std::vector&lt;std::pair&lt;std::string, std::string&gt; &gt; DetectionsEvaluator::validMixClass</definition>
+        <argsstring></argsstring>
+        <name>validMixClass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="33" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1a935ee293feb1d6fd78d054fc4d9d069c" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, std::string &gt;</type>
+        <definition>std::unordered_map&lt;std::string, std::string&gt; DetectionsEvaluator::classMapping</definition>
+        <argsstring></argsstring>
+        <name>classMapping</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="34" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1a15aa129236b7cf425b48db0f499b45d5" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; DetectionsEvaluator::classesToDisplay</definition>
+        <argsstring></argsstring>
+        <name>classesToDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="43" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1a1036c89ebb9c141e7faf124b9fcd6c15" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double DetectionsEvaluator::thIOU</definition>
+        <argsstring></argsstring>
+        <name>thIOU</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="44" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1aefa0465b93d3c5693b51aface9ae3bf8" prot="private" static="no" mutable="no">
+        <type>std::map&lt; double, <ref refid="class_global_stats" kindref="compound">GlobalStats</ref> &gt;</type>
+        <definition>std::map&lt;double, GlobalStats&gt; DetectionsEvaluator::sampleStats</definition>
+        <argsstring></argsstring>
+        <name>sampleStats</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="45" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1aed69c086b38ab0d01b3d89da84100af4" prot="private" static="no" mutable="no">
+        <type><ref refid="class_global_stats" kindref="compound">GlobalStats</ref></type>
+        <definition>GlobalStats DetectionsEvaluator::stats</definition>
+        <argsstring></argsstring>
+        <name>stats</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="47" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1a8abd594f6510240694ac95406a412039" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, double &gt;</type>
+        <definition>std::map&lt;std::string, double&gt; DetectionsEvaluator::classWiseMeanAP</definition>
+        <argsstring></argsstring>
+        <name>classWiseMeanAP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="49" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1aea63bcd4e2e4c056054d80e099a09405" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, double &gt;</type>
+        <definition>std::map&lt;std::string, double&gt; DetectionsEvaluator::classWiseMeanAR</definition>
+        <argsstring></argsstring>
+        <name>classWiseMeanAR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="50" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1aa3902e92d5b5eec63f4b81ca5436ab87" prot="private" static="no" mutable="no">
+        <type>std::valarray&lt; double &gt;</type>
+        <definition>std::valarray&lt;double&gt; DetectionsEvaluator::ApDiffIou</definition>
+        <argsstring></argsstring>
+        <name>ApDiffIou</name>
+        <initializer>= std::valarray&lt;double&gt;(10)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="51" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1a3db4c3fea888dbfe5aad892ed157b95c" prot="private" static="no" mutable="no">
+        <type>std::valarray&lt; double &gt;</type>
+        <definition>std::valarray&lt;double&gt; DetectionsEvaluator::ArDiffIou</definition>
+        <argsstring></argsstring>
+        <name>ArDiffIou</name>
+        <initializer>= std::valarray&lt;double&gt;(10)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="52" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1a83252362172a629186e449330e64cf9c" prot="private" static="no" mutable="no">
+        <type>std::map&lt; std::string, std::tuple&lt; unsigned int, unsigned int &gt; &gt;</type>
+        <definition>std::map&lt;std::string, std::tuple &lt;unsigned int, unsigned int&gt; &gt; DetectionsEvaluator::areaRng</definition>
+        <argsstring></argsstring>
+        <name>areaRng</name>
+        <initializer>= { {&quot;all&quot;, std::make_tuple(0, 10000000000) },
+                                                                {&quot;small&quot;, std::make_tuple(0, 1024) },
+                                                                {&quot;medium&quot;, std::make_tuple(1024, 9216) },
+                                                                {&quot;large&quot;, std::make_tuple(9210, 10000000000)} }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="55" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1a5d02f8fc9bf3c0a83a8b790d4bfc89f1" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double DetectionsEvaluator::iouThrs[10]</definition>
+        <argsstring>[10]</argsstring>
+        <name>iouThrs</name>
+        <initializer>= {0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="60" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detections_evaluator_1a60ddfc8387ac9d68a7b9ad6a06e21762" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; DetectionsEvaluator::recallThrs</definition>
+        <argsstring></argsstring>
+        <name>recallThrs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="62" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_detections_evaluator_1aea7893610a1924fc827b1140f4d64644" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DetectionsEvaluator::DetectionsEvaluator</definition>
+        <argsstring>(DatasetReaderPtr gt, DatasetReaderPtr detections, bool debug=false)</argsstring>
+        <name>DetectionsEvaluator</name>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref></type>
+          <declname>gt</declname>
+        </param>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref></type>
+          <declname>detections</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>debug</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp" bodystart="10" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detections_evaluator_1ae3047c04a1fbdce949f309373f1d81c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectionsEvaluator::evaluate</definition>
+        <argsstring>(bool isIouTypeBbox)</argsstring>
+        <name>evaluate</name>
+        <param>
+          <type>bool</type>
+          <declname>isIouTypeBbox</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp" bodystart="109" bodyend="163"/>
+        <references refid="struct_sample_1adead1781500bbf8508eae6f983621d3a" compoundref="_sample_8cpp" startline="330" endline="332">Sample::getSampleID</references>
+        <references refid="struct_sample_1a64fc306f85a0a1966f5f3b662efe95bb" compoundref="_sample_8cpp" startline="326" endline="328">Sample::setSampleID</references>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">Sample::setColorImage</references>
+        <references refid="struct_sample_1a2991d3bc768b12e84c51f52381dad944" compoundref="_sample_8cpp" startline="135" endline="140">Sample::getColorImagePath</references>
+        <references refid="class_stats_utils_1ab2ddaf474a74534ae5896d7d564d9a68" compoundref="_stats_utils_8cpp" startline="58" endline="140">StatsUtils::computeIOUMatrix</references>
+        <references refid="struct_sample_1a5f1b7716e5c4e8f5217a18021169283f" compoundref="_sample_8cpp" startline="123" endline="125">Sample::getRectRegions</references>
+        <references refid="namespacekeras__utils_1_1bounding__box__utils_1a2aa9711828ff2fd23f2769c95bfa3b52" compoundref="bounding__box__utils_8py" startline="253" endline="342">keras_utils.bounding_box_utils.iou</references>
+        <references refid="struct_sample_1aba47baeaed03136d0b63ca6609de25a7" compoundref="_sample_8cpp" startline="131" endline="133">Sample::getRleRegions</references>
+      </memberdef>
+      <memberdef kind="function" id="class_detections_evaluator_1ae5bd9702b49c12f39d09243b2d00ee74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectionsEvaluator::accumulateResults</definition>
+        <argsstring>()</argsstring>
+        <name>accumulateResults</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp" bodystart="37" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detections_evaluator_1ac71c60dd93e3afdf7ccdc69353afbed7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectionsEvaluator::addValidMixClass</definition>
+        <argsstring>(const std::string classA, const std::string classB)</argsstring>
+        <name>addValidMixClass</name>
+        <param>
+          <type>const std::string</type>
+          <declname>classA</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>classB</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp" bodystart="392" bodyend="395"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detections_evaluator_1a4dd79b8b2b45a8f035a2ce5d447d5738" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectionsEvaluator::addClassToDisplay</definition>
+        <argsstring>(const std::string &amp;classID)</argsstring>
+        <name>addClassToDisplay</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp" bodystart="397" bodyend="399"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detections_evaluator_1a8e45b894c4bd12036b06d661b22cfad3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::map&lt; std::string, double &gt;</type>
+        <definition>std::map&lt; std::string, double &gt; DetectionsEvaluator::getClassWiseAP</definition>
+        <argsstring>()</argsstring>
+        <name>getClassWiseAP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detections_evaluator_1a721ab693346076a18bf7dbdfa9a52c35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::map&lt; std::string, double &gt;</type>
+        <definition>std::map&lt; std::string, double &gt; DetectionsEvaluator::getClassWiseAR</definition>
+        <argsstring>()</argsstring>
+        <name>getClassWiseAR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detections_evaluator_1a593969daae1eb92721cbf6b4d58e480c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double DetectionsEvaluator::getOverallmAP</definition>
+        <argsstring>()</argsstring>
+        <name>getOverallmAP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detections_evaluator_1a33ecd969977924ce1385fc64109e619c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double DetectionsEvaluator::getOverallmAR</definition>
+        <argsstring>()</argsstring>
+        <name>getOverallmAR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp" bodystart="33" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_detections_evaluator_1a6aa1a4e92439db99eee6d9c19612be55" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectionsEvaluator::evaluateSample</definition>
+        <argsstring>(Sample gt, Sample detection, bool isIouTypeBbox)</argsstring>
+        <name>evaluateSample</name>
+        <param>
+          <type><ref refid="struct_sample" kindref="compound">Sample</ref></type>
+          <declname>gt</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_sample" kindref="compound">Sample</ref></type>
+          <declname>detection</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isIouTypeBbox</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="37" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp" bodystart="165" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detections_evaluator_1a889e3502e215fc8554c8b9e84de289fe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectionsEvaluator::printStats</definition>
+        <argsstring>()</argsstring>
+        <name>printStats</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="39" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp" bodystart="373" bodyend="375"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detections_evaluator_1a9d701d375e7be04dba521af628aa9867" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectionsEvaluator::sameClass</definition>
+        <argsstring>(const std::string class1, const std::string class2)</argsstring>
+        <name>sameClass</name>
+        <param>
+          <type>const std::string</type>
+          <declname>class1</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>class2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="41" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp" bodystart="378" bodyend="389"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h" bodystart="17" bodyend="63"/>
+    <listofallmembers>
+      <member refid="class_detections_evaluator_1ae5bd9702b49c12f39d09243b2d00ee74" prot="public" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>accumulateResults</name></member>
+      <member refid="class_detections_evaluator_1a4dd79b8b2b45a8f035a2ce5d447d5738" prot="public" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>addClassToDisplay</name></member>
+      <member refid="class_detections_evaluator_1ac71c60dd93e3afdf7ccdc69353afbed7" prot="public" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>addValidMixClass</name></member>
+      <member refid="class_detections_evaluator_1aa3902e92d5b5eec63f4b81ca5436ab87" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>ApDiffIou</name></member>
+      <member refid="class_detections_evaluator_1a3db4c3fea888dbfe5aad892ed157b95c" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>ArDiffIou</name></member>
+      <member refid="class_detections_evaluator_1a83252362172a629186e449330e64cf9c" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>areaRng</name></member>
+      <member refid="class_detections_evaluator_1a15aa129236b7cf425b48db0f499b45d5" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>classesToDisplay</name></member>
+      <member refid="class_detections_evaluator_1a935ee293feb1d6fd78d054fc4d9d069c" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>classMapping</name></member>
+      <member refid="class_detections_evaluator_1a8abd594f6510240694ac95406a412039" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>classWiseMeanAP</name></member>
+      <member refid="class_detections_evaluator_1aea63bcd4e2e4c056054d80e099a09405" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>classWiseMeanAR</name></member>
+      <member refid="class_detections_evaluator_1ae6f967cd2c995c80af33ac57ac0409fe" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>debug</name></member>
+      <member refid="class_detections_evaluator_1a4930424fbd0d699e8815d04081fb7487" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>detections</name></member>
+      <member refid="class_detections_evaluator_1aea7893610a1924fc827b1140f4d64644" prot="public" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>DetectionsEvaluator</name></member>
+      <member refid="class_detections_evaluator_1ae3047c04a1fbdce949f309373f1d81c5" prot="public" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>evaluate</name></member>
+      <member refid="class_detections_evaluator_1a6aa1a4e92439db99eee6d9c19612be55" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>evaluateSample</name></member>
+      <member refid="class_detections_evaluator_1a8e45b894c4bd12036b06d661b22cfad3" prot="public" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>getClassWiseAP</name></member>
+      <member refid="class_detections_evaluator_1a721ab693346076a18bf7dbdfa9a52c35" prot="public" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>getClassWiseAR</name></member>
+      <member refid="class_detections_evaluator_1a593969daae1eb92721cbf6b4d58e480c" prot="public" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>getOverallmAP</name></member>
+      <member refid="class_detections_evaluator_1a33ecd969977924ce1385fc64109e619c" prot="public" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>getOverallmAR</name></member>
+      <member refid="class_detections_evaluator_1abed56e5a3701e4f445546c2bf12dfb4d" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>gt</name></member>
+      <member refid="class_detections_evaluator_1a5d02f8fc9bf3c0a83a8b790d4bfc89f1" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>iouThrs</name></member>
+      <member refid="class_detections_evaluator_1a889e3502e215fc8554c8b9e84de289fe" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>printStats</name></member>
+      <member refid="class_detections_evaluator_1a60ddfc8387ac9d68a7b9ad6a06e21762" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>recallThrs</name></member>
+      <member refid="class_detections_evaluator_1a9d701d375e7be04dba521af628aa9867" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>sameClass</name></member>
+      <member refid="class_detections_evaluator_1aefa0465b93d3c5693b51aface9ae3bf8" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>sampleStats</name></member>
+      <member refid="class_detections_evaluator_1aed69c086b38ab0d01b3d89da84100af4" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>stats</name></member>
+      <member refid="class_detections_evaluator_1a1036c89ebb9c141e7faf124b9fcd6c15" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>thIOU</name></member>
+      <member refid="class_detections_evaluator_1a65fdfe3f3dcd1fa660dd538e34ea4f0d" prot="private" virt="non-virtual"><scope>DetectionsEvaluator</scope><name>validMixClass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

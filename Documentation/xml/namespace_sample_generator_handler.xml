@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespace_sample_generator_handler" kind="namespace" language="C++">
+    <compoundname>SampleGeneratorHandler</compoundname>
+    <innerclass refid="class_sample_generator_handler_1_1_converter" prot="public">SampleGeneratorHandler::Converter</innerclass>
+    <innerclass refid="class_sample_generator_handler_1_1_deployer" prot="public">SampleGeneratorHandler::Deployer</innerclass>
+    <innerclass refid="class_sample_generator_handler_1_1_detector" prot="public">SampleGeneratorHandler::Detector</innerclass>
+    <innerclass refid="class_sample_generator_handler_1_1_evaluator" prot="public">SampleGeneratorHandler::Evaluator</innerclass>
+    <innerclass refid="class_sample_generator_handler_1_1_sampler_generation_handler" prot="public">SampleGeneratorHandler::SamplerGenerationHandler</innerclass>
+    <innerclass refid="class_sample_generator_handler_1_1_viewer" prot="public">SampleGeneratorHandler::Viewer</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.h" line="10" column="1"/>
+  </compounddef>
+</doxygen>

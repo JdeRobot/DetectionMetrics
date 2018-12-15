@@ -1,0 +1,154 @@
+\hypertarget{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss}{}\section{keras\+\_\+utils.\+keras\+\_\+ssd\+\_\+loss.\+S\+S\+D\+Loss Class Reference}
+\label{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss}\index{keras\+\_\+utils.\+keras\+\_\+ssd\+\_\+loss.\+S\+S\+D\+Loss@{keras\+\_\+utils.\+keras\+\_\+ssd\+\_\+loss.\+S\+S\+D\+Loss}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_a2689ede880461cb86574c15d98d200f2}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, \hyperlink{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_af9f522438bf7085bea81c6431baf427b}{neg\+\_\+pos\+\_\+ratio}=3, \hyperlink{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_a933f7528c9efabe7dd5c91fd18d9cbf9}{n\+\_\+neg\+\_\+min}=0, \hyperlink{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_afb5702fa295ff501d5b4baf09e2af409}{alpha}=1.\+0)
+\item 
+def \hyperlink{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_af8b9efac79d769cb5d55728946798bd3}{smooth\+\_\+\+L1\+\_\+loss} (self, y\+\_\+true, y\+\_\+pred)
+\item 
+def \hyperlink{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_ac961f7061c048c565a859f8d42159a0d}{log\+\_\+loss} (self, y\+\_\+true, y\+\_\+pred)
+\item 
+def \hyperlink{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_a4f40f84c97462853d5b19373e7c5933b}{compute\+\_\+loss} (self, y\+\_\+true, y\+\_\+pred)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_af9f522438bf7085bea81c6431baf427b}{neg\+\_\+pos\+\_\+ratio}
+\item 
+\hyperlink{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_a933f7528c9efabe7dd5c91fd18d9cbf9}{n\+\_\+neg\+\_\+min}
+\item 
+\hyperlink{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_afb5702fa295ff501d5b4baf09e2af409}{alpha}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}The SSD loss, see https://arxiv.org/abs/1512.02325.
+\end{DoxyVerb}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_a2689ede880461cb86574c15d98d200f2}\label{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_a2689ede880461cb86574c15d98d200f2}} 
+\index{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss@{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss@{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def keras\+\_\+utils.\+keras\+\_\+ssd\+\_\+loss.\+S\+S\+D\+Loss.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{neg\+\_\+pos\+\_\+ratio = {\ttfamily 3},  }\item[{}]{n\+\_\+neg\+\_\+min = {\ttfamily 0},  }\item[{}]{alpha = {\ttfamily 1.0} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Arguments:
+    neg_pos_ratio (int, optional): The maximum ratio of negative (i.e. background)
+to positive ground truth boxes to include in the loss computation.
+There are no actual background ground truth boxes of course, but `y_true`
+contains anchor boxes labeled with the background class. Since
+the number of background boxes in `y_true` will usually exceed
+the number of positive boxes by far, it is necessary to balance
+their influence on the loss. Defaults to 3 following the paper.
+    n_neg_min (int, optional): The minimum number of negative ground truth boxes to
+enter the loss computation *per batch*. This argument can be used to make
+sure that the model learns from a minimum number of negatives in batches
+in which there are very few, or even none at all, positive ground truth
+boxes. It defaults to 0 and if used, it should be set to a value that
+stands in reasonable proportion to the batch size used for training.
+    alpha (float, optional): A factor to weight the localization loss in the
+computation of the total loss. Defaults to 1.0 following the paper.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_a4f40f84c97462853d5b19373e7c5933b}\label{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_a4f40f84c97462853d5b19373e7c5933b}} 
+\index{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss@{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss}!compute\+\_\+loss@{compute\+\_\+loss}}
+\index{compute\+\_\+loss@{compute\+\_\+loss}!keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss@{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss}}
+\subsubsection{\texorpdfstring{compute\+\_\+loss()}{compute\_loss()}}
+{\footnotesize\ttfamily def keras\+\_\+utils.\+keras\+\_\+ssd\+\_\+loss.\+S\+S\+D\+Loss.\+compute\+\_\+loss (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{y\+\_\+true,  }\item[{}]{y\+\_\+pred }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the loss of the SSD model prediction against the ground truth.
+
+Arguments:
+    y_true (array): A Numpy array of shape `(batch_size, #boxes, #classes + 12)`,
+where `#boxes` is the total number of boxes that the model predicts
+per image. Be careful to make sure that the index of each given
+box in `y_true` is the same as the index for the corresponding
+box in `y_pred`. The last axis must have length `#classes + 12` and contain
+`[classes one-hot encoded, 4 ground truth box coordinate offsets, 8 arbitrary entries]`
+in this order, including the background class. The last eight entries of the
+last axis are not used by this function and therefore their contents are
+irrelevant, they only exist so that `y_true` has the same shape as `y_pred`,
+where the last four entries of the last axis contain the anchor box
+coordinates, which are needed during inference. Important: Boxes that
+you want the cost function to ignore need to have a one-hot
+class vector of all zeros.
+    y_pred (Keras tensor): The model prediction. The shape is identical
+to that of `y_true`, i.e. `(batch_size, #boxes, #classes + 12)`.
+The last axis must contain entries in the format
+`[classes one-hot encoded, 4 predicted box coordinate offsets, 8 arbitrary entries]`.
+
+Returns:
+    A scalar, the total multitask loss for classification and localization.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_ac961f7061c048c565a859f8d42159a0d}\label{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_ac961f7061c048c565a859f8d42159a0d}} 
+\index{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss@{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss}!log\+\_\+loss@{log\+\_\+loss}}
+\index{log\+\_\+loss@{log\+\_\+loss}!keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss@{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss}}
+\subsubsection{\texorpdfstring{log\+\_\+loss()}{log\_loss()}}
+{\footnotesize\ttfamily def keras\+\_\+utils.\+keras\+\_\+ssd\+\_\+loss.\+S\+S\+D\+Loss.\+log\+\_\+loss (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{y\+\_\+true,  }\item[{}]{y\+\_\+pred }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute the softmax log loss.
+
+Arguments:
+    y_true (nD tensor): A TensorFlow tensor of any shape containing the ground truth data.
+In this context, the expected tensor has shape (batch_size, #boxes, #classes)
+and contains the ground truth bounding box categories.
+    y_pred (nD tensor): A TensorFlow tensor of identical structure to `y_true` containing
+the predicted data, in this context the predicted bounding box categories.
+
+Returns:
+    The softmax log loss, a nD-1 Tensorflow tensor. In this context a 2D tensor
+    of shape (batch, n_boxes_total).
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_af8b9efac79d769cb5d55728946798bd3}\label{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_af8b9efac79d769cb5d55728946798bd3}} 
+\index{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss@{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss}!smooth\+\_\+\+L1\+\_\+loss@{smooth\+\_\+\+L1\+\_\+loss}}
+\index{smooth\+\_\+\+L1\+\_\+loss@{smooth\+\_\+\+L1\+\_\+loss}!keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss@{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss}}
+\subsubsection{\texorpdfstring{smooth\+\_\+\+L1\+\_\+loss()}{smooth\_L1\_loss()}}
+{\footnotesize\ttfamily def keras\+\_\+utils.\+keras\+\_\+ssd\+\_\+loss.\+S\+S\+D\+Loss.\+smooth\+\_\+\+L1\+\_\+loss (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{y\+\_\+true,  }\item[{}]{y\+\_\+pred }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Compute smooth L1 loss, see references.
+
+Arguments:
+    y_true (nD tensor): A TensorFlow tensor of any shape containing the ground truth data.
+In this context, the expected tensor has shape `(batch_size, #boxes, 4)` and
+contains the ground truth bounding box coordinates, where the last dimension
+contains `(xmin, xmax, ymin, ymax)`.
+    y_pred (nD tensor): A TensorFlow tensor of identical structure to `y_true` containing
+the predicted data, in this context the predicted bounding box coordinates.
+
+Returns:
+    The smooth L1 loss, a nD-1 Tensorflow tensor. In this context a 2D tensor
+    of shape (batch, n_boxes_total).
+
+References:
+    https://arxiv.org/abs/1504.08083
+\end{DoxyVerb}
+ 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_afb5702fa295ff501d5b4baf09e2af409}\label{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_afb5702fa295ff501d5b4baf09e2af409}} 
+\index{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss@{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss}!alpha@{alpha}}
+\index{alpha@{alpha}!keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss@{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss}}
+\subsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily keras\+\_\+utils.\+keras\+\_\+ssd\+\_\+loss.\+S\+S\+D\+Loss.\+alpha}
+
+\mbox{\Hypertarget{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_a933f7528c9efabe7dd5c91fd18d9cbf9}\label{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_a933f7528c9efabe7dd5c91fd18d9cbf9}} 
+\index{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss@{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss}!n\+\_\+neg\+\_\+min@{n\+\_\+neg\+\_\+min}}
+\index{n\+\_\+neg\+\_\+min@{n\+\_\+neg\+\_\+min}!keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss@{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss}}
+\subsubsection{\texorpdfstring{n\+\_\+neg\+\_\+min}{n\_neg\_min}}
+{\footnotesize\ttfamily keras\+\_\+utils.\+keras\+\_\+ssd\+\_\+loss.\+S\+S\+D\+Loss.\+n\+\_\+neg\+\_\+min}
+
+\mbox{\Hypertarget{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_af9f522438bf7085bea81c6431baf427b}\label{classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_af9f522438bf7085bea81c6431baf427b}} 
+\index{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss@{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss}!neg\+\_\+pos\+\_\+ratio@{neg\+\_\+pos\+\_\+ratio}}
+\index{neg\+\_\+pos\+\_\+ratio@{neg\+\_\+pos\+\_\+ratio}!keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss@{keras\+\_\+utils\+::keras\+\_\+ssd\+\_\+loss\+::\+S\+S\+D\+Loss}}
+\subsubsection{\texorpdfstring{neg\+\_\+pos\+\_\+ratio}{neg\_pos\_ratio}}
+{\footnotesize\ttfamily keras\+\_\+utils.\+keras\+\_\+ssd\+\_\+loss.\+S\+S\+D\+Loss.\+neg\+\_\+pos\+\_\+ratio}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/python\+\_\+modules/keras\+\_\+utils/\hyperlink{keras__ssd__loss_8py}{keras\+\_\+ssd\+\_\+loss.\+py}\end{DoxyCompactItemize}

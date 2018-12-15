@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="keras__layer___l2_normalization_8py" kind="file" language="Python">
+    <compoundname>keras_layer_L2Normalization.py</compoundname>
+    <innerclass refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization" prot="public">keras_utils::keras_layer_L2Normalization::L2Normalization</innerclass>
+    <innernamespace refid="namespacekeras__utils_1_1keras__layer___l2_normalization">keras_utils::keras_layer_L2Normalization</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacekeras__utils_1_1keras__layer___l2_normalization" refkind="compound"><highlight class="stringliteral">&apos;&apos;&apos;</highlight></codeline>
+<codeline lineno="2"><highlight class="stringliteral">A<sp/>custom<sp/>Keras<sp/>layer<sp/>to<sp/>perform<sp/>L2-normalization.</highlight></codeline>
+<codeline lineno="3"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral">Copyright<sp/>(C)<sp/>2017<sp/>Pierluigi<sp/>Ferrari</highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral">This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral">it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral">the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral">(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral">This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral">but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral">MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral">GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral">You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral">along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>&lt;http://www.gnu.org/licenses/&gt;.</highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral">&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>__future__<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>division</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>np</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>keras.backend<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>K</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>keras.engine.topology<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>InputSpec</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>keras.engine.topology<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Layer</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization" kindref="compound">L2Normalization</ref>(Layer):</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;&apos;&apos;</highlight></codeline>
+<codeline lineno="28"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Performs<sp/>L2<sp/>normalization<sp/>on<sp/>the<sp/>input<sp/>tensor<sp/>with<sp/>a<sp/>learnable<sp/>scaling<sp/>parameter</highlight></codeline>
+<codeline lineno="29"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>as<sp/>described<sp/>in<sp/>the<sp/>paper<sp/>&quot;Parsenet:<sp/>Looking<sp/>Wider<sp/>to<sp/>See<sp/>Better&quot;<sp/>(see<sp/>references)</highlight></codeline>
+<codeline lineno="30"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>and<sp/>as<sp/>used<sp/>in<sp/>the<sp/>original<sp/>SSD<sp/>model.</highlight></codeline>
+<codeline lineno="31"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="32"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Arguments:</highlight></codeline>
+<codeline lineno="33"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gamma_init<sp/>(int):<sp/>The<sp/>initial<sp/>scaling<sp/>parameter.<sp/>Defaults<sp/>to<sp/>20<sp/>following<sp/>the</highlight></codeline>
+<codeline lineno="34"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SSD<sp/>paper.</highlight></codeline>
+<codeline lineno="35"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="36"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Input<sp/>shape:</highlight></codeline>
+<codeline lineno="37"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4D<sp/>tensor<sp/>of<sp/>shape<sp/>`(batch,<sp/>channels,<sp/>height,<sp/>width)`<sp/>if<sp/>`dim_ordering<sp/>=<sp/>&apos;th&apos;`</highlight></codeline>
+<codeline lineno="38"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>or<sp/>`(batch,<sp/>height,<sp/>width,<sp/>channels)`<sp/>if<sp/>`dim_ordering<sp/>=<sp/>&apos;tf&apos;`.</highlight></codeline>
+<codeline lineno="39"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="40"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>Returns:</highlight></codeline>
+<codeline lineno="41"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>The<sp/>scaled<sp/>tensor.<sp/>Same<sp/>shape<sp/>as<sp/>the<sp/>input<sp/>tensor.</highlight></codeline>
+<codeline lineno="42"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="43"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>References:</highlight></codeline>
+<codeline lineno="44"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>http://cs.unc.edu/~wliu/papers/parsenet.pdf</highlight></codeline>
+<codeline lineno="45"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&apos;&apos;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a44d3d7b777a42cb28b5bbbcead7b2725" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a44d3d7b777a42cb28b5bbbcead7b2725" kindref="member">__init__</ref>(self,<sp/>gamma_init=20,<sp/>**kwargs):</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>K.image_dim_ordering()<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;tf&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="49" refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a14c9cb005b543eac21ce2ba17c1eb49e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a14c9cb005b543eac21ce2ba17c1eb49e" kindref="member">axis</ref><sp/>=<sp/>3</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a14c9cb005b543eac21ce2ba17c1eb49e" kindref="member">axis</ref><sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="52" refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a692198f0ef32ded740d28f5e89684a0e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a692198f0ef32ded740d28f5e89684a0e" kindref="member">gamma_init</ref><sp/>=<sp/>gamma_init</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(L2Normalization,<sp/>self).<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a44d3d7b777a42cb28b5bbbcead7b2725" kindref="member">__init__</ref>(**kwargs)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a9111c56e1f9a28a8ab53389883587cd4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a9111c56e1f9a28a8ab53389883587cd4" kindref="member">build</ref>(self,<sp/>input_shape):</highlight></codeline>
+<codeline lineno="56" refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a1abbe639712dc72d6db7ff2074044ba4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a1abbe639712dc72d6db7ff2074044ba4" kindref="member">input_spec</ref><sp/>=<sp/>[InputSpec(shape=input_shape)]</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gamma<sp/>=<sp/>self.<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a692198f0ef32ded740d28f5e89684a0e" kindref="member">gamma_init</ref><sp/>*<sp/>np.ones((input_shape[self.<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a14c9cb005b543eac21ce2ba17c1eb49e" kindref="member">axis</ref>],))</highlight></codeline>
+<codeline lineno="58" refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1ab7b23065ad64ef9d19c8d869c914b417" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1ab7b23065ad64ef9d19c8d869c914b417" kindref="member">gamma</ref><sp/>=<sp/>K.variable(gamma,<sp/>name=</highlight><highlight class="stringliteral">&apos;{}_gamma&apos;</highlight><highlight class="normal">.format(self.name))</highlight></codeline>
+<codeline lineno="59" refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a5cb4f097f087e58e797e8132c68b8d9d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a5cb4f097f087e58e797e8132c68b8d9d" kindref="member">trainable_weights</ref><sp/>=<sp/>[self.<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1ab7b23065ad64ef9d19c8d869c914b417" kindref="member">gamma</ref>]</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(L2Normalization,<sp/>self).<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a9111c56e1f9a28a8ab53389883587cd4" kindref="member">build</ref>(input_shape)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1ac9f98847106a0787d750ef82b2bc702b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1ac9f98847106a0787d750ef82b2bc702b" kindref="member">call</ref>(self,<sp/>x,<sp/>mask=None):</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/>=<sp/>K.l2_normalize(x,<sp/>self.<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a14c9cb005b543eac21ce2ba17c1eb49e" kindref="member">axis</ref>)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>output<sp/>*<sp/>self.<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1ab7b23065ad64ef9d19c8d869c914b417" kindref="member">gamma</ref></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a7202c20f7a98115dfc7882062cbf61af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a7202c20f7a98115dfc7882062cbf61af" kindref="member">get_config</ref>(self):</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>config<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&apos;gamma_init&apos;</highlight><highlight class="normal">:<sp/>self.<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a692198f0ef32ded740d28f5e89684a0e" kindref="member">gamma_init</ref></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>base_config<sp/>=<sp/>super(L2Normalization,<sp/>self).<ref refid="classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization_1a7202c20f7a98115dfc7882062cbf61af" kindref="member">get_config</ref>()</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>dict(list(base_config.items())<sp/>+<sp/>list(config.items()))</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_layer_L2Normalization.py"/>
+  </compounddef>
+</doxygen>

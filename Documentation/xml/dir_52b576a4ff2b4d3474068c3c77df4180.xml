@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_52b576a4ff2b4d3474068c3c77df4180" kind="dir">
+    <compoundname>DeepLearningSuite/libs/comm/include/comm/ice</compoundname>
+    <innerfile refid="camera_ice_client_8hpp">cameraIceClient.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/comm/include/comm/ice/"/>
+  </compounddef>
+</doxygen>

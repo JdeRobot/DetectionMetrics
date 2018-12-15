@@ -1,0 +1,115 @@
+.TH "DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+\fC#include <pthread\&.h>\fP
+.br
+\fC#include 'colorspaces\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBrgb2yuv_wiki\fP (double r, double g, double b, double *Y, double *U, double *V)"
+.br
+.ti -1c
+.RI "void \fByuv2rgb\fP (double Y, double U, double V, double *r, double *g, double *b)"
+.br
+.RI "Returns the translation from \fBYUV\fP to RGB\&. "
+.ti -1c
+.RI "void \fBprint_status_HSV\fP (unsigned long status)"
+.br
+.RI "Function to print unsiged int in binary\&. "
+.ti -1c
+.RI "void \fBRGB2YUV_destroyTable\fP ()"
+.br
+.RI "Free de memory of RGB2YUV\&. "
+.ti -1c
+.RI "void \fBRGB2YUV_init\fP ()"
+.br
+.RI "Init the RGB2YUV\&. "
+.ti -1c
+.RI "void \fBRGB2YUV_createTable\fP ()"
+.br
+.RI ": Calculate values for create a generic table "
+.ti -1c
+.RI "void \fBRGB2YUV_printYUV\fP (struct \fBYUV\fP *yuv)"
+.br
+.RI "Print the struct \fBYUV\fP\&. "
+.ti -1c
+.RI "void \fBRGB2YUV_test\fP (void)"
+.br
+.RI "Test\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const int \fBMAXIMUN_RGB\fP = 255"
+.br
+.ti -1c
+.RI "struct \fBYUV\fP * \fBLUT_RGB2YUV\fP [64][64][64]"
+.br
+.ti -1c
+.RI "int \fBisInitTableYUV\fP"
+.br
+.ti -1c
+.RI "pthread_mutex_t \fBmutex\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void print_status_HSV (unsigned long status)"
+
+.PP
+Function to print unsiged int in binary\&. 
+.SS "void RGB2YUV_createTable ()"
+
+.PP
+: Calculate values for create a generic table Create a generic translate RGB2YUV table with resolution of 6bits (64x64x64) 
+.SS "void RGB2YUV_destroyTable ()"
+
+.PP
+Free de memory of RGB2YUV\&. 
+.SS "void RGB2YUV_init ()"
+
+.PP
+Init the RGB2YUV\&. 
+.SS "void RGB2YUV_printYUV (struct \fBYUV\fP * yuv)"
+
+.PP
+Print the struct \fBYUV\fP\&. 
+.SS "void RGB2YUV_test (void)"
+
+.PP
+Test\&. 
+.SS "void rgb2yuv_wiki (double r, double g, double b, double * Y, double * U, double * V)"
+
+.SS "void yuv2rgb (double Y, double U, double V, double * r, double * g, double * b)"
+
+.PP
+Returns the translation from \fBYUV\fP to RGB\&. 
+.SH "Variable Documentation"
+.PP 
+.SS "int isInitTableYUV"
+
+.SS "struct \fBYUV\fP* LUT_RGB2YUV[64][64][64]"
+
+.SS "const int MAXIMUN_RGB = 255"
+
+.SS "pthread_mutex_t mutex"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

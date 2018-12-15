@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_a0dc6956e9d0937da5746cb36c628723" kind="dir">
+    <compoundname>DeepLearningSuite/build/CMakeFiles/3.12.2</compoundname>
+    <innerdir refid="dir_354825f3b0e512f6f9b9f12cc3074c3b">DeepLearningSuite/build/CMakeFiles/3.12.2/CompilerIdC</innerdir>
+    <innerdir refid="dir_78d9a5c7fb901b31ad653e58068c60db">DeepLearningSuite/build/CMakeFiles/3.12.2/CompilerIdCXX</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/build/CMakeFiles/3.12.2/"/>
+  </compounddef>
+</doxygen>

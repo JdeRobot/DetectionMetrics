@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_tree" kind="class" language="C++" prot="public">
+    <compoundname>Tree</compoundname>
+    <includes refid="_tree_8h" local="no">Tree.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_tree_1ad2b3438e4c6808e5e0cdc71889e5b6d1" prot="private" static="no" mutable="no">
+        <type><ref refid="class_tree" kindref="compound">Tree</ref> *</type>
+        <definition>Tree* Tree::parent</definition>
+        <argsstring></argsstring>
+        <name>parent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tree_1a27e33b15f94411531db327b44426a83a" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Tree::className</definition>
+        <argsstring></argsstring>
+        <name>className</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tree_1a08dc7ad3887079a0c7d52c5fff326d39" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_tree" kindref="compound">Tree</ref> * &gt;</type>
+        <definition>std::vector&lt;Tree*&gt; Tree::children</definition>
+        <argsstring></argsstring>
+        <name>children</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_tree_1a9c617e144485ea46e7acd4ada998b469" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tree::Tree</definition>
+        <argsstring>(std::string filename)</argsstring>
+        <name>Tree</name>
+        <param>
+          <type>std::string</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.cpp" bodystart="3" bodyend="25"/>
+        <references refid="class_tree_1ac718ef932f2a48d178a4a5ee372fd847" compoundref="_tree_8cpp" startline="150" endline="152">setClassName</references>
+        <references refid="class_tree_1ad376a7c639d857312f5de2ef47482f68" compoundref="_tree_8cpp" startline="27" endline="29">Tree</references>
+        <references refid="class_tree_1ae4c4da2bdb7f83b3d9394c6bdf4bff3b" compoundref="_tree_8cpp" startline="31" endline="54">fillSubTree</references>
+      </memberdef>
+      <memberdef kind="function" id="class_tree_1ad376a7c639d857312f5de2ef47482f68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tree::Tree</definition>
+        <argsstring>()</argsstring>
+        <name>Tree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.cpp" bodystart="27" bodyend="29"/>
+        <referencedby refid="class_tree_1a9c617e144485ea46e7acd4ada998b469" compoundref="_tree_8cpp" startline="3" endline="25">Tree</referencedby>
+        <referencedby refid="class_tree_1ae4c4da2bdb7f83b3d9394c6bdf4bff3b" compoundref="_tree_8cpp" startline="31" endline="54">fillSubTree</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_tree_1ae4c4da2bdb7f83b3d9394c6bdf4bff3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tree::fillSubTree</definition>
+        <argsstring>(boost::property_tree::ptree tree, Tree *root)</argsstring>
+        <name>fillSubTree</name>
+        <param>
+          <type>boost::property_tree::ptree</type>
+          <declname>tree</declname>
+        </param>
+        <param>
+          <type><ref refid="class_tree" kindref="compound">Tree</ref> *</type>
+          <declname>root</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.cpp" bodystart="31" bodyend="54"/>
+        <references refid="class_tree_1ac718ef932f2a48d178a4a5ee372fd847" compoundref="_tree_8cpp" startline="150" endline="152">setClassName</references>
+        <references refid="class_tree_1ad376a7c639d857312f5de2ef47482f68" compoundref="_tree_8cpp" startline="27" endline="29">Tree</references>
+        <referencedby refid="class_tree_1a9c617e144485ea46e7acd4ada998b469" compoundref="_tree_8cpp" startline="3" endline="25">Tree</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_tree_1a745082a21d2f7ce4952a6d4d8def516e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tree::printClassName</definition>
+        <argsstring>()</argsstring>
+        <name>printClassName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.cpp" bodystart="146" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tree_1a25c7c9886c5a882b69f775fc8a406732" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tree::printChildren</definition>
+        <argsstring>()</argsstring>
+        <name>printChildren</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.cpp" bodystart="71" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tree_1af1f79de9a19b36ffe830fce16db57174" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tree::printChildrenRecursive</definition>
+        <argsstring>()</argsstring>
+        <name>printChildrenRecursive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.cpp" bodystart="84" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tree_1ac718ef932f2a48d178a4a5ee372fd847" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tree::setClassName</definition>
+        <argsstring>(std::string passedClassName)</argsstring>
+        <name>setClassName</name>
+        <param>
+          <type>std::string</type>
+          <declname>passedClassName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.cpp" bodystart="150" bodyend="152"/>
+        <referencedby refid="class_tree_1a9c617e144485ea46e7acd4ada998b469" compoundref="_tree_8cpp" startline="3" endline="25">Tree</referencedby>
+        <referencedby refid="class_tree_1ae4c4da2bdb7f83b3d9394c6bdf4bff3b" compoundref="_tree_8cpp" startline="31" endline="54">fillSubTree</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_tree_1ab6fb42578015f2c2d397c68609495e53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tree::insertChild</definition>
+        <argsstring>(Tree *child)</argsstring>
+        <name>insertChild</name>
+        <param>
+          <type><ref refid="class_tree" kindref="compound">Tree</ref> *</type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.cpp" bodystart="56" bodyend="62"/>
+        <references refid="class_tree_1aa299141dce83b8cae4679bf203fc8241" compoundref="_tree_8cpp" startline="64" endline="69">setParent</references>
+      </memberdef>
+      <memberdef kind="function" id="class_tree_1aa299141dce83b8cae4679bf203fc8241" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tree::setParent</definition>
+        <argsstring>(Tree *parent)</argsstring>
+        <name>setParent</name>
+        <param>
+          <type><ref refid="class_tree" kindref="compound">Tree</ref> *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.cpp" bodystart="64" bodyend="69"/>
+        <referencedby refid="class_tree_1ab6fb42578015f2c2d397c68609495e53" compoundref="_tree_8cpp" startline="56" endline="62">insertChild</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_tree_1ac010956e6b34ee7137ccaf79b5f529a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_tree" kindref="compound">Tree</ref> *</type>
+        <definition>Tree * Tree::searchTree</definition>
+        <argsstring>(std::string className)</argsstring>
+        <name>searchTree</name>
+        <param>
+          <type>std::string</type>
+          <declname>className</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.cpp" bodystart="100" bodyend="114"/>
+        <references refid="class_tree_1ac010956e6b34ee7137ccaf79b5f529a7" compoundref="_tree_8cpp" startline="100" endline="114">searchTree</references>
+        <referencedby refid="class_tree_1ac010956e6b34ee7137ccaf79b5f529a7" compoundref="_tree_8cpp" startline="100" endline="114">searchTree</referencedby>
+        <referencedby refid="class_tree_1ab88f67717ecef951fac69e530ded3e5d" compoundref="_tree_8cpp" startline="116" endline="144">getImmediateSynonmys</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_tree_1ab88f67717ecef951fac69e530ded3e5d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; Tree::getImmediateSynonmys</definition>
+        <argsstring>(std::string passedClassName)</argsstring>
+        <name>getImmediateSynonmys</name>
+        <param>
+          <type>std::string</type>
+          <declname>passedClassName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.cpp" bodystart="116" bodyend="144"/>
+        <references refid="class_tree_1ac010956e6b34ee7137ccaf79b5f529a7" compoundref="_tree_8cpp" startline="100" endline="114">searchTree</references>
+        <referencedby refid="struct_class_type_mapper_1af76d00ce9a2267710ee9119f0bb2e607" compoundref="_class_type_mapper_8cpp" startline="24" endline="49">ClassTypeMapper::mapString</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" line="8" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/Tree.h" bodystart="8" bodyend="29"/>
+    <listofallmembers>
+      <member refid="class_tree_1a08dc7ad3887079a0c7d52c5fff326d39" prot="private" virt="non-virtual"><scope>Tree</scope><name>children</name></member>
+      <member refid="class_tree_1a27e33b15f94411531db327b44426a83a" prot="private" virt="non-virtual"><scope>Tree</scope><name>className</name></member>
+      <member refid="class_tree_1ae4c4da2bdb7f83b3d9394c6bdf4bff3b" prot="public" virt="non-virtual"><scope>Tree</scope><name>fillSubTree</name></member>
+      <member refid="class_tree_1ab88f67717ecef951fac69e530ded3e5d" prot="public" virt="non-virtual"><scope>Tree</scope><name>getImmediateSynonmys</name></member>
+      <member refid="class_tree_1ab6fb42578015f2c2d397c68609495e53" prot="public" virt="non-virtual"><scope>Tree</scope><name>insertChild</name></member>
+      <member refid="class_tree_1ad2b3438e4c6808e5e0cdc71889e5b6d1" prot="private" virt="non-virtual"><scope>Tree</scope><name>parent</name></member>
+      <member refid="class_tree_1a25c7c9886c5a882b69f775fc8a406732" prot="public" virt="non-virtual"><scope>Tree</scope><name>printChildren</name></member>
+      <member refid="class_tree_1af1f79de9a19b36ffe830fce16db57174" prot="public" virt="non-virtual"><scope>Tree</scope><name>printChildrenRecursive</name></member>
+      <member refid="class_tree_1a745082a21d2f7ce4952a6d4d8def516e" prot="public" virt="non-virtual"><scope>Tree</scope><name>printClassName</name></member>
+      <member refid="class_tree_1ac010956e6b34ee7137ccaf79b5f529a7" prot="public" virt="non-virtual"><scope>Tree</scope><name>searchTree</name></member>
+      <member refid="class_tree_1ac718ef932f2a48d178a4a5ee372fd847" prot="public" virt="non-virtual"><scope>Tree</scope><name>setClassName</name></member>
+      <member refid="class_tree_1aa299141dce83b8cae4679bf203fc8241" prot="public" virt="non-virtual"><scope>Tree</scope><name>setParent</name></member>
+      <member refid="class_tree_1a9c617e144485ea46e7acd4ada998b469" prot="public" virt="non-virtual"><scope>Tree</scope><name>Tree</name></member>
+      <member refid="class_tree_1ad376a7c639d857312f5de2ef47482f68" prot="public" virt="non-virtual"><scope>Tree</scope><name>Tree</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

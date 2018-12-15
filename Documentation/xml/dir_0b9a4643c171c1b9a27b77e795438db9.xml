@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_0b9a4643c171c1b9a27b77e795438db9" kind="dir">
+    <compoundname>DeepLearningSuite/Tools/Evaluator</compoundname>
+    <innerfile refid="_tools_2_evaluator_2_evaluator_8cpp">evaluator.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/Tools/Evaluator/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,569 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classjderobot_1_1_depth_filter" kind="class" language="C++" prot="public">
+    <compoundname>jderobot::DepthFilter</compoundname>
+    <includes refid="_depth_filter_8h" local="no">DepthFilter.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classjderobot_1_1_depth_filter_1ac38b481d92e2f9bd46340818e8c4c3c6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int jderobot::DepthFilter::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="39" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classjderobot_1_1_depth_filter_1ad1acd4e2d7cdb60c0c1bfeb54411e319" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int jderobot::DepthFilter::buffSize</definition>
+        <argsstring></argsstring>
+        <name>buffSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="40" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classjderobot_1_1_depth_filter_1a4de2857e173e42f596d5ae362fe1e721" prot="private" static="no" mutable="no">
+        <type>std::list&lt; cv::Mat &gt;</type>
+        <definition>std::list&lt;cv::Mat&gt; jderobot::DepthFilter::buffer</definition>
+        <argsstring></argsstring>
+        <name>buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="41" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classjderobot_1_1_depth_filter_1a08e4c05bc756e7ced312dd90ee1847b8" prot="private" static="no" mutable="no">
+        <type>std::list&lt; cv::Mat &gt;</type>
+        <definition>std::list&lt;cv::Mat&gt; jderobot::DepthFilter::bufferGray</definition>
+        <argsstring></argsstring>
+        <name>bufferGray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="42" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classjderobot_1_1_depth_filter_1a0fa2e1090bec9dfe51b1a3b8fa89b5f0" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int jderobot::DepthFilter::erodeSize</definition>
+        <argsstring></argsstring>
+        <name>erodeSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="43" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classjderobot_1_1_depth_filter_1ab0256848654f1dbd8575aeedf9094f53" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int jderobot::DepthFilter::threshold</definition>
+        <argsstring></argsstring>
+        <name>threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="44" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classjderobot_1_1_depth_filter_1ac1389c07e2778e73b3b245f02e51c9fe" prot="private" static="no" mutable="no">
+        <type><ref refid="rgb2yuv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">std::mutex</ref></type>
+        <definition>std::mutex jderobot::DepthFilter::m</definition>
+        <argsstring></argsstring>
+        <name>m</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="45" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classjderobot_1_1_depth_filter_1ad121a4060c5bb16aff41f482591e8bb3" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat jderobot::DepthFilter::globalMeanImage</definition>
+        <argsstring></argsstring>
+        <name>globalMeanImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="54" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classjderobot_1_1_depth_filter_1ad231a45d93d97ea8eb41372f37ba9e7c" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat jderobot::DepthFilter::globalDiffImage</definition>
+        <argsstring></argsstring>
+        <name>globalDiffImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="55" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classjderobot_1_1_depth_filter_1a5693d06c327e8b177b03f49644526f3d" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat jderobot::DepthFilter::globalFirstMask</definition>
+        <argsstring></argsstring>
+        <name>globalFirstMask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="56" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classjderobot_1_1_depth_filter_1a2166a2b3d5eaf5a777b090021ed7f0e9" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat jderobot::DepthFilter::globalSecondMask</definition>
+        <argsstring></argsstring>
+        <name>globalSecondMask</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="57" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a5f1717aa509c378e2124f9ab86dfe584" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>jderobot::DepthFilter::DepthFilter</definition>
+        <argsstring>(int type, int buffSize, int erodeSize, int threshold)</argsstring>
+        <name>DepthFilter</name>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>buffSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>erodeSize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="20" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.cpp" bodystart="22" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1afd0b86c3f0bf4328025ee4f92934f564" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>jderobot::DepthFilter::DepthFilter</definition>
+        <argsstring>()</argsstring>
+        <name>DepthFilter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="21" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.cpp" bodystart="13" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a6bc39bb21bc8a8685e910ddbc70bef20" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>jderobot::DepthFilter::~DepthFilter</definition>
+        <argsstring>()</argsstring>
+        <name>~DepthFilter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="22" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.cpp" bodystart="30" bodyend="32"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+        <references refid="namespacetensorflow__detect_1a92f27be303bb36c28ed99f95a89104b1" compoundref="tensorflow__detect_8py" startline="12">tensorflow_detect.threshold</references>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1adc334eab73132c4ae1f44da6db02ae70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthFilter::update</definition>
+        <argsstring>(cv::Mat imageIn, cv::Mat &amp;imageOut)</argsstring>
+        <name>update</name>
+        <param>
+          <type>cv::Mat</type>
+          <declname>imageIn</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>imageOut</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="23" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.cpp" bodystart="322" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a0906e79126a1447526a40fe2345d7653" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int jderobot::DepthFilter::getBufferSize</definition>
+        <argsstring>()</argsstring>
+        <name>getBufferSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="24" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a619b72f8bded1c3ea8e3a02f2bcb21ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthFilter::setBufferSize</definition>
+        <argsstring>(int size)</argsstring>
+        <name>setBufferSize</name>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="25" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a6ce70c6b569e38f4bf95037fc32e9474" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int jderobot::DepthFilter::getErodeSize</definition>
+        <argsstring>()</argsstring>
+        <name>getErodeSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="26" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a9e8d63b72611be1fca6913241c162889" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthFilter::setErodeSize</definition>
+        <argsstring>(int size)</argsstring>
+        <name>setErodeSize</name>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="27" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a47fc6768210b2b11df536729c04a23cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int jderobot::DepthFilter::getThreshold</definition>
+        <argsstring>()</argsstring>
+        <name>getThreshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="28" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1af7ddc46805bded3d3f8ad24bc866268c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthFilter::setThreshold</definition>
+        <argsstring>(int value)</argsstring>
+        <name>setThreshold</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="29" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1abb7692e32727b32edebb1f01601dfbe7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthFilter::setFilterType</definition>
+        <argsstring>(int value)</argsstring>
+        <name>setFilterType</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="30" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a5d0a063ea9641f5bcf3dd71c3d45609f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int jderobot::DepthFilter::getFilterType</definition>
+        <argsstring>()</argsstring>
+        <name>getFilterType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="31" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="31" bodyend="31"/>
+        <references refid="classjderobot_1_1_depth_filter_1a89460a33c77663365cdaac29f3e06e9a" compoundref="_depth_filter_8cpp" startline="311" endline="317">clear</references>
+        <references refid="classjderobot_1_1_depth_filter_1a3ec6d1a0731ddbc235eacff6bae7970c" compoundref="_depth_filter_8cpp" startline="290" endline="294">getMeanImage</references>
+        <references refid="classjderobot_1_1_depth_filter_1a726764bf1ca8f8f765507b32870ed8ee" compoundref="_depth_filter_8cpp" startline="295" endline="299">getDiffImage</references>
+        <references refid="classjderobot_1_1_depth_filter_1a6667315ceee0a6abba42840d29b848d3" compoundref="_depth_filter_8cpp" startline="300" endline="304">getFistMask</references>
+        <references refid="classjderobot_1_1_depth_filter_1a1e69ca9fd83391b8fb89d4ae4df35262" compoundref="_depth_filter_8cpp" startline="305" endline="309">getSecondMask</references>
+        <references refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" compoundref="rgb2hsv_8c" startline="42">mutex</references>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a89460a33c77663365cdaac29f3e06e9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthFilter::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="32" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.cpp" bodystart="311" bodyend="317"/>
+        <referencedby refid="classjderobot_1_1_depth_filter_1a5d0a063ea9641f5bcf3dd71c3d45609f" compoundref="_depth_filter_8h" startline="31" endline="31">getFilterType</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a3ec6d1a0731ddbc235eacff6bae7970c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthFilter::getMeanImage</definition>
+        <argsstring>(cv::Mat &amp;out)</argsstring>
+        <name>getMeanImage</name>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="33" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.cpp" bodystart="290" bodyend="294"/>
+        <referencedby refid="classjderobot_1_1_depth_filter_1a5d0a063ea9641f5bcf3dd71c3d45609f" compoundref="_depth_filter_8h" startline="31" endline="31">getFilterType</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a726764bf1ca8f8f765507b32870ed8ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthFilter::getDiffImage</definition>
+        <argsstring>(cv::Mat &amp;out)</argsstring>
+        <name>getDiffImage</name>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="34" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.cpp" bodystart="295" bodyend="299"/>
+        <referencedby refid="classjderobot_1_1_depth_filter_1a5d0a063ea9641f5bcf3dd71c3d45609f" compoundref="_depth_filter_8h" startline="31" endline="31">getFilterType</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a6667315ceee0a6abba42840d29b848d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthFilter::getFistMask</definition>
+        <argsstring>(cv::Mat &amp;out)</argsstring>
+        <name>getFistMask</name>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="35" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.cpp" bodystart="300" bodyend="304"/>
+        <referencedby refid="classjderobot_1_1_depth_filter_1a5d0a063ea9641f5bcf3dd71c3d45609f" compoundref="_depth_filter_8h" startline="31" endline="31">getFilterType</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a1e69ca9fd83391b8fb89d4ae4df35262" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthFilter::getSecondMask</definition>
+        <argsstring>(cv::Mat &amp;out)</argsstring>
+        <name>getSecondMask</name>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="36" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.cpp" bodystart="305" bodyend="309"/>
+        <referencedby refid="classjderobot_1_1_depth_filter_1a5d0a063ea9641f5bcf3dd71c3d45609f" compoundref="_depth_filter_8h" startline="31" endline="31">getFilterType</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a8a54ec5a6300b273bab9f539788bd64f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthFilter::filterMeanNonZero</definition>
+        <argsstring>(cv::Mat imageIn, cv::Mat &amp;imageOut)</argsstring>
+        <name>filterMeanNonZero</name>
+        <param>
+          <type>cv::Mat</type>
+          <declname>imageIn</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>imageOut</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="48" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.cpp" bodystart="243" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1ac1969744ae2324f4a1b10fb7db602066" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthFilter::filterDakkak</definition>
+        <argsstring>(cv::Mat imageIn, cv::Mat &amp;imageOut)</argsstring>
+        <name>filterDakkak</name>
+        <param>
+          <type>cv::Mat</type>
+          <declname>imageIn</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>imageOut</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="49" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.cpp" bodystart="35" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a8b01db204d3ebfdb505a5d7a2d8f7956" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthFilter::filterMeanNonMotion3Channels</definition>
+        <argsstring>(cv::Mat imageIn, cv::Mat &amp;imageOut)</argsstring>
+        <name>filterMeanNonMotion3Channels</name>
+        <param>
+          <type>cv::Mat</type>
+          <declname>imageIn</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>imageOut</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="50" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.cpp" bodystart="48" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_filter_1a167dd1569a44b08003c6f478b6ebddaa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthFilter::filterMeanNonMotion1Channels</definition>
+        <argsstring>(cv::Mat imageIn, cv::Mat &amp;imageOut)</argsstring>
+        <name>filterMeanNonMotion1Channels</name>
+        <param>
+          <type>cv::Mat</type>
+          <declname>imageIn</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>imageOut</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="51" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.cpp" bodystart="132" bodyend="239"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h" line="18" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthFilter.h" bodystart="18" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classjderobot_1_1_depth_filter_1a4de2857e173e42f596d5ae362fe1e721" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>buffer</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a08e4c05bc756e7ced312dd90ee1847b8" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>bufferGray</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1ad1acd4e2d7cdb60c0c1bfeb54411e319" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>buffSize</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a89460a33c77663365cdaac29f3e06e9a" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>clear</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a5f1717aa509c378e2124f9ab86dfe584" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>DepthFilter</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1afd0b86c3f0bf4328025ee4f92934f564" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>DepthFilter</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a0fa2e1090bec9dfe51b1a3b8fa89b5f0" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>erodeSize</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1ac1969744ae2324f4a1b10fb7db602066" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>filterDakkak</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a167dd1569a44b08003c6f478b6ebddaa" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>filterMeanNonMotion1Channels</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a8b01db204d3ebfdb505a5d7a2d8f7956" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>filterMeanNonMotion3Channels</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a8a54ec5a6300b273bab9f539788bd64f" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>filterMeanNonZero</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a0906e79126a1447526a40fe2345d7653" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>getBufferSize</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a726764bf1ca8f8f765507b32870ed8ee" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>getDiffImage</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a6ce70c6b569e38f4bf95037fc32e9474" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>getErodeSize</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a5d0a063ea9641f5bcf3dd71c3d45609f" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>getFilterType</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a6667315ceee0a6abba42840d29b848d3" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>getFistMask</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a3ec6d1a0731ddbc235eacff6bae7970c" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>getMeanImage</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a1e69ca9fd83391b8fb89d4ae4df35262" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>getSecondMask</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a47fc6768210b2b11df536729c04a23cb" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>getThreshold</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1ad231a45d93d97ea8eb41372f37ba9e7c" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>globalDiffImage</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a5693d06c327e8b177b03f49644526f3d" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>globalFirstMask</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1ad121a4060c5bb16aff41f482591e8bb3" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>globalMeanImage</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a2166a2b3d5eaf5a777b090021ed7f0e9" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>globalSecondMask</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1ac1389c07e2778e73b3b245f02e51c9fe" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>m</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a619b72f8bded1c3ea8e3a02f2bcb21ec" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>setBufferSize</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a9e8d63b72611be1fca6913241c162889" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>setErodeSize</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1abb7692e32727b32edebb1f01601dfbe7" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>setFilterType</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1af7ddc46805bded3d3f8ad24bc866268c" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>setThreshold</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1ab0256848654f1dbd8575aeedf9094f53" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>threshold</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1ac38b481d92e2f9bd46340818e8c4c3c6" prot="private" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>type</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1adc334eab73132c4ae1f44da6db02ae70" prot="public" virt="non-virtual"><scope>jderobot::DepthFilter</scope><name>update</name></member>
+      <member refid="classjderobot_1_1_depth_filter_1a6bc39bb21bc8a8685e910ddbc70bef20" prot="public" virt="virtual"><scope>jderobot::DepthFilter</scope><name>~DepthFilter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,85 @@
+.TH "colorspaces::Image::Format" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+colorspaces::Image::Format
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <imagecv\&.h>\fP
+.PP
+Inherits \fBcolorspaces::Uncopyable\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImage\fP * \fBcreateInstance\fP (const int \fBwidth\fP, const int \fBheight\fP, void *const data)"
+.br
+.ti -1c
+.RI "int \fBbytesPerPixel\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static const \fBFormatPtr\fP \fBcreateFormat\fP (const std::string \fBname\fP, const int \fBcvType\fP, \fBimageCtor\fP \fBctor\fP, \fBimageCvt\fP \fBcvt\fP)"
+.br
+.ti -1c
+.RI "static const \fBFormatPtr\fP \fBgetFormat\fP (const int fmtId)"
+.br
+.ti -1c
+.RI "static const \fBFormatPtr\fP \fBsearchFormat\fP (const std::string \fBname\fP)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBname\fP"
+.br
+.ti -1c
+.RI "int \fBid\fP"
+.br
+.ti -1c
+.RI "int \fBcvType\fP"
+.br
+.ti -1c
+.RI "\fBimageCtor\fP \fBctor\fP"
+.br
+.ti -1c
+.RI "\fBimageCvt\fP \fBcvt\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Define the pixel format of an image 
+.SH "Member Function Documentation"
+.PP 
+.SS "int colorspaces::Image::Format::bytesPerPixel ()\fC [inline]\fP"
+
+.SS "const \fBImage::FormatPtr\fP colorspaces::Image::Format::createFormat (const std::string name, const int cvType, \fBimageCtor\fP ctor, \fBimageCvt\fP cvt)\fC [static]\fP"
+
+.SS "\fBImage\fP * colorspaces::Image::Format::createInstance (const int width, const int height, void *const data)"
+
+.SS "static const \fBFormatPtr\fP colorspaces::Image::Format::getFormat (const int fmtId)\fC [static]\fP"
+
+.SS "const \fBImage::FormatPtr\fP colorspaces::Image::Format::searchFormat (const std::string name)\fC [static]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBimageCtor\fP colorspaces::Image::Format::ctor"
+Contructor 
+.SS "\fBimageCvt\fP colorspaces::Image::Format::cvt"
+conversion function 
+.SS "int colorspaces::Image::Format::cvType"
+Opencv data type used for pixel data 
+.SS "int colorspaces::Image::Format::id"
+\fBFormat\fP identification 
+.SS "std::string colorspaces::Image::Format::name"
+String that represents this format 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

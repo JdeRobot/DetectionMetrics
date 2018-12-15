@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_keras_inferencer_1_1detection" kind="struct" language="C++" prot="private">
+    <compoundname>KerasInferencer::detection</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_keras_inferencer_1_1detection_1aeed84d3ebf1380e7c6a7a47f4b18e2bc" prot="public" static="no" mutable="no">
+        <type>cv::Rect</type>
+        <definition>cv::Rect KerasInferencer::detection::boundingBox</definition>
+        <argsstring></argsstring>
+        <name>boundingBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_keras_inferencer_1_1detection_1a4a046524694b6978617ef40c1ea62211" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float KerasInferencer::detection::probability</definition>
+        <argsstring></argsstring>
+        <name>probability</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_keras_inferencer_1_1detection_1aa789f858987521693b92b5e9017c9be6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int KerasInferencer::detection::classId</definition>
+        <argsstring></argsstring>
+        <name>classId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="18" bodyend="22"/>
+    <listofallmembers>
+      <member refid="struct_keras_inferencer_1_1detection_1aeed84d3ebf1380e7c6a7a47f4b18e2bc" prot="public" virt="non-virtual"><scope>KerasInferencer::detection</scope><name>boundingBox</name></member>
+      <member refid="struct_keras_inferencer_1_1detection_1aa789f858987521693b92b5e9017c9be6" prot="public" virt="non-virtual"><scope>KerasInferencer::detection</scope><name>classId</name></member>
+      <member refid="struct_keras_inferencer_1_1detection_1a4a046524694b6978617ef40c1ea62211" prot="public" virt="non-virtual"><scope>KerasInferencer::detection</scope><name>probability</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

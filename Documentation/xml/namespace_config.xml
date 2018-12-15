@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespace_config" kind="namespace" language="C++">
+    <compoundname>Config</compoundname>
+    <innerclass refid="class_config_1_1_properties" prot="public">Config::Properties</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_config_1a845ed902425e4e06b984e0ecd861fa18" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_config_1_1_properties" kindref="compound">Config::Properties</ref></type>
+        <definition>Config::Properties Config::load</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>load</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>loads propierties from a file </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>config class with all properties </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/config.h" line="49" column="1" bodyfile="DeepLearningSuite/libs/config/include/config/config.h" bodystart="49" bodyend="52"/>
+        <references refid="namespacejderobotconfig_1_1loader_1a20d680d49aae952308a601aefca96fa4" compoundref="loader_8cpp" startline="47" endline="59">jderobotconfig::loader::load</references>
+        <referencedby refid="class_jderobot_reader_1a89dde6b225b901d5b55926437be46d54" compoundref="_jderobot_reader_8cpp" startline="8" endline="76">JderobotReader::JderobotReader</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespace_config_1af48e0d12acc53c2d353939b563e472e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; Config::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;out, Properties &amp;data)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type><ref refid="class_config_1_1_properties" kindref="compound">Properties</ref> &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>function to make printable config class </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/properties.hpp" line="153" column="1" bodyfile="DeepLearningSuite/libs/config/include/config/properties.hpp" bodystart="153" bodyend="156"/>
+        <references refid="class_config_1_1_properties_1abb18930b0431bd89e85ed0a5b9b7cac3" compoundref="properties_8cpp" startline="111" endline="116">Config::Properties::getNode</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/config/include/config/config.h" line="36" column="1"/>
+  </compounddef>
+</doxygen>

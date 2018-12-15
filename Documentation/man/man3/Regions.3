@@ -1,0 +1,64 @@
+.TH "Regions" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Regions
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Regions\&.h>\fP
+.PP
+Inherited by \fBContourRegions\fP, \fBRectRegions\fP, and \fBRleRegions\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRegions\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsaveJson\fP (const std::string &outPath)=0"
+.br
+.ti -1c
+.RI "virtual void \fBdrawRegions\fP (cv::Mat &image)=0"
+.br
+.ti -1c
+.RI "virtual void \fBfilterSamplesByID\fP (std::vector< std::string > filteredIDS)=0"
+.br
+.ti -1c
+.RI "virtual bool \fBempty\fP ()=0"
+.br
+.ti -1c
+.RI "virtual void \fBprint\fP ()=0"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Regions::Regions ()\fC [inline]\fP"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void Regions::drawRegions (cv::Mat & image)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRectRegions\fP, \fBContourRegions\fP, and \fBRleRegions\fP\&.
+.SS "virtual bool Regions::empty ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRectRegions\fP, \fBContourRegions\fP, and \fBRleRegions\fP\&.
+.SS "virtual void Regions::filterSamplesByID (std::vector< std::string > filteredIDS)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRectRegions\fP, \fBContourRegions\fP, and \fBRleRegions\fP\&.
+.SS "virtual void Regions::print ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRectRegions\fP, \fBContourRegions\fP, and \fBRleRegions\fP\&.
+.SS "virtual void Regions::saveJson (const std::string & outPath)\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBRectRegions\fP, \fBContourRegions\fP, and \fBRleRegions\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_generic_inferencer" kind="class" language="C++" prot="public">
+    <compoundname>GenericInferencer</compoundname>
+    <includes refid="_generic_inferencer_8h" local="no">GenericInferencer.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_generic_inferencer_1aae48068a6a38e7f4f70240be5b726e6b" prot="private" static="no" mutable="no">
+        <type><ref refid="_generic_inferencer_8h_1a80df93ab84f47f76903a9dfcb1dc0ca9" kindref="member">INFERENCER_IMPLEMENTATIONS</ref></type>
+        <definition>INFERENCER_IMPLEMENTATIONS GenericInferencer::imp</definition>
+        <argsstring></argsstring>
+        <name>imp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" line="31" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_inferencer_1a656075b375ad6f53c07b0cc2ea941cf5" prot="private" static="no" mutable="no">
+        <type><ref refid="_tensor_flow_inferencer_8h_1a7ab10b4af80e2d31c5f59a5a54cc971d" kindref="member">TensorFlowInferencerPtr</ref></type>
+        <definition>TensorFlowInferencerPtr GenericInferencer::tensorFlowInferencerPtr</definition>
+        <argsstring></argsstring>
+        <name>tensorFlowInferencerPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" line="36" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_inferencer_1a151f4a02b3ac064873b39a4a47420c20" prot="private" static="no" mutable="no">
+        <type><ref refid="_keras_inferencer_8h_1adc669830717b53b7ea12b1d9dfcb8be9" kindref="member">KerasInferencerPtr</ref></type>
+        <definition>KerasInferencerPtr GenericInferencer::kerasInferencerPtr</definition>
+        <argsstring></argsstring>
+        <name>kerasInferencerPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" line="38" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_inferencer_1acbb4c41b769e48442848973e90bfaed6" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; GenericInferencer::availableImplementations</definition>
+        <argsstring></argsstring>
+        <name>availableImplementations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" line="44" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_generic_inferencer_1ac27f8f3d177ab05d861ef28dbd0b8a28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GenericInferencer::GenericInferencer</definition>
+        <argsstring>(const std::string &amp;netConfig, const std::string &amp;netWeights, const std::string &amp;classNames, const std::string &amp;implementation, std::map&lt; std::string, std::string &gt; *inferencerParamsMap=NULL)</argsstring>
+        <name>GenericInferencer</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>netConfig</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>netWeights</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classNames</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>implementation</declname>
+        </param>
+        <param>
+          <type>std::map&lt; std::string, std::string &gt; *</type>
+          <declname>inferencerParamsMap</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.cpp" bodystart="8" bodyend="41"/>
+        <references refid="_generic_inferencer_8h_1a80df93ab84f47f76903a9dfcb1dc0ca9a11a5c02270b7e7a4d6471bb9ada4f389" compoundref="_generic_inferencer_8h" startline="21">INF_YOLO</references>
+        <references refid="_generic_inferencer_8h_1a80df93ab84f47f76903a9dfcb1dc0ca9a0733f7f52b47fb86e18b72d10f84f096" compoundref="_generic_inferencer_8h" startline="21">INF_TENSORFLOW</references>
+        <references refid="_generic_inferencer_8h_1a80df93ab84f47f76903a9dfcb1dc0ca9a835ccdeb73dd9d2c12a3718b9dcc01cc" compoundref="_generic_inferencer_8h" startline="21">INF_KERAS</references>
+        <references refid="_generic_inferencer_8h_1a80df93ab84f47f76903a9dfcb1dc0ca9aa06e22077eb6ffb26a978fd53ad63418" compoundref="_generic_inferencer_8h" startline="21">INF_CAFFE</references>
+      </memberdef>
+      <memberdef kind="function" id="class_generic_inferencer_1a786e55caa6a7329b8f5d1011372b8942" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_framework_inferencer_8h_1a7b59ebc4b080d1be0d1a6240703011f2" kindref="member">FrameworkInferencerPtr</ref></type>
+        <definition>FrameworkInferencerPtr GenericInferencer::getInferencer</definition>
+        <argsstring>()</argsstring>
+        <name>getInferencer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.cpp" bodystart="70" bodyend="89"/>
+        <references refid="_generic_inferencer_8h_1a80df93ab84f47f76903a9dfcb1dc0ca9a11a5c02270b7e7a4d6471bb9ada4f389" compoundref="_generic_inferencer_8h" startline="21">INF_YOLO</references>
+        <references refid="_generic_inferencer_8h_1a80df93ab84f47f76903a9dfcb1dc0ca9a0733f7f52b47fb86e18b72d10f84f096" compoundref="_generic_inferencer_8h" startline="21">INF_TENSORFLOW</references>
+        <references refid="_generic_inferencer_8h_1a80df93ab84f47f76903a9dfcb1dc0ca9a835ccdeb73dd9d2c12a3718b9dcc01cc" compoundref="_generic_inferencer_8h" startline="21">INF_KERAS</references>
+        <references refid="_generic_inferencer_8h_1a80df93ab84f47f76903a9dfcb1dc0ca9aa06e22077eb6ffb26a978fd53ad63418" compoundref="_generic_inferencer_8h" startline="21">INF_CAFFE</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_generic_inferencer_1a40f6285002820780d626e80a2524a494" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; GenericInferencer::getAvailableImplementations</definition>
+        <argsstring>()</argsstring>
+        <name>getAvailableImplementations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.cpp" bodystart="91" bodyend="97"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_generic_inferencer_1af810680f6fc07faf5732b18c4b2e1600" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GenericInferencer::configureAvailablesImplementations</definition>
+        <argsstring>(std::vector&lt; std::string &gt; &amp;data)</argsstring>
+        <name>configureAvailablesImplementations</name>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" line="46" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.cpp" bodystart="43" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_generic_inferencer_1a0db872c0fa5e66a2f08418f99be4891b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_generic_inferencer_8h_1a80df93ab84f47f76903a9dfcb1dc0ca9" kindref="member">INFERENCER_IMPLEMENTATIONS</ref></type>
+        <definition>INFERENCER_IMPLEMENTATIONS GenericInferencer::getImplementation</definition>
+        <argsstring>(const std::string &amp;inferencerImplementation)</argsstring>
+        <name>getImplementation</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>inferencerImplementation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" line="47" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.cpp" bodystart="55" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h" bodystart="24" bodyend="48"/>
+    <listofallmembers>
+      <member refid="class_generic_inferencer_1acbb4c41b769e48442848973e90bfaed6" prot="private" virt="non-virtual"><scope>GenericInferencer</scope><name>availableImplementations</name></member>
+      <member refid="class_generic_inferencer_1af810680f6fc07faf5732b18c4b2e1600" prot="private" virt="non-virtual"><scope>GenericInferencer</scope><name>configureAvailablesImplementations</name></member>
+      <member refid="class_generic_inferencer_1ac27f8f3d177ab05d861ef28dbd0b8a28" prot="public" virt="non-virtual"><scope>GenericInferencer</scope><name>GenericInferencer</name></member>
+      <member refid="class_generic_inferencer_1a40f6285002820780d626e80a2524a494" prot="public" virt="non-virtual"><scope>GenericInferencer</scope><name>getAvailableImplementations</name></member>
+      <member refid="class_generic_inferencer_1a0db872c0fa5e66a2f08418f99be4891b" prot="private" virt="non-virtual"><scope>GenericInferencer</scope><name>getImplementation</name></member>
+      <member refid="class_generic_inferencer_1a786e55caa6a7329b8f5d1011372b8942" prot="public" virt="non-virtual"><scope>GenericInferencer</scope><name>getInferencer</name></member>
+      <member refid="class_generic_inferencer_1aae48068a6a38e7f4f70240be5b726e6b" prot="private" virt="non-virtual"><scope>GenericInferencer</scope><name>imp</name></member>
+      <member refid="class_generic_inferencer_1a151f4a02b3ac064873b39a4a47420c20" prot="private" virt="non-virtual"><scope>GenericInferencer</scope><name>kerasInferencerPtr</name></member>
+      <member refid="class_generic_inferencer_1a656075b375ad6f53c07b0cc2ea941cf5" prot="private" virt="non-virtual"><scope>GenericInferencer</scope><name>tensorFlowInferencerPtr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

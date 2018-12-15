@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_354825f3b0e512f6f9b9f12cc3074c3b" kind="dir">
+    <compoundname>DeepLearningSuite/build/CMakeFiles/3.12.2/CompilerIdC</compoundname>
+    <innerfile refid="_c_make_c_compiler_id_8c">CMakeCCompilerId.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/build/CMakeFiles/3.12.2/CompilerIdC/"/>
+  </compounddef>
+</doxygen>

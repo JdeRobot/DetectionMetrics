@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_cb0fa5cd5c7df0fc0a7d30769940b065" kind="dir">
+    <compoundname>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders</compoundname>
+    <innerfile refid="_camera_reader_8cpp">CameraReader.cpp</innerfile>
+    <innerfile refid="_camera_reader_8h">CameraReader.h</innerfile>
+    <innerfile refid="_generic_live_reader_8cpp">GenericLiveReader.cpp</innerfile>
+    <innerfile refid="_generic_live_reader_8h">GenericLiveReader.h</innerfile>
+    <innerfile refid="_jderobot_reader_8cpp">JderobotReader.cpp</innerfile>
+    <innerfile refid="_jderobot_reader_8h">JderobotReader.h</innerfile>
+    <innerfile refid="_recorder_reader_8cpp">RecorderReader.cpp</innerfile>
+    <innerfile refid="_recorder_reader_8h">RecorderReader.h</innerfile>
+    <innerfile refid="_video_reader_8cpp">VideoReader.cpp</innerfile>
+    <innerfile refid="_video_reader_8h">VideoReader.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/"/>
+  </compounddef>
+</doxygen>

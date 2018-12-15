@@ -1,0 +1,89 @@
+\hypertarget{classtensorflow__detect_1_1_tensor_flow_detector}{}\section{tensorflow\+\_\+detect.\+Tensor\+Flow\+Detector Class Reference}
+\label{classtensorflow__detect_1_1_tensor_flow_detector}\index{tensorflow\+\_\+detect.\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect.\+Tensor\+Flow\+Detector}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classtensorflow__detect_1_1_tensor_flow_detector_a93c5505340a2adfd4505a3299b8ae4b8}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, path\+\_\+to\+\_\+ckpt)
+\item 
+def \hyperlink{classtensorflow__detect_1_1_tensor_flow_detector_a691b64feeb99ad6f9bc091c95bae01f1}{run\+\_\+inference\+\_\+for\+\_\+single\+\_\+image} (self, image)
+\item 
+def \hyperlink{classtensorflow__detect_1_1_tensor_flow_detector_a6bc7adeea3ea117897cca495a46fb55a}{detect} (self, img, \hyperlink{namespacetensorflow__detect_a92f27be303bb36c28ed99f95a89104b1}{threshold})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtensorflow__detect_1_1_tensor_flow_detector_af28b6b2ea938da5a5fcfd755f22bdafe}{tensor\+\_\+dict}
+\item 
+\hyperlink{classtensorflow__detect_1_1_tensor_flow_detector_a185cf2de088861188c614957c31278fe}{image\+\_\+tensor}
+\item 
+\hyperlink{classtensorflow__detect_1_1_tensor_flow_detector_a65b0bb63ecdf52de6732e5f8d0efc533}{sess}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtensorflow__detect_1_1_tensor_flow_detector_a2cf3856b888126fcd80d48e88e666107}{dummy\+\_\+tensor} = np.\+zeros((1,1,1,3), dtype=np.\+int32)
+\item 
+\hyperlink{classtensorflow__detect_1_1_tensor_flow_detector_a8c873949217953989176a8cccaf97b54}{feed\+\_\+dict}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtensorflow__detect_1_1_tensor_flow_detector_a93c5505340a2adfd4505a3299b8ae4b8}\label{classtensorflow__detect_1_1_tensor_flow_detector_a93c5505340a2adfd4505a3299b8ae4b8}} 
+\index{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def tensorflow\+\_\+detect.\+Tensor\+Flow\+Detector.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{path\+\_\+to\+\_\+ckpt }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtensorflow__detect_1_1_tensor_flow_detector_a6bc7adeea3ea117897cca495a46fb55a}\label{classtensorflow__detect_1_1_tensor_flow_detector_a6bc7adeea3ea117897cca495a46fb55a}} 
+\index{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}!detect@{detect}}
+\index{detect@{detect}!tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}}
+\subsubsection{\texorpdfstring{detect()}{detect()}}
+{\footnotesize\ttfamily def tensorflow\+\_\+detect.\+Tensor\+Flow\+Detector.\+detect (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{img,  }\item[{}]{threshold }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classtensorflow__detect_1_1_tensor_flow_detector_a691b64feeb99ad6f9bc091c95bae01f1}\label{classtensorflow__detect_1_1_tensor_flow_detector_a691b64feeb99ad6f9bc091c95bae01f1}} 
+\index{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}!run\+\_\+inference\+\_\+for\+\_\+single\+\_\+image@{run\+\_\+inference\+\_\+for\+\_\+single\+\_\+image}}
+\index{run\+\_\+inference\+\_\+for\+\_\+single\+\_\+image@{run\+\_\+inference\+\_\+for\+\_\+single\+\_\+image}!tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}}
+\subsubsection{\texorpdfstring{run\+\_\+inference\+\_\+for\+\_\+single\+\_\+image()}{run\_inference\_for\_single\_image()}}
+{\footnotesize\ttfamily def tensorflow\+\_\+detect.\+Tensor\+Flow\+Detector.\+run\+\_\+inference\+\_\+for\+\_\+single\+\_\+image (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{image }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classtensorflow__detect_1_1_tensor_flow_detector_a2cf3856b888126fcd80d48e88e666107}\label{classtensorflow__detect_1_1_tensor_flow_detector_a2cf3856b888126fcd80d48e88e666107}} 
+\index{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}!dummy\+\_\+tensor@{dummy\+\_\+tensor}}
+\index{dummy\+\_\+tensor@{dummy\+\_\+tensor}!tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}}
+\subsubsection{\texorpdfstring{dummy\+\_\+tensor}{dummy\_tensor}}
+{\footnotesize\ttfamily tensorflow\+\_\+detect.\+Tensor\+Flow\+Detector.\+dummy\+\_\+tensor = np.\+zeros((1,1,1,3), dtype=np.\+int32)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classtensorflow__detect_1_1_tensor_flow_detector_a8c873949217953989176a8cccaf97b54}\label{classtensorflow__detect_1_1_tensor_flow_detector_a8c873949217953989176a8cccaf97b54}} 
+\index{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}!feed\+\_\+dict@{feed\+\_\+dict}}
+\index{feed\+\_\+dict@{feed\+\_\+dict}!tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}}
+\subsubsection{\texorpdfstring{feed\+\_\+dict}{feed\_dict}}
+{\footnotesize\ttfamily tensorflow\+\_\+detect.\+Tensor\+Flow\+Detector.\+feed\+\_\+dict\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classtensorflow__detect_1_1_tensor_flow_detector_a185cf2de088861188c614957c31278fe}\label{classtensorflow__detect_1_1_tensor_flow_detector_a185cf2de088861188c614957c31278fe}} 
+\index{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}!image\+\_\+tensor@{image\+\_\+tensor}}
+\index{image\+\_\+tensor@{image\+\_\+tensor}!tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}}
+\subsubsection{\texorpdfstring{image\+\_\+tensor}{image\_tensor}}
+{\footnotesize\ttfamily tensorflow\+\_\+detect.\+Tensor\+Flow\+Detector.\+image\+\_\+tensor}
+
+\mbox{\Hypertarget{classtensorflow__detect_1_1_tensor_flow_detector_a65b0bb63ecdf52de6732e5f8d0efc533}\label{classtensorflow__detect_1_1_tensor_flow_detector_a65b0bb63ecdf52de6732e5f8d0efc533}} 
+\index{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}!sess@{sess}}
+\index{sess@{sess}!tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}}
+\subsubsection{\texorpdfstring{sess}{sess}}
+{\footnotesize\ttfamily tensorflow\+\_\+detect.\+Tensor\+Flow\+Detector.\+sess}
+
+\mbox{\Hypertarget{classtensorflow__detect_1_1_tensor_flow_detector_af28b6b2ea938da5a5fcfd755f22bdafe}\label{classtensorflow__detect_1_1_tensor_flow_detector_af28b6b2ea938da5a5fcfd755f22bdafe}} 
+\index{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}!tensor\+\_\+dict@{tensor\+\_\+dict}}
+\index{tensor\+\_\+dict@{tensor\+\_\+dict}!tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector@{tensorflow\+\_\+detect\+::\+Tensor\+Flow\+Detector}}
+\subsubsection{\texorpdfstring{tensor\+\_\+dict}{tensor\_dict}}
+{\footnotesize\ttfamily tensorflow\+\_\+detect.\+Tensor\+Flow\+Detector.\+tensor\+\_\+dict}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/python\+\_\+modules/\hyperlink{tensorflow__detect_8py}{tensorflow\+\_\+detect.\+py}\end{DoxyCompactItemize}

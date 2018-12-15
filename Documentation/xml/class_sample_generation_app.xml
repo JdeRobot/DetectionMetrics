@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_sample_generation_app" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>SampleGenerationApp</compoundname>
+    <derivedcompoundref refid="class_my_app" prot="public" virt="non-virtual">MyApp</derivedcompoundref>
+    <derivedcompoundref refid="class_my_app" prot="public" virt="non-virtual">MyApp</derivedcompoundref>
+    <derivedcompoundref refid="class_my_app" prot="public" virt="non-virtual">MyApp</derivedcompoundref>
+    <derivedcompoundref refid="class_my_app" prot="public" virt="non-virtual">MyApp</derivedcompoundref>
+    <derivedcompoundref refid="class_my_app" prot="public" virt="non-virtual">MyApp</derivedcompoundref>
+    <derivedcompoundref refid="class_my_app" prot="public" virt="non-virtual">MyApp</derivedcompoundref>
+    <derivedcompoundref refid="class_my_app" prot="public" virt="non-virtual">MyApp</derivedcompoundref>
+    <derivedcompoundref refid="class_my_app" prot="public" virt="non-virtual">MyApp</derivedcompoundref>
+    <includes refid="_sample_generation_app_8h" local="no">SampleGenerationApp.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_config_1_1_properties" kindref="compound">Config::Properties</ref></type>
+        <definition>Config::Properties SampleGenerationApp::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" compoundref="_tools_2_converter_2_converter_8cpp" startline="37" endline="67">MyApp::operator()</referencedby>
+        <referencedby refid="class_sample_generation_app_1ac7359b551057127947243e1251237a90" compoundref="_sample_generation_app_8cpp" startline="22" endline="30">SampleGenerationApp</referencedby>
+        <referencedby refid="class_sample_generation_app_1adb5fa7f811a3177d7966981789b41f72" compoundref="_sample_generation_app_8cpp" startline="95" endline="107">verifyRequirements</referencedby>
+        <referencedby refid="class_sample_generation_app_1a2c13df2c47ec917170e0b995218bb31b" compoundref="_sample_generation_app_8cpp" startline="109" endline="111">getConfig</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_generation_app_1ad40fd006cd4f887a6458054152bf3592" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string SampleGenerationApp::configFilePath</definition>
+        <argsstring></argsstring>
+        <name>configFilePath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" bodystart="21" bodyend="-1"/>
+        <referencedby refid="class_sample_generation_app_1ac7359b551057127947243e1251237a90" compoundref="_sample_generation_app_8cpp" startline="22" endline="30">SampleGenerationApp</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; SampleGenerationApp::requiredArguments</definition>
+        <argsstring></argsstring>
+        <name>requiredArguments</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" bodystart="22" bodyend="-1"/>
+        <referencedby refid="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" compoundref="main_8cpp" startline="8" endline="14">MyApp::MyApp</referencedby>
+        <referencedby refid="class_sample_generation_app_1adb5fa7f811a3177d7966981789b41f72" compoundref="_sample_generation_app_8cpp" startline="95" endline="107">verifyRequirements</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_generation_app_1af98f6187cc8eb62fc3fe0ff53df76b6e" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int SampleGenerationApp::argc</definition>
+        <argsstring></argsstring>
+        <name>argc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" compoundref="main_8cpp" startline="15" endline="23">MyApp::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_sample_generation_app_1a7e490e3711491c2bc58351f9e9dd9945" prot="protected" static="no" mutable="no">
+        <type>char **</type>
+        <definition>char** SampleGenerationApp::argv</definition>
+        <argsstring></argsstring>
+        <name>argv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" bodystart="27" bodyend="-1"/>
+        <referencedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" compoundref="main_8cpp" startline="15" endline="23">MyApp::operator()</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_sample_generation_app_1ac7359b551057127947243e1251237a90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SampleGenerationApp::SampleGenerationApp</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>SampleGenerationApp</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.cpp" bodystart="22" bodyend="30"/>
+        <references refid="class_sample_generation_app_1a4304bff49d553420b6cf436fad6f5e6a" compoundref="_sample_generation_app_8cpp" startline="34" endline="88">parse_arguments</references>
+        <references refid="class_sample_generation_app_1ad40fd006cd4f887a6458054152bf3592" compoundref="_sample_generation_app_8h" startline="21">configFilePath</references>
+        <references refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" compoundref="_sample_generation_app_8h" startline="20">config</references>
+        <references refid="namespacejderobotconfig_1_1loader_1a20d680d49aae952308a601aefca96fa4" compoundref="loader_8cpp" startline="47" endline="59">jderobotconfig::loader::load</references>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_generation_app_1a351fe6cfe624aeeee9ba4fb04d80ca0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void SampleGenerationApp::operator()</definition>
+        <argsstring>()=0</argsstring>
+        <name>operator()</name>
+        <reimplementedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14">operator()</reimplementedby>
+        <reimplementedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14">operator()</reimplementedby>
+        <reimplementedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14">operator()</reimplementedby>
+        <reimplementedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14">operator()</reimplementedby>
+        <reimplementedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14">operator()</reimplementedby>
+        <reimplementedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14">operator()</reimplementedby>
+        <reimplementedby refid="class_my_app_1ab3cc458e74a9fc059504fa33983249ee">operator()</reimplementedby>
+        <reimplementedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14">operator()</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" line="14" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_generation_app_1acec58569149ac1fc8af9525d35b9e88a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SampleGenerationApp::process</definition>
+        <argsstring>()</argsstring>
+        <name>process</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.cpp" bodystart="90" bodyend="93"/>
+        <references refid="class_sample_generation_app_1adb5fa7f811a3177d7966981789b41f72" compoundref="_sample_generation_app_8cpp" startline="95" endline="107">verifyRequirements</references>
+        <referencedby refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8cpp" startline="29" endline="33">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_generation_app_1a2c13df2c47ec917170e0b995218bb31b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_config_1_1_properties" kindref="compound">Config::Properties</ref></type>
+        <definition>Config::Properties SampleGenerationApp::getConfig</definition>
+        <argsstring>()</argsstring>
+        <name>getConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.cpp" bodystart="109" bodyend="111"/>
+        <references refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" compoundref="_sample_generation_app_8h" startline="20">config</references>
+        <referencedby refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" compoundref="mainwindow_8cpp" startline="51" endline="54">MainWindow::~MainWindow</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_sample_generation_app_1adb5fa7f811a3177d7966981789b41f72" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SampleGenerationApp::verifyRequirements</definition>
+        <argsstring>()</argsstring>
+        <name>verifyRequirements</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.cpp" bodystart="95" bodyend="107"/>
+        <references refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" compoundref="_sample_generation_app_8h" startline="20">config</references>
+        <references refid="class_config_1_1_properties_1a4c09553d96770e465f62a9899c94120d" compoundref="properties_8cpp" startline="33" endline="46">Config::Properties::showConfig</references>
+        <references refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" compoundref="_sample_generation_app_8h" startline="22">requiredArguments</references>
+        <references refid="class_config_1_1_properties_1a93e257f371ab1cd5d87d96fc39983101" compoundref="properties_8cpp" startline="79" endline="84">Config::Properties::keyExists</references>
+        <referencedby refid="class_sample_generation_app_1acec58569149ac1fc8af9525d35b9e88a" compoundref="_sample_generation_app_8cpp" startline="90" endline="93">process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_sample_generation_app_1a4304bff49d553420b6cf436fad6f5e6a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int SampleGenerationApp::parse_arguments</definition>
+        <argsstring>(const int argc, char *argv[], std::string &amp;configFile)</argsstring>
+        <name>parse_arguments</name>
+        <param>
+          <type>const int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>configFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Define and parse the program options</para><para><ndash/>help option</para>        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.cpp" bodystart="34" bodyend="88"/>
+        <referencedby refid="class_sample_generation_app_1ac7359b551057127947243e1251237a90" compoundref="_sample_generation_app_8cpp" startline="22" endline="30">SampleGenerationApp</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="313">
+        <label>SampleGenerationApp</label>
+        <link refid="class_sample_generation_app"/>
+      </node>
+      <node id="314">
+        <label>MyApp</label>
+        <link refid="class_my_app"/>
+        <childnode refid="313" relation="public-inheritance">
+        </childnode>
+        <childnode refid="313" relation="public-inheritance">
+        </childnode>
+        <childnode refid="313" relation="public-inheritance">
+        </childnode>
+        <childnode refid="313" relation="public-inheritance">
+        </childnode>
+        <childnode refid="313" relation="public-inheritance">
+        </childnode>
+        <childnode refid="313" relation="public-inheritance">
+        </childnode>
+        <childnode refid="313" relation="public-inheritance">
+        </childnode>
+        <childnode refid="313" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="316">
+        <label>Config::Properties</label>
+        <link refid="class_config_1_1_properties"/>
+      </node>
+      <node id="315">
+        <label>SampleGenerationApp</label>
+        <link refid="class_sample_generation_app"/>
+        <childnode refid="316" relation="usage">
+          <edgelabel>config</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" line="11" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h" bodystart="11" bodyend="30"/>
+    <listofallmembers>
+      <member refid="class_sample_generation_app_1af98f6187cc8eb62fc3fe0ff53df76b6e" prot="protected" virt="non-virtual"><scope>SampleGenerationApp</scope><name>argc</name></member>
+      <member refid="class_sample_generation_app_1a7e490e3711491c2bc58351f9e9dd9945" prot="protected" virt="non-virtual"><scope>SampleGenerationApp</scope><name>argv</name></member>
+      <member refid="class_sample_generation_app_1a4123900b02b2c4d61e9425d9b35da2f2" prot="protected" virt="non-virtual"><scope>SampleGenerationApp</scope><name>config</name></member>
+      <member refid="class_sample_generation_app_1ad40fd006cd4f887a6458054152bf3592" prot="protected" virt="non-virtual"><scope>SampleGenerationApp</scope><name>configFilePath</name></member>
+      <member refid="class_sample_generation_app_1a2c13df2c47ec917170e0b995218bb31b" prot="public" virt="non-virtual"><scope>SampleGenerationApp</scope><name>getConfig</name></member>
+      <member refid="class_sample_generation_app_1a351fe6cfe624aeeee9ba4fb04d80ca0f" prot="public" virt="pure-virtual"><scope>SampleGenerationApp</scope><name>operator()</name></member>
+      <member refid="class_sample_generation_app_1a4304bff49d553420b6cf436fad6f5e6a" prot="protected" virt="non-virtual"><scope>SampleGenerationApp</scope><name>parse_arguments</name></member>
+      <member refid="class_sample_generation_app_1acec58569149ac1fc8af9525d35b9e88a" prot="public" virt="non-virtual"><scope>SampleGenerationApp</scope><name>process</name></member>
+      <member refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" prot="protected" virt="non-virtual"><scope>SampleGenerationApp</scope><name>requiredArguments</name></member>
+      <member refid="class_sample_generation_app_1ac7359b551057127947243e1251237a90" prot="public" virt="non-virtual"><scope>SampleGenerationApp</scope><name>SampleGenerationApp</name></member>
+      <member refid="class_sample_generation_app_1adb5fa7f811a3177d7966981789b41f72" prot="protected" virt="non-virtual"><scope>SampleGenerationApp</scope><name>verifyRequirements</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

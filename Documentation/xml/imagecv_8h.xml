@@ -1,0 +1,470 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="imagecv_8h" kind="file" language="C++">
+    <compoundname>imagecv.h</compoundname>
+    <includes local="no">opencv2/core/core.hpp</includes>
+    <includes local="no">exception</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">memory</includes>
+    <includes refid="uncopyable_8h" local="yes">uncopyable.h</includes>
+    <includedby refid="_camera_utils_8cpp" local="no">DeepLearningSuite/libs/utils/CameraUtils.cpp</includedby>
+    <includedby refid="colorspacesmm_8h" local="yes">DeepLearningSuite/libs/utils/colorspaces/colorspacesmm.h</includedby>
+    <includedby refid="imagecv_8cpp" local="yes">DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp</includedby>
+    <incdepgraph>
+      <node id="5675">
+        <label>uncopyable.h</label>
+        <link refid="uncopyable_8h"/>
+      </node>
+      <node id="5670">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="5669">
+        <label>DeepLearningSuite/libs/utils/colorspaces/imagecv.h</label>
+        <link refid="imagecv_8h"/>
+        <childnode refid="5670" relation="include">
+        </childnode>
+        <childnode refid="5671" relation="include">
+        </childnode>
+        <childnode refid="5672" relation="include">
+        </childnode>
+        <childnode refid="5673" relation="include">
+        </childnode>
+        <childnode refid="5674" relation="include">
+        </childnode>
+        <childnode refid="5675" relation="include">
+        </childnode>
+      </node>
+      <node id="5671">
+        <label>exception</label>
+      </node>
+      <node id="5672">
+        <label>vector</label>
+      </node>
+      <node id="5673">
+        <label>iostream</label>
+      </node>
+      <node id="5674">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5690">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.cpp</label>
+        <link refid="_generic_live_reader_8cpp"/>
+      </node>
+      <node id="5680">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h</label>
+        <link refid="_jderobot_reader_8h"/>
+        <childnode refid="5681" relation="include">
+        </childnode>
+        <childnode refid="5691" relation="include">
+        </childnode>
+      </node>
+      <node id="5679">
+        <label>DeepLearningSuite/libs/comm/include/comm/cameraClient.hpp</label>
+        <link refid="camera_client_8hpp"/>
+        <childnode refid="5680" relation="include">
+        </childnode>
+        <childnode refid="5692" relation="include">
+        </childnode>
+      </node>
+      <node id="5695">
+        <label>DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp</label>
+        <link refid="imagecv_8cpp"/>
+      </node>
+      <node id="5692">
+        <label>DeepLearningSuite/libs/comm/src/cameraClient.cpp</label>
+        <link refid="camera_client_8cpp"/>
+      </node>
+      <node id="5684">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_converter_8cpp"/>
+      </node>
+      <node id="5693">
+        <label>DeepLearningSuite/libs/comm/include/comm/ice/cameraIceClient.hpp</label>
+        <link refid="camera_ice_client_8hpp"/>
+        <childnode refid="5694" relation="include">
+        </childnode>
+      </node>
+      <node id="5689">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Viewer.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp"/>
+      </node>
+      <node id="5681">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h</label>
+        <link refid="_generic_live_reader_8h"/>
+        <childnode refid="5682" relation="include">
+        </childnode>
+        <childnode refid="5683" relation="include">
+        </childnode>
+        <childnode refid="5685" relation="include">
+        </childnode>
+        <childnode refid="5690" relation="include">
+        </childnode>
+      </node>
+      <node id="5694">
+        <label>DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp</label>
+        <link refid="camera_ice_client_8cpp"/>
+      </node>
+      <node id="5685">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.cpp</label>
+        <link refid="_deployer_8cpp"/>
+      </node>
+      <node id="5676">
+        <label>DeepLearningSuite/libs/utils/colorspaces/imagecv.h</label>
+        <link refid="imagecv_8h"/>
+        <childnode refid="5677" relation="include">
+        </childnode>
+        <childnode refid="5678" relation="include">
+        </childnode>
+        <childnode refid="5695" relation="include">
+        </childnode>
+      </node>
+      <node id="5688">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.cpp</label>
+        <link refid="_sampler_generation_handler_8cpp"/>
+      </node>
+      <node id="5683">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.h</label>
+        <link refid="_sampler_generation_handler_8h"/>
+        <childnode refid="5684" relation="include">
+        </childnode>
+        <childnode refid="5685" relation="include">
+        </childnode>
+        <childnode refid="5686" relation="include">
+        </childnode>
+        <childnode refid="5687" relation="include">
+        </childnode>
+        <childnode refid="5688" relation="include">
+        </childnode>
+        <childnode refid="5689" relation="include">
+        </childnode>
+      </node>
+      <node id="5678">
+        <label>DeepLearningSuite/libs/utils/colorspaces/colorspacesmm.h</label>
+        <link refid="colorspacesmm_8h"/>
+        <childnode refid="5679" relation="include">
+        </childnode>
+        <childnode refid="5693" relation="include">
+        </childnode>
+      </node>
+      <node id="5687">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_evaluator_8cpp"/>
+      </node>
+      <node id="5691">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.cpp</label>
+        <link refid="_jderobot_reader_8cpp"/>
+      </node>
+      <node id="5677">
+        <label>DeepLearningSuite/libs/utils/CameraUtils.cpp</label>
+        <link refid="_camera_utils_8cpp"/>
+      </node>
+      <node id="5682">
+        <label>DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="5686">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classcolorspaces_1_1_image" prot="public">colorspaces::Image</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_1_1_format_mismatch" prot="public">colorspaces::Image::FormatMismatch</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_1_1_no_conversion" prot="public">colorspaces::Image::NoConversion</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_1_1_format" prot="public">colorspaces::Image::Format</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_r_g_b8" prot="public">colorspaces::ImageRGB8</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_y_u_y2" prot="public">colorspaces::ImageYUY2</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_g_r_a_y8" prot="public">colorspaces::ImageGRAY8</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_h_s_v8" prot="public">colorspaces::ImageHSV8</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_y_c_r_c_b" prot="public">colorspaces::ImageYCRCB</innerclass>
+    <innerclass refid="classcolorspaces_1_1_image_n_v21" prot="public">colorspaces::ImageNV21</innerclass>
+    <innernamespace refid="namespacecolorspaces">colorspaces</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="imagecv_8h_1a0dc95948b67a11c2364594f65e5aab15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;stream, const colorspaces::Image::Format &amp;fmt)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcolorspaces_1_1_image_1_1_format" kindref="compound">colorspaces::Image::Format</ref> &amp;</type>
+          <declname>fmt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Insert a format in an output stream. Only debugging, output could be truncated </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="399" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="538" bodyend="541"/>
+        <references refid="classcolorspaces_1_1_image_1_1_format_1a0b2fef0398d48a881a56d38e04ad94b8" compoundref="imagecv_8h" startline="74">colorspaces::Image::Format::name</references>
+        <references refid="classcolorspaces_1_1_image_1_1_format_1a98396a43290ed1b2530caf35e858daa9" compoundref="imagecv_8h" startline="76">colorspaces::Image::Format::cvType</references>
+      </memberdef>
+      <memberdef kind="function" id="imagecv_8h_1ac71a8cc751ddcf2bc0b85beaca0f2144" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;stream, const colorspaces::Image &amp;img)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classcolorspaces_1_1_image" kindref="compound">colorspaces::Image</ref> &amp;</type>
+          <declname>img</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Insert an image in an output stream. Only debugging, output could be truncated </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="404" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.cpp" bodystart="543" bodyend="546"/>
+        <references refid="classcolorspaces_1_1_image_1a1bd416764e9349d73ab57154c0eebcc7" compoundref="imagecv_8h" startline="118" endline="118">colorspaces::Image::format</references>
+        <references refid="classcolorspaces_1_1_image_1ab80af7d4797110c23ed575b329ec7c4f" compoundref="imagecv_8h" startline="130">colorspaces::Image::width</references>
+        <references refid="classcolorspaces_1_1_image_1a99a05ebd37f61215b2c3042ecaefdbfc" compoundref="imagecv_8h" startline="131">colorspaces::Image::height</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/><sp/>Copyright<sp/>(C)<sp/>1997-2009<sp/>JDERobot<sp/>Developers<sp/>Team</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>free<sp/>software:<sp/>you<sp/>can<sp/>redistribute<sp/>it<sp/>and/or<sp/>modify</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/><sp/>it<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>as<sp/>published<sp/>by</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/><sp/>the<sp/>Free<sp/>Software<sp/>Foundation,<sp/>either<sp/>version<sp/>3<sp/>of<sp/>the<sp/>License,<sp/>or</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/><sp/>(at<sp/>your<sp/>option)<sp/>any<sp/>later<sp/>version.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/><sp/>This<sp/>program<sp/>is<sp/>distributed<sp/>in<sp/>the<sp/>hope<sp/>that<sp/>it<sp/>will<sp/>be<sp/>useful,</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/><sp/>but<sp/>WITHOUT<sp/>ANY<sp/>WARRANTY;<sp/>without<sp/>even<sp/>the<sp/>implied<sp/>warranty<sp/>of</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/><sp/>MERCHANTABILITY<sp/>or<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE.<sp/><sp/>See<sp/>the</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/><sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>for<sp/>more<sp/>details.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/><sp/>You<sp/>should<sp/>have<sp/>received<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>GNU<sp/>General<sp/>Public<sp/>License</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/><sp/>along<sp/>with<sp/>this<sp/>program.<sp/><sp/>If<sp/>not,<sp/>see<sp/>http://www.gnu.org/licenses/.</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/>Authors<sp/>:<sp/>David<sp/>Lobato<sp/>Bravo<sp/>&lt;dav.lobato@gmail.com&gt;</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>IMAGECV_COLORSPACES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IMAGECV_COLORSPACES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/core/core.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;exception&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="uncopyable_8h" kindref="compound">uncopyable.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacecolorspaces" kindref="compound">colorspaces</ref><sp/>{</highlight></codeline>
+<codeline lineno="36" refid="classcolorspaces_1_1_image" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><sp/>cv::Mat<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38" refid="classcolorspaces_1_1_image_1_1_format_mismatch" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::exception{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40" refid="classcolorspaces_1_1_image_1_1_format_mismatch_1a75b74eb84462dba829465eebadbfa531" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_1_1_format_mismatch_1a75b74eb84462dba829465eebadbfa531" kindref="member">FormatMismatch</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>msg)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>message(msg)<sp/>{}</highlight></codeline>
+<codeline lineno="42" refid="classcolorspaces_1_1_image_1_1_format_mismatch_1aaf8f52b425f244849b8b84d384eef961" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_1_1_format_mismatch_1aaf8f52b425f244849b8b84d384eef961" kindref="member">~FormatMismatch</ref>()<sp/>throw()<sp/>{}</highlight></codeline>
+<codeline lineno="43" refid="classcolorspaces_1_1_image_1_1_format_mismatch_1ab8255b66f6ed6b5034155e0132654f01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classcolorspaces_1_1_image_1_1_format_mismatch_1ab8255b66f6ed6b5034155e0132654f01" kindref="member">what</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>throw()</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>message.c_str();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>message;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="classcolorspaces_1_1_image_1_1_no_conversion" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcolorspaces_1_1_image_1_1_no_conversion" kindref="compound">NoConversion</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::exception{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="classcolorspaces_1_1_image_1_1_format_mismatch_1ab8255b66f6ed6b5034155e0132654f01" kindref="member">what</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">()</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;Can&apos;t<sp/>convert<sp/>image<sp/>to<sp/>requested<sp/>format&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="classcolorspaces_1_1_image_1a5d086f8bb03d6eab9c3accfd0040e28d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>*<sp/>(*imageCtor)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1a99a05ebd37f61215b2c3042ecaefdbfc" kindref="member">height</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ab80af7d4797110c23ed575b329ec7c4f" kindref="member">width</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="59" refid="classcolorspaces_1_1_image_1a8d8b6c8b517caac4cb685f4d73e2c8dc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>(*imageCvt)(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>src,<sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classcolorspaces_1_1_image_1ab3978cc7acc2b5e855f8c715f09667d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcolorspaces_1_1_image_1_1_format" kindref="compound">Format</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;Format&gt;<sp/><ref refid="classcolorspaces_1_1_image_1ab3978cc7acc2b5e855f8c715f09667d1" kindref="member">FormatPtr</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="classcolorspaces_1_1_image_1_1_format" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcolorspaces_1_1_image_1_1_format" kindref="compound">Format</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_uncopyable" kindref="compound">Uncopyable</ref>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FormatPtr<sp/>createFormat(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cvType,<sp/><ref refid="classcolorspaces_1_1_image_1a5d086f8bb03d6eab9c3accfd0040e28d" kindref="member">imageCtor</ref><sp/>ctor,<sp/><ref refid="classcolorspaces_1_1_image_1a8d8b6c8b517caac4cb685f4d73e2c8dc" kindref="member">imageCvt</ref><sp/>cvt);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FormatPtr<sp/>getFormat(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fmtId);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FormatPtr<sp/>searchFormat(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>*<sp/>createInstance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="73" refid="classcolorspaces_1_1_image_1_1_format_1a0ff066e47cb663980d8fe186994a4686" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1_1_format_1a0ff066e47cb663980d8fe186994a4686" kindref="member">bytesPerPixel</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>CV_ELEM_SIZE(cvType);<sp/>}</highlight></codeline>
+<codeline lineno="74" refid="classcolorspaces_1_1_image_1_1_format_1a0b2fef0398d48a881a56d38e04ad94b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="classcolorspaces_1_1_image_1_1_format_1a0b2fef0398d48a881a56d38e04ad94b8" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="75" refid="classcolorspaces_1_1_image_1_1_format_1af1ffb2ff3d465a7bcd608f35c01d11de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1_1_format_1af1ffb2ff3d465a7bcd608f35c01d11de" kindref="member">id</ref>;</highlight></codeline>
+<codeline lineno="76" refid="classcolorspaces_1_1_image_1_1_format_1a98396a43290ed1b2530caf35e858daa9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1_1_format_1a98396a43290ed1b2530caf35e858daa9" kindref="member">cvType</ref>;</highlight></codeline>
+<codeline lineno="77" refid="classcolorspaces_1_1_image_1_1_format_1a8aab62c6ca6ae1280cb4ba07702a5991" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_1a5d086f8bb03d6eab9c3accfd0040e28d" kindref="member">imageCtor</ref><sp/><ref refid="classcolorspaces_1_1_image_1_1_format_1a8aab62c6ca6ae1280cb4ba07702a5991" kindref="member">ctor</ref>;</highlight></codeline>
+<codeline lineno="78" refid="classcolorspaces_1_1_image_1_1_format_1ab7b83a3ddf1666e728782722dc3c081f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_1a8d8b6c8b517caac4cb685f4d73e2c8dc" kindref="member">imageCvt</ref><sp/><ref refid="classcolorspaces_1_1_image_1_1_format_1ab7b83a3ddf1666e728782722dc3c081f" kindref="member">cvt</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_1_1_format" kindref="compound">Format</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>name,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>cvType,<sp/><ref refid="classcolorspaces_1_1_image_1a5d086f8bb03d6eab9c3accfd0040e28d" kindref="member">imageCtor</ref><sp/>ctor,<sp/><ref refid="classcolorspaces_1_1_image_1a8d8b6c8b517caac4cb685f4d73e2c8dc" kindref="member">imageCvt</ref><sp/>cvt);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::vector&lt;FormatPtr&gt;&amp;<sp/>formatTable();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_1ac5cf4664b2cd2c67bb83624c14d92b5f" kindref="member">Image</ref>();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_1ac5cf4664b2cd2c67bb83624c14d92b5f" kindref="member">Image</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FormatPtr<sp/>fmt);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_1ac5cf4664b2cd2c67bb83624c14d92b5f" kindref="member">Image</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FormatPtr<sp/>fmt,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_1ac5cf4664b2cd2c67bb83624c14d92b5f" kindref="member">Image</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>i);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_1ac5cf4664b2cd2c67bb83624c14d92b5f" kindref="member">Image</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>m,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FormatPtr<sp/>fmt);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="classcolorspaces_1_1_image_1ad5463e8cae11b572cd10a92734216f8a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ad5463e8cae11b572cd10a92734216f8a" kindref="member">~Image</ref>()<sp/>{}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="classcolorspaces_1_1_image_1a1bd416764e9349d73ab57154c0eebcc7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FormatPtr<sp/><sp/><ref refid="classcolorspaces_1_1_image_1a1bd416764e9349d73ab57154c0eebcc7" kindref="member">format</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>_format;<sp/>}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/><ref refid="classcolorspaces_1_1_image_1af33b3aeb1a668b64f3ae4e00b90058a5" kindref="member">convert</ref>(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_no_conversion" kindref="compound">NoConversion</ref>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref><sp/><ref refid="classcolorspaces_1_1_image_1a1bf62f4371700005a8f9581b2f70f31f" kindref="member">clone</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130" refid="classcolorspaces_1_1_image_1ab80af7d4797110c23ed575b329ec7c4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ab80af7d4797110c23ed575b329ec7c4f" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="131" refid="classcolorspaces_1_1_image_1a99a05ebd37f61215b2c3042ecaefdbfc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1a99a05ebd37f61215b2c3042ecaefdbfc" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="classcolorspaces_1_1_image_1a53b533100b5fd24fae3617f271c73271" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>FormatPtr<sp/><ref refid="classcolorspaces_1_1_image_1a53b533100b5fd24fae3617f271c73271" kindref="member">FORMAT_NONE</ref>;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>FormatPtr<sp/>_format;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142" refid="classcolorspaces_1_1_image_r_g_b8" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcolorspaces_1_1_image_r_g_b8" kindref="compound">ImageRGB8</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref><sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_r_g_b8" kindref="compound">ImageRGB8</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ab80af7d4797110c23ed575b329ec7c4f" kindref="member">width</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1a99a05ebd37f61215b2c3042ecaefdbfc" kindref="member">height</ref>);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_r_g_b8" kindref="compound">ImageRGB8</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_r_g_b8" kindref="compound">ImageRGB8</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>i);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toGRAY8(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toYUY2(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toHSV8(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toYCRCB(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_r_g_b8" kindref="compound">ImageRGB8</ref><sp/>read(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>write(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;int&gt;&amp;<sp/>params=std::vector&lt;int&gt;());</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>*<sp/>createInstance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/><ref refid="classcolorspaces_1_1_image_1a8d8b6c8b517caac4cb685f4d73e2c8dc" kindref="member">imageCvt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>src,<sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_no_conversion" kindref="compound">NoConversion</ref>);</highlight></codeline>
+<codeline lineno="185" refid="classcolorspaces_1_1_image_r_g_b8_1a02a89815364677755b02998334820324" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ab3978cc7acc2b5e855f8c715f09667d1" kindref="member">FormatPtr</ref><sp/>FORMAT_RGB8,<sp/><ref refid="classcolorspaces_1_1_image_r_g_b8_1a02a89815364677755b02998334820324" kindref="member">FORMAT_RGB8_Z</ref>,<sp/>FORMAT_DEPTH8_16,<sp/>FORMAT_DEPTH8_16_Z;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191" refid="classcolorspaces_1_1_image_y_u_y2" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcolorspaces_1_1_image_y_u_y2" kindref="compound">ImageYUY2</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref><sp/>{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_y_u_y2" kindref="compound">ImageYUY2</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ab80af7d4797110c23ed575b329ec7c4f" kindref="member">width</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1a99a05ebd37f61215b2c3042ecaefdbfc" kindref="member">height</ref>);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_y_u_y2" kindref="compound">ImageYUY2</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_y_u_y2" kindref="compound">ImageYUY2</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>i);</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toGRAY8(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toRGB8(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toYCRCB(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>);</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>*<sp/>createInstance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/><ref refid="classcolorspaces_1_1_image_1a8d8b6c8b517caac4cb685f4d73e2c8dc" kindref="member">imageCvt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>src,<sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_no_conversion" kindref="compound">NoConversion</ref>);</highlight></codeline>
+<codeline lineno="225" refid="classcolorspaces_1_1_image_y_u_y2_1ad78f841cffc31b95f8069cb789e9f0e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ab3978cc7acc2b5e855f8c715f09667d1" kindref="member">FormatPtr</ref><sp/><ref refid="classcolorspaces_1_1_image_y_u_y2_1ad78f841cffc31b95f8069cb789e9f0e4" kindref="member">FORMAT_YUY2</ref>;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232" refid="classcolorspaces_1_1_image_g_r_a_y8" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcolorspaces_1_1_image_g_r_a_y8" kindref="compound">ImageGRAY8</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref><sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_g_r_a_y8" kindref="compound">ImageGRAY8</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ab80af7d4797110c23ed575b329ec7c4f" kindref="member">width</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1a99a05ebd37f61215b2c3042ecaefdbfc" kindref="member">height</ref>);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_g_r_a_y8" kindref="compound">ImageGRAY8</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_g_r_a_y8" kindref="compound">ImageGRAY8</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>i);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toRGB8(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toYUY2(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_g_r_a_y8" kindref="compound">ImageGRAY8</ref><sp/>read(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>write(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::vector&lt;int&gt;&amp;<sp/>params=std::vector&lt;int&gt;());</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>*<sp/>createInstance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/><ref refid="classcolorspaces_1_1_image_1a8d8b6c8b517caac4cb685f4d73e2c8dc" kindref="member">imageCvt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>src,<sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_no_conversion" kindref="compound">NoConversion</ref>);</highlight></codeline>
+<codeline lineno="275" refid="classcolorspaces_1_1_image_g_r_a_y8_1af37dcabe8bbf5ef6f73ed790c88e4896" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ab3978cc7acc2b5e855f8c715f09667d1" kindref="member">FormatPtr</ref><sp/>FORMAT_GRAY8,<sp/><ref refid="classcolorspaces_1_1_image_g_r_a_y8_1af37dcabe8bbf5ef6f73ed790c88e4896" kindref="member">FORMAT_GRAY8_Z</ref>;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281" refid="classcolorspaces_1_1_image_h_s_v8" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcolorspaces_1_1_image_h_s_v8" kindref="compound">ImageHSV8</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref><sp/>{</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_h_s_v8" kindref="compound">ImageHSV8</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ab80af7d4797110c23ed575b329ec7c4f" kindref="member">width</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1a99a05ebd37f61215b2c3042ecaefdbfc" kindref="member">height</ref>);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_h_s_v8" kindref="compound">ImageHSV8</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_h_s_v8" kindref="compound">ImageHSV8</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>i);</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toRGB8(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>*<sp/>createInstance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/><ref refid="classcolorspaces_1_1_image_1a8d8b6c8b517caac4cb685f4d73e2c8dc" kindref="member">imageCvt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>src,<sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_no_conversion" kindref="compound">NoConversion</ref>);</highlight></codeline>
+<codeline lineno="311" refid="classcolorspaces_1_1_image_h_s_v8_1ac6257ac7a1d55ddf8347f19c163abfa2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ab3978cc7acc2b5e855f8c715f09667d1" kindref="member">FormatPtr</ref><sp/><ref refid="classcolorspaces_1_1_image_h_s_v8_1ac6257ac7a1d55ddf8347f19c163abfa2" kindref="member">FORMAT_HSV8</ref>;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317" refid="classcolorspaces_1_1_image_y_c_r_c_b" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcolorspaces_1_1_image_y_c_r_c_b" kindref="compound">ImageYCRCB</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref><sp/>{</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_y_c_r_c_b" kindref="compound">ImageYCRCB</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ab80af7d4797110c23ed575b329ec7c4f" kindref="member">width</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1a99a05ebd37f61215b2c3042ecaefdbfc" kindref="member">height</ref>);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_y_c_r_c_b" kindref="compound">ImageYCRCB</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_y_c_r_c_b" kindref="compound">ImageYCRCB</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>i);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toRGB8(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>);</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//void<sp/>toYUY2(Image&amp;<sp/>dst)<sp/>const<sp/>throw(FormatMismatch);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>*<sp/>createInstance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/><ref refid="classcolorspaces_1_1_image_1a8d8b6c8b517caac4cb685f4d73e2c8dc" kindref="member">imageCvt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>src,<sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_no_conversion" kindref="compound">NoConversion</ref>);</highlight></codeline>
+<codeline lineno="348" refid="classcolorspaces_1_1_image_y_c_r_c_b_1a9423fb6d470113987bd078e88ff46cb8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ab3978cc7acc2b5e855f8c715f09667d1" kindref="member">FormatPtr</ref><sp/><ref refid="classcolorspaces_1_1_image_y_c_r_c_b_1a9423fb6d470113987bd078e88ff46cb8" kindref="member">FORMAT_YCRCB</ref>;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354" refid="classcolorspaces_1_1_image_n_v21" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcolorspaces_1_1_image_n_v21" kindref="compound">ImageNV21</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref><sp/>{</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_n_v21" kindref="compound">ImageNV21</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ab80af7d4797110c23ed575b329ec7c4f" kindref="member">width</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1a99a05ebd37f61215b2c3042ecaefdbfc" kindref="member">height</ref>);</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_n_v21" kindref="compound">ImageNV21</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classcolorspaces_1_1_image_n_v21" kindref="compound">ImageNV21</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>i);</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toGRAY8(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>);</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toRGB8(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>);</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toYCRCB(<ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_format_mismatch" kindref="compound">FormatMismatch</ref>);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>*<sp/>createInstance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>data);</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/><ref refid="classcolorspaces_1_1_image_1a8d8b6c8b517caac4cb685f4d73e2c8dc" kindref="member">imageCvt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>src,<sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">Image</ref>&amp;<sp/>dst)<sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal">(<ref refid="classcolorspaces_1_1_image_1_1_no_conversion" kindref="compound">NoConversion</ref>);</highlight></codeline>
+<codeline lineno="388" refid="classcolorspaces_1_1_image_n_v21_1aa7e4ffadaba25b5b888123c955c63499" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1ab3978cc7acc2b5e855f8c715f09667d1" kindref="member">FormatPtr</ref><sp/><ref refid="classcolorspaces_1_1_image_n_v21_1aa7e4ffadaba25b5b888123c955c63499" kindref="member">FORMAT_NV21</ref>;</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal">}<sp/></highlight><highlight class="comment">//namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight><highlight class="comment">//declarations<sp/>outside<sp/>the<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal">std::ostream<sp/>&amp;<ref refid="imagecv_8h_1a0dc95948b67a11c2364594f65e5aab15" kindref="member">operator&lt;&lt;</ref>(std::ostream<sp/>&amp;stream,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image_1_1_format" kindref="compound">colorspaces::Image::Format</ref>&amp;<sp/>fmt);</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal">std::ostream<sp/>&amp;<ref refid="imagecv_8h_1a0dc95948b67a11c2364594f65e5aab15" kindref="member">operator&lt;&lt;</ref>(std::ostream<sp/>&amp;stream,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classcolorspaces_1_1_image" kindref="compound">colorspaces::Image</ref>&amp;<sp/>img);</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//IMAGECV_COLORSPACES_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss" kind="class" language="Python" prot="public">
+    <compoundname>keras_utils::keras_ssd_loss::SSDLoss</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1af9f522438bf7085bea81c6431baf427b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_ssd_loss.SSDLoss::neg_pos_ratio</definition>
+        <argsstring></argsstring>
+        <name>neg_pos_ratio</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" line="50" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1a4f40f84c97462853d5b19373e7c5933b" compoundref="keras__ssd__loss_8py" startline="99" endline="213">keras_utils.keras_ssd_loss.SSDLoss.compute_loss</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1a933f7528c9efabe7dd5c91fd18d9cbf9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_ssd_loss.SSDLoss::n_neg_min</definition>
+        <argsstring></argsstring>
+        <name>n_neg_min</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" line="51" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1a4f40f84c97462853d5b19373e7c5933b" compoundref="keras__ssd__loss_8py" startline="99" endline="213">keras_utils.keras_ssd_loss.SSDLoss.compute_loss</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1afb5702fa295ff501d5b4baf09e2af409" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>keras_utils.keras_ssd_loss.SSDLoss::alpha</definition>
+        <argsstring></argsstring>
+        <name>alpha</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" line="52" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1a4f40f84c97462853d5b19373e7c5933b" compoundref="keras__ssd__loss_8py" startline="99" endline="213">keras_utils.keras_ssd_loss.SSDLoss.compute_loss</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1a2689ede880461cb86574c15d98d200f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_ssd_loss.SSDLoss.__init__</definition>
+        <argsstring>(self, neg_pos_ratio=3, n_neg_min=0, alpha=1.0)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1af9f522438bf7085bea81c6431baf427b" kindref="member">neg_pos_ratio</ref></type>
+          <defname>neg_pos_ratio</defname>
+          <defval>3</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1a933f7528c9efabe7dd5c91fd18d9cbf9" kindref="member">n_neg_min</ref></type>
+          <defname>n_neg_min</defname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type><ref refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1afb5702fa295ff501d5b4baf09e2af409" kindref="member">alpha</ref></type>
+          <defname>alpha</defname>
+          <defval>1.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Arguments:
+    neg_pos_ratio (int, optional): The maximum ratio of negative (i.e. background)
+to positive ground truth boxes to include in the loss computation.
+There are no actual background ground truth boxes of course, but `y_true`
+contains anchor boxes labeled with the background class. Since
+the number of background boxes in `y_true` will usually exceed
+the number of positive boxes by far, it is necessary to balance
+their influence on the loss. Defaults to 3 following the paper.
+    n_neg_min (int, optional): The minimum number of negative ground truth boxes to
+enter the loss computation *per batch*. This argument can be used to make
+sure that the model learns from a minimum number of negatives in batches
+in which there are very few, or even none at all, positive ground truth
+boxes. It defaults to 0 and if used, it should be set to a value that
+stands in reasonable proportion to the batch size used for training.
+    alpha (float, optional): A factor to weight the localization loss in the
+computation of the total loss. Defaults to 1.0 following the paper.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" bodystart="31" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1af8b9efac79d769cb5d55728946798bd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_ssd_loss.SSDLoss.smooth_L1_loss</definition>
+        <argsstring>(self, y_true, y_pred)</argsstring>
+        <name>smooth_L1_loss</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>y_true</type>
+          <defname>y_true</defname>
+        </param>
+        <param>
+          <type>y_pred</type>
+          <defname>y_pred</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Compute smooth L1 loss, see references.
+
+Arguments:
+    y_true (nD tensor): A TensorFlow tensor of any shape containing the ground truth data.
+In this context, the expected tensor has shape `(batch_size, #boxes, 4)` and
+contains the ground truth bounding box coordinates, where the last dimension
+contains `(xmin, xmax, ymin, ymax)`.
+    y_pred (nD tensor): A TensorFlow tensor of identical structure to `y_true` containing
+the predicted data, in this context the predicted bounding box coordinates.
+
+Returns:
+    The smooth L1 loss, a nD-1 Tensorflow tensor. In this context a 2D tensor
+    of shape (batch, n_boxes_total).
+
+References:
+    https://arxiv.org/abs/1504.08083
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" line="54" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" bodystart="54" bodyend="77"/>
+        <referencedby refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1a4f40f84c97462853d5b19373e7c5933b" compoundref="keras__ssd__loss_8py" startline="99" endline="213">keras_utils.keras_ssd_loss.SSDLoss.compute_loss</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1ac961f7061c048c565a859f8d42159a0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_ssd_loss.SSDLoss.log_loss</definition>
+        <argsstring>(self, y_true, y_pred)</argsstring>
+        <name>log_loss</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>y_true</type>
+          <defname>y_true</defname>
+        </param>
+        <param>
+          <type>y_pred</type>
+          <defname>y_pred</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Compute the softmax log loss.
+
+Arguments:
+    y_true (nD tensor): A TensorFlow tensor of any shape containing the ground truth data.
+In this context, the expected tensor has shape (batch_size, #boxes, #classes)
+and contains the ground truth bounding box categories.
+    y_pred (nD tensor): A TensorFlow tensor of identical structure to `y_true` containing
+the predicted data, in this context the predicted bounding box categories.
+
+Returns:
+    The softmax log loss, a nD-1 Tensorflow tensor. In this context a 2D tensor
+    of shape (batch, n_boxes_total).
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" line="78" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" bodystart="78" bodyend="98"/>
+        <referencedby refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1a4f40f84c97462853d5b19373e7c5933b" compoundref="keras__ssd__loss_8py" startline="99" endline="213">keras_utils.keras_ssd_loss.SSDLoss.compute_loss</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1a4f40f84c97462853d5b19373e7c5933b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def keras_utils.keras_ssd_loss.SSDLoss.compute_loss</definition>
+        <argsstring>(self, y_true, y_pred)</argsstring>
+        <name>compute_loss</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>y_true</type>
+          <defname>y_true</defname>
+        </param>
+        <param>
+          <type>y_pred</type>
+          <defname>y_pred</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Compute the loss of the SSD model prediction against the ground truth.
+
+Arguments:
+    y_true (array): A Numpy array of shape `(batch_size, #boxes, #classes + 12)`,
+where `#boxes` is the total number of boxes that the model predicts
+per image. Be careful to make sure that the index of each given
+box in `y_true` is the same as the index for the corresponding
+box in `y_pred`. The last axis must have length `#classes + 12` and contain
+`[classes one-hot encoded, 4 ground truth box coordinate offsets, 8 arbitrary entries]`
+in this order, including the background class. The last eight entries of the
+last axis are not used by this function and therefore their contents are
+irrelevant, they only exist so that `y_true` has the same shape as `y_pred`,
+where the last four entries of the last axis contain the anchor box
+coordinates, which are needed during inference. Important: Boxes that
+you want the cost function to ignore need to have a one-hot
+class vector of all zeros.
+    y_pred (Keras tensor): The model prediction. The shape is identical
+to that of `y_true`, i.e. `(batch_size, #boxes, #classes + 12)`.
+The last axis must contain entries in the format
+`[classes one-hot encoded, 4 predicted box coordinate offsets, 8 arbitrary entries]`.
+
+Returns:
+    A scalar, the total multitask loss for classification and localization.
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" line="99" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" bodystart="99" bodyend="213"/>
+        <references refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1af9f522438bf7085bea81c6431baf427b" compoundref="keras__ssd__loss_8py" startline="50">keras_utils.keras_ssd_loss.SSDLoss.neg_pos_ratio</references>
+        <references refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1a933f7528c9efabe7dd5c91fd18d9cbf9" compoundref="keras__ssd__loss_8py" startline="51">keras_utils.keras_ssd_loss.SSDLoss.n_neg_min</references>
+        <references refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1afb5702fa295ff501d5b4baf09e2af409" compoundref="keras__ssd__loss_8py" startline="52">keras_utils.keras_ssd_loss.SSDLoss.alpha</references>
+        <references refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1ac961f7061c048c565a859f8d42159a0d" compoundref="keras__ssd__loss_8py" startline="78" endline="98">keras_utils.keras_ssd_loss.SSDLoss.log_loss</references>
+        <references refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1af8b9efac79d769cb5d55728946798bd3" compoundref="keras__ssd__loss_8py" startline="54" endline="77">keras_utils.keras_ssd_loss.SSDLoss.smooth_L1_loss</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>The SSD loss, see https://arxiv.org/abs/1512.02325.
+</verbatim> </para>    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/python_modules/keras_utils/keras_ssd_loss.py" bodystart="23" bodyend="213"/>
+    <listofallmembers>
+      <member refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1a2689ede880461cb86574c15d98d200f2" prot="public" virt="non-virtual"><scope>keras_utils::keras_ssd_loss::SSDLoss</scope><name>__init__</name></member>
+      <member refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1afb5702fa295ff501d5b4baf09e2af409" prot="public" virt="non-virtual"><scope>keras_utils::keras_ssd_loss::SSDLoss</scope><name>alpha</name></member>
+      <member refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1a4f40f84c97462853d5b19373e7c5933b" prot="public" virt="non-virtual"><scope>keras_utils::keras_ssd_loss::SSDLoss</scope><name>compute_loss</name></member>
+      <member refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1ac961f7061c048c565a859f8d42159a0d" prot="public" virt="non-virtual"><scope>keras_utils::keras_ssd_loss::SSDLoss</scope><name>log_loss</name></member>
+      <member refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1a933f7528c9efabe7dd5c91fd18d9cbf9" prot="public" virt="non-virtual"><scope>keras_utils::keras_ssd_loss::SSDLoss</scope><name>n_neg_min</name></member>
+      <member refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1af9f522438bf7085bea81c6431baf427b" prot="public" virt="non-virtual"><scope>keras_utils::keras_ssd_loss::SSDLoss</scope><name>neg_pos_ratio</name></member>
+      <member refid="classkeras__utils_1_1keras__ssd__loss_1_1_s_s_d_loss_1af8b9efac79d769cb5d55728946798bd3" prot="public" virt="non-virtual"><scope>keras_utils::keras_ssd_loss::SSDLoss</scope><name>smooth_L1_loss</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

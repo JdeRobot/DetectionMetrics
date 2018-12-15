@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_stats_writer" kind="class" language="C++" prot="public">
+    <compoundname>StatsWriter</compoundname>
+    <includes refid="_stats_writer_8h" local="no">StatsWriter.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_stats_writer_1a6562a3b434f46de2ba1ea2cdfd9df212" prot="private" static="no" mutable="no">
+        <type>std::ofstream</type>
+        <definition>std::ofstream StatsWriter::writer</definition>
+        <argsstring></argsstring>
+        <name>writer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_stats_writer_1a366900b39c1116e05c274dd23b0190cd" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string StatsWriter::writerFile</definition>
+        <argsstring></argsstring>
+        <name>writerFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_stats_writer_1a88b21614747eed69b9c1397783df15ee" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; StatsWriter::classNamesinOrder</definition>
+        <argsstring></argsstring>
+        <name>classNamesinOrder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_stats_writer_1aebab85adf064e61088b43c861fb33072" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>StatsWriter::StatsWriter</definition>
+        <argsstring>(DatasetReaderPtr dataset, std::string &amp;writerFile)</argsstring>
+        <name>StatsWriter</name>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref></type>
+          <declname>dataset</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>writerFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h" line="10" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.cpp" bodystart="3" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_stats_writer_1a3eaa872621d87d7c26df3d4d810ee759" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StatsWriter::writeInferencerResults</definition>
+        <argsstring>(std::string inferencerName, DetectionsEvaluatorPtr evaluator)</argsstring>
+        <name>writeInferencerResults</name>
+        <param>
+          <type>std::string</type>
+          <declname>inferencerName</declname>
+        </param>
+        <param>
+          <type><ref refid="_detections_evaluator_8h_1ad123715cbea5e203556b7efa1ec44d77" kindref="member">DetectionsEvaluatorPtr</ref></type>
+          <declname>evaluator</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h" line="11" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.cpp" bodystart="37" bodyend="65"/>
+        <referencedby refid="class_sample_generator_handler_1_1_evaluator_1aea0f0fd9a50055382e4c44f45f61c4f0" compoundref="_dataset_evaluation_app_2_sampler_generator_handler_2_evaluator_8cpp" startline="11" endline="61">SampleGeneratorHandler::Evaluator::process</referencedby>
+        <referencedby refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" compoundref="_tools_2_evaluator_2_evaluator_8cpp" startline="27" endline="65">MyApp::operator()</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_stats_writer_1ad81e2697e713bfc4903b1260b3e5d952" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StatsWriter::saveFile</definition>
+        <argsstring>()</argsstring>
+        <name>saveFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.cpp" bodystart="67" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h" line="8" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h" bodystart="8" bodyend="18"/>
+    <listofallmembers>
+      <member refid="class_stats_writer_1a88b21614747eed69b9c1397783df15ee" prot="private" virt="non-virtual"><scope>StatsWriter</scope><name>classNamesinOrder</name></member>
+      <member refid="class_stats_writer_1ad81e2697e713bfc4903b1260b3e5d952" prot="public" virt="non-virtual"><scope>StatsWriter</scope><name>saveFile</name></member>
+      <member refid="class_stats_writer_1aebab85adf064e61088b43c861fb33072" prot="public" virt="non-virtual"><scope>StatsWriter</scope><name>StatsWriter</name></member>
+      <member refid="class_stats_writer_1a3eaa872621d87d7c26df3d4d810ee759" prot="public" virt="non-virtual"><scope>StatsWriter</scope><name>writeInferencerResults</name></member>
+      <member refid="class_stats_writer_1a6562a3b434f46de2ba1ea2cdfd9df212" prot="private" virt="non-virtual"><scope>StatsWriter</scope><name>writer</name></member>
+      <member refid="class_stats_writer_1a366900b39c1116e05c274dd23b0190cd" prot="private" virt="non-virtual"><scope>StatsWriter</scope><name>writerFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

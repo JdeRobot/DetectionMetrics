@@ -1,0 +1,155 @@
+\hypertarget{rgb2hsv_8c}{}\section{Deep\+Learning\+Suite/libs/utils/colorspaces/rgb2hsv.c File Reference}
+\label{rgb2hsv_8c}\index{Deep\+Learning\+Suite/libs/utils/colorspaces/rgb2hsv.\+c@{Deep\+Learning\+Suite/libs/utils/colorspaces/rgb2hsv.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}colorspaces.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{rgb2hsv_8c_a4716974869bc6274b2241b1a27dee97e}{rgb2hsv\+\_\+wiki} (double r, double g, double b, double $\ast$H, double $\ast$S, double $\ast$V)
+\item 
+void \hyperlink{rgb2hsv_8c_a5b3adc13cc2586f7905ea56f141ceef0}{hsv2rgb} (double H, double S, double V, double $\ast$r, double $\ast$g, double $\ast$b)
+\begin{DoxyCompactList}\small\item\em Returns the translation from \hyperlink{struct_h_s_v}{H\+SV} to R\+GB. \end{DoxyCompactList}\item 
+void \hyperlink{rgb2hsv_8c_a5f4a3a50114f90fcb9765952ec68a2c0}{print\+\_\+status\+\_\+\+Y\+UV} (unsigned long status)
+\begin{DoxyCompactList}\small\item\em Function to print unsiged int in binary. \end{DoxyCompactList}\item 
+void \hyperlink{rgb2hsv_8c_ad7dd44362d341ab79bbf849231329901}{R\+G\+B2\+H\+S\+V\+\_\+destroy\+Table} ()
+\begin{DoxyCompactList}\small\item\em Free de memory of R\+G\+B2\+H\+SV. \end{DoxyCompactList}\item 
+void \hyperlink{rgb2hsv_8c_a9d3c0b7a96c30bad15271386140eb6ae}{R\+G\+B2\+H\+S\+V\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Init the R\+G\+B2\+H\+SV. \end{DoxyCompactList}\item 
+void \hyperlink{rgb2hsv_8c_a1c0a6a7df547f29e98835424b6b66c09}{R\+G\+B2\+H\+S\+V\+\_\+create\+Table} ()
+\begin{DoxyCompactList}\small\item\em \+: Calculate values for create a generic table \end{DoxyCompactList}\item 
+void \hyperlink{rgb2hsv_8c_ab77e39ef0029a5ecf5e970bcaaae2335}{R\+G\+B2\+H\+S\+V\+\_\+print\+H\+SV} (struct \hyperlink{struct_h_s_v}{H\+SV} $\ast$hsv)
+\item 
+void \hyperlink{rgb2hsv_8c_aa96ba32c645c0cbcaa92a30849f05df0}{R\+G\+B2\+H\+S\+V\+\_\+test} (void)
+\begin{DoxyCompactList}\small\item\em Test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{rgb2hsv_8c_ab70d7462ac875c42ef0369c3972deca2}{M\+A\+X\+\_\+\+B\+I\+TS} = 8
+\item 
+const int \hyperlink{rgb2hsv_8c_a8cbe804ef68b5f73a678c4ac0279867c}{S\+I\+G\+N\+I\+F\+I\+C\+A\+T\+I\+V\+E\+\_\+\+B\+I\+TS} = 6
+\item 
+const int \hyperlink{rgb2hsv_8c_a326c0e940e5d5c329218e5ccff03df52}{M\+A\+X\+\_\+\+R\+GB} = 255
+\item 
+struct \hyperlink{struct_h_s_v}{H\+SV} $\ast$ \hyperlink{rgb2hsv_8c_a4dddeb18ef9d4b3ad60a78ec2b33d11c}{L\+U\+T\+\_\+\+R\+G\+B2\+H\+SV} \mbox{[}64\mbox{]}\mbox{[}64\mbox{]}\mbox{[}64\mbox{]}
+\item 
+int \hyperlink{rgb2hsv_8c_a3d8f38fa99d5cc96d230b933664c17cf}{is\+Init\+Table\+H\+SV}
+\item 
+pthread\+\_\+mutex\+\_\+t \hyperlink{rgb2hsv_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{rgb2hsv_8c_a5b3adc13cc2586f7905ea56f141ceef0}\label{rgb2hsv_8c_a5b3adc13cc2586f7905ea56f141ceef0}} 
+\index{rgb2hsv.\+c@{rgb2hsv.\+c}!hsv2rgb@{hsv2rgb}}
+\index{hsv2rgb@{hsv2rgb}!rgb2hsv.\+c@{rgb2hsv.\+c}}
+\subsubsection{\texorpdfstring{hsv2rgb()}{hsv2rgb()}}
+{\footnotesize\ttfamily void hsv2rgb (\begin{DoxyParamCaption}\item[{double}]{H,  }\item[{double}]{S,  }\item[{double}]{V,  }\item[{double $\ast$}]{r,  }\item[{double $\ast$}]{g,  }\item[{double $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Returns the translation from \hyperlink{struct_h_s_v}{H\+SV} to R\+GB. 
+
+\mbox{\Hypertarget{rgb2hsv_8c_a5f4a3a50114f90fcb9765952ec68a2c0}\label{rgb2hsv_8c_a5f4a3a50114f90fcb9765952ec68a2c0}} 
+\index{rgb2hsv.\+c@{rgb2hsv.\+c}!print\+\_\+status\+\_\+\+Y\+UV@{print\+\_\+status\+\_\+\+Y\+UV}}
+\index{print\+\_\+status\+\_\+\+Y\+UV@{print\+\_\+status\+\_\+\+Y\+UV}!rgb2hsv.\+c@{rgb2hsv.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+status\+\_\+\+Y\+U\+V()}{print\_status\_YUV()}}
+{\footnotesize\ttfamily void print\+\_\+status\+\_\+\+Y\+UV (\begin{DoxyParamCaption}\item[{unsigned long}]{status }\end{DoxyParamCaption})}
+
+
+
+Function to print unsiged int in binary. 
+
+\mbox{\Hypertarget{rgb2hsv_8c_a1c0a6a7df547f29e98835424b6b66c09}\label{rgb2hsv_8c_a1c0a6a7df547f29e98835424b6b66c09}} 
+\index{rgb2hsv.\+c@{rgb2hsv.\+c}!R\+G\+B2\+H\+S\+V\+\_\+create\+Table@{R\+G\+B2\+H\+S\+V\+\_\+create\+Table}}
+\index{R\+G\+B2\+H\+S\+V\+\_\+create\+Table@{R\+G\+B2\+H\+S\+V\+\_\+create\+Table}!rgb2hsv.\+c@{rgb2hsv.\+c}}
+\subsubsection{\texorpdfstring{R\+G\+B2\+H\+S\+V\+\_\+create\+Table()}{RGB2HSV\_createTable()}}
+{\footnotesize\ttfamily void R\+G\+B2\+H\+S\+V\+\_\+create\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\+: Calculate values for create a generic table 
+
+Create a translate R\+G\+B2\+H\+SV table with resolution of 6bits (64x64x64) \mbox{\Hypertarget{rgb2hsv_8c_ad7dd44362d341ab79bbf849231329901}\label{rgb2hsv_8c_ad7dd44362d341ab79bbf849231329901}} 
+\index{rgb2hsv.\+c@{rgb2hsv.\+c}!R\+G\+B2\+H\+S\+V\+\_\+destroy\+Table@{R\+G\+B2\+H\+S\+V\+\_\+destroy\+Table}}
+\index{R\+G\+B2\+H\+S\+V\+\_\+destroy\+Table@{R\+G\+B2\+H\+S\+V\+\_\+destroy\+Table}!rgb2hsv.\+c@{rgb2hsv.\+c}}
+\subsubsection{\texorpdfstring{R\+G\+B2\+H\+S\+V\+\_\+destroy\+Table()}{RGB2HSV\_destroyTable()}}
+{\footnotesize\ttfamily void R\+G\+B2\+H\+S\+V\+\_\+destroy\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Free de memory of R\+G\+B2\+H\+SV. 
+
+\mbox{\Hypertarget{rgb2hsv_8c_a9d3c0b7a96c30bad15271386140eb6ae}\label{rgb2hsv_8c_a9d3c0b7a96c30bad15271386140eb6ae}} 
+\index{rgb2hsv.\+c@{rgb2hsv.\+c}!R\+G\+B2\+H\+S\+V\+\_\+init@{R\+G\+B2\+H\+S\+V\+\_\+init}}
+\index{R\+G\+B2\+H\+S\+V\+\_\+init@{R\+G\+B2\+H\+S\+V\+\_\+init}!rgb2hsv.\+c@{rgb2hsv.\+c}}
+\subsubsection{\texorpdfstring{R\+G\+B2\+H\+S\+V\+\_\+init()}{RGB2HSV\_init()}}
+{\footnotesize\ttfamily void R\+G\+B2\+H\+S\+V\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Init the R\+G\+B2\+H\+SV. 
+
+\mbox{\Hypertarget{rgb2hsv_8c_ab77e39ef0029a5ecf5e970bcaaae2335}\label{rgb2hsv_8c_ab77e39ef0029a5ecf5e970bcaaae2335}} 
+\index{rgb2hsv.\+c@{rgb2hsv.\+c}!R\+G\+B2\+H\+S\+V\+\_\+print\+H\+SV@{R\+G\+B2\+H\+S\+V\+\_\+print\+H\+SV}}
+\index{R\+G\+B2\+H\+S\+V\+\_\+print\+H\+SV@{R\+G\+B2\+H\+S\+V\+\_\+print\+H\+SV}!rgb2hsv.\+c@{rgb2hsv.\+c}}
+\subsubsection{\texorpdfstring{R\+G\+B2\+H\+S\+V\+\_\+print\+H\+S\+V()}{RGB2HSV\_printHSV()}}
+{\footnotesize\ttfamily void R\+G\+B2\+H\+S\+V\+\_\+print\+H\+SV (\begin{DoxyParamCaption}\item[{struct \hyperlink{struct_h_s_v}{H\+SV} $\ast$}]{hsv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rgb2hsv_8c_aa96ba32c645c0cbcaa92a30849f05df0}\label{rgb2hsv_8c_aa96ba32c645c0cbcaa92a30849f05df0}} 
+\index{rgb2hsv.\+c@{rgb2hsv.\+c}!R\+G\+B2\+H\+S\+V\+\_\+test@{R\+G\+B2\+H\+S\+V\+\_\+test}}
+\index{R\+G\+B2\+H\+S\+V\+\_\+test@{R\+G\+B2\+H\+S\+V\+\_\+test}!rgb2hsv.\+c@{rgb2hsv.\+c}}
+\subsubsection{\texorpdfstring{R\+G\+B2\+H\+S\+V\+\_\+test()}{RGB2HSV\_test()}}
+{\footnotesize\ttfamily void R\+G\+B2\+H\+S\+V\+\_\+test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Test. 
+
+\mbox{\Hypertarget{rgb2hsv_8c_a4716974869bc6274b2241b1a27dee97e}\label{rgb2hsv_8c_a4716974869bc6274b2241b1a27dee97e}} 
+\index{rgb2hsv.\+c@{rgb2hsv.\+c}!rgb2hsv\+\_\+wiki@{rgb2hsv\+\_\+wiki}}
+\index{rgb2hsv\+\_\+wiki@{rgb2hsv\+\_\+wiki}!rgb2hsv.\+c@{rgb2hsv.\+c}}
+\subsubsection{\texorpdfstring{rgb2hsv\+\_\+wiki()}{rgb2hsv\_wiki()}}
+{\footnotesize\ttfamily void rgb2hsv\+\_\+wiki (\begin{DoxyParamCaption}\item[{double}]{r,  }\item[{double}]{g,  }\item[{double}]{b,  }\item[{double $\ast$}]{H,  }\item[{double $\ast$}]{S,  }\item[{double $\ast$}]{V }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{rgb2hsv_8c_a3d8f38fa99d5cc96d230b933664c17cf}\label{rgb2hsv_8c_a3d8f38fa99d5cc96d230b933664c17cf}} 
+\index{rgb2hsv.\+c@{rgb2hsv.\+c}!is\+Init\+Table\+H\+SV@{is\+Init\+Table\+H\+SV}}
+\index{is\+Init\+Table\+H\+SV@{is\+Init\+Table\+H\+SV}!rgb2hsv.\+c@{rgb2hsv.\+c}}
+\subsubsection{\texorpdfstring{is\+Init\+Table\+H\+SV}{isInitTableHSV}}
+{\footnotesize\ttfamily int is\+Init\+Table\+H\+SV}
+
+\mbox{\Hypertarget{rgb2hsv_8c_a4dddeb18ef9d4b3ad60a78ec2b33d11c}\label{rgb2hsv_8c_a4dddeb18ef9d4b3ad60a78ec2b33d11c}} 
+\index{rgb2hsv.\+c@{rgb2hsv.\+c}!L\+U\+T\+\_\+\+R\+G\+B2\+H\+SV@{L\+U\+T\+\_\+\+R\+G\+B2\+H\+SV}}
+\index{L\+U\+T\+\_\+\+R\+G\+B2\+H\+SV@{L\+U\+T\+\_\+\+R\+G\+B2\+H\+SV}!rgb2hsv.\+c@{rgb2hsv.\+c}}
+\subsubsection{\texorpdfstring{L\+U\+T\+\_\+\+R\+G\+B2\+H\+SV}{LUT\_RGB2HSV}}
+{\footnotesize\ttfamily struct \hyperlink{struct_h_s_v}{H\+SV}$\ast$ L\+U\+T\+\_\+\+R\+G\+B2\+H\+SV\mbox{[}64\mbox{]}\mbox{[}64\mbox{]}\mbox{[}64\mbox{]}}
+
+\mbox{\Hypertarget{rgb2hsv_8c_ab70d7462ac875c42ef0369c3972deca2}\label{rgb2hsv_8c_ab70d7462ac875c42ef0369c3972deca2}} 
+\index{rgb2hsv.\+c@{rgb2hsv.\+c}!M\+A\+X\+\_\+\+B\+I\+TS@{M\+A\+X\+\_\+\+B\+I\+TS}}
+\index{M\+A\+X\+\_\+\+B\+I\+TS@{M\+A\+X\+\_\+\+B\+I\+TS}!rgb2hsv.\+c@{rgb2hsv.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+B\+I\+TS}{MAX\_BITS}}
+{\footnotesize\ttfamily const int M\+A\+X\+\_\+\+B\+I\+TS = 8}
+
+\mbox{\Hypertarget{rgb2hsv_8c_a326c0e940e5d5c329218e5ccff03df52}\label{rgb2hsv_8c_a326c0e940e5d5c329218e5ccff03df52}} 
+\index{rgb2hsv.\+c@{rgb2hsv.\+c}!M\+A\+X\+\_\+\+R\+GB@{M\+A\+X\+\_\+\+R\+GB}}
+\index{M\+A\+X\+\_\+\+R\+GB@{M\+A\+X\+\_\+\+R\+GB}!rgb2hsv.\+c@{rgb2hsv.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+R\+GB}{MAX\_RGB}}
+{\footnotesize\ttfamily const int M\+A\+X\+\_\+\+R\+GB = 255}
+
+\mbox{\Hypertarget{rgb2hsv_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}\label{rgb2hsv_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}} 
+\index{rgb2hsv.\+c@{rgb2hsv.\+c}!mutex@{mutex}}
+\index{mutex@{mutex}!rgb2hsv.\+c@{rgb2hsv.\+c}}
+\subsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t mutex}
+
+\mbox{\Hypertarget{rgb2hsv_8c_a8cbe804ef68b5f73a678c4ac0279867c}\label{rgb2hsv_8c_a8cbe804ef68b5f73a678c4ac0279867c}} 
+\index{rgb2hsv.\+c@{rgb2hsv.\+c}!S\+I\+G\+N\+I\+F\+I\+C\+A\+T\+I\+V\+E\+\_\+\+B\+I\+TS@{S\+I\+G\+N\+I\+F\+I\+C\+A\+T\+I\+V\+E\+\_\+\+B\+I\+TS}}
+\index{S\+I\+G\+N\+I\+F\+I\+C\+A\+T\+I\+V\+E\+\_\+\+B\+I\+TS@{S\+I\+G\+N\+I\+F\+I\+C\+A\+T\+I\+V\+E\+\_\+\+B\+I\+TS}!rgb2hsv.\+c@{rgb2hsv.\+c}}
+\subsubsection{\texorpdfstring{S\+I\+G\+N\+I\+F\+I\+C\+A\+T\+I\+V\+E\+\_\+\+B\+I\+TS}{SIGNIFICATIVE\_BITS}}
+{\footnotesize\ttfamily const int S\+I\+G\+N\+I\+F\+I\+C\+A\+T\+I\+V\+E\+\_\+\+B\+I\+TS = 6}
+

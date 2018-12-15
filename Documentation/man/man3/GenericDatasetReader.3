@@ -1,0 +1,46 @@
+.TH "GenericDatasetReader" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GenericDatasetReader
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GenericDatasetReader\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGenericDatasetReader\fP (const std::string &path, const std::string &classNamesFile, const std::string &readerImplementation, bool imagesRequired)"
+.br
+.ti -1c
+.RI "\fBGenericDatasetReader\fP (const std::vector< std::string > &paths, const std::string &classNamesFile, const std::string &readerImplementation, bool imagesRegquired)"
+.br
+.ti -1c
+.RI "\fBDatasetReaderPtr\fP \fBgetReader\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::vector< std::string > \fBgetAvailableImplementations\fP ()"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GenericDatasetReader::GenericDatasetReader (const std::string & path, const std::string & classNamesFile, const std::string & readerImplementation, bool imagesRequired)"
+
+.SS "GenericDatasetReader::GenericDatasetReader (const std::vector< std::string > & paths, const std::string & classNamesFile, const std::string & readerImplementation, bool imagesRegquired)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< std::string > GenericDatasetReader::getAvailableImplementations ()\fC [static]\fP"
+
+.SS "\fBDatasetReaderPtr\fP GenericDatasetReader::getReader ()"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

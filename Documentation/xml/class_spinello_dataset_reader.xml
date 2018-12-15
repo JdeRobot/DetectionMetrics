@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_spinello_dataset_reader" kind="class" language="C++" prot="public">
+    <compoundname>SpinelloDatasetReader</compoundname>
+    <basecompoundref refid="class_dataset_reader" prot="public" virt="non-virtual">DatasetReader</basecompoundref>
+    <includes refid="_spinello_dataset_reader_8h" local="no">SpinelloDatasetReader.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_spinello_dataset_reader_1a4ba79e9d888e4e23726b2f4d8c6d31db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SpinelloDatasetReader::SpinelloDatasetReader</definition>
+        <argsstring>(const std::string &amp;path, const std::string &amp;classNamesFile, const bool imagesRequired)</argsstring>
+        <name>SpinelloDatasetReader</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classNamesFile</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>imagesRequired</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/SpinelloDatasetReader.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/SpinelloDatasetReader.cpp" bodystart="15" bodyend="18"/>
+        <references refid="class_dataset_reader_1a45ded43b56539f1e37a24ca9c94b4611" compoundref="_dataset_reader_8h" startline="37">DatasetReader::classNamesFile</references>
+        <references refid="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9" compoundref="_spinello_dataset_reader_8cpp" startline="24" endline="113">appendDataset</references>
+      </memberdef>
+      <memberdef kind="function" id="class_spinello_dataset_reader_1a894804f5b2ea181ba0b3d1b85ee43cfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SpinelloDatasetReader::SpinelloDatasetReader</definition>
+        <argsstring>(const bool imagesRequired)</argsstring>
+        <name>SpinelloDatasetReader</name>
+        <param>
+          <type>const bool</type>
+          <declname>imagesRequired</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/SpinelloDatasetReader.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/SpinelloDatasetReader.cpp" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool SpinelloDatasetReader::appendDataset</definition>
+        <argsstring>(const std::string &amp;datasetPath, const std::string &amp;datasetPrefix=&quot;&quot;)</argsstring>
+        <name>appendDataset</name>
+        <reimplements refid="class_dataset_reader_1a732438244cec7c20294f93c6b635888c">appendDataset</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>datasetPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>datasetPrefix</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/SpinelloDatasetReader.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/SpinelloDatasetReader.cpp" bodystart="24" bodyend="113"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+        <references refid="class_depth_utils_1aa27c57f9882e66c600a03a5378c00110" compoundref="_depth_utils_8cpp" startline="46" endline="69">DepthUtils::spinello_mat16_to_viewable</references>
+        <references refid="class_normalizations_1aa96f186b39b47d20b98da5cdb22217f2" compoundref="_normalizations_8cpp" startline="10" endline="16">Normalizations::normalizeRect</references>
+        <references refid="class_dataset_reader_1aeff3413e85bbde9f1f755e36860c7f3a" compoundref="_dataset_reader_8cpp" startline="81" endline="89">DatasetReader::getSampleBySampleID</references>
+        <references refid="struct_sample_1a5f1b7716e5c4e8f5217a18021169283f" compoundref="_sample_8cpp" startline="123" endline="125">Sample::getRectRegions</references>
+        <references refid="struct_sample_1a64fc306f85a0a1966f5f3b662efe95bb" compoundref="_sample_8cpp" startline="326" endline="328">Sample::setSampleID</references>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">Sample::setColorImage</references>
+        <references refid="struct_sample_1a1a140ca4aa294de160581251fe5072e5" compoundref="_sample_8cpp" startline="80" endline="82">Sample::setDepthImage</references>
+        <references refid="struct_sample_1a9654dcf85e7a0b19b7b462cd7e6e1e6a" compoundref="_sample_8cpp" startline="84" endline="86">Sample::setRectRegions</references>
+        <references refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" compoundref="_dataset_reader_8h" startline="34">DatasetReader::samples</references>
+        <references refid="class_dataset_reader_1a1e37cddfc448b548dc6ca40f629884cb" compoundref="_dataset_reader_8cpp" startline="101" endline="137">DatasetReader::printDatasetStats</references>
+        <referencedby refid="class_spinello_dataset_reader_1a4ba79e9d888e4e23726b2f4d8c6d31db" compoundref="_spinello_dataset_reader_8cpp" startline="15" endline="18">SpinelloDatasetReader</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="324">
+        <label>DatasetReader</label>
+        <link refid="class_dataset_reader"/>
+      </node>
+      <node id="323">
+        <label>SpinelloDatasetReader</label>
+        <link refid="class_spinello_dataset_reader"/>
+        <childnode refid="324" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="326">
+        <label>DatasetReader</label>
+        <link refid="class_dataset_reader"/>
+      </node>
+      <node id="325">
+        <label>SpinelloDatasetReader</label>
+        <link refid="class_spinello_dataset_reader"/>
+        <childnode refid="326" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/SpinelloDatasetReader.h" line="11" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/SpinelloDatasetReader.h" bodystart="11" bodyend="18"/>
+    <listofallmembers>
+      <member refid="class_dataset_reader_1a03ceb33ec8ecd5fb73a4b17e9701cbb3" prot="public" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>addSample</name></member>
+      <member refid="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9" prot="public" virt="virtual"><scope>SpinelloDatasetReader</scope><name>appendDataset</name></member>
+      <member refid="class_dataset_reader_1a76c52c7db385a4a930021fe69d04fefb" prot="protected" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>classNames</name></member>
+      <member refid="class_dataset_reader_1a45ded43b56539f1e37a24ca9c94b4611" prot="protected" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>classNamesFile</name></member>
+      <member refid="class_dataset_reader_1a357a86043c584062497bbc0fcd3ea420" prot="public" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>DatasetReader</name></member>
+      <member refid="class_dataset_reader_1ac94f1934639708dc2a29b1ba05e3cc0b" prot="public" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>decrementReaderCounter</name></member>
+      <member refid="class_dataset_reader_1a17085ffacc392c459a95cd510f341a7d" prot="public" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>filterSamplesByID</name></member>
+      <member refid="class_dataset_reader_1a2838c12e627e42e8394fd18011afa203" prot="public" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>getClassNamesFile</name></member>
+      <member refid="class_dataset_reader_1af50668f52c34f4620c44e91f26dd11ce" prot="public" virt="virtual"><scope>SpinelloDatasetReader</scope><name>getNextSample</name></member>
+      <member refid="class_dataset_reader_1a4875a59f33227329ca93241add8370c0" prot="public" virt="virtual"><scope>SpinelloDatasetReader</scope><name>getNextSamples</name></member>
+      <member refid="class_dataset_reader_1a67f4c1c3fdfcc0c6bf3b90d65d5fc7c5" prot="public" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>getNumberOfElements</name></member>
+      <member refid="class_dataset_reader_1aeff3413e85bbde9f1f755e36860c7f3a" prot="public" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>getSampleBySampleID</name></member>
+      <member refid="class_dataset_reader_1a2cfa8b90e643a325b519a292c62d4460" prot="public" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>getSampleBySampleID</name></member>
+      <member refid="class_dataset_reader_1a71d04d25d58e0e9a0c05d69afcff03a1" prot="protected" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>imagesRequired</name></member>
+      <member refid="class_dataset_reader_1a951146f7949deff5e17c3482f4339672" prot="public" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>incrementReaderCounter</name></member>
+      <member refid="class_dataset_reader_1ac662ff47f081f872d05ade9a33724a2a" prot="public" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>overWriteClasses</name></member>
+      <member refid="class_dataset_reader_1a1e37cddfc448b548dc6ca40f629884cb" prot="public" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>printDatasetStats</name></member>
+      <member refid="class_dataset_reader_1af0fd759568c5db7187d19bae8ebe1b6c" prot="protected" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>readerCounter</name></member>
+      <member refid="class_dataset_reader_1a528f4df5009c93efd37ff5cfafe4c778" prot="public" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>resetReaderCounter</name></member>
+      <member refid="class_dataset_reader_1adeafe74d71d96205e2920f76d3fc6a72" prot="protected" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>samples</name></member>
+      <member refid="class_dataset_reader_1aae9a49629ae536c02b726e52a9def4ee" prot="protected" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>skip_count</name></member>
+      <member refid="class_spinello_dataset_reader_1a4ba79e9d888e4e23726b2f4d8c6d31db" prot="public" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>SpinelloDatasetReader</name></member>
+      <member refid="class_spinello_dataset_reader_1a894804f5b2ea181ba0b3d1b85ee43cfa" prot="public" virt="non-virtual"><scope>SpinelloDatasetReader</scope><name>SpinelloDatasetReader</name></member>
+      <member refid="class_dataset_reader_1af972d4b7460587b2292d3dd15e69827b" prot="public" virt="virtual"><scope>SpinelloDatasetReader</scope><name>~DatasetReader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_darknet_inferencer" kind="class" language="C++" prot="public">
+    <compoundname>DarknetInferencer</compoundname>
+    <basecompoundref refid="class_framework_inferencer" prot="public" virt="non-virtual">FrameworkInferencer</basecompoundref>
+    <includes refid="_darknet_inferencer_8h" local="no">DarknetInferencer.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_darknet_inferencer_1ab7912e9995087783dcfaca68d86108cc" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string DarknetInferencer::netConfig</definition>
+        <argsstring></argsstring>
+        <name>netConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_darknet_inferencer_1a39f760ed91cbf7c776d307089dd5c6c7" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string DarknetInferencer::netWeights</definition>
+        <argsstring></argsstring>
+        <name>netWeights</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_darknet_inferencer_1aaa936bb1b702e89c0c04612e27fad49f" prot="private" static="no" mutable="no">
+        <type>boost::shared_ptr&lt; DarknetAPI &gt;</type>
+        <definition>boost::shared_ptr&lt;DarknetAPI&gt; DarknetInferencer::cnn</definition>
+        <argsstring></argsstring>
+        <name>cnn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_darknet_inferencer_1ad3ec4de38c45a556057c93a14561e3b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DarknetInferencer::DarknetInferencer</definition>
+        <argsstring>(const std::string &amp;netConfig, const std::string &amp;netWeights, const std::string &amp;classNamesFile)</argsstring>
+        <name>DarknetInferencer</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>netConfig</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>netWeights</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classNamesFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.cpp" bodystart="9" bodyend="12"/>
+        <references refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" compoundref="_framework_inferencer_8h" startline="24">FrameworkInferencer::classNamesFile</references>
+      </memberdef>
+      <memberdef kind="function" id="class_darknet_inferencer_1a9fb53792b71055b3104e5a54a6190c50" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="struct_sample" kindref="compound">Sample</ref></type>
+        <definition>Sample DarknetInferencer::detectImp</definition>
+        <argsstring>(const cv::Mat &amp;image, double confidence_threshold)</argsstring>
+        <name>detectImp</name>
+        <reimplements refid="class_framework_inferencer_1a8fd7e708c8be4471bc2b37a4193a9045">detectImp</reimplements>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>confidence_threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.cpp" bodystart="14" bodyend="31"/>
+        <references refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" compoundref="_framework_inferencer_8h" startline="24">FrameworkInferencer::classNamesFile</references>
+        <references refid="struct_class_type_generic_1abb29534e4b1c9e2b33c57df5e56ef2fb" compoundref="_class_type_generic_8cpp" startline="26" endline="28">ClassTypeGeneric::setId</references>
+        <references refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" compoundref="_class_type_8cpp" startline="44" endline="46">ClassType::getClassString</references>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">Sample::setColorImage</references>
+        <references refid="struct_sample_1a9654dcf85e7a0b19b7b462cd7e6e1e6a" compoundref="_sample_8cpp" startline="84" endline="86">Sample::setRectRegions</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="70">
+        <label>FrameworkInferencer</label>
+        <link refid="class_framework_inferencer"/>
+      </node>
+      <node id="69">
+        <label>DarknetInferencer</label>
+        <link refid="class_darknet_inferencer"/>
+        <childnode refid="70" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="72">
+        <label>FrameworkInferencer</label>
+        <link refid="class_framework_inferencer"/>
+      </node>
+      <node id="71">
+        <label>DarknetInferencer</label>
+        <link refid="class_darknet_inferencer"/>
+        <childnode refid="72" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.h" bodystart="12" bodyend="21"/>
+    <listofallmembers>
+      <member refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" prot="protected" virt="non-virtual"><scope>DarknetInferencer</scope><name>classNamesFile</name></member>
+      <member refid="class_darknet_inferencer_1aaa936bb1b702e89c0c04612e27fad49f" prot="private" virt="non-virtual"><scope>DarknetInferencer</scope><name>cnn</name></member>
+      <member refid="class_darknet_inferencer_1ad3ec4de38c45a556057c93a14561e3b4" prot="public" virt="non-virtual"><scope>DarknetInferencer</scope><name>DarknetInferencer</name></member>
+      <member refid="class_framework_inferencer_1a4c2b3b0ec03df5f97e7b32235422dc60" prot="public" virt="non-virtual"><scope>DarknetInferencer</scope><name>detect</name></member>
+      <member refid="class_darknet_inferencer_1a9fb53792b71055b3104e5a54a6190c50" prot="public" virt="virtual"><scope>DarknetInferencer</scope><name>detectImp</name></member>
+      <member refid="class_framework_inferencer_1adda91b1e8b6238e4cd3cc18e84675fea" prot="public" virt="non-virtual"><scope>DarknetInferencer</scope><name>FrameworkInferencer</name></member>
+      <member refid="class_framework_inferencer_1a51291e562ddc5a4b86c0c413439d59a5" prot="public" virt="non-virtual"><scope>DarknetInferencer</scope><name>getMeanDurationTime</name></member>
+      <member refid="class_darknet_inferencer_1ab7912e9995087783dcfaca68d86108cc" prot="private" virt="non-virtual"><scope>DarknetInferencer</scope><name>netConfig</name></member>
+      <member refid="class_darknet_inferencer_1a39f760ed91cbf7c776d307089dd5c6c7" prot="private" virt="non-virtual"><scope>DarknetInferencer</scope><name>netWeights</name></member>
+      <member refid="class_framework_inferencer_1a0a0ad89131a1f2a2377a3003b0c1d319" prot="public" virt="non-virtual"><scope>DarknetInferencer</scope><name>~ FrameworkInferencer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

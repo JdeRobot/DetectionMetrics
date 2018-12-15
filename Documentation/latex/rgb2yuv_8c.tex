@@ -1,0 +1,143 @@
+\hypertarget{rgb2yuv_8c}{}\section{Deep\+Learning\+Suite/libs/utils/colorspaces/rgb2yuv.c File Reference}
+\label{rgb2yuv_8c}\index{Deep\+Learning\+Suite/libs/utils/colorspaces/rgb2yuv.\+c@{Deep\+Learning\+Suite/libs/utils/colorspaces/rgb2yuv.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}colorspaces.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{rgb2yuv_8c_a3a13eec5805909b2257e309f187a8d67}{rgb2yuv\+\_\+wiki} (double r, double g, double b, double $\ast$Y, double $\ast$U, double $\ast$V)
+\item 
+void \hyperlink{rgb2yuv_8c_ae80eb39e10fb510ac3d5be1c81671f0d}{yuv2rgb} (double Y, double U, double V, double $\ast$r, double $\ast$g, double $\ast$b)
+\begin{DoxyCompactList}\small\item\em Returns the translation from \hyperlink{struct_y_u_v}{Y\+UV} to R\+GB. \end{DoxyCompactList}\item 
+void \hyperlink{rgb2yuv_8c_a27570a02b90c39f6de2579bb79e5462f}{print\+\_\+status\+\_\+\+H\+SV} (unsigned long status)
+\begin{DoxyCompactList}\small\item\em Function to print unsiged int in binary. \end{DoxyCompactList}\item 
+void \hyperlink{rgb2yuv_8c_aae0cea8e9df662fcb538c679a4049045}{R\+G\+B2\+Y\+U\+V\+\_\+destroy\+Table} ()
+\begin{DoxyCompactList}\small\item\em Free de memory of R\+G\+B2\+Y\+UV. \end{DoxyCompactList}\item 
+void \hyperlink{rgb2yuv_8c_a076be3570ea0ec2aba5811ee0c609361}{R\+G\+B2\+Y\+U\+V\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Init the R\+G\+B2\+Y\+UV. \end{DoxyCompactList}\item 
+void \hyperlink{rgb2yuv_8c_ab2b3287a0417bedece40b4bcc665265c}{R\+G\+B2\+Y\+U\+V\+\_\+create\+Table} ()
+\begin{DoxyCompactList}\small\item\em \+: Calculate values for create a generic table \end{DoxyCompactList}\item 
+void \hyperlink{rgb2yuv_8c_ad94bf56e9292976bbfdd28cb949a94fd}{R\+G\+B2\+Y\+U\+V\+\_\+print\+Y\+UV} (struct \hyperlink{struct_y_u_v}{Y\+UV} $\ast$yuv)
+\begin{DoxyCompactList}\small\item\em Print the struct \hyperlink{struct_y_u_v}{Y\+UV}. \end{DoxyCompactList}\item 
+void \hyperlink{rgb2yuv_8c_a1c5da998be57be65228dbff14e0a9375}{R\+G\+B2\+Y\+U\+V\+\_\+test} (void)
+\begin{DoxyCompactList}\small\item\em Test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{rgb2yuv_8c_af73ed8a1dc439668c497a41a38b5bddf}{M\+A\+X\+I\+M\+U\+N\+\_\+\+R\+GB} = 255
+\item 
+struct \hyperlink{struct_y_u_v}{Y\+UV} $\ast$ \hyperlink{rgb2yuv_8c_ae6bcabd09da17a93dcba1556dae20720}{L\+U\+T\+\_\+\+R\+G\+B2\+Y\+UV} \mbox{[}64\mbox{]}\mbox{[}64\mbox{]}\mbox{[}64\mbox{]}
+\item 
+int \hyperlink{rgb2yuv_8c_aaae0c312320c8f59fb2b072d84dcbc38}{is\+Init\+Table\+Y\+UV}
+\item 
+pthread\+\_\+mutex\+\_\+t \hyperlink{rgb2yuv_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}{mutex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{rgb2yuv_8c_a27570a02b90c39f6de2579bb79e5462f}\label{rgb2yuv_8c_a27570a02b90c39f6de2579bb79e5462f}} 
+\index{rgb2yuv.\+c@{rgb2yuv.\+c}!print\+\_\+status\+\_\+\+H\+SV@{print\+\_\+status\+\_\+\+H\+SV}}
+\index{print\+\_\+status\+\_\+\+H\+SV@{print\+\_\+status\+\_\+\+H\+SV}!rgb2yuv.\+c@{rgb2yuv.\+c}}
+\subsubsection{\texorpdfstring{print\+\_\+status\+\_\+\+H\+S\+V()}{print\_status\_HSV()}}
+{\footnotesize\ttfamily void print\+\_\+status\+\_\+\+H\+SV (\begin{DoxyParamCaption}\item[{unsigned long}]{status }\end{DoxyParamCaption})}
+
+
+
+Function to print unsiged int in binary. 
+
+\mbox{\Hypertarget{rgb2yuv_8c_ab2b3287a0417bedece40b4bcc665265c}\label{rgb2yuv_8c_ab2b3287a0417bedece40b4bcc665265c}} 
+\index{rgb2yuv.\+c@{rgb2yuv.\+c}!R\+G\+B2\+Y\+U\+V\+\_\+create\+Table@{R\+G\+B2\+Y\+U\+V\+\_\+create\+Table}}
+\index{R\+G\+B2\+Y\+U\+V\+\_\+create\+Table@{R\+G\+B2\+Y\+U\+V\+\_\+create\+Table}!rgb2yuv.\+c@{rgb2yuv.\+c}}
+\subsubsection{\texorpdfstring{R\+G\+B2\+Y\+U\+V\+\_\+create\+Table()}{RGB2YUV\_createTable()}}
+{\footnotesize\ttfamily void R\+G\+B2\+Y\+U\+V\+\_\+create\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\+: Calculate values for create a generic table 
+
+Create a generic translate R\+G\+B2\+Y\+UV table with resolution of 6bits (64x64x64) \mbox{\Hypertarget{rgb2yuv_8c_aae0cea8e9df662fcb538c679a4049045}\label{rgb2yuv_8c_aae0cea8e9df662fcb538c679a4049045}} 
+\index{rgb2yuv.\+c@{rgb2yuv.\+c}!R\+G\+B2\+Y\+U\+V\+\_\+destroy\+Table@{R\+G\+B2\+Y\+U\+V\+\_\+destroy\+Table}}
+\index{R\+G\+B2\+Y\+U\+V\+\_\+destroy\+Table@{R\+G\+B2\+Y\+U\+V\+\_\+destroy\+Table}!rgb2yuv.\+c@{rgb2yuv.\+c}}
+\subsubsection{\texorpdfstring{R\+G\+B2\+Y\+U\+V\+\_\+destroy\+Table()}{RGB2YUV\_destroyTable()}}
+{\footnotesize\ttfamily void R\+G\+B2\+Y\+U\+V\+\_\+destroy\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Free de memory of R\+G\+B2\+Y\+UV. 
+
+\mbox{\Hypertarget{rgb2yuv_8c_a076be3570ea0ec2aba5811ee0c609361}\label{rgb2yuv_8c_a076be3570ea0ec2aba5811ee0c609361}} 
+\index{rgb2yuv.\+c@{rgb2yuv.\+c}!R\+G\+B2\+Y\+U\+V\+\_\+init@{R\+G\+B2\+Y\+U\+V\+\_\+init}}
+\index{R\+G\+B2\+Y\+U\+V\+\_\+init@{R\+G\+B2\+Y\+U\+V\+\_\+init}!rgb2yuv.\+c@{rgb2yuv.\+c}}
+\subsubsection{\texorpdfstring{R\+G\+B2\+Y\+U\+V\+\_\+init()}{RGB2YUV\_init()}}
+{\footnotesize\ttfamily void R\+G\+B2\+Y\+U\+V\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Init the R\+G\+B2\+Y\+UV. 
+
+\mbox{\Hypertarget{rgb2yuv_8c_ad94bf56e9292976bbfdd28cb949a94fd}\label{rgb2yuv_8c_ad94bf56e9292976bbfdd28cb949a94fd}} 
+\index{rgb2yuv.\+c@{rgb2yuv.\+c}!R\+G\+B2\+Y\+U\+V\+\_\+print\+Y\+UV@{R\+G\+B2\+Y\+U\+V\+\_\+print\+Y\+UV}}
+\index{R\+G\+B2\+Y\+U\+V\+\_\+print\+Y\+UV@{R\+G\+B2\+Y\+U\+V\+\_\+print\+Y\+UV}!rgb2yuv.\+c@{rgb2yuv.\+c}}
+\subsubsection{\texorpdfstring{R\+G\+B2\+Y\+U\+V\+\_\+print\+Y\+U\+V()}{RGB2YUV\_printYUV()}}
+{\footnotesize\ttfamily void R\+G\+B2\+Y\+U\+V\+\_\+print\+Y\+UV (\begin{DoxyParamCaption}\item[{struct \hyperlink{struct_y_u_v}{Y\+UV} $\ast$}]{yuv }\end{DoxyParamCaption})}
+
+
+
+Print the struct \hyperlink{struct_y_u_v}{Y\+UV}. 
+
+\mbox{\Hypertarget{rgb2yuv_8c_a1c5da998be57be65228dbff14e0a9375}\label{rgb2yuv_8c_a1c5da998be57be65228dbff14e0a9375}} 
+\index{rgb2yuv.\+c@{rgb2yuv.\+c}!R\+G\+B2\+Y\+U\+V\+\_\+test@{R\+G\+B2\+Y\+U\+V\+\_\+test}}
+\index{R\+G\+B2\+Y\+U\+V\+\_\+test@{R\+G\+B2\+Y\+U\+V\+\_\+test}!rgb2yuv.\+c@{rgb2yuv.\+c}}
+\subsubsection{\texorpdfstring{R\+G\+B2\+Y\+U\+V\+\_\+test()}{RGB2YUV\_test()}}
+{\footnotesize\ttfamily void R\+G\+B2\+Y\+U\+V\+\_\+test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Test. 
+
+\mbox{\Hypertarget{rgb2yuv_8c_a3a13eec5805909b2257e309f187a8d67}\label{rgb2yuv_8c_a3a13eec5805909b2257e309f187a8d67}} 
+\index{rgb2yuv.\+c@{rgb2yuv.\+c}!rgb2yuv\+\_\+wiki@{rgb2yuv\+\_\+wiki}}
+\index{rgb2yuv\+\_\+wiki@{rgb2yuv\+\_\+wiki}!rgb2yuv.\+c@{rgb2yuv.\+c}}
+\subsubsection{\texorpdfstring{rgb2yuv\+\_\+wiki()}{rgb2yuv\_wiki()}}
+{\footnotesize\ttfamily void rgb2yuv\+\_\+wiki (\begin{DoxyParamCaption}\item[{double}]{r,  }\item[{double}]{g,  }\item[{double}]{b,  }\item[{double $\ast$}]{Y,  }\item[{double $\ast$}]{U,  }\item[{double $\ast$}]{V }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rgb2yuv_8c_ae80eb39e10fb510ac3d5be1c81671f0d}\label{rgb2yuv_8c_ae80eb39e10fb510ac3d5be1c81671f0d}} 
+\index{rgb2yuv.\+c@{rgb2yuv.\+c}!yuv2rgb@{yuv2rgb}}
+\index{yuv2rgb@{yuv2rgb}!rgb2yuv.\+c@{rgb2yuv.\+c}}
+\subsubsection{\texorpdfstring{yuv2rgb()}{yuv2rgb()}}
+{\footnotesize\ttfamily void yuv2rgb (\begin{DoxyParamCaption}\item[{double}]{Y,  }\item[{double}]{U,  }\item[{double}]{V,  }\item[{double $\ast$}]{r,  }\item[{double $\ast$}]{g,  }\item[{double $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Returns the translation from \hyperlink{struct_y_u_v}{Y\+UV} to R\+GB. 
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{rgb2yuv_8c_aaae0c312320c8f59fb2b072d84dcbc38}\label{rgb2yuv_8c_aaae0c312320c8f59fb2b072d84dcbc38}} 
+\index{rgb2yuv.\+c@{rgb2yuv.\+c}!is\+Init\+Table\+Y\+UV@{is\+Init\+Table\+Y\+UV}}
+\index{is\+Init\+Table\+Y\+UV@{is\+Init\+Table\+Y\+UV}!rgb2yuv.\+c@{rgb2yuv.\+c}}
+\subsubsection{\texorpdfstring{is\+Init\+Table\+Y\+UV}{isInitTableYUV}}
+{\footnotesize\ttfamily int is\+Init\+Table\+Y\+UV}
+
+\mbox{\Hypertarget{rgb2yuv_8c_ae6bcabd09da17a93dcba1556dae20720}\label{rgb2yuv_8c_ae6bcabd09da17a93dcba1556dae20720}} 
+\index{rgb2yuv.\+c@{rgb2yuv.\+c}!L\+U\+T\+\_\+\+R\+G\+B2\+Y\+UV@{L\+U\+T\+\_\+\+R\+G\+B2\+Y\+UV}}
+\index{L\+U\+T\+\_\+\+R\+G\+B2\+Y\+UV@{L\+U\+T\+\_\+\+R\+G\+B2\+Y\+UV}!rgb2yuv.\+c@{rgb2yuv.\+c}}
+\subsubsection{\texorpdfstring{L\+U\+T\+\_\+\+R\+G\+B2\+Y\+UV}{LUT\_RGB2YUV}}
+{\footnotesize\ttfamily struct \hyperlink{struct_y_u_v}{Y\+UV}$\ast$ L\+U\+T\+\_\+\+R\+G\+B2\+Y\+UV\mbox{[}64\mbox{]}\mbox{[}64\mbox{]}\mbox{[}64\mbox{]}}
+
+\mbox{\Hypertarget{rgb2yuv_8c_af73ed8a1dc439668c497a41a38b5bddf}\label{rgb2yuv_8c_af73ed8a1dc439668c497a41a38b5bddf}} 
+\index{rgb2yuv.\+c@{rgb2yuv.\+c}!M\+A\+X\+I\+M\+U\+N\+\_\+\+R\+GB@{M\+A\+X\+I\+M\+U\+N\+\_\+\+R\+GB}}
+\index{M\+A\+X\+I\+M\+U\+N\+\_\+\+R\+GB@{M\+A\+X\+I\+M\+U\+N\+\_\+\+R\+GB}!rgb2yuv.\+c@{rgb2yuv.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+X\+I\+M\+U\+N\+\_\+\+R\+GB}{MAXIMUN\_RGB}}
+{\footnotesize\ttfamily const int M\+A\+X\+I\+M\+U\+N\+\_\+\+R\+GB = 255}
+
+\mbox{\Hypertarget{rgb2yuv_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}\label{rgb2yuv_8c_a4acff8232e4aec9cd5c6dc200ac55ef3}} 
+\index{rgb2yuv.\+c@{rgb2yuv.\+c}!mutex@{mutex}}
+\index{mutex@{mutex}!rgb2yuv.\+c@{rgb2yuv.\+c}}
+\subsubsection{\texorpdfstring{mutex}{mutex}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t mutex}
+

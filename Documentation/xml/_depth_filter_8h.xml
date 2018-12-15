@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_depth_filter_8h" kind="file" language="C++">
+    <compoundname>DepthFilter.h</compoundname>
+    <includes local="no">opencv2/opencv.hpp</includes>
+    <includes local="no">list</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">iostream</includes>
+    <includedby refid="_depth_foreground_segmentator_8h" local="no">DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h</includedby>
+    <includedby refid="_depth_filter_8cpp" local="yes">DeepLearningSuite/libs/depthLib/DepthFilter.cpp</includedby>
+    <incdepgraph>
+      <node id="5540">
+        <label>list</label>
+      </node>
+      <node id="5539">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="5538">
+        <label>DeepLearningSuite/libs/depthLib/DepthFilter.h</label>
+        <link refid="_depth_filter_8h"/>
+        <childnode refid="5539" relation="include">
+        </childnode>
+        <childnode refid="5540" relation="include">
+        </childnode>
+        <childnode refid="5541" relation="include">
+        </childnode>
+        <childnode refid="5542" relation="include">
+        </childnode>
+      </node>
+      <node id="5542">
+        <label>iostream</label>
+      </node>
+      <node id="5541">
+        <label>mutex</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5545">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.cpp</label>
+        <link refid="_depth_foreground_segmentator_8cpp"/>
+      </node>
+      <node id="5544">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DepthForegroundSegmentator.h</label>
+        <link refid="_depth_foreground_segmentator_8h"/>
+        <childnode refid="5545" relation="include">
+        </childnode>
+        <childnode refid="5546" relation="include">
+        </childnode>
+      </node>
+      <node id="5543">
+        <label>DeepLearningSuite/libs/depthLib/DepthFilter.h</label>
+        <link refid="_depth_filter_8h"/>
+        <childnode refid="5544" relation="include">
+        </childnode>
+        <childnode refid="5547" relation="include">
+        </childnode>
+      </node>
+      <node id="5547">
+        <label>DeepLearningSuite/libs/depthLib/DepthFilter.cpp</label>
+        <link refid="_depth_filter_8cpp"/>
+      </node>
+      <node id="5546">
+        <label>DeepLearningSuite/SampleGenerationApp/generator.cpp</label>
+        <link refid="generator_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classjderobot_1_1_depth_filter" prot="public">jderobot::DepthFilter</innerclass>
+    <innernamespace refid="namespacejderobot">jderobot</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>DepthFilter.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>04/01/2014</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>frivas</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DEPTHFILTER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEPTHFILTER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/opencv.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;list&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacejderobot" kindref="compound">jderobot</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classjderobot_1_1_depth_filter" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classjderobot_1_1_depth_filter" kindref="compound">DepthFilter</ref><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classjderobot_1_1_depth_filter_1afd0b86c3f0bf4328025ee4f92934f564" kindref="member">DepthFilter</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>buffSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>erodeSize,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>threshold);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classjderobot_1_1_depth_filter_1afd0b86c3f0bf4328025ee4f92934f564" kindref="member">DepthFilter</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1a6bc39bb21bc8a8685e910ddbc70bef20" kindref="member">~DepthFilter</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1adc334eab73132c4ae1f44da6db02ae70" kindref="member">update</ref>(cv::Mat<sp/>imageIn,<sp/>cv::Mat&amp;<sp/>imageOut);</highlight></codeline>
+<codeline lineno="24" refid="classjderobot_1_1_depth_filter_1a0906e79126a1447526a40fe2345d7653" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1a0906e79126a1447526a40fe2345d7653" kindref="member">getBufferSize</ref>(){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;buffSize;};</highlight></codeline>
+<codeline lineno="25" refid="classjderobot_1_1_depth_filter_1a619b72f8bded1c3ea8e3a02f2bcb21ec" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1a619b72f8bded1c3ea8e3a02f2bcb21ec" kindref="member">setBufferSize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size){<sp/>this-&gt;buffSize=size;};</highlight></codeline>
+<codeline lineno="26" refid="classjderobot_1_1_depth_filter_1a6ce70c6b569e38f4bf95037fc32e9474" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1a6ce70c6b569e38f4bf95037fc32e9474" kindref="member">getErodeSize</ref>(){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;erodeSize;};</highlight></codeline>
+<codeline lineno="27" refid="classjderobot_1_1_depth_filter_1a9e8d63b72611be1fca6913241c162889" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1a9e8d63b72611be1fca6913241c162889" kindref="member">setErodeSize</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>size){<sp/>this-&gt;erodeSize=size;};</highlight></codeline>
+<codeline lineno="28" refid="classjderobot_1_1_depth_filter_1a47fc6768210b2b11df536729c04a23cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1a47fc6768210b2b11df536729c04a23cb" kindref="member">getThreshold</ref>(){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;threshold;};</highlight></codeline>
+<codeline lineno="29" refid="classjderobot_1_1_depth_filter_1af7ddc46805bded3d3f8ad24bc866268c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1af7ddc46805bded3d3f8ad24bc866268c" kindref="member">setThreshold</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value){this-&gt;threshold=value;};</highlight></codeline>
+<codeline lineno="30" refid="classjderobot_1_1_depth_filter_1abb7692e32727b32edebb1f01601dfbe7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1abb7692e32727b32edebb1f01601dfbe7" kindref="member">setFilterType</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value){this-&gt;type=value;};</highlight></codeline>
+<codeline lineno="31" refid="classjderobot_1_1_depth_filter_1a5d0a063ea9641f5bcf3dd71c3d45609f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1a5d0a063ea9641f5bcf3dd71c3d45609f" kindref="member">getFilterType</ref>(){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;type;};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1a89460a33c77663365cdaac29f3e06e9a" kindref="member">clear</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1a3ec6d1a0731ddbc235eacff6bae7970c" kindref="member">getMeanImage</ref>(cv::Mat&amp;<sp/>out);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1a726764bf1ca8f8f765507b32870ed8ee" kindref="member">getDiffImage</ref>(cv::Mat&amp;<sp/>out);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1a6667315ceee0a6abba42840d29b848d3" kindref="member">getFistMask</ref>(cv::Mat&amp;<sp/>out);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classjderobot_1_1_depth_filter_1a1e69ca9fd83391b8fb89d4ae4df35262" kindref="member">getSecondMask</ref>(cv::Mat&amp;<sp/>out);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type;<sp/></highlight><highlight class="comment">//tipo<sp/>de<sp/>filtro<sp/>a<sp/>aplicar</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>buffSize;<sp/></highlight><highlight class="comment">//tamaño<sp/>del<sp/>buffer<sp/>de<sp/>imágenes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>std::list&lt;cv::Mat&gt;<sp/>buffer;<sp/></highlight><highlight class="comment">//buffer<sp/>de<sp/>imágenes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>std::list&lt;cv::Mat&gt;<sp/>bufferGray;<sp/></highlight><highlight class="comment">//buffer<sp/>de<sp/>imágenes<sp/>en<sp/>escala<sp/>de<sp/>grises</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>erodeSize;<sp/></highlight><highlight class="comment">//numero<sp/>de<sp/>erosiones<sp/>a<sp/>realizar<sp/>en<sp/>el<sp/>filtrado</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>threshold;<sp/></highlight><highlight class="comment">//umbral<sp/>para<sp/>el<sp/>filtrado</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="rgb2hsv_8c_1a4acff8232e4aec9cd5c6dc200ac55ef3" kindref="member">std::mutex</ref><sp/>m;<sp/></highlight><highlight class="comment">//control<sp/>de<sp/>datos<sp/>compartidos</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//callbacks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>filterMeanNonZero(cv::Mat<sp/>imageIn,<sp/>cv::Mat&amp;<sp/>imageOut);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>filterDakkak(cv::Mat<sp/>imageIn,<sp/>cv::Mat&amp;<sp/>imageOut);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>filterMeanNonMotion3Channels(cv::Mat<sp/>imageIn,<sp/>cv::Mat&amp;<sp/>imageOut);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>filterMeanNonMotion1Channels(cv::Mat<sp/>imageIn,<sp/>cv::Mat&amp;<sp/>imageOut);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//tempImages</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>globalMeanImage;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>globalDiffImage;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>globalFirstMask;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>globalSecondMask;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>namespace<sp/>jderobot<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>DEPTHFILTER_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/libs/depthLib/DepthFilter.h"/>
+  </compounddef>
+</doxygen>

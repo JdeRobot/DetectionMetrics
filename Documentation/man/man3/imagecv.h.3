@@ -1,0 +1,81 @@
+.TH "DeepLearningSuite/libs/utils/colorspaces/imagecv.h" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DeepLearningSuite/libs/utils/colorspaces/imagecv.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <opencv2/core/core\&.hpp>\fP
+.br
+\fC#include <exception>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <memory>\fP
+.br
+\fC#include 'uncopyable\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBcolorspaces::Image\fP"
+.br
+.ti -1c
+.RI "class \fBcolorspaces::Image::FormatMismatch\fP"
+.br
+.ti -1c
+.RI "class \fBcolorspaces::Image::NoConversion\fP"
+.br
+.ti -1c
+.RI "class \fBcolorspaces::Image::Format\fP"
+.br
+.ti -1c
+.RI "class \fBcolorspaces::ImageRGB8\fP"
+.br
+.ti -1c
+.RI "class \fBcolorspaces::ImageYUY2\fP"
+.br
+.ti -1c
+.RI "class \fBcolorspaces::ImageGRAY8\fP"
+.br
+.ti -1c
+.RI "class \fBcolorspaces::ImageHSV8\fP"
+.br
+.ti -1c
+.RI "class \fBcolorspaces::ImageYCRCB\fP"
+.br
+.ti -1c
+.RI "class \fBcolorspaces::ImageNV21\fP"
+.br
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBcolorspaces\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &stream, const \fBcolorspaces::Image::Format\fP &fmt)"
+.br
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &stream, const \fBcolorspaces::Image\fP &img)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "std::ostream& operator<< (std::ostream & stream, const \fBcolorspaces::Image::Format\fP & fmt)"
+Insert a format in an output stream\&. Only debugging, output could be truncated 
+.SS "std::ostream& operator<< (std::ostream & stream, const \fBcolorspaces::Image\fP & img)"
+Insert an image in an output stream\&. Only debugging, output could be truncated 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

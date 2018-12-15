@@ -1,0 +1,357 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_class_statistics" kind="struct" language="C++" prot="public">
+    <compoundname>ClassStatistics</compoundname>
+    <includes refid="_class_statistics_8h" local="no">ClassStatistics.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_class_statistics_1a4f06e2d800fde06ed4f6b77547d8dc06" prot="public" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ClassStatistics::classID</definition>
+        <argsstring></argsstring>
+        <name>classID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="31" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_class_statistics_1af869c91eda0b044c899797a3b10153ca" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ClassStatistics::numGroundTruthsReg</definition>
+        <argsstring></argsstring>
+        <name>numGroundTruthsReg</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="32" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="struct_class_statistics_1ae8fc780d72aca26b4dfc5af5992cb41b" compoundref="_class_statistics_8cpp" startline="155" endline="172">getRecallArray</referencedby>
+        <referencedby refid="class_global_stats_1a2c29f0dbc05606ac58ae49a1dedeef78" compoundref="_global_stats_8cpp" startline="29" endline="43">GlobalStats::addGroundTruth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_class_statistics_1a016df1ad61f150bb92d7d987488a4741" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ClassStatistics::numGroundTruthsIg</definition>
+        <argsstring></argsstring>
+        <name>numGroundTruthsIg</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="33" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="class_global_stats_1a2c29f0dbc05606ac58ae49a1dedeef78" compoundref="_global_stats_8cpp" startline="29" endline="43">GlobalStats::addGroundTruth</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_class_statistics_1ac0495687ef1d08720c41612afbf49730" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt;double&gt; ClassStatistics::iou</definition>
+        <argsstring></argsstring>
+        <name>iou</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="34" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="struct_class_statistics_1a22377aafdf557f655f500783fc5dc77f" compoundref="_class_statistics_8cpp" startline="23" endline="25">getMeanIOU</referencedby>
+        <referencedby refid="class_global_stats_1a07078ad8a5909da138bb7d0571f461c3" compoundref="_global_stats_8cpp" startline="94" endline="103">GlobalStats::addIOU</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; ClassStatistics::truePositives</definition>
+        <argsstring></argsstring>
+        <name>truePositives</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="35" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="struct_class_statistics_1a33a90034e90af43aa97e1b46e9c8567f" compoundref="_class_statistics_8cpp" startline="114" endline="147">getPrecisionArray</referencedby>
+        <referencedby refid="struct_class_statistics_1ae8fc780d72aca26b4dfc5af5992cb41b" compoundref="_class_statistics_8cpp" startline="155" endline="172">getRecallArray</referencedby>
+        <referencedby refid="class_global_stats_1a44ef2427549b0eb26c755b0a2e9a5ae9" compoundref="_global_stats_8cpp" startline="10" endline="27">GlobalStats::addIgnore</referencedby>
+        <referencedby refid="class_global_stats_1a43e9e950d3ab11dd07f7fe3ca76f91ee" compoundref="_global_stats_8cpp" startline="45" endline="61">GlobalStats::addTruePositive</referencedby>
+        <referencedby refid="class_global_stats_1ad3b7ccc1ad4191394357d7280b04d13c" compoundref="_global_stats_8cpp" startline="63" endline="81">GlobalStats::addFalsePositive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_class_statistics_1a0193beb26acd9dab5f7a1709b50c353c" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; ClassStatistics::falsePositives</definition>
+        <argsstring></argsstring>
+        <name>falsePositives</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="36" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="struct_class_statistics_1a33a90034e90af43aa97e1b46e9c8567f" compoundref="_class_statistics_8cpp" startline="114" endline="147">getPrecisionArray</referencedby>
+        <referencedby refid="class_global_stats_1a44ef2427549b0eb26c755b0a2e9a5ae9" compoundref="_global_stats_8cpp" startline="10" endline="27">GlobalStats::addIgnore</referencedby>
+        <referencedby refid="class_global_stats_1a43e9e950d3ab11dd07f7fe3ca76f91ee" compoundref="_global_stats_8cpp" startline="45" endline="61">GlobalStats::addTruePositive</referencedby>
+        <referencedby refid="class_global_stats_1ad3b7ccc1ad4191394357d7280b04d13c" compoundref="_global_stats_8cpp" startline="63" endline="81">GlobalStats::addFalsePositive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_class_statistics_1a13f50f2fa57bf7de930955cd149667b6" prot="public" static="no" mutable="no">
+        <type>std::multiset&lt; double &gt;</type>
+        <definition>std::multiset&lt;double&gt; ClassStatistics::confScores</definition>
+        <argsstring></argsstring>
+        <name>confScores</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="37" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="class_global_stats_1a44ef2427549b0eb26c755b0a2e9a5ae9" compoundref="_global_stats_8cpp" startline="10" endline="27">GlobalStats::addIgnore</referencedby>
+        <referencedby refid="class_global_stats_1a43e9e950d3ab11dd07f7fe3ca76f91ee" compoundref="_global_stats_8cpp" startline="45" endline="61">GlobalStats::addTruePositive</referencedby>
+        <referencedby refid="class_global_stats_1ad3b7ccc1ad4191394357d7280b04d13c" compoundref="_global_stats_8cpp" startline="63" endline="81">GlobalStats::addFalsePositive</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_class_statistics_1aa0b08fee8daa548214f4bcc3b2c5cc86" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ClassStatistics::nSamples</definition>
+        <argsstring></argsstring>
+        <name>nSamples</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="39" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_class_statistics_1a5485816a475a6cc554c2d9e5b442c96d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ClassStatistics::falseNegatives</definition>
+        <argsstring></argsstring>
+        <name>falseNegatives</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="42" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="class_global_stats_1a667d0c7293eadc152d9de17aa1b6d40e" compoundref="_global_stats_8cpp" startline="83" endline="92">GlobalStats::addFalseNegative</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_class_statistics_1a8b268ca669e6d982c8ce409330cf08f9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ClassStatistics::trueNegatives</definition>
+        <argsstring></argsstring>
+        <name>trueNegatives</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="43" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_class_statistics_1ac5a27388db5ca1d9283096020a9b1aeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ClassStatistics::ClassStatistics</definition>
+        <argsstring>()</argsstring>
+        <name>ClassStatistics</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.cpp" bodystart="13" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_statistics_1a0434f553802cd8ea436164281184c8e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ClassStatistics::ClassStatistics</definition>
+        <argsstring>(const std::string &amp;classID)</argsstring>
+        <name>ClassStatistics</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_statistics_1a22377aafdf557f655f500783fc5dc77f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ClassStatistics::getMeanIOU</definition>
+        <argsstring>() const</argsstring>
+        <name>getMeanIOU</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.cpp" bodystart="23" bodyend="25"/>
+        <references refid="struct_class_statistics_1ac0495687ef1d08720c41612afbf49730" compoundref="_class_statistics_8h" startline="34">iou</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_statistics_1af97e1c498a387e6762be460e61d0e610" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ClassStatistics::getAveragePrecision</definition>
+        <argsstring>(std::vector&lt; double &gt; recallThrs) const</argsstring>
+        <name>getAveragePrecision</name>
+        <param>
+          <type>std::vector&lt; double &gt;</type>
+          <declname>recallThrs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.cpp" bodystart="27" bodyend="42"/>
+        <references refid="struct_class_statistics_1aa6b024d72444ea2b8d71f5f2a416655c" compoundref="_class_statistics_8cpp" startline="45" endline="92">getPrecisionForDiffRecallThrs</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_statistics_1a33a90034e90af43aa97e1b46e9c8567f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt; double &gt; ClassStatistics::getPrecisionArray</definition>
+        <argsstring>() const</argsstring>
+        <name>getPrecisionArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.cpp" bodystart="114" bodyend="147"/>
+        <references refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" compoundref="_class_statistics_8h" startline="35">truePositives</references>
+        <references refid="struct_class_statistics_1a0193beb26acd9dab5f7a1709b50c353c" compoundref="_class_statistics_8h" startline="36">falsePositives</references>
+        <references refid="struct_class_statistics_1a66418a700e12730feb6ad54d81ba0a8e" compoundref="_class_statistics_8cpp" startline="17" endline="21">divide</references>
+        <referencedby refid="struct_class_statistics_1a3fa2067c657166bcc5d6719575e64ddc" compoundref="_class_statistics_8cpp" startline="94" endline="112">getPrecisionArrayOp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_statistics_1a3fa2067c657166bcc5d6719575e64ddc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt; double &gt; ClassStatistics::getPrecisionArrayOp</definition>
+        <argsstring>() const</argsstring>
+        <name>getPrecisionArrayOp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.cpp" bodystart="94" bodyend="112"/>
+        <references refid="struct_class_statistics_1a33a90034e90af43aa97e1b46e9c8567f" compoundref="_class_statistics_8cpp" startline="114" endline="147">getPrecisionArray</references>
+        <referencedby refid="struct_class_statistics_1aa6b024d72444ea2b8d71f5f2a416655c" compoundref="_class_statistics_8cpp" startline="45" endline="92">getPrecisionForDiffRecallThrs</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_statistics_1aa6b024d72444ea2b8d71f5f2a416655c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt; double &gt; ClassStatistics::getPrecisionForDiffRecallThrs</definition>
+        <argsstring>(std::vector&lt; double &gt; recallThrs) const</argsstring>
+        <name>getPrecisionForDiffRecallThrs</name>
+        <param>
+          <type>std::vector&lt; double &gt;</type>
+          <declname>recallThrs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.cpp" bodystart="45" bodyend="92"/>
+        <references refid="struct_class_statistics_1a3fa2067c657166bcc5d6719575e64ddc" compoundref="_class_statistics_8cpp" startline="94" endline="112">getPrecisionArrayOp</references>
+        <references refid="struct_class_statistics_1ae8fc780d72aca26b4dfc5af5992cb41b" compoundref="_class_statistics_8cpp" startline="155" endline="172">getRecallArray</references>
+        <referencedby refid="struct_class_statistics_1af97e1c498a387e6762be460e61d0e610" compoundref="_class_statistics_8cpp" startline="27" endline="42">getAveragePrecision</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_statistics_1ae8fc780d72aca26b4dfc5af5992cb41b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; double &gt;</type>
+        <definition>std::vector&lt; double &gt; ClassStatistics::getRecallArray</definition>
+        <argsstring>() const</argsstring>
+        <name>getRecallArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.cpp" bodystart="155" bodyend="172"/>
+        <references refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" compoundref="_class_statistics_8h" startline="35">truePositives</references>
+        <references refid="struct_class_statistics_1af869c91eda0b044c899797a3b10153ca" compoundref="_class_statistics_8h" startline="32">numGroundTruthsReg</references>
+        <referencedby refid="struct_class_statistics_1aa6b024d72444ea2b8d71f5f2a416655c" compoundref="_class_statistics_8cpp" startline="45" endline="92">getPrecisionForDiffRecallThrs</referencedby>
+        <referencedby refid="struct_class_statistics_1a4b189bb3822f02cca79dbe1b59fce7b5" compoundref="_class_statistics_8cpp" startline="149" endline="153">getRecall</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_statistics_1a4b189bb3822f02cca79dbe1b59fce7b5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ClassStatistics::getRecall</definition>
+        <argsstring>() const</argsstring>
+        <name>getRecall</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.cpp" bodystart="149" bodyend="153"/>
+        <references refid="struct_class_statistics_1ae8fc780d72aca26b4dfc5af5992cb41b" compoundref="_class_statistics_8cpp" startline="155" endline="172">getRecallArray</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="struct_class_statistics_1a66418a700e12730feb6ad54d81ba0a8e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ClassStatistics::divide</definition>
+        <argsstring>(double x, double y)</argsstring>
+        <name>divide</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.cpp" bodystart="17" bodyend="21"/>
+        <referencedby refid="struct_class_statistics_1a33a90034e90af43aa97e1b46e9c8567f" compoundref="_class_statistics_8cpp" startline="114" endline="147">getPrecisionArray</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/ClassStatistics.h" bodystart="17" bodyend="46"/>
+    <listofallmembers>
+      <member refid="struct_class_statistics_1a4f06e2d800fde06ed4f6b77547d8dc06" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>classID</name></member>
+      <member refid="struct_class_statistics_1ac5a27388db5ca1d9283096020a9b1aeb" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>ClassStatistics</name></member>
+      <member refid="struct_class_statistics_1a0434f553802cd8ea436164281184c8e7" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>ClassStatistics</name></member>
+      <member refid="struct_class_statistics_1a13f50f2fa57bf7de930955cd149667b6" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>confScores</name></member>
+      <member refid="struct_class_statistics_1a66418a700e12730feb6ad54d81ba0a8e" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>divide</name></member>
+      <member refid="struct_class_statistics_1a5485816a475a6cc554c2d9e5b442c96d" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>falseNegatives</name></member>
+      <member refid="struct_class_statistics_1a0193beb26acd9dab5f7a1709b50c353c" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>falsePositives</name></member>
+      <member refid="struct_class_statistics_1af97e1c498a387e6762be460e61d0e610" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>getAveragePrecision</name></member>
+      <member refid="struct_class_statistics_1a22377aafdf557f655f500783fc5dc77f" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>getMeanIOU</name></member>
+      <member refid="struct_class_statistics_1a33a90034e90af43aa97e1b46e9c8567f" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>getPrecisionArray</name></member>
+      <member refid="struct_class_statistics_1a3fa2067c657166bcc5d6719575e64ddc" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>getPrecisionArrayOp</name></member>
+      <member refid="struct_class_statistics_1aa6b024d72444ea2b8d71f5f2a416655c" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>getPrecisionForDiffRecallThrs</name></member>
+      <member refid="struct_class_statistics_1a4b189bb3822f02cca79dbe1b59fce7b5" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>getRecall</name></member>
+      <member refid="struct_class_statistics_1ae8fc780d72aca26b4dfc5af5992cb41b" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>getRecallArray</name></member>
+      <member refid="struct_class_statistics_1ac0495687ef1d08720c41612afbf49730" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>iou</name></member>
+      <member refid="struct_class_statistics_1aa0b08fee8daa548214f4bcc3b2c5cc86" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>nSamples</name></member>
+      <member refid="struct_class_statistics_1a016df1ad61f150bb92d7d987488a4741" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>numGroundTruthsIg</name></member>
+      <member refid="struct_class_statistics_1af869c91eda0b044c899797a3b10153ca" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>numGroundTruthsReg</name></member>
+      <member refid="struct_class_statistics_1a8b268ca669e6d982c8ce409330cf08f9" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>trueNegatives</name></member>
+      <member refid="struct_class_statistics_1a07e9de84d5cda8ee5b91d54f8d8685b1" prot="public" virt="non-virtual"><scope>ClassStatistics</scope><name>truePositives</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

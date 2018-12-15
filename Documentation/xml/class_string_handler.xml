@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_string_handler" kind="class" language="C++" prot="public">
+    <compoundname>StringHandler</compoundname>
+    <includes refid="_string_handler_8h" local="no">StringHandler.h</includes>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_string_handler_1a286ea02b23cfe395c96010ce3a198803" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Out</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>static void StringHandler::split</definition>
+        <argsstring>(const std::string &amp;s, char delim, Out result)</argsstring>
+        <name>split</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>delim</declname>
+        </param>
+        <param>
+          <type>Out</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/StringHandler.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/StringHandler.h" bodystart="17" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_string_handler_1a6df77cc748896469647c0abf21cb5e92" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>static std::vector&lt;std::string&gt; StringHandler::split</definition>
+        <argsstring>(const std::string &amp;s, char delim)</argsstring>
+        <name>split</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>delim</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/StringHandler.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/StringHandler.h" bodystart="27" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/StringHandler.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/StringHandler.h" bodystart="14" bodyend="32"/>
+    <listofallmembers>
+      <member refid="class_string_handler_1a286ea02b23cfe395c96010ce3a198803" prot="private" virt="non-virtual"><scope>StringHandler</scope><name>split</name></member>
+      <member refid="class_string_handler_1a6df77cc748896469647c0abf21cb5e92" prot="public" virt="non-virtual"><scope>StringHandler</scope><name>split</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

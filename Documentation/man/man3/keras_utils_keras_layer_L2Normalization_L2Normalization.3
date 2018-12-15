@@ -1,0 +1,99 @@
+.TH "keras_utils.keras_layer_L2Normalization.L2Normalization" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+keras_utils.keras_layer_L2Normalization.L2Normalization
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Layer\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, \fBgamma_init\fP=20, kwargs)"
+.br
+.ti -1c
+.RI "def \fBbuild\fP (self, input_shape)"
+.br
+.ti -1c
+.RI "def \fBcall\fP (self, x, mask=None)"
+.br
+.ti -1c
+.RI "def \fBget_config\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBaxis\fP"
+.br
+.ti -1c
+.RI "\fBgamma_init\fP"
+.br
+.ti -1c
+.RI "\fBinput_spec\fP"
+.br
+.ti -1c
+.RI "\fBgamma\fP"
+.br
+.ti -1c
+.RI "\fBtrainable_weights\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+Performs L2 normalization on the input tensor with a learnable scaling parameter
+as described in the paper "Parsenet: Looking Wider to See Better" (see references)
+and as used in the original SSD model.
+
+Arguments:
+    gamma_init (int): The initial scaling parameter. Defaults to 20 following the
+        SSD paper.
+
+Input shape:
+    4D tensor of shape `(batch, channels, height, width)` if `dim_ordering = 'th'`
+    or `(batch, height, width, channels)` if `dim_ordering = 'tf'`.
+
+Returns:
+    The scaled tensor. Same shape as the input tensor.
+
+References:
+    http://cs.unc.edu/~wliu/papers/parsenet.pdf
+
+.fi
+.PP
+ 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def keras_utils\&.keras_layer_L2Normalization\&.L2Normalization\&.__init__ ( self,  gamma_init = \fC20\fP,  kwargs)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "def keras_utils\&.keras_layer_L2Normalization\&.L2Normalization\&.build ( self,  input_shape)"
+
+.SS "def keras_utils\&.keras_layer_L2Normalization\&.L2Normalization\&.call ( self,  x,  mask = \fCNone\fP)"
+
+.SS "def keras_utils\&.keras_layer_L2Normalization\&.L2Normalization\&.get_config ( self)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "keras_utils\&.keras_layer_L2Normalization\&.L2Normalization\&.axis"
+
+.SS "keras_utils\&.keras_layer_L2Normalization\&.L2Normalization\&.gamma"
+
+.SS "keras_utils\&.keras_layer_L2Normalization\&.L2Normalization\&.gamma_init"
+
+.SS "keras_utils\&.keras_layer_L2Normalization\&.L2Normalization\&.input_spec"
+
+.SS "keras_utils\&.keras_layer_L2Normalization\&.L2Normalization\&.trainable_weights"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

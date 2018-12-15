@@ -1,0 +1,100 @@
+.TH "colorspaces::ImageGRAY8" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+colorspaces::ImageGRAY8
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <imagecv\&.h>\fP
+.PP
+Inherits \fBcolorspaces::Image\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBImageGRAY8\fP (const int \fBwidth\fP, const int \fBheight\fP)"
+.br
+.ti -1c
+.RI "\fBImageGRAY8\fP (const int \fBwidth\fP, const int \fBheight\fP, void *const data)"
+.br
+.ti -1c
+.RI "\fBImageGRAY8\fP (const \fBImage\fP &i)"
+.br
+.ti -1c
+.RI "void \fBtoRGB8\fP (\fBImage\fP &dst) const  throw (FormatMismatch)"
+.br
+.ti -1c
+.RI "void \fBtoYUY2\fP (\fBImage\fP &dst) const  throw (FormatMismatch)"
+.br
+.ti -1c
+.RI "bool \fBwrite\fP (const std::string &filename, const std::vector< int > &params=std::vector< int >())"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBImageGRAY8\fP \fBread\fP (const std::string &filename)"
+.br
+.ti -1c
+.RI "static \fBImage\fP * \fBcreateInstance\fP (const int \fBwidth\fP, const int \fBheight\fP, void *const data)"
+.br
+.ti -1c
+.RI "static \fBImage\fP & \fBimageCvt\fP (const \fBImage\fP &src, \fBImage\fP &dst)  throw (NoConversion)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const \fBFormatPtr\fP \fBFORMAT_GRAY8\fP = \fBImage::Format::createFormat\fP('GRAY8',CV_8UC1,&\fBImageGRAY8::createInstance\fP,&\fBImageGRAY8::imageCvt\fP)"
+.br
+.ti -1c
+.RI "static const \fBFormatPtr\fP \fBFORMAT_GRAY8_Z\fP = \fBImage::Format::createFormat\fP('GRAY8_Z',CV_8UC1,&\fBImageGRAY8::createInstance\fP,&\fBImageGRAY8::imageCvt\fP)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A Gray 8 bit image 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "colorspaces::ImageGRAY8::ImageGRAY8 (const int width, const int height)"
+Constructor 
+.SS "colorspaces::ImageGRAY8::ImageGRAY8 (const int width, const int height, void *const data)"
+Constructor from user data 
+.SS "colorspaces::ImageGRAY8::ImageGRAY8 (const \fBImage\fP & i)"
+Copy constructor\&. if 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP doesn't match format a conversion will happen\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBImage\fP * colorspaces::ImageGRAY8::createInstance (const int width, const int height, void *const data)\fC [static]\fP"
+Factory method 
+.SS "\fBImage\fP & colorspaces::ImageGRAY8::imageCvt (const \fBImage\fP & src, \fBImage\fP & dst)\fBNoConversion\fP\fC [static]\fP"
+
+.SS "\fBImageGRAY8\fP colorspaces::ImageGRAY8::read (const std::string & filename)\fC [static]\fP"
+Read from a file See cv::imread for flags and params 
+.SS "void colorspaces::ImageGRAY8::toRGB8 (\fBImage\fP & dst) const\fBFormatMismatch\fP"
+Conversion methods\&. Returns a copy 
+.SS "void colorspaces::ImageGRAY8::toYUY2 (\fBImage\fP & dst) const\fBFormatMismatch\fP"
+
+.SS "bool colorspaces::ImageGRAY8::write (const std::string & filename, const std::vector< int > & params = \fCstd::vector<int>()\fP)"
+Write to a file See cv::imwrite for flags and params 
+.SH "Member Data Documentation"
+.PP 
+.SS "const \fBImage::FormatPtr\fP colorspaces::ImageGRAY8::FORMAT_GRAY8 = \fBImage::Format::createFormat\fP('GRAY8',CV_8UC1,&\fBImageGRAY8::createInstance\fP,&\fBImageGRAY8::imageCvt\fP)\fC [static]\fP"
+
+.SS "const \fBImage::FormatPtr\fP colorspaces::ImageGRAY8::FORMAT_GRAY8_Z = \fBImage::Format::createFormat\fP('GRAY8_Z',CV_8UC1,&\fBImageGRAY8::createInstance\fP,&\fBImageGRAY8::imageCvt\fP)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

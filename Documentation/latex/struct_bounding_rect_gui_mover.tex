@@ -1,0 +1,92 @@
+\hypertarget{struct_bounding_rect_gui_mover}{}\section{Bounding\+Rect\+Gui\+Mover Struct Reference}
+\label{struct_bounding_rect_gui_mover}\index{Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}}
+
+
+{\ttfamily \#include $<$Bounding\+Rect\+Gui\+Mover.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493}{Movement\+Type} \{ \hyperlink{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493abf66fc6c222bd5db76829f8b8a227202}{L\+O\+C\+A\+L\+\_\+\+M\+O\+V\+E\+M\+E\+NT}, 
+\hyperlink{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493a1703ea806817f5f686511ed4c49f6eb7}{G\+L\+O\+B\+A\+L\+\_\+\+M\+O\+V\+E\+M\+E\+NT}, 
+\hyperlink{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493a3965bc68b15cffd59d6d4cf842e0578c}{N\+O\+NE}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_bounding_rect_gui_mover_ab11a7dba1cae9cb635258daae2b161eb}{Bounding\+Rect\+Gui\+Mover} (const std\+::vector$<$ cv\+::\+Point $>$ \&points)
+\item 
+\hyperlink{struct_bounding_rect_gui_mover_aee1d69e1b9d599b692e1226f3455974f}{Bounding\+Rect\+Gui\+Mover} (const cv\+::\+Rect\+\_\+$<$ double $>$ \&rectangle)
+\item 
+std\+::vector$<$ cv\+::\+Point $>$ \hyperlink{struct_bounding_rect_gui_mover_a72ff4270c2c100aab98125ca381aab10}{get\+Points} ()
+\item 
+void \hyperlink{struct_bounding_rect_gui_mover_a86c01942e7a57a0cec7d757592b40c41}{move} (const cv\+::\+Point \&from, const cv\+::\+Point \&to, const \hyperlink{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493}{Movement\+Type} \&type)
+\item 
+cv\+::\+Rect\+\_\+$<$ double $>$ \hyperlink{struct_bounding_rect_gui_mover_a5e242d1bbc84714da0fa04b0adee0e5d}{get\+Rect} (const double scale=1)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493}\label{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493}} 
+\index{Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}!Movement\+Type@{Movement\+Type}}
+\index{Movement\+Type@{Movement\+Type}!Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}}
+\subsubsection{\texorpdfstring{Movement\+Type}{MovementType}}
+{\footnotesize\ttfamily enum \hyperlink{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493}{Bounding\+Rect\+Gui\+Mover\+::\+Movement\+Type}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+C\+A\+L\+\_\+\+M\+O\+V\+E\+M\+E\+NT@{L\+O\+C\+A\+L\+\_\+\+M\+O\+V\+E\+M\+E\+NT}!Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}}\index{Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}!L\+O\+C\+A\+L\+\_\+\+M\+O\+V\+E\+M\+E\+NT@{L\+O\+C\+A\+L\+\_\+\+M\+O\+V\+E\+M\+E\+NT}}}\mbox{\Hypertarget{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493abf66fc6c222bd5db76829f8b8a227202}\label{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493abf66fc6c222bd5db76829f8b8a227202}} 
+L\+O\+C\+A\+L\+\_\+\+M\+O\+V\+E\+M\+E\+NT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+L\+O\+B\+A\+L\+\_\+\+M\+O\+V\+E\+M\+E\+NT@{G\+L\+O\+B\+A\+L\+\_\+\+M\+O\+V\+E\+M\+E\+NT}!Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}}\index{Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}!G\+L\+O\+B\+A\+L\+\_\+\+M\+O\+V\+E\+M\+E\+NT@{G\+L\+O\+B\+A\+L\+\_\+\+M\+O\+V\+E\+M\+E\+NT}}}\mbox{\Hypertarget{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493a1703ea806817f5f686511ed4c49f6eb7}\label{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493a1703ea806817f5f686511ed4c49f6eb7}} 
+G\+L\+O\+B\+A\+L\+\_\+\+M\+O\+V\+E\+M\+E\+NT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\+O\+NE@{N\+O\+NE}!Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}}\index{Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}!N\+O\+NE@{N\+O\+NE}}}\mbox{\Hypertarget{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493a3965bc68b15cffd59d6d4cf842e0578c}\label{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493a3965bc68b15cffd59d6d4cf842e0578c}} 
+N\+O\+NE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_bounding_rect_gui_mover_ab11a7dba1cae9cb635258daae2b161eb}\label{struct_bounding_rect_gui_mover_ab11a7dba1cae9cb635258daae2b161eb}} 
+\index{Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}!Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}}
+\index{Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}!Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}}
+\subsubsection{\texorpdfstring{Bounding\+Rect\+Gui\+Mover()}{BoundingRectGuiMover()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Bounding\+Rect\+Gui\+Mover\+::\+Bounding\+Rect\+Gui\+Mover (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ cv\+::\+Point $>$ \&}]{points }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_bounding_rect_gui_mover_aee1d69e1b9d599b692e1226f3455974f}\label{struct_bounding_rect_gui_mover_aee1d69e1b9d599b692e1226f3455974f}} 
+\index{Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}!Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}}
+\index{Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}!Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}}
+\subsubsection{\texorpdfstring{Bounding\+Rect\+Gui\+Mover()}{BoundingRectGuiMover()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Bounding\+Rect\+Gui\+Mover\+::\+Bounding\+Rect\+Gui\+Mover (\begin{DoxyParamCaption}\item[{const cv\+::\+Rect\+\_\+$<$ double $>$ \&}]{rectangle }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_bounding_rect_gui_mover_a72ff4270c2c100aab98125ca381aab10}\label{struct_bounding_rect_gui_mover_a72ff4270c2c100aab98125ca381aab10}} 
+\index{Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}!get\+Points@{get\+Points}}
+\index{get\+Points@{get\+Points}!Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}}
+\subsubsection{\texorpdfstring{get\+Points()}{getPoints()}}
+{\footnotesize\ttfamily std\+::vector$<$ cv\+::\+Point $>$ Bounding\+Rect\+Gui\+Mover\+::get\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_bounding_rect_gui_mover_a5e242d1bbc84714da0fa04b0adee0e5d}\label{struct_bounding_rect_gui_mover_a5e242d1bbc84714da0fa04b0adee0e5d}} 
+\index{Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}!get\+Rect@{get\+Rect}}
+\index{get\+Rect@{get\+Rect}!Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}}
+\subsubsection{\texorpdfstring{get\+Rect()}{getRect()}}
+{\footnotesize\ttfamily cv\+::\+Rect\+\_\+$<$ double $>$ Bounding\+Rect\+Gui\+Mover\+::get\+Rect (\begin{DoxyParamCaption}\item[{const double}]{scale = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_bounding_rect_gui_mover_a86c01942e7a57a0cec7d757592b40c41}\label{struct_bounding_rect_gui_mover_a86c01942e7a57a0cec7d757592b40c41}} 
+\index{Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}!move@{move}}
+\index{move@{move}!Bounding\+Rect\+Gui\+Mover@{Bounding\+Rect\+Gui\+Mover}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Bounding\+Rect\+Gui\+Mover\+::move (\begin{DoxyParamCaption}\item[{const cv\+::\+Point \&}]{from,  }\item[{const cv\+::\+Point \&}]{to,  }\item[{const \hyperlink{struct_bounding_rect_gui_mover_a76ac02999d4012d5a8ba60853d2c6493}{Movement\+Type} \&}]{type }\end{DoxyParamCaption})}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Generation\+Utils/\hyperlink{_bounding_rect_gui_mover_8h}{Bounding\+Rect\+Gui\+Mover.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Generation\+Utils/\hyperlink{_bounding_rect_gui_mover_8cpp}{Bounding\+Rect\+Gui\+Mover.\+cpp}\end{DoxyCompactItemize}

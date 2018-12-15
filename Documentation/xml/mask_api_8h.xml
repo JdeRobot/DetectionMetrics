@@ -1,0 +1,1324 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="mask_api_8h" kind="file" language="C++">
+    <compoundname>maskApi.h</compoundname>
+    <includedby refid="mask_api_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp</includedby>
+    <includedby refid="_rle_region_8h" local="yes">DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegion.h</includedby>
+    <invincdepgraph>
+      <node id="4311">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.cpp</label>
+        <link refid="_caffe_inferencer_8cpp"/>
+      </node>
+      <node id="4260">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.cpp</label>
+        <link refid="_generic_live_reader_8cpp"/>
+      </node>
+      <node id="4304">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/OwnDatasetWriter.cpp</label>
+        <link refid="_own_dataset_writer_8cpp"/>
+      </node>
+      <node id="4307">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassBatchInferencer.h</label>
+        <link refid="_mass_batch_inferencer_8h"/>
+        <childnode refid="4308" relation="include">
+        </childnode>
+      </node>
+      <node id="4261">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.h</label>
+        <link refid="_jderobot_reader_8h"/>
+        <childnode refid="4252" relation="include">
+        </childnode>
+        <childnode refid="4262" relation="include">
+        </childnode>
+      </node>
+      <node id="4282">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/YoloDatasetReader.cpp</label>
+        <link refid="_yolo_dataset_reader_8cpp"/>
+      </node>
+      <node id="4287">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/OwnDatasetReader.h</label>
+        <link refid="_own_dataset_reader_8h"/>
+        <childnode refid="4267" relation="include">
+        </childnode>
+        <childnode refid="4288" relation="include">
+        </childnode>
+        <childnode refid="4272" relation="include">
+        </childnode>
+        <childnode refid="4274" relation="include">
+        </childnode>
+        <childnode refid="4275" relation="include">
+        </childnode>
+      </node>
+      <node id="4320">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.cpp</label>
+        <link refid="_keras_inferencer_8cpp"/>
+      </node>
+      <node id="4286">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/ImageNetDatasetReader.cpp</label>
+        <link refid="_image_net_dataset_reader_8cpp"/>
+      </node>
+      <node id="4279">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/SpinelloDatasetReader.h</label>
+        <link refid="_spinello_dataset_reader_8h"/>
+        <childnode refid="4267" relation="include">
+        </childnode>
+        <childnode refid="4280" relation="include">
+        </childnode>
+      </node>
+      <node id="4277">
+        <label>DeepLearningSuite/Tools/Viewer/viewer.cpp</label>
+        <link refid="_tools_2_viewer_2_viewer_8cpp"/>
+      </node>
+      <node id="4238">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h</label>
+        <link refid="mask_api_8h"/>
+        <childnode refid="4239" relation="include">
+        </childnode>
+        <childnode refid="4240" relation="include">
+        </childnode>
+      </node>
+      <node id="4293">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.h</label>
+        <link refid="_dataset_writer_8h"/>
+        <childnode refid="4294" relation="include">
+        </childnode>
+        <childnode refid="4298" relation="include">
+        </childnode>
+        <childnode refid="4296" relation="include">
+        </childnode>
+        <childnode refid="4299" relation="include">
+        </childnode>
+        <childnode refid="4301" relation="include">
+        </childnode>
+        <childnode refid="4303" relation="include">
+        </childnode>
+      </node>
+      <node id="4317">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.h</label>
+        <link refid="_generic_inferencer_8h"/>
+        <childnode refid="4253" relation="include">
+        </childnode>
+        <childnode refid="4256" relation="include">
+        </childnode>
+        <childnode refid="4257" relation="include">
+        </childnode>
+        <childnode refid="4318" relation="include">
+        </childnode>
+        <childnode refid="4272" relation="include">
+        </childnode>
+        <childnode refid="4275" relation="include">
+        </childnode>
+      </node>
+      <node id="4242">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.h</label>
+        <link refid="_rle_regions_8h"/>
+        <childnode refid="4243" relation="include">
+        </childnode>
+        <childnode refid="4327" relation="include">
+        </childnode>
+      </node>
+      <node id="4288">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/OwnDatasetReader.cpp</label>
+        <link refid="_own_dataset_reader_8cpp"/>
+      </node>
+      <node id="4269">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.cpp</label>
+        <link refid="_generic_dataset_reader_8cpp"/>
+      </node>
+      <node id="4298">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/DatasetWriter.cpp</label>
+        <link refid="_dataset_writer_8cpp"/>
+      </node>
+      <node id="4271">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.cpp</label>
+        <link refid="_stats_writer_8cpp"/>
+      </node>
+      <node id="4239">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp</label>
+        <link refid="mask_api_8cpp"/>
+      </node>
+      <node id="4255">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_converter_8cpp"/>
+      </node>
+      <node id="4301">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.h</label>
+        <link refid="_pascal_v_o_c_dataset_writer_8h"/>
+        <childnode refid="4296" relation="include">
+        </childnode>
+        <childnode refid="4302" relation="include">
+        </childnode>
+      </node>
+      <node id="4244">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Viewer.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_viewer_8cpp"/>
+      </node>
+      <node id="4278">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.cpp</label>
+        <link refid="_dataset_reader_8cpp"/>
+      </node>
+      <node id="4252">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/GenericLiveReader.h</label>
+        <link refid="_generic_live_reader_8h"/>
+        <childnode refid="4253" relation="include">
+        </childnode>
+        <childnode refid="4254" relation="include">
+        </childnode>
+        <childnode refid="4256" relation="include">
+        </childnode>
+        <childnode refid="4260" relation="include">
+        </childnode>
+      </node>
+      <node id="4308">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassBatchInferencer.cpp</label>
+        <link refid="_mass_batch_inferencer_8cpp"/>
+      </node>
+      <node id="4296">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h</label>
+        <link refid="_generic_dataset_writer_8h"/>
+        <childnode refid="4253" relation="include">
+        </childnode>
+        <childnode refid="4255" relation="include">
+        </childnode>
+        <childnode refid="4257" relation="include">
+        </childnode>
+        <childnode refid="4297" relation="include">
+        </childnode>
+        <childnode refid="4274" relation="include">
+        </childnode>
+        <childnode refid="4276" relation="include">
+        </childnode>
+      </node>
+      <node id="4264">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/VideoReader.cpp</label>
+        <link refid="_video_reader_8cpp"/>
+      </node>
+      <node id="4256">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.cpp</label>
+        <link refid="_deployer_8cpp"/>
+      </node>
+      <node id="4292">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/SamplesReader.cpp</label>
+        <link refid="_samples_reader_8cpp"/>
+      </node>
+      <node id="4316">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.cpp</label>
+        <link refid="_framework_inferencer_8cpp"/>
+      </node>
+      <node id="4273">
+        <label>DeepLearningSuite/Tools/Evaluator/evaluator.cpp</label>
+        <link refid="_tools_2_evaluator_2_evaluator_8cpp"/>
+      </node>
+      <node id="4245">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.cpp</label>
+        <link refid="_sample_8cpp"/>
+      </node>
+      <node id="4263">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/VideoReader.h</label>
+        <link refid="_video_reader_8h"/>
+        <childnode refid="4252" relation="include">
+        </childnode>
+        <childnode refid="4264" relation="include">
+        </childnode>
+      </node>
+      <node id="4259">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.cpp</label>
+        <link refid="_sampler_generation_handler_8cpp"/>
+      </node>
+      <node id="4321">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h</label>
+        <link refid="_tensor_flow_inferencer_8h"/>
+        <childnode refid="4317" relation="include">
+        </childnode>
+        <childnode refid="4322" relation="include">
+        </childnode>
+      </node>
+      <node id="4327">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.cpp</label>
+        <link refid="_rle_regions_8cpp"/>
+      </node>
+      <node id="4289">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/PrincetonDatasetReader.h</label>
+        <link refid="_princeton_dataset_reader_8h"/>
+        <childnode refid="4267" relation="include">
+        </childnode>
+        <childnode refid="4290" relation="include">
+        </childnode>
+      </node>
+      <node id="4281">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/YoloDatasetReader.h</label>
+        <link refid="_yolo_dataset_reader_8h"/>
+        <childnode refid="4267" relation="include">
+        </childnode>
+        <childnode refid="4282" relation="include">
+        </childnode>
+        <childnode refid="4274" relation="include">
+        </childnode>
+      </node>
+      <node id="4323">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.h</label>
+        <link refid="_detections_validator_8h"/>
+        <childnode refid="4324" relation="include">
+        </childnode>
+        <childnode refid="4248" relation="include">
+        </childnode>
+      </node>
+      <node id="4309">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.h</label>
+        <link refid="_mass_inferencer_8h"/>
+        <childnode refid="4256" relation="include">
+        </childnode>
+        <childnode refid="4257" relation="include">
+        </childnode>
+        <childnode refid="4310" relation="include">
+        </childnode>
+        <childnode refid="4272" relation="include">
+        </childnode>
+        <childnode refid="4275" relation="include">
+        </childnode>
+      </node>
+      <node id="4324">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils/DetectionsValidator.cpp</label>
+        <link refid="_detections_validator_8cpp"/>
+      </node>
+      <node id="4299">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.h</label>
+        <link refid="_yolo_dataset_writer_8h"/>
+        <childnode refid="4296" relation="include">
+        </childnode>
+        <childnode refid="4300" relation="include">
+        </childnode>
+        <childnode refid="4274" relation="include">
+        </childnode>
+      </node>
+      <node id="4290">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/PrincetonDatasetReader.cpp</label>
+        <link refid="_princeton_dataset_reader_8cpp"/>
+      </node>
+      <node id="4250">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/CameraReader.h</label>
+        <link refid="_camera_reader_8h"/>
+        <childnode refid="4251" relation="include">
+        </childnode>
+        <childnode refid="4252" relation="include">
+        </childnode>
+      </node>
+      <node id="4265">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.h</label>
+        <link refid="_c_o_c_o_dataset_reader_8h"/>
+        <childnode refid="4266" relation="include">
+        </childnode>
+        <childnode refid="4267" relation="include">
+        </childnode>
+      </node>
+      <node id="4313">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/CaffeInferencer.h</label>
+        <link refid="_caffe_inferencer_8h"/>
+        <childnode refid="4311" relation="include">
+        </childnode>
+      </node>
+      <node id="4251">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/CameraReader.cpp</label>
+        <link refid="_camera_reader_8cpp"/>
+      </node>
+      <node id="4272">
+        <label>DeepLearningSuite/Tools/AutoEvaluator/autoEvaluator.cpp</label>
+        <link refid="auto_evaluator_8cpp"/>
+      </node>
+      <node id="4274">
+        <label>DeepLearningSuite/Tools/Converter/converter.cpp</label>
+        <link refid="_tools_2_converter_2_converter_8cpp"/>
+      </node>
+      <node id="4267">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h</label>
+        <link refid="_generic_dataset_reader_8h"/>
+        <childnode refid="4268" relation="include">
+        </childnode>
+        <childnode refid="4253" relation="include">
+        </childnode>
+        <childnode refid="4254" relation="include">
+        </childnode>
+        <childnode refid="4257" relation="include">
+        </childnode>
+        <childnode refid="4244" relation="include">
+        </childnode>
+        <childnode refid="4269" relation="include">
+        </childnode>
+        <childnode refid="4270" relation="include">
+        </childnode>
+        <childnode refid="4248" relation="include">
+        </childnode>
+        <childnode refid="4272" relation="include">
+        </childnode>
+        <childnode refid="4274" relation="include">
+        </childnode>
+        <childnode refid="4275" relation="include">
+        </childnode>
+        <childnode refid="4273" relation="include">
+        </childnode>
+        <childnode refid="4276" relation="include">
+        </childnode>
+        <childnode refid="4277" relation="include">
+        </childnode>
+      </node>
+      <node id="4246">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.h</label>
+        <link refid="_recorder_reader_8h"/>
+        <childnode refid="4247" relation="include">
+        </childnode>
+        <childnode refid="4248" relation="include">
+        </childnode>
+      </node>
+      <node id="4254">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.h</label>
+        <link refid="_sampler_generation_handler_8h"/>
+        <childnode refid="4255" relation="include">
+        </childnode>
+        <childnode refid="4256" relation="include">
+        </childnode>
+        <childnode refid="4257" relation="include">
+        </childnode>
+        <childnode refid="4258" relation="include">
+        </childnode>
+        <childnode refid="4259" relation="include">
+        </childnode>
+        <childnode refid="4244" relation="include">
+        </childnode>
+      </node>
+      <node id="4240">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="4241" relation="include">
+        </childnode>
+        <childnode refid="4242" relation="include">
+        </childnode>
+      </node>
+      <node id="4302">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/PascalVOCDatasetWriter.cpp</label>
+        <link refid="_pascal_v_o_c_dataset_writer_8cpp"/>
+      </node>
+      <node id="4270">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/StatsWriter.h</label>
+        <link refid="_stats_writer_8h"/>
+        <childnode refid="4258" relation="include">
+        </childnode>
+        <childnode refid="4271" relation="include">
+        </childnode>
+        <childnode refid="4272" relation="include">
+        </childnode>
+        <childnode refid="4273" relation="include">
+        </childnode>
+      </node>
+      <node id="4243">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Common/Sample.h</label>
+        <link refid="_sample_8h"/>
+        <childnode refid="4244" relation="include">
+        </childnode>
+        <childnode refid="4245" relation="include">
+        </childnode>
+        <childnode refid="4246" relation="include">
+        </childnode>
+        <childnode refid="4249" relation="include">
+        </childnode>
+        <childnode refid="4311" relation="include">
+        </childnode>
+        <childnode refid="4312" relation="include">
+        </childnode>
+        <childnode refid="4315" relation="include">
+        </childnode>
+        <childnode refid="4320" relation="include">
+        </childnode>
+        <childnode refid="4322" relation="include">
+        </childnode>
+        <childnode refid="4323" relation="include">
+        </childnode>
+        <childnode refid="4325" relation="include">
+        </childnode>
+      </node>
+      <node id="4291">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/SamplesReader.h</label>
+        <link refid="_samples_reader_8h"/>
+        <childnode refid="4267" relation="include">
+        </childnode>
+        <childnode refid="4292" relation="include">
+        </childnode>
+      </node>
+      <node id="4284">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/PascalVOCDatasetReader.cpp</label>
+        <link refid="_pascal_v_o_c_dataset_reader_8cpp"/>
+      </node>
+      <node id="4325">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Utils/StatsUtils.h</label>
+        <link refid="_stats_utils_8h"/>
+        <childnode refid="4306" relation="include">
+        </childnode>
+        <childnode refid="4326" relation="include">
+        </childnode>
+      </node>
+      <node id="4322">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.cpp</label>
+        <link refid="_tensor_flow_inferencer_8cpp"/>
+      </node>
+      <node id="4314">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.h</label>
+        <link refid="_darknet_inferencer_8h"/>
+        <childnode refid="4315" relation="include">
+        </childnode>
+      </node>
+      <node id="4285">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/ImageNetDatasetReader.h</label>
+        <link refid="_image_net_dataset_reader_8h"/>
+        <childnode refid="4267" relation="include">
+        </childnode>
+        <childnode refid="4286" relation="include">
+        </childnode>
+      </node>
+      <node id="4326">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Utils/StatsUtils.cpp</label>
+        <link refid="_stats_utils_8cpp"/>
+      </node>
+      <node id="4319">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h</label>
+        <link refid="_keras_inferencer_8h"/>
+        <childnode refid="4317" relation="include">
+        </childnode>
+        <childnode refid="4320" relation="include">
+        </childnode>
+      </node>
+      <node id="4241">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegion.cpp</label>
+        <link refid="_rle_region_8cpp"/>
+      </node>
+      <node id="4306">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.cpp</label>
+        <link refid="_detections_evaluator_8cpp"/>
+      </node>
+      <node id="4300">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/YoloDatasetWriter.cpp</label>
+        <link refid="_yolo_dataset_writer_8cpp"/>
+      </node>
+      <node id="4310">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/MassInferencer.cpp</label>
+        <link refid="_mass_inferencer_8cpp"/>
+      </node>
+      <node id="4276">
+        <label>DeepLearningSuite/Tools/Splitter/splitter.cpp</label>
+        <link refid="splitter_8cpp"/>
+      </node>
+      <node id="4315">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DarknetInferencer.cpp</label>
+        <link refid="_darknet_inferencer_8cpp"/>
+      </node>
+      <node id="4283">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/PascalVOCDatasetReader.h</label>
+        <link refid="_pascal_v_o_c_dataset_reader_8h"/>
+        <childnode refid="4267" relation="include">
+        </childnode>
+        <childnode refid="4284" relation="include">
+        </childnode>
+      </node>
+      <node id="4318">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/GenericInferencer.cpp</label>
+        <link refid="_generic_inferencer_8cpp"/>
+      </node>
+      <node id="4258">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_evaluator_8cpp"/>
+      </node>
+      <node id="4312">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/FrameworkInferencer.h</label>
+        <link refid="_framework_inferencer_8h"/>
+        <childnode refid="4313" relation="include">
+        </childnode>
+        <childnode refid="4314" relation="include">
+        </childnode>
+        <childnode refid="4316" relation="include">
+        </childnode>
+        <childnode refid="4317" relation="include">
+        </childnode>
+        <childnode refid="4319" relation="include">
+        </childnode>
+        <childnode refid="4307" relation="include">
+        </childnode>
+        <childnode refid="4309" relation="include">
+        </childnode>
+        <childnode refid="4321" relation="include">
+        </childnode>
+        <childnode refid="4248" relation="include">
+        </childnode>
+      </node>
+      <node id="4295">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.cpp</label>
+        <link refid="_c_o_c_o_dataset_writer_8cpp"/>
+      </node>
+      <node id="4266">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/COCODatasetReader.cpp</label>
+        <link refid="_c_o_c_o_dataset_reader_8cpp"/>
+      </node>
+      <node id="4249">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/DatasetReader.h</label>
+        <link refid="_dataset_reader_8h"/>
+        <childnode refid="4250" relation="include">
+        </childnode>
+        <childnode refid="4252" relation="include">
+        </childnode>
+        <childnode refid="4261" relation="include">
+        </childnode>
+        <childnode refid="4246" relation="include">
+        </childnode>
+        <childnode refid="4263" relation="include">
+        </childnode>
+        <childnode refid="4265" relation="include">
+        </childnode>
+        <childnode refid="4278" relation="include">
+        </childnode>
+        <childnode refid="4279" relation="include">
+        </childnode>
+        <childnode refid="4281" relation="include">
+        </childnode>
+        <childnode refid="4283" relation="include">
+        </childnode>
+        <childnode refid="4285" relation="include">
+        </childnode>
+        <childnode refid="4267" relation="include">
+        </childnode>
+        <childnode refid="4287" relation="include">
+        </childnode>
+        <childnode refid="4289" relation="include">
+        </childnode>
+        <childnode refid="4291" relation="include">
+        </childnode>
+        <childnode refid="4293" relation="include">
+        </childnode>
+        <childnode refid="4303" relation="include">
+        </childnode>
+        <childnode refid="4305" relation="include">
+        </childnode>
+        <childnode refid="4307" relation="include">
+        </childnode>
+        <childnode refid="4309" relation="include">
+        </childnode>
+      </node>
+      <node id="4262">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/JderobotReader.cpp</label>
+        <link refid="_jderobot_reader_8cpp"/>
+      </node>
+      <node id="4280">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/SpinelloDatasetReader.cpp</label>
+        <link refid="_spinello_dataset_reader_8cpp"/>
+      </node>
+      <node id="4253">
+        <label>DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="4257">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp"/>
+      </node>
+      <node id="4297">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.cpp</label>
+        <link refid="_generic_dataset_writer_8cpp"/>
+      </node>
+      <node id="4247">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/liveReaders/RecorderReader.cpp</label>
+        <link refid="_recorder_reader_8cpp"/>
+      </node>
+      <node id="4305">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/DetectionsEvaluator.h</label>
+        <link refid="_detections_evaluator_8h"/>
+        <childnode refid="4258" relation="include">
+        </childnode>
+        <childnode refid="4306" relation="include">
+        </childnode>
+        <childnode refid="4270" relation="include">
+        </childnode>
+        <childnode refid="4272" relation="include">
+        </childnode>
+        <childnode refid="4273" relation="include">
+        </childnode>
+        <childnode refid="4276" relation="include">
+        </childnode>
+      </node>
+      <node id="4303">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/OwnDatasetWriter.h</label>
+        <link refid="_own_dataset_writer_8h"/>
+        <childnode refid="4296" relation="include">
+        </childnode>
+        <childnode refid="4304" relation="include">
+        </childnode>
+      </node>
+      <node id="4275">
+        <label>DeepLearningSuite/Tools/Detector/detector.cpp</label>
+        <link refid="_tools_2_detector_2_detector_8cpp"/>
+      </node>
+      <node id="4248">
+        <label>DeepLearningSuite/SampleGenerationApp/generator.cpp</label>
+        <link refid="generator_8cpp"/>
+      </node>
+      <node id="4294">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h</label>
+        <link refid="_c_o_c_o_dataset_writer_8h"/>
+        <childnode refid="4295" relation="include">
+        </childnode>
+        <childnode refid="4296" relation="include">
+        </childnode>
+      </node>
+      <node id="4268">
+        <label>DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.cpp</label>
+        <link refid="_tab_handler_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_r_l_e" prot="public">RLE</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" prot="public" static="no">
+        <type>unsigned int</type>
+        <definition>typedef unsigned int uint</definition>
+        <argsstring></argsstring>
+        <name>uint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="2" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" bodystart="2" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" prot="public" static="no">
+        <type>unsigned long</type>
+        <definition>typedef unsigned long siz</definition>
+        <argsstring></argsstring>
+        <name>siz</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="3" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" prot="public" static="no">
+        <type>unsigned char</type>
+        <definition>typedef unsigned char byte</definition>
+        <argsstring></argsstring>
+        <name>byte</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="4" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" prot="public" static="no">
+        <type>double *</type>
+        <definition>typedef double* BB</definition>
+        <argsstring></argsstring>
+        <name>BB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="5" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="mask_api_8h_1a426476ca7bc162435c9b4b351556d9e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleInit</definition>
+        <argsstring>(RLE *R, siz h, siz w, siz m, uint *cnts)</argsstring>
+        <name>rleInit</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref> *</type>
+          <declname>cnts</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="9" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="9" bodyend="12"/>
+        <references refid="struct_r_l_e_1a0729872eb55bbc6269cc535d91b97db1" compoundref="mask_api_8h" startline="6">RLE::h</references>
+        <references refid="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" compoundref="mask_api_8h" startline="6">RLE::w</references>
+        <references refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" compoundref="mask_api_8h" startline="6">RLE::m</references>
+        <references refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" compoundref="mask_api_8h" startline="6">RLE::cnts</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1ad3dc79ff171b5df8677a0a66a5f97ebd" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="353" endline="394">COCODatasetReader::fromUncompressedRle</referencedby>
+        <referencedby refid="mask_api_8h_1a32c5da9d1f7dcf59262e5c8af4bd8525" compoundref="mask_api_8cpp" startline="18" endline="21">rlesInit</referencedby>
+        <referencedby refid="mask_api_8h_1af3823da2745ad1e0783e2ddb00c63ea1" compoundref="mask_api_8cpp" startline="28" endline="37">rleEncode</referencedby>
+        <referencedby refid="mask_api_8h_1a74a6558465a0ea2511156cbf9b24b685" compoundref="mask_api_8cpp" startline="45" endline="66">rleMerge</referencedby>
+        <referencedby refid="mask_api_8h_1a084dece6a0cb5f2a8f16b921ad3f7e4b" compoundref="mask_api_8cpp" startline="158" endline="198">rleFrPoly</referencedby>
+        <referencedby refid="mask_api_8h_1af7769ad8a8d4a37dca02ec731213e2e3" compoundref="mask_api_8cpp" startline="214" endline="227">rleFrString</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1af63527a8e2b39cbc09d0337a2fe2e2d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleFree</definition>
+        <argsstring>(RLE *R)</argsstring>
+        <name>rleFree</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="10" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="14" bodyend="16"/>
+        <references refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" compoundref="mask_api_8h" startline="6">RLE::cnts</references>
+        <referencedby refid="mask_api_8h_1a8f4a62edceb041bc08c1fbc94a339c82" compoundref="mask_api_8cpp" startline="23" endline="25">rlesFree</referencedby>
+        <referencedby refid="mask_api_8h_1a74a6558465a0ea2511156cbf9b24b685" compoundref="mask_api_8cpp" startline="45" endline="66">rleMerge</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1a32c5da9d1f7dcf59262e5c8af4bd8525" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rlesInit</definition>
+        <argsstring>(RLE **R, siz n)</argsstring>
+        <name>rlesInit</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> **</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="18" bodyend="21"/>
+        <references refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0133d6cd0659f32bb96c52e5afee33e6" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="303" endline="351">COCODatasetReader::fromSegmentationObject</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1ac1529b3cc125da893d089fa88c866a53" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="396" endline="457">COCODatasetReader::fromSegmentationList</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1a8f4a62edceb041bc08c1fbc94a339c82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rlesFree</definition>
+        <argsstring>(RLE **R, siz n)</argsstring>
+        <name>rlesFree</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> **</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="23" bodyend="25"/>
+        <references refid="mask_api_8cpp_1af63527a8e2b39cbc09d0337a2fe2e2d1" compoundref="mask_api_8cpp" startline="14" endline="16">rleFree</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0133d6cd0659f32bb96c52e5afee33e6" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="303" endline="351">COCODatasetReader::fromSegmentationObject</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1af3823da2745ad1e0783e2ddb00c63ea1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleEncode</definition>
+        <argsstring>(RLE *R, const byte *mask, siz h, siz w, siz n)</argsstring>
+        <name>rleEncode</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type>const <ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref> *</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="28" bodyend="37"/>
+        <references refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</references>
+        <referencedby refid="class_tensor_flow_inferencer_1a57f6622a03e8ee69e6f2ef17e09b3545" compoundref="_tensor_flow_inferencer_8cpp" startline="116" endline="213">TensorFlowInferencer::output_result</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1a0a3e06e94c895fc67fb3ed2e6b765b37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleDecode</definition>
+        <argsstring>(const RLE *R, byte *mask, siz n)</argsstring>
+        <name>rleDecode</name>
+        <param>
+          <type>const <ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref> *</type>
+          <declname>mask</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="39" bodyend="43"/>
+        <references refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" compoundref="mask_api_8h" startline="6">RLE::m</references>
+        <references refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" compoundref="mask_api_8h" startline="6">RLE::cnts</references>
+        <referencedby refid="struct_rle_regions_1aedcc9f614d38a2882a589e3014799d91" compoundref="_rle_regions_8cpp" startline="81" endline="113">RleRegions::drawRegions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1a74a6558465a0ea2511156cbf9b24b685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleMerge</definition>
+        <argsstring>(const RLE *R, RLE *M, siz n, int intersect)</argsstring>
+        <name>rleMerge</name>
+        <param>
+          <type>const <ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>M</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>intersect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="45" bodyend="66"/>
+        <references refid="struct_r_l_e_1a0729872eb55bbc6269cc535d91b97db1" compoundref="mask_api_8h" startline="6">RLE::h</references>
+        <references refid="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" compoundref="mask_api_8h" startline="6">RLE::w</references>
+        <references refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" compoundref="mask_api_8h" startline="6">RLE::m</references>
+        <references refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</references>
+        <references refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" compoundref="mask_api_8h" startline="6">RLE::cnts</references>
+        <references refid="mask_api_8cpp_1a5c0e4f361c48b1c5104f09da66583ff8" compoundref="mask_api_8cpp" startline="6" endline="6">umin</references>
+        <references refid="mask_api_8cpp_1af63527a8e2b39cbc09d0337a2fe2e2d1" compoundref="mask_api_8cpp" startline="14" endline="16">rleFree</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1a0133d6cd0659f32bb96c52e5afee33e6" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="303" endline="351">COCODatasetReader::fromSegmentationObject</referencedby>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1ac1529b3cc125da893d089fa88c866a53" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="396" endline="457">COCODatasetReader::fromSegmentationList</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1a591e0537d851f6c473e1ce1759d804ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleArea</definition>
+        <argsstring>(const RLE *R, siz n, uint *a)</argsstring>
+        <name>rleArea</name>
+        <param>
+          <type>const <ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref> *</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="68" bodyend="71"/>
+        <references refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" compoundref="mask_api_8h" startline="6">RLE::m</references>
+        <referencedby refid="mask_api_8h_1ac27f86dce9ee2ec00d2a7597ff903725" compoundref="mask_api_8cpp" startline="73" endline="92">rleIou</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1ac27f86dce9ee2ec00d2a7597ff903725" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleIou</definition>
+        <argsstring>(RLE *dt, RLE *gt, siz m, siz n, byte *iscrowd, double *o)</argsstring>
+        <name>rleIou</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>gt</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref> *</type>
+          <declname>iscrowd</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>o</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="29" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="73" bodyend="92"/>
+        <references refid="mask_api_8cpp_1a22db5078587ae7651fd590a90d249297" compoundref="mask_api_8cpp" startline="129" endline="143">rleToBbox</references>
+        <references refid="mask_api_8cpp_1ad8523ea3a8f927b4cbe7e938ffcb69b9" compoundref="mask_api_8cpp" startline="105" endline="116">bbIou</references>
+        <references refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" compoundref="mask_api_8h" startline="6">RLE::cnts</references>
+        <references refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" compoundref="mask_api_8h" startline="6">RLE::m</references>
+        <references refid="mask_api_8cpp_1a5c0e4f361c48b1c5104f09da66583ff8" compoundref="mask_api_8cpp" startline="6" endline="6">umin</references>
+        <references refid="mask_api_8cpp_1a591e0537d851f6c473e1ce1759d804ab" compoundref="mask_api_8cpp" startline="68" endline="71">rleArea</references>
+        <referencedby refid="mask_api_8h_1ad7c6fa2b354edd4fa7c37f58af8e5cb3" compoundref="mask_api_8cpp" startline="94" endline="103">rleNms</referencedby>
+        <referencedby refid="class_stats_utils_1ab2ddaf474a74534ae5896d7d564d9a68" compoundref="_stats_utils_8cpp" startline="58" endline="140">StatsUtils::computeIOUMatrix</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1ad7c6fa2b354edd4fa7c37f58af8e5cb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleNms</definition>
+        <argsstring>(RLE *dt, siz n, uint *keep, double thr)</argsstring>
+        <name>rleNms</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref> *</type>
+          <declname>keep</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>thr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="32" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="94" bodyend="103"/>
+        <references refid="mask_api_8cpp_1ac27f86dce9ee2ec00d2a7597ff903725" compoundref="mask_api_8cpp" startline="73" endline="92">rleIou</references>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1ad8523ea3a8f927b4cbe7e938ffcb69b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bbIou</definition>
+        <argsstring>(BB dt, BB gt, siz m, siz n, byte *iscrowd, double *o)</argsstring>
+        <name>bbIou</name>
+        <param>
+          <type><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref></type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref></type>
+          <declname>gt</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref> *</type>
+          <declname>iscrowd</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>o</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="35" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="105" bodyend="116"/>
+        <referencedby refid="mask_api_8h_1ac27f86dce9ee2ec00d2a7597ff903725" compoundref="mask_api_8cpp" startline="73" endline="92">rleIou</referencedby>
+        <referencedby refid="mask_api_8h_1ad626232505f457a5bfbfe18f6802cddb" compoundref="mask_api_8cpp" startline="118" endline="127">bbNms</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1ad626232505f457a5bfbfe18f6802cddb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void bbNms</definition>
+        <argsstring>(BB dt, siz n, uint *keep, double thr)</argsstring>
+        <name>bbNms</name>
+        <param>
+          <type><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref></type>
+          <declname>dt</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref> *</type>
+          <declname>keep</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>thr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="38" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="118" bodyend="127"/>
+        <references refid="mask_api_8cpp_1ad8523ea3a8f927b4cbe7e938ffcb69b9" compoundref="mask_api_8cpp" startline="105" endline="116">bbIou</references>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1a22db5078587ae7651fd590a90d249297" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleToBbox</definition>
+        <argsstring>(const RLE *R, BB bb, siz n)</argsstring>
+        <name>rleToBbox</name>
+        <param>
+          <type>const <ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref></type>
+          <declname>bb</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="41" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="129" bodyend="143"/>
+        <references refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" compoundref="mask_api_8h" startline="6">RLE::m</references>
+        <references refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" compoundref="mask_api_8h" startline="6">RLE::cnts</references>
+        <references refid="mask_api_8cpp_1a5c0e4f361c48b1c5104f09da66583ff8" compoundref="mask_api_8cpp" startline="6" endline="6">umin</references>
+        <references refid="mask_api_8cpp_1a86b36117ab160918373dd52966fabc72" compoundref="mask_api_8cpp" startline="7" endline="7">umax</references>
+        <referencedby refid="mask_api_8h_1ac27f86dce9ee2ec00d2a7597ff903725" compoundref="mask_api_8cpp" startline="73" endline="92">rleIou</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1a74fd6cb9e29361751f25697ab5f1911c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleFrBbox</definition>
+        <argsstring>(RLE *R, const BB bb, siz h, siz w, siz n)</argsstring>
+        <name>rleFrBbox</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type>const <ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref></type>
+          <declname>bb</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="44" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="145" bodyend="152"/>
+        <references refid="mask_api_8cpp_1a084dece6a0cb5f2a8f16b921ad3f7e4b" compoundref="mask_api_8cpp" startline="158" endline="198">rleFrPoly</references>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1a084dece6a0cb5f2a8f16b921ad3f7e4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleFrPoly</definition>
+        <argsstring>(RLE *R, const double *xy, siz k, siz h, siz w)</argsstring>
+        <name>rleFrPoly</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type>const double *</type>
+          <declname>xy</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="47" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="158" bodyend="198"/>
+        <references refid="mask_api_8cpp_1a86b36117ab160918373dd52966fabc72" compoundref="mask_api_8cpp" startline="7" endline="7">umax</references>
+        <references refid="mask_api_8cpp_1a8c265d7243e8206bfc0fb114d1f741e5" compoundref="mask_api_8cpp" startline="154" endline="156">uintCompare</references>
+        <references refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1ac1529b3cc125da893d089fa88c866a53" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="396" endline="457">COCODatasetReader::fromSegmentationList</referencedby>
+        <referencedby refid="mask_api_8h_1a74fd6cb9e29361751f25697ab5f1911c" compoundref="mask_api_8cpp" startline="145" endline="152">rleFrBbox</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1a935356b85c9e3ff7faf6c0533fb94733" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char* rleToString</definition>
+        <argsstring>(const RLE *R)</argsstring>
+        <name>rleToString</name>
+        <param>
+          <type>const <ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="50" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="200" bodyend="212"/>
+        <references refid="struct_r_l_e_1afc79c7bf9f98a42ca3c9f831042b9eee" compoundref="mask_api_8h" startline="6">RLE::m</references>
+        <references refid="struct_r_l_e_1a2abdba115f54bd3d2de7115e4d8fa0a1" compoundref="mask_api_8h" startline="6">RLE::cnts</references>
+        <referencedby refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" compoundref="_c_o_c_o_dataset_writer_8cpp" startline="34" endline="272">COCODatasetWriter::process</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mask_api_8h_1af7769ad8a8d4a37dca02ec731213e2e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void rleFrString</definition>
+        <argsstring>(RLE *R, char *s, siz h, siz w)</argsstring>
+        <name>rleFrString</name>
+        <param>
+          <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref> *</type>
+          <declname>R</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref></type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" line="53" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.cpp" bodystart="214" bodyend="227"/>
+        <references refid="mask_api_8cpp_1a426476ca7bc162435c9b4b351556d9e6" compoundref="mask_api_8cpp" startline="9" endline="12">rleInit</references>
+        <referencedby refid="class_c_o_c_o_dataset_reader_1aa88f5bc653084dd529950558ebd6322c" compoundref="_c_o_c_o_dataset_reader_8cpp" startline="459" endline="479">COCODatasetReader::fromRle</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2" refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref>;</highlight></codeline>
+<codeline lineno="3" refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref>;</highlight></codeline>
+<codeline lineno="4" refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref>;</highlight></codeline>
+<codeline lineno="5" refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*<sp/><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref>;</highlight></codeline>
+<codeline lineno="6" refid="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>h,<sp/><ref refid="struct_r_l_e_1ad5eb7382229117c8f368a2482711f540" kindref="member">w</ref>,<sp/>m;<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>*cnts;<sp/>}<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref>;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Initialize/destroy<sp/>RLE.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1a426476ca7bc162435c9b4b351556d9e6" kindref="member">rleInit</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>h,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>w,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>m,<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>*cnts<sp/>);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1af63527a8e2b39cbc09d0337a2fe2e2d1" kindref="member">rleFree</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R<sp/>);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Initialize/destroy<sp/>RLE<sp/>array.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1a32c5da9d1f7dcf59262e5c8af4bd8525" kindref="member">rlesInit</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>**R,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n<sp/>);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1a8f4a62edceb041bc08c1fbc94a339c82" kindref="member">rlesFree</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>**R,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n<sp/>);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Encode<sp/>binary<sp/>masks<sp/>using<sp/>RLE.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1af3823da2745ad1e0783e2ddb00c63ea1" kindref="member">rleEncode</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref><sp/>*mask,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>h,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>w,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n<sp/>);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Decode<sp/>binary<sp/>masks<sp/>encoded<sp/>via<sp/>RLE.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1a0a3e06e94c895fc67fb3ed2e6b765b37" kindref="member">rleDecode</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref><sp/>*mask,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n<sp/>);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Compute<sp/>union<sp/>or<sp/>intersection<sp/>of<sp/>encoded<sp/>masks.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1a74a6558465a0ea2511156cbf9b24b685" kindref="member">rleMerge</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*M,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>intersect<sp/>);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Compute<sp/>area<sp/>of<sp/>encoded<sp/>masks.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1a591e0537d851f6c473e1ce1759d804ab" kindref="member">rleArea</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n,<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>*a<sp/>);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Compute<sp/>intersection<sp/>over<sp/>union<sp/>between<sp/>masks.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1ac27f86dce9ee2ec00d2a7597ff903725" kindref="member">rleIou</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*dt,<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*gt,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>m,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n,<sp/><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref><sp/>*iscrowd,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*o<sp/>);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Compute<sp/>non-maximum<sp/>suppression<sp/>between<sp/>bounding<sp/>masks<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1ad7c6fa2b354edd4fa7c37f58af8e5cb3" kindref="member">rleNms</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*dt,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n,<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>*keep,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>thr<sp/>);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Compute<sp/>intersection<sp/>over<sp/>union<sp/>between<sp/>bounding<sp/>boxes.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1ad8523ea3a8f927b4cbe7e938ffcb69b9" kindref="member">bbIou</ref>(<sp/><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref><sp/>dt,<sp/><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref><sp/>gt,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>m,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n,<sp/><ref refid="mask_api_8h_1a0c8186d9b9b7880309c27230bbb5e69d" kindref="member">byte</ref><sp/>*iscrowd,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*o<sp/>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Compute<sp/>non-maximum<sp/>suppression<sp/>between<sp/>bounding<sp/>boxes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1ad626232505f457a5bfbfe18f6802cddb" kindref="member">bbNms</ref>(<sp/><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref><sp/>dt,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n,<sp/><ref refid="mask_api_8h_1a91ad9478d81a7aaf2593e8d9c3d06a14" kindref="member">uint</ref><sp/>*keep,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>thr<sp/>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Get<sp/>bounding<sp/>boxes<sp/>surrounding<sp/>encoded<sp/>masks.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1a22db5078587ae7651fd590a90d249297" kindref="member">rleToBbox</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref><sp/>bb,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n<sp/>);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Convert<sp/>bounding<sp/>boxes<sp/>to<sp/>encoded<sp/>masks.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1a74fd6cb9e29361751f25697ab5f1911c" kindref="member">rleFrBbox</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1afd2aa7930433820dc940c701fa124b69" kindref="member">BB</ref><sp/>bb,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>h,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>w,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>n<sp/>);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Convert<sp/>polygon<sp/>to<sp/>encoded<sp/>mask.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1a084dece6a0cb5f2a8f16b921ad3f7e4b" kindref="member">rleFrPoly</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>*xy,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>k,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>h,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>w<sp/>);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Get<sp/>compressed<sp/>string<sp/>representation<sp/>of<sp/>encoded<sp/>mask.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="mask_api_8h_1a935356b85c9e3ff7faf6c0533fb94733" kindref="member">rleToString</ref>(<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R<sp/>);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Convert<sp/>from<sp/>compressed<sp/>string<sp/>representation<sp/>of<sp/>encoded<sp/>mask.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mask_api_8h_1af7769ad8a8d4a37dca02ec731213e2e3" kindref="member">rleFrString</ref>(<sp/><ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>*R,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>h,<sp/><ref refid="mask_api_8h_1aa6f8bea7f64712768a7b9a4acc9601bf" kindref="member">siz</ref><sp/>w<sp/>);</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h"/>
+  </compounddef>
+</doxygen>

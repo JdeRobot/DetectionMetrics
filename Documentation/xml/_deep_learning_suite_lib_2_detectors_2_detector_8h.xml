@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_deep_learning_suite_lib_2_detectors_2_detector_8h" kind="file" language="C++">
+    <compoundname>Detector.h</compoundname>
+    <includes local="no">SampleGeneratorLib/Sample.h</includes>
+    <incdepgraph>
+      <node id="808">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Detectors/Detector.h</label>
+        <link refid="_deep_learning_suite_lib_2_detectors_2_detector_8h"/>
+        <childnode refid="809" relation="include">
+        </childnode>
+      </node>
+      <node id="809">
+        <label>SampleGeneratorLib/Sample.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_detector" prot="public">Detector</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>28/01/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_DETECTOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_DETECTOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;SampleGeneratorLib/Sample.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_detector" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_detector" kindref="compound">Detector</ref>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12" refid="class_detector_1aa43b3d7bbd4b225855b4bcc93f70b225" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_detector_1aa43b3d7bbd4b225855b4bcc93f70b225" kindref="member">Detector</ref>(){};</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="struct_sample" kindref="compound">Sample</ref><sp/><ref refid="class_detector_1a2f86c9bdc9cacd3bbc4d62d9a142c455" kindref="member">inferImage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>cv::Mat&amp;<sp/>image)=0;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_DETECTOR_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Detectors/Detector.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,61 @@
+.TH "Comm::CameraClient" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Comm::CameraClient
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <cameraClient\&.hpp>\fP
+.PP
+Inherited by \fBComm::CameraIceClient\fP, and \fBComm::ListenerCamera\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual \fBJdeRobotTypes::Image\fP \fBgetImage\fP ()=0"
+.br
+.ti -1c
+.RI "virtual int \fBgetRefreshRate\fP ()=0"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBon\fP = false"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBJdeRobotTypes::Image\fP \fBimage\fP"
+.br
+.ti -1c
+.RI "int \fBrefreshRate\fP"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual \fBJdeRobotTypes::Image\fP Comm::CameraClient::getImage ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBComm::CameraIceClient\fP, and \fBComm::ListenerCamera\fP\&.
+.SS "virtual int Comm::CameraClient::getRefreshRate ()\fC [pure virtual]\fP"
+
+.PP
+Implemented in \fBComm::CameraIceClient\fP, and \fBComm::ListenerCamera\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBJdeRobotTypes::Image\fP Comm::CameraClient::image\fC [protected]\fP"
+
+.SS "bool Comm::CameraClient::on = false"
+
+.SS "int Comm::CameraClient::refreshRate\fC [protected]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

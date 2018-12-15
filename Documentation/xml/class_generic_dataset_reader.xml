@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_generic_dataset_reader" kind="class" language="C++" prot="public">
+    <compoundname>GenericDatasetReader</compoundname>
+    <includes refid="_generic_dataset_reader_8h" local="no">GenericDatasetReader.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_generic_dataset_reader_1a20acd9b897cfa6a0d956286e56372f07" prot="private" static="no" mutable="no">
+        <type><ref refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1" kindref="member">READER_IMPLEMENTATIONS</ref></type>
+        <definition>READER_IMPLEMENTATIONS GenericDatasetReader::imp</definition>
+        <argsstring></argsstring>
+        <name>imp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="33" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_dataset_reader_1acd578d855b7e7421d8a5d2e4d68123bc" prot="private" static="no" mutable="no">
+        <type><ref refid="_own_dataset_reader_8h_1a328570f0d1eee5270090e1db48d8923b" kindref="member">OwnDatasetReaderPtr</ref></type>
+        <definition>OwnDatasetReaderPtr GenericDatasetReader::ownDatasetReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>ownDatasetReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="34" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_dataset_reader_1ab104493c5d2c95ebbab7a1b10fa69008" prot="private" static="no" mutable="no">
+        <type><ref refid="_yolo_dataset_reader_8h_1a48a3e0a8f4e5c509de0bd39449e2342a" kindref="member">YoloDatasetReaderPtr</ref></type>
+        <definition>YoloDatasetReaderPtr GenericDatasetReader::yoloDatasetReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>yoloDatasetReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="35" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_dataset_reader_1a867a3b63c8d777cff2176473432e4d9c" prot="private" static="no" mutable="no">
+        <type><ref refid="_spinello_dataset_reader_8h_1aa3d4c842405cba6578e616284b552c05" kindref="member">SpinelloDatasetReaderPtr</ref></type>
+        <definition>SpinelloDatasetReaderPtr GenericDatasetReader::spinelloDatasetReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>spinelloDatasetReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="36" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_dataset_reader_1ab9d7618ac3934a1bbf1ede0090a058cd" prot="private" static="no" mutable="no">
+        <type><ref refid="_princeton_dataset_reader_8h_1ab1d4bd7b6d7a7d3c004cdba879b14599" kindref="member">PrincetonDatasetReaderPtr</ref></type>
+        <definition>PrincetonDatasetReaderPtr GenericDatasetReader::princetonDatasetReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>princetonDatasetReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="37" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_dataset_reader_1a3268cf8787b01c76bf1eeaee3f7ad7f7" prot="private" static="no" mutable="no">
+        <type><ref refid="_pascal_v_o_c_dataset_reader_8h_1a1851827fc8c36f93a565ec720f4c0fbb" kindref="member">PascalVOCDatasetReaderPtr</ref></type>
+        <definition>PascalVOCDatasetReaderPtr GenericDatasetReader::pascalvocDatasetReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>pascalvocDatasetReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="38" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_dataset_reader_1acd0452744cee57b6d0f7919ce4ab9be7" prot="private" static="no" mutable="no">
+        <type><ref refid="_c_o_c_o_dataset_reader_8h_1a6e48f4211d549229c215002c0d5910b1" kindref="member">COCODatasetReaderPtr</ref></type>
+        <definition>COCODatasetReaderPtr GenericDatasetReader::cocoDatasetReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>cocoDatasetReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="39" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_dataset_reader_1a1428ac598615e5459997adb35a30cebd" prot="private" static="no" mutable="no">
+        <type><ref refid="_image_net_dataset_reader_8h_1a610d7f551907a484ab914c0142422f42" kindref="member">ImageNetDatasetReaderPtr</ref></type>
+        <definition>ImageNetDatasetReaderPtr GenericDatasetReader::imagenetDatasetReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>imagenetDatasetReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="40" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_dataset_reader_1a94523f3cd4ea346ab9d4cca32a916938" prot="private" static="no" mutable="no">
+        <type><ref refid="_samples_reader_8h_1a3636d2d85349c23ab0da9505d3b5e9ab" kindref="member">SamplesReaderPtr</ref></type>
+        <definition>SamplesReaderPtr GenericDatasetReader::samplesReaderPtr</definition>
+        <argsstring></argsstring>
+        <name>samplesReaderPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="41" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_generic_dataset_reader_1aabace901ad7ca439e261d71e48ea4482" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt;std::string&gt; GenericDatasetReader::availableImplementations</definition>
+        <argsstring></argsstring>
+        <name>availableImplementations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="43" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_generic_dataset_reader_1a9a7b0030a642e855e5847c8bbbbeb715" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GenericDatasetReader::GenericDatasetReader</definition>
+        <argsstring>(const std::string &amp;path, const std::string &amp;classNamesFile, const std::string &amp;readerImplementation, bool imagesRequired)</argsstring>
+        <name>GenericDatasetReader</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classNamesFile</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>readerImplementation</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>imagesRequired</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.cpp" bodystart="9" bodyend="43"/>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1ae1415ff4e0db966f5aa0bf656e9d8c1f" compoundref="_generic_dataset_reader_8h" startline="20">IMAGENET</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1afc963c7cc007485f66dcc57674cb6dc6" compoundref="_generic_dataset_reader_8h" startline="20">COCO</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1a1be61c9ee9d521c3c8234128f51acf63" compoundref="_generic_dataset_reader_8h" startline="20">PASCALVOC</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1a05354d7be491a5c0eb8beaf1cbe6fae0" compoundref="_generic_dataset_reader_8h" startline="20">YOLO</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1a9978ae637d842594509ef7eaf8d62fa9" compoundref="_generic_dataset_reader_8h" startline="20">SPINELLO</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1ab146bb15e05cc9c4321b2dc436a2b5a8" compoundref="_generic_dataset_reader_8h" startline="20">OWN</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1aecbeb0b2d5071f39eeb569b99cf78be5" compoundref="_generic_dataset_reader_8h" startline="20">PRINCETON</references>
+      </memberdef>
+      <memberdef kind="function" id="class_generic_dataset_reader_1a1fc3abcead6cd89fc263817111d6088e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GenericDatasetReader::GenericDatasetReader</definition>
+        <argsstring>(const std::vector&lt; std::string &gt; &amp;paths, const std::string &amp;classNamesFile, const std::string &amp;readerImplementation, bool imagesRegquired)</argsstring>
+        <name>GenericDatasetReader</name>
+        <param>
+          <type>const std::vector&lt; std::string &gt; &amp;</type>
+          <declname>paths</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classNamesFile</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>readerImplementation</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>imagesRegquired</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.cpp" bodystart="46" bodyend="98"/>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1ae1415ff4e0db966f5aa0bf656e9d8c1f" compoundref="_generic_dataset_reader_8h" startline="20">IMAGENET</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1a05354d7be491a5c0eb8beaf1cbe6fae0" compoundref="_generic_dataset_reader_8h" startline="20">YOLO</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1a9978ae637d842594509ef7eaf8d62fa9" compoundref="_generic_dataset_reader_8h" startline="20">SPINELLO</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1ab146bb15e05cc9c4321b2dc436a2b5a8" compoundref="_generic_dataset_reader_8h" startline="20">OWN</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1afc963c7cc007485f66dcc57674cb6dc6" compoundref="_generic_dataset_reader_8h" startline="20">COCO</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1a1be61c9ee9d521c3c8234128f51acf63" compoundref="_generic_dataset_reader_8h" startline="20">PASCALVOC</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1aecbeb0b2d5071f39eeb569b99cf78be5" compoundref="_generic_dataset_reader_8h" startline="20">PRINCETON</references>
+      </memberdef>
+      <memberdef kind="function" id="class_generic_dataset_reader_1a94efb90275d8a0bbce75cdfbbea96eae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref></type>
+        <definition>DatasetReaderPtr GenericDatasetReader::getReader</definition>
+        <argsstring>()</argsstring>
+        <name>getReader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.cpp" bodystart="136" bodyend="156"/>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1ae1415ff4e0db966f5aa0bf656e9d8c1f" compoundref="_generic_dataset_reader_8h" startline="20">IMAGENET</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1afc963c7cc007485f66dcc57674cb6dc6" compoundref="_generic_dataset_reader_8h" startline="20">COCO</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1a1be61c9ee9d521c3c8234128f51acf63" compoundref="_generic_dataset_reader_8h" startline="20">PASCALVOC</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1a05354d7be491a5c0eb8beaf1cbe6fae0" compoundref="_generic_dataset_reader_8h" startline="20">YOLO</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1a9978ae637d842594509ef7eaf8d62fa9" compoundref="_generic_dataset_reader_8h" startline="20">SPINELLO</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1ab146bb15e05cc9c4321b2dc436a2b5a8" compoundref="_generic_dataset_reader_8h" startline="20">OWN</references>
+        <references refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1aecbeb0b2d5071f39eeb569b99cf78be5" compoundref="_generic_dataset_reader_8h" startline="20">PRINCETON</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_generic_dataset_reader_1a61027ae03b1fcf92eee88c95eb8740a0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::string &gt;</type>
+        <definition>std::vector&lt; std::string &gt; GenericDatasetReader::getAvailableImplementations</definition>
+        <argsstring>()</argsstring>
+        <name>getAvailableImplementations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="30" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.cpp" bodystart="158" bodyend="163"/>
+        <referencedby refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" compoundref="mainwindow_8cpp" startline="51" endline="54">MainWindow::~MainWindow</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_generic_dataset_reader_1a8685b20d10b493643ffa3eb106b28d0c" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GenericDatasetReader::configureAvailablesImplementations</definition>
+        <argsstring>(std::vector&lt; std::string &gt; &amp;data)</argsstring>
+        <name>configureAvailablesImplementations</name>
+        <param>
+          <type>std::vector&lt; std::string &gt; &amp;</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="45" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.cpp" bodystart="101" bodyend="110"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_generic_dataset_reader_1aa22d0bbf45c71a015c33c12a4563701a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="_generic_dataset_reader_8h_1a6c62196be3f03d5ecd0dd961de2f76f1" kindref="member">READER_IMPLEMENTATIONS</ref></type>
+        <definition>READER_IMPLEMENTATIONS GenericDatasetReader::getImplementation</definition>
+        <argsstring>(const std::string &amp;readerImplementation)</argsstring>
+        <name>getImplementation</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>readerImplementation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="46" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.cpp" bodystart="112" bodyend="134"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/readers/GenericDatasetReader.h" bodystart="23" bodyend="47"/>
+    <listofallmembers>
+      <member refid="class_generic_dataset_reader_1aabace901ad7ca439e261d71e48ea4482" prot="private" virt="non-virtual"><scope>GenericDatasetReader</scope><name>availableImplementations</name></member>
+      <member refid="class_generic_dataset_reader_1acd0452744cee57b6d0f7919ce4ab9be7" prot="private" virt="non-virtual"><scope>GenericDatasetReader</scope><name>cocoDatasetReaderPtr</name></member>
+      <member refid="class_generic_dataset_reader_1a8685b20d10b493643ffa3eb106b28d0c" prot="private" virt="non-virtual"><scope>GenericDatasetReader</scope><name>configureAvailablesImplementations</name></member>
+      <member refid="class_generic_dataset_reader_1a9a7b0030a642e855e5847c8bbbbeb715" prot="public" virt="non-virtual"><scope>GenericDatasetReader</scope><name>GenericDatasetReader</name></member>
+      <member refid="class_generic_dataset_reader_1a1fc3abcead6cd89fc263817111d6088e" prot="public" virt="non-virtual"><scope>GenericDatasetReader</scope><name>GenericDatasetReader</name></member>
+      <member refid="class_generic_dataset_reader_1a61027ae03b1fcf92eee88c95eb8740a0" prot="public" virt="non-virtual"><scope>GenericDatasetReader</scope><name>getAvailableImplementations</name></member>
+      <member refid="class_generic_dataset_reader_1aa22d0bbf45c71a015c33c12a4563701a" prot="private" virt="non-virtual"><scope>GenericDatasetReader</scope><name>getImplementation</name></member>
+      <member refid="class_generic_dataset_reader_1a94efb90275d8a0bbce75cdfbbea96eae" prot="public" virt="non-virtual"><scope>GenericDatasetReader</scope><name>getReader</name></member>
+      <member refid="class_generic_dataset_reader_1a1428ac598615e5459997adb35a30cebd" prot="private" virt="non-virtual"><scope>GenericDatasetReader</scope><name>imagenetDatasetReaderPtr</name></member>
+      <member refid="class_generic_dataset_reader_1a20acd9b897cfa6a0d956286e56372f07" prot="private" virt="non-virtual"><scope>GenericDatasetReader</scope><name>imp</name></member>
+      <member refid="class_generic_dataset_reader_1acd578d855b7e7421d8a5d2e4d68123bc" prot="private" virt="non-virtual"><scope>GenericDatasetReader</scope><name>ownDatasetReaderPtr</name></member>
+      <member refid="class_generic_dataset_reader_1a3268cf8787b01c76bf1eeaee3f7ad7f7" prot="private" virt="non-virtual"><scope>GenericDatasetReader</scope><name>pascalvocDatasetReaderPtr</name></member>
+      <member refid="class_generic_dataset_reader_1ab9d7618ac3934a1bbf1ede0090a058cd" prot="private" virt="non-virtual"><scope>GenericDatasetReader</scope><name>princetonDatasetReaderPtr</name></member>
+      <member refid="class_generic_dataset_reader_1a94523f3cd4ea346ab9d4cca32a916938" prot="private" virt="non-virtual"><scope>GenericDatasetReader</scope><name>samplesReaderPtr</name></member>
+      <member refid="class_generic_dataset_reader_1a867a3b63c8d777cff2176473432e4d9c" prot="private" virt="non-virtual"><scope>GenericDatasetReader</scope><name>spinelloDatasetReaderPtr</name></member>
+      <member refid="class_generic_dataset_reader_1ab104493c5d2c95ebbab7a1b10fa69008" prot="private" virt="non-virtual"><scope>GenericDatasetReader</scope><name>yoloDatasetReaderPtr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

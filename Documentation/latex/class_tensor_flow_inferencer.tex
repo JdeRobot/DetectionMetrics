@@ -1,0 +1,75 @@
+\hypertarget{class_tensor_flow_inferencer}{}\section{Tensor\+Flow\+Inferencer Class Reference}
+\label{class_tensor_flow_inferencer}\index{Tensor\+Flow\+Inferencer@{Tensor\+Flow\+Inferencer}}
+
+
+{\ttfamily \#include $<$Tensor\+Flow\+Inferencer.\+h$>$}
+
+Inheritance diagram for Tensor\+Flow\+Inferencer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_tensor_flow_inferencer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tensor_flow_inferencer_a78ef7a49464aeb0d846910cda36b33cc}{Tensor\+Flow\+Inferencer} (const std\+::string \&net\+Config, const std\+::string \&net\+Weights, const std\+::string \&\hyperlink{class_framework_inferencer_abdb304d43262f48e0438a55778c7540f}{class\+Names\+File})
+\item 
+\hyperlink{struct_sample}{Sample} \hyperlink{class_tensor_flow_inferencer_ae8b603ab05273a9ec5fee720f23d0c58}{detect\+Imp} (const cv\+::\+Mat \&image, double confidence\+\_\+threshold)
+\item 
+int \hyperlink{class_tensor_flow_inferencer_af5d1c756798e075bc44f51857571143a}{gettf\+Inferences} (const cv\+::\+Mat \&image, double confidence\+\_\+threshold)
+\item 
+void \hyperlink{class_tensor_flow_inferencer_a57f6622a03e8ee69e6f2ef17e09b3545}{output\+\_\+result} (int num\+\_\+detections, int width, int height, Py\+Object $\ast$bounding\+\_\+boxes, Py\+Object $\ast$detection\+\_\+scores, Py\+Object $\ast$class\+Ids, Py\+Object $\ast$detections\+\_\+masks=N\+U\+LL)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_tensor_flow_inferencer_a301f29e30c8f18bc71ca627a11af5cc6}{init} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_tensor_flow_inferencer_a78ef7a49464aeb0d846910cda36b33cc}\label{class_tensor_flow_inferencer_a78ef7a49464aeb0d846910cda36b33cc}} 
+\index{Tensor\+Flow\+Inferencer@{Tensor\+Flow\+Inferencer}!Tensor\+Flow\+Inferencer@{Tensor\+Flow\+Inferencer}}
+\index{Tensor\+Flow\+Inferencer@{Tensor\+Flow\+Inferencer}!Tensor\+Flow\+Inferencer@{Tensor\+Flow\+Inferencer}}
+\subsubsection{\texorpdfstring{Tensor\+Flow\+Inferencer()}{TensorFlowInferencer()}}
+{\footnotesize\ttfamily Tensor\+Flow\+Inferencer\+::\+Tensor\+Flow\+Inferencer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{net\+Config,  }\item[{const std\+::string \&}]{net\+Weights,  }\item[{const std\+::string \&}]{class\+Names\+File }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tensor_flow_inferencer_ae8b603ab05273a9ec5fee720f23d0c58}\label{class_tensor_flow_inferencer_ae8b603ab05273a9ec5fee720f23d0c58}} 
+\index{Tensor\+Flow\+Inferencer@{Tensor\+Flow\+Inferencer}!detect\+Imp@{detect\+Imp}}
+\index{detect\+Imp@{detect\+Imp}!Tensor\+Flow\+Inferencer@{Tensor\+Flow\+Inferencer}}
+\subsubsection{\texorpdfstring{detect\+Imp()}{detectImp()}}
+{\footnotesize\ttfamily \hyperlink{struct_sample}{Sample} Tensor\+Flow\+Inferencer\+::detect\+Imp (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image,  }\item[{double}]{confidence\+\_\+threshold }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_framework_inferencer_a8fd7e708c8be4471bc2b37a4193a9045}{Framework\+Inferencer}.
+
+\mbox{\Hypertarget{class_tensor_flow_inferencer_af5d1c756798e075bc44f51857571143a}\label{class_tensor_flow_inferencer_af5d1c756798e075bc44f51857571143a}} 
+\index{Tensor\+Flow\+Inferencer@{Tensor\+Flow\+Inferencer}!gettf\+Inferences@{gettf\+Inferences}}
+\index{gettf\+Inferences@{gettf\+Inferences}!Tensor\+Flow\+Inferencer@{Tensor\+Flow\+Inferencer}}
+\subsubsection{\texorpdfstring{gettf\+Inferences()}{gettfInferences()}}
+{\footnotesize\ttfamily int Tensor\+Flow\+Inferencer\+::gettf\+Inferences (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image,  }\item[{double}]{confidence\+\_\+threshold }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_tensor_flow_inferencer_a301f29e30c8f18bc71ca627a11af5cc6}\label{class_tensor_flow_inferencer_a301f29e30c8f18bc71ca627a11af5cc6}} 
+\index{Tensor\+Flow\+Inferencer@{Tensor\+Flow\+Inferencer}!init@{init}}
+\index{init@{init}!Tensor\+Flow\+Inferencer@{Tensor\+Flow\+Inferencer}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Tensor\+Flow\+Inferencer\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_tensor_flow_inferencer_a57f6622a03e8ee69e6f2ef17e09b3545}\label{class_tensor_flow_inferencer_a57f6622a03e8ee69e6f2ef17e09b3545}} 
+\index{Tensor\+Flow\+Inferencer@{Tensor\+Flow\+Inferencer}!output\+\_\+result@{output\+\_\+result}}
+\index{output\+\_\+result@{output\+\_\+result}!Tensor\+Flow\+Inferencer@{Tensor\+Flow\+Inferencer}}
+\subsubsection{\texorpdfstring{output\+\_\+result()}{output\_result()}}
+{\footnotesize\ttfamily void Tensor\+Flow\+Inferencer\+::output\+\_\+result (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+detections,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{Py\+Object $\ast$}]{bounding\+\_\+boxes,  }\item[{Py\+Object $\ast$}]{detection\+\_\+scores,  }\item[{Py\+Object $\ast$}]{class\+Ids,  }\item[{Py\+Object $\ast$}]{detections\+\_\+masks = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Framework\+Evaluator/\hyperlink{_tensor_flow_inferencer_8h}{Tensor\+Flow\+Inferencer.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Framework\+Evaluator/\hyperlink{_tensor_flow_inferencer_8cpp}{Tensor\+Flow\+Inferencer.\+cpp}\end{DoxyCompactItemize}

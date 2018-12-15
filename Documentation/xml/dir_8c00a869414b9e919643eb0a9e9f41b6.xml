@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_8c00a869414b9e919643eb0a9e9f41b6" kind="dir">
+    <compoundname>DeepLearningSuite/DeepLearningSuiteLib</compoundname>
+    <innerdir refid="dir_7accf7733c82c5d6c93ea9ec806d0c57">DeepLearningSuite/DeepLearningSuiteLib/Common</innerdir>
+    <innerdir refid="dir_68595adf0bb43cc17ae9262e77bb4a0d">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters</innerdir>
+    <innerdir refid="dir_595aacd1582a3edd97b1d87543c78061">DeepLearningSuite/DeepLearningSuiteLib/Detectors</innerdir>
+    <innerdir refid="dir_86104aedb2696dffec64154518b3809d">DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator</innerdir>
+    <innerdir refid="dir_c8ed0e67b28de8e6e5093400dba9b08a">DeepLearningSuite/DeepLearningSuiteLib/GenerationUtils</innerdir>
+    <innerdir refid="dir_9e4caa9e98b241898a112b3acb70c317">DeepLearningSuite/DeepLearningSuiteLib/python_modules</innerdir>
+    <innerdir refid="dir_d3cd917df11e39f1ae8c3bfc34b475b5">DeepLearningSuite/DeepLearningSuiteLib/Regions</innerdir>
+    <innerdir refid="dir_f0d8cdfe7e345faffc2162d982d91c6d">DeepLearningSuite/DeepLearningSuiteLib/Utils</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/"/>
+  </compounddef>
+</doxygen>

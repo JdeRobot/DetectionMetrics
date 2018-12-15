@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classjderobot_1_1_depth_sampler" kind="class" language="C++" prot="public">
+    <compoundname>jderobot::DepthSampler</compoundname>
+    <includes refid="_depth_sampler_8h" local="no">DepthSampler.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classjderobot_1_1_depth_sampler_1ab9338aaa50b3d32623daa2777d703b3a" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int jderobot::DepthSampler::nBins</definition>
+        <argsstring></argsstring>
+        <name>nBins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="39" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classjderobot_1_1_depth_sampler_1a1448941ffccfb91b323a687868f8b009" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int jderobot::DepthSampler::maxDistance</definition>
+        <argsstring></argsstring>
+        <name>maxDistance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="39" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classjderobot_1_1_depth_sampler_1aee1105a38435c527629eb04f92d9f0b5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int jderobot::DepthSampler::minInd</definition>
+        <argsstring></argsstring>
+        <name>minInd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="39" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classjderobot_1_1_depth_sampler_1a044389cfbedb639079461630d39fb72a" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double jderobot::DepthSampler::step</definition>
+        <argsstring></argsstring>
+        <name>step</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="40" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classjderobot_1_1_depth_sampler_1accca5c92982fbcdab35b077be7ec4171" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>jderobot::DepthSampler::DepthSampler</definition>
+        <argsstring>(int nBins, int maxDistance, int minInd, float step)</argsstring>
+        <name>DepthSampler</name>
+        <param>
+          <type>int</type>
+          <declname>nBins</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>maxDistance</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>minInd</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>step</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="20" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.cpp" bodystart="12" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_sampler_1a77a5834945c0d4aaf9024b77ff08c3ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>jderobot::DepthSampler::DepthSampler</definition>
+        <argsstring>()</argsstring>
+        <name>DepthSampler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="21" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.cpp" bodystart="19" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_sampler_1a7423eb098eeab7f2e58e375389b72bcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>jderobot::DepthSampler::~DepthSampler</definition>
+        <argsstring>()</argsstring>
+        <name>~DepthSampler</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="22" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.cpp" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_sampler_1abd92df0e1e72431b2297344ff6d7dd78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthSampler::calculateLayers</definition>
+        <argsstring>(cv::Mat source, std::vector&lt; cv::Mat &gt; &amp;layers)</argsstring>
+        <name>calculateLayers</name>
+        <param>
+          <type>cv::Mat</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; cv::Mat &gt; &amp;</type>
+          <declname>layers</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="23" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.cpp" bodystart="31" bodyend="52"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+        <references refid="namespacetensorflow__detect_1a92f27be303bb36c28ed99f95a89104b1" compoundref="tensorflow__detect_8py" startline="12">tensorflow_detect.threshold</references>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_sampler_1a208a3898c54c443647ad5116044041e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthSampler::evalSample</definition>
+        <argsstring>(cv::Mat source, std::vector&lt; cv::Mat &gt; layers, int samplingRate, cv::Mat &amp;outSNormal, cv::Mat &amp;outSLayers)</argsstring>
+        <name>evalSample</name>
+        <param>
+          <type>cv::Mat</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; cv::Mat &gt;</type>
+          <declname>layers</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>samplingRate</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>outSNormal</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>outSLayers</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="24" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.cpp" bodystart="56" bodyend="144"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_sampler_1ac8dda5c26e30a21ad5a23d9421eb732e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthSampler::sample</definition>
+        <argsstring>(cv::Mat source, std::vector&lt; cv::Mat &gt; layers, std::vector&lt; cv::Point2i &gt; &amp;out)</argsstring>
+        <name>sample</name>
+        <param>
+          <type>cv::Mat</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; cv::Mat &gt;</type>
+          <declname>layers</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; cv::Point2i &gt; &amp;</type>
+          <declname>out</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="25" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.cpp" bodystart="146" bodyend="171"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_sampler_1ac3c4d83a723a16b2c66f5999de69fadb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthSampler::setnBins</definition>
+        <argsstring>(int value)</argsstring>
+        <name>setnBins</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="27" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.h" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_sampler_1a2d2b5c3abfa476965341cf7d4246d654" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int jderobot::DepthSampler::getnBins</definition>
+        <argsstring>()</argsstring>
+        <name>getnBins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="28" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.h" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_sampler_1a33513f22328330f20c574d5d95f094ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthSampler::setMaxDistance</definition>
+        <argsstring>(int value)</argsstring>
+        <name>setMaxDistance</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="29" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.h" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_sampler_1afcd72cfcec0c2858676e5d2de9c1a447" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int jderobot::DepthSampler::getMaxDistance</definition>
+        <argsstring>()</argsstring>
+        <name>getMaxDistance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="30" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.h" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_sampler_1a56f8d0604fb9e97cc295baad9092d3b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthSampler::setMinInd</definition>
+        <argsstring>(int value)</argsstring>
+        <name>setMinInd</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="31" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.h" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_sampler_1a158f58f94935280fa5eedaab9356b51e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int jderobot::DepthSampler::getMinInd</definition>
+        <argsstring>()</argsstring>
+        <name>getMinInd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="32" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.h" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_sampler_1ad5dc4b9beb677e517e7c7ad87b16720b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void jderobot::DepthSampler::setStep</definition>
+        <argsstring>(double value)</argsstring>
+        <name>setStep</name>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="33" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.h" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classjderobot_1_1_depth_sampler_1a6694d0f60a6bacd72d304cb6b0dd46bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double jderobot::DepthSampler::getStep</definition>
+        <argsstring>()</argsstring>
+        <name>getStep</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="34" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.h" bodystart="34" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/depthLib/DepthSampler.h" line="18" column="1" bodyfile="DeepLearningSuite/libs/depthLib/DepthSampler.h" bodystart="18" bodyend="42"/>
+    <listofallmembers>
+      <member refid="classjderobot_1_1_depth_sampler_1abd92df0e1e72431b2297344ff6d7dd78" prot="public" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>calculateLayers</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1accca5c92982fbcdab35b077be7ec4171" prot="public" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>DepthSampler</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1a77a5834945c0d4aaf9024b77ff08c3ae" prot="public" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>DepthSampler</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1a208a3898c54c443647ad5116044041e8" prot="public" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>evalSample</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1afcd72cfcec0c2858676e5d2de9c1a447" prot="public" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>getMaxDistance</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1a158f58f94935280fa5eedaab9356b51e" prot="public" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>getMinInd</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1a2d2b5c3abfa476965341cf7d4246d654" prot="public" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>getnBins</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1a6694d0f60a6bacd72d304cb6b0dd46bc" prot="public" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>getStep</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1a1448941ffccfb91b323a687868f8b009" prot="private" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>maxDistance</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1aee1105a38435c527629eb04f92d9f0b5" prot="private" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>minInd</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1ab9338aaa50b3d32623daa2777d703b3a" prot="private" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>nBins</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1ac8dda5c26e30a21ad5a23d9421eb732e" prot="public" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>sample</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1a33513f22328330f20c574d5d95f094ce" prot="public" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>setMaxDistance</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1a56f8d0604fb9e97cc295baad9092d3b6" prot="public" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>setMinInd</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1ac3c4d83a723a16b2c66f5999de69fadb" prot="public" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>setnBins</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1ad5dc4b9beb677e517e7c7ad87b16720b" prot="public" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>setStep</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1a044389cfbedb639079461630d39fb72a" prot="private" virt="non-virtual"><scope>jderobot::DepthSampler</scope><name>step</name></member>
+      <member refid="classjderobot_1_1_depth_sampler_1a7423eb098eeab7f2e58e375389b72bcd" prot="public" virt="virtual"><scope>jderobot::DepthSampler</scope><name>~DepthSampler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

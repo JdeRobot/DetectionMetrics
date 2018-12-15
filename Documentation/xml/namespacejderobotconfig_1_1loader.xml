@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacejderobotconfig_1_1loader" kind="namespace" language="C++">
+    <compoundname>jderobotconfig::loader</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacejderobotconfig_1_1loader_1a5b2c5f0990c440ef22a49c12951c6969" prot="public" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string jderobotconfig::loader::CONFIG_PATH_NAME</definition>
+        <argsstring></argsstring>
+        <name>CONFIG_PATH_NAME</name>
+        <initializer>= &quot;JDEROBOT_CONFIG_PATHS&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/loader.hpp" line="35" column="1" bodyfile="DeepLearningSuite/libs/config/include/config/loader.hpp" bodystart="35" bodyend="-1"/>
+        <referencedby refid="namespacejderobotconfig_1_1loader_1a521f15425002acf9d87a5857ac38268f" compoundref="loader_8cpp" startline="27" endline="44">findConfigFile</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacejderobotconfig_1_1loader_1a521f15425002acf9d87a5857ac38268f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string jderobotconfig::loader::findConfigFile</definition>
+        <argsstring>(const std::string &amp;filename)</argsstring>
+        <name>findConfigFile</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Find filename into all defined search paths. Order is: </para>        </briefdescription>
+        <detaileddescription>
+<para><orderedlist>
+<listitem><para>current dir</para></listitem><listitem><para>jderobot paths (*)</para></listitem></orderedlist>
+</para><para><simplesect kind="return"><para>empty if file was not found. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/loader.hpp" line="46" column="1" bodyfile="DeepLearningSuite/libs/config/src/loader.cpp" bodystart="27" bodyend="44"/>
+        <references refid="namespacestd_1ae966385e77759fc59768aa9bc280f3d9" compoundref="stdutils_8hpp" startline="60" endline="63">std::fileexists</references>
+        <references refid="stdutils_8hpp_1a227cbc6c55ca1410521658bbe3a5ff71" compoundref="stdutils_8hpp" startline="29" endline="32">getEnvironmentVariable</references>
+        <references refid="namespacejderobotconfig_1_1loader_1a5b2c5f0990c440ef22a49c12951c6969" compoundref="loader_8hpp" startline="35">CONFIG_PATH_NAME</references>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+        <referencedby refid="namespacejderobotconfig_1_1loader_1a20d680d49aae952308a601aefca96fa4" compoundref="loader_8cpp" startline="47" endline="59">load</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="namespacejderobotconfig_1_1loader_1a20d680d49aae952308a601aefca96fa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_config_1_1_properties" kindref="compound">Config::Properties</ref></type>
+        <definition>Config::Properties jderobotconfig::loader::load</definition>
+        <argsstring>(std::string filename)</argsstring>
+        <name>load</name>
+        <param>
+          <type>std::string</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Loads File configuration from passed file. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>new Config::Config or passed one. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/config/include/config/loader.hpp" line="53" column="1" bodyfile="DeepLearningSuite/libs/config/src/loader.cpp" bodystart="47" bodyend="59"/>
+        <references refid="namespacejderobotconfig_1_1loader_1a521f15425002acf9d87a5857ac38268f" compoundref="loader_8cpp" startline="27" endline="44">findConfigFile</references>
+        <referencedby refid="class_sample_generation_app_1ac7359b551057127947243e1251237a90" compoundref="_sample_generation_app_8cpp" startline="22" endline="30">SampleGenerationApp::SampleGenerationApp</referencedby>
+        <referencedby refid="namespace_config_1a845ed902425e4e06b984e0ecd861fa18" compoundref="config_8h" startline="49" endline="52">Config::load</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/config/include/config/loader.hpp" line="33" column="1"/>
+  </compounddef>
+</doxygen>

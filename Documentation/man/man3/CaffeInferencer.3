@@ -1,0 +1,47 @@
+.TH "CaffeInferencer" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CaffeInferencer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CaffeInferencer\&.h>\fP
+.PP
+Inherits \fBFrameworkInferencer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCaffeInferencer\fP (const std::string &netConfig, const std::string &netWeights, const std::string &\fBclassNamesFile\fP, std::map< std::string, std::string > *inferencerParamsMap)"
+.br
+.ti -1c
+.RI "\fBSample\fP \fBdetectImp\fP (const cv::Mat &image, double confidence_threshold)"
+.br
+.ti -1c
+.RI "std::vector< cv::String > \fBgetOutputsNames\fP ()"
+.br
+.ti -1c
+.RI "void \fBpostprocess\fP (const std::vector< cv::Mat > &outs, cv::Mat &image, double confidence_threshold)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "CaffeInferencer::CaffeInferencer (const std::string & netConfig, const std::string & netWeights, const std::string & classNamesFile, std::map< std::string, std::string > * inferencerParamsMap)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBSample\fP CaffeInferencer::detectImp (const cv::Mat & image, double confidence_threshold)\fC [virtual]\fP"
+
+.PP
+Implements \fBFrameworkInferencer\fP\&.
+.SS "std::vector< cv::String > CaffeInferencer::getOutputsNames ()"
+
+.SS "void CaffeInferencer::postprocess (const std::vector< cv::Mat > & outs, cv::Mat & image, double confidence_threshold)"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

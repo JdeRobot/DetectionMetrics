@@ -1,0 +1,394 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_generic_dataset_writer_8h" kind="file" language="C++">
+    <compoundname>GenericDatasetWriter.h</compoundname>
+    <includes local="no">string</includes>
+    <includes refid="_dataset_writer_8h" local="yes">DatasetWriter.h</includes>
+    <includes refid="_own_dataset_writer_8h" local="no">DatasetConverters/writers/OwnDatasetWriter.h</includes>
+    <includes refid="_yolo_dataset_writer_8h" local="yes">YoloDatasetWriter.h</includes>
+    <includes refid="_c_o_c_o_dataset_writer_8h" local="yes">COCODatasetWriter.h</includes>
+    <includes refid="_pascal_v_o_c_dataset_writer_8h" local="yes">PascalVOCDatasetWriter.h</includes>
+    <includedby refid="mainwindow_8cpp" local="no">DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp</includedby>
+    <includedby refid="_dataset_evaluation_app_2_sampler_generator_handler_2_converter_8cpp" local="no">DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.cpp</includedby>
+    <includedby refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp" local="no">DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp</includedby>
+    <includedby refid="_generic_dataset_writer_8cpp" local="yes">DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.cpp</includedby>
+    <includedby refid="_tools_2_converter_2_converter_8cpp" local="no">DeepLearningSuite/Tools/Converter/converter.cpp</includedby>
+    <includedby refid="splitter_8cpp" local="no">DeepLearningSuite/Tools/Splitter/splitter.cpp</includedby>
+    <incdepgraph>
+      <node id="3055">
+        <label>rapidjson/writer.h</label>
+      </node>
+      <node id="3059">
+        <label>boost/property_tree/xml_parser.hpp</label>
+      </node>
+      <node id="3037">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="3061">
+        <label>boost/filesystem/operations.hpp</label>
+      </node>
+      <node id="3044">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="3049">
+        <label>glog/logging.h</label>
+      </node>
+      <node id="3031">
+        <label>DatasetWriter.h</label>
+        <link refid="_dataset_writer_8h"/>
+        <childnode refid="3032" relation="include">
+        </childnode>
+        <childnode refid="3050" relation="include">
+        </childnode>
+      </node>
+      <node id="3042">
+        <label>Regions/RleRegions.h</label>
+        <link refid="_rle_regions_8h"/>
+        <childnode refid="3035" relation="include">
+        </childnode>
+        <childnode refid="3036" relation="include">
+        </childnode>
+        <childnode refid="3043" relation="include">
+        </childnode>
+      </node>
+      <node id="3034">
+        <label>Regions/RectRegions.h</label>
+        <link refid="_rect_regions_8h"/>
+        <childnode refid="3035" relation="include">
+        </childnode>
+        <childnode refid="3036" relation="include">
+        </childnode>
+        <childnode refid="3038" relation="include">
+        </childnode>
+        <childnode refid="3039" relation="include">
+        </childnode>
+      </node>
+      <node id="3062">
+        <label>boost/foreach.hpp</label>
+      </node>
+      <node id="3057">
+        <label>PascalVOCDatasetWriter.h</label>
+        <link refid="_pascal_v_o_c_dataset_writer_8h"/>
+        <childnode refid="3030" relation="include">
+        </childnode>
+        <childnode refid="3031" relation="include">
+        </childnode>
+        <childnode refid="3058" relation="include">
+        </childnode>
+        <childnode refid="3059" relation="include">
+        </childnode>
+        <childnode refid="3060" relation="include">
+        </childnode>
+        <childnode refid="3061" relation="include">
+        </childnode>
+        <childnode refid="3062" relation="include">
+        </childnode>
+      </node>
+      <node id="3036">
+        <label>Regions.h</label>
+        <link refid="_regions_8h"/>
+        <childnode refid="3035" relation="include">
+        </childnode>
+        <childnode refid="3037" relation="include">
+        </childnode>
+      </node>
+      <node id="3029">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h</label>
+        <link refid="_generic_dataset_writer_8h"/>
+        <childnode refid="3030" relation="include">
+        </childnode>
+        <childnode refid="3031" relation="include">
+        </childnode>
+        <childnode refid="3051" relation="include">
+        </childnode>
+        <childnode refid="3052" relation="include">
+        </childnode>
+        <childnode refid="3053" relation="include">
+        </childnode>
+        <childnode refid="3057" relation="include">
+        </childnode>
+      </node>
+      <node id="3035">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="3030">
+        <label>string</label>
+      </node>
+      <node id="3045">
+        <label>Common/EvalMatrix.h</label>
+        <link refid="_eval_matrix_8h"/>
+        <childnode refid="3046" relation="include">
+        </childnode>
+        <childnode refid="3048" relation="include">
+        </childnode>
+      </node>
+      <node id="3048">
+        <label>map</label>
+      </node>
+      <node id="3054">
+        <label>rapidjson/document.h</label>
+      </node>
+      <node id="3040">
+        <label>Regions/ContourRegions.h</label>
+        <link refid="_contour_regions_8h"/>
+        <childnode refid="3035" relation="include">
+        </childnode>
+        <childnode refid="3036" relation="include">
+        </childnode>
+        <childnode refid="3041" relation="include">
+        </childnode>
+      </node>
+      <node id="3056">
+        <label>rapidjson/stringbuffer.h</label>
+      </node>
+      <node id="3052">
+        <label>YoloDatasetWriter.h</label>
+        <link refid="_yolo_dataset_writer_8h"/>
+        <childnode refid="3030" relation="include">
+        </childnode>
+        <childnode refid="3031" relation="include">
+        </childnode>
+      </node>
+      <node id="3060">
+        <label>boost/filesystem/path.hpp</label>
+      </node>
+      <node id="3043">
+        <label>RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="3037" relation="include">
+        </childnode>
+        <childnode refid="3044" relation="include">
+        </childnode>
+      </node>
+      <node id="3033">
+        <label>Common/Sample.h</label>
+        <link refid="_sample_8h"/>
+        <childnode refid="3034" relation="include">
+        </childnode>
+        <childnode refid="3040" relation="include">
+        </childnode>
+        <childnode refid="3042" relation="include">
+        </childnode>
+      </node>
+      <node id="3047">
+        <label>vector</label>
+      </node>
+      <node id="3046">
+        <label>Matrix.h</label>
+        <link refid="_matrix_8h"/>
+        <childnode refid="3047" relation="include">
+        </childnode>
+      </node>
+      <node id="3041">
+        <label>ContourRegion.h</label>
+        <link refid="_contour_region_8h"/>
+        <childnode refid="3035" relation="include">
+        </childnode>
+        <childnode refid="3037" relation="include">
+        </childnode>
+      </node>
+      <node id="3058">
+        <label>boost/property_tree/ptree.hpp</label>
+      </node>
+      <node id="3050">
+        <label>unordered_map</label>
+      </node>
+      <node id="3038">
+        <label>RectRegion.h</label>
+        <link refid="_rect_region_8h"/>
+        <childnode refid="3035" relation="include">
+        </childnode>
+      </node>
+      <node id="3032">
+        <label>DatasetConverters/readers/DatasetReader.h</label>
+        <link refid="_dataset_reader_8h"/>
+        <childnode refid="3030" relation="include">
+        </childnode>
+        <childnode refid="3033" relation="include">
+        </childnode>
+        <childnode refid="3037" relation="include">
+        </childnode>
+        <childnode refid="3045" relation="include">
+        </childnode>
+        <childnode refid="3049" relation="include">
+        </childnode>
+      </node>
+      <node id="3039">
+        <label>algorithm</label>
+      </node>
+      <node id="3051">
+        <label>DatasetConverters/writers/OwnDatasetWriter.h</label>
+        <link refid="_own_dataset_writer_8h"/>
+        <childnode refid="3030" relation="include">
+        </childnode>
+        <childnode refid="3032" relation="include">
+        </childnode>
+        <childnode refid="3031" relation="include">
+        </childnode>
+      </node>
+      <node id="3053">
+        <label>COCODatasetWriter.h</label>
+        <link refid="_c_o_c_o_dataset_writer_8h"/>
+        <childnode refid="3030" relation="include">
+        </childnode>
+        <childnode refid="3031" relation="include">
+        </childnode>
+        <childnode refid="3054" relation="include">
+        </childnode>
+        <childnode refid="3055" relation="include">
+        </childnode>
+        <childnode refid="3056" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3065">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_converter_8cpp"/>
+      </node>
+      <node id="3063">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h</label>
+        <link refid="_generic_dataset_writer_8h"/>
+        <childnode refid="3064" relation="include">
+        </childnode>
+        <childnode refid="3065" relation="include">
+        </childnode>
+        <childnode refid="3066" relation="include">
+        </childnode>
+        <childnode refid="3067" relation="include">
+        </childnode>
+        <childnode refid="3068" relation="include">
+        </childnode>
+        <childnode refid="3069" relation="include">
+        </childnode>
+      </node>
+      <node id="3068">
+        <label>DeepLearningSuite/Tools/Converter/converter.cpp</label>
+        <link refid="_tools_2_converter_2_converter_8cpp"/>
+      </node>
+      <node id="3069">
+        <label>DeepLearningSuite/Tools/Splitter/splitter.cpp</label>
+        <link refid="splitter_8cpp"/>
+      </node>
+      <node id="3064">
+        <label>DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="3066">
+        <label>DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp</label>
+        <link refid="_dataset_evaluation_app_2_sampler_generator_handler_2_detector_8cpp"/>
+      </node>
+      <node id="3067">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.cpp</label>
+        <link refid="_generic_dataset_writer_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_generic_dataset_writer" prot="public">GenericDatasetWriter</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066" prot="public" static="no">
+        <name>WRITER_IMPLEMENTATIONS</name>
+        <enumvalue id="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066ab82371b187856d4de3e8112c9da18445" prot="public">
+          <name>WR_OWN</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066a7aca064476488e9f3ee5ca08c924466d" prot="public">
+          <name>WR_YOLO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066ac6207bdc21aae7a73c7ae7e766c75ac4" prot="public">
+          <name>WR_PASCALVOC</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066a3a7c589b65404eb923a50b874ba3f25c" prot="public">
+          <name>WR_COCO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" line="8" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" bodystart="8" bodyend="8"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="_generic_dataset_writer_8h_1a191a7e32d151b8c7ca9a3ec4e34dfa53" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="class_generic_dataset_writer" kindref="compound">GenericDatasetWriter</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;GenericDatasetWriter&gt; GenericDatasetWriterPtr</definition>
+        <argsstring></argsstring>
+        <name>GenericDatasetWriterPtr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" line="40" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Created<sp/>by<sp/>frivas<sp/>on<sp/>5/02/17.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SAMPLERGENERATOR_GENERICDATASETWRITTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SAMPLERGENERATOR_GENERICDATASETWRITTER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066" kindref="member">WRITER_IMPLEMENTATIONS</ref>{<ref refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066ab82371b187856d4de3e8112c9da18445" kindref="member">WR_OWN</ref>,<sp/><ref refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066a7aca064476488e9f3ee5ca08c924466d" kindref="member">WR_YOLO</ref>,<sp/><ref refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066ac6207bdc21aae7a73c7ae7e766c75ac4" kindref="member">WR_PASCALVOC</ref>,<sp/><ref refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066a3a7c589b65404eb923a50b874ba3f25c" kindref="member">WR_COCO</ref>};</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_dataset_writer_8h" kindref="compound">DatasetWriter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_own_dataset_writer_8h" kindref="compound">DatasetConverters/writers/OwnDatasetWriter.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_yolo_dataset_writer_8h" kindref="compound">YoloDatasetWriter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_c_o_c_o_dataset_writer_8h" kindref="compound">COCODatasetWriter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_pascal_v_o_c_dataset_writer_8h" kindref="compound">PascalVOCDatasetWriter.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_generic_dataset_writer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_generic_dataset_writer" kindref="compound">GenericDatasetWriter</ref><sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_generic_dataset_writer_1a687568a6fff812dca1b41063209b144c" kindref="member">GenericDatasetWriter</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/><ref refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" kindref="member">path</ref>,<ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref><sp/>&amp;reader,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;writerImplementation,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>writerNamesFile<sp/>=<sp/>std::string());</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_dataset_writer_8h_1a6d016fa40626aa1798ebce934c5d29b0" kindref="member">DatasetWriterPtr</ref><sp/><ref refid="class_generic_dataset_writer_1a56eed0c235998128360dfc4fdc347799" kindref="member">getWriter</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>std::vector&lt;std::string&gt;<sp/><ref refid="class_generic_dataset_writer_1ae2728eb07aa990f39d41aa0d2eee2206" kindref="member">getAvailableImplementations</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066" kindref="member">WRITER_IMPLEMENTATIONS</ref><sp/>imp;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_yolo_dataset_writer_8h_1ac90eb7c291939096c04b75f21b75471a" kindref="member">YoloDatasetWriterPtr</ref><sp/>yoloDatasetWriterPtr;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_own_dataset_writer_8h_1a44fef7e2023419282f83ffbca3266275" kindref="member">OwnDatasetWriterPtr</ref><sp/>ownDatasetWriterPtr;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_c_o_c_o_dataset_writer_8h_1adc1b46863feaa4a2a037fd391eea2825" kindref="member">COCODatasetWriterPtr</ref><sp/>cocoDatasetWriterPtr;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_pascal_v_o_c_dataset_writer_8h_1abb5287e23628cfc9cbccc05797a90afe" kindref="member">PascalVOCDatasetWriterPtr</ref><sp/>pascalvocDatasetWriterPtr;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::string&gt;<sp/>availableImplementations;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>configureAvailableImplementations(std::vector&lt;std::string&gt;&amp;<sp/>data);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_generic_dataset_writer_8h_1a3c441c5b830d4fcd6d5bdd79b15f4066" kindref="member">WRITER_IMPLEMENTATIONS</ref><sp/>getImplementation(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>writerImplementation);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="_generic_dataset_writer_8h_1a191a7e32d151b8c7ca9a3ec4e34dfa53" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>boost::shared_ptr&lt;GenericDatasetWriter&gt;<sp/><ref refid="_generic_dataset_writer_8h_1a191a7e32d151b8c7ca9a3ec4e34dfa53" kindref="member">GenericDatasetWriterPtr</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//SAMPLERGENERATOR_GENERICDATASETWRITTER_H</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/GenericDatasetWriter.h"/>
+  </compounddef>
+</doxygen>

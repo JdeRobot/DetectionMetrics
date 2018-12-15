@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_rle_regions_8cpp" kind="file" language="C++">
+    <compoundname>RleRegions.cpp</compoundname>
+    <includes refid="_rle_regions_8h" local="yes">RleRegions.h</includes>
+    <includes local="no">rapidjson/rapidjson.h</includes>
+    <includes local="no">rapidjson/document.h</includes>
+    <includes local="no">rapidjson/stringbuffer.h</includes>
+    <includes local="no">rapidjson/writer.h</includes>
+    <includes local="no">fstream</includes>
+    <includes local="no">random</includes>
+    <includes local="yes">rapidjson/filereadstream.h</includes>
+    <incdepgraph>
+      <node id="4734">
+        <label>rapidjson/writer.h</label>
+      </node>
+      <node id="4728">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="4730">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="4725">
+        <label>RleRegions.h</label>
+        <link refid="_rle_regions_8h"/>
+        <childnode refid="4726" relation="include">
+        </childnode>
+        <childnode refid="4727" relation="include">
+        </childnode>
+        <childnode refid="4729" relation="include">
+        </childnode>
+      </node>
+      <node id="4727">
+        <label>Regions.h</label>
+        <link refid="_regions_8h"/>
+        <childnode refid="4726" relation="include">
+        </childnode>
+        <childnode refid="4728" relation="include">
+        </childnode>
+      </node>
+      <node id="4726">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="4731">
+        <label>rapidjson/rapidjson.h</label>
+      </node>
+      <node id="4732">
+        <label>rapidjson/document.h</label>
+      </node>
+      <node id="4735">
+        <label>fstream</label>
+      </node>
+      <node id="4724">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.cpp</label>
+        <link refid="_rle_regions_8cpp"/>
+        <childnode refid="4725" relation="include">
+        </childnode>
+        <childnode refid="4731" relation="include">
+        </childnode>
+        <childnode refid="4732" relation="include">
+        </childnode>
+        <childnode refid="4733" relation="include">
+        </childnode>
+        <childnode refid="4734" relation="include">
+        </childnode>
+        <childnode refid="4735" relation="include">
+        </childnode>
+        <childnode refid="4736" relation="include">
+        </childnode>
+        <childnode refid="4737" relation="include">
+        </childnode>
+      </node>
+      <node id="4733">
+        <label>rapidjson/stringbuffer.h</label>
+      </node>
+      <node id="4736">
+        <label>random</label>
+      </node>
+      <node id="4729">
+        <label>RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="4728" relation="include">
+        </childnode>
+        <childnode refid="4730" relation="include">
+        </childnode>
+      </node>
+      <node id="4737">
+        <label>rapidjson/filereadstream.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_rle_regions_8h" kindref="compound">RleRegions.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rapidjson/rapidjson.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rapidjson/document.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rapidjson/stringbuffer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rapidjson/writer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;random&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;rapidjson/filereadstream.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="struct_rle_regions_1af02a61ff467f90320aa1980ec6924710" refkind="member"><highlight class="normal"><ref refid="struct_rle_regions_1af02a61ff467f90320aa1980ec6924710" kindref="member">RleRegions::RleRegions</ref>(){</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="struct_rle_regions_1a4d7fd1bdb03c494c5ebe66e940337a73" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rle_regions_1a4d7fd1bdb03c494c5ebe66e940337a73" kindref="member">RleRegions::add</ref>(<ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>region,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>classId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isCrowd)<sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_rle_region" kindref="compound">RleRegion</ref><sp/>regionToInsert(region,<sp/>classId,<sp/>isCrowd);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itr<sp/>=<sp/>std::upper_bound(<ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>.begin(),<sp/><ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>.end(),<sp/>regionToInsert);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>regionToInsert.<ref refid="struct_rle_region_1a3e9536b27f34bb3932c5b3d3f60a416b" kindref="member">uniqObjectID</ref><sp/>=<sp/><ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>.size();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>.insert(itr,<sp/>regionToInsert);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="struct_rle_regions_1a537a1a2b789d4d95fd579a82baf89f2f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rle_regions_1a4d7fd1bdb03c494c5ebe66e940337a73" kindref="member">RleRegions::add</ref>(<ref refid="struct_r_l_e" kindref="compound">RLE</ref><sp/>region,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>classId,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>confidence_score,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isCrowd)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_rle_region" kindref="compound">RleRegion</ref><sp/>regionToInsert(region,<sp/>classId,<sp/>confidence_score,<sp/>isCrowd);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>itr<sp/>=<sp/>std::upper_bound(<ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>.begin(),<sp/><ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>.end(),<sp/>regionToInsert);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>regionToInsert.<ref refid="struct_rle_region_1a3e9536b27f34bb3932c5b3d3f60a416b" kindref="member">uniqObjectID</ref><sp/>=<sp/><ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>.size();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>.insert(itr,<sp/>regionToInsert);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//regions.push_back(RectRegion(rect,<sp/>cla</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="struct_rle_regions_1a643c55d59720ba45a78e0e6090018e05" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rle_regions_1a643c55d59720ba45a78e0e6090018e05" kindref="member">RleRegions::saveJson</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;outPath)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>rapidjson::Document<sp/>d;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*d.SetObject();</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/><sp/><sp/><sp/>d.SetArray();</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/><sp/><sp/><sp/>for<sp/>(auto<sp/>it<sp/>=<sp/>this-&gt;regions.begin(),<sp/>end=this-&gt;regions.end();<sp/>it<sp/>!=<sp/>end;<sp/>it++){</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rapidjson::Value<sp/>detection;</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>detection.SetObject();</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rapidjson::Value<sp/>idValue(it-&gt;classID.c_str(),d.GetAllocator());</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>detection.AddMember(&quot;classID&quot;,idValue,d.GetAllocator());</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"></highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rapidjson::Value<sp/>regionValue;</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>regionValue.SetArray();</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"></highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(auto<sp/>it2=it-&gt;region.begin(),<sp/>end2=<sp/>it-&gt;region.end();<sp/>it2<sp/>!=<sp/>end2;<sp/>++it2)<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rapidjson::Value<sp/>point;</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>point.SetObject();</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rapidjson::Value<sp/>xValue(it2-&gt;x);</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>point.AddMember(&quot;x&quot;,<sp/>xValue,<sp/>d.GetAllocator());</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"></highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rapidjson::Value<sp/>yValue(it2-&gt;y);</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>point.AddMember(&quot;y&quot;,<sp/>yValue,<sp/>d.GetAllocator());</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"></highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>regionValue.PushBack(point,<sp/>d.GetAllocator());</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>detection.AddMember(&quot;region&quot;,regionValue,d.GetAllocator());</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d.PushBack(detection,d.GetAllocator());</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"></highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/>rapidjson::StringBuffer<sp/>buffer;</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"></highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/><sp/>buffer.Clear();</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"></highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/><sp/>rapidjson::Writer&lt;rapidjson::StringBuffer&gt;<sp/>writer(buffer);</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/>d.Accept(writer);</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"></highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/>std::ofstream<sp/>outFile(outPath);</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/><sp/>outFile<sp/>&lt;&lt;<sp/>buffer.GetString()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/><sp/><sp/><sp/>outFile.close();*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="struct_rle_regions_1a0188b60eb616945a63ad9dd14a167392" refkind="member"><highlight class="normal"><ref refid="struct_rle_region" kindref="compound">RleRegion</ref><sp/><ref refid="struct_rle_regions_1a0188b60eb616945a63ad9dd14a167392" kindref="member">RleRegions::getRegion</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>idx)<sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>.size()<sp/>-1<sp/>&gt;=<sp/>idx)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>[idx];</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_rle_region" kindref="compound">RleRegion</ref>();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="struct_rle_regions_1aedcc9f614d38a2882a589e3014799d91" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rle_regions_1aedcc9f614d38a2882a589e3014799d91" kindref="member">RleRegions::drawRegions</ref>(cv::Mat<sp/>&amp;image)<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>std::default_random_engine<sp/><ref refid="namespacegenerator" kindref="compound">generator</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>std::uniform_real_distribution&lt;double&gt;<sp/>distribution(0.0,1.0);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/><ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>.begin(),<sp/>end=<sp/><ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>.end();<sp/>it<sp/>!=<sp/>end;<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::Mat<sp/>mask<sp/>=<sp/>cv::Mat(it-&gt;region.w,<sp/>it-&gt;region.h,<sp/>CV_8UC1,<sp/>cv::Scalar(0));</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mask_api_8cpp_1a04f96b392b2f316fce42e8c86fc77d51" kindref="member">rleDecode</ref>(&amp;(it-&gt;region),<sp/>mask.data<sp/>,<sp/>1);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mask<sp/>=<sp/>mask<sp/>*<sp/>255;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::Mat<sp/>rotatedMask<sp/>=<sp/>mask.t();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::Scalar<sp/>color;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;std::vector&lt;cv::Point&gt;<sp/>&gt;<sp/>contours;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it-&gt;isCrowd)<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>color<sp/>=<sp/>cv::Scalar(2,166,101);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>color<sp/>=<sp/>cv::Scalar((</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)(distribution(generator)*170),<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)(distribution(generator)*170),<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)(distribution(generator)*170));</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::findContours(<sp/>rotatedMask.clone(),<sp/>contours,<sp/>cv::RETR_CCOMP,<sp/>cv::CHAIN_APPROX_SIMPLE,<sp/>cv::Point(0,<sp/>0)<sp/>);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::Mat<sp/>colorMask(image.size(),<sp/>CV_8UC3,<sp/>color);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::Mat<sp/>output(colorMask.size(),<sp/>CV_8UC3,<sp/>cv::Scalar(0));</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>colorMask.copyTo(output,<sp/>rotatedMask);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>image<sp/>=<sp/>image.mul(((<sp/>255<sp/>-<sp/>output<sp/>)/255<sp/>))<sp/><sp/>+<sp/>output;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cv::drawContours(image,<sp/>contours,<sp/>-1,<sp/>color,<sp/>2,<sp/>8);</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="struct_rle_regions_1a66101430c60a2e954c9f9b197bbd4030" refkind="member"><highlight class="normal">std::vector&lt;RleRegion&gt;<sp/><ref refid="struct_rle_regions_1a66101430c60a2e954c9f9b197bbd4030" kindref="member">RleRegions::getRegions</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="struct_rle_regions_1a50e7df1873c11d5436cbe875593c331b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rle_regions_1a50e7df1873c11d5436cbe875593c331b" kindref="member">RleRegions::filterSamplesByID</ref>(std::vector&lt;std::string&gt;<sp/>filteredIDS)<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;RleRegion&gt;<sp/>oldRegions(this-&gt;<ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>.clear();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>oldRegions.begin(),<sp/>end=oldRegions.end();<sp/>it<sp/>!=<sp/>end;<sp/>++it)<sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::find(filteredIDS.begin(),<sp/>filteredIDS.end(),<sp/>it-&gt;classID)<sp/>!=<sp/>filteredIDS.end())<sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>.push_back(*it);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="struct_rle_regions_1acaea73c92cdcff78a60d1e10bed62c3d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_rle_regions_1acaea73c92cdcff78a60d1e10bed62c3d" kindref="member">RleRegions::empty</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(this-&gt;<ref refid="struct_rle_regions_1a49c81f3a73376196ac33e70d2a49b867" kindref="member">regions</ref>.size()==0);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="struct_rle_regions_1a83e335ebc08dd7029bdc76baa8b71b32" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="struct_rle_regions_1a83e335ebc08dd7029bdc76baa8b71b32" kindref="member">RleRegions::print</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//todo</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Not<sp/>yet<sp/>implemented&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegions.cpp"/>
+  </compounddef>
+</doxygen>

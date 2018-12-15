@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_tensor_flow_inferencer_1_1detection" kind="struct" language="C++" prot="private">
+    <compoundname>TensorFlowInferencer::detection</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_tensor_flow_inferencer_1_1detection_1a11a2a1ef343916bc464f2acf4739e091" prot="public" static="no" mutable="no">
+        <type>cv::Rect</type>
+        <definition>cv::Rect TensorFlowInferencer::detection::boundingBox</definition>
+        <argsstring></argsstring>
+        <name>boundingBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_tensor_flow_inferencer_1_1detection_1a89893adb8e92387269c9f6843e7eb86c" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_r_l_e" kindref="compound">RLE</ref></type>
+        <definition>RLE TensorFlowInferencer::detection::rleRegion</definition>
+        <argsstring></argsstring>
+        <name>rleRegion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_tensor_flow_inferencer_1_1detection_1af170685c23bbd9cf2470464b6493638d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float TensorFlowInferencer::detection::probability</definition>
+        <argsstring></argsstring>
+        <name>probability</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="22" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_tensor_flow_inferencer_1_1detection_1ad7b79b83d7be0172d614971672bed596" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int TensorFlowInferencer::detection::classId</definition>
+        <argsstring></argsstring>
+        <name>classId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="115">
+        <label>RLE</label>
+        <link refid="struct_r_l_e"/>
+      </node>
+      <node id="114">
+        <label>TensorFlowInferencer::detection</label>
+        <childnode refid="115" relation="usage">
+          <edgelabel>rleRegion</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="18" bodyend="24"/>
+    <listofallmembers>
+      <member refid="struct_tensor_flow_inferencer_1_1detection_1a11a2a1ef343916bc464f2acf4739e091" prot="public" virt="non-virtual"><scope>TensorFlowInferencer::detection</scope><name>boundingBox</name></member>
+      <member refid="struct_tensor_flow_inferencer_1_1detection_1ad7b79b83d7be0172d614971672bed596" prot="public" virt="non-virtual"><scope>TensorFlowInferencer::detection</scope><name>classId</name></member>
+      <member refid="struct_tensor_flow_inferencer_1_1detection_1af170685c23bbd9cf2470464b6493638d" prot="public" virt="non-virtual"><scope>TensorFlowInferencer::detection</scope><name>probability</name></member>
+      <member refid="struct_tensor_flow_inferencer_1_1detection_1a89893adb8e92387269c9f6843e7eb86c" prot="public" virt="non-virtual"><scope>TensorFlowInferencer::detection</scope><name>rleRegion</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

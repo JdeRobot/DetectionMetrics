@@ -1,0 +1,348 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_tensor_flow_inferencer" kind="class" language="C++" prot="public">
+    <compoundname>TensorFlowInferencer</compoundname>
+    <basecompoundref refid="class_framework_inferencer" prot="public" virt="non-virtual">FrameworkInferencer</basecompoundref>
+    <includes refid="_tensor_flow_inferencer_8h" local="no">TensorFlowInferencer.h</includes>
+    <innerclass refid="struct_tensor_flow_inferencer_1_1detection" prot="private">TensorFlowInferencer::detection</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_tensor_flow_inferencer_1a7cb647ca4b7c9a53cdd969919a985a2b" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string TensorFlowInferencer::netConfig</definition>
+        <argsstring></argsstring>
+        <name>netConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tensor_flow_inferencer_1a70e813f64ffdd7b87657f551f93eb023" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string TensorFlowInferencer::netWeights</definition>
+        <argsstring></argsstring>
+        <name>netWeights</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tensor_flow_inferencer_1a4653f6c77b991b274e813c4f8ad646c5" prot="private" static="no" mutable="no">
+        <type>PyObject *</type>
+        <definition>PyObject* TensorFlowInferencer::pName</definition>
+        <argsstring></argsstring>
+        <name>pName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tensor_flow_inferencer_1a7d0d819fecb67464182009705691b53a" prot="private" static="no" mutable="no">
+        <type>PyObject *</type>
+        <definition>PyObject * TensorFlowInferencer::pModule</definition>
+        <argsstring></argsstring>
+        <name>pModule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tensor_flow_inferencer_1a66da5ff7ce05381a9e1d380842f817f7" prot="private" static="no" mutable="no">
+        <type>PyObject *</type>
+        <definition>PyObject * TensorFlowInferencer::pClass</definition>
+        <argsstring></argsstring>
+        <name>pClass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tensor_flow_inferencer_1af9710331ac03824f38eec18c43302a40" prot="private" static="no" mutable="no">
+        <type>PyObject *</type>
+        <definition>PyObject * TensorFlowInferencer::pInstance</definition>
+        <argsstring></argsstring>
+        <name>pInstance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tensor_flow_inferencer_1a0204fe8d6b5749496138092d1cdd4b17" prot="private" static="no" mutable="no">
+        <type>PyObject *</type>
+        <definition>PyObject* TensorFlowInferencer::pArgs</definition>
+        <argsstring></argsstring>
+        <name>pArgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tensor_flow_inferencer_1a320ec1689196d3628ba4d2a9edcaa47d" prot="private" static="no" mutable="no">
+        <type>PyObject *</type>
+        <definition>PyObject * TensorFlowInferencer::pValue</definition>
+        <argsstring></argsstring>
+        <name>pValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tensor_flow_inferencer_1a89d3a8fa0e4eb0ea81333dbb04d6adc9" prot="private" static="no" mutable="no">
+        <type>PyObject *</type>
+        <definition>PyObject * TensorFlowInferencer::pmodel</definition>
+        <argsstring></argsstring>
+        <name>pmodel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tensor_flow_inferencer_1ad8eda8d27d8feaf17661e05b077dedd9" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; detection &gt;</type>
+        <definition>std::vector&lt;detection&gt; TensorFlowInferencer::detections</definition>
+        <argsstring></argsstring>
+        <name>detections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="29" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tensor_flow_inferencer_1a1198c958b291379de51ed0574680be76" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TensorFlowInferencer::hasMasks</definition>
+        <argsstring></argsstring>
+        <name>hasMasks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="30" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_tensor_flow_inferencer_1a78ef7a49464aeb0d846910cda36b33cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TensorFlowInferencer::TensorFlowInferencer</definition>
+        <argsstring>(const std::string &amp;netConfig, const std::string &amp;netWeights, const std::string &amp;classNamesFile)</argsstring>
+        <name>TensorFlowInferencer</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>netConfig</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>netWeights</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classNamesFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="10" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.cpp" bodystart="5" bodyend="65"/>
+        <references refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" compoundref="_framework_inferencer_8h" startline="24">FrameworkInferencer::classNamesFile</references>
+        <references refid="class_tensor_flow_inferencer_1a301f29e30c8f18bc71ca627a11af5cc6" compoundref="_tensor_flow_inferencer_8cpp" startline="67" endline="70">init</references>
+      </memberdef>
+      <memberdef kind="function" id="class_tensor_flow_inferencer_1ae8b603ab05273a9ec5fee720f23d0c58" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="struct_sample" kindref="compound">Sample</ref></type>
+        <definition>Sample TensorFlowInferencer::detectImp</definition>
+        <argsstring>(const cv::Mat &amp;image, double confidence_threshold)</argsstring>
+        <name>detectImp</name>
+        <reimplements refid="class_framework_inferencer_1a8fd7e708c8be4471bc2b37a4193a9045">detectImp</reimplements>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>confidence_threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="11" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.cpp" bodystart="72" bodyend="108"/>
+        <references refid="class_tensor_flow_inferencer_1af5d1c756798e075bc44f51857571143a" compoundref="_tensor_flow_inferencer_8cpp" startline="221" endline="291">gettfInferences</references>
+        <references refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" compoundref="_framework_inferencer_8h" startline="24">FrameworkInferencer::classNamesFile</references>
+        <references refid="struct_class_type_generic_1abb29534e4b1c9e2b33c57df5e56ef2fb" compoundref="_class_type_generic_8cpp" startline="26" endline="28">ClassTypeGeneric::setId</references>
+        <references refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" compoundref="_class_type_8cpp" startline="44" endline="46">ClassType::getClassString</references>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">Sample::setColorImage</references>
+        <references refid="struct_sample_1a9654dcf85e7a0b19b7b462cd7e6e1e6a" compoundref="_sample_8cpp" startline="84" endline="86">Sample::setRectRegions</references>
+        <references refid="struct_sample_1a6716c8c1e8fdcd00d66b2a959a79b507" compoundref="_sample_8cpp" startline="92" endline="94">Sample::setRleRegions</references>
+      </memberdef>
+      <memberdef kind="function" id="class_tensor_flow_inferencer_1af5d1c756798e075bc44f51857571143a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int TensorFlowInferencer::gettfInferences</definition>
+        <argsstring>(const cv::Mat &amp;image, double confidence_threshold)</argsstring>
+        <name>gettfInferences</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>confidence_threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.cpp" bodystart="221" bodyend="291"/>
+        <references refid="class_tensor_flow_inferencer_1a57f6622a03e8ee69e6f2ef17e09b3545" compoundref="_tensor_flow_inferencer_8cpp" startline="116" endline="213">output_result</references>
+        <referencedby refid="class_tensor_flow_inferencer_1ae8b603ab05273a9ec5fee720f23d0c58" compoundref="_tensor_flow_inferencer_8cpp" startline="72" endline="108">detectImp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_tensor_flow_inferencer_1a57f6622a03e8ee69e6f2ef17e09b3545" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TensorFlowInferencer::output_result</definition>
+        <argsstring>(int num_detections, int width, int height, PyObject *bounding_boxes, PyObject *detection_scores, PyObject *classIds, PyObject *detections_masks=NULL)</argsstring>
+        <name>output_result</name>
+        <param>
+          <type>int</type>
+          <declname>num_detections</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>PyObject *</type>
+          <declname>bounding_boxes</declname>
+        </param>
+        <param>
+          <type>PyObject *</type>
+          <declname>detection_scores</declname>
+        </param>
+        <param>
+          <type>PyObject *</type>
+          <declname>classIds</declname>
+        </param>
+        <param>
+          <type>PyObject *</type>
+          <declname>detections_masks</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.cpp" bodystart="116" bodyend="213"/>
+        <references refid="namespacetensorflow__detect_1a92f27be303bb36c28ed99f95a89104b1" compoundref="tensorflow__detect_8py" startline="12">tensorflow_detect.threshold</references>
+        <references refid="mask_api_8cpp_1ad8f4231081925e13e5464ed07b1bbb08" compoundref="mask_api_8cpp" startline="28" endline="37">rleEncode</references>
+        <referencedby refid="class_tensor_flow_inferencer_1af5d1c756798e075bc44f51857571143a" compoundref="_tensor_flow_inferencer_8cpp" startline="221" endline="291">gettfInferences</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_tensor_flow_inferencer_1a301f29e30c8f18bc71ca627a11af5cc6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TensorFlowInferencer::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.cpp" bodystart="67" bodyend="70"/>
+        <referencedby refid="class_tensor_flow_inferencer_1a78ef7a49464aeb0d846910cda36b33cc" compoundref="_tensor_flow_inferencer_8cpp" startline="5" endline="65">TensorFlowInferencer</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="340">
+        <label>FrameworkInferencer</label>
+        <link refid="class_framework_inferencer"/>
+      </node>
+      <node id="339">
+        <label>TensorFlowInferencer</label>
+        <link refid="class_tensor_flow_inferencer"/>
+        <childnode refid="340" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="342">
+        <label>FrameworkInferencer</label>
+        <link refid="class_framework_inferencer"/>
+      </node>
+      <node id="341">
+        <label>TensorFlowInferencer</label>
+        <link refid="class_tensor_flow_inferencer"/>
+        <childnode refid="342" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" line="8" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/TensorFlowInferencer.h" bodystart="8" bodyend="32"/>
+    <listofallmembers>
+      <member refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" prot="protected" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>classNamesFile</name></member>
+      <member refid="class_framework_inferencer_1a4c2b3b0ec03df5f97e7b32235422dc60" prot="public" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>detect</name></member>
+      <member refid="class_tensor_flow_inferencer_1ae8b603ab05273a9ec5fee720f23d0c58" prot="public" virt="virtual"><scope>TensorFlowInferencer</scope><name>detectImp</name></member>
+      <member refid="class_tensor_flow_inferencer_1ad8eda8d27d8feaf17661e05b077dedd9" prot="private" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>detections</name></member>
+      <member refid="class_framework_inferencer_1adda91b1e8b6238e4cd3cc18e84675fea" prot="public" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>FrameworkInferencer</name></member>
+      <member refid="class_framework_inferencer_1a51291e562ddc5a4b86c0c413439d59a5" prot="public" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>getMeanDurationTime</name></member>
+      <member refid="class_tensor_flow_inferencer_1af5d1c756798e075bc44f51857571143a" prot="public" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>gettfInferences</name></member>
+      <member refid="class_tensor_flow_inferencer_1a1198c958b291379de51ed0574680be76" prot="private" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>hasMasks</name></member>
+      <member refid="class_tensor_flow_inferencer_1a301f29e30c8f18bc71ca627a11af5cc6" prot="public" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>init</name></member>
+      <member refid="class_tensor_flow_inferencer_1a7cb647ca4b7c9a53cdd969919a985a2b" prot="private" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>netConfig</name></member>
+      <member refid="class_tensor_flow_inferencer_1a70e813f64ffdd7b87657f551f93eb023" prot="private" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>netWeights</name></member>
+      <member refid="class_tensor_flow_inferencer_1a57f6622a03e8ee69e6f2ef17e09b3545" prot="public" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>output_result</name></member>
+      <member refid="class_tensor_flow_inferencer_1a0204fe8d6b5749496138092d1cdd4b17" prot="private" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>pArgs</name></member>
+      <member refid="class_tensor_flow_inferencer_1a66da5ff7ce05381a9e1d380842f817f7" prot="private" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>pClass</name></member>
+      <member refid="class_tensor_flow_inferencer_1af9710331ac03824f38eec18c43302a40" prot="private" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>pInstance</name></member>
+      <member refid="class_tensor_flow_inferencer_1a89d3a8fa0e4eb0ea81333dbb04d6adc9" prot="private" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>pmodel</name></member>
+      <member refid="class_tensor_flow_inferencer_1a7d0d819fecb67464182009705691b53a" prot="private" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>pModule</name></member>
+      <member refid="class_tensor_flow_inferencer_1a4653f6c77b991b274e813c4f8ad646c5" prot="private" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>pName</name></member>
+      <member refid="class_tensor_flow_inferencer_1a320ec1689196d3628ba4d2a9edcaa47d" prot="private" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>pValue</name></member>
+      <member refid="class_tensor_flow_inferencer_1a78ef7a49464aeb0d846910cda36b33cc" prot="public" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>TensorFlowInferencer</name></member>
+      <member refid="class_framework_inferencer_1a0a0ad89131a1f2a2377a3003b0c1d319" prot="public" virt="non-virtual"><scope>TensorFlowInferencer</scope><name>~ FrameworkInferencer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

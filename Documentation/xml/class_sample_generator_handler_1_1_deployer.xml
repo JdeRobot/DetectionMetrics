@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_sample_generator_handler_1_1_deployer" kind="class" language="C++" prot="public">
+    <compoundname>SampleGeneratorHandler::Deployer</compoundname>
+    <includes refid="_deployer_8h" local="no">Deployer.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_sample_generator_handler_1_1_deployer_1ad9964a4e64b6d51ce7cd63083929ac42" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SampleGeneratorHandler::Deployer::process</definition>
+        <argsstring>(QListView *deployImpList, QListView *weightsList, QListView *netConfigList, QListView *inferencerImpList, QListView *inferencerNamesList, bool *stopButton, double *confidence_threshold, QGroupBox *deployer_params, QGroupBox *camera_params, QGroupBox *inferencer_params, const std::string &amp;weightsPath, const std::string &amp;cfgPath, const std::string &amp;inferencerNamesPath, const std::string &amp;inputInfo, const std::string &amp;outputFolder)</argsstring>
+        <name>process</name>
+        <param>
+          <type>QListView *</type>
+          <declname>deployImpList</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>weightsList</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>netConfigList</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>inferencerImpList</declname>
+        </param>
+        <param>
+          <type>QListView *</type>
+          <declname>inferencerNamesList</declname>
+        </param>
+        <param>
+          <type>bool *</type>
+          <declname>stopButton</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>confidence_threshold</declname>
+        </param>
+        <param>
+          <type>QGroupBox *</type>
+          <declname>deployer_params</declname>
+        </param>
+        <param>
+          <type>QGroupBox *</type>
+          <declname>camera_params</declname>
+        </param>
+        <param>
+          <type>QGroupBox *</type>
+          <declname>inferencer_params</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>weightsPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>cfgPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>inferencerNamesPath</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>inputInfo</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outputFolder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.h" line="15" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.cpp" bodystart="13" bodyend="89"/>
+        <references refid="class_sample_generator_handler_1_1_sampler_generation_handler_1ad840c7f9b5a3281f62829933308e7e18" compoundref="_sampler_generation_handler_8cpp" startline="57" endline="102">SampleGeneratorHandler::SamplerGenerationHandler::createLiveReaderPtr</references>
+        <references refid="class_utils_1af7234a751d8a81bd01774e9af9e403be" compoundref="_utils_8cpp" startline="7" endline="21">Utils::getListViewContent</references>
+        <references refid="class_utils_1ae909b1275beb381a21977eb3618d31cd" compoundref="_utils_8cpp" startline="52" endline="86">Utils::getInferencerParamsContent</references>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+        <references refid="class_mass_inferencer_1a64197fd7172177a03d5e87f5dbf37dc3" compoundref="_mass_inferencer_8cpp" startline="81" endline="159">MassInferencer::process</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.h" line="13" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.h" bodystart="13" bodyend="18"/>
+    <listofallmembers>
+      <member refid="class_sample_generator_handler_1_1_deployer_1ad9964a4e64b6d51ce7cd63083929ac42" prot="public" virt="non-virtual"><scope>SampleGeneratorHandler::Deployer</scope><name>process</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

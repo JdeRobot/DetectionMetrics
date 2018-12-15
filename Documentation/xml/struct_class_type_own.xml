@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_class_type_own" kind="struct" language="C++" prot="public">
+    <compoundname>ClassTypeOwn</compoundname>
+    <basecompoundref refid="struct_class_type" prot="public" virt="non-virtual">ClassType</basecompoundref>
+    <includes refid="_class_type_own_8h" local="no">ClassTypeOwn.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_class_type_own_1a1224d96cba263c903f2943477fd25273" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ClassTypeOwn::ClassTypeOwn</definition>
+        <argsstring>(int id)</argsstring>
+        <name>ClassTypeOwn</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.cpp" bodystart="14" bodyend="17"/>
+        <references refid="struct_class_type_own_1a4328aa6d88335c50ea33e1bbe6584d7e" compoundref="_class_type_own_8cpp" startline="19" endline="103">fillStringClassesVector</references>
+        <references refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" compoundref="_class_type_8h" startline="19">ClassType::classID</references>
+        <references refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" compoundref="_class_type_8h" startline="18">ClassType::classes</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_type_own_1a5a7bbd16b56ab3d470bdfe48a2d1e51b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ClassTypeOwn::ClassTypeOwn</definition>
+        <argsstring>(const std::string &amp;classID)</argsstring>
+        <name>ClassTypeOwn</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.cpp" bodystart="9" bodyend="12"/>
+        <references refid="struct_class_type_own_1a4328aa6d88335c50ea33e1bbe6584d7e" compoundref="_class_type_own_8cpp" startline="19" endline="103">fillStringClassesVector</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_class_type_own_1a4328aa6d88335c50ea33e1bbe6584d7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ClassTypeOwn::fillStringClassesVector</definition>
+        <argsstring>()</argsstring>
+        <name>fillStringClassesVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.cpp" bodystart="19" bodyend="103"/>
+        <references refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" compoundref="_class_type_8h" startline="18">ClassType::classes</references>
+        <referencedby refid="struct_class_type_own_1a5a7bbd16b56ab3d470bdfe48a2d1e51b" compoundref="_class_type_own_8cpp" startline="9" endline="12">ClassTypeOwn</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="45">
+        <label>ClassTypeOwn</label>
+        <link refid="struct_class_type_own"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>ClassType</label>
+        <link refid="struct_class_type"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="47">
+        <label>ClassTypeOwn</label>
+        <link refid="struct_class_type_own"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>ClassType</label>
+        <link refid="struct_class_type"/>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.h" line="11" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/ClassTypeOwn.h" bodystart="11" bodyend="16"/>
+    <listofallmembers>
+      <member refid="struct_class_type_1a37ea5c5449bc06ed3f2a327448abe02a" prot="protected" virt="non-virtual"><scope>ClassTypeOwn</scope><name>_get_color</name></member>
+      <member refid="struct_class_type_1af453ca0ff4cf50bc7dc45272cc77565a" prot="protected" virt="non-virtual"><scope>ClassTypeOwn</scope><name>classes</name></member>
+      <member refid="struct_class_type_1ae50867baa128ab7aabab4f900e03f9cc" prot="protected" virt="non-virtual"><scope>ClassTypeOwn</scope><name>classID</name></member>
+      <member refid="struct_class_type_own_1a1224d96cba263c903f2943477fd25273" prot="public" virt="non-virtual"><scope>ClassTypeOwn</scope><name>ClassTypeOwn</name></member>
+      <member refid="struct_class_type_own_1a5a7bbd16b56ab3d470bdfe48a2d1e51b" prot="public" virt="non-virtual"><scope>ClassTypeOwn</scope><name>ClassTypeOwn</name></member>
+      <member refid="struct_class_type_own_1a4328aa6d88335c50ea33e1bbe6584d7e" prot="public" virt="non-virtual"><scope>ClassTypeOwn</scope><name>fillStringClassesVector</name></member>
+      <member refid="struct_class_type_1a867149836bb99711a7c14fbe7801c9e4" prot="public" virt="non-virtual"><scope>ClassTypeOwn</scope><name>getAllAvailableClasses</name></member>
+      <member refid="struct_class_type_1ab5cc3bb3376a812d051d4726eb4ee063" prot="public" virt="non-virtual"><scope>ClassTypeOwn</scope><name>getClassID</name></member>
+      <member refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" prot="public" virt="non-virtual"><scope>ClassTypeOwn</scope><name>getClassString</name></member>
+      <member refid="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" prot="public" virt="non-virtual"><scope>ClassTypeOwn</scope><name>getColor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

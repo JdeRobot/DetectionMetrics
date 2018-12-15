@@ -1,0 +1,37 @@
+.TH "DarknetInferencer" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DarknetInferencer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DarknetInferencer\&.h>\fP
+.PP
+Inherits \fBFrameworkInferencer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDarknetInferencer\fP (const std::string &netConfig, const std::string &netWeights, const std::string &\fBclassNamesFile\fP)"
+.br
+.ti -1c
+.RI "\fBSample\fP \fBdetectImp\fP (const cv::Mat &image, double confidence_threshold)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DarknetInferencer::DarknetInferencer (const std::string & netConfig, const std::string & netWeights, const std::string & classNamesFile)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBSample\fP DarknetInferencer::detectImp (const cv::Mat & image, double confidence_threshold)\fC [virtual]\fP"
+
+.PP
+Implements \fBFrameworkInferencer\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

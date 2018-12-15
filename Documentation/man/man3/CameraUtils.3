@@ -1,0 +1,40 @@
+.TH "CameraUtils" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CameraUtils
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CameraUtils\&.h>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static cv::Mat \fBgetImageFromCameraProxy\fP (jderobot::ImageDataPtr dataPtr)"
+.br
+.ti -1c
+.RI "static std::string \fBnegotiateDefaultFormat\fP (jderobot::CameraPrx prx, const std::string &definedFormat)"
+.br
+.ti -1c
+.RI "static bool \fBcompressImage\fP (const cv::Mat &image, unsigned char **compressed_data, unsigned long &compress_len)"
+.br
+.ti -1c
+.RI "static jderobot::ImageDataPtr \fBconvert\fP (const cv::Mat &image)"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "bool CameraUtils::compressImage (const cv::Mat & image, unsigned char ** compressed_data, unsigned long & compress_len)\fC [static]\fP"
+
+.SS "jderobot::ImageDataPtr CameraUtils::convert (const cv::Mat & image)\fC [static]\fP"
+
+.SS "cv::Mat CameraUtils::getImageFromCameraProxy (jderobot::ImageDataPtr dataPtr)\fC [static]\fP"
+
+.SS "std::string CameraUtils::negotiateDefaultFormat (jderobot::CameraPrx prx, const std::string & definedFormat)\fC [static]\fP"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

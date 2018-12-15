@@ -1,0 +1,190 @@
+\hypertarget{struct_class_statistics}{}\section{Class\+Statistics Struct Reference}
+\label{struct_class_statistics}\index{Class\+Statistics@{Class\+Statistics}}
+
+
+{\ttfamily \#include $<$Class\+Statistics.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_class_statistics_ac5a27388db5ca1d9283096020a9b1aeb}{Class\+Statistics} ()
+\item 
+\hyperlink{struct_class_statistics_a0434f553802cd8ea436164281184c8e7}{Class\+Statistics} (const std\+::string \&\hyperlink{struct_class_statistics_a4f06e2d800fde06ed4f6b77547d8dc06}{class\+ID})
+\item 
+double \hyperlink{struct_class_statistics_a22377aafdf557f655f500783fc5dc77f}{get\+Mean\+I\+OU} () const
+\item 
+double \hyperlink{struct_class_statistics_af97e1c498a387e6762be460e61d0e610}{get\+Average\+Precision} (std\+::vector$<$ double $>$ recall\+Thrs) const
+\item 
+std\+::vector$<$ double $>$ \hyperlink{struct_class_statistics_a33a90034e90af43aa97e1b46e9c8567f}{get\+Precision\+Array} () const
+\item 
+std\+::vector$<$ double $>$ \hyperlink{struct_class_statistics_a3fa2067c657166bcc5d6719575e64ddc}{get\+Precision\+Array\+Op} () const
+\item 
+std\+::vector$<$ double $>$ \hyperlink{struct_class_statistics_aa6b024d72444ea2b8d71f5f2a416655c}{get\+Precision\+For\+Diff\+Recall\+Thrs} (std\+::vector$<$ double $>$ recall\+Thrs) const
+\item 
+std\+::vector$<$ double $>$ \hyperlink{struct_class_statistics_ae8fc780d72aca26b4dfc5af5992cb41b}{get\+Recall\+Array} () const
+\item 
+double \hyperlink{struct_class_statistics_a4b189bb3822f02cca79dbe1b59fce7b5}{get\+Recall} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{struct_class_statistics_a66418a700e12730feb6ad54d81ba0a8e}{divide} (double x, double y)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{struct_class_statistics_a4f06e2d800fde06ed4f6b77547d8dc06}{class\+ID}
+\item 
+int \hyperlink{struct_class_statistics_af869c91eda0b044c899797a3b10153ca}{num\+Ground\+Truths\+Reg} = 0
+\item 
+int \hyperlink{struct_class_statistics_a016df1ad61f150bb92d7d987488a4741}{num\+Ground\+Truths\+Ig} = 0
+\item 
+std\+::vector$<$ double $>$ \hyperlink{struct_class_statistics_ac0495687ef1d08720c41612afbf49730}{iou}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{struct_class_statistics_a07e9de84d5cda8ee5b91d54f8d8685b1}{true\+Positives}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{struct_class_statistics_a0193beb26acd9dab5f7a1709b50c353c}{false\+Positives}
+\item 
+std\+::multiset$<$ double $>$ \hyperlink{struct_class_statistics_a13f50f2fa57bf7de930955cd149667b6}{conf\+Scores}
+\item 
+int \hyperlink{struct_class_statistics_aa0b08fee8daa548214f4bcc3b2c5cc86}{n\+Samples}
+\item 
+int \hyperlink{struct_class_statistics_a5485816a475a6cc554c2d9e5b442c96d}{false\+Negatives}
+\item 
+int \hyperlink{struct_class_statistics_a8b268ca669e6d982c8ce409330cf08f9}{true\+Negatives}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_class_statistics_ac5a27388db5ca1d9283096020a9b1aeb}\label{struct_class_statistics_ac5a27388db5ca1d9283096020a9b1aeb}} 
+\index{Class\+Statistics@{Class\+Statistics}!Class\+Statistics@{Class\+Statistics}}
+\index{Class\+Statistics@{Class\+Statistics}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{Class\+Statistics()}{ClassStatistics()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Class\+Statistics\+::\+Class\+Statistics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_class_statistics_a0434f553802cd8ea436164281184c8e7}\label{struct_class_statistics_a0434f553802cd8ea436164281184c8e7}} 
+\index{Class\+Statistics@{Class\+Statistics}!Class\+Statistics@{Class\+Statistics}}
+\index{Class\+Statistics@{Class\+Statistics}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{Class\+Statistics()}{ClassStatistics()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Class\+Statistics\+::\+Class\+Statistics (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{class\+ID }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_class_statistics_a66418a700e12730feb6ad54d81ba0a8e}\label{struct_class_statistics_a66418a700e12730feb6ad54d81ba0a8e}} 
+\index{Class\+Statistics@{Class\+Statistics}!divide@{divide}}
+\index{divide@{divide}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{divide()}{divide()}}
+{\footnotesize\ttfamily double Class\+Statistics\+::divide (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{struct_class_statistics_af97e1c498a387e6762be460e61d0e610}\label{struct_class_statistics_af97e1c498a387e6762be460e61d0e610}} 
+\index{Class\+Statistics@{Class\+Statistics}!get\+Average\+Precision@{get\+Average\+Precision}}
+\index{get\+Average\+Precision@{get\+Average\+Precision}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{get\+Average\+Precision()}{getAveragePrecision()}}
+{\footnotesize\ttfamily double Class\+Statistics\+::get\+Average\+Precision (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{recall\+Thrs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_class_statistics_a22377aafdf557f655f500783fc5dc77f}\label{struct_class_statistics_a22377aafdf557f655f500783fc5dc77f}} 
+\index{Class\+Statistics@{Class\+Statistics}!get\+Mean\+I\+OU@{get\+Mean\+I\+OU}}
+\index{get\+Mean\+I\+OU@{get\+Mean\+I\+OU}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{get\+Mean\+I\+O\+U()}{getMeanIOU()}}
+{\footnotesize\ttfamily double Class\+Statistics\+::get\+Mean\+I\+OU (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_class_statistics_a33a90034e90af43aa97e1b46e9c8567f}\label{struct_class_statistics_a33a90034e90af43aa97e1b46e9c8567f}} 
+\index{Class\+Statistics@{Class\+Statistics}!get\+Precision\+Array@{get\+Precision\+Array}}
+\index{get\+Precision\+Array@{get\+Precision\+Array}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{get\+Precision\+Array()}{getPrecisionArray()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Class\+Statistics\+::get\+Precision\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_class_statistics_a3fa2067c657166bcc5d6719575e64ddc}\label{struct_class_statistics_a3fa2067c657166bcc5d6719575e64ddc}} 
+\index{Class\+Statistics@{Class\+Statistics}!get\+Precision\+Array\+Op@{get\+Precision\+Array\+Op}}
+\index{get\+Precision\+Array\+Op@{get\+Precision\+Array\+Op}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{get\+Precision\+Array\+Op()}{getPrecisionArrayOp()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Class\+Statistics\+::get\+Precision\+Array\+Op (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_class_statistics_aa6b024d72444ea2b8d71f5f2a416655c}\label{struct_class_statistics_aa6b024d72444ea2b8d71f5f2a416655c}} 
+\index{Class\+Statistics@{Class\+Statistics}!get\+Precision\+For\+Diff\+Recall\+Thrs@{get\+Precision\+For\+Diff\+Recall\+Thrs}}
+\index{get\+Precision\+For\+Diff\+Recall\+Thrs@{get\+Precision\+For\+Diff\+Recall\+Thrs}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{get\+Precision\+For\+Diff\+Recall\+Thrs()}{getPrecisionForDiffRecallThrs()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Class\+Statistics\+::get\+Precision\+For\+Diff\+Recall\+Thrs (\begin{DoxyParamCaption}\item[{std\+::vector$<$ double $>$}]{recall\+Thrs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_class_statistics_a4b189bb3822f02cca79dbe1b59fce7b5}\label{struct_class_statistics_a4b189bb3822f02cca79dbe1b59fce7b5}} 
+\index{Class\+Statistics@{Class\+Statistics}!get\+Recall@{get\+Recall}}
+\index{get\+Recall@{get\+Recall}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{get\+Recall()}{getRecall()}}
+{\footnotesize\ttfamily double Class\+Statistics\+::get\+Recall (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_class_statistics_ae8fc780d72aca26b4dfc5af5992cb41b}\label{struct_class_statistics_ae8fc780d72aca26b4dfc5af5992cb41b}} 
+\index{Class\+Statistics@{Class\+Statistics}!get\+Recall\+Array@{get\+Recall\+Array}}
+\index{get\+Recall\+Array@{get\+Recall\+Array}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{get\+Recall\+Array()}{getRecallArray()}}
+{\footnotesize\ttfamily std\+::vector$<$ double $>$ Class\+Statistics\+::get\+Recall\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_class_statistics_a4f06e2d800fde06ed4f6b77547d8dc06}\label{struct_class_statistics_a4f06e2d800fde06ed4f6b77547d8dc06}} 
+\index{Class\+Statistics@{Class\+Statistics}!class\+ID@{class\+ID}}
+\index{class\+ID@{class\+ID}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{class\+ID}{classID}}
+{\footnotesize\ttfamily std\+::string Class\+Statistics\+::class\+ID}
+
+\mbox{\Hypertarget{struct_class_statistics_a13f50f2fa57bf7de930955cd149667b6}\label{struct_class_statistics_a13f50f2fa57bf7de930955cd149667b6}} 
+\index{Class\+Statistics@{Class\+Statistics}!conf\+Scores@{conf\+Scores}}
+\index{conf\+Scores@{conf\+Scores}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{conf\+Scores}{confScores}}
+{\footnotesize\ttfamily std\+::multiset$<$double$>$ Class\+Statistics\+::conf\+Scores}
+
+\mbox{\Hypertarget{struct_class_statistics_a5485816a475a6cc554c2d9e5b442c96d}\label{struct_class_statistics_a5485816a475a6cc554c2d9e5b442c96d}} 
+\index{Class\+Statistics@{Class\+Statistics}!false\+Negatives@{false\+Negatives}}
+\index{false\+Negatives@{false\+Negatives}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{false\+Negatives}{falseNegatives}}
+{\footnotesize\ttfamily int Class\+Statistics\+::false\+Negatives}
+
+\mbox{\Hypertarget{struct_class_statistics_a0193beb26acd9dab5f7a1709b50c353c}\label{struct_class_statistics_a0193beb26acd9dab5f7a1709b50c353c}} 
+\index{Class\+Statistics@{Class\+Statistics}!false\+Positives@{false\+Positives}}
+\index{false\+Positives@{false\+Positives}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{false\+Positives}{falsePositives}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ Class\+Statistics\+::false\+Positives}
+
+\mbox{\Hypertarget{struct_class_statistics_ac0495687ef1d08720c41612afbf49730}\label{struct_class_statistics_ac0495687ef1d08720c41612afbf49730}} 
+\index{Class\+Statistics@{Class\+Statistics}!iou@{iou}}
+\index{iou@{iou}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{iou}{iou}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ Class\+Statistics\+::iou}
+
+\mbox{\Hypertarget{struct_class_statistics_aa0b08fee8daa548214f4bcc3b2c5cc86}\label{struct_class_statistics_aa0b08fee8daa548214f4bcc3b2c5cc86}} 
+\index{Class\+Statistics@{Class\+Statistics}!n\+Samples@{n\+Samples}}
+\index{n\+Samples@{n\+Samples}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{n\+Samples}{nSamples}}
+{\footnotesize\ttfamily int Class\+Statistics\+::n\+Samples}
+
+\mbox{\Hypertarget{struct_class_statistics_a016df1ad61f150bb92d7d987488a4741}\label{struct_class_statistics_a016df1ad61f150bb92d7d987488a4741}} 
+\index{Class\+Statistics@{Class\+Statistics}!num\+Ground\+Truths\+Ig@{num\+Ground\+Truths\+Ig}}
+\index{num\+Ground\+Truths\+Ig@{num\+Ground\+Truths\+Ig}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{num\+Ground\+Truths\+Ig}{numGroundTruthsIg}}
+{\footnotesize\ttfamily int Class\+Statistics\+::num\+Ground\+Truths\+Ig = 0}
+
+\mbox{\Hypertarget{struct_class_statistics_af869c91eda0b044c899797a3b10153ca}\label{struct_class_statistics_af869c91eda0b044c899797a3b10153ca}} 
+\index{Class\+Statistics@{Class\+Statistics}!num\+Ground\+Truths\+Reg@{num\+Ground\+Truths\+Reg}}
+\index{num\+Ground\+Truths\+Reg@{num\+Ground\+Truths\+Reg}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{num\+Ground\+Truths\+Reg}{numGroundTruthsReg}}
+{\footnotesize\ttfamily int Class\+Statistics\+::num\+Ground\+Truths\+Reg = 0}
+
+\mbox{\Hypertarget{struct_class_statistics_a8b268ca669e6d982c8ce409330cf08f9}\label{struct_class_statistics_a8b268ca669e6d982c8ce409330cf08f9}} 
+\index{Class\+Statistics@{Class\+Statistics}!true\+Negatives@{true\+Negatives}}
+\index{true\+Negatives@{true\+Negatives}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{true\+Negatives}{trueNegatives}}
+{\footnotesize\ttfamily int Class\+Statistics\+::true\+Negatives}
+
+\mbox{\Hypertarget{struct_class_statistics_a07e9de84d5cda8ee5b91d54f8d8685b1}\label{struct_class_statistics_a07e9de84d5cda8ee5b91d54f8d8685b1}} 
+\index{Class\+Statistics@{Class\+Statistics}!true\+Positives@{true\+Positives}}
+\index{true\+Positives@{true\+Positives}!Class\+Statistics@{Class\+Statistics}}
+\subsubsection{\texorpdfstring{true\+Positives}{truePositives}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ Class\+Statistics\+::true\+Positives}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Framework\+Evaluator/\hyperlink{_class_statistics_8h}{Class\+Statistics.\+h}\item 
+Deep\+Learning\+Suite/\+Deep\+Learning\+Suite\+Lib/\+Framework\+Evaluator/\hyperlink{_class_statistics_8cpp}{Class\+Statistics.\+cpp}\end{DoxyCompactItemize}

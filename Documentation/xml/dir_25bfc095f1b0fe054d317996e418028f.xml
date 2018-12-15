@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_25bfc095f1b0fe054d317996e418028f" kind="dir">
+    <compoundname>DeepLearningSuite/libs/types/include</compoundname>
+    <innerdir refid="dir_63bf2b7ecb2d1542cfc170dea0dba839">DeepLearningSuite/libs/types/include/jderobottypes</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/libs/types/include/"/>
+  </compounddef>
+</doxygen>

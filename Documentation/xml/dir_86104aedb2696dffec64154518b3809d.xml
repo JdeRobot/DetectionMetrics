@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_86104aedb2696dffec64154518b3809d" kind="dir">
+    <compoundname>DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator</compoundname>
+    <innerfile refid="_caffe_inferencer_8cpp">CaffeInferencer.cpp</innerfile>
+    <innerfile refid="_caffe_inferencer_8h">CaffeInferencer.h</innerfile>
+    <innerfile refid="_class_statistics_8cpp">ClassStatistics.cpp</innerfile>
+    <innerfile refid="_class_statistics_8h">ClassStatistics.h</innerfile>
+    <innerfile refid="_darknet_inferencer_8cpp">DarknetInferencer.cpp</innerfile>
+    <innerfile refid="_darknet_inferencer_8h">DarknetInferencer.h</innerfile>
+    <innerfile refid="_detections_evaluator_8cpp">DetectionsEvaluator.cpp</innerfile>
+    <innerfile refid="_detections_evaluator_8h">DetectionsEvaluator.h</innerfile>
+    <innerfile refid="_framework_inferencer_8cpp">FrameworkInferencer.cpp</innerfile>
+    <innerfile refid="_framework_inferencer_8h">FrameworkInferencer.h</innerfile>
+    <innerfile refid="_generic_inferencer_8cpp">GenericInferencer.cpp</innerfile>
+    <innerfile refid="_generic_inferencer_8h">GenericInferencer.h</innerfile>
+    <innerfile refid="_global_stats_8cpp">GlobalStats.cpp</innerfile>
+    <innerfile refid="_global_stats_8h">GlobalStats.h</innerfile>
+    <innerfile refid="_keras_inferencer_8cpp">KerasInferencer.cpp</innerfile>
+    <innerfile refid="_keras_inferencer_8h">KerasInferencer.h</innerfile>
+    <innerfile refid="_mass_batch_inferencer_8cpp">MassBatchInferencer.cpp</innerfile>
+    <innerfile refid="_mass_batch_inferencer_8h">MassBatchInferencer.h</innerfile>
+    <innerfile refid="_mass_inferencer_8cpp">MassInferencer.cpp</innerfile>
+    <innerfile refid="_mass_inferencer_8h">MassInferencer.h</innerfile>
+    <innerfile refid="_stats_writer_8cpp">StatsWriter.cpp</innerfile>
+    <innerfile refid="_stats_writer_8h">StatsWriter.h</innerfile>
+    <innerfile refid="_tensor_flow_inferencer_8cpp">TensorFlowInferencer.cpp</innerfile>
+    <innerfile refid="_tensor_flow_inferencer_8h">TensorFlowInferencer.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/"/>
+  </compounddef>
+</doxygen>

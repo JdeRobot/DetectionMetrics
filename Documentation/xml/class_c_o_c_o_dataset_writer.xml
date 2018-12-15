@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_c_o_c_o_dataset_writer" kind="class" language="C++" prot="public">
+    <compoundname>COCODatasetWriter</compoundname>
+    <basecompoundref refid="class_dataset_writer" prot="public" virt="non-virtual">DatasetWriter</basecompoundref>
+    <includes refid="_c_o_c_o_dataset_writer_8h" local="no">COCODatasetWriter.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_c_o_c_o_dataset_writer_1a5bb4ea5218cfa7347fe650130a47bad9" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string COCODatasetWriter::fullImagesPath</definition>
+        <argsstring></argsstring>
+        <name>fullImagesPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_o_c_o_dataset_writer_1a41f0c570e34b8118452de6d193e31d32" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string COCODatasetWriter::fullLabelsPath</definition>
+        <argsstring></argsstring>
+        <name>fullLabelsPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_o_c_o_dataset_writer_1a34444bd82efe39c2b8e98e7baa984b9f" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string COCODatasetWriter::fullNamesPath</definition>
+        <argsstring></argsstring>
+        <name>fullNamesPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_o_c_o_dataset_writer_1a165fc38cbc9569a966c17ac477e262c8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool COCODatasetWriter::overWriteclassWithZero</definition>
+        <argsstring></argsstring>
+        <name>overWriteclassWithZero</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_c_o_c_o_dataset_writer_1aadc1546ebdc00b35a8c33710ac67aa64" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string COCODatasetWriter::writerNamesFile</definition>
+        <argsstring></argsstring>
+        <name>writerNamesFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_c_o_c_o_dataset_writer_1adec3d112a29a894f380b0e72ffde9f93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>COCODatasetWriter::COCODatasetWriter</definition>
+        <argsstring>(const std::string &amp;outPath, DatasetReaderPtr &amp;reader, const std::string &amp;writerNamesFile, bool overWriteclassWithZero=false)</argsstring>
+        <name>COCODatasetWriter</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outPath</declname>
+        </param>
+        <param>
+          <type><ref refid="_dataset_reader_8h_1a30d89cba514a220d64d04535c0465f1c" kindref="member">DatasetReaderPtr</ref> &amp;</type>
+          <declname>reader</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>writerNamesFile</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>overWriteclassWithZero</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.cpp" bodystart="13" bodyend="32"/>
+        <references refid="namespaceload_image_1a2d12fe0487467ded88b6007624cbe6c7" compoundref="load_image_8py" startline="4">loadImage.path</references>
+      </memberdef>
+      <memberdef kind="function" id="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void COCODatasetWriter::process</definition>
+        <argsstring>(bool writeImages=false, bool useDepth=false)</argsstring>
+        <name>process</name>
+        <reimplements refid="class_dataset_writer_1a97270b2e182e6c08d9342d8db42710fd">process</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>writeImages</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useDepth</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.cpp" bodystart="34" bodyend="272"/>
+        <references refid="class_dataset_writer_1a2edef70c0de507a2e056eb3984705811" compoundref="_dataset_writer_8h" startline="19">DatasetWriter::reader</references>
+        <references refid="struct_sample_1a5f1b7716e5c4e8f5217a18021169283f" compoundref="_sample_8cpp" startline="123" endline="125">Sample::getRectRegions</references>
+        <references refid="struct_sample_1aba47baeaed03136d0b63ca6609de25a7" compoundref="_sample_8cpp" startline="131" endline="133">Sample::getRleRegions</references>
+        <references refid="struct_sample_1a90e4c417c9b81664bd0027a7ea2aeedc" compoundref="_sample_8cpp" startline="97" endline="108">Sample::getSampleWidth</references>
+        <references refid="struct_sample_1a7e18614451f5a983bba865592b661eea" compoundref="_sample_8cpp" startline="110" endline="121">Sample::getSampleHeight</references>
+        <references refid="struct_sample_1adead1781500bbf8508eae6f983621d3a" compoundref="_sample_8cpp" startline="330" endline="332">Sample::getSampleID</references>
+        <references refid="struct_sample_1a4d2e91f909467a974832c9359cc81c3c" compoundref="_sample_8cpp" startline="158" endline="165">Sample::getDepthImage</references>
+        <references refid="struct_sample_1abf69bbc9b312c22d3ded30d30d1e278f" compoundref="_sample_8cpp" startline="149" endline="156">Sample::getColorImage</references>
+        <references refid="class_dataset_writer_1a2c5c9a2670a4acb12278284668af7970" compoundref="_dataset_writer_8h" startline="23">DatasetWriter::skip_count</references>
+        <references refid="class_dataset_writer_1a55b8888beec78365ed6ea9b057a2d17b" compoundref="_dataset_writer_8h" startline="20">DatasetWriter::outputClasses</references>
+        <references refid="struct_class_type_mapper_1af76d00ce9a2267710ee9119f0bb2e607" compoundref="_class_type_mapper_8cpp" startline="24" endline="49">ClassTypeMapper::mapString</references>
+        <references refid="struct_class_type_1ab5cc3bb3376a812d051d4726eb4ee063" compoundref="_class_type_8cpp" startline="48" endline="52">ClassType::getClassID</references>
+        <references refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" compoundref="_class_type_8cpp" startline="44" endline="46">ClassType::getClassString</references>
+        <references refid="class_dataset_writer_1a44b65963ebc0c9146e29802658627031" compoundref="_dataset_writer_8h" startline="21">DatasetWriter::mapped_classes</references>
+        <references refid="class_dataset_writer_1a978c35196e9b3be5dcd7ef3cb7c968c5" compoundref="_dataset_writer_8h" startline="22">DatasetWriter::discarded_classes</references>
+        <references refid="mask_api_8cpp_1a935356b85c9e3ff7faf6c0533fb94733" compoundref="mask_api_8cpp" startline="200" endline="212">rleToString</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="53">
+        <label>COCODatasetWriter</label>
+        <link refid="class_c_o_c_o_dataset_writer"/>
+        <childnode refid="54" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>DatasetWriter</label>
+        <link refid="class_dataset_writer"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="55">
+        <label>COCODatasetWriter</label>
+        <link refid="class_c_o_c_o_dataset_writer"/>
+        <childnode refid="56" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>DatasetWriter</label>
+        <link refid="class_dataset_writer"/>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" line="10" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/DatasetConverters/writers/COCODatasetWriter.h" bodystart="10" bodyend="21"/>
+    <listofallmembers>
+      <member refid="class_c_o_c_o_dataset_writer_1adec3d112a29a894f380b0e72ffde9f93" prot="public" virt="non-virtual"><scope>COCODatasetWriter</scope><name>COCODatasetWriter</name></member>
+      <member refid="class_dataset_writer_1a96cb64791602cd684ec3a05156a7c28e" prot="public" virt="non-virtual"><scope>COCODatasetWriter</scope><name>DatasetWriter</name></member>
+      <member refid="class_dataset_writer_1a978c35196e9b3be5dcd7ef3cb7c968c5" prot="protected" virt="non-virtual"><scope>COCODatasetWriter</scope><name>discarded_classes</name></member>
+      <member refid="class_c_o_c_o_dataset_writer_1a5bb4ea5218cfa7347fe650130a47bad9" prot="private" virt="non-virtual"><scope>COCODatasetWriter</scope><name>fullImagesPath</name></member>
+      <member refid="class_c_o_c_o_dataset_writer_1a41f0c570e34b8118452de6d193e31d32" prot="private" virt="non-virtual"><scope>COCODatasetWriter</scope><name>fullLabelsPath</name></member>
+      <member refid="class_c_o_c_o_dataset_writer_1a34444bd82efe39c2b8e98e7baa984b9f" prot="private" virt="non-virtual"><scope>COCODatasetWriter</scope><name>fullNamesPath</name></member>
+      <member refid="class_dataset_writer_1a44b65963ebc0c9146e29802658627031" prot="protected" virt="non-virtual"><scope>COCODatasetWriter</scope><name>mapped_classes</name></member>
+      <member refid="class_dataset_writer_1ac19eabc3e69f6e9bc4c5185803eed626" prot="protected" virt="non-virtual"><scope>COCODatasetWriter</scope><name>outPath</name></member>
+      <member refid="class_dataset_writer_1a55b8888beec78365ed6ea9b057a2d17b" prot="protected" virt="non-virtual"><scope>COCODatasetWriter</scope><name>outputClasses</name></member>
+      <member refid="class_c_o_c_o_dataset_writer_1a165fc38cbc9569a966c17ac477e262c8" prot="private" virt="non-virtual"><scope>COCODatasetWriter</scope><name>overWriteclassWithZero</name></member>
+      <member refid="class_c_o_c_o_dataset_writer_1a82b054ee143507382ae3f87b46c246d6" prot="public" virt="virtual"><scope>COCODatasetWriter</scope><name>process</name></member>
+      <member refid="class_dataset_writer_1a2edef70c0de507a2e056eb3984705811" prot="protected" virt="non-virtual"><scope>COCODatasetWriter</scope><name>reader</name></member>
+      <member refid="class_dataset_writer_1a2c5c9a2670a4acb12278284668af7970" prot="protected" virt="non-virtual"><scope>COCODatasetWriter</scope><name>skip_count</name></member>
+      <member refid="class_c_o_c_o_dataset_writer_1aadc1546ebdc00b35a8c33710ac67aa64" prot="private" virt="non-virtual"><scope>COCODatasetWriter</scope><name>writerNamesFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

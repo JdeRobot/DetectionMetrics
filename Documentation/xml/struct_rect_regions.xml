@@ -1,0 +1,404 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_rect_regions" kind="struct" language="C++" prot="public">
+    <compoundname>RectRegions</compoundname>
+    <basecompoundref refid="struct_regions" prot="public" virt="non-virtual">Regions</basecompoundref>
+    <includes refid="_rect_regions_8h" local="no">RectRegions.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="struct_rect_region" kindref="compound">RectRegion</ref> &gt;</type>
+        <definition>std::vector&lt;RectRegion&gt; RectRegions::regions</definition>
+        <argsstring></argsstring>
+        <name>regions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="31" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="struct_rect_regions_1a75fc4850d7b8caee61164658e47832fb" compoundref="_rect_regions_8cpp" startline="16" endline="29">RectRegions</referencedby>
+        <referencedby refid="struct_rect_regions_1a84d6d3a2e3ee8faf775c69fcd3207767" compoundref="_rect_regions_8cpp" startline="35" endline="74">saveJson</referencedby>
+        <referencedby refid="struct_rect_regions_1a949e327f668e731868a853b6331761be" compoundref="_rect_regions_8cpp" startline="76" endline="83">add</referencedby>
+        <referencedby refid="struct_rect_regions_1a4bbad55e0b6f3a8ece1d76402f16bfc2" compoundref="_rect_regions_8cpp" startline="113" endline="118">getRegion</referencedby>
+        <referencedby refid="struct_rect_regions_1a9f31dc6fd3d371417e2c9024d1fdeecb" compoundref="_rect_regions_8cpp" startline="120" endline="146">drawRegions</referencedby>
+        <referencedby refid="struct_rect_regions_1ab1d9ba6a6a0087fd2db278a22162c63a" compoundref="_rect_regions_8cpp" startline="148" endline="150">getRegions</referencedby>
+        <referencedby refid="struct_rect_regions_1a8eff732b9c2308dae4e0ff45f147cb51" compoundref="_rect_regions_8cpp" startline="152" endline="160">filterSamplesByID</referencedby>
+        <referencedby refid="struct_rect_regions_1a4ec356e30d899d9a49fce3fe95f73d34" compoundref="_rect_regions_8cpp" startline="162" endline="164">empty</referencedby>
+        <referencedby refid="struct_rect_regions_1a6ce45dd2b9d9f0f3424d4c6d656652c2" compoundref="_rect_regions_8cpp" startline="166" endline="173">print</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_rect_regions_1a75fc4850d7b8caee61164658e47832fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RectRegions::RectRegions</definition>
+        <argsstring>(const std::string &amp;jsonPath)</argsstring>
+        <name>RectRegions</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>jsonPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp" bodystart="16" bodyend="29"/>
+        <references refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" compoundref="_rect_regions_8h" startline="31">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rect_regions_1af0c705b56314b41a80970fcd826b0600" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RectRegions::RectRegions</definition>
+        <argsstring>()</argsstring>
+        <name>RectRegions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="15" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp" bodystart="30" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_rect_regions_1a949e327f668e731868a853b6331761be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RectRegions::add</definition>
+        <argsstring>(const cv::Rect_&lt; double &gt; rect, const std::string classId, const bool isCrowd=false)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const cv::Rect_&lt; double &gt;</type>
+          <declname>rect</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>classId</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isCrowd</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp" bodystart="76" bodyend="83"/>
+        <references refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" compoundref="_rect_regions_8h" startline="31">regions</references>
+        <references refid="struct_rect_region_1a6701398d34833514dc6ab12b38d24e3a" compoundref="_rect_region_8h" startline="42">RectRegion::uniqObjectID</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rect_regions_1afebb1d6079ae2d0701b70c3c153a4a88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RectRegions::add</definition>
+        <argsstring>(const cv::Rect_&lt; double &gt; rect, const std::string classId, const double confidence_score, const bool isCrowd=false)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const cv::Rect_&lt; double &gt;</type>
+          <declname>rect</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>classId</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>confidence_score</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isCrowd</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="18" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp" bodystart="85" bodyend="91"/>
+        <references refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" compoundref="_rect_regions_8h" startline="31">regions</references>
+        <references refid="struct_rect_region_1a6701398d34833514dc6ab12b38d24e3a" compoundref="_rect_region_8h" startline="42">RectRegion::uniqObjectID</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rect_regions_1a00afed1e298d77dd9dd722e590507586" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RectRegions::add</definition>
+        <argsstring>(const std::vector&lt; cv::Point_&lt; double &gt;&gt; &amp;detections, const std::string classId, const bool isCrowd=false)</argsstring>
+        <name>add</name>
+        <param>
+          <type>const std::vector&lt; cv::Point_&lt; double &gt;&gt; &amp;</type>
+          <declname>detections</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>classId</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isCrowd</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="19" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp" bodystart="94" bodyend="96"/>
+        <references refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" compoundref="_rect_regions_8h" startline="31">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rect_regions_1a988c804d33f2b8fc9dabe79c3259b267" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RectRegions::add</definition>
+        <argsstring>(double x, double y, double w, double h, const std::string classId, const bool isCrowd=false)</argsstring>
+        <name>add</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>classId</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isCrowd</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="20" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp" bodystart="98" bodyend="104"/>
+        <references refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" compoundref="_rect_regions_8h" startline="31">regions</references>
+        <references refid="struct_rect_region_1a6701398d34833514dc6ab12b38d24e3a" compoundref="_rect_region_8h" startline="42">RectRegion::uniqObjectID</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rect_regions_1a009ff3de6ffc9c05e0cd3c87916d16be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RectRegions::add</definition>
+        <argsstring>(double x, double y, double w, double h, const std::string classId, const double confidence_score, const bool isCrowd=false)</argsstring>
+        <name>add</name>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>const std::string</type>
+          <declname>classId</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>confidence_score</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isCrowd</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="21" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp" bodystart="106" bodyend="111"/>
+        <references refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" compoundref="_rect_regions_8h" startline="31">regions</references>
+        <references refid="struct_rect_region_1a6701398d34833514dc6ab12b38d24e3a" compoundref="_rect_region_8h" startline="42">RectRegion::uniqObjectID</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rect_regions_1a84d6d3a2e3ee8faf775c69fcd3207767" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RectRegions::saveJson</definition>
+        <argsstring>(const std::string &amp;outPath)</argsstring>
+        <name>saveJson</name>
+        <reimplements refid="struct_regions_1a402078d4ff67e4aee31b231c2d1942c6">saveJson</reimplements>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>outPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="23" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp" bodystart="35" bodyend="74"/>
+        <references refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" compoundref="_rect_regions_8h" startline="31">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rect_regions_1a4bbad55e0b6f3a8ece1d76402f16bfc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_rect_region" kindref="compound">RectRegion</ref></type>
+        <definition>RectRegion RectRegions::getRegion</definition>
+        <argsstring>(int id)</argsstring>
+        <name>getRegion</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp" bodystart="113" bodyend="118"/>
+        <references refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" compoundref="_rect_regions_8h" startline="31">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rect_regions_1ab1d9ba6a6a0087fd2db278a22162c63a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="struct_rect_region" kindref="compound">RectRegion</ref> &gt;</type>
+        <definition>std::vector&lt; RectRegion &gt; RectRegions::getRegions</definition>
+        <argsstring>()</argsstring>
+        <name>getRegions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp" bodystart="148" bodyend="150"/>
+        <references refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" compoundref="_rect_regions_8h" startline="31">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rect_regions_1a9f31dc6fd3d371417e2c9024d1fdeecb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RectRegions::drawRegions</definition>
+        <argsstring>(cv::Mat &amp;image)</argsstring>
+        <name>drawRegions</name>
+        <reimplements refid="struct_regions_1adab32a2a00fc77abb6f4876939dc8505">drawRegions</reimplements>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="26" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp" bodystart="120" bodyend="146"/>
+        <references refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" compoundref="_rect_regions_8h" startline="31">regions</references>
+        <references refid="struct_class_type_1a72b048c816b2d1210e0cc0b258d6a1ee" compoundref="_class_type_8cpp" startline="10" endline="21">ClassType::getColor</references>
+        <references refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" compoundref="_class_type_8cpp" startline="44" endline="46">ClassType::getClassString</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rect_regions_1a8eff732b9c2308dae4e0ff45f147cb51" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RectRegions::filterSamplesByID</definition>
+        <argsstring>(std::vector&lt; std::string &gt; filteredIDS)</argsstring>
+        <name>filterSamplesByID</name>
+        <reimplements refid="struct_regions_1ae2bcea2b1c245a9d1ab1ff3abc23f2a0">filterSamplesByID</reimplements>
+        <param>
+          <type>std::vector&lt; std::string &gt;</type>
+          <declname>filteredIDS</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp" bodystart="152" bodyend="160"/>
+        <references refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" compoundref="_rect_regions_8h" startline="31">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rect_regions_1a4ec356e30d899d9a49fce3fe95f73d34" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool RectRegions::empty</definition>
+        <argsstring>()</argsstring>
+        <name>empty</name>
+        <reimplements refid="struct_regions_1a5763d0526981f665356ac35734e8e505">empty</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="28" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp" bodystart="162" bodyend="164"/>
+        <references refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" compoundref="_rect_regions_8h" startline="31">regions</references>
+      </memberdef>
+      <memberdef kind="function" id="struct_rect_regions_1a6ce45dd2b9d9f0f3424d4c6d656652c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RectRegions::print</definition>
+        <argsstring>()</argsstring>
+        <name>print</name>
+        <reimplements refid="struct_regions_1a5a19f40bc0d2226f244625b88fbf8e59">print</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="29" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.cpp" bodystart="166" bodyend="173"/>
+        <references refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" compoundref="_rect_regions_8h" startline="31">regions</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="289">
+        <label>Regions</label>
+        <link refid="struct_regions"/>
+      </node>
+      <node id="288">
+        <label>RectRegions</label>
+        <link refid="struct_rect_regions"/>
+        <childnode refid="289" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="291">
+        <label>Regions</label>
+        <link refid="struct_regions"/>
+      </node>
+      <node id="290">
+        <label>RectRegions</label>
+        <link refid="struct_rect_regions"/>
+        <childnode refid="291" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Regions/RectRegions.h" bodystart="13" bodyend="32"/>
+    <listofallmembers>
+      <member refid="struct_rect_regions_1a949e327f668e731868a853b6331761be" prot="public" virt="non-virtual"><scope>RectRegions</scope><name>add</name></member>
+      <member refid="struct_rect_regions_1afebb1d6079ae2d0701b70c3c153a4a88" prot="public" virt="non-virtual"><scope>RectRegions</scope><name>add</name></member>
+      <member refid="struct_rect_regions_1a00afed1e298d77dd9dd722e590507586" prot="public" virt="non-virtual"><scope>RectRegions</scope><name>add</name></member>
+      <member refid="struct_rect_regions_1a988c804d33f2b8fc9dabe79c3259b267" prot="public" virt="non-virtual"><scope>RectRegions</scope><name>add</name></member>
+      <member refid="struct_rect_regions_1a009ff3de6ffc9c05e0cd3c87916d16be" prot="public" virt="non-virtual"><scope>RectRegions</scope><name>add</name></member>
+      <member refid="struct_rect_regions_1a9f31dc6fd3d371417e2c9024d1fdeecb" prot="public" virt="virtual"><scope>RectRegions</scope><name>drawRegions</name></member>
+      <member refid="struct_rect_regions_1a4ec356e30d899d9a49fce3fe95f73d34" prot="public" virt="virtual"><scope>RectRegions</scope><name>empty</name></member>
+      <member refid="struct_rect_regions_1a8eff732b9c2308dae4e0ff45f147cb51" prot="public" virt="virtual"><scope>RectRegions</scope><name>filterSamplesByID</name></member>
+      <member refid="struct_rect_regions_1a4bbad55e0b6f3a8ece1d76402f16bfc2" prot="public" virt="non-virtual"><scope>RectRegions</scope><name>getRegion</name></member>
+      <member refid="struct_rect_regions_1ab1d9ba6a6a0087fd2db278a22162c63a" prot="public" virt="non-virtual"><scope>RectRegions</scope><name>getRegions</name></member>
+      <member refid="struct_rect_regions_1a6ce45dd2b9d9f0f3424d4c6d656652c2" prot="public" virt="virtual"><scope>RectRegions</scope><name>print</name></member>
+      <member refid="struct_rect_regions_1a75fc4850d7b8caee61164658e47832fb" prot="public" virt="non-virtual"><scope>RectRegions</scope><name>RectRegions</name></member>
+      <member refid="struct_rect_regions_1af0c705b56314b41a80970fcd826b0600" prot="public" virt="non-virtual"><scope>RectRegions</scope><name>RectRegions</name></member>
+      <member refid="struct_rect_regions_1a213237dc4a98b5d77d76c3992d533694" prot="public" virt="non-virtual"><scope>RectRegions</scope><name>regions</name></member>
+      <member refid="struct_regions_1aa3456e0ecf9b3a84be6a0b7705495929" prot="public" virt="non-virtual"><scope>RectRegions</scope><name>Regions</name></member>
+      <member refid="struct_rect_regions_1a84d6d3a2e3ee8faf775c69fcd3207767" prot="public" virt="virtual"><scope>RectRegions</scope><name>saveJson</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

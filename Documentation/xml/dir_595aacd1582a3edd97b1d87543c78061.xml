@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_595aacd1582a3edd97b1d87543c78061" kind="dir">
+    <compoundname>DeepLearningSuite/DeepLearningSuiteLib/Detectors</compoundname>
+    <innerfile refid="_deep_learning_suite_lib_2_detectors_2_detector_8h">Detector.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Detectors/"/>
+  </compounddef>
+</doxygen>

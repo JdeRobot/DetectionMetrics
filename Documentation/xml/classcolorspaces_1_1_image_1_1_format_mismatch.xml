@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classcolorspaces_1_1_image_1_1_format_mismatch" kind="class" language="C++" prot="public">
+    <compoundname>colorspaces::Image::FormatMismatch</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">exception</basecompoundref>
+    <includes refid="imagecv_8h" local="no">imagecv.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcolorspaces_1_1_image_1_1_format_mismatch_1ac2e7090f6e6e2b8ca35cdb4d95bb057c" prot="private" static="no" mutable="no">
+        <type>const std::string</type>
+        <definition>const std::string colorspaces::Image::FormatMismatch::message</definition>
+        <argsstring></argsstring>
+        <name>message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="48" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcolorspaces_1_1_image_1_1_format_mismatch_1a75b74eb84462dba829465eebadbfa531" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>colorspaces::Image::FormatMismatch::FormatMismatch</definition>
+        <argsstring>(const std::string msg)</argsstring>
+        <name>FormatMismatch</name>
+        <param>
+          <type>const std::string</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="40" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" bodystart="40" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classcolorspaces_1_1_image_1_1_format_mismatch_1aaf8f52b425f244849b8b84d384eef961" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>colorspaces::Image::FormatMismatch::~FormatMismatch</definition>
+        <argsstring>()</argsstring>
+        <name>~FormatMismatch</name>
+        <exceptions> throw ()</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="42" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classcolorspaces_1_1_image_1_1_format_mismatch_1ab8255b66f6ed6b5034155e0132654f01" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>const char *</type>
+        <definition>virtual const char* colorspaces::Image::FormatMismatch::what</definition>
+        <argsstring>() const</argsstring>
+        <name>what</name>
+        <exceptions> throw ()</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="43" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" bodystart="43" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="133">
+        <label>exception</label>
+      </node>
+      <node id="132">
+        <label>colorspaces::Image::FormatMismatch</label>
+        <link refid="classcolorspaces_1_1_image_1_1_format_mismatch"/>
+        <childnode refid="133" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="135">
+        <label>exception</label>
+      </node>
+      <node id="134">
+        <label>colorspaces::Image::FormatMismatch</label>
+        <link refid="classcolorspaces_1_1_image_1_1_format_mismatch"/>
+        <childnode refid="135" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" line="38" column="1" bodyfile="DeepLearningSuite/libs/utils/colorspaces/imagecv.h" bodystart="38" bodyend="49"/>
+    <listofallmembers>
+      <member refid="classcolorspaces_1_1_image_1_1_format_mismatch_1a75b74eb84462dba829465eebadbfa531" prot="public" virt="non-virtual"><scope>colorspaces::Image::FormatMismatch</scope><name>FormatMismatch</name></member>
+      <member refid="classcolorspaces_1_1_image_1_1_format_mismatch_1ac2e7090f6e6e2b8ca35cdb4d95bb057c" prot="private" virt="non-virtual"><scope>colorspaces::Image::FormatMismatch</scope><name>message</name></member>
+      <member refid="classcolorspaces_1_1_image_1_1_format_mismatch_1ab8255b66f6ed6b5034155e0132654f01" prot="public" virt="virtual"><scope>colorspaces::Image::FormatMismatch</scope><name>what</name></member>
+      <member refid="classcolorspaces_1_1_image_1_1_format_mismatch_1aaf8f52b425f244849b8b84d384eef961" prot="public" virt="non-virtual"><scope>colorspaces::Image::FormatMismatch</scope><name>~FormatMismatch</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

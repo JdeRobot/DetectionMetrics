@@ -1,0 +1,135 @@
+.TH "DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DeepLearningSuite/DeepLearningSuiteLib/Regions/maskApi.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBRLE\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef unsigned int \fBuint\fP"
+.br
+.ti -1c
+.RI "typedef unsigned long \fBsiz\fP"
+.br
+.ti -1c
+.RI "typedef unsigned char \fBbyte\fP"
+.br
+.ti -1c
+.RI "typedef double * \fBBB\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBrleInit\fP (\fBRLE\fP *R, \fBsiz\fP h, \fBsiz\fP w, \fBsiz\fP m, \fBuint\fP *cnts)"
+.br
+.ti -1c
+.RI "void \fBrleFree\fP (\fBRLE\fP *R)"
+.br
+.ti -1c
+.RI "void \fBrlesInit\fP (\fBRLE\fP **R, \fBsiz\fP n)"
+.br
+.ti -1c
+.RI "void \fBrlesFree\fP (\fBRLE\fP **R, \fBsiz\fP n)"
+.br
+.ti -1c
+.RI "void \fBrleEncode\fP (\fBRLE\fP *R, const \fBbyte\fP *mask, \fBsiz\fP h, \fBsiz\fP w, \fBsiz\fP n)"
+.br
+.ti -1c
+.RI "void \fBrleDecode\fP (const \fBRLE\fP *R, \fBbyte\fP *mask, \fBsiz\fP n)"
+.br
+.ti -1c
+.RI "void \fBrleMerge\fP (const \fBRLE\fP *R, \fBRLE\fP *M, \fBsiz\fP n, int intersect)"
+.br
+.ti -1c
+.RI "void \fBrleArea\fP (const \fBRLE\fP *R, \fBsiz\fP n, \fBuint\fP *a)"
+.br
+.ti -1c
+.RI "void \fBrleIou\fP (\fBRLE\fP *dt, \fBRLE\fP *gt, \fBsiz\fP m, \fBsiz\fP n, \fBbyte\fP *iscrowd, double *o)"
+.br
+.ti -1c
+.RI "void \fBrleNms\fP (\fBRLE\fP *dt, \fBsiz\fP n, \fBuint\fP *keep, double thr)"
+.br
+.ti -1c
+.RI "void \fBbbIou\fP (\fBBB\fP dt, \fBBB\fP gt, \fBsiz\fP m, \fBsiz\fP n, \fBbyte\fP *iscrowd, double *o)"
+.br
+.ti -1c
+.RI "void \fBbbNms\fP (\fBBB\fP dt, \fBsiz\fP n, \fBuint\fP *keep, double thr)"
+.br
+.ti -1c
+.RI "void \fBrleToBbox\fP (const \fBRLE\fP *R, \fBBB\fP bb, \fBsiz\fP n)"
+.br
+.ti -1c
+.RI "void \fBrleFrBbox\fP (\fBRLE\fP *R, const \fBBB\fP bb, \fBsiz\fP h, \fBsiz\fP w, \fBsiz\fP n)"
+.br
+.ti -1c
+.RI "void \fBrleFrPoly\fP (\fBRLE\fP *R, const double *xy, \fBsiz\fP k, \fBsiz\fP h, \fBsiz\fP w)"
+.br
+.ti -1c
+.RI "char * \fBrleToString\fP (const \fBRLE\fP *R)"
+.br
+.ti -1c
+.RI "void \fBrleFrString\fP (\fBRLE\fP *R, char *s, \fBsiz\fP h, \fBsiz\fP w)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef double* \fBBB\fP"
+
+.SS "typedef unsigned char \fBbyte\fP"
+
+.SS "typedef unsigned long \fBsiz\fP"
+
+.SS "typedef unsigned int \fBuint\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "void bbIou (\fBBB\fP dt, \fBBB\fP gt, \fBsiz\fP m, \fBsiz\fP n, \fBbyte\fP * iscrowd, double * o)"
+
+.SS "void bbNms (\fBBB\fP dt, \fBsiz\fP n, \fBuint\fP * keep, double thr)"
+
+.SS "void rleArea (const \fBRLE\fP * R, \fBsiz\fP n, \fBuint\fP * a)"
+
+.SS "void rleDecode (const \fBRLE\fP * R, \fBbyte\fP * mask, \fBsiz\fP n)"
+
+.SS "void rleEncode (\fBRLE\fP * R, const \fBbyte\fP * mask, \fBsiz\fP h, \fBsiz\fP w, \fBsiz\fP n)"
+
+.SS "void rleFrBbox (\fBRLE\fP * R, const \fBBB\fP bb, \fBsiz\fP h, \fBsiz\fP w, \fBsiz\fP n)"
+
+.SS "void rleFree (\fBRLE\fP * R)"
+
+.SS "void rleFrPoly (\fBRLE\fP * R, const double * xy, \fBsiz\fP k, \fBsiz\fP h, \fBsiz\fP w)"
+
+.SS "void rleFrString (\fBRLE\fP * R, char * s, \fBsiz\fP h, \fBsiz\fP w)"
+
+.SS "void rleInit (\fBRLE\fP * R, \fBsiz\fP h, \fBsiz\fP w, \fBsiz\fP m, \fBuint\fP * cnts)"
+
+.SS "void rleIou (\fBRLE\fP * dt, \fBRLE\fP * gt, \fBsiz\fP m, \fBsiz\fP n, \fBbyte\fP * iscrowd, double * o)"
+
+.SS "void rleMerge (const \fBRLE\fP * R, \fBRLE\fP * M, \fBsiz\fP n, int intersect)"
+
+.SS "void rleNms (\fBRLE\fP * dt, \fBsiz\fP n, \fBuint\fP * keep, double thr)"
+
+.SS "void rlesFree (\fBRLE\fP ** R, \fBsiz\fP n)"
+
+.SS "void rlesInit (\fBRLE\fP ** R, \fBsiz\fP n)"
+
+.SS "void rleToBbox (const \fBRLE\fP * R, \fBBB\fP bb, \fBsiz\fP n)"
+
+.SS "char* rleToString (const \fBRLE\fP * R)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

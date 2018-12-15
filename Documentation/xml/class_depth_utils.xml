@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_depth_utils" kind="class" language="C++" prot="public">
+    <compoundname>DepthUtils</compoundname>
+    <includes refid="_depth_utils_8h" local="no">DepthUtils.h</includes>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_depth_utils_1a5ba9ff6bb47e9810c8832ab733ada879" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DepthUtils::mat16_to_ownFormat</definition>
+        <argsstring>(const cv::Mat &amp;inputImage, cv::Mat &amp;outImage)</argsstring>
+        <name>mat16_to_ownFormat</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>inputImage</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>outImage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/DepthUtils.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/DepthUtils.cpp" bodystart="8" bodyend="44"/>
+        <referencedby refid="class_princeton_dataset_reader_1a078bdc2105cbef10ce0dc8c2fd12923e" compoundref="_princeton_dataset_reader_8cpp" startline="25" endline="75">PrincetonDatasetReader::appendDataset</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_depth_utils_1aa27c57f9882e66c600a03a5378c00110" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DepthUtils::spinello_mat16_to_viewable</definition>
+        <argsstring>(const cv::Mat &amp;inputImage, cv::Mat &amp;outImage)</argsstring>
+        <name>spinello_mat16_to_viewable</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>inputImage</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>outImage</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/DepthUtils.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/DepthUtils.cpp" bodystart="46" bodyend="69"/>
+        <references refid="namespacestd_1afbda037ce4502f9a197deba4a43bada9" compoundref="stdutils_8hpp" startline="44" endline="48">std::split</references>
+        <referencedby refid="class_spinello_dataset_reader_1a2313fdf01fb702337dda812f0c341cd9" compoundref="_spinello_dataset_reader_8cpp" startline="24" endline="113">SpinelloDatasetReader::appendDataset</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Utils/DepthUtils.h" line="10" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/Utils/DepthUtils.h" bodystart="10" bodyend="14"/>
+    <listofallmembers>
+      <member refid="class_depth_utils_1a5ba9ff6bb47e9810c8832ab733ada879" prot="public" virt="non-virtual"><scope>DepthUtils</scope><name>mat16_to_ownFormat</name></member>
+      <member refid="class_depth_utils_1aa27c57f9882e66c600a03a5378c00110" prot="public" virt="non-virtual"><scope>DepthUtils</scope><name>spinello_mat16_to_viewable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

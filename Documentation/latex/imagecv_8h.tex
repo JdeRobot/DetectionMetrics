@@ -1,0 +1,59 @@
+\hypertarget{imagecv_8h}{}\section{Deep\+Learning\+Suite/libs/utils/colorspaces/imagecv.h File Reference}
+\label{imagecv_8h}\index{Deep\+Learning\+Suite/libs/utils/colorspaces/imagecv.\+h@{Deep\+Learning\+Suite/libs/utils/colorspaces/imagecv.\+h}}
+{\ttfamily \#include $<$opencv2/core/core.\+hpp$>$}\newline
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include \char`\"{}uncopyable.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcolorspaces_1_1_image}{colorspaces\+::\+Image}
+\item 
+class \hyperlink{classcolorspaces_1_1_image_1_1_format_mismatch}{colorspaces\+::\+Image\+::\+Format\+Mismatch}
+\item 
+class \hyperlink{classcolorspaces_1_1_image_1_1_no_conversion}{colorspaces\+::\+Image\+::\+No\+Conversion}
+\item 
+class \hyperlink{classcolorspaces_1_1_image_1_1_format}{colorspaces\+::\+Image\+::\+Format}
+\item 
+class \hyperlink{classcolorspaces_1_1_image_r_g_b8}{colorspaces\+::\+Image\+R\+G\+B8}
+\item 
+class \hyperlink{classcolorspaces_1_1_image_y_u_y2}{colorspaces\+::\+Image\+Y\+U\+Y2}
+\item 
+class \hyperlink{classcolorspaces_1_1_image_g_r_a_y8}{colorspaces\+::\+Image\+G\+R\+A\+Y8}
+\item 
+class \hyperlink{classcolorspaces_1_1_image_h_s_v8}{colorspaces\+::\+Image\+H\+S\+V8}
+\item 
+class \hyperlink{classcolorspaces_1_1_image_y_c_r_c_b}{colorspaces\+::\+Image\+Y\+C\+R\+CB}
+\item 
+class \hyperlink{classcolorspaces_1_1_image_n_v21}{colorspaces\+::\+Image\+N\+V21}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacecolorspaces}{colorspaces}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{imagecv_8h_a0dc95948b67a11c2364594f65e5aab15}{operator$<$$<$} (std\+::ostream \&stream, const \hyperlink{classcolorspaces_1_1_image_1_1_format}{colorspaces\+::\+Image\+::\+Format} \&fmt)
+\item 
+std\+::ostream \& \hyperlink{imagecv_8h_ac71a8cc751ddcf2bc0b85beaca0f2144}{operator$<$$<$} (std\+::ostream \&stream, const \hyperlink{classcolorspaces_1_1_image}{colorspaces\+::\+Image} \&img)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{imagecv_8h_a0dc95948b67a11c2364594f65e5aab15}\label{imagecv_8h_a0dc95948b67a11c2364594f65e5aab15}} 
+\index{imagecv.\+h@{imagecv.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!imagecv.\+h@{imagecv.\+h}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const \hyperlink{classcolorspaces_1_1_image_1_1_format}{colorspaces\+::\+Image\+::\+Format} \&}]{fmt }\end{DoxyParamCaption})}
+
+Insert a format in an output stream. Only debugging, output could be truncated \mbox{\Hypertarget{imagecv_8h_ac71a8cc751ddcf2bc0b85beaca0f2144}\label{imagecv_8h_ac71a8cc751ddcf2bc0b85beaca0f2144}} 
+\index{imagecv.\+h@{imagecv.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!imagecv.\+h@{imagecv.\+h}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const \hyperlink{classcolorspaces_1_1_image}{colorspaces\+::\+Image} \&}]{img }\end{DoxyParamCaption})}
+
+Insert an image in an output stream. Only debugging, output could be truncated 

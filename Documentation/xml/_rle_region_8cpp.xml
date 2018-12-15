@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_rle_region_8cpp" kind="file" language="C++">
+    <compoundname>RleRegion.cpp</compoundname>
+    <includes refid="_rle_region_8h" local="yes">RleRegion.h</includes>
+    <incdepgraph>
+      <node id="4630">
+        <label>boost/shared_ptr.hpp</label>
+      </node>
+      <node id="4631">
+        <label>maskApi.h</label>
+        <link refid="mask_api_8h"/>
+      </node>
+      <node id="4629">
+        <label>RleRegion.h</label>
+        <link refid="_rle_region_8h"/>
+        <childnode refid="4630" relation="include">
+        </childnode>
+        <childnode refid="4631" relation="include">
+        </childnode>
+      </node>
+      <node id="4628">
+        <label>DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegion.cpp</label>
+        <link refid="_rle_region_8cpp"/>
+        <childnode refid="4629" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_rle_region_8h" kindref="compound">RleRegion.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/Regions/RleRegion.cpp"/>
+  </compounddef>
+</doxygen>

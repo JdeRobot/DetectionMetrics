@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_keras_inferencer" kind="class" language="C++" prot="public">
+    <compoundname>KerasInferencer</compoundname>
+    <basecompoundref refid="class_framework_inferencer" prot="public" virt="non-virtual">FrameworkInferencer</basecompoundref>
+    <includes refid="_keras_inferencer_8h" local="no">KerasInferencer.h</includes>
+    <innerclass refid="struct_keras_inferencer_1_1detection" prot="private">KerasInferencer::detection</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_keras_inferencer_1acabfa573876e869d1088dd22abd8859f" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string KerasInferencer::netConfig</definition>
+        <argsstring></argsstring>
+        <name>netConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="16" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_keras_inferencer_1a84b56907d5b82c88c07d5e78e7daf6f3" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string KerasInferencer::netWeights</definition>
+        <argsstring></argsstring>
+        <name>netWeights</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="17" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_keras_inferencer_1a841978f347a94dd048f93bbc855817ea" prot="private" static="no" mutable="no">
+        <type>PyObject *</type>
+        <definition>PyObject* KerasInferencer::pName</definition>
+        <argsstring></argsstring>
+        <name>pName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_keras_inferencer_1ae952bccf46bab2e3ca7288b92979231d" prot="private" static="no" mutable="no">
+        <type>PyObject *</type>
+        <definition>PyObject * KerasInferencer::pModule</definition>
+        <argsstring></argsstring>
+        <name>pModule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_keras_inferencer_1a1038116f709c92260ed963a22c67dd59" prot="private" static="no" mutable="no">
+        <type>PyObject *</type>
+        <definition>PyObject * KerasInferencer::pClass</definition>
+        <argsstring></argsstring>
+        <name>pClass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_keras_inferencer_1ad4fcf9b50496c0bdeb3a0bd918faced1" prot="private" static="no" mutable="no">
+        <type>PyObject *</type>
+        <definition>PyObject * KerasInferencer::pInstance</definition>
+        <argsstring></argsstring>
+        <name>pInstance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="24" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_keras_inferencer_1a92d859bb200a91093157530459a38063" prot="private" static="no" mutable="no">
+        <type>PyObject *</type>
+        <definition>PyObject* KerasInferencer::pArgs</definition>
+        <argsstring></argsstring>
+        <name>pArgs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_keras_inferencer_1a3b092df0bbecf5429a065db80496084d" prot="private" static="no" mutable="no">
+        <type>PyObject *</type>
+        <definition>PyObject * KerasInferencer::pValue</definition>
+        <argsstring></argsstring>
+        <name>pValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_keras_inferencer_1a9c798bcba17cb43c660fdd122595363b" prot="private" static="no" mutable="no">
+        <type>PyObject *</type>
+        <definition>PyObject * KerasInferencer::pmodel</definition>
+        <argsstring></argsstring>
+        <name>pmodel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="25" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_keras_inferencer_1a5db19517a01141ff26b8cb17ba555eac" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; detection &gt;</type>
+        <definition>std::vector&lt;detection&gt; KerasInferencer::detections</definition>
+        <argsstring></argsstring>
+        <name>detections</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="27" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_keras_inferencer_1a086ecb2ca8beafba15acdfca0e3ede00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KerasInferencer::KerasInferencer</definition>
+        <argsstring>(const std::string &amp;netConfig, const std::string &amp;netWeights, const std::string &amp;classNamesFile)</argsstring>
+        <name>KerasInferencer</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>netConfig</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>netWeights</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>classNamesFile</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="10" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.cpp" bodystart="5" bodyend="64"/>
+        <references refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" compoundref="_framework_inferencer_8h" startline="24">FrameworkInferencer::classNamesFile</references>
+        <references refid="class_keras_inferencer_1a98f3d1bdf1e3207e44602312c04c6e98" compoundref="_keras_inferencer_8cpp" startline="66" endline="69">init</references>
+      </memberdef>
+      <memberdef kind="function" id="class_keras_inferencer_1a4c944e963e3ec3ca8fa0bd4b229a8931" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="struct_sample" kindref="compound">Sample</ref></type>
+        <definition>Sample KerasInferencer::detectImp</definition>
+        <argsstring>(const cv::Mat &amp;image, double confidence_threshold)</argsstring>
+        <name>detectImp</name>
+        <reimplements refid="class_framework_inferencer_1a8fd7e708c8be4471bc2b37a4193a9045">detectImp</reimplements>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>confidence_threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="11" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.cpp" bodystart="71" bodyend="103"/>
+        <references refid="class_keras_inferencer_1adb1b0ad044dd344be3d12df018db589c" compoundref="_keras_inferencer_8cpp" startline="159" endline="219">getKerasInferences</references>
+        <references refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" compoundref="_framework_inferencer_8h" startline="24">FrameworkInferencer::classNamesFile</references>
+        <references refid="struct_class_type_generic_1abb29534e4b1c9e2b33c57df5e56ef2fb" compoundref="_class_type_generic_8cpp" startline="26" endline="28">ClassTypeGeneric::setId</references>
+        <references refid="struct_class_type_1af6ce3dd95df43c13e50848cd930f4a25" compoundref="_class_type_8cpp" startline="44" endline="46">ClassType::getClassString</references>
+        <references refid="struct_sample_1a37c84ccbf7cbc37823327da68037c51a" compoundref="_sample_8cpp" startline="318" endline="320">Sample::setColorImage</references>
+        <references refid="struct_sample_1a9654dcf85e7a0b19b7b462cd7e6e1e6a" compoundref="_sample_8cpp" startline="84" endline="86">Sample::setRectRegions</references>
+      </memberdef>
+      <memberdef kind="function" id="class_keras_inferencer_1adb1b0ad044dd344be3d12df018db589c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int KerasInferencer::getKerasInferences</definition>
+        <argsstring>(const cv::Mat &amp;image, double confidence_threshold)</argsstring>
+        <name>getKerasInferences</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>image</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>confidence_threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="12" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.cpp" bodystart="159" bodyend="219"/>
+        <references refid="class_keras_inferencer_1a954532264ddadbee70c7c4bdb7b55ed3" compoundref="_keras_inferencer_8cpp" startline="111" endline="151">output_result</references>
+        <referencedby refid="class_keras_inferencer_1a4c944e963e3ec3ca8fa0bd4b229a8931" compoundref="_keras_inferencer_8cpp" startline="71" endline="103">detectImp</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_keras_inferencer_1a954532264ddadbee70c7c4bdb7b55ed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KerasInferencer::output_result</definition>
+        <argsstring>(PyObject *result, int sizes[])</argsstring>
+        <name>output_result</name>
+        <param>
+          <type>PyObject *</type>
+          <declname>result</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>sizes</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="13" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.cpp" bodystart="111" bodyend="151"/>
+        <referencedby refid="class_keras_inferencer_1adb1b0ad044dd344be3d12df018db589c" compoundref="_keras_inferencer_8cpp" startline="159" endline="219">getKerasInferences</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_keras_inferencer_1a98f3d1bdf1e3207e44602312c04c6e98" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KerasInferencer::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="14" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.cpp" bodystart="66" bodyend="69"/>
+        <referencedby refid="class_keras_inferencer_1a086ecb2ca8beafba15acdfca0e3ede00" compoundref="_keras_inferencer_8cpp" startline="5" endline="64">KerasInferencer</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="215">
+        <label>FrameworkInferencer</label>
+        <link refid="class_framework_inferencer"/>
+      </node>
+      <node id="214">
+        <label>KerasInferencer</label>
+        <link refid="class_keras_inferencer"/>
+        <childnode refid="215" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="217">
+        <label>FrameworkInferencer</label>
+        <link refid="class_framework_inferencer"/>
+      </node>
+      <node id="216">
+        <label>KerasInferencer</label>
+        <link refid="class_keras_inferencer"/>
+        <childnode refid="217" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" line="8" column="1" bodyfile="DeepLearningSuite/DeepLearningSuiteLib/FrameworkEvaluator/KerasInferencer.h" bodystart="8" bodyend="29"/>
+    <listofallmembers>
+      <member refid="class_framework_inferencer_1abdb304d43262f48e0438a55778c7540f" prot="protected" virt="non-virtual"><scope>KerasInferencer</scope><name>classNamesFile</name></member>
+      <member refid="class_framework_inferencer_1a4c2b3b0ec03df5f97e7b32235422dc60" prot="public" virt="non-virtual"><scope>KerasInferencer</scope><name>detect</name></member>
+      <member refid="class_keras_inferencer_1a4c944e963e3ec3ca8fa0bd4b229a8931" prot="public" virt="virtual"><scope>KerasInferencer</scope><name>detectImp</name></member>
+      <member refid="class_keras_inferencer_1a5db19517a01141ff26b8cb17ba555eac" prot="private" virt="non-virtual"><scope>KerasInferencer</scope><name>detections</name></member>
+      <member refid="class_framework_inferencer_1adda91b1e8b6238e4cd3cc18e84675fea" prot="public" virt="non-virtual"><scope>KerasInferencer</scope><name>FrameworkInferencer</name></member>
+      <member refid="class_keras_inferencer_1adb1b0ad044dd344be3d12df018db589c" prot="public" virt="non-virtual"><scope>KerasInferencer</scope><name>getKerasInferences</name></member>
+      <member refid="class_framework_inferencer_1a51291e562ddc5a4b86c0c413439d59a5" prot="public" virt="non-virtual"><scope>KerasInferencer</scope><name>getMeanDurationTime</name></member>
+      <member refid="class_keras_inferencer_1a98f3d1bdf1e3207e44602312c04c6e98" prot="public" virt="non-virtual"><scope>KerasInferencer</scope><name>init</name></member>
+      <member refid="class_keras_inferencer_1a086ecb2ca8beafba15acdfca0e3ede00" prot="public" virt="non-virtual"><scope>KerasInferencer</scope><name>KerasInferencer</name></member>
+      <member refid="class_keras_inferencer_1acabfa573876e869d1088dd22abd8859f" prot="private" virt="non-virtual"><scope>KerasInferencer</scope><name>netConfig</name></member>
+      <member refid="class_keras_inferencer_1a84b56907d5b82c88c07d5e78e7daf6f3" prot="private" virt="non-virtual"><scope>KerasInferencer</scope><name>netWeights</name></member>
+      <member refid="class_keras_inferencer_1a954532264ddadbee70c7c4bdb7b55ed3" prot="public" virt="non-virtual"><scope>KerasInferencer</scope><name>output_result</name></member>
+      <member refid="class_keras_inferencer_1a92d859bb200a91093157530459a38063" prot="private" virt="non-virtual"><scope>KerasInferencer</scope><name>pArgs</name></member>
+      <member refid="class_keras_inferencer_1a1038116f709c92260ed963a22c67dd59" prot="private" virt="non-virtual"><scope>KerasInferencer</scope><name>pClass</name></member>
+      <member refid="class_keras_inferencer_1ad4fcf9b50496c0bdeb3a0bd918faced1" prot="private" virt="non-virtual"><scope>KerasInferencer</scope><name>pInstance</name></member>
+      <member refid="class_keras_inferencer_1a9c798bcba17cb43c660fdd122595363b" prot="private" virt="non-virtual"><scope>KerasInferencer</scope><name>pmodel</name></member>
+      <member refid="class_keras_inferencer_1ae952bccf46bab2e3ca7288b92979231d" prot="private" virt="non-virtual"><scope>KerasInferencer</scope><name>pModule</name></member>
+      <member refid="class_keras_inferencer_1a841978f347a94dd048f93bbc855817ea" prot="private" virt="non-virtual"><scope>KerasInferencer</scope><name>pName</name></member>
+      <member refid="class_keras_inferencer_1a3b092df0bbecf5429a065db80496084d" prot="private" virt="non-virtual"><scope>KerasInferencer</scope><name>pValue</name></member>
+      <member refid="class_framework_inferencer_1a0a0ad89131a1f2a2377a3003b0c1d319" prot="public" virt="non-virtual"><scope>KerasInferencer</scope><name>~ FrameworkInferencer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

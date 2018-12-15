@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="main_8cpp" kind="file" language="C++">
+    <compoundname>main.cpp</compoundname>
+    <includes refid="mainwindow_8h" local="yes">mainwindow.h</includes>
+    <includes local="no">QApplication</includes>
+    <includes refid="_sample_generation_app_8h" local="no">Utils/SampleGenerationApp.h</includes>
+    <includes local="no">QStyleFactory</includes>
+    <incdepgraph>
+      <node id="239">
+        <label>QStyleFactory</label>
+      </node>
+      <node id="236">
+        <label>iomanip</label>
+      </node>
+      <node id="232">
+        <label>boost/algorithm/string/classification.hpp</label>
+      </node>
+      <node id="235">
+        <label>config/properties.hpp</label>
+        <link refid="properties_8hpp"/>
+        <childnode refid="226" relation="include">
+        </childnode>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="237" relation="include">
+        </childnode>
+        <childnode refid="227" relation="include">
+        </childnode>
+        <childnode refid="230" relation="include">
+        </childnode>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="228" relation="include">
+        </childnode>
+      </node>
+      <node id="227">
+        <label>string</label>
+      </node>
+      <node id="221">
+        <label>QMainWindow</label>
+      </node>
+      <node id="223">
+        <label>config/config.h</label>
+        <link refid="config_8h"/>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="225" relation="include">
+        </childnode>
+        <childnode refid="235" relation="include">
+        </childnode>
+      </node>
+      <node id="233">
+        <label>fstream</label>
+      </node>
+      <node id="224">
+        <label>yaml-cpp/yaml.h</label>
+      </node>
+      <node id="231">
+        <label>boost/algorithm/string/split.hpp</label>
+      </node>
+      <node id="238">
+        <label>QApplication</label>
+      </node>
+      <node id="222">
+        <label>Utils/SampleGenerationApp.h</label>
+        <link refid="_sample_generation_app_8h"/>
+        <childnode refid="223" relation="include">
+        </childnode>
+      </node>
+      <node id="228">
+        <label>config/stdutils.hpp</label>
+        <link refid="stdutils_8hpp"/>
+        <childnode refid="229" relation="include">
+        </childnode>
+        <childnode refid="227" relation="include">
+        </childnode>
+        <childnode refid="230" relation="include">
+        </childnode>
+        <childnode refid="231" relation="include">
+        </childnode>
+        <childnode refid="232" relation="include">
+        </childnode>
+        <childnode refid="233" relation="include">
+        </childnode>
+      </node>
+      <node id="230">
+        <label>vector</label>
+      </node>
+      <node id="237">
+        <label>sstream</label>
+      </node>
+      <node id="219">
+        <label>DeepLearningSuite/DatasetEvaluationApp/main.cpp</label>
+        <link refid="main_8cpp"/>
+        <childnode refid="220" relation="include">
+        </childnode>
+        <childnode refid="238" relation="include">
+        </childnode>
+        <childnode refid="222" relation="include">
+        </childnode>
+        <childnode refid="239" relation="include">
+        </childnode>
+      </node>
+      <node id="229">
+        <label>cstdlib</label>
+      </node>
+      <node id="226">
+        <label>iostream</label>
+      </node>
+      <node id="220">
+        <label>mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="221" relation="include">
+        </childnode>
+        <childnode refid="222" relation="include">
+        </childnode>
+        <childnode refid="236" relation="include">
+        </childnode>
+        <childnode refid="237" relation="include">
+        </childnode>
+      </node>
+      <node id="225">
+        <label>config/loader.hpp</label>
+        <link refid="loader_8hpp"/>
+        <childnode refid="226" relation="include">
+        </childnode>
+        <childnode refid="227" relation="include">
+        </childnode>
+        <childnode refid="228" relation="include">
+        </childnode>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="234" relation="include">
+        </childnode>
+        <childnode refid="235" relation="include">
+        </childnode>
+      </node>
+      <node id="234">
+        <label>yaml-cpp/exceptions.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="class_my_app" prot="public">MyApp</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="DeepLearningSuite/DatasetEvaluationApp/main.cpp" line="29" column="1" bodyfile="DeepLearningSuite/DatasetEvaluationApp/main.cpp" bodystart="29" bodyend="33"/>
+        <references refid="class_sample_generation_app_1acec58569149ac1fc8af9525d35b9e88a" compoundref="_sample_generation_app_8cpp" startline="90" endline="93">SampleGenerationApp::process</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mainwindow_8h" kindref="compound">mainwindow.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QApplication&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_sample_generation_app_8h" kindref="compound">Utils/SampleGenerationApp.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QStyleFactory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="class_my_app" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_my_app" kindref="compound">MyApp</ref>:</highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_sample_generation_app" kindref="compound">SampleGenerationApp</ref>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="8" refid="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_my_app_1a2cedcf8942b99702d5e26db7d07ff57b" kindref="member">MyApp</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_sample_generation_app_1af98f6187cc8eb62fc3fe0ff53df76b6e" kindref="member">argc</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="class_sample_generation_app_1a7e490e3711491c2bc58351f9e9dd9945" kindref="member">argv</ref>[]):<ref refid="class_sample_generation_app" kindref="compound">SampleGenerationApp</ref>(argc,argv){</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" kindref="member">requiredArguments</ref>.push_back(</highlight><highlight class="stringliteral">&quot;datasetPath&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" kindref="member">requiredArguments</ref>.push_back(</highlight><highlight class="stringliteral">&quot;evaluationsPath&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" kindref="member">requiredArguments</ref>.push_back(</highlight><highlight class="stringliteral">&quot;weightsPath&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" kindref="member">requiredArguments</ref>.push_back(</highlight><highlight class="stringliteral">&quot;netCfgPath&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_sample_generation_app_1a1dae733636d90e8b5d27002cf513e59a" kindref="member">requiredArguments</ref>.push_back(</highlight><highlight class="stringliteral">&quot;namesPath&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="15" refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_my_app_1a376d7e3ddb7ab21223f29a7263b6fb14" kindref="member">operator()</ref>(){</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QApplication<sp/>a(<ref refid="class_sample_generation_app_1af98f6187cc8eb62fc3fe0ff53df76b6e" kindref="member">argc</ref>,<sp/><ref refid="class_sample_generation_app_1a7e490e3711491c2bc58351f9e9dd9945" kindref="member">argv</ref>);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_main_window" kindref="compound">MainWindow</ref><sp/>w(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>w.show();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>a.exec();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_sample_generation_app_1af98f6187cc8eb62fc3fe0ff53df76b6e" kindref="member">argc</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="class_sample_generation_app_1a7e490e3711491c2bc58351f9e9dd9945" kindref="member">argv</ref>[])</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_my_app" kindref="compound">MyApp</ref><sp/>myApp(argc,<sp/>argv);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>myApp.<ref refid="class_sample_generation_app_1acec58569149ac1fc8af9525d35b9e88a" kindref="member">process</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="DeepLearningSuite/DatasetEvaluationApp/main.cpp"/>
+  </compounddef>
+</doxygen>

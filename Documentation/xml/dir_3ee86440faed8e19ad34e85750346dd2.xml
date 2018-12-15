@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_3ee86440faed8e19ad34e85750346dd2" kind="dir">
+    <compoundname>DeepLearningSuite/build/DatasetEvaluationApp/DatasetEvaluationApp_autogen</compoundname>
+    <innerdir refid="dir_5efbe90f758fe32eda06f8697333ed39">DeepLearningSuite/build/DatasetEvaluationApp/DatasetEvaluationApp_autogen/EWIEGA46WW</innerdir>
+    <innerdir refid="dir_f2fa9afb437c974c9c8b39b16c93bcb3">DeepLearningSuite/build/DatasetEvaluationApp/DatasetEvaluationApp_autogen/include</innerdir>
+    <innerfile refid="moc__predefs_8h">moc_predefs.h</innerfile>
+    <innerfile refid="mocs__compilation_8cpp">mocs_compilation.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="DeepLearningSuite/build/DatasetEvaluationApp/DatasetEvaluationApp_autogen/"/>
+  </compounddef>
+</doxygen>

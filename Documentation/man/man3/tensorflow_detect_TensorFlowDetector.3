@@ -1,0 +1,70 @@
+.TH "tensorflow_detect.TensorFlowDetector" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+tensorflow_detect.TensorFlowDetector
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, path_to_ckpt)"
+.br
+.ti -1c
+.RI "def \fBrun_inference_for_single_image\fP (self, image)"
+.br
+.ti -1c
+.RI "def \fBdetect\fP (self, img, \fBthreshold\fP)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBtensor_dict\fP"
+.br
+.ti -1c
+.RI "\fBimage_tensor\fP"
+.br
+.ti -1c
+.RI "\fBsess\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBdummy_tensor\fP = np\&.zeros((1,1,1,3), dtype=np\&.int32)"
+.br
+.ti -1c
+.RI "\fBfeed_dict\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def tensorflow_detect\&.TensorFlowDetector\&.__init__ ( self,  path_to_ckpt)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "def tensorflow_detect\&.TensorFlowDetector\&.detect ( self,  img,  threshold)"
+
+.SS "def tensorflow_detect\&.TensorFlowDetector\&.run_inference_for_single_image ( self,  image)"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "tensorflow_detect\&.TensorFlowDetector\&.dummy_tensor = np\&.zeros((1,1,1,3), dtype=np\&.int32)\fC [static]\fP"
+
+.SS "tensorflow_detect\&.TensorFlowDetector\&.feed_dict\fC [static]\fP"
+
+.SS "tensorflow_detect\&.TensorFlowDetector\&.image_tensor"
+
+.SS "tensorflow_detect\&.TensorFlowDetector\&.sess"
+
+.SS "tensorflow_detect\&.TensorFlowDetector\&.tensor_dict"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.

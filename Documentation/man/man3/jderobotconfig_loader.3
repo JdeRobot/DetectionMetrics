@@ -1,0 +1,63 @@
+.TH "jderobotconfig::loader" 3 "Sat Dec 15 2018" "Version 1.00" "dl-DetectionSuite" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+jderobotconfig::loader
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBfindConfigFile\fP (const std::string &filename)"
+.br
+.RI "Find filename into all defined search paths\&. Order is: "
+.ti -1c
+.RI "\fBConfig::Properties\fP \fBload\fP (std::string filename)"
+.br
+.RI "Loads File configuration from passed file\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const std::string \fBCONFIG_PATH_NAME\fP = 'JDEROBOT_CONFIG_PATHS'"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "std::string jderobotconfig::loader::findConfigFile (const std::string & filename)"
+
+.PP
+Find filename into all defined search paths\&. Order is: 
+.IP "1." 4
+current dir
+.IP "2." 4
+jderobot paths (*)
+.PP
+.PP
+\fBReturns:\fP
+.RS 4
+empty if file was not found\&. 
+.RE
+.PP
+
+.SS "\fBConfig::Properties\fP jderobotconfig::loader::load (std::string filename)"
+
+.PP
+Loads File configuration from passed file\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+new Config::Config or passed one\&. 
+.RE
+.PP
+
+.SH "Variable Documentation"
+.PP 
+.SS "const std::string jderobotconfig::loader::CONFIG_PATH_NAME = 'JDEROBOT_CONFIG_PATHS'"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for dl-DetectionSuite from the source code\&.
