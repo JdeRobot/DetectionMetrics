@@ -230,8 +230,8 @@ Each one of them has some Dependencies, and are mentioned below.
 Once you have all the required Dependencies installed just:
 
 ```
-    git clone https://github.com/JdeRobot/DeepLearningSuite
-    cd DeepLearningSuite/
+    git clone https://github.com/JdeRobot/dl-DetectionSuite
+    cd dl-DetectionSuite/DeepLearningSuite
     mkdir build && cd build
 ```
 ```
