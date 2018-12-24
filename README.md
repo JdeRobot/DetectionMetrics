@@ -122,6 +122,7 @@ Install OpenCV 3.4
 <pre>
 git clone https://github.com/opencv/opencv.git
 git checkout 3.4
+mkdir build && cd build
 cmake -D WITH_QT=ON -D WITH_GTK=OFF ..
 make -j4
 sudo make install
@@ -229,8 +230,8 @@ Each one of them has some Dependencies, and are mentioned below.
 Once you have all the required Dependencies installed just:
 
 ```
-    git clone https://github.com/JdeRobot/DeepLearningSuite
-    cd DeepLearningSuite/
+    git clone https://github.com/JdeRobot/dl-DetectionSuite
+    cd dl-DetectionSuite/DeepLearningSuite
     mkdir build && cd build
 ```
 ```
