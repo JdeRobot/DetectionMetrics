@@ -78,8 +78,8 @@ after_success:
   - ls -lh out/*            # Assuming you have some files in out/ that you would like to upload
   - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
   - travis_wait bash upload.sh out/*
-  - cd $TRAVIS_BUILD_DIR
-  - doxygen $DOXYFILE 2>&1 | tee doxygen.log
+  - cd $TRAVIS_BUILD_DIR && pwd && ls
+  - doxygen 2>&1 | tee doxygen.log
   - mv doxygen.log html/ && echo "" > html/.nojekyll
 
 deploy:
