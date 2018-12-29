@@ -78,7 +78,8 @@ after_success:
   - ls -lh out/*            # Assuming you have some files in out/ that you would like to upload
   - wget -c https://github.com/probonopd/uploadtool/raw/master/upload.sh
   - travis_wait bash upload.sh out/*
-  - cd $TRAVIS_BUILD_DIR && pwd && ls
+  - cd $TRAVIS_BUILD_DIR && rm -rf DeepLearningSuite/build
+  - wget https://jderobot.org/resources/assets/jderobot.png
   - doxygen
   - echo "" > html/.nojekyll
 
@@ -89,7 +90,7 @@ deploy:
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   on:
     branch: master
-    condition: ($TRAVIS_OS_NAME == "linux") && ($CC == "gcc")
+    condition: "$TO_TEST" == "WITH_ROS_AND_ICE"        # Publish only in the 4th job
 
 branches:
   except:
