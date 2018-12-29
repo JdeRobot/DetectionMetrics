@@ -90,7 +90,7 @@ deploy:
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   on:
     branch: master
-    condition: "$TO_TEST" == "WITH_ROS_AND_ICE"        # Publish only in the 4th job
+    condition: ( "$TO_TEST" == "WITH_ROS_AND_ICE" )        # Publish only in the 4th job
 
 branches:
   except:
