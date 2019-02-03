@@ -138,13 +138,10 @@ void DetectionsValidator::validate(const Sample &inputSample) {
     cv::Mat initialImage=inputSample.getColorImage().clone();
     cv::imshow("Source Image", initialImage);
     cv::waitKey(100);
-    std::cout << "Number of detections: " << rectDetections.size() << std::endl;
 
     BoundingValidator validatorNumber(initialImage, this->scale);
 
-
     validatorNumber.validateNDetections(rectDetections);
-
 
     for (auto it= rectDetections.begin(), end=rectDetections.end(); it != end; ++it){
         //draw all detections
@@ -189,4 +186,7 @@ void DetectionsValidator::validate(const Sample &inputSample) {
         sample.save(this->path,this->validationCounter);
         this->validationCounter++;
     }
+
+    cv::destroyAllWindows();
+
 }

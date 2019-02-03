@@ -7,7 +7,7 @@ from sampleGenerator.sample import sample
 
 
 
-input_folder = '/mnt/large/pentalo/sample/data/images/'
+input_folder = '/opt/datasets/sample_images'
 output_folder = './out/'
 
 
@@ -20,7 +20,7 @@ def getIfPropertyToTest(sampleNumber, testRatio):
 def mainDepth():
     imagesList = []
     fileLists = os.listdir(input_folder + '/camera2/')
-    imagesList += [each for each in fileLists if each.endswith('.png')]
+    imagesList += [each for each in fileLists if each.endswith('.jpg')]
     sorted_files = sorted(imagesList, key=lambda x: int(x.split('.')[0]))
 
     imageIn=cv2.imread(input_folder + '/camera2/' +  sorted_files[1])
@@ -81,7 +81,7 @@ def mainDepth():
 def maincolor():
     imagesList = []
     fileLists = os.listdir(input_folder + '/camera1/')
-    imagesList += [each for each in fileLists if each.endswith('.png')]
+    imagesList += [each for each in fileLists if each.endswith('.jpg')]
     sorted_files = sorted(imagesList, key=lambda x: int(x.split('.')[0]))
 
     bkg=cv2.imread(input_folder + '/camera1/' +  sorted_files[1])
@@ -140,7 +140,7 @@ def main():
     index=0
     imagesList=[]
     fileLists= os.listdir(input_folder+'/camera1/')
-    imagesList += [each for each in fileLists if each.endswith('.png')]
+    imagesList += [each for each in fileLists if each.endswith('.jpg')]
     sorted_files = sorted(imagesList, key=lambda x: int(x.split('.')[0]))
 
     print 'source ', input_folder +  '/camera1/' + sorted_files[1]
@@ -175,6 +175,7 @@ def main():
                 gray = cv2.cvtColor(currImage, cv2.COLOR_BGR2GRAY)
                 gray = cv2.GaussianBlur(gray, (21, 21), 0)
 
+                print (sourceGray.shape, gray.shape)
                 frameDelta = cv2.absdiff(sourceGray, gray)
                 thresh = cv2.threshold(frameDelta, th, 255, cv2.THRESH_BINARY)[1]
 
@@ -234,7 +235,7 @@ def main2():
     min_area=50
     imagesList = []
     fileLists = os.listdir(input_folder + '/camera1/')
-    imagesList += [each for each in fileLists if each.endswith('.png')]
+    imagesList += [each for each in fileLists if each.endswith('.jpg')]
     sorted_files = sorted(imagesList, key=lambda x: int(x.split('.')[0]))
 
     frame=cv2.imread(input_folder + '/camera1/' +  sorted_files[1])

@@ -1,5 +1,3 @@
-
-
 #include <iostream>
 #include <random>
 #include <boost/program_options.hpp>
@@ -7,6 +5,7 @@
 
 #include <opencv2/highgui/highgui.hpp>
 #include "DatasetConverters/liveReaders/RecorderReader.h"
+#include "DatasetConverters/liveReaders/DirectoryReader.h"
 #include "GenerationUtils/DepthForegroundSegmentator.h"
 #include "GenerationUtils/DetectionsValidator.h"
 #include <glog/logging.h>
@@ -42,10 +41,9 @@ public:
             colorImagesPathKey = this->config.getNode("colorImagesPath");
             depthImagesPathKey = this->config.getNode("depthImagesPath");
         }
-        else{
+        else {
             dataPath = this->config.getNode("dataPath");
         }
-
 
 
 
@@ -58,7 +56,7 @@ public:
 
 
         if (std::find(detectorOptions.begin(),detectorOptions.end(),detectorKey.as<std::string>())== detectorOptions.end()){
-            LOG(ERROR) << detectorKey.as<std::string>() << " is nor supported";
+            LOG(ERROR) << detectorKey.as<std::string>() << " is not supported";
             exit(1);
         }
 
@@ -72,7 +70,7 @@ public:
             DetectionsValidator validator(outputPath.as<std::string>());
             cv::Mat previousImage;
             int counter = 0;
-            int maxElements = converter.getNumSamples();
+            int maxElements = converter.getNumberOfElements();
             Sample sample;
             while (converter.getNextSample(sample)) {
                 counter++;
@@ -103,12 +101,17 @@ public:
             YAML::Node inferencerWeightsKey=this->config.getNode("inferencerWeights");
 
 
-            RecorderReaderPtr converter;
+            DatasetReaderPtr converter;
             if (reader.as<std::string>() == "recorder-rgbd") {
                 converter=RecorderReaderPtr( new RecorderReader(dataPath.as<std::string>()));
-            }
-            else{
+
+            } else if (reader.as<std::string>() == "directory") {
+                converter=DirectoryReaderPtr( new DirectoryReader(dataPath.as<std::string>()));
+            } else if (reader.as<std::string>() == "recorder"){
+                std::cout << colorImagesPathKey.as<std::string>() << " " << depthImagesPathKey.as<std::string>() << std::endl;
                 converter=RecorderReaderPtr( new RecorderReader(colorImagesPathKey.as<std::string>(), depthImagesPathKey.as<std::string>()));
+            } else {
+                throw "Reader: " + dataPath.as<std::string>() + " is not supported";
             }
 
             FrameworkInferencerPtr inferencer;
@@ -125,7 +128,7 @@ public:
             }
 
             DetectionsValidator validator(outputPath.as<std::string>());
-            int maxElements = converter->getNumSamples();
+            int maxElements = converter->getNumberOfElements();
             Sample sample;
             int counter=0;
             int skipSamples=10;
@@ -139,14 +142,14 @@ public:
             }
 
             while (converter->getNextSample(sample)) {
-                int samples_to_skip=distr(eng);
-                std::cout << "Skipping. " << samples_to_skip << std::endl;
-                bool validSample=false;
-                for (size_t i = 0; i < samples_to_skip; i++){
-                    validSample=converter->getNextSample(sample);
-                }
-                if (!validSample)
-                    break;
+                //int samples_to_skip=distr(eng);
+                //std::cout << "Skipping. " << samples_to_skip << std::endl;
+                //bool validSample=false;
+                //for (size_t i = 0; i < samples_to_skip; i++){
+                //    validSample=converter->getNextSample(sample);
+                //}
+                //if (!validSample)
+                //    break;
 
 
                 counter++;
@@ -161,7 +164,6 @@ public:
 
 
                 validator.validate(detectedSample);
-
 
             }
         }

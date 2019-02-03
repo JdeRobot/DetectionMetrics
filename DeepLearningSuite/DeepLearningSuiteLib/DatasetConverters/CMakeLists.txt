@@ -25,7 +25,7 @@ SET (DatasetConverters_SOURCE_FILES
   liveReaders/RecorderReader
   liveReaders/CameraReader
   liveReaders/VideoReader
-  liveReaders/VideoReader
+  liveReaders/DirectoryReader
 )
 
 ADD_LIBRARY(DeepLearningSuite_DatasetConverters OBJECT ${DatasetConverters_SOURCE_FILES})

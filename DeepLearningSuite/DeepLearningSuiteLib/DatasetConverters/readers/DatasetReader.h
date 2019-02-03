@@ -18,7 +18,7 @@ public:
     virtual bool getNextSamples(std::vector<Sample> &samples, int size );
     void filterSamplesByID(std::vector<std::string> filteredIDS);
     void overWriteClasses(const std::string& from, const std::string& to);
-    int getNumberOfElements();
+    virtual int getNumberOfElements();
     void resetReaderCounter();
     void decrementReaderCounter(const int decrement_by = 1);
     void incrementReaderCounter(const int increment_by = 1);

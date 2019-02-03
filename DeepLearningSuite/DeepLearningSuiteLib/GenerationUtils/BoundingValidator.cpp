@@ -97,7 +97,7 @@ bool BoundingValidator::validate(const cv::Rect_<double> &bounding, cv::Rect_<do
         cv::rectangle(image2show, rect.getRect(), cv::Scalar(255, 0, 0), 3);
         std::string windowName="Validation window";
         cv::namedWindow(windowName, 1);
-        cv::setMouseCallback(windowName, CallBackFunc, &rect);
+        cv::setMouseCallback(windowName, this->CallBackFunc, &rect);
         cv::imshow(windowName, image2show);
         key=cv::waitKey(1);
         //std::cout << "key: " << char(key) << std::endl;
@@ -119,7 +119,9 @@ bool BoundingValidator::validateNDetections(std::vector<RectRegion> &regions) {
     while ((key != ' ') and (key != rejectionKey)){
         cv::Mat image2show= imageInputRects.clone();
 
-        cv::setMouseCallback(windowName, CallBackFuncNumberDetections, &rect);
+
+        cv::setMouseCallback(windowName, this->CallBackFuncNumberDetections, &rect);
+
         if (rect != cv::Rect_<double>()){
             cv::rectangle(image2show,rect,cv::Scalar(0,255,0),int(this->scale));
             if (!clicked){

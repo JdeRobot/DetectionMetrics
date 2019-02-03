@@ -15,7 +15,7 @@ public:
     RecorderReader(const std::string& colorImagesPath, const std::string& depthImagesPath);
     explicit RecorderReader(const std::string& dataPath);
     bool getNextSample(Sample &sample) override;
-    int getNumSamples();
+    int getNumberOfElements();
 //    virtual bool getNextSample(Sample &sample);
 
 

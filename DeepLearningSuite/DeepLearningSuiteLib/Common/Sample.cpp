@@ -157,8 +157,15 @@ cv::Mat Sample::getColorImage() const{
 
 cv::Mat Sample::getDepthImage() const{
     if (this->depthImage.empty()) {
-        cv::Mat image = cv::imread(this->depthImagePath);
-        return image;
+        if (!(this->depthImagePath.empty())) {
+            cv::Mat image = cv::imread(this->depthImagePath);
+            return image;
+
+        } else {
+            cv::Mat empty;
+            return empty;
+        }
+
     }
     else
         return this->depthImage.clone();
@@ -212,30 +219,33 @@ void Sample::save(const std::string &outPath, const std::string &filename) {
 
 
     if (this->colorImage.empty()){
-        if (!this->colorImagePath.empty())
+        if (!this->colorImagePath.empty()) {
             if (boost::filesystem::exists(boost::filesystem::path(this->colorImagePath))) {
                 cv::Mat image = cv::imread(this->colorImagePath);
                 cv::imwrite(outPath + "/" + filename + ".png", image);
             }
+        }
     }
     else
         cv::imwrite(outPath + "/" + filename + ".png",this->colorImage);
 
     if (this->depthImage.empty()){
-        if (boost::filesystem::exists(boost::filesystem::path(this->depthImagePath))) {
-            cv::Mat image = cv::imread(this->depthImagePath);
-            cv::imwrite(outPath + "/" + filename + "-depth.png", image);
+        if (!this->depthImagePath.empty()) {
+            if (boost::filesystem::exists(boost::filesystem::path(this->depthImagePath))) {
+                cv::Mat image = cv::imread(this->depthImagePath);
+                cv::imwrite(outPath + "/" + filename + "-depth.png", image);
+            }
         }
     }
     else
         cv::imwrite(outPath + "/" + filename + "-depth.png", depthImage);
 
     bool ifRegions = false;
-    if(!rectRegions->getRegions().empty()) {
+    if(rectRegions and !rectRegions->getRegions().empty()) {
         rectRegions->saveJson(outPath + "/" + filename + ".json");
         ifRegions = true;
     }
-    if (!contourRegions->getRegions().empty()) {
+    if (contourRegions and !contourRegions->getRegions().empty()) {
         contourRegions->saveJson(outPath + "/" + filename + "-region.json");
         ifRegions = true;
     }

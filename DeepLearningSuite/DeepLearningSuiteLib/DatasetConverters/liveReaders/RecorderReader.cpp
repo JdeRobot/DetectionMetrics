@@ -14,16 +14,20 @@
 RecorderReader::RecorderReader(const std::string &colorImagesPath, const std::string &depthImagesPath):DatasetReader(true), colorPath(colorImagesPath), depthPath(depthImagesPath) {
     currentIndex=0;
     syncedData=false;
+        std::cout << "here3.2" << std::endl;
     getImagesByIndexes(depthPath,depthIndexes);
     getImagesByIndexes(colorPath,colorIndexes);
+        std::cout << "here3.5" << std::endl;
 }
 
 
 RecorderReader::RecorderReader(const std::string &dataPath):DatasetReader(true), colorPath(dataPath), depthPath(dataPath) {
     currentIndex=0;
     syncedData=true;
+    std::cout << "here3.2" << std::endl;
     getImagesByIndexes(dataPath,depthIndexes,"-depth");
     getImagesByIndexes(dataPath,colorIndexes,"-rgb");
+    std::cout << "here3.5" << std::endl;
 }
 
 
@@ -98,6 +102,6 @@ bool RecorderReader::getNextSample(Sample &sample) {
     return false;
 }
 
-int RecorderReader::getNumSamples() {
+int RecorderReader::getNumberOfElements() {
     return (int)this->depthIndexes.size();
 }

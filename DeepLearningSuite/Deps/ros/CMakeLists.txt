@@ -1,6 +1,6 @@
 OPTION(ENABLE_ROS "Enable ROS compatibility modules" ON)
 
-SET (CMAKE_PREFIX_PATH "/opt/ros/kinetic;/opt/ros/lunar;/opt/ros/jade")
+SET (CMAKE_PREFIX_PATH "/opt/ros/melodic;/opt/ros/kinetic;/opt/ros/lunar;/opt/ros/jade")
 
 if (ENABLE_ROS)
 	find_package(roscpp QUIET)
