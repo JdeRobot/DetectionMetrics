@@ -28,7 +28,6 @@ DirectoryReader::DirectoryReader(const std::string& directoryPath):DatasetReader
             continue;
 
         if (supported_image_formats.find(boost::filesystem::extension(*itr)) != supported_image_formats.end()) {
-            std::cout << itr->path().string() << std::endl;
             (this->listOfImages).push_back(itr->path().string());
         }
 
@@ -50,6 +49,5 @@ bool DirectoryReader::getNextSample(Sample &sample) {
 
 
 int DirectoryReader::getNumberOfElements() {
-    std::cout << this->listOfImages.size() << "\n";
     return this->listOfImages.size();
 }
