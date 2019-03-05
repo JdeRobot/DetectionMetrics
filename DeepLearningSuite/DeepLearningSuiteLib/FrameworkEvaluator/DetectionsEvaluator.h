@@ -17,8 +17,8 @@
 class DetectionsEvaluator {
 public:
     DetectionsEvaluator(DatasetReaderPtr gt, DatasetReaderPtr detections, bool debug=false);
-    void evaluate(bool isIouTypeBbox);
-    void accumulateResults();
+    void evaluate(bool isIouTypeBbox, double *time_evaluation = 0);
+    void accumulateResults(double *time_accumulation = 0);
     void addValidMixClass(const std::string classA, const std::string classB);
     void addClassToDisplay(const std::string& classID);
     std::map<std::string, double> getClassWiseAP();

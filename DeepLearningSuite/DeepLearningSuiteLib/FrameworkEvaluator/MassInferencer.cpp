@@ -78,7 +78,7 @@ MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr i
         alreadyProcessed=0;
 }
 
-void MassInferencer::process(bool useDepthImages, DatasetReaderPtr readerDetection) {
+void MassInferencer::process(bool useDepthImages, DatasetReaderPtr readerDetection,  unsigned int *mean_inference_time) {
 
     Sample sample;
     int counter=0;
@@ -153,7 +153,9 @@ void MassInferencer::process(bool useDepthImages, DatasetReaderPtr readerDetecti
 
     }
     cv::destroyAllWindows();
-    std::cout << "Mean inference time: " << this->inferencer->getMeanDurationTime() << "(ms)" <<  std::endl;
+    *mean_inference_time = this->inferencer->getMeanDurationTime();
+
+    std::cout << "Mean inference time: " << *mean_inference_time << "(ms)" <<  std::endl;
 
 
 }

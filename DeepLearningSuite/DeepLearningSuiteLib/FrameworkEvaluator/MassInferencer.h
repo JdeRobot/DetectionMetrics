@@ -15,7 +15,7 @@ public:
     MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, const std::string &resultsPath, bool* stopDeployer, double* confidence_threshold = NULL, bool debug=true);
     MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, double* confidence_threshold = NULL, bool debug=true);
     MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, bool debug=true);
-    void process(bool writeImages, DatasetReaderPtr readerDetection = NULL);
+    void process(bool writeImages, DatasetReaderPtr readerDetection = NULL, unsigned int *mean_inference_time = 0);
 
 private:
     DatasetReaderPtr reader;
