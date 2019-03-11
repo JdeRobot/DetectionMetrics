@@ -16,7 +16,8 @@ public:
     MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, double* confidence_threshold = NULL, bool debug=true);
     MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, bool debug=true);
     void process(bool writeImages, DatasetReaderPtr readerDetection = NULL);
-    unsigned int mean_inference_time;
+    FrameworkInferencerPtr getInferencer() const;
+
 private:
     DatasetReaderPtr reader;
     FrameworkInferencerPtr inferencer;

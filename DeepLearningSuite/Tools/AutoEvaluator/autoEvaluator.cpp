@@ -125,7 +125,7 @@ public:
                 GenericInferencerPtr inferencer(new GenericInferencer(inferencerConfig, inferencerWeights, inferencerNames, inferencerImplementation));
                 MassInferencer massInferencer(reader->getReader(),inferencer->getInferencer(), false);
                 massInferencer.process(useDepth, readerDetection);
-		
+
                 /*std::vector<Sample>::iterator iter;
                 std::cout << samples.size() << '\n';
 
@@ -154,7 +154,7 @@ public:
                 std::size_t b =  path.substr(0, a).find_last_of("/");
                 a =  path.find_last_of(".");
 
-                writer.writeInferencerResults(path.substr(b + 1, a - (b+1)), evaluator,massInferencer.mean_inference_time);
+                writer.writeInferencerResults(path.substr(b + 1, a - (b+1)), evaluator,massInferencer.getInferencer()->getMeanDurationTime());
 
 
                 count2++;

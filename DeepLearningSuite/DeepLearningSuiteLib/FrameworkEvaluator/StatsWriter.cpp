@@ -57,7 +57,7 @@ void StatsWriter::writeInferencerResults(std::string inferencerName, DetectionsE
 
     }
       this->writer << ", " << evaluator->getOverallmAP() << ", " << evaluator->getOverallmAR();
-      this->writer << ", " << mean_inference_time << ", "<< evaluator->time_evaluation << ", " << evaluator->time_accumulation;
+      this->writer << ", " << mean_inference_time << ", "<< evaluator->getEvaluationTime() << ", " << evaluator->getAccumulationTime();
       this->writer << "\n";
       LOG(INFO) << "Inference Results Written Successfully";
 
