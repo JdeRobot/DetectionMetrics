@@ -82,9 +82,9 @@ public:
             counter= counter % 10;
         }
 
-        std::cout << "Train: " << std::endl;
+        LOG(INFO) << "Train: ";
         readerTrain->printDatasetStats();
-        std::cout << "Test: " << std::endl;
+        LOG(INFO) << "Test: " ;
         readerTest->printDatasetStats();
 
 

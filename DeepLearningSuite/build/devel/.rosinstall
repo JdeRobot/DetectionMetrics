@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/sleep_404/.lab/dl-DetectionSuite/DeepLearningSuite/build/devel/setup.sh

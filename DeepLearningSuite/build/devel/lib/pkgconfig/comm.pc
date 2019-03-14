@@ -1,0 +1,8 @@
+prefix=/home/sleep_404/.lab/dl-DetectionSuite/DeepLearningSuite/build/devel
+
+Name: comm
+Description: Description of comm
+Version: 0.0.1
+Cflags: -I/home/sleep_404/.lab/dl-DetectionSuite/DeepLearningSuite/libs/comm/include
+Libs: -L/home/sleep_404/.lab/dl-DetectionSuite/DeepLearningSuite/build/devel/lib -lcomm
+Requires: roscpp std_msgs message_runtime

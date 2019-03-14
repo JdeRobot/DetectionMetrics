@@ -83,26 +83,26 @@ void DetectionsEvaluator::accumulateResults() {
     }
 
     int stop_s=clock();
-    std::cout << "Time Taken in Accumulation: " << (stop_s-start_s)/double(CLOCKS_PER_SEC) << " seconds" << std::endl;
-    std::cout << std::fixed;
-    std::cout << std::setprecision(8);
+    LOG(INFO) << "Time Taken in Accumulation: " << (stop_s-start_s)/double(CLOCKS_PER_SEC) << " seconds" << std::endl;
+    LOG(INFO) << std::fixed;
+    LOG(INFO) << std::setprecision(8);
 
 
     for (int i = 0; i < this->ApDiffIou.size(); i++) {
-        std::cout << "AP for IOU " << this->iouThrs[i] <<  ": \t" << this->ApDiffIou[i] << '\n';
+        LOG(INFO) << "AP for IOU " << this->iouThrs[i] <<  ": \t" << this->ApDiffIou[i] << '\n';
     }
 
     for (int i = 0; i < this->ArDiffIou.size(); i++) {
-        std::cout << "AR for IOU " << this->iouThrs[i] <<  ": \t" << this->ArDiffIou[i] << '\n';
+        LOG(INFO) << "AR for IOU " << this->iouThrs[i] <<  ": \t" << this->ArDiffIou[i] << '\n';
     }
 
-    std::cout << "AP for IOU 0.5:0.95 \t" << this->ApDiffIou.sum()/10 << '\n';
+    LOG(INFO) << "AP for IOU 0.5:0.95 \t" << this->ApDiffIou.sum()/10 << '\n';
 
-    std::cout << "AR for IOU 0.5:0.95 \t" << this->ArDiffIou.sum()/10 << '\n';
+    LOG(INFO) << "AR for IOU 0.5:0.95 \t" << this->ArDiffIou.sum()/10 << '\n';
 
     cv::destroyAllWindows();
 
-    std::cout << "Evaluated Successfully" << '\n';
+    LOG(INFO) << "Evaluated Successfully" << '\n';
 
 }
 
@@ -133,7 +133,7 @@ void DetectionsEvaluator::evaluate(bool isIouTypeBbox) {
         this->detections->getNextSample(detectionSample);
 
 
-        std::cout << "Evaluating: " << detectionSample.getSampleID() << "(" << counter << "/" << gtSamples << ")" << std::endl;
+        LOG(INFO) << "Evaluating: " << detectionSample.getSampleID() << "(" << counter << "/" << gtSamples << ")" << std::endl;
 
 
         if (gtSample.getSampleID().compare(detectionSample.getSampleID()) != 0){
@@ -158,7 +158,7 @@ void DetectionsEvaluator::evaluate(bool isIouTypeBbox) {
 
     }
     int stop_s=clock();
-    std::cout << "Time Taken in Evaluation: " << (stop_s-start_s)/double(CLOCKS_PER_SEC) << " seconds" << std::endl;
+    LOG(INFO) << "Time Taken in Evaluation: " << (stop_s-start_s)/double(CLOCKS_PER_SEC) << " seconds" << std::endl;
 
 }
 
@@ -210,7 +210,7 @@ void DetectionsEvaluator::evaluateSample(Sample gt, Sample detection, bool isIou
                     }
                 }
                 if (sampleEvalMatrix[current_class].empty()) {
-                    std::cout << "IOU Matrix for " << sampleID << " and class " << current_class << " is empty for this Detection Ground Truth Pair" << '\n';
+                    LOG(INFO) << "IOU Matrix for " << sampleID << " and class " << current_class << " is empty for this Detection Ground Truth Pair" << '\n';
 
                 }
 
@@ -305,7 +305,7 @@ void DetectionsEvaluator::evaluateSample(Sample gt, Sample detection, bool isIou
                     }
                 }
                 if (sampleEvalMatrix[current_class].empty()) {
-                    std::cout << "IOU Matrix for " << sampleID << " and class " << current_class << " is empty for this Detection Ground Truth Pair" << '\n';
+                    LOG(INFO) << "IOU Matrix for " << sampleID << " and class " << current_class << " is empty for this Detection Ground Truth Pair" << '\n';
 
                 }
 

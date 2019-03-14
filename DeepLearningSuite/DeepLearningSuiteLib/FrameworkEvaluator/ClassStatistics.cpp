@@ -6,7 +6,7 @@
 #include "ClassStatistics.h"
 #include <iostream>
 #include <limits>
-
+#include <glog/logging.h>
 ClassStatistics::ClassStatistics(const std::string& classID):classID(classID),nSamples(0),truePositives(0),falsePositives(0), falseNegatives(0), trueNegatives(0){
 
 }

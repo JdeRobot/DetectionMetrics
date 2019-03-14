@@ -178,5 +178,5 @@ int main (int argc, char* argv[]) {
     MyApp myApp(argc,argv);
     myApp.process();
 
-    std::cout << "Auto Evaluation Successfull" << '\n';
+    LOG(INFO) << "Auto Evaluation Successfull \n" ;
 }

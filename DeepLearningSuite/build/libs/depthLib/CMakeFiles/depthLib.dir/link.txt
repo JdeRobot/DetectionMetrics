@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdepthLib.a  CMakeFiles/depthLib.dir/DepthFilter.cpp.o CMakeFiles/depthLib.dir/DepthSampler.cpp.o
+/usr/bin/ranlib libdepthLib.a
