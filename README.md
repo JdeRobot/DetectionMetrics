@@ -71,30 +71,6 @@ Similrarly for keras:
 pip install keras
 ```
 
-#### Using Docker  
-First you need to have docker installed in your computer. If no, assuming you are in Ubuntu, install using the following command
-
-```
- sudo apt install docker.io
-```
-
-Now you need to start the docker deamon using
-```
-sudo service docker start
-```
-
-After starting the deamon , get the dl-detectionsuite docker file using
-```
-sudo docker pull jderobot/dl-detectionsuite
-```
-
-Now run the docker image using
-```
-sudo docker run -it jderobot/dl-detectionsuite
-```
-where the ```-it``` flag instructs Docker to allocate a pseudo-TTY connected to the container’s stdin; creating an interactive ```bash``` shell in the container.
-Voila!! Now you can use dl-detectionsuite.
-
 # Requirements
 
 ### Common deps
