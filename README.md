@@ -121,6 +121,7 @@ echo 'export PATH="/usr/local/opt/qt/bin:$PATH"' >> ~/.bash_profile
 Install OpenCV 3.4
 <pre>
 git clone https://github.com/opencv/opencv.git
+cd opencv
 git checkout 3.4
 mkdir build && cd build
 cmake -D WITH_QT=ON -D WITH_GTK=OFF ..

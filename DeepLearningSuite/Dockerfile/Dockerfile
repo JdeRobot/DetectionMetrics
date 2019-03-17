@@ -18,14 +18,12 @@ COPY ./keyboard /etc/default/keyboard
 RUN apt-get install -y cuda
 
 #common depds
-RUN   apt-get install -y build-essential git openssh-client cmake libopencv-dev rapidjson-dev libboost-dev sudo
+RUN   apt-get install -y build-essential git openssh-client cmake rapidjson-dev libboost-dev python-dev python-numpy sudo
 
 
 #jderobot
-RUN apt-get install -y libboost-filesystem-dev libboost-system-dev libboost-thread-dev libeigen3-dev libgoogle-glog-dev \
-    libgsl-dev libgtkgl2.0-dev libgtkmm-2.4-dev libglademm-2.4-dev libgnomecanvas2-dev libgoocanvasmm-2.0-dev libgnomecanvasmm-2.6-dev \
-    libgtkglextmm-x11-1.2-dev libyaml-cpp-dev icestorm zeroc-ice libxml++2.6-dev qt5-default libqt5svg5-dev libtinyxml-dev \
-    catkin libssl-dev
+RUN apt-get install -y libboost-filesystem-dev libboost-system-dev libboost-program-options-dev libeigen3-dev libgoogle-glog-dev \
+    libgsl-dev libyaml-cpp-dev qt5-default libqt5svg5-dev libtinyxml-dev libssl-dev
 
 
 RUN useradd -ms /bin/bash docker
@@ -34,15 +32,16 @@ RUN 	echo "docker ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 USER docker
 WORKDIR /home/docker
 
-
-USER root
-RUN apt-get install -y libboost-program-options-dev
-USER docker
-
 ENV DARKNET_DIR=/home/docker/install/darknet
 ENV LIBRARY_PATH=/usr/local/cuda/lib64/:usr/local/cuda/targets/x86_64-linux/lib/
 ENV LD_LIBRAR_PATH=/usr/local/cuda/lib64/:usr/local/cuda/targets/x86_64-linux/lib/
 
+RUN  git clone https://github.com/opencv/opencv.git && \
+	cd opencv && git checkout 3.4 && \
+  mkdir build && cd build && \
+	cmake -D WITH_QT=ON -D WITH_GTK=OFF .. && \
+	make -j4 && \
+	sudo make install && cd /home/docker
 
 RUN   mkdir -p devel && cd devel && mkdir install && \
         git clone https://github.com/JdeRobot/darknet && \
@@ -54,8 +53,7 @@ RUN   mkdir -p devel && cd devel && mkdir install && \
 
 
 RUN   cd devel && \
-        git clone https://github.com/JdeRobot/DeepLearningSuite && \
-        cd DeepLearningSuite && mkdir build && \
-        cd build/ && \
-        cmake . -DDARKNET_PATH=$DARKNET_DIR  && \
-	make -j4
+        git clone https://github.com/JdeRobot/dl-DetectionSuite && \
+        cd dl-DetectionSuite/DeepLearningSuite && mkdir build && \
+        cd build/ && cmake -DDARKNET_PATH=$DARKNET_DIR ..  && \
+        make -j4
