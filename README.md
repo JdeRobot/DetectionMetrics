@@ -279,3 +279,9 @@ Once it is build you will find various executables in different folders ready to
 ## Starting with DetectionSuite
 The best way to start is with our [beginner's tutorial](https://github.com/JdeRobot/dl-DetectionSuite/wiki/Beginner's-Tutorial-to-DetectionSuite-Part-1) for DetectionSuite.
 If you have any issue feel free to drop a mail <vinay04sharma@icloud.com> or create an issue for the same.
+
+## Sample screenshot for choosing some parameters
+![screen1](https://user-images.githubusercontent.com/32989600/55291875-3fd3ba00-53e4-11e9-9955-607191d41556.png)
+
+## Sample screenshot for output of detectionsuite tool
+![screen2](https://user-images.githubusercontent.com/32989600/55291878-48c48b80-53e4-11e9-9ce4-4b3b52afd423.png)
