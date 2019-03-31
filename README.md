@@ -281,7 +281,7 @@ The best way to start is with our [beginner's tutorial](https://github.com/JdeRo
 If you have any issue feel free to drop a mail <vinay04sharma@icloud.com> or create an issue for the same.
 
 ## First choosing some parameters
-![Screenshot](screen1.png)
+
 
 ## Sample of input and output
-![Screenshot](screen2.png)
+
