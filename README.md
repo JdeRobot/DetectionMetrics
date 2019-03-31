@@ -284,4 +284,4 @@ If you have any issue feel free to drop a mail <vinay04sharma@icloud.com> or cre
 ![Screenshot](screen1.png)
 
 ## Sample of input and output
-![Screenshot](screen1.png)
+![Screenshot](screen2.png)
