@@ -280,4 +280,4 @@ Once it is build you will find various executables in different folders ready to
 The best way to start is with our [beginner's tutorial](https://github.com/JdeRobot/dl-DetectionSuite/wiki/Beginner's-Tutorial-to-DetectionSuite-Part-1) for DetectionSuite.
 If you have any issue feel free to drop a mail <vinay04sharma@icloud.com> or create an issue for the same.
 
-![alt text](https://drive.google.com/file/d/1yBwPh567DL2BT2w-v0xt_9NFD_tMkD09/view?usp=sharing)
+![Screenshot](Screenshot from 2019-03-31 17-57-48.png)
