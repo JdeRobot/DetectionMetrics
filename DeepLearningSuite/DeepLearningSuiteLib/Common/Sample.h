@@ -5,9 +5,9 @@
 #ifndef SAMPLERGENERATOR_SAMPLE_H
 #define SAMPLERGENERATOR_SAMPLE_H
 
-#include <Regions/RectRegions.h>
-#include <Regions/ContourRegions.h>
-#include <Regions/RleRegions.h>
+#include "../Regions/RectRegions.h"
+#include "../Regions/ContourRegions.h"
+#include "../Regions/RleRegions.h"
 
 struct Sample {
     Sample(const std::string& path, const std::string& id, bool loadDepth=true);

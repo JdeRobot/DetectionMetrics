@@ -6,16 +6,17 @@
 #include <boost/program_options.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/algorithm/string/predicate.hpp>
-#include <Utils/PathHelper.h>
+#include "../../Utils/PathHelper.h"
 #include <boost/algorithm/string/erase.hpp>
 #include <glog/logging.h>
+#include "opencv2/opencv.hpp"
 
 
-RecorderReader::RecorderReader(const std::string &colorImagesPath, const std::string &depthImagesPath):DatasetReader(true), colorPath(colorImagesPath), depthPath(depthImagesPath) {
+RecorderReader::RecorderReader(const std::string& colorImagesPath,const std::string& depthImagesPath):DatasetReader(true), colorPath(colorImagesPath), depthPath(depthImagesPath) {
     currentIndex=0;
     syncedData=false;
-    getImagesByIndexes(depthPath,depthIndexes);
-    getImagesByIndexes(colorPath,colorIndexes);
+    getImagesByIndexes(depthPath,depthIndexes,".png");
+    getImagesByIndexes(colorPath,colorIndexes,".png");
 }
 
 
@@ -27,24 +28,24 @@ RecorderReader::RecorderReader(const std::string &dataPath):DatasetReader(true),
 }
 
 
-void RecorderReader::getImagesByIndexes(const std::string& path, std::vector<int>& indexes,std::string sufix){
+void RecorderReader::getImagesByIndexes(const std::string path, std::vector<int>& indexes,std::string sufix){
     indexes.clear();
-    if(boost::filesystem::is_directory(path)) {
-
-
+    boost::filesystem::path p(path);
+    if(boost::filesystem::is_directory(p)) {
         boost::filesystem::directory_iterator end_iter;
 
-        for (boost::filesystem::directory_iterator dir_itr(path);
+        for (boost::filesystem::directory_iterator dir_itr(p);
              dir_itr != end_iter; dir_itr++) {
-
             if (boost::filesystem::is_regular_file(*dir_itr) && dir_itr->path().extension() == ".png") {
                 std::string onlyIndexFilename;
                 if (not sufix.empty()) {
-                    std::string filename=dir_itr->path().stem().string();
+                    std::string filename=dir_itr->path().string();
+                    std::cout<<filename<<std::endl;
                     if ( ! boost::algorithm::ends_with(filename, sufix)){
+                        std::cout<<"yes \n";
                         continue;
                     }
-                    onlyIndexFilename=dir_itr->path().filename().stem().string();
+                    onlyIndexFilename=dir_itr->path().filename().string();
                     boost::erase_all(onlyIndexFilename,sufix);
                 }
                 else{
@@ -100,4 +101,8 @@ bool RecorderReader::getNextSample(Sample &sample) {
 
 int RecorderReader::getNumSamples() {
     return (int)this->depthIndexes.size();
+}
+
+RecorderReader::~RecorderReader(){
+
 }

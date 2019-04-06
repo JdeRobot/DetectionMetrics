@@ -6,9 +6,10 @@
 #define SAMPLERGENERATOR_DATASETREADER_H
 
 #include <string>
-#include <Common/Sample.h>
+
+#include "../../Common/Sample.h"
 #include <boost/shared_ptr.hpp>
-#include <Common/EvalMatrix.h>
+#include "../../Common/EvalMatrix.h"
 #include <glog/logging.h>
 
 class DatasetReader {

@@ -8,8 +8,9 @@
 #include <rapidjson/stringbuffer.h>
 #include <rapidjson/writer.h>
 #include <fstream>
-#include "rapidjson/filereadstream.h"
-#include <DatasetConverters/ClassTypeOwn.h>
+#include <rapidjson/filereadstream.h>
+#include "../DatasetConverters/ClassType.h"
+#include "../DatasetConverters/ClassTypeOwn.h"
 #include <glog/logging.h>
 
 

@@ -4,11 +4,12 @@
 
 #include <unordered_map>
 #include "DatasetReader.h"
-#include "DatasetConverters/ClassTypeOwn.h"
+#include "../ClassTypeOwn.h"
 #include <glog/logging.h>
 
 DatasetReader::DatasetReader(const bool imagesRequired):readerCounter(0),imagesRequired(imagesRequired) {
 }
+
 
 DatasetReader::~DatasetReader() {
 }

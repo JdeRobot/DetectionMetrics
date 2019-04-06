@@ -5,8 +5,9 @@
 #include <rapidjson/writer.h>
 #include <fstream>
 #include <random>
-#include "rapidjson/filereadstream.h"
+#include <rapidjson/filereadstream.h>
 #include <glog/logging.h>
+
 
 RleRegions::RleRegions(){
 
