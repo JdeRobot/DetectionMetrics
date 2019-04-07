@@ -1,6 +1,6 @@
 # DetectionSuite
 
-[![Build Status](https://travis-ci.org/JdeRobot/dl-DetectionSuite.svg?branch=master)](https://travis-ci.org/JdeRobot/dl-DetectionSuite)
+[![Build Status](https://travis-ci.org/JdeRobot/DetectionSuite.svg?branch=master)](https://travis-ci.org/JdeRobot/DetectionSuite)
 
 DetectionSuite is a DeepLearning tool that simplifies the evaluation of most common object detection datasets with several object detection neural networks.
 
@@ -97,7 +97,7 @@ Voila!! You can now use dl-detectionsuite. Proceed to [beginner's tutorial](http
 
 # Compile and Install from source
 To use the latest version of dl-DetectionSuite you need to compile and install it from source.
-To get started you can either read along or follow [these video tutorials](https://www.youtube.com/watch?v=HYuFFTnEn5s&list=PLgB5c9xg9C91DJ30WFlHfHAhMECeho-gU). 
+To get started you can either read along or follow [these video tutorials](https://www.youtube.com/watch?v=HYuFFTnEn5s&list=PLgB5c9xg9C91DJ30WFlHfHAhMECeho-gU).
 ## Requirements
 
 ### Common deps
