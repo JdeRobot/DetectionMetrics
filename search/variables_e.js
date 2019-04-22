@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['tensor_5fdict',['tensor_dict',['../classtensorflow__detect_1_1_tensor_flow_detector.html#af28b6b2ea938da5a5fcfd755f22bdafe',1,'tensorflow_detect::TensorFlowDetector']]],
+  ['tf_5fconfidence_5fthresh',['tf_confidence_thresh',['../classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections.html#a88d5353fc73d56cbb1892fc044f2d2d9',1,'keras_utils::keras_layer_DecodeDetections::DecodeDetections']]],
+  ['tf_5fimg_5fheight',['tf_img_height',['../classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections.html#a1c2b144c85cf22aaf4ceed592c9fa4c6',1,'keras_utils::keras_layer_DecodeDetections::DecodeDetections']]],
+  ['tf_5fimg_5fwidth',['tf_img_width',['../classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections.html#a5f25fd4c14f3842a416faf0a6c910c83',1,'keras_utils::keras_layer_DecodeDetections::DecodeDetections']]],
+  ['tf_5fiou_5fthreshold',['tf_iou_threshold',['../classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections.html#a020f083a9dcaeb2e7ac2cf4fa1c9ca38',1,'keras_utils::keras_layer_DecodeDetections::DecodeDetections']]],
+  ['tf_5fnms_5fmax_5foutput_5fsize',['tf_nms_max_output_size',['../classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections.html#a7dfdb5fee748112e94d86ca0e4a9bd00',1,'keras_utils::keras_layer_DecodeDetections::DecodeDetections']]],
+  ['tf_5fnormalize_5fcoords',['tf_normalize_coords',['../classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections.html#a8a3ffd734b8f4c461fb5354207d8578e',1,'keras_utils::keras_layer_DecodeDetections::DecodeDetections']]],
+  ['tf_5ftop_5fk',['tf_top_k',['../classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections.html#ae35fbc96d0e33cd5c0bb01d4af424dfa',1,'keras_utils::keras_layer_DecodeDetections::DecodeDetections']]],
+  ['this_5foffsets',['this_offsets',['../classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes.html#a0f61985b5286284949ebb7849252c3ae',1,'keras_utils::keras_layer_AnchorBoxes::AnchorBoxes']]],
+  ['this_5fscale',['this_scale',['../classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes.html#a24e9592f65b944f9d50aeb820b67016c',1,'keras_utils::keras_layer_AnchorBoxes::AnchorBoxes']]],
+  ['this_5fsteps',['this_steps',['../classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes.html#a31bea1902b9bad5c14ad74c975586a1f',1,'keras_utils::keras_layer_AnchorBoxes::AnchorBoxes']]],
+  ['threshold',['threshold',['../namespacetensorflow__detect.html#a92f27be303bb36c28ed99f95a89104b1',1,'tensorflow_detect']]],
+  ['timestamp',['timeStamp',['../class_jde_robot_types_1_1_image.html#a4557271a34c2a35e6a9c03946ed2332c',1,'JdeRobotTypes::Image::timeStamp()'],['../class_jde_robot_types_1_1_rgbd.html#a6cf1e3e9b469df3c599b711a2edcf6ba',1,'JdeRobotTypes::Rgbd::timeStamp()']]],
+  ['top_5fk',['top_k',['../classkeras__utils_1_1keras__layer___decode_detections_1_1_decode_detections.html#af6b9c9a1dea2ff88cd16075225005405',1,'keras_utils::keras_layer_DecodeDetections::DecodeDetections']]],
+  ['trainable_5fweights',['trainable_weights',['../classkeras__utils_1_1keras__layer___l2_normalization_1_1_l2_normalization.html#a5cb4f097f087e58e797e8132c68b8d9d',1,'keras_utils::keras_layer_L2Normalization::L2Normalization']]],
+  ['truenegatives',['trueNegatives',['../struct_class_statistics.html#a8b268ca669e6d982c8ce409330cf08f9',1,'ClassStatistics']]],
+  ['truepositives',['truePositives',['../struct_class_statistics.html#a07e9de84d5cda8ee5b91d54f8d8685b1',1,'ClassStatistics']]],
+  ['two_5fboxes_5ffor_5far1',['two_boxes_for_ar1',['../classkeras__utils_1_1keras__layer___anchor_boxes_1_1_anchor_boxes.html#a1c1bd98352cf19dd0ad2d3e573fe06ab',1,'keras_utils::keras_layer_AnchorBoxes::AnchorBoxes']]]
+];
