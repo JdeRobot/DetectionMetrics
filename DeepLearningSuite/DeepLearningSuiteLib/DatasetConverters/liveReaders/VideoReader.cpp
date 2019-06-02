@@ -6,7 +6,8 @@
 
 VideoReader::VideoReader(const std::string &videoPath):DatasetReader(true) {
     this->cap =  new cv::VideoCapture(videoPath);
-
+    this->framesCount = this->cap->get(cv::CAP_PROP_FRAME_COUNT);
+    this->isVideo = true;
     if(!cap->isOpened())  // check if we succeeded
 			 throw std::invalid_argument( "Couldn't open Video file!" );
 
@@ -26,6 +27,7 @@ bool VideoReader::getNextSample(Sample &sample) {
 
     try {
         while (!cap->read(image)) {
+            this->validFrame = false;
             LOG(ERROR) << "Frame not valid " << std::endl;
 			if (count >= 5) {
 				LOG(INFO) << "Video Ended" << '\n';
@@ -35,6 +37,7 @@ bool VideoReader::getNextSample(Sample &sample) {
         }
 
         //    init=true;
+        this->validFrame = true;
         sample.setSampleID(std::to_string(++this->sample_count));
         sample.setColorImage(image);
         return true;

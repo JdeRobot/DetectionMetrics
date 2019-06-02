@@ -8,6 +8,7 @@ SET(Utils_SOURCE_FILES
   JsonHelper.h
   DepthUtils
   PathHelper
+  Playback
 )
 
 ADD_LIBRARY(DeepLearningSuite_Utils OBJECT ${Utils_SOURCE_FILES})
