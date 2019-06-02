@@ -7,7 +7,7 @@
 #include "DatasetConverters/ClassTypeOwn.h"
 #include <glog/logging.h>
 
-DatasetReader::DatasetReader(const bool imagesRequired):readerCounter(0),imagesRequired(imagesRequired) {
+DatasetReader::DatasetReader(const bool imagesRequired):readerCounter(0),imagesRequired(imagesRequired),isVideo(false),validFrame(true){
 }
 
 DatasetReader::~DatasetReader() {
@@ -174,4 +174,16 @@ void DatasetReader::overWriteClasses(const std::string &from, const std::string 
         }
 
     }
+}
+
+bool DatasetReader::IsValidFrame(){
+  return this->validFrame;
+}
+
+bool DatasetReader::IsVideo(){
+  return this->isVideo;
+}
+
+long long int DatasetReader::TotalFrames(){
+  return this->framesCount;
 }

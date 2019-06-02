@@ -20,8 +20,10 @@ MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr i
         saveOutput = false;
     else
         saveOutput = true;
-
     alreadyProcessed=0;
+    int time=0;
+    time = reader->IsVideo() ? reader->TotalFrames() : 1000 ;
+    this->playback.AddTrackbar(time);
     if (!resultsPath.empty()) {
         auto boostPath= boost::filesystem::path(this->resultsPath);
         if (!boost::filesystem::exists(boostPath)){
@@ -52,7 +54,9 @@ MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr i
         saveOutput = false;
     else
         saveOutput = true;
-
+    int time=0;
+    time = reader->IsVideo() ? reader->TotalFrames() : 1000 ;
+    this->playback.AddTrackbar(time);
     alreadyProcessed=0;
     if (!resultsPath.empty()) {
         auto boostPath= boost::filesystem::path(this->resultsPath);
@@ -76,6 +80,9 @@ MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr i
         //Constructor to avoid writing results to outputPath
         saveOutput = false;
         alreadyProcessed=0;
+        int time=0;
+        time = reader->IsVideo() ? reader->TotalFrames() : 1000 ;
+        this->playback.AddTrackbar(time);
 }
 
 void MassInferencer::process(bool useDepthImages, DatasetReaderPtr readerDetection) {
@@ -139,8 +146,12 @@ void MassInferencer::process(bool useDepthImages, DatasetReaderPtr readerDetecti
                 cv::imshow("GT on Depth", sample.getSampledDepthColorMapImage());
                 cv::imshow("Input", image2detect);
             }
-            cv::imshow("Detection", detectionWithImage.getSampledColorImage());
-            cv::waitKey(100);
+            // cv::imshow("Detection", detectionWithImage.getSampledColorImage());
+            // cv::waitKey(100);
+            char keystroke=cv::waitKey(1);
+            if(reader->IsValidFrame())
+              this->playback.GetInput(keystroke,detectionWithImage.getSampledColorImage());
+
         }
 
         detection.clearColorImage();
@@ -152,8 +163,11 @@ void MassInferencer::process(bool useDepthImages, DatasetReaderPtr readerDetecti
         }
 
     }
-    cv::destroyAllWindows();
-    LOG(INFO) << "Mean inference time: " << this->inferencer->getMeanDurationTime() << "(ms)" <<  std::endl;
+    if(!reader->IsValidFrame()){
+      this->playback.completeShow();
+      cv::destroyAllWindows();
+      LOG(INFO) << "Mean inference time: " << this->inferencer->getMeanDurationTime() << "(ms)" <<  std::endl;
+    }
 
 
 }

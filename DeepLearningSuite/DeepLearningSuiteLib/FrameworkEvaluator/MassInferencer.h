@@ -7,6 +7,7 @@
 
 #include <DatasetConverters/readers/DatasetReader.h>
 #include <FrameworkEvaluator/FrameworkInferencer.h>
+#include "Utils/Playback.hpp"
 
 class MassInferencer {
 public:
@@ -28,7 +29,7 @@ private:
     bool* stopDeployer = NULL;
     double* confidence_threshold = NULL;
     double default_confidence_threshold = 0.2;
-
+    Playback playback;
 };
 
 

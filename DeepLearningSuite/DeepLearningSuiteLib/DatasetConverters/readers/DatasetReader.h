@@ -29,7 +29,9 @@ public:
     void addSample(Sample sample);
     std::string getClassNamesFile();
     virtual ~DatasetReader();
-
+    bool IsVideo();
+    bool IsValidFrame();
+    long long int TotalFrames();
 protected:
     std::vector<Sample> samples;
     //std::string datasetPath;
@@ -37,6 +39,9 @@ protected:
     std::string classNamesFile;
     std::vector<std::string> classNames;
     bool imagesRequired;
+    bool isVideo;
+    bool validFrame;
+    long long int framesCount;
     unsigned int skip_count = 10;           //max Number of annotations that can be skipped if Corresponding images weren't found
 };
 
