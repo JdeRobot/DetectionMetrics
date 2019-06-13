@@ -17,6 +17,8 @@ ENDIF()
 
 set (SOURCES main.cpp
         mainwindow
+        gui/Appcfg
+        gui/appconfig
         gui/ListViewConfig
         gui/TabHandler.cpp gui/TabHandler.h
         SamplerGeneratorHandler/Converter

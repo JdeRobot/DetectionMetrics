@@ -9,7 +9,7 @@ class Playback {
 public:
   Playback(long long int framesCount);
   Playback();
-  void GetInput(char keypressed , cv::Mat inference);
+  void GetInput(char keypressed , cv::Mat inference, cv::Mat groundTruth);
   void GetInput(char keypressed);
   void AddTrackbar(long long int framesCount);
   bool IsPaused();
@@ -25,7 +25,9 @@ private:
   double speed;
   char keystroke;
   std::vector<cv::Mat> inferences;
-  // std::que<cv::Mat> livefeed;
+  std::vector<cv::Mat> groundTruth;
+  std::queue <cv::Mat> livefeed;
+  std::queue <cv::Mat> inf_livefeed;
   int frameId;
   long long int framesCount;
 };

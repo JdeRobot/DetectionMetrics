@@ -11,6 +11,7 @@
 class SampleGenerationApp {
 public:
     SampleGenerationApp(int argc, char* argv[]);
+    SampleGenerationApp(YAML::Node node);
     virtual void operator()() =0;
     void process();
     Config::Properties getConfig();
@@ -25,6 +26,8 @@ protected:
     int parse_arguments(const int argc, char* argv[], std::string& configFile);
     int argc;
     char** argv;
+private:
+    // QApplication *a;
 
 
 };

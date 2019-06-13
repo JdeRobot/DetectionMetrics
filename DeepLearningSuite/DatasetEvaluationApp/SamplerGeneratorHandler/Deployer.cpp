@@ -8,6 +8,7 @@
 #include <FrameworkEvaluator/MassInferencer.h>
 #include "Deployer.h"
 #include "SamplerGenerationHandler.h"
+#include "gui/Appcfg.hpp"
 
 void
 SampleGeneratorHandler::Deployer::process(QListView *deployImpList, QListView *weightsList, QListView *netConfigList,

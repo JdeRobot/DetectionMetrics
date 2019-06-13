@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/issiki/gsoc/test/learn/DetectionSuite/DeepLearningSuite/build/devel/setup.sh

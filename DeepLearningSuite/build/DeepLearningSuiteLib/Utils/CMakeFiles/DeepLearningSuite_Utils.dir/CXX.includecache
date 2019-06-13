@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/issiki/gsoc/test/learn/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.cpp
+SampleGenerationApp.h
+/home/issiki/gsoc/test/learn/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h
+glog/logging.h
+-
+boost/program_options.hpp
+-
+boost/filesystem.hpp
+-
+iostream
+-
+
+/home/issiki/gsoc/test/learn/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib/Utils/SampleGenerationApp.h
+config/config.h
+-
+

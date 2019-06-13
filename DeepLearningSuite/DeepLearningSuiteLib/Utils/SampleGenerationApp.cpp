@@ -20,19 +20,22 @@ namespace
 
 
 SampleGenerationApp::SampleGenerationApp(int argc, char **argv):argc(argc),argv(argv) {
-
+  // QApplication a(argc,argv);
+  // this->a = new QApplication(argc,argv);
     if (parse_arguments(argc,argv,configFilePath) != SUCCESS){
         exit(1);
+        // LOG(INFO) << "This has missing parameters" << std::endl;
     }
-
+    // LOG(INFO)<< "Config File Path :" << configFilePath << std::endl;
     config = jderobotconfig::loader::load(configFilePath);
     //config=ConfigurationPtr( new Configuration(configFilePath));
 }
-
+SampleGenerationApp::SampleGenerationApp(YAML::Node node){
+  config = jderobotconfig::loader::load(node);
+}
 
 
 int SampleGenerationApp::parse_arguments(const int argc, char* argv[], std::string& configFile){
-
     for (google::LogSeverity s = google::WARNING; s < google::NUM_SEVERITIES; s++)
         google::SetLogDestination(s, "");
     google::SetLogDestination(google::INFO, "log.log");

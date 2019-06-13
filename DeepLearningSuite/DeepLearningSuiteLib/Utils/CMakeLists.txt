@@ -1,3 +1,7 @@
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
 SET(Utils_SOURCE_FILES
   StringHandler.h
   Normalizations
@@ -23,5 +27,5 @@ TARGET_INCLUDE_DIRECTORIES ( DeepLearningSuite_Utils PUBLIC
   ${utils_INCLUDE_DIRS}
   ${CMAKE_CURRENT_LIST_DIR}
   ${DeepLearningSuite_INCLUDE_DIR}
-
+  ${QT_INCLUDE_DIRS}
 )

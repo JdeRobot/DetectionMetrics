@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/issiki/gsoc/test/learn/DetectionSuite/DeepLearningSuite/libs/config/src/loader.cpp
+config/loader.hpp
+-
+glog/logging.h
+-
+

@@ -17,6 +17,7 @@
 #include <SamplerGeneratorHandler/Deployer.h>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+// #include "gui/Appcfg.hpp"
 
 MainWindow::MainWindow(SampleGenerationApp* app,QWidget *parent) :
     app(app),

@@ -22,7 +22,7 @@ MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr i
         saveOutput = true;
     alreadyProcessed=0;
     int time=0;
-    time = reader->IsVideo() ? reader->TotalFrames() : 1000 ;
+    time = reader->IsVideo() ? reader->TotalFrames() : 1 ;
     this->playback.AddTrackbar(time);
     if (!resultsPath.empty()) {
         auto boostPath= boost::filesystem::path(this->resultsPath);
@@ -55,7 +55,7 @@ MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr i
     else
         saveOutput = true;
     int time=0;
-    time = reader->IsVideo() ? reader->TotalFrames() : 1000 ;
+    time = reader->IsVideo() ? reader->TotalFrames() : 1 ;
     this->playback.AddTrackbar(time);
     alreadyProcessed=0;
     if (!resultsPath.empty()) {
@@ -81,7 +81,7 @@ MassInferencer::MassInferencer(DatasetReaderPtr reader, FrameworkInferencerPtr i
         saveOutput = false;
         alreadyProcessed=0;
         int time=0;
-        time = reader->IsVideo() ? reader->TotalFrames() : 1000 ;
+        time = reader->IsVideo() ? reader->TotalFrames() : 1 ;
         this->playback.AddTrackbar(time);
 }
 
@@ -141,7 +141,7 @@ void MassInferencer::process(bool useDepthImages, DatasetReaderPtr readerDetecti
                 detectionWithImage.setColorImage(sample.getDepthColorMapImage());
             else
                 detectionWithImage.setColorImage(sample.getColorImage());
-            cv::imshow("GT on RGB", image);
+            // cv::imshow("GT on RGB", image);
             if (useDepthImages){
                 cv::imshow("GT on Depth", sample.getSampledDepthColorMapImage());
                 cv::imshow("Input", image2detect);
@@ -149,9 +149,14 @@ void MassInferencer::process(bool useDepthImages, DatasetReaderPtr readerDetecti
             // cv::imshow("Detection", detectionWithImage.getSampledColorImage());
             // cv::waitKey(100);
             char keystroke=cv::waitKey(1);
-            if(reader->IsValidFrame())
-              this->playback.GetInput(keystroke,detectionWithImage.getSampledColorImage());
+            if(reader->IsValidFrame() && reader->IsVideo())
+              this->playback.GetInput(keystroke,detectionWithImage.getSampledColorImage(),image);
+            else{
+              cv::imshow("GT on RGB", image);
+              cv::imshow("Detection", detectionWithImage.getSampledColorImage());
+              cv::waitKey(100);
 
+            }
         }
 
         detection.clearColorImage();

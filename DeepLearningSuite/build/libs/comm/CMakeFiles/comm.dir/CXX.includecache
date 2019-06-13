@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/issiki/gsoc/test/learn/DetectionSuite/DeepLearningSuite/libs/comm/src/cameraClient.cpp
+comm/cameraClient.hpp
+-
+glog/logging.h
+-
+
+/home/issiki/gsoc/test/learn/DetectionSuite/DeepLearningSuite/libs/comm/src/communicator.cpp
+comm/communicator.hpp
+-
+
+/home/issiki/gsoc/test/learn/DetectionSuite/DeepLearningSuite/libs/comm/src/ice/cameraIceClient.cpp
+comm/ice/cameraIceClient.hpp
+-
+glog/logging.h
+-
+exception
+-
+
+/home/issiki/gsoc/test/learn/DetectionSuite/DeepLearningSuite/libs/comm/src/ros/listenerCamera.cpp
+comm/ros/listenerCamera.hpp
+-
+glog/logging.h
+-
+
+/home/issiki/gsoc/test/learn/DetectionSuite/DeepLearningSuite/libs/comm/src/ros/translators.cpp
+comm/ros/translators.hpp
+-
+
+/home/issiki/gsoc/test/learn/DetectionSuite/DeepLearningSuite/libs/comm/src/tools.cpp
+comm/tools.hpp
+-
+

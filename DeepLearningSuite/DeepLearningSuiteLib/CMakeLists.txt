@@ -25,7 +25,6 @@ add_library(DeepLearningSuite SHARED
               $<TARGET_OBJECTS:DeepLearningSuite_GenerationUtils>
               $<TARGET_OBJECTS:DeepLearningSuite_Regions>
               $<TARGET_OBJECTS:DeepLearningSuite_Utils>
-
             )
 
 TARGET_LINK_LIBRARIES(DeepLearningSuite
