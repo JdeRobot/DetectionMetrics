@@ -9,6 +9,7 @@ public:
   Appcfg(int argc , char **argv);
   void exec();
   YAML::Node get_node();
+  
 private:
   QApplication *a;
   appconfig *w;

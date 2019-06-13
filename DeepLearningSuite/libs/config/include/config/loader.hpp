@@ -52,8 +52,7 @@ std::string findConfigFile(const std::string& filename);
  */
 Config::Properties load(std::string filename);
 Config::Properties load(YAML::Node node);
-
-
+Config::Properties load(std::string filepath,bool isPath);
 }}//NS
 
 

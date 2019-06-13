@@ -17,10 +17,14 @@ public:
     ~appconfig();
     YAML::Node return_node();
 private slots:
-    void on_toolButton1_clicked();
-    void on_toolButton2_clicked();
-    void on_toolButton3_clicked();
-    void on_toolButton4_clicked();
+    void handleToolbuttonWeights();
+    void handleToolbuttonNames();
+    void handleToolbuttonCfg();
+    void handleToolbuttonAppconfig();
+    void handleToolbuttonEval();
+    void handleCheckbox();
+    void handlePushbuttonOK();
+
 private:
     Ui::appconfig *ui;
     YAML::Node node;

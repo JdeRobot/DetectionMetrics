@@ -46,6 +46,7 @@ findConfigFile(const std::string& filename){
 Config::Properties
 load(std::string filename){
     std::string filepath = findConfigFile(filename);
+    // load_path(filepath);
     if (filepath.empty()){
         YAML::Exception e(YAML::Mark(),"jderobot/config/loader.cpp: file " + filepath + " Not Found");
         throw e;
@@ -62,6 +63,15 @@ load(std::string filename){
     //properties->setProperty("Ice.Config", filepath);
     return config;
 }
+
+Config::Properties
+load(std::string filepath,bool isPath){
+    YAML::Node nodeConfig = YAML::LoadFile(filepath);
+    Config::Properties config(nodeConfig);
+    LOG(INFO)<<"[Info] loaded YAML Config file: "<<filepath<<std::endl;
+    return config;
+}
+
 
 Config::Properties
 load(YAML::Node node){

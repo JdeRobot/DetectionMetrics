@@ -32,6 +32,7 @@
 #include <yaml-cpp/yaml.h>
 #include <config/loader.hpp>
 #include <config/properties.hpp>
+#include <iostream>
 
 namespace Config{
 
@@ -52,6 +53,5 @@ inline Config::Properties load(int argc, char* argv[]){
 inline Config::Properties load(YAML::Node node){
     return jderobotconfig::loader::load(node);
 	}
-
 } //NS
 #endif // JDEROBOT_CONFIG_CONFIG_H

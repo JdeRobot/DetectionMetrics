@@ -12,6 +12,7 @@ class SampleGenerationApp {
 public:
     SampleGenerationApp(int argc, char* argv[]);
     SampleGenerationApp(YAML::Node node);
+    SampleGenerationApp(std::string filepath,bool isPath);
     virtual void operator()() =0;
     void process();
     Config::Properties getConfig();

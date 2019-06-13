@@ -20,6 +20,13 @@ public:
         this->requiredArguments.push_back("netCfgPath");
         this->requiredArguments.push_back("namesPath");
     };
+    MyApp(std::string filepath, bool isPath):SampleGenerationApp(filepath,isPath){
+        this->requiredArguments.push_back("datasetPath");
+        this->requiredArguments.push_back("evaluationsPath");
+        this->requiredArguments.push_back("weightsPath");
+        this->requiredArguments.push_back("netCfgPath");
+        this->requiredArguments.push_back("namesPath");
+    };
     void operator()(){
         QApplication a(argc, argv);
         MainWindow w(this);
@@ -35,7 +42,20 @@ public:
 
 
 int main(int argc, char *argv[]){
-  Appcfg app(argc,argv);
-  MyApp myApp(app.get_node());
-  myApp.process();
+  if(argc<3){
+    Appcfg app(argc,argv);
+    YAML::Node noder = app.get_node();
+    if(noder["appconfig"]){
+      MyApp myApp(noder["appconfig"].as<std::string>(),true);
+      myApp.process();
+    }
+    else{
+      MyApp myApp(noder);
+      myApp.process();
+    }
+  }
+  else{
+    MyApp myApp(argc,argv);
+    myApp.process();
+  }
 }

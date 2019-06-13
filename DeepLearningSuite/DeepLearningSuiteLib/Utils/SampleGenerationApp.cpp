@@ -33,7 +33,9 @@ SampleGenerationApp::SampleGenerationApp(int argc, char **argv):argc(argc),argv(
 SampleGenerationApp::SampleGenerationApp(YAML::Node node){
   config = jderobotconfig::loader::load(node);
 }
-
+SampleGenerationApp::SampleGenerationApp(std::string filepath, bool isPath){
+  config = jderobotconfig::loader::load(filepath,true);
+}
 
 int SampleGenerationApp::parse_arguments(const int argc, char* argv[], std::string& configFile){
     for (google::LogSeverity s = google::WARNING; s < google::NUM_SEVERITIES; s++)
