@@ -3,7 +3,7 @@ main:
   - title: Installation
     url: /installation
   - title: Functionality
-    url: /functionality/example
+    url: /functionality/automatic_evaluation
   - title: About
     url: /about
 

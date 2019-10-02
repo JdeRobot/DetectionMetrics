@@ -8,51 +8,68 @@ header:
   #  - label: "<i class='fas fa-download'></i> Install now"
   #    url: "/installation/"
 excerpt: 
-  Learn Robotics and Computer Vision
-feature_row:
-  - image_path: /assets/images/cover/cover_column_1.png
-    alt: "Exercises"
-    title: "Exercises"
-    excerpt: "Take a look at the list of exercises available, under development or future."
-    url: "/exercises/"
-    btn_class: "btn--primary"
-    btn_label: "Learn more"
-
-  - image_path: /assets/images/cover/cover_column_2.png
-    alt: "fully responsive"
-    title: "Contribute"
-    excerpt: "Contribute with new exercises. For more information go to the following site."
-    url: "/contribute/"
-    btn_class: "btn--primary"
-    btn_label: "Learn more"
-
-  - image_path: /assets/images/cover/cover_column_3.png
-    alt: "100% free"
-    title: "More information"
-    excerpt: "Find out more about the requirements and objectives of the project."
-    url: "/about/"
-    btn_class: "btn--primary"
-    btn_label: "Learn more"   
-youTube_id: ID7qaEcIu4k
+  Evaluation of object detection dataset simplified
 ---
 
-{% include feature_row %}
 
+## What is DetectionSuite?
 
-## What is Robotics-Academy?
+DetectionSuite consists of a set of utilities oriented to simplify developing and testing solutions based on object detection.
 
-Robotics-Academy is an **open source** collection of exercises to learn robotics in a practical way. [Gazebo simulator](http://gazebosim.org) is the main tool required, as [ROS](https://www.ros.org). The students program their solutions in **Python** language. Each exercise is composed of :
+# Utilities
 
-1. Gazebo configuration files,
-2. A ROS node that hosts the student's code,
-3. A file with instructions, hints, etc..
-4. The student solution itself.
+## DeepLearningSuite
 
-1, 2, and 3 are already provided, the student has to develop her code on a separate file which already has a template. The student may use there an existing simple Python API to access to sensor readings and actuator commands_ (HAL API) and she may use an existing simple Python API for Graphical User Interface and debugging_ (GUI API). To develop her solution the student has to edit that template file and add her code, using her favorite text editor.
+DeepLearningSuite is a tool designed to experiment upon Datasets and Networks using various FrameWorks. Currently it has following Utilities:
 
-For execution the student launches Gazebo with certain configuration file (specifying the robot and the simulated scenario for that exercise) and launches the ROS node hosting her code. On that code lies the intelligence of the robot to solve the exercise. For instance, check the recent solution of one degree student here for the local navigation exercise:
++ Auto Evaluator
++ Viewer
++ Converter
++ Detector
++ Evaluator
++ Deployer
 
+Every Tool in DeepLearningSuite requires a config file to run, and currently YAML file format is supported. See Below on how to create a custom Config File.
+Each tool may have different requirements for keys in Config File, and they can be known by passing the ```--help``` flag.
 
-{% include video id="ID7qaEcIu4k" provider="youtube" %}
+### Creating a Custom ```appConfig.yml```
+It is recommended to create and assign a dedicated directory for storing all datasets, weights and config files, for easier access and a cleaner ```appConfig.yml``` file.
 
-There are exercises about drone programming, about computer vision, about mobile robots, about autonomous cars, etc.. In the JdeRobotFoundation we are improving the quality of the existing exercises and creating a few exercises more. We are also working in a webserver to code and [run the exercises from the web browser](https://www.youtube.com/watch?v=bTwt6W8vCGQ) but that is a ongoing project yet.
+For Instance we will be using ```/opt/datasets/``` for demonstration purposes.
+
+Create some directories in ```/opt/datasets/``` such as ```cfg```, ```names```, ```weights``` and ```eval```.
+
+Again, these names are temporary and can be changed, but must also be changed in appConfig.yml.
+
+```cfg```: This directory will store config files for various networks. For example, yolo-voc.cfg [2].
+```names```: This directory will contain class names for various datasets. For example, voc.names [3].
+```weights```: This directory will contain weights for various networks, such as yolo-voc.weights [1] for yolo or a frozen inference graph for tensorflow trained networks.
+```eval```: Evaluations path
+
+Once done, you can create you own custom appConfig.yml like the one mentioned below.
+
+```
+
+datasetPath: /opt/datasets/
+
+evaluationsPath: /opt/datasets/eval
+
+weightsPath: /opt/datasets/weights
+
+netCfgPath: /opt/datasets/cfg
+
+namesPath: /opt/datasets/names
+
+inferencesPath: /opt/datasets
+
+```
+
+Place your weights in weights directory, config files in cfg directory, classname files in names. And you are ready to go ⚡️ .
+
+## Sample of input and output
+
+<img src="/assets/images/screen1.png" alt="Screenshot" style="max-width:100%;">
+
+<img src="/assets/images/screen2.png" alt="Screenshot" style="max-width:100%;">
+
+<img src="/assets/images/screen3.png" alt="Screenshot" style="max-width:100%;">

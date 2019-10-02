@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: splash
 title: About
 permalink: /about/
 
@@ -7,7 +7,7 @@ permalink: /about/
 
 DetectionSuite creators:
 
-### Vinay Sharma
+### Vinay Sharma 
 
 ### Jeevan Kumar
 

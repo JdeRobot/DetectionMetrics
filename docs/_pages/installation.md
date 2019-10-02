@@ -1,9 +1,10 @@
 ---
-layout: home
+layout: splash
 title: Installation
 permalink: /installation/
 
 ---
+## Installation
 
 #### We have AppImages !!!  
 ###  [Download from here](https://github.com/vinay0410/dl-DetectionSuite/releases/tag/continuous)  
