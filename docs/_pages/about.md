@@ -5,12 +5,12 @@ permalink: /about/
 
 ---
 
-DetectionSuite creators:
+## DetectionSuite main maintainers:
 
-### Vinay Sharma 
++ ### [Vinay Sharma](https://github.com/vinay0410)
 
-### Jeevan Kumar
++ ### [Jeevan Kumar](https://github.com/sleep-404)
 
-### Sergio Paniego
++ ### [Sergio Paniego](https://github.com/sergiopaniego)
 
-### José María Cañas
++ ### [José María Cañas](https://github.com/jmplaza)
