@@ -16,6 +16,8 @@ excerpt:
 
 DetectionSuite consists of a set of utilities oriented to simplify developing and testing solutions based on object detection.
 
+{% include video id="gDP9nWCL0Vg" provider="youtube" %}
+
 # Utilities
 
 ## DeepLearningSuite
