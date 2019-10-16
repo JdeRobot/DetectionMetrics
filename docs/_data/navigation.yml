@@ -25,8 +25,6 @@ docs:
         url: /functionality/evaluator
       - title: "Viewer"
         url: /functionality/viewer
-
-
       - title: "Class Names"
         url: /functionality/class_names
       - title: "Frameworks"
@@ -37,3 +35,5 @@ docs:
         url: /functionality/testing_detectionsuite
       - title: "Tutorial"
         url: /functionality/tutorial
+      - title: "New Functionality"
+        url: /functionality/gsoc_19
