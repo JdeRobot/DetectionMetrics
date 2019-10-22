@@ -26,10 +26,8 @@ RectRegions::RectRegions(const std::string &jsonPath) {
         id= (*it)["id"].GetString();
         regions.push_back(RectRegion(reg,id));
     }
-    // this->img = new cv::Mat();
 }
 RectRegions::RectRegions() {
-  // this->img = new cv::Mat();
 }
 
 
@@ -80,7 +78,6 @@ void RectRegions::add(const cv::Rect_<double> rect,const std::string classId, bo
     regionToInsert.uniqObjectID = regions.size();
     regions.insert(itr, regionToInsert);
 
-    //regions.push_back(RectRegion(rect,classId));
 }
 
 void RectRegions::add(const cv::Rect_<double> rect, const std::string classId, double confidence_score, bool isCrowd) {
@@ -88,7 +85,6 @@ void RectRegions::add(const cv::Rect_<double> rect, const std::string classId, d
     auto itr = std::upper_bound(regions.begin(), regions.end(), regionToInsert);
     regionToInsert.uniqObjectID = regions.size();
     regions.insert(itr, regionToInsert);
-    //regions.push_back(RectRegion(rect, classId, confidence_score));
 }
 
 
@@ -101,7 +97,6 @@ void RectRegions::add(double x, double y, double w, double h,const std::string c
     auto itr = std::upper_bound(regions.begin(), regions.end(), regionToInsert);
     regionToInsert.uniqObjectID = regions.size();
     regions.insert(itr, regionToInsert);
-    //regions.push_back(RectRegion(cv::Rect(x,y,w,h),classId));
 }
 
 void RectRegions::add(double x, double y, double w, double h, const std::string classId, const double confidence_score, const bool isCrowd) {
@@ -118,25 +113,8 @@ RectRegion RectRegions::getRegion(int id) {
         return RectRegion();
 }
 
-// void RectRegions::Draw(){
-//   return;
-// }
-
-// void RectRegions::SetPoints(int x, int y){
-//   this->mouse.first=x;
-//   this->mouse.second=y;
-// }
-
-// void RectRegions::CallBackFunc(int event, int x, int y, int flags, void* userdata){
-//         // LOG(INFO) << "This is fintec : " << it->region.x << std::endl;
-//     // RectRegions::drawRegions(((RectRegions *)(userdata))->img);
-// }
-
-
 
 void RectRegions::drawRegions(cv::Mat &image) {
-  // std::pair<int ,int > mouser(0,0);
-  // this->img=image;
     if (!image.empty())
         for (auto it = regions.begin(), end=regions.end(); it != end; ++it) {
             ClassTypeOwn classType(it->classID);
@@ -193,7 +171,3 @@ void RectRegions::print() {
     }
     LOG(INFO) << "-------------------" << std::endl;
 }
-
-// cv::Mat* RectRegions::getImage(){
-  // return this->img;
-// }

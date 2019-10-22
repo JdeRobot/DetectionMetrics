@@ -13,16 +13,12 @@ Playback::Playback(long long int framesCount):framesCount(framesCount),pause(fal
   cv::namedWindow("GT on RGB",cv::WINDOW_NORMAL);
   cv::createTrackbar("Frames", "Detection",frame,this->framesCount,&Playback::onSlide,frame);
   cv::createTrackbar("Frames", "GT on RGB",frame,this->framesCount,&Playback::onSlide,frame);
-  // this->livefeed = new std::queue <cv::Mat>;
-  // this->inf_livefeed = new std::queue <cv::Mat>;
 }
 
 // Constructor if the framesCount is not known beforehand
 Playback::Playback():framesCount(0),pause(false),speed(1),frameId(0),inferences(0),groundTruth(0){
   cv::namedWindow("Detection",cv::WINDOW_NORMAL);
   cv::namedWindow("GT on RGB",cv::WINDOW_NORMAL);
-  // this->livefeed = new std::queue <cv::Mat>;
-  // this->inf_livefeed = new std::queue <cv::Mat>;
 }
 
 // Adds trackbar to the Detection and undetected window
@@ -79,7 +75,6 @@ void Playback::process(){
 void Playback::show(){
   // If not paused , output the frame
   if(!this->pause){
-    // Playback::WaitTillResume();
     usleep(int(this->rate()*10000));
     cv::imshow("Detection",this->inferences[this->frameId]);
     cv::imshow("GT on RGB",this->groundTruth[this->frameId]);

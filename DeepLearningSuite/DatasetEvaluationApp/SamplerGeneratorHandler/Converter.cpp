@@ -32,8 +32,6 @@ void SampleGeneratorHandler::Converter::process(QListView *datasetList, QListVie
             LOG(WARNING)<<"Select the dataset names related to the Output dataset, or unchechk mapping if you want a custom names file to be generated";
             return;
     }
-
-
 }
 
 
@@ -43,7 +41,6 @@ void SampleGeneratorHandler::Converter::process(QListView *datasetList, QListVie
 
         std::string testPath = outputPath + "/test";
         std::string trainPath = outputPath + "/train";
-
 
         int ratio=int(splitRatio*10);
 
@@ -77,9 +74,7 @@ void SampleGeneratorHandler::Converter::process(QListView *datasetList, QListVie
             GenericDatasetWriterPtr writerTrain( new GenericDatasetWriter(trainPath,readerTrain,writerImp[0]));
             writerTest->getWriter()->process(writeImages);
             writerTrain->getWriter()->process(writeImages);
-
         }
-
     }
     else{
         auto readerPtr = reader->getReader();
@@ -92,8 +87,5 @@ void SampleGeneratorHandler::Converter::process(QListView *datasetList, QListVie
 
             writer->getWriter()->process(writeImages);
         }
-
     }
-
-
 }
