@@ -40,7 +40,7 @@ The idea is to offer a generic infrastructure to evaluates object detection algo
 * JdeRobot Recorder Logs
 
 
-## Sample generation Tool
+### Sample generation Tool
 Sample Generation Tool has been developed in order to simply the process of generation samples for datasets focused on object detection. The tools provides some features to reduce the time on labelling objects as rectangles.
 
 
@@ -48,14 +48,15 @@ Sample Generation Tool has been developed in order to simply the process of gene
 
 Check the intallation guide [here](https://jderobot.github.io/DetectionSuite/installation/).
 
-## Starting with DetectionSuite
+# Starting with DetectionSuite
 The best way to start is with our [beginner's tutorial](https://jderobot.github.io/DetectionSuite/functionality/tutorial/) for DetectionSuite.
 If you have any issue feel free to drop a mail <vinay04sharma@icloud.com> or create an issue for the same.
 
-## Sample of input and output
+### DetectionSuite's sample images
 
-<img src="./docs/assets/images/screen1.png" alt="Screenshot" style="max-width:100%;">
+GUI             |  Screenshot 1
+:-------------------------:|:-------------------------:
+![](./docs/assets/images/detection_suite_gui.png)  |  ![](./docs/assets/images/screen1.png)   
+Screenshot 2             |  Screenshot 3
+![](./docs/assets/images/screen2.png) |  ![](./docs/assets/images/screen3.png)
 
-<img src="./docs/assets/images/screen2.png" alt="Screenshot" style="max-width:100%;">
-
-<img src="./docs/assets/images/screen3.png" alt="Screenshot" style="max-width:100%;">
