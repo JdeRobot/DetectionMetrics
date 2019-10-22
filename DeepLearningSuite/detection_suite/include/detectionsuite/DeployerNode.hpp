@@ -15,7 +15,7 @@
 
 #include <FrameworkEvaluator/GenericInferencer.h>
 #include <FrameworkEvaluator/MassInferencer.h>
-#include <FrameworkEvaluator/labeling.h>
+#include <FrameworkEvaluator/Labelling.h>
 #include <Regions/RectRegions.h>
 #include <yaml-cpp/yaml.h>
 

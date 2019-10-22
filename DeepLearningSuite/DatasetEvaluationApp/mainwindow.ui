@@ -1829,7 +1829,7 @@
        </property>
       </widget>
      </widget>
-     <widget class="QCheckBox" name="Labeling">
+     <widget class="QCheckBox" name="Labelling">
       <property name="geometry">
        <rect>
         <x>770</x>
@@ -1839,7 +1839,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Use for labeling</string>
+       <string>Use for labelling</string>
       </property>
      </widget>
     </widget>

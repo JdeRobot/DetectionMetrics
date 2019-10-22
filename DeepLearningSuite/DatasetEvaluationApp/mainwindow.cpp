@@ -493,11 +493,10 @@ void MainWindow::handleProcessDeploy() {
     }
 
     try{
-        // LOG(INFO) << " sad : " << ui->Labeling->isChecked() << std::endl;
         SampleGeneratorHandler::Deployer::process(ui->listView_deploy_input_imp,ui->listView_deploy_weights,
                                                   ui->listView_deploy_net_config,ui->listView_deploy_impl,ui->listView_deploy_names_inferencer, &this->stopDeployer,
                                                   &confidence_threshold, deployer_params, camera_params, inferencer_params, app->getConfig().asString("weightsPath"),
-                                                  app->getConfig().asString("netCfgPath"),app->getConfig().asString("namesPath"),inputInfo, outputFolder,ui->Labeling->isChecked());
+                                                  app->getConfig().asString("netCfgPath"),app->getConfig().asString("namesPath"),inputInfo, outputFolder,ui->Labelling->isChecked());
     }
     catch (const std::string& msg){
         LOG(ERROR) << "Exception detected: " << msg;
