@@ -24,8 +24,6 @@ public:
   DeployerNode(int argc, char *argv[]);
   ~DeployerNode();
   static void ros_to_cv(const sensor_msgs::ImageConstPtr &ros_img , DeployerNode *node);
-  // void SubCallback(const sensor_msgs::ImageConstPtr& img);
-  // void SubCallback(const cv::Mat& img);
 
 private:
   cv::Mat cv_frame;

@@ -411,11 +411,7 @@ namespace colorspaces {
     else {
       const ImageNV21 srcNv21(src);
       if (dst.format() == ImageRGB8::FORMAT_RGB8)
-	srcNv21.toRGB8(dst);/*
-      else if (dst.format() == ImageGRAY8::FORMAT_GRAY8)
-	srcNv21.toGRAY8(dst);
-      else if (dst.format() == ImageYCRCB::FORMAT_YCRCB)
-	srcNv21.toYCRCB(dst);*/
+	    srcNv21.toRGB8(dst);
       else
 	throw Image::NoConversion();
     }
@@ -474,63 +470,7 @@ namespace colorspaces {
     else
       return new ImageNV21(width,height);
   }
-
-
-
-//   ImageppPtr Imagepp::createTestHline(const int width,
-// 				      const int height,
-// 				      const int lineWidth,
-// 				      const int startRow,
-// 				      const RGBColor *bgColor,
-// 				      const RGBColor *fgColor){
-//     Image *i = Image_createTestHline(width,height,lineWidth,startRow,bgColor,fgColor);
-//     if (i!=0){
-//       ImageppPtr ii(new Imagepp(i->description,i->imageData));
-//       Image_swapDataOwner(i,ii.get());
-//       delete_Image(i);
-//       return ii;
-//     }else
-//       return ImageppPtr();
-//   }
-
-//   ImageppPtr Imagepp::createTestVline(const int width,
-// 				      const int height,
-// 				      const int lineWidth,
-// 				      const int startCol,
-// 				      const RGBColor *bgColor,
-// 				      const RGBColor *fgColor){
-//     Image *i = Image_createTestVline(width,height,lineWidth,startCol,bgColor,fgColor);
-//     if (i!=0){
-//       ImageppPtr ii(new Imagepp(i->description,i->imageData));
-//       Image_swapDataOwner(i,ii.get());
-//       delete_Image(i);
-//       return ii;
-//     }else
-//       return ImageppPtr();
-//   }
-
-//   ImageppPtr Imagepp::createTestSquare(const int width,
-// 				       const int height,
-// 				       const int sideLength,
-// 				       const int xStartCorner,
-// 				       const int yStartCorner,
-// 				       const RGBColor *bgColor,
-// 				       const RGBColor *fgColor){
-//     Image *i = Image_createTestSquare(width,height,
-// 				      sideLength,
-// 				      xStartCorner,yStartCorner,
-// 				      bgColor,bgColor);
-//     if (i!=0){
-//       ImageppPtr ii(new Imagepp(i->description,i->imageData));
-//       Image_swapDataOwner(i,ii.get());
-//       delete_Image(i);
-//       return ii;
-//     }else
-//       return ImageppPtr();
-//   }
-
-
-}//namespace
+}
 
 /**
  * Insert a format in an output stream. Only debugging, output could be truncated

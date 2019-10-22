@@ -30,8 +30,6 @@ double ClassStatistics::getAveragePrecision(std::vector<double> recallThrs) cons
    double precsion = 0;
    int precsionCount = 0;
    for (auto it = pt_rc.begin(); it != pt_rc.end(); it++) {
-       //std::cout << *it << ' ';
-       //count++;
        precsion += *it;
        precsionCount++;
 
@@ -44,16 +42,9 @@ double ClassStatistics::getAveragePrecision(std::vector<double> recallThrs) cons
 
 std::vector<double> ClassStatistics::getPrecisionForDiffRecallThrs(std::vector<double> recallThrs) const{
     std::vector<double> precisionForDiffRecallThrs(recallThrs.size());
-    //std::vector<double> scoresForDiffRecallThrs;
-
-    //std::cout << recallThrs.size() << ' ';
 
     std::vector<double> precisionArrayOp = getPrecisionArrayOp();
     std::vector<double> recallArray = getRecallArray();
-
-
-    //int recallThrsSize = sizeof(recallThrs) / sizeof(recallThrs[0]);
-    //std::cout << recallThrs.size() << '\n';
 
     bool isEmpty = precisionArrayOp.size() == 0;
 
@@ -65,30 +56,16 @@ std::vector<double> ClassStatistics::getPrecisionForDiffRecallThrs(std::vector<d
             int index;
             if (it != recallArray.end()) {
                 index = std::distance(recallArray.begin(), it);
-
-                //std::cout << index << '\n';
-                /*if (i == 49 || i == 50 || i == 51) {
-                    std::cout << " Index: " << index << ' ';
-                }*/
                 precisionForDiffRecallThrs[i] = precisionArrayOp[index];
             } else {
-                /*if (*(--it) == recallThrs[i]) {
-                    index = std::distance(recallArray.begin(), it);
-                    precisionForDiffRecallThrs.push_back(precisionArrayOp[index]);
-                } else {*/
-                    precisionForDiffRecallThrs[i] = 0;
-                //}
-
+                precisionForDiffRecallThrs[i] = 0;
             }
         } else {
             precisionForDiffRecallThrs.push_back(0);
         }
-
-        //scoresForDiffRecallThrs.push_back(*(this->confScores.begin() + index));
     }
 
     return precisionForDiffRecallThrs;
-
 }
 
 std::vector<double> ClassStatistics::getPrecisionArrayOp() const{
@@ -97,12 +74,7 @@ std::vector<double> ClassStatistics::getPrecisionArrayOp() const{
         return precision_array;
     }
 
-    //std::vector<double>::reverse_iterator rit;
-    //int i = 0;
     for (auto it = ++(precision_array.rbegin()); it != precision_array.rend(); it++) {
-        //rit = it;
-        //iter++;
-        //std::cout << *it << '\n';
         if (*it < *std::prev(it)) {
             *it = *std::prev(it);
         }
@@ -112,8 +84,6 @@ std::vector<double> ClassStatistics::getPrecisionArrayOp() const{
 }
 
 std::vector<double> ClassStatistics::getPrecisionArray() const{
-    //std::cout << this->truePositives.size() << '\n';
-    //std::cout << this->falsePositives.size() << '\n';
     std::vector<int> cumulative_truePositives(this->truePositives.size());
     std::partial_sum(this->truePositives.begin(), this->truePositives.end(), cumulative_truePositives.begin());
     std::vector<int> cumulative_falsePositives(this->falsePositives.size());
@@ -122,27 +92,6 @@ std::vector<double> ClassStatistics::getPrecisionArray() const{
     std::transform (cumulative_truePositives.begin(), cumulative_truePositives.end(), cumulative_falsePositives.begin(), cum_sum.begin(), std::plus<int>());
     std::vector<double> result(this->truePositives.size());
     std::transform (cumulative_truePositives.begin(), cumulative_truePositives.end(), cum_sum.begin(), result.begin(), divide);
-
-    /*for (auto it = this->truePositives.begin(); it != this->truePositives.end(); it++) {
-        std::cout << *it << ' ';
-    }
-    std::cout << '\n';
-    for (auto it = this->falsePositives.begin(); it != this->falsePositives.end(); it++) {
-        std::cout << *it << ' ';
-    }
-    std::cout << '\n';
-    for (auto it = cumulative_truePositives.begin(); it != cumulative_truePositives.end(); it++) {
-        std::cout << *it << ' ';
-    }
-    std::cout << '\n';
-    for (auto it = cumulative_falsePositives.begin(); it != cumulative_falsePositives.end(); it++) {
-        std::cout << *it << ' ';
-    }
-    std::cout << '\n';
-    */
-
-
-    //result.push_back(2.4);
     return result;
 }
 
@@ -157,10 +106,6 @@ std::vector<double> ClassStatistics::getRecallArray() const{
     std::partial_sum(this->truePositives.begin(), this->truePositives.end(), cumulative_truePositives.begin());
 
     std::vector<double> result(this->truePositives.size());
-    //std::transform (cumulative_truePositives.begin(), cumulative_truePositives.end(), (double)this->numGroundTruths, result.begin(), std::divides<double>());
-    //std::transform (cumulative_truePositives.begin(), cumulative_truePositives.end(), result.begin(),
-    //           std::bind(std::divides<double>(), std::placeholders::_1, this->numGroundTruths));
-    //std::cout << t << '\n';
     int i =0;
     for (auto it = cumulative_truePositives.begin(); it != cumulative_truePositives.end(); it++) {
 
@@ -170,18 +115,3 @@ std::vector<double> ClassStatistics::getRecallArray() const{
 
     return result;
 }
-
-/*void ClassStatistics::printStats() const{
-    std::cout << "------------------------------" << std::endl;
-    std::cout << "------------------------------" << std::endl;
-    std::cout << "  Class id: " << classID << std::endl;
-    std::cout << "------------------------------" << std::endl;
-    std::cout << "TP: " << this->truePositives  << std::endl;
-    std::cout << "FP: " << this->falsePositives << std::endl;
-    std::cout << "FN: " << this->falseNegatives << std::endl;
-    std::cout << "Mean IOU: " << getMeanIOU() << std::endl;
-    std::cout << "Precision: " << getPrecision() << std::endl;
-    std::cout << "Recall: " << getRecall() << std::endl;
-    std::cout << "------------------------------" << std::endl;
-    std::cout << "------------------------------" << std::endl;
-}*/

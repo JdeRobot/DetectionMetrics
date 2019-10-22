@@ -102,22 +102,6 @@ void GlobalStats::addIOU(const std::string &classID, double value)  {
     }
 }
 
-/*void GlobalStats::printStats(const std::vector<std::string>& classesToDisplay) const{
-    if (classesToDisplay.empty()) {
-        for (auto it : this->statsMap) {
-            it.second.printStats();
-        }
-    }
-    else{
-        for (const std::string& it : classesToDisplay){
-            if (this->statsMap.count(it)) {
-                auto data =this->statsMap.at(it);
-                data.printStats();
-            }
-        }
-    }
-}*/
-
 std::map<std::string,ClassStatistics> GlobalStats::getStats() const{
     return statsMap;
 }

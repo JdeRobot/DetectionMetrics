@@ -10,7 +10,6 @@ void TensorFlowInferencer::CallBackFunc(int event, int x, int y, int flags, void
 		itr->boundingBox.x = x;
 		itr->boundingBox.y = y;
 	}
-	// LOG(INFO) << "This is x : " << x << std::endl;
 }
 
 TensorFlowInferencer::TensorFlowInferencer(const std::string &netConfig, const std::string &netWeights,const std::string& classNamesFile): netConfig(netConfig),netWeights(netWeights) {
@@ -85,7 +84,6 @@ void TensorFlowInferencer::init()
 }
 
 Sample TensorFlowInferencer::detectImp(const cv::Mat &image, double confidence_threshold) {
-	// cv::setMouseCallback("Detection", TensorFlowInferencer::CallBackFunc ,this);
 	if(PyErr_CheckSignals() == -1) {
 		throw std::runtime_error("Keyboard Interrupt");
 	}

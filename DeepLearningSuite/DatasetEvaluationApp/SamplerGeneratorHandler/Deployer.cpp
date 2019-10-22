@@ -30,16 +30,12 @@ SampleGeneratorHandler::Deployer::process(QListView *deployImpList, QListView *w
 
      }
 
-   // The below variable stores the selected weights's path
     std::vector<std::string> weights;
-   // If no weights has been selected warn the user to select and exit.
     if (! Utils::getListViewContent(weightsList,weights,weightsPath+ "/")){
         LOG(WARNING)<<"Select the weightsList";
         return;
     }
-    // The below variable stores the selected Configuration's path
     std::vector<std::string> netConfiguration;
-    // If no required Configuration has been selected warn the user to select and exit.
     if (! Utils::getListViewContent(netConfigList,netConfiguration,cfgPath+ "/")){
         LOG(WARNING)<<"Select the netConfiguration";
         return;
@@ -51,19 +47,13 @@ SampleGeneratorHandler::Deployer::process(QListView *deployImpList, QListView *w
         return;
     }
 
-    //Which inferencer to be used is stored it the below variable
     std::vector<std::string> inferencerNames;
-    // If no inferencer has been selected warn the user to select and exit.
     if (! Utils::getListViewContent(inferencerNamesList,inferencerNames,inferencerNamesPath + "/")){
         LOG(WARNING)<<"Select the class names";
         return;
     }
 
-    /*
-      If inferencer Parameters exists, store them in the Parameters map
-      else set the map to NULL.
-      This map only accesseble caffe is used as an inferencer.
-    */
+
     std::map<std::string, std::string>* inferencerParamsMap = new std::map<std::string, std::string>();
     try {
         if(! Utils::getInferencerParamsContent(inferencer_params, *inferencerParamsMap)) {
@@ -71,7 +61,6 @@ SampleGeneratorHandler::Deployer::process(QListView *deployImpList, QListView *w
         }
 
     }
-    // If something strange happens exit with logging the exceptions.
     catch(std::exception& ex) {
         LOG(WARNING)<< ex.what();
         return;
@@ -85,9 +74,7 @@ SampleGeneratorHandler::Deployer::process(QListView *deployImpList, QListView *w
             boost::filesystem::directory_iterator itr(boostPath);
             for (; itr != end_itr; ++itr)
             {
-        // If it's not a directory, list it. If you want to list directories too, just remove this check.
                 if (boost::filesystem::is_regular_file(itr->path()) && (itr->path().extension()==".png" || itr->path().extension()==".json")  ) {
-            // assign current file name to current_file and echo it out to the console.
                     break;
                 }
             }
@@ -101,12 +88,12 @@ SampleGeneratorHandler::Deployer::process(QListView *deployImpList, QListView *w
     LOG(INFO) << "netConfigList : " << netConfiguration[0] << " ; weights : " << weights[0] << " ; inferencerNames : " << inferencerNames[0] << " ; inferencerImp : " << inferencerImp[0] << std::endl;
     GenericInferencerPtr inferencer(new GenericInferencer(netConfiguration[0],weights[0],inferencerNames[0],inferencerImp[0], inferencerParamsMap));
     if(labelling){
-      Labelling massInferencer(data_reader,inferencer->getInferencer(),outputFolder, stopButton, confidence_threshold, true);
-      massInferencer.process(false);
+        Labelling massInferencer(data_reader,inferencer->getInferencer(),outputFolder, stopButton, confidence_threshold, true);
+        massInferencer.process(false);
     }
     else{
-      MassInferencer massInferencer(data_reader,inferencer->getInferencer(),outputFolder, stopButton, confidence_threshold, true);
-      massInferencer.process(false);
+        MassInferencer massInferencer(data_reader,inferencer->getInferencer(),outputFolder, stopButton, confidence_threshold, true);
+        massInferencer.process(false);
     }
 
 }
