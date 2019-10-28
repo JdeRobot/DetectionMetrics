@@ -1,7 +1,7 @@
 #include <boost/filesystem/path.hpp>
 #include <boost/filesystem/operations.hpp>
 #include <glog/logging.h>
-#include "labelling.h"
+#include "Labelling.h"
 
 Labelling::Labelling(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, const std::string& resultsPath, bool debug)
  : Labelling::Labelling(reader, inferencer, resultsPath, NULL, debug) {
