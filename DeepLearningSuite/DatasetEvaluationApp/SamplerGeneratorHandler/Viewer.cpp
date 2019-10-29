@@ -14,29 +14,31 @@ namespace SampleGeneratorHandler {
 
     void Viewer::process(QListView* datasetList,QListView* namesList,QListView* readerImpList,QListView* filterClasses, bool showDepth, const std::string& datasetPath, const std::string& namesPath) {
 
-        GenericDatasetReaderPtr reader = SamplerGenerationHandler::createDatasetReaderPtr(datasetList, namesList,
-                                                                                          readerImpList, filterClasses,
-                                                                                          datasetPath, namesPath, true);
-        if (!reader){
-            return;
+        try {
+            GenericDatasetReaderPtr reader = SamplerGenerationHandler::createDatasetReaderPtr(datasetList, namesList,
+                                                                                              readerImpList, filterClasses,
+                                                                                              datasetPath, namesPath, true);
+            if (!reader){
+                return;
+            }
+
+            std::string windowName="viewer";
+            Sample sample;
+
+            std::vector<std::string> readerImplementation;
+            Utils::getListViewContent(readerImpList,readerImplementation,"");
+
+
+            while (reader->getReader()->getNextSample(sample)){
+                LOG(INFO) << "number of elements: " << sample.getRectRegions()->getRegions().size() << std::endl;
+
+                if (!sample.show(readerImplementation[0], windowName, 0, showDepth))
+                    break;
+
+            }
+        } catch (std::invalid_argument e) {
+            LOG(INFO) << "Invalid argument!" << std::endl;
         }
-
-        std::string windowName="viewer";
-        Sample sample;
-
-        std::vector<std::string> readerImplementation;
-        Utils::getListViewContent(readerImpList,readerImplementation,"");
-
-
-        while (reader->getReader()->getNextSample(sample)){
-            LOG(INFO) << "number of elements: " << sample.getRectRegions()->getRegions().size() << std::endl;
-
-            if (!sample.show(readerImplementation[0], windowName, 0, showDepth))
-                break;
-
-        }
-        //cv::destroyWindow(windowName);
-
     }
 
 }

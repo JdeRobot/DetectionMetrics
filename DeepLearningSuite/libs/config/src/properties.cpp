@@ -48,7 +48,6 @@ Properties::showConfig() {
 
 void
 Properties::printNode(YAML::Node node_passed, int nesting_level) {
-    //LOG(INFO) << nesting_level << '\n';
    switch (node_passed.Type()) {
      case  YAML::NodeType::Null:
         return;

@@ -1,11 +1,7 @@
-//
-// Created by frivas on 1/02/17.
-//
-
 #include <boost/filesystem/path.hpp>
 #include <boost/filesystem/operations.hpp>
 #include <glog/logging.h>
-#include "labelling.h"
+#include "Labelling.h"
 
 Labelling::Labelling(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, const std::string& resultsPath, bool debug)
  : Labelling::Labelling(reader, inferencer, resultsPath, NULL, debug) {
@@ -54,7 +50,6 @@ Labelling::Labelling(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer,
                 }
 
             }
-          //exit(-1);
         }
     }
 }
@@ -85,12 +80,8 @@ Labelling::Labelling(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer,
             LOG(WARNING)<<"Output directory already exists";
             LOG(WARNING)<<"Files might be overwritten, if present in the directory";
             boost::filesystem::directory_iterator end_itr;
-
-
         }
-
     }
-
 }
 
 Labelling::Labelling(DatasetReaderPtr reader, FrameworkInferencerPtr inferencer, double* confidence_threshold, bool debug): reader(reader), inferencer(inferencer), confidence_threshold(confidence_threshold), debug(debug)
@@ -245,11 +236,9 @@ void Labelling::finder(Sample *sample , Sample *detection, cv::Mat *image2detect
 
   if (saveOutput)
       detection->save(this->resultsPath);
-
 }
 
 void Labelling::process(bool useDepthImages, DatasetReaderPtr readerDetection) {
-
     Sample sample;
     int counter=0;
     int nsamples = this->reader->getNumberOfElements();
@@ -278,11 +267,7 @@ void Labelling::process(bool useDepthImages, DatasetReaderPtr readerDetection) {
       cv::destroyAllWindows();
       LOG(INFO) << "Mean inference time: " << this->inferencer->getMeanDurationTime() << "(ms)" <<  std::endl;
     }
-
-
 }
-
-
 
 FrameworkInferencerPtr Labelling::getInferencer() const {
     return this->inferencer;

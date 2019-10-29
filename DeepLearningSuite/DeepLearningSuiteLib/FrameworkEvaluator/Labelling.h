@@ -1,7 +1,7 @@
 
 
-#ifndef SAMPLERGENERATOR_LABELING_H
-#define SAMPLERGENERATOR_LABELING_H
+#ifndef SAMPLERGENERATOR_LABELLING_H
+#define SAMPLERGENERATOR_LABELLING_H
 
 #include <DatasetConverters/readers/DatasetReader.h>
 #include <DatasetConverters/ClassTypeGeneric.h>

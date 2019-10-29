@@ -17,7 +17,6 @@ SampleGeneratorHandler::Deployer::process(QListView *deployImpList, QListView *w
                                           const std::string &inferencerNamesPath, const std::string &inputInfo, const std::string &outputFolder) {
 
     GenericLiveReaderPtr reader;
-    // LOG(INFO) << "Osat : " << inferencerNamesPath << std::endl;
 
     try {
 
@@ -73,9 +72,7 @@ SampleGeneratorHandler::Deployer::process(QListView *deployImpList, QListView *w
             boost::filesystem::directory_iterator itr(boostPath);
             for (; itr != end_itr; ++itr)
             {
-        // If it's not a directory, list it. If you want to list directories too, just remove this check.
                 if (boost::filesystem::is_regular_file(itr->path()) && (itr->path().extension()==".png" || itr->path().extension()==".json")  ) {
-            // assign current file name to current_file and echo it out to the console.
                     break;
                 }
             }

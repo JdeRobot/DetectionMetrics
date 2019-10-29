@@ -9,7 +9,7 @@
 
 #include <FrameworkEvaluator/GenericInferencer.h>
 #include <FrameworkEvaluator/MassInferencer.h>
-#include <FrameworkEvaluator/labeling.h>
+#include <FrameworkEvaluator/Labelling.h>
 #include <yaml-cpp/yaml.h>
 
 
@@ -28,7 +28,6 @@ void chatterCallback(const sensor_msgs::ImageConstPtr& img){
     return;
   }
 
-  // cv::imshow("Mat", cv_ptr->image);
   cv::waitKey(3);
 
   massInferencer->process(false,cv_ptr->image);

@@ -34,9 +34,6 @@ bool Utils::getDeployerParamsContent(const QGroupBox* deployer_params, std::map<
         if ((*i)->text().toStdString().empty())
           throw std::invalid_argument("Please Enter All the Parameters");
     }
-    /*foreach( QLineEdit* item, allLineEdits ) {
-        std::cout << item->text().toStdString() << '\n';
-    }*/
 
     deployer_params_map["Server"] = deployer_params->findChild<QRadioButton*>("radioButton_deployer_ros")->isChecked() ? "ROS" : "Ice";
     deployer_params_map["Proxy"] = deployer_params->findChild<QLineEdit*>("lineEdit_deployer_proxy")->text().toStdString();
@@ -67,9 +64,6 @@ bool Utils::getInferencerParamsContent(const QGroupBox* inferencer_params, std::
         if ((*i)->text().toStdString().empty())
           throw std::invalid_argument("Please Enter All the Parameters");
     }
-    /*foreach( QLineEdit* item, allLineEdits ) {
-        std::cout << item->text().toStdString() << '\n';
-    }*/
 
 
     //inferencer_params_map["conf_thresh"] = inferencer_params->findChild<QLineEdit*>((prefix + "_lineEdit_confidence_thresh").c_str())->text().toStdString();

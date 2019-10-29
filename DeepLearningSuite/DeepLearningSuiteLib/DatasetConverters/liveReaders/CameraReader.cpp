@@ -38,7 +38,6 @@ bool CameraReader::getNextSample(Sample &sample) {
 	         }						// Video Ended
 	        count++;
         }
-        //    init=true;
 
         // If we succeeded in capturing the image ,set the sampleID to the sample count
         // which was started from the moment we initialized video capturing.
