@@ -10,7 +10,7 @@ sidebar:
 
 
 The **Evaluator** takes two datasets, one considered the ground truth, and compares them based on different metrics. 
-In order to use the Evaluator functionality, the configuration file need an `inferencesPath` value, so the config file could be as follows:
+In order to use the Evaluator functionality, the configuration file needs an `inferencesPath` value, so the config file could be as follows:
 
 ```
 datasetPath: /opt/datasets/
