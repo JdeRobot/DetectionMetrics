@@ -159,20 +159,26 @@ void MainWindow::setupTabsInformation() {
 
             break;
         case 3:
-            ListViewConfig::configureDatasetInput(this, ui->listView_evaluator_gt_dataset,
-                                                  app->getConfig().asString("datasetPath"), true);
-            ListViewConfig::configureInputByFile(this, ui->listView_evaluator_gt_names,
-                                                 app->getConfig().asString("namesPath"), false);
-            ListViewConfig::configureInputByData(this, ui->listView_evaluator_gt_imp,
-                                                 GenericDatasetReader::getAvailableImplementations(), false);
-            ListViewConfig::configureDatasetInput(this, ui->listView_evaluator_dectection_dataset,
-                                                  app->getConfig().asString("inferencesPath"), true);
-            ListViewConfig::configureInputByFile(this, ui->listView_evaluator_detection_names,
-                                                 app->getConfig().asString("namesPath"), false);
-            ListViewConfig::configureInputByData(this, ui->listView_evaluator_detection_imp,
-                                                 GenericDatasetReader::getAvailableImplementations(), false);
-            connect(ui->listView_evaluator_detection_names->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this, SLOT(handleSelectionNamesChanged()));
-            break;
+            try {
+                ListViewConfig::configureDatasetInput(this, ui->listView_evaluator_gt_dataset,
+                                                      app->getConfig().asString("datasetPath"), true);
+                ListViewConfig::configureInputByFile(this, ui->listView_evaluator_gt_names,
+                                                     app->getConfig().asString("namesPath"), false);
+                ListViewConfig::configureInputByData(this, ui->listView_evaluator_gt_imp,
+                                                     GenericDatasetReader::getAvailableImplementations(), false);
+                ListViewConfig::configureDatasetInput(this, ui->listView_evaluator_dectection_dataset,
+                                                      app->getConfig().asString("inferencesPath"), true);
+                ListViewConfig::configureInputByFile(this, ui->listView_evaluator_detection_names,
+                                                     app->getConfig().asString("namesPath"), false);
+                ListViewConfig::configureInputByData(this, ui->listView_evaluator_detection_imp,
+                                                     GenericDatasetReader::getAvailableImplementations(), false);
+                connect(ui->listView_evaluator_detection_names->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this, SLOT(handleSelectionNamesChanged()));
+                break;
+            } catch (const std::exception ex) {
+                LOG(WARNING)<< "Error starting Evaluator. Is your config file completed? " << ex.what();
+                break;
+            }
+
         case 4:
             ListViewConfig::configureInputByFile(this, ui->listView_deploy_weights,
                                                  app->getConfig().asString("weightsPath"), false);

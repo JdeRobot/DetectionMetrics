@@ -21,14 +21,14 @@ SampleGeneratorHandler::Deployer::process(QListView *deployImpList, QListView *w
 
     try {
 
-        reader = SamplerGenerationHandler::createLiveReaderPtr( inferencerNamesList,
-                                                                                 deployImpList, deployer_params, camera_params, inputInfo,inferencerNamesPath);
+        reader = SamplerGenerationHandler::createLiveReaderPtr( inferencerNamesList,deployImpList, deployer_params,
+            camera_params, inputInfo,inferencerNamesPath);
 
-     } catch(const std::invalid_argument& ex) {
-         LOG(WARNING)<< "Error Creating Generic Live Reader\nError Message: " << ex.what();
-         return;
+    } catch(const std::invalid_argument& ex) {
+        LOG(WARNING)<< "Error Creating Generic Live Reader\nError Message: " << ex.what();
+        return;
 
-     }
+    }
 
     std::vector<std::string> weights;
     if (! Utils::getListViewContent(weightsList,weights,weightsPath+ "/")){
