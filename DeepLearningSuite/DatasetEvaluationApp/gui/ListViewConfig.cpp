@@ -21,13 +21,9 @@ bool ListViewConfig::configureDatasetInput(QMainWindow* mainWindow, QListView *q
         return false;
     }
 
-
     QStringListModel *model;
     model = new QStringListModel(mainWindow);
     QStringList List;
-
-
-
 
     std::vector<std::string> filesID;
 
@@ -114,21 +110,26 @@ bool ListViewConfig::configureInputByFile(QMainWindow *mainWindow, QListView *ql
         return false;
     }
 
-
     QStringListModel *model;
     model = new QStringListModel(mainWindow);
     QStringList List;
-
-
-
-
     std::vector<std::string> filesID;
-
     getPathContentOnlyFiles(path,filesID);
 
+    // Filter weights files
+    if (path == "/opt/datasets/weights") {
+        std::vector<std::string> filteredFilesID;
+        for (int i = 0; i < filesID.size(); i = i + 1) {
+            std::size_t found_pb = filesID[i].find(".pb");
+            std::size_t found_h5 = filesID[i].find(".h5");
+            if (found_pb != std::string::npos || found_h5 != std::string::npos) {
+                filteredFilesID.push_back(filesID[i]);
+            }
+        }
+        filesID = filteredFilesID;
+    }
 
     std::sort(filesID.begin(),filesID.end());
-
     for (auto it = filesID.begin(), end = filesID.end(); it != end; ++it){
         std::string::size_type i = it->find(path);
 
