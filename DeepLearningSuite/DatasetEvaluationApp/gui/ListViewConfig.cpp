@@ -104,7 +104,7 @@ void ListViewConfig::getPathContentDatasetInput(const std::string &path, std::ve
     }
 }
 
-bool ListViewConfig::configureInputByFile(QMainWindow *mainWindow, QListView *qlistView, const std::string &path,bool multipleSelection) {
+bool ListViewConfig::configureInputByFile(QMainWindow *mainWindow, QListView *qlistView, const std::string &path, const std::string &pathIdentifier, bool multipleSelection) {
     if (!boost::filesystem::exists(boost::filesystem::path(path))){
         LOG(WARNING) << "path: " + path  + " does not exist";
         return false;
@@ -117,7 +117,7 @@ bool ListViewConfig::configureInputByFile(QMainWindow *mainWindow, QListView *ql
     getPathContentOnlyFiles(path,filesID);
 
     // Filter weights files
-    if (path == "/opt/datasets/weights") {
+    if (pathIdentifier == "weightsPath") {
         std::vector<std::string> filteredFilesID;
         for (int i = 0; i < filesID.size(); i = i + 1) {
             std::size_t found_pb = filesID[i].find(".pb");

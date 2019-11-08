@@ -112,7 +112,7 @@ void MainWindow::setupTabsInformation() {
             ListViewConfig::configureDatasetInput(this, ui->listView_viewer_dataset,
                                               app->getConfig().asString("datasetPath"), true);
             ListViewConfig::configureInputByFile(this, ui->listView_viewer_names,
-                                             app->getConfig().asString("namesPath"), false);
+                                             app->getConfig().asString("namesPath"), "namesPath", false);
             ListViewConfig::configureInputByData(this, ui->listView_viewer_reader_imp,
                                                  GenericDatasetReader::getAvailableImplementations(), false);
             connect(ui->listView_viewer_names->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this, SLOT(handleSelectionNamesChanged()));
@@ -122,9 +122,9 @@ void MainWindow::setupTabsInformation() {
             ListViewConfig::configureDatasetInput(this, ui->listView_converter_dataset,
                                                   app->getConfig().asString("datasetPath"), true);
             ListViewConfig::configureInputByFile(this, ui->listView_converter_names,
-                                                 app->getConfig().asString("namesPath"), false);
+                                                 app->getConfig().asString("namesPath"), "namesPath", false);
             ListViewConfig::configureInputByFile(this, ui->listView_converter_writer_names,
-                                              app->getConfig().asString("namesPath"), false);
+                                              app->getConfig().asString("namesPath"), "namesPath", false);
             ui->listView_converter_writer_names->setEnabled(false);
             ListViewConfig::configureInputByData(this, ui->listView_converter_reader_imp,
                                                  GenericDatasetReader::getAvailableImplementations(), false);
@@ -138,17 +138,17 @@ void MainWindow::setupTabsInformation() {
             ListViewConfig::configureDatasetInput(this, ui->listView_detector_dataset,
                                                   app->getConfig().asString("datasetPath"), true);
             ListViewConfig::configureInputByFile(this, ui->listView_detector_names,
-                                                 app->getConfig().asString("namesPath"), false);
+                                                 app->getConfig().asString("namesPath"), "namesPath",false);
             ListViewConfig::configureInputByData(this, ui->listView_detector_reader_imp,
                                                  GenericDatasetReader::getAvailableImplementations(), false);
             ListViewConfig::configureInputByFile(this, ui->listView_detector_weights,
-                                                 app->getConfig().asString("weightsPath"), false);
+                                                 app->getConfig().asString("weightsPath"), "weightsPath", false);
             ListViewConfig::configureInputByFile(this, ui->listView_detector_net_config,
-                                                 app->getConfig().asString("netCfgPath"), false);
+                                                 app->getConfig().asString("netCfgPath"), "netCfgPath", false);
             ListViewConfig::configureInputByData(this, ui->listView_detector_imp,
                                                  GenericInferencer::getAvailableImplementations(), false);
             ListViewConfig::configureInputByFile(this, ui->listView_detector_names_inferencer,
-                                                 app->getConfig().asString("namesPath"), false);
+                                                 app->getConfig().asString("namesPath"), "namesPath", false);
 
 
             ui->detector_groupBox_inferencer_params->setEnabled(false);
@@ -163,13 +163,13 @@ void MainWindow::setupTabsInformation() {
                 ListViewConfig::configureDatasetInput(this, ui->listView_evaluator_gt_dataset,
                                                       app->getConfig().asString("datasetPath"), true);
                 ListViewConfig::configureInputByFile(this, ui->listView_evaluator_gt_names,
-                                                     app->getConfig().asString("namesPath"), false);
+                                                     app->getConfig().asString("namesPath"), "namesPath", false);
                 ListViewConfig::configureInputByData(this, ui->listView_evaluator_gt_imp,
                                                      GenericDatasetReader::getAvailableImplementations(), false);
                 ListViewConfig::configureDatasetInput(this, ui->listView_evaluator_dectection_dataset,
                                                       app->getConfig().asString("inferencesPath"), true);
                 ListViewConfig::configureInputByFile(this, ui->listView_evaluator_detection_names,
-                                                     app->getConfig().asString("namesPath"), false);
+                                                     app->getConfig().asString("namesPath"), "namesPath", false);
                 ListViewConfig::configureInputByData(this, ui->listView_evaluator_detection_imp,
                                                      GenericDatasetReader::getAvailableImplementations(), false);
                 connect(ui->listView_evaluator_detection_names->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)), this, SLOT(handleSelectionNamesChanged()));
@@ -181,13 +181,13 @@ void MainWindow::setupTabsInformation() {
 
         case 4:
             ListViewConfig::configureInputByFile(this, ui->listView_deploy_weights,
-                                                 app->getConfig().asString("weightsPath"), false);
+                                                 app->getConfig().asString("weightsPath"), "weightsPath", false);
             ListViewConfig::configureInputByFile(this, ui->listView_deploy_net_config,
-                                                 app->getConfig().asString("netCfgPath"), false);
+                                                 app->getConfig().asString("netCfgPath"), "netCfgPath", false);
             ListViewConfig::configureInputByData(this, ui->listView_deploy_impl,
                                                  GenericInferencer::getAvailableImplementations(), false);
             ListViewConfig::configureInputByFile(this, ui->listView_deploy_names_inferencer,
-                                                 app->getConfig().asString("namesPath"), false);
+                                                 app->getConfig().asString("namesPath"), "namesPath", false);
             ListViewConfig::configureInputByData(this, ui->listView_deploy_input_imp,
                                                  GenericLiveReader::getAvailableImplementations(), false);
 
