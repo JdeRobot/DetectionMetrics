@@ -21,13 +21,9 @@ bool ListViewConfig::configureDatasetInput(QMainWindow* mainWindow, QListView *q
         return false;
     }
 
-
     QStringListModel *model;
     model = new QStringListModel(mainWindow);
     QStringList List;
-
-
-
 
     std::vector<std::string> filesID;
 
@@ -108,27 +104,34 @@ void ListViewConfig::getPathContentDatasetInput(const std::string &path, std::ve
     }
 }
 
-bool ListViewConfig::configureInputByFile(QMainWindow *mainWindow, QListView *qlistView, const std::string &path,bool multipleSelection) {
+bool ListViewConfig::configureInputByFile(QMainWindow *mainWindow, QListView *qlistView, const std::string &path, const std::string &pathIdentifier, bool multipleSelection) {
     if (!boost::filesystem::exists(boost::filesystem::path(path))){
         LOG(WARNING) << "path: " + path  + " does not exist";
         return false;
     }
 
-
     QStringListModel *model;
     model = new QStringListModel(mainWindow);
     QStringList List;
-
-
-
-
     std::vector<std::string> filesID;
-
     getPathContentOnlyFiles(path,filesID);
 
+    // Filter weights files
+    if (pathIdentifier == "weightsPath") {
+        std::vector<std::string> filteredFilesID;
+        for (int i = 0; i < filesID.size(); i = i + 1) {
+            std::size_t found_pb = filesID[i].find(".pb");
+            std::size_t found_h5 = filesID[i].find(".h5");
+            std::size_t found_pth = filesID[i].find(".pth");
+            std::size_t found_weights = filesID[i].find(".weights");
+            if (found_pb != std::string::npos || found_h5 != std::string::npos || found_pth != std::string::npos || found_weights != std::string::npos) {
+                filteredFilesID.push_back(filesID[i]);
+            }
+        }
+        filesID = filteredFilesID;
+    }
 
     std::sort(filesID.begin(),filesID.end());
-
     for (auto it = filesID.begin(), end = filesID.end(); it != end; ++it){
         std::string::size_type i = it->find(path);
 

@@ -13,7 +13,7 @@
 class ListViewConfig {
 public:
     static bool configureDatasetInput(QMainWindow* mainWindow, QListView* qlistView, const std::string& path, bool multipleSelection);
-    static bool configureInputByFile(QMainWindow* mainWindow, QListView* qlistView, const std::string& path,bool multipleSelection);
+    static bool configureInputByFile(QMainWindow* mainWindow, QListView* qlistView, const std::string& path, const std::string& pathIdentifier, bool multipleSelection);
     static bool configureInputByData(QMainWindow* mainWindow, QListView* qlistView, const std::vector<std::string>& data,bool multipleSelection);
 
 
