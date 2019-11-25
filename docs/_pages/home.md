@@ -15,7 +15,7 @@ excerpt:
 # What is DetectionSuite?
 
 DetectionSuite is an application that provides a toolbox of utilities oriented to simplify the development and testing of solutions based on object detection.
-The application comes with a GUI but it can also be used through command line.
+The application comes with a GUI (based on Qt) but it can also be used through command line.
 
 
 {% include video id="gDP9nWCL0Vg" provider="youtube" %}
