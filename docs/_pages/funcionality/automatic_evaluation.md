@@ -42,12 +42,14 @@ Inferencers:
   inferencerConfig:          /opt/datasets/cfg/foo.cfg
   inferencerImplementation:  tensorflow
   inferencerNames:           /opt/datasets/names/coco.names
+  iouType:                   bbox
 
 -
   inferencerWeights:         /opt/datasets/weights/ssd_inception_v2_coco_2017_11_17/frozen_inference_graph.pb
   inferencerConfig:          /opt/datasets/cfg/foo.cfg
   inferencerImplementation:  tensorflow
   inferencerNames:           /opt/datasets/names/coco.names
+  iouType:                   bbox
 
 
 outputCSVPath: /opt/datasets/output
@@ -77,18 +79,21 @@ Inferencers:
   inferencerConfig:          /opt/datasets/cfg/foo.cfg              # TensorFlow doesn't need any config file, hence any 
   inferencerImplementation:  tensorflow                             # empty foo.cfg file
   inferencerNames:           /opt/datasets/names/coco.names
+  iouType:                   bbox
 
 -
   inferencerWeights:         /opt/datasets/weights/VGG_VOC0712_SSD_512x512_iter_120000.h5
   inferencerConfig:          /opt/datasets/cfg/foo.cfg              # New version Keras also doesn't need any file, all the
   inferencerImplementation:  keras                                  # data is stored in the HDF5 file including model 
   inferencerNames:           /opt/datasets/names/voc.names          # weights, configuration and optimizer state, hence we 
-                                                                    # are using an empty foo.cfg file
+  iouType:                   bbox                                   # are using an empty foo.cfg file
+
 -
   inferencerWeights:         /opt/datasets/weights/VGG_VOC0712_SSD_512x512_iter_240000.h5
   inferencerConfig:          /opt/datasets/cfg/foo.cfg              
   inferencerImplementation:  keras                             
   inferencerNames:           /opt/datasets/names/voc.names
+  iouType:                   bbox
 
 
 

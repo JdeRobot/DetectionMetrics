@@ -94,8 +94,7 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
         if (find_img_directory(boostDatasetPath.parent_path().parent_path(), img_dir, img_dirname)) {
             LOG(INFO) << "Image Directory Found: " << img_dir.string() << '\n';
         } else {
-            throw std::invalid_argument("Corresponding Image Directory, can't be located, please place it in the same Directory as annotations"
-            "If you wish to continue without reading images");
+            throw std::invalid_argument("Corresponding Image Directory can't be located, please place it in the same Directory as annotations if you wish to continue without reading images");
 
         }
 
