@@ -26,7 +26,7 @@ An example of config file would be:
     writeImages: no
 ```
 
-With the cofig file, change the directory to ``Tools/Converter`` inside build and run
+With the config file, change the directory to ``Tools/Converter`` inside build and run
 
 ```
     ./converter -c appConfig.yml

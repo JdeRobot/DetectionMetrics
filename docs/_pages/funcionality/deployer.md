@@ -22,6 +22,9 @@ To run it navigate to ``` DatasetEvaluationApp/build``` and run
     ./DatasetEvaluationApp -c appConfig.yml 
 ```
 
+The inferences obtained can be written to a file providing it before executing and a threshold confidence 
+limit can be set, so a detection is only considered if the confidence is over the threshold.
+
 ## 1. Input Images
 In order to run inferences, a user needs input images. they can be captured from multiple resources:
 
