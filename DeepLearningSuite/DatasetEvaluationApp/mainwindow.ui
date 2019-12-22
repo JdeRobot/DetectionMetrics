@@ -11,7 +11,7 @@
             </rect>
         </property>
         <property name="windowTitle">
-            <string>MainWindow</string>
+            <string>DetectionSuite</string>
         </property>
         <widget class="QWidget" name="centralWidget">
             <widget class="QTabWidget" name="tabWidget">
