@@ -39,7 +39,7 @@ The two following points are different depending on the permissions you have to 
 * **Open a pull request:** A pull request is compulsory any time a new change wants to be added to the core or the project. After solving the issue, create a pull request with your branch. In this pull request include all the commits made,
  write a good description of the changes made and refer to the issue solved to make things easier to the maintainers. Include any additional resource that would be interesting (references, screenshots...). Link the PR with the issue
 
-* Testing and merging pull requests
+* **Testing and merging pull requests**
 Your pull request will be automatically tested by Travis CI. If any jobs have failed, you should fix them. 
 To rerun the automatic builds just push changes to your branch on GitHub. No need to close that pull request and open a new one!
 Once all the builders are "green", one of DetectionSuite's developers will review your code. Reviewer could ask you to modify your pull request.
