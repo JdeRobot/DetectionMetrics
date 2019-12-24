@@ -4,12 +4,14 @@ main:
     url: /installation
   - title: Functionality
     url: /functionality/command_line_application
+  - title: Resources
+    url: /resources/class_names
   - title: About
     url: /about
 
 
 # left side bar
-docs:
+functionality:
 
   - title: Functionality
     children:
@@ -27,15 +29,21 @@ docs:
         url: /functionality/viewer
       - title: "ROS Node"
         url: /functionality/ros_node
+
+# left side bar
+resources:
+
+  - title: Resources
+    children:
       - title: "Class Names"
-        url: /functionality/class_names
+        url: /resources/class_names
       - title: "Frameworks"
-        url: /functionality/frameworks
+        url: /resources/frameworks
       - title: "Model zoo"
-        url: /functionality/model_zoo
+        url: /resources/model_zoo
       - title: "Testing DetectionSuite"
-        url: /functionality/testing_detectionsuite
+        url: /resources/testing_detectionsuite
       - title: "Tutorial"
-        url: /functionality/tutorial
+        url: /resources/tutorial
       - title: "New Functionality"
-        url: /functionality/gsoc_19
+        url: /resources/gsoc_19

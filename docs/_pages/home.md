@@ -30,7 +30,8 @@ The application is designed to experiment with datasets and neural networks usin
 + [Detector](functionality/detector/)
 + [Evaluator](functionality/evaluator/)
 + [Viewer](functionality/viewer/)
-+ [Labelling](functionality/gsoc_19/)
++ [ROS Node](functionality/ros_node/)
++ [Labelling](resources/gsoc_19/)
 
 Every tool in DetectionSuite requires a config file to run, where the main parameters needed are provided. Currently, YAML config file format is supported. See below on how to create a custom config file.
 Each tool may have different requirements for keys in config file, and they can be known by passing the ```--help``` flag when using DetectionSuite from

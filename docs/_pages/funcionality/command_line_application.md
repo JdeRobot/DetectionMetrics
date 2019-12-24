@@ -5,7 +5,7 @@ permalink: /functionality/command_line_application/
 
 
 sidebar:
-  nav: "docs"
+  nav: "functionality"
 ---
 
 DetectionSuite supports both a Qt based UI and some command line based applications both requiring a config file to run.

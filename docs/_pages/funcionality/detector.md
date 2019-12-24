@@ -5,7 +5,7 @@ permalink: /functionality/detector/
 
 
 sidebar:
-  nav: "docs"
+  nav: "functionality"
 ---
 
 **Detector** runs over and input dataset containing images and outputs the detected objects (detection dataset) providing the network weights

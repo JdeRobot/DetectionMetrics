@@ -5,7 +5,7 @@ permalink: /functionality/converter/
 
 
 sidebar:
-  nav: "docs"
+  nav: "functionality"
 ---
 
 This tool takes a dataset from a specific format and converts it to another format.

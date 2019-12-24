@@ -5,7 +5,7 @@ permalink: /functionality/ros_node/
 
 
 sidebar:
-  nav: "docs"
+  nav: "functionality"
 ---
 
 DetectionSuite Deployer functionality is provided as a **ROS Node**.

@@ -5,7 +5,7 @@ permalink: /functionality/evaluator/
 
 
 sidebar:
-  nav: "docs"
+  nav: "functionality"
 ---
 
 

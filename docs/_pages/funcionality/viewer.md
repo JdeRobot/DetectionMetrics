@@ -5,7 +5,7 @@ permalink: /functionality/viewer/
 
 
 sidebar:
-  nav: "docs"
+  nav: "functionality"
 ---
 
 **Viewer** tab is used to view various datasets. It reads the images and the annotation files to label them with their respective class names and displays the same.

@@ -5,7 +5,7 @@ permalink: /functionality/deployer/
 
 
 sidebar:
-  nav: "docs"
+  nav: "functionality"
 ---
 
 This tool makes inferences using images from different sources. Having the input, the user provides the weights and several configuration parameters
