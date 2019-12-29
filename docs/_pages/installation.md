@@ -61,7 +61,7 @@ Now run the docker image using
 ```
 where the ```-it``` flag instructs Docker to allocate a pseudo-TTY connected to the container’s stdin; creating an interactive ```bash``` shell in the container ,```-e``` tag is used to set the environment variable, in this case ```DISPLAY```, this is required because you will be using GUI for interaction through out rest of the tutorials.
 
-Voila!! You can now use DetectionSuite. Proceed to [beginner's tutorial](../functionality/tutorial/) to get started.
+Voila!! You can now use DetectionSuite. Proceed to [beginner's tutorial](../resources/tutorial/) to get started.
 
 # Compile and Install from source
 To use the latest version of DetectionSuite you need to compile and install it from source.
@@ -204,7 +204,7 @@ Each one of them has some dependencies, and are mentioned below.
     For using Caffe as an inferencing framework, it is necessary to install OpenCV 3.4 or greater.
 
 
-**Note:** Be Sure to checkout [functionality](../functionality/automatic_evaluation) for tutorials on how to use the above mentioned functionalities and frameworks.  
+**Note:** Be Sure to checkout [functionality](../functionality/command_line_application) for tutorials on how to use the above mentioned functionalities and frameworks.  
 
 # How to compile DetectionSuite:
 
@@ -232,6 +232,6 @@ To enable Darknet support with GPU:
 Once it is built, you will find various executables in different folders ready to be executed :smile:.
 
 ## Starting with DetectionSuite
-The best way to start is with our [beginner's tutorial](../functionality/tutorial/) for DetectionSuite.
+The best way to start is with our [beginner's tutorial](../resources/tutorial/) for DetectionSuite.
 
 If you have any issue feel free to drop a mail <vinay04sharma@icloud.com> or create an [issue](https://github.com/JdeRobot/DetectionSuite/issues) for the same.

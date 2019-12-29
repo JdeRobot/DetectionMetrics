@@ -63,7 +63,7 @@ to let DetectionSuite know more about the Inferencer.
    * ### 2.4. Inferencer implementation (framework being used):
         Currently support Darknet, TensorFlow, Keras and Caffe.  
 
-**Note:** For Caffe, you might need to add some additional parameters specific to your model. Some samples are available at our [model zoo](../model_zoo/).
+**Note:** For Caffe, you might need to add some additional parameters specific to your model. Some samples are available at our [model zoo](../../resources/model_zoo/).
    
 After configuring all these parameters, you are good to go.  
   
