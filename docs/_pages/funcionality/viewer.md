@@ -41,7 +41,7 @@ This will generate a window with the a image a the detections. Pressing the *spa
 Change your ```appConfig.txt``` to include this folder's path (containing both annotations and images) or it's parent's path in dataset path.
 
 Now, you can run DetectionSuite, switch to viewer tab, select the annotation file for COCO, which will be ```instances_trainxxxx.json```.
-Select reader Implementation as COCO and class name as coco.names (can be downloaded from [here](https://github.com/pjreddie/darknet/blob/master/data/coco.names)).
+Select reader Implementation as COCO and class name as coco.names (can be downloaded from [here](https://github.com/JdeRobot/DetectionSuite/blob/master/samples/names/coco.names)).
 
 And click **View**!
 
