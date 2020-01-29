@@ -56,7 +56,7 @@ For this tutorial we will need inferencer weights, config files and a class name
 For this tutorial, we will be using SSD MobileNet v1, trained on COCO, and would require following files:
 - Model: [ssd_mobilenet_v1_coco](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v1_coco_2018_01_28.tar.gz).
 - Config: Just Create an empty foo.cfg file in `cfg/`.
-- ClassNames: Download [COCO ClassNames File](https://github.com/pjreddie/darknet/blob/master/data/coco.names).
+- ClassNames: Download [COCO ClassNames File](https://github.com/JdeRobot/DetectionSuite/blob/master/samples/names/coco.names).
 
 
 

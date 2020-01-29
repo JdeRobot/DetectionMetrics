@@ -16,7 +16,7 @@ Text file listing *Pascal VOC* class names in the correct order: [voc.names](htt
 
 ## COCO
 
-Text file listing *COCO* class names in the correct order: [coco.names](https://github.com/pjreddie/darknet/blob/master/data/coco.names).
+Text file listing *COCO* class names in the correct order: [coco.names](https://github.com/JdeRobot/DetectionSuite/blob/master/samples/names/coco.names).
 
 ## Imagenet
 
