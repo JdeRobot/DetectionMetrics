@@ -5,7 +5,7 @@ path="/mnt/large/pentalo/deep/external_datasets/princeton/EvaluationSet/bag1/dep
 im = Image.open(path)
 red = im.getextrema()
 
-print red
+print(red)
 
 im.show()
 

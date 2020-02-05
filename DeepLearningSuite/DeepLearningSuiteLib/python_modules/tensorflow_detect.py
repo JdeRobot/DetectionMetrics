@@ -20,13 +20,13 @@ class TensorFlowDetector:
     def __init__(self, path_to_ckpt):
         detection_graph = tf.Graph()
         with detection_graph.as_default():
-            od_graph_def = tf.GraphDef()
-            with tf.gfile.GFile(path_to_ckpt, 'rb') as fid:
+            od_graph_def = tf.compat.v1.GraphDef()
+            with tf.compat.v2.io.gfile.GFile(path_to_ckpt, 'rb') as fid:
                 serialized_graph = fid.read()
                 od_graph_def.ParseFromString(serialized_graph)
                 tf.import_graph_def(od_graph_def, name='')
 
-            ops = tf.get_default_graph().get_operations()
+            ops = tf.compat.v1.get_default_graph().get_operations()
             all_tensor_names = {output.name for op in ops for output in op.outputs}
             self.tensor_dict = {}
             for key in [
@@ -35,7 +35,7 @@ class TensorFlowDetector:
             ]:
                 tensor_name = key + ':0'
                 if tensor_name in all_tensor_names:
-                    self.tensor_dict[key] = tf.get_default_graph().get_tensor_by_name(
+                    self.tensor_dict[key] = tf.compat.v1.get_default_graph().get_tensor_by_name(
                         tensor_name)
             #if 'detection_masks' in self.tensor_dict:
         # The following processing is only for single image
@@ -52,7 +52,7 @@ class TensorFlowDetector:
         # Follow the convention by adding back the batch dimension
                 #self.tensor_dict['detection_masks'] = detection_masks
 
-            self.image_tensor = tf.get_default_graph().get_tensor_by_name('image_tensor:0')
+            self.image_tensor = tf.compat.v1.get_default_graph().get_tensor_by_name('image_tensor:0')
 
 
 
@@ -62,13 +62,10 @@ class TensorFlowDetector:
         #self.detection_classes = detection_graph.get_tensor_by_name('detection_classes:0')
         #self.num_detections = detection_graph.get_tensor_by_name('num_detections:0')
 
-        self.sess = tf.Session(graph=detection_graph)
-
-	print "Initializing"
-
-	dummy_tensor = np.zeros((1,1,1,3), dtype=np.int32)
-    	self.sess.run(self.tensor_dict,
-                        feed_dict={self.image_tensor: dummy_tensor})
+        self.sess = tf.compat.v1.Session(graph=detection_graph)
+        print("Initializing")
+        dummy_tensor = np.zeros((1,1,1,3), dtype=np.int32)
+        self.sess.run(self.tensor_dict, feed_dict={self.image_tensor: dummy_tensor})
 
 
 
@@ -97,7 +94,7 @@ class TensorFlowDetector:
 
     def detect(self, img, threshold):
 
-        print "Starting inference"
+        print("Starting inference")
         start_time = time.time()
 
         # the array based representation of the image will be used later in order to prepare the
@@ -125,7 +122,7 @@ class TensorFlowDetector:
 
 
 
-        print "Inference Time: " + str(time.time() - start_time) + " seconds"
+        print("Inference Time: " + str(time.time() - start_time) + " seconds")
 
         new_dict = {}
 

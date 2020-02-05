@@ -143,7 +143,7 @@ def main():
     imagesList += [each for each in fileLists if each.endswith('.png')]
     sorted_files = sorted(imagesList, key=lambda x: int(x.split('.')[0]))
 
-    print 'source ', input_folder +  '/camera1/' + sorted_files[1]
+    print('source ', input_folder +  '/camera1/' + sorted_files[1])
 
     sourceImage=cv2.imread(input_folder + '/camera1/' +  sorted_files[1])
     sourceImage=cv2.cvtColor(sourceImage,cv2.COLOR_BGR2RGB)
@@ -165,7 +165,7 @@ def main():
     for image in sorted_files[2:-1]:
         testImage=False
         for warp in warps:
-            print "w: ", warp
+            print("w: ", warp)
             for scale in scales:
                 imagePath = input_folder +  '/camera1/' + image
                 currImage=cv2.imread(imagePath)
@@ -186,9 +186,6 @@ def main():
 
                 cv2.imshow("th",thresh)
 
-
-
-
                 nPoints = cv2.countNonZero(thresh)
                 if nPoints < minPoints * scale:
                     nPoints=0
@@ -197,7 +194,7 @@ def main():
                     if (warp == warps[0] and scale == scales[0]):
                         imagesCounter+=1
                     testImage=getIfPropertyToTest(imagesCounter,testRatio)
-                    print testImage
+                    print(testImage)
                     if testImage:
                         cv2.imwrite("test/" + image,currImage)
 
@@ -226,7 +223,7 @@ def main():
                 break
 
 
-    print imagesCounter
+    print(imagesCounter)
 
 
 

@@ -114,18 +114,15 @@ class sample:
         return self.angle
 
     def printResult(self):
-        print self.getResultStr()
+        print(self.getResultStr())
 
 
 
     def getResultStr(self):
-		tempX=checkRange(float(self.x)/float(self.getImageWidth()))
-		tempY=checkRange(float(self.y)/float(self.getImageHeight()))
-
-
-		if self.w + self.x >= self.getImageWidth():
-			self.w= self.getImageWidth() - 1 - self.x
-		if self.h + self.y >= self.getImageHeight():
-			self.h= self.getImageHeight() - 1 - self.y
-
-		return str(0) + ' ' +  str(tempX) + ' ' + str(tempY) + ' ' +  str(float(self.w)/float(self.getImageWidth())) +  ' ' +  str(float(self.h)/float(self.getImageHeight()))
+        tempX=checkRange(float(self.x)/float(self.getImageWidth()))
+        tempY=checkRange(float(self.y)/float(self.getImageHeight()))
+        if self.w + self.x >= self.getImageWidth():
+            self.w= self.getImageWidth() - 1 - self.x
+        if self.h + self.y >= self.getImageHeight():
+            self.h= self.getImageHeight() - 1 - self.y
+        return str(0) + ' ' +  str(tempX) + ' ' + str(tempY) + ' ' +  str(float(self.w)/float(self.getImageWidth())) +  ' ' +  str(float(self.h)/float(self.getImageHeight()))
