@@ -53,7 +53,7 @@ public:
         evaluator->accumulateResults();
 
 
-        std::string mywriterFile("Evaluation Results.csv" );
+        std::string mywriterFile("evaluation_results.csv");
 
         StatsWriter writer(readerGT->getReader(), mywriterFile);
 

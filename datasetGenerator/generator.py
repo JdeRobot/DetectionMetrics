@@ -23,10 +23,10 @@ def main(path):
 
     totalCount=0
     for sample in samples:
-        print sample, ":", len(samples[sample])
+        print(sample, ":", len(samples[sample]))
         totalCount+=len(samples[sample])
 
-    print "totalCount=", totalCount
+    print("totalCount=", totalCount)
 
 
 

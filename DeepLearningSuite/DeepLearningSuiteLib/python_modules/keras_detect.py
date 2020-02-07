@@ -31,12 +31,12 @@ class KerasDetector:
         input_size = self.model.input.shape.as_list()
         self.img_height = input_size[1]
         self.img_width = input_size[2]
-        print self.img_width, self.img_height
+        print(self.img_width, self.img_height)
 
 
     def detect(self, img, threshold):
 
-        print "Starting inference"
+        print("Starting inference")
         input_images = []
 
         as_image = Image.fromarray(img)
@@ -60,6 +60,6 @@ class KerasDetector:
         y_thresh_array[:, 4] /= self.img_width
         y_thresh_array[:, 5] /= self.img_height
 
-        print "Inference Time: " + str(time.time() - start_time) + " seconds"
+        print("Inference Time: " + str(time.time() - start_time) + " seconds")
 
         return y_thresh_array
