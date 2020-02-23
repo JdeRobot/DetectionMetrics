@@ -8,7 +8,9 @@
 #include <DarknetAPI/DarknetDetection.h>
 
 #include <vector>
-#include <iostream>extern "C" void c_test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filename, float thresh, float hier_thresh);
+#include <iostream>
+
+extern "C" void c_test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filename, float thresh, float hier_thresh);
 extern "C" network c_parse_network_cfg(char *filename);
 extern "C" void c_load_weights(network *net, char *filename);
 extern "C" void c_set_batch_network(network *net, int b);
@@ -33,7 +35,7 @@ extern "C" void c_get_region_boxes(layer l, int w, int h, int netw, int neth, fl
 extern "C" image c_letterbox_image(image im, int w, int h);
 
 void addDetection(int num, float threshold, box *boxes, float **probs, char **names, image *labels, int classes, DarknetDetections& detections);
-DarknetDetections processImageDetection(network& net, image& im, flaot threshold = 0.24);
+DarknetDetections processImageDetection(network& net, image& im, float threshold = 0.24);
 DarknetDetections preocessImageDetection(network& net, const cv::Mat & im, float threshold = 0.24);
 
 class DarknetAPI {

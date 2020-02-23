@@ -1,6 +1,6 @@
 #include "DarknetAPI.h"
 #include <iostream>
-#include "DarknetAPIConversions.h
+#include "DarknetAPIConversions.h"
 
 
 char *voc_names[] = {"aeroplane", "bicycle", "bird", "boat", "bottle", "bus", "car", "cat", "chair", "cow", "dinningtable", "dog", "horse", "motorbike", "person", "pottedplant", "sheep", "sofa", "train", "tvmonitor"};
@@ -10,7 +10,7 @@ image voc_labels[20];
 DarknetAPI::DarknetAPI(char *cfgfile, char *weightfile) {
     net = c_parse_network_cfg(cfgfile);
     if (weightfile != nullptr) {
-        c_load_wegiths(&net, weightfile);
+        c_load_weigths(&net, weightfile);
     }
 }
 
@@ -21,8 +21,8 @@ DarknetAPI::~DarknetAPI() {
 void addDetection(image& im, int num, float threshold, box *boxes, float **probs, char **names, image *labels, int classes, DarknetDetections& detections) {
     int i;
     for(i = 0; i< num; i++) {
-        int classid = c_max_indes(probs[i], classes);
-	float prob = ptobs[i][classid];
+        int classid = c_max_index(probs[i], classes);
+	float prob = probs[i][classid];
 	if (prob > threshold) {
 	    int width =pow(prob, 1./2.) * 10 + 1;
 	    int offset = classid * 17 % classes;
@@ -62,7 +62,7 @@ DarknetDetection processImageDetection(network& net, image& im, float threshold)
     int j;
     float nms = .3;
 
-    image sized = c_leerbox_image(im, net.w, net.h);
+    image sized = c_letterbox_image(im, net.w, net.h);
     layer l = net.layers[net.n - 1];
 
     box *boxes = (box*) calloc(l.w * l.h * l.n, sizeof(box));
@@ -78,8 +78,8 @@ DarknetDetection processImageDetection(network& net, image& im, float threshold)
     time = clock();
     c_network_predict(net, X);
     printf("%s: Prodicted in %f second.\n", input, c_sec(clock()-time));
-    c_get_regin_boxes(l, im.w, im-h, net.w, net.h, threshold, probs, boxes, maks, 0, 0, hier_threh, 1);
-    if (l.sotfmax_tree && nms)
+    c_get_region_boxes(l, im.w, im.h, net.w, net.h, threshold, probs, boxes, masks, 0, 0, hier_thresh, 1);
+    if (l.softmax_tree && nms)
         c_do_nms_onj(boxes, probs, l.w * l.h * l.h, l.classes, nms);
     else if (nms)
         c_do_nms_sort(boxes, probs, l.w * l.h * l.n, l.classes, nms);

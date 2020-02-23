@@ -8,7 +8,7 @@ IF (DARKNET_ACTIVE)
     # include_directories(${DARKNET_INCLUDE_DIR})
 ENDIF()
 
-# add_subdirectory(Wrappers)
+add_subdirectory(Wrappers)
 add_subdirectory(Common)
 add_subdirectory(DatasetConverters)
 add_subdirectory(Detectors)
