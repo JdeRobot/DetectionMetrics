@@ -10,7 +10,7 @@ image voc_labels[20];
 DarknetAPI::DarknetAPI(char *cfgfile, char *weightfile) {
     net = c_parse_network_cfg(cfgfile);
     if (weightfile != nullptr) {
-        c_load_weigths(&net, weightfile);
+        c_load_weights(&net, weightfile);
     }
 }
 
@@ -51,7 +51,7 @@ void addDetection(image& im, int num, float threshold, box *boxes, float **probs
 }
 
 
-DarknetDetection processImageDetection(network& net, image& im, float threshold) {
+DarknetDetections processImageDetection(network& net, image& im, float threshold) {
     float hier_threshold = 0.5;
     DarknetDetections detections;
     c_set_batch_network(&net, 1);
@@ -78,36 +78,36 @@ DarknetDetection processImageDetection(network& net, image& im, float threshold)
     time = clock();
     c_network_predict(net, X);
     printf("%s: Prodicted in %f second.\n", input, c_sec(clock()-time));
-    c_get_region_boxes(l, im.w, im.h, net.w, net.h, threshold, probs, boxes, masks, 0, 0, hier_thresh, 1);
+    c_get_region_boxes(l, im.w, im.h, net.w, net.h, threshold, probs, boxes, masks, 0, 0, hier_threshold, 1);
     if (l.softmax_tree && nms)
-        c_do_nms_onj(boxes, probs, l.w * l.h * l.h, l.classes, nms);
+        c_do_nms_obj(boxes, probs, l.w * l.h * l.h, l.classes, nms);
     else if (nms)
         c_do_nms_sort(boxes, probs, l.w * l.h * l.n, l.classes, nms);
 
-    addDetection(im, l.w * l.h * l.n, thresh, boxes, probs, voc_names, 0, l.classes, detections);
-    c_free_image(size);
+    addDetection(im, l.w * l.h * l.n, threshold, boxes, probs, voc_names, 0, l.classes, detections);
+    c_free_image(sized);
 
     return detections;
 }
 
 DarknetDetections processImageDetection(network& net, const cv::Mat & im, float threshold) {
     image imageDarknet = cv_to_image(im);
-    auto detection = processDetection(net, imageDarknet, threshold);
+    auto detection = processImageDetection(net, imageDarknet, threshold);
     c_free_image(imageDarknet);
     return detection;
 }
 
-DarknetDetecitons DarknetAPI::process(image& im, float threshold) {
+DarknetDetections DarknetAPI::process(image& im, float threshold) {
     return processImageDetection(this->net, im, threshold);
 }
 
 DarknetDetections DarknetAPI::process(const cv::Mat &im, float threshold) {
     image imageDarknet = cv_to_image(im);
-    return processImageDetectoni(this->net, imageDarknet, threshold);
+    return processImageDetection(this->net, imageDarknet, threshold);
 }
 
-std::string DArknetAPI::processToJson(const cv::Mat &im, flaot threshold) {
-    return process(im, threshold),serialize();
+std::string DarknetAPI::processToJson(const cv::Mat &im, float threshold) {
+    return process(im, threshold).serialize();
 }
 
 

@@ -26,7 +26,6 @@ DarknetDetection::DarknetDetection(const float x, const float y, const float w, 
     this->probability=probability;
 }
 
-
 DarknetDetection::DarknetDetection(const rapidjson::Value &jsonValue) {
     auto end = jsonValue.MemberEnd();
     auto xIt = jsonValue.FindMember("x");
@@ -43,7 +42,7 @@ DarknetDetection::DarknetDetection(const rapidjson::Value &jsonValue) {
     }
     this->detectionBox.y = yIt->value.GetDouble();
 
-    auto wIt = jsonValue.FindMemeber("width");
+    auto wIt = jsonValue.FindMember("width");
     if (wIt == end) {
         std::cerr << "w node not found!" << std::endl;
 	return;
@@ -51,30 +50,27 @@ DarknetDetection::DarknetDetection(const rapidjson::Value &jsonValue) {
 
     auto hIt = jsonValue.FindMember("height");
     if (hIt == end) {
-        std:cerr << "w node not found!" << std:endl;
+	std::cerr << "w node not found!" << std::endl;
         return;
     }
 
     auto idIt = jsonValue.FindMember("id");
     if (idIt == end) {
-        std:cerr << "id node not found!" << std:endl;
+	std::cerr << "id node not found!" << std::endl;
         return;
     }
     this->classId = idIt->value.GetDouble();
 }
 
-
-
-
-rapidjson::Value DarknetDetection::getJsonValue(rapidjson::Docuemtn &document) const {
+rapidjson::Value DarknetDetection::getJsonValue(rapidjson::Document &document) const {
     document.SetObject();
 
     auto &allocator =document.GetAllocator();
-    rapidjosn::Value value;
+    rapidjson::Value value;
     value.SetObject();
-    value.AddMember("x", detectoinBox.x, allocator);
-    value.AddMemeber("y", detectionBox.y, allocator);
-    value.AddMember("width", detectionBos.width, allocator);
+    value.AddMember("x", detectionBox.x, allocator);
+    value.AddMember("y", detectionBox.y, allocator);
+    value.AddMember("width", detectionBox.width, allocator);
     value.AddMember("height", detectionBox.height, allocator);
     value.AddMember("id", classId, allocator);
 
@@ -85,7 +81,7 @@ std::vector<DarknetDetection> DarknetDetections::get() {
     return data;
 }
 
-DarknetDetections::DarknetDetection(const rapidjson::Value &jsonValue) {
+DarknetDetections::DarknetDetections(const rapidjson::Value &jsonValue) {
     data.clear();
     if (!jsonValue.IsArray()) {
         std::cerr << "node is not an array!" << std::endl;
@@ -98,19 +94,19 @@ DarknetDetections::DarknetDetection(const rapidjson::Value &jsonValue) {
     }
 }
 
-rapidjosn::Value DarknetDetections::getJsonValue(rapidjson::Document &document) const {
+rapidjson::Value DarknetDetections::getJsonValue(rapidjson::Document &document) const {
     auto &allocator = document.GetAllocator();
     rapidjson::Value arrayDetections;
 
     arrayDetections.SetArray();
     for (auto it = data.begin(), end = data.end(); it != end; it ++) {
-        rapidjosn::Value detectionValue = it->getJsonValue(document);
+        rapidjson::Value detectionValue = it->getJsonValue(document);
 	arrayDetections.PushBack(detectionValue, allocator);
     }
-    return arrayDEtections;
+    return arrayDetections;
 }
 
-std:string DarknetDetections::serialize() {
+std::string DarknetDetections::serialize() {
     if (data.size()) {
         rapidjson::Document document;
 	document.SetObject();
@@ -119,7 +115,7 @@ std:string DarknetDetections::serialize() {
 	rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
 	value.Accept(writer);
 	const char *jsonString = buffer.GetString();
-	return std::String(jsonString);
+	return std::string(jsonString);
     } else {
         return std::string("[]");
     }
