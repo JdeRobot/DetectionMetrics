@@ -47,3 +47,5 @@ resources:
         url: /resources/tutorial
       - title: "New Functionality"
         url: /resources/gsoc_19
+      - title: "Talks"
+        url: /resources/talks
