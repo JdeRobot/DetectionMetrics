@@ -197,7 +197,7 @@ int KerasInferencer::getKerasInferences(const cv::Mat& image, double confidence_
 	}
 
 	//pValue = PyObject_CallObject(pFunc, pArgs);
-	pValue = PyObject_CallMethodObjArgs(pInstance, PyString_FromString("detect"), mynparr, conf, NULL);
+	pValue = PyObject_CallMethodObjArgs(pInstance, PyLong_FromString("detect"), mynparr, conf, NULL);
 
 	Py_DECREF(pArgs);
     if (pValue != NULL) {
