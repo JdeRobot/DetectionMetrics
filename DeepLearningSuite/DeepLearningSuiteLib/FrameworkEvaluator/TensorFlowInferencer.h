@@ -1,7 +1,8 @@
+#include "pythonWrap.h"
 //#include <boost/shared_ptr.hpp>
 #include "FrameworkInferencer.h"
-#include <boost/python.hpp>
-#include <Python.h>
+//#include <boost/python.hpp>
+
 #include <numpy/arrayobject.h>
 #include <vector>
 
@@ -11,7 +12,7 @@ public:
     Sample detectImp(const cv::Mat& image, double confidence_threshold);
     int gettfInferences(const cv::Mat& image, double confidence_threshold);
     void output_result(int num_detections, int width, int height, PyObject* bounding_boxes, PyObject* detection_scores, PyObject* classIds, PyObject* detections_masks=NULL );
-    static void init();
+    static char* init();
     static void CallBackFunc(int event, int x, int y, int flags, void* userdata);
 private:
     std::string netConfig;

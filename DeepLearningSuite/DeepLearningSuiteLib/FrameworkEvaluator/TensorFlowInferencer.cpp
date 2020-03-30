@@ -2,7 +2,11 @@
 #include <DatasetConverters/ClassTypeGeneric.h>
 #include "TensorFlowInferencer.h"
 #include <glog/logging.h>
+#ifdef slots
+#undef slots
+#endif
 
+#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
 // Construcor function for the tensorflow Inferencer
 void TensorFlowInferencer::CallBackFunc(int event, int x, int y, int flags, void* userdata){
 	((TensorFlowInferencer *)(userdata))->mousy = true;
@@ -41,7 +45,7 @@ TensorFlowInferencer::TensorFlowInferencer(const std::string &netConfig, const s
 
 	LOG(INFO) << "InterPreter Initailized" << '\n';
 
-	pName = PyString_FromString("tensorflow_detect");
+	pName = PyUnicode_FromString("tensorflow_detect");
 
 
 	pModule = PyImport_Import(pName);
@@ -54,14 +58,13 @@ TensorFlowInferencer::TensorFlowInferencer(const std::string &netConfig, const s
 
 		pArgs = PyTuple_New(1);
 
-		pmodel = PyString_FromString(netWeights.c_str());
+		pmodel = PyUnicode_FromString(netWeights.c_str());
 
 
 		/* pValue reference stolen here: */
 		PyTuple_SetItem(pArgs, 0, pmodel);
 		/* pFunc is a new reference */
-		pInstance = PyInstance_New(pClass, pArgs, NULL);
-
+		pInstance = PyObject_CallObject(pClass, pArgs);
 		if (pInstance == NULL)
 		{
 			Py_DECREF(pArgs);
@@ -78,7 +81,7 @@ TensorFlowInferencer::TensorFlowInferencer(const std::string &netConfig, const s
 
 }
 
-void TensorFlowInferencer::init()
+char* TensorFlowInferencer::init()
 {
 	import_array();
 }
@@ -295,18 +298,18 @@ int TensorFlowInferencer::gettfInferences(const cv::Mat& image, double confidenc
 	}
 
 	//pValue = PyObject_CallObject(pFunc, pArgs);
-	pValue = PyObject_CallMethodObjArgs(pInstance, PyString_FromString("detect"), mynparr, conf, NULL);
+	pValue = PyObject_CallMethodObjArgs(pInstance, PyUnicode_FromString("detect"), mynparr, conf, NULL);
 
 	Py_DECREF(pArgs);
     if (pValue != NULL) {
-		num_detections = _PyInt_AsInt( PyDict_GetItem(pValue, PyString_FromString("num_detections") ) );
+		num_detections = _PyLong_AsInt( PyDict_GetItem(pValue, PyUnicode_FromString("num_detections") ) );
 		printf("Num Detections: %d\n",  num_detections );
-		PyObject* pBounding_boxes = PyDict_GetItem(pValue, PyString_FromString("detection_boxes") );
-		PyObject* pDetection_scores = PyDict_GetItem(pValue, PyString_FromString("detection_scores") );
-		PyObject* classIds = PyDict_GetItem(pValue, PyString_FromString("detection_classes") );
-        PyObject* key = PyString_FromString("detection_masks");
+		PyObject* pBounding_boxes = PyDict_GetItem(pValue, PyUnicode_FromString("detection_boxes") );
+		PyObject* pDetection_scores = PyDict_GetItem(pValue, PyUnicode_FromString("detection_scores") );
+		PyObject* classIds = PyDict_GetItem(pValue, PyUnicode_FromString("detection_classes") );
+        PyObject* key = PyUnicode_FromString("detection_masks");
         if (PyDict_Contains(pValue, key)) {
-            PyObject* pDetection_masks = PyDict_GetItem(pValue, PyString_FromString("detection_masks") );
+            PyObject* pDetection_masks = PyDict_GetItem(pValue, PyUnicode_FromString("detection_masks") );
             output_result(num_detections, image.cols, image.rows, pBounding_boxes, pDetection_scores, classIds, pDetection_masks);
         } else {
             output_result(num_detections, image.cols, image.rows, pBounding_boxes, pDetection_scores, classIds);

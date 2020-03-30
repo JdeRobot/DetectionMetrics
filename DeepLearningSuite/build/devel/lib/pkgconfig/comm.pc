@@ -1,8 +1,0 @@
-prefix=/home/hmrishav/DetectionSuite/DeepLearningSuite/build/devel
-
-Name: comm
-Description: Description of comm
-Version: 0.0.1
-Cflags: -I/home/hmrishav/DetectionSuite/DeepLearningSuite/libs/comm/include
-Libs: -L${prefix}/lib -lcomm
-Requires: roscpp std_msgs message_runtime
