@@ -12,7 +12,7 @@ public:
     Sample detectImp(const cv::Mat& image, double confidence_threshold);
     int gettfInferences(const cv::Mat& image, double confidence_threshold);
     void output_result(int num_detections, int width, int height, PyObject* bounding_boxes, PyObject* detection_scores, PyObject* classIds, PyObject* detections_masks=NULL );
-    static char* init();
+    static void init();
     static void CallBackFunc(int event, int x, int y, int flags, void* userdata);
 private:
     std::string netConfig;

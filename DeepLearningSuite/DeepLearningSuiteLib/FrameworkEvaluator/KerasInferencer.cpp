@@ -64,7 +64,7 @@ KerasInferencer::KerasInferencer(const std::string &netConfig, const std::string
 
 }
 
-char* KerasInferencer::init()
+void KerasInferencer::init()
 {
 	import_array();
 }

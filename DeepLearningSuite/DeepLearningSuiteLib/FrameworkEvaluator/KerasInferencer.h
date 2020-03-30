@@ -11,7 +11,7 @@ public:
     Sample detectImp(const cv::Mat& image, double confidence_threshold);
     int getKerasInferences(const cv::Mat& image, double confidence_threshold);
     void output_result(PyObject* result, int sizes[] );
-    static char* init();
+    static void init();
 private:
     std::string netConfig;
     std::string netWeights;

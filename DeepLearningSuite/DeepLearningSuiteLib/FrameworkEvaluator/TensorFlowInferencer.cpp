@@ -80,7 +80,7 @@ TensorFlowInferencer::TensorFlowInferencer(const std::string &netConfig, const s
 
 }
 
-char* TensorFlowInferencer::init()
+void TensorFlowInferencer::init()
 {
 	import_array();
 }
