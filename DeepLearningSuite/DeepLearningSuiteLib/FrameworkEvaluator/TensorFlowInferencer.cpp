@@ -2,9 +2,6 @@
 #include <DatasetConverters/ClassTypeGeneric.h>
 #include "TensorFlowInferencer.h"
 #include <glog/logging.h>
-#ifdef slots
-#undef slots
-#endif
 
 // Construcor function for the tensorflow Inferencer
 void TensorFlowInferencer::CallBackFunc(int event, int x, int y, int flags, void* userdata){
