@@ -42,7 +42,6 @@ OPTION(USE_GPU_DARKNET "Compile with GPU Support" OFF)						## Only Applicable f
 
 FIND_PACKAGE(Boost REQUIRED program_options filesystem)
 
-
 #darknet
 
 FIND_PATH( DARKNET_INCLUDE_DIR NAMES darknet.h  PATHS ${DARKNET_PATH}/include )
