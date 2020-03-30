@@ -1,7 +1,7 @@
 #include "pythonWrap.h"
 //#include <boost/shared_ptr.hpp>
 #include "FrameworkInferencer.h"
-//#include <boost/python.hpp>
+#include <boost/python.hpp>
 
 #include <numpy/arrayobject.h>
 #include <vector>
