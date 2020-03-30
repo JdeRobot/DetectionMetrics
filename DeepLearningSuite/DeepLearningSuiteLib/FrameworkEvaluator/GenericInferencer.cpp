@@ -4,7 +4,6 @@
 
 #include <glog/logging.h>
 #include "GenericInferencer.h"
-#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
 
 // Process the image using the selected inferener.
 GenericInferencer::GenericInferencer(const std::string &netConfig, const std::string &netWeights,const std::string& classNames,
