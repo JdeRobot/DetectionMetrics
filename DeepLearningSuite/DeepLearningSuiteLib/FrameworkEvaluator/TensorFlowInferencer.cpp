@@ -6,7 +6,6 @@
 #undef slots
 #endif
 
-#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION
 // Construcor function for the tensorflow Inferencer
 void TensorFlowInferencer::CallBackFunc(int event, int x, int y, int flags, void* userdata){
 	((TensorFlowInferencer *)(userdata))->mousy = true;
