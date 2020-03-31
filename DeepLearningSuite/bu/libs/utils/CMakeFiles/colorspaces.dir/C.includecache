@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hmrishav/DetectionSuite/DeepLearningSuite/libs/utils/colorspaces/colorspaces.h
+
+/home/hmrishav/DetectionSuite/DeepLearningSuite/libs/utils/colorspaces/rgb2hsv.c
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+pthread.h
+-
+colorspaces.h
+/home/hmrishav/DetectionSuite/DeepLearningSuite/libs/utils/colorspaces/colorspaces.h
+
+/home/hmrishav/DetectionSuite/DeepLearningSuite/libs/utils/colorspaces/rgb2yuv.c
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+pthread.h
+-
+colorspaces.h
+/home/hmrishav/DetectionSuite/DeepLearningSuite/libs/utils/colorspaces/colorspaces.h
+

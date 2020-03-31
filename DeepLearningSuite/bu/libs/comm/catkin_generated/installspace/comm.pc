@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: comm
+Description: Description of comm
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs message_runtime

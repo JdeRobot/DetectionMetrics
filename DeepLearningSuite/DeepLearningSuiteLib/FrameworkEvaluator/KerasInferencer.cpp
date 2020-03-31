@@ -63,10 +63,15 @@ KerasInferencer::KerasInferencer(const std::string &netConfig, const std::string
 	LOG(INFO) << "Loaded Keras Model" << '\n';
 
 }
-
-void KerasInferencer::init()
+#if PY_MAJOR_VERSION >= 3
+int*
+#else
+void
+#endif 
+KerasInferencer::init()
 {
-	import_array();
+	import_array();//seems to return NULL with python3 and nothing with python2 
+//ideally should not be placed inside a seperate function
 }
 
 Sample KerasInferencer::detectImp(const cv::Mat &image, double confidence_threshold) {

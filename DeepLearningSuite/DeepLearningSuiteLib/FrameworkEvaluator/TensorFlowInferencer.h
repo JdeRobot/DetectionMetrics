@@ -11,8 +11,15 @@ public:
     TensorFlowInferencer(const std::string& netConfig, const std::string& netWeights, const std::string& classNamesFile);
     Sample detectImp(const cv::Mat& image, double confidence_threshold);
     int gettfInferences(const cv::Mat& image, double confidence_threshold);
-    void output_result(int num_detections, int width, int height, PyObject* bounding_boxes, PyObject* detection_scores, PyObject* classIds, PyObject* detections_masks=NULL );
-    static void init();
+    void output_result(int num_detections, int width, int height, PyObject* bounding_boxes,
+PyObject* detection_scores, PyObject* classIds, PyObject* detections_masks=NULL );
+    static
+    #if PY_MAJOR_VERSION >= 3
+    int*
+    #else
+    void
+    #endif 
+    init();
     static void CallBackFunc(int event, int x, int y, int flags, void* userdata);
 private:
     std::string netConfig;

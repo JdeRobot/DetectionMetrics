@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -std=c++11 -Wno-deprecated -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libconfig.so -o libconfig.so CMakeFiles/config.dir/src/loader.cpp.o CMakeFiles/config.dir/src/properties.cpp.o /usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.5.2 -lglog 

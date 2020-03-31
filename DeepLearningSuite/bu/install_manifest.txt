@@ -1,0 +1,14 @@
+/usr/local/lib/pkgconfig/comm.pc
+/usr/local/share/comm/cmake/commConfig.cmake
+/usr/local/share/comm/cmake/commConfig-version.cmake
+/usr/local/share/comm/package.xml
+/usr/local/share/detection_suite/msg/object.msg
+/usr/local/share/detection_suite/msg/objects.msg
+/usr/local/share/detection_suite/cmake/detection_suite-msg-paths.cmake
+/usr/local/lib/python3/dist-packages/detection_suite/__pycache__/__init__.cpython-36.pyc
+/usr/local/lib/python3/dist-packages/detection_suite/__init__.py
+/usr/local/lib/pkgconfig/detection_suite.pc
+/usr/local/share/detection_suite/cmake/detection_suite-msg-extras.cmake
+/usr/local/share/detection_suite/cmake/detection_suiteConfig.cmake
+/usr/local/share/detection_suite/cmake/detection_suiteConfig-version.cmake
+/usr/local/share/detection_suite/package.xml
