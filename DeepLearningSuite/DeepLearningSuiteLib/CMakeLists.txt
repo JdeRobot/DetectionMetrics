@@ -1,14 +1,19 @@
 IF (DARKNET_ACTIVE)
     SET(EXTRA_LIBS ${EXTRA_LIBS}
          ${DARKNET_LIBRARIES}
-         ${CUDA_LIBRARIES}
-         ${CUDA_LIBRARIES}
-         ${CUDA_CUBLAS_LIBRARIES}
-         ${CUDA_curand_LIBRARY})
-    # include_directories(${DARKNET_INCLUDE_DIR})
+	 ${CUDA_LIBRARIES}
+	 ${CUDA_LIBRARIES}
+	 ${CUDA_CUBLAS_LIBRARIES}
+	 ${CUDA_curand_LIBRARY})
+	include_directories(${DARKNET_INCLUDE_DIR})
+	add_subdirectory(Wrappers)
+	message("DARKNET_INCLUDE_DIR HERE: ${DARKNET_INCLUDE_DIR}")
+	message("CUDA_LIBRARIES HERE: ${CUDA_LIBRARIES}")
+	message("CUDA CUBLAS LIBRARIES: ${CUDA_CUBLAS_LIBRARIES}")
+	message("CUDA_curand_LIBRARY: ${CUDA_curand_LIBRARY}")
+	
 ENDIF()
 
-add_subdirectory(Wrappers)
 add_subdirectory(Common)
 add_subdirectory(DatasetConverters)
 add_subdirectory(Detectors)
@@ -19,9 +24,10 @@ add_subdirectory(Utils)
 
 # IF (DARKNET_ACTIVE)
   add_library(DeepLearningSuite SHARED
-                # $<TARGET_OBJECTS:DeepLearningSuite_darknetLib>
-                # $<TARGET_OBJECTS:DeepLearningSuite_darknetAPILib>
-                $<TARGET_OBJECTS:DeepLearningSuite_Common>
+	  	#$<TARGET_OBJECTS:DeepLearningSuite_darknetLib>
+		#$<TARGET_OBJECTS:DeepLearningSuite_darknetAPILib>
+		$<TARGET_OBJECTS:DeepLearningSuite_Wrappers>
+		$<TARGET_OBJECTS:DeepLearningSuite_Common>
                 $<TARGET_OBJECTS:DeepLearningSuite_DatasetConverters>
                 $<TARGET_OBJECTS:DeepLearningSuite_Detectors>
                 $<TARGET_OBJECTS:DeepLearningSuite_FrameworkEvaluator>
@@ -44,11 +50,12 @@ add_subdirectory(Utils)
 
 TARGET_LINK_LIBRARIES(DeepLearningSuite
                     ${OpenCV_LIBRARIES}
-                    ${EXTRA_LIBS}
+		    ${EXTRA_LIBS}
                     ${depthLib_LIBRARIES}
                     ${JderobotInterfaces_LIBRARIES}
                     ${comm_LIBRARIES}
                     ${config_LIBRARIES}
                     ${PYTHON_LIBRARIES}
                     ${GLOG_LIBRARIES}
-                    )
+		 darknetLib
+		    )

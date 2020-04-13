@@ -93,7 +93,6 @@ void MassBatchInferencer::process(const int batchSize, bool useDepthImages, Data
 
         if (saveOutput)
             detection.save(this->resultsPath);
-
         if (this->debug) {
             cv::Mat image =sample.getSampledColorImage();
             Sample detectionWithImage;
@@ -110,7 +109,6 @@ void MassBatchInferencer::process(const int batchSize, bool useDepthImages, Data
             cv::imshow("Detection", detectionWithImage.getSampledColorImage());
             cv::waitKey(100);
         }
-
         detection.clearColorImage();
         detection.clearDepthImage();
 

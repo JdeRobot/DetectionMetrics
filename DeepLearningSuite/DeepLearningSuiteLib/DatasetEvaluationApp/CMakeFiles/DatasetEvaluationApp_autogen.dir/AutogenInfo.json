@@ -1,0 +1,211 @@
+{
+	"BUILD_DIR" : "/home/docker/Projects/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib/DatasetEvaluationApp/DatasetEvaluationApp_autogen",
+	"CMAKE_BINARY_DIR" : "/home/docker/Projects/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/docker/Projects/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib/DatasetEvaluationApp",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp",
+	"CMAKE_EXECUTABLE" : "/home/docker/.local/lib/python3.6/site-packages/cmake/data/bin/cmake",
+	"CMAKE_SOURCE_DIR" : "/home/docker/Projects/DetectionSuite/DeepLearningSuite",
+	"HEADERS" : 
+	[
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.h",
+			"MU",
+			"IIW3KEIOUS/moc_Converter.cpp"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.h",
+			"MU",
+			"IIW3KEIOUS/moc_Deployer.cpp"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.h",
+			"MU",
+			"IIW3KEIOUS/moc_Detector.cpp"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.h",
+			"MU",
+			"IIW3KEIOUS/moc_Evaluator.cpp"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.h",
+			"MU",
+			"IIW3KEIOUS/moc_SamplerGenerationHandler.cpp"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Viewer.h",
+			"MU",
+			"IIW3KEIOUS/moc_Viewer.cpp"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/gui/Appcfg.hpp",
+			"MU",
+			"DMHXEJ42XS/moc_Appcfg.cpp"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/gui/ListViewConfig.h",
+			"MU",
+			"DMHXEJ42XS/moc_ListViewConfig.cpp"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.h",
+			"MU",
+			"DMHXEJ42XS/moc_TabHandler.cpp"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/gui/Utils.h",
+			"MU",
+			"DMHXEJ42XS/moc_Utils.cpp"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/gui/appconfig.h",
+			"MU",
+			"DMHXEJ42XS/moc_appconfig.cpp"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/mainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_mainwindow.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/docker/Projects/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib/DatasetEvaluationApp/DatasetEvaluationApp_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/docker/Projects/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib/DatasetEvaluationApp/DatasetEvaluationApp_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"DARKNET_ACTIVE",
+		"ENABLE_DNN_CAFFE",
+		"JDERROS",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_OPENGL_LIB",
+		"QT_SVG_LIB",
+		"QT_WIDGETS_LIB",
+		"ROSCONSOLE_BACKEND_LOG4CXX",
+		"ROS_BUILD_SHARED_LIBS=1",
+		"ROS_PACKAGE_NAME=\"samplerGenerator\""
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib/DatasetEvaluationApp",
+		"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp",
+		"/home/docker/Projects/DetectionSuite/DeepLearningSuite/libs/config/include",
+		"/home/docker/Projects/DetectionSuite/DeepLearningSuite/libs/comm/include",
+		"/home/docker/Projects/DetectionSuite/DeepLearningSuite/libs/utils",
+		"/home/docker/Projects/DetectionSuite/DeepLearningSuite/libs/utils/colorspaces",
+		"/opt/ros/melodic/include",
+		"/opt/ros/melodic/include/xmlrpcpp",
+		"/usr/include/opencv",
+		"/usr/include/python2.7",
+		"/usr/local/lib/python2.7/dist-packages/numpy/core/include",
+		"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib/libs/interfaces/cpp/jderobot",
+		"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib/libs/interfaces/cpp",
+		"/home/docker/Projects/DetectionSuite/DeepLearningSuite/libs/types/include",
+		"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib",
+		"/usr/local/include/opencv",
+		"/usr/include/x86_64-linux-gnu/qt5",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
+		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
+		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt5/QtSvg",
+		"/usr/include/x86_64-linux-gnu/qt5/QtOpenGL",
+		"/usr/local/include",
+		"/usr/include",
+		"/usr/include/c++/7",
+		"/usr/include/x86_64-linux-gnu/c++/7",
+		"/usr/include/c++/7/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/7/include",
+		"/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed",
+		"/usr/include/x86_64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : true,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/home/docker/.local/lib/python3.6/site-packages/cmake/data/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/docker/Projects/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib/DatasetEvaluationApp/DatasetEvaluationApp_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "/home/docker/Projects/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib/DatasetEvaluationApp/CMakeFiles/DatasetEvaluationApp_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"SETTINGS_FILE" : "/home/docker/Projects/DetectionSuite/DeepLearningSuite/DeepLearningSuiteLib/DatasetEvaluationApp/CMakeFiles/DatasetEvaluationApp_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Converter.cpp",
+			"MU"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Deployer.cpp",
+			"MU"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Detector.cpp",
+			"MU"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Evaluator.cpp",
+			"MU"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/SamplerGenerationHandler.cpp",
+			"MU"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/SamplerGeneratorHandler/Viewer.cpp",
+			"MU"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/gui/Appcfg.cpp",
+			"MU"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/gui/ListViewConfig.cpp",
+			"MU"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/gui/TabHandler.cpp",
+			"MU"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/gui/Utils.cpp",
+			"MU"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/gui/appconfig.cpp",
+			"MU"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/main.cpp",
+			"MU"
+		],
+		[
+			"/home/docker/Projects/DetectionSuite/DeepLearningSuite/DatasetEvaluationApp/mainwindow.cpp",
+			"MU"
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

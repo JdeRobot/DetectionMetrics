@@ -1,0 +1,51 @@
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+#if(UNIX)
+#    set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS}; -Xcompiler -fPIC; -O3; -ccbin ${CMAKE_CXX_COMPILER})
+#else()
+#    set(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS}; -ccbin "\"${CMAKE_CXX_COMPILER}\"")
+#endif()
+
+FIND_PATH( DARKNET_INCLUDE_DIR NAMES darknet.h  PATHS ${DARKNET_PATH}/include )
+
+message("DARKNET_INCLUDE_DIR HERE: ${DARKNET_INCLUDE_DIR}")
+message("DARKNET_INCLUDE_DIR HERE: ${DARKNET_PATH}/include")
+link_directories(${DARKNET_INCLUDE_DIR})
+
+SET(Wrappers_SOURCE_FILES
+  DarknetAPI
+  
+  DarknetAPIConversions.h
+  DarknetDetection
+  yolo
+)
+
+#if(USE_GPU)
+#cuda_add_library (darknetAPILib ${Wrappers_SOURCES} ${gpu_SRCS} SHARED)
+  #else()
+  #add_library (darknetAPILib SHARED ${Wrappers_SOURCES})
+  #endif(USE_GPU)
+
+
+ADD_LIBRARY(DeepLearningSuite_Wrappers  OBJECT ${Wrappers_SOURCE_FILES})
+
+
+TARGET_INCLUDE_DIRECTORIES ( DeepLearningSuite_Wrappers PUBLIC
+  ${OpenCV_INCLUDE_DIRS}
+  #find_package(OpenCV 3.4.0 REQUIRED)
+  ${Boost_INCLUDE_DIR}
+  ${config_INCLUDE_DIRS}
+  ${depthLib_INCLUDE_DIRS}
+  ${GLOG_INCLUDE_DIRS}
+  ${utils_INCLUDE_DIRS}
+  ${CMAKE_CURRENT_LIST_DIR}
+  ${DeepLearningSuite_INCLUDE_DIR}
+  ${DARKNET_INCLUDE_DIR}
+  ${DARKNET_PATH}/src
+  
+  
+  # ${DARKNET_PATH}/include
+  # ${DARKNET_PATH}/src
+)

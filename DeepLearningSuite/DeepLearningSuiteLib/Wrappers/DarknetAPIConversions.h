@@ -2,7 +2,7 @@
 #define DARKNET_DARKNETAPICONVERSIONS_H
 
 
-#include <image.h>
+//#include <image.h>
 #include <opencv2/core/core.hpp>
 #include "DarknetAPI.h"
 

@@ -33,7 +33,8 @@ set (SOURCES main.cpp
 
 
 include_directories(
-        ${OpenCV_INCLUDE_DIRS}
+	    find_package(OpenCV 3.4.0 REQUIRED)
+        //${OpenCV_INCLUDE_DIRS}
         ${config_INCLUDE_DIRS}
         ${comm_INCLUDE_DIRS}
         ${utils_INCLUDE_DIRS}

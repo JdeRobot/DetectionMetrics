@@ -1,6 +1,6 @@
 OPTION(ENABLE_ROS "Enable ROS compatibility modules" ON)
 
-SET (CMAKE_PREFIX_PATH "/opt/ros/kinetic;/opt/ros/lunar;/opt/ros/jade;/opt/ros/melodic;")
+SET (CMAKE_PREFIX_PATH "/opt/ros/kinetic;/opt/ros/lunar;/opt/ros/jade")
 
 if (ENABLE_ROS)
 	find_package(roscpp QUIET)
@@ -13,7 +13,7 @@ if (ENABLE_ROS)
 	    find_package(catkin REQUIRED COMPONENTS
 	      roscpp
 	      std_msgs
-	      cv_bridge
+	      #cv_bridge
 	      image_transport
 	    )
 

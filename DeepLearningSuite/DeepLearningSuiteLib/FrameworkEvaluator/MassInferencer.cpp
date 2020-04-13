@@ -146,7 +146,6 @@ void MassInferencer::process(bool useDepthImages, DatasetReaderPtr readerDetecti
 
         if (saveOutput)
             detection.save(this->resultsPath);
-
         if (this->debug) {
             cv::Mat image =sample.getSampledColorImage();
             Sample detectionWithImage;
@@ -172,7 +171,6 @@ void MassInferencer::process(bool useDepthImages, DatasetReaderPtr readerDetecti
 
             }
         }
-
         detection.clearColorImage();
         detection.clearDepthImage();
 

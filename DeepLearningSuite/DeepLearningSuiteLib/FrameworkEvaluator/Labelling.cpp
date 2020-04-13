@@ -190,7 +190,6 @@ void Labelling::Shower(Sample *sample, Sample *detection,cv::Mat *image2detect, 
           detectionWithImage.setColorImage(sample->getDepthColorMapImage());
       else
           detectionWithImage.setColorImage(sample->getColorImage());
-
       if (useDepthImages){
           cv::imshow("GT on Depth", sample->getSampledDepthColorMapImage());
           cv::imshow("Input", *image2detect);
@@ -204,6 +203,7 @@ void Labelling::Shower(Sample *sample, Sample *detection,cv::Mat *image2detect, 
         cv::waitKey(100);
       }
   }
+  
 }
 
 void Labelling::finder(Sample *sample , Sample *detection, cv::Mat *image2detect ,bool &useDepthImages, int *counter , int *nsamples){

@@ -74,7 +74,7 @@ void Playback::process(){
 
 void Playback::show(){
   // If not paused , output the frame
-  if(!this->pause){
+if(!this->pause){
     usleep(int(this->rate()*10000));
     cv::imshow("Detection",this->inferences[this->frameId]);
     cv::imshow("GT on RGB",this->groundTruth[this->frameId]);
@@ -82,7 +82,7 @@ void Playback::show(){
     this->frameId++;
     cv::setTrackbarPos("Frames","Detection",this->frameId);
     cv::setTrackbarPos("Frames","GT on RGB",this->frameId);
-  }
+    }
   // Else wait
   else
     Playback::WaitTillResume();

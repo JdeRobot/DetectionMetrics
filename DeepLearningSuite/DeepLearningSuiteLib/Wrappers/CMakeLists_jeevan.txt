@@ -1,0 +1,31 @@
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+FIND_PATH( DARKNET_INCLUDE_DIR NAMES darknet.h  PATHS ${DARKNET_PATH}/include )
+
+SET(Wrappers_SOURCE_FILES
+  DarknetAPI
+  DarknetAPIConversions.h
+  DarknetDetection
+  yolo
+)
+
+ADD_LIBRARY(DeepLearningSuite_Wrappers  OBJECT ${Wrappers_SOURCE_FILES})
+
+
+TARGET_INCLUDE_DIRECTORIES ( DeepLearningSuite_Wrappers PUBLIC
+  ${OpenCV_INCLUDE_DIRS}
+  ${Boost_INCLUDE_DIR}
+  ${config_INCLUDE_DIRS}
+  ${depthLib_INCLUDE_DIRS}
+  ${GLOG_INCLUDE_DIRS}
+  ${utils_INCLUDE_DIRS}
+  ${CMAKE_CURRENT_LIST_DIR}
+  ${DeepLearningSuite_INCLUDE_DIR}
+  ${DARKNET_INCLUDE_DIR}
+  ${DARKNET_PATH}/src
+  # ${DARKNET_PATH}/include
+  # ${DARKNET_PATH}/src
+)
+

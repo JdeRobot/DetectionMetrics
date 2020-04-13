@@ -6,7 +6,6 @@
 #include <fstream>
 #include <sstream>
 
-
 DarknetDetection::DarknetDetection(const box &detectionBox, const int classId, double probability) {
     this->detectionBox.x=detectionBox.x;
     this->detectionBox.y=detectionBox.y;

@@ -115,7 +115,8 @@ public:
 
             if (inferencerImplementationKey.as<std::string>()=="yolo") {
 #ifdef DARKNET_ACTIVE
-                inferencer = DarknetInferencerPtr( new DarknetInferencer(inferencerConfigKey.as<std::string>(), inferencerWeightsKey.as<std::string>(), inferencerNamesKey.as<std::string>()));
+LOG(WARNING) << "Darknet inferencer is not available";
+    		    //inferencer = DarknetInferencerPtr( new DarknetInferencer(inferencerConfigKey.as<std::string>(), inferencerWeightsKey.as<std::string>(), inferencerNamesKey.as<std::string>()));
 #else
                 LOG(WARNING) << "Darknet inferencer is not available";
 #endif

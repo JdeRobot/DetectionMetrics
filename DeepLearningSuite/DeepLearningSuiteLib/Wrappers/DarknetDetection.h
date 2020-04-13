@@ -1,7 +1,8 @@
 #ifndef DARKNET_DARKNETDETECTION_H
 #define DARKNET_DARKNETDETECTION_H
 
-#include <box.h>
+//#include <box.h>
+#include <darknet.h>
 #include <vector>
 #include <string>
 #include <rapidjson/document.h>

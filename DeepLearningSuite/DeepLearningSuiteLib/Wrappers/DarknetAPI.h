@@ -5,12 +5,17 @@
 #include "detection_layer.h"
 #include "utils.h"
 #include "yolo.h"
-#include <DarknetAPI/DarknetDetection.h>
+#include "DarknetDetection.h"
+#include "network.h"
 
+/*#include "/home/docker/darknet/include/darknet.h"*/
+#include "darknet.h"
+
+//#include "</usr/local/include/darknet.h>"
 #include <vector>
 #include <iostream>
 
-extern "C" void c_test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filename, float thresh, float hier_thresh);
+extern "C" void c_test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filename, float thresh, float hier_thresh, char *outfile, int fullscreen);
 extern "C" network c_parse_network_cfg(char *filename);
 extern "C" void c_load_weights(network *net, char *filename);
 extern "C" void c_set_batch_network(network *net, int b);
