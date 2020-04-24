@@ -24,8 +24,12 @@ using namespace dnn;
 
 DarknetInferencer::DarknetInferencer(const std::string &netConfig, const std::string &netWeights,const std::string& classNamesFile): netConfig(netConfig),netWeights(netWeights) {
     	this->classNamesFile=classNamesFile;
-    
-    
+ 	this->netConfig=netConfig;
+	this->netWeights=netWeights;	
+    	/*Net net = readNetFromDarknet(this->netConfig, this->netWeights);
+        net.setPreferableBackend(DNN_BACKEND_OPENCV);
+        net.setPreferableTarget(DNN_TARGET_CPU);
+	this->net=net;*/
     
     	//this->cnn = boost::shared_ptr<DarknetAPI>(new DarknetAPI((char*)this->netConfig.c_str(), (char*)this->netWeights.c_str()));
 }
@@ -41,31 +45,17 @@ Sample DarknetInferencer::detectImp(const cv::Mat &image, double confThreshold) 
         while (getline(ifs, line)) classes.push_back(line);
 
         //Give the configuration and weight files for the model
-        string modelConfiguration = "/home/docker/Projects/DetectionSuite/datasets/cfg/yolov3.cfg";
-        string modelWeights = "/home/docker/Projects/DetectionSuite/datasets/weights/yolov3.weights";
 	int inpWidth = 416; // Width of network's input image
         int inpHeight = 416; // Height of networkd's input image
 
         // Load the network
-        Net net = readNetFromDarknet(modelConfiguration, modelWeights);	
+	Net net = readNetFromDarknet(this->netConfig, this->netWeights);
 	net.setPreferableBackend(DNN_BACKEND_OPENCV);
         net.setPreferableTarget(DNN_TARGET_CPU);
-        //net.setPreferableBackend(DNN_BACKEND_CUDA);
-        //net.setPreferableTarget(DNN_TARGET_OPENCL);
+        // net.setPreferableTarget(DNN_TARGET_OPENCL);
         vector<String> outNames = net.getUnconnectedOutLayersNames();	
-	/*	
-	Mat rgbImageIn;
-	cv::Mat rgbImage;
-    	cv::cvtColor(image,rgbImageIn,cv::COLOR_RGB2BGR);
-    	resize(rgbImageIn, rgbImage, Size(inpWidth, inpHeight), 1, 1);
-   	*/
-	string filename = "/home/docker/Projects/DetectionSuite/datasets/coco/oneval2014/COCO_val2014_000000397133.jpg";
-        //string filename = "/home/docker/darknet/data/dog.jpg";
-
-        //Mat frame = imread(filename, 0);
-        Mat frameIn = imread(filename);
         Mat rgbImage;
-        resize(frameIn, rgbImage, Size(inpWidth, inpHeight), 1, 1);
+        resize(image, rgbImage, Size(inpWidth, inpHeight), 1, 1);
 
     	Mat blob;
     	blobFromImage(rgbImage, blob, 1.0, cvSize(rgbImage.cols, rgbImage.rows), Scalar(), true, false, CV_8U);
