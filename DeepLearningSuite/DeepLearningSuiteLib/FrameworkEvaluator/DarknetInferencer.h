@@ -17,6 +17,7 @@ public:
 private:
     std::string netConfig;
     std::string netWeights;
+    std::vector<std::string> classes;
     //boost::shared_ptr<DarknetAPI> cnn;
 };
 

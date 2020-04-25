@@ -25,28 +25,34 @@ using namespace dnn;
 DarknetInferencer::DarknetInferencer(const std::string &netConfig, const std::string &netWeights,const std::string& classNamesFile): netConfig(netConfig),netWeights(netWeights) {
     	this->classNamesFile=classNamesFile;
  	this->netConfig=netConfig;
-	this->netWeights=netWeights;	
+	this->netWeights=netWeights;
+
+	std::vector<string> classes = {};
+        string classesFile = "/home/docker/darknet/data/coco.names";
+        // ifstream ifs(this->classNamesFile.c_str());
+        ifstream ifs(classesFile.c_str());
+	string line;
+        while (getline(ifs, line)) classes.push_back(line);
+	this->classes=classes;
     	/*Net net = readNetFromDarknet(this->netConfig, this->netWeights);
         net.setPreferableBackend(DNN_BACKEND_OPENCV);
         net.setPreferableTarget(DNN_TARGET_CPU);
-	this->net=net;*/
-    
-    	//this->cnn = boost::shared_ptr<DarknetAPI>(new DarknetAPI((char*)this->netConfig.c_str(), (char*)this->netWeights.c_str()));
+	this->net=net;*/ 
 }
 
 Sample DarknetInferencer::detectImp(const cv::Mat &image, double confThreshold) {
-       //printf("OpenCV: %s", cv::getBuildInformation().c_str());
- 
-	float nmsThreshold = 0.4; // Non-maximum suppression threshold
-	std::vector<string> classes = {};
-	string classesFile = "/home/docker/darknet/data/coco.names";
-        ifstream ifs(classesFile.c_str());
-        string line;
-        while (getline(ifs, line)) classes.push_back(line);
+        //printf("OpenCV: %s", cv::getBuildInformation().c_str());
+	
+	cout << "Cols -> " << image.cols << endl;
+	cout << "Rows -> " << image.rows << endl;
 
-        //Give the configuration and weight files for the model
-	int inpWidth = 416; // Width of network's input image
-        int inpHeight = 416; // Height of networkd's input image
+	float nmsThreshold = 0.4; // Non-maximum suppression threshold
+
+
+	//int inpWidth = 416; // Width of network's input image
+        int inpWidth = 640;
+	int inpHeight = 416; // Height of networkd's input image
+	//int inpHeight = 640;
 
         // Load the network
 	Net net = readNetFromDarknet(this->netConfig, this->netWeights);
@@ -59,8 +65,10 @@ Sample DarknetInferencer::detectImp(const cv::Mat &image, double confThreshold) 
 
     	Mat blob;
     	blobFromImage(rgbImage, blob, 1.0, cvSize(rgbImage.cols, rgbImage.rows), Scalar(), true, false, CV_8U);
-    	net.setInput(blob, "", 0.00392, Scalar());
-    	// END preprocess
+    	//blobFromImage(image, blob, 1.0, cvSize(image.cols, image.rows), Scalar(), true, false, CV_8U);
+	net.setInput(blob, "", 0.00392, Scalar());
+    	
+	// END preprocess
     	vector<Mat> outs;
     	net.forward(outs, outNames);
     	// postprocess
@@ -88,6 +96,10 @@ Sample DarknetInferencer::detectImp(const cv::Mat &image, double confThreshold) 
                     		int centerY = (int)(data[1] * rgbImage.rows);
                     		int width = (int)(data[2] * rgbImage.cols);
                     		int height = (int)(data[3] * rgbImage.rows);
+				/*int centerX = (int)(data[0] * image.cols);
+                                int centerY = (int)(data[1] * image.rows);
+                                int width = (int)(data[2] * image.cols);
+                                int height = (int)(data[3] * image.rows);*/
                     		int left = centerX - width / 2;
                     		int top = centerY - height / 2;
 
@@ -104,33 +116,16 @@ Sample DarknetInferencer::detectImp(const cv::Mat &image, double confThreshold) 
 
 	Sample sample;
     	RectRegionsPtr regions(new RectRegions());
-    	ClassTypeGeneric typeConverter(classNamesFile);
 	for (size_t i = 0; i < indices.size(); i++) {
                 int idx = indices[i];
                 Rect box = boxes[idx];
-                //rectangle(frame, Point(box.x, box.y), Point(box.x + box.width, box.y + box.height), Scalar(0, 255, 0));
-                string label = format("%.2f", confidences[idx]);
-                typeConverter.setId(idx);
-		regions->add(box, typeConverter.getClassString(), confidences[idx]);
-		LOG(INFO)<< typeConverter.getClassString() << ": " << confidences[idx] << std::endl;
-		LOG(INFO) << box <<endl;		
+                string label = this->classes[classIds[idx]];
+		regions->add(box, label, confidences[idx]);
+		LOG(INFO) << "Label -> " << label << " Confidence -> " << confidences[idx] << endl;
         }
 
-
+	//sample.setColorImage(rgbImage);
+	//sample.setSampleDims(inpWidth, inpHeight);
+	sample.setRectRegions(regions);
 	return sample;
-    	//DarknetDetections detections = this->cnn->process(rgbImage, (float)confidence_threshold);
-	/*
-    	Sample sample;
-    	RectRegionsPtr regions(new RectRegions());
-    	ClassTypeGeneric typeConverter(classNamesFile);
-
-    	for (auto it = detections.data.begin(), end=detections.data.end(); it !=end; ++it){
-        	typeConverter.setId(it->classId);
-        	regions->add(it->detectionBox,typeConverter.getClassString(), it->probability);
-        	LOG(INFO)<< typeConverter.getClassString() << ": " << it->probability << std::endl;
-    	}
-    	sample.setColorImage(image);
-    	sample.setRectRegions(regions);
-    	return sample;
-	*/
 }
