@@ -43,16 +43,13 @@ DarknetInferencer::DarknetInferencer(const std::string &netConfig, const std::st
 Sample DarknetInferencer::detectImp(const cv::Mat &image, double confThreshold) {
         //printf("OpenCV: %s", cv::getBuildInformation().c_str());
 	
-	cout << "Cols -> " << image.cols << endl;
-	cout << "Rows -> " << image.rows << endl;
+	cout << "Width -> " << image.cols << endl;
+	cout << "Height -> " << image.rows << endl;
 
 	float nmsThreshold = 0.4; // Non-maximum suppression threshold
 
-
-	//int inpWidth = 416; // Width of network's input image
-        int inpWidth = 640;
-	int inpHeight = 416; // Height of networkd's input image
-	//int inpHeight = 640;
+	int inpWidth = (image.cols/32) * 32; // Width of network's input image
+	int inpHeight = (image.rows/32) * 32;;
 
         // Load the network
 	Net net = readNetFromDarknet(this->netConfig, this->netWeights);
@@ -64,7 +61,7 @@ Sample DarknetInferencer::detectImp(const cv::Mat &image, double confThreshold) 
         resize(image, rgbImage, Size(inpWidth, inpHeight), 1, 1);
 
     	Mat blob;
-    	blobFromImage(rgbImage, blob, 1.0, cvSize(rgbImage.cols, rgbImage.rows), Scalar(), true, false, CV_8U);
+    	blobFromImage(rgbImage, blob, 1.0, cvSize(inpWidth, inpHeight), Scalar(), true, false, CV_8U);
     	//blobFromImage(image, blob, 1.0, cvSize(image.cols, image.rows), Scalar(), true, false, CV_8U);
 	net.setInput(blob, "", 0.00392, Scalar());
     	
@@ -92,16 +89,18 @@ Sample DarknetInferencer::detectImp(const cv::Mat &image, double confThreshold) 
                 	minMaxLoc(scores, 0, &confidence, 0, &classIdPoint);
                 	if (confidence > confThreshold)
                 	{
-                    		int centerX = (int)(data[0] * rgbImage.cols);
+                    		// The boxes should be resized to the original size
+				//
+				/*int centerX = (int)(data[0] * rgbImage.cols);
                     		int centerY = (int)(data[1] * rgbImage.rows);
                     		int width = (int)(data[2] * rgbImage.cols);
-                    		int height = (int)(data[3] * rgbImage.rows);
-				/*int centerX = (int)(data[0] * image.cols);
+                    		int height = (int)(data[3] * rgbImage.rows);*/
+				int centerX = (int)(data[0] * image.cols);
                                 int centerY = (int)(data[1] * image.rows);
                                 int width = (int)(data[2] * image.cols);
-                                int height = (int)(data[3] * image.rows);*/
-                    		int left = centerX - width / 2;
-                    		int top = centerY - height / 2;
+                                int height = (int)(data[3] * image.rows);
+				int left = centerX - width / 2;
+				int top = centerY - height / 2;
 
                     		classIds.push_back(classIdPoint.x);
                     		confidences.push_back((float)confidence);
