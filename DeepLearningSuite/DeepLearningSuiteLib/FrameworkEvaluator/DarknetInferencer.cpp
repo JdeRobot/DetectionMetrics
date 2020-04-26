@@ -34,34 +34,24 @@ DarknetInferencer::DarknetInferencer(const std::string &netConfig, const std::st
 	string line;
         while (getline(ifs, line)) classes.push_back(line);
 	this->classes=classes;
-    	Net net = readNetFromDarknet(this->netConfig, this->netWeights);
+
+    	// Load the network
+	Net net = readNetFromDarknet(this->netConfig, this->netWeights);
         net.setPreferableBackend(DNN_BACKEND_OPENCV);
         net.setPreferableTarget(DNN_TARGET_CPU);
 	//net.setPreferableTarget(DNN_TARGET_OPENCL);
 	this->net=net;
-
 	this->outNames=net.getUnconnectedOutLayersNames();
-	//vector<String> outNames = net.getUnconnectedOutLayersNames();
-		
+	this->nmsThreshold = 0.4;
 }
 
 Sample DarknetInferencer::detectImp(const cv::Mat &image, double confThreshold) {
-        //printf("OpenCV: %s", cv::getBuildInformation().c_str());
-	
 	cout << "Width -> " << image.cols << endl;
 	cout << "Height -> " << image.rows << endl;
-
-	float nmsThreshold = 0.4; // Non-maximum suppression threshold
 
 	int inpWidth = (image.cols/32) * 32; // Width of network's input image
 	int inpHeight = (image.rows/32) * 32;;
 
-        // Load the network
-	//Net net = readNetFromDarknet(this->netConfig, this->netWeights);
-	//net.setPreferableBackend(DNN_BACKEND_OPENCV);
-        //net.setPreferableTarget(DNN_TARGET_CPU);
-        // net.setPreferableTarget(DNN_TARGET_OPENCL);
-        //vector<String> outNames = net.getUnconnectedOutLayersNames();	
         Mat rgbImage;
         resize(image, rgbImage, Size(inpWidth, inpHeight), 1, 1);
 
@@ -75,14 +65,10 @@ Sample DarknetInferencer::detectImp(const cv::Mat &image, double confThreshold) 
     	net.forward(outs, outNames);
     	// postprocess
 
-        //static vector<int> outLayers = net.getUnconnectedOutLayers();
-        //static string outLayerType = net.getLayer(outLayers[0])->type;
         vector<int> classIds;
         vector<float> confidences;
 	vector<Rect> boxes;
     
-    	//cout << outLayerType << endl;
-
         for (size_t i = 0; i < outs.size(); i++)
         {
                 float* data = (float*)outs[i].data;
@@ -94,12 +80,6 @@ Sample DarknetInferencer::detectImp(const cv::Mat &image, double confThreshold) 
                 	minMaxLoc(scores, 0, &confidence, 0, &classIdPoint);
                 	if (confidence > confThreshold)
                 	{
-                    		// The boxes should be resized to the original size
-				//
-				/*int centerX = (int)(data[0] * rgbImage.cols);
-                    		int centerY = (int)(data[1] * rgbImage.rows);
-                    		int width = (int)(data[2] * rgbImage.cols);
-                    		int height = (int)(data[3] * rgbImage.rows);*/
 				int centerX = (int)(data[0] * image.cols);
                                 int centerY = (int)(data[1] * image.rows);
                                 int width = (int)(data[2] * image.cols);
@@ -128,8 +108,6 @@ Sample DarknetInferencer::detectImp(const cv::Mat &image, double confThreshold) 
 		LOG(INFO) << "Label -> " << label << " Confidence -> " << confidences[idx] << endl;
         }
 
-	//sample.setColorImage(rgbImage);
-	//sample.setSampleDims(inpWidth, inpHeight);
 	sample.setRectRegions(regions);
 	return sample;
 }

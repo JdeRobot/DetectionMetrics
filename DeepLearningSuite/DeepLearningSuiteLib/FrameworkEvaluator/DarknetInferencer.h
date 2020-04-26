@@ -18,15 +18,16 @@ using namespace dnn;
 
 class DarknetInferencer: public FrameworkInferencer {
 public:
-    DarknetInferencer(const std::string& netConfig, const std::string& netWeights, const std::string& classNamesFile);
-    Sample detectImp(const cv::Mat& image, double confidence_threshold);
+    DarknetInferencer(const string& netConfig, const string& netWeights, const string& classNamesFile);
+    Sample detectImp(const Mat& image, double confidence_threshold);
 
 private:
-    std::string netConfig;
-    std::string netWeights;
-    std::vector<std::string> classes;
+    string netConfig;
+    string netWeights;
+    vector<string> classes;
     Net net;
     vector<String> outNames;
+    float nmsThreshold;
 };
 
 
