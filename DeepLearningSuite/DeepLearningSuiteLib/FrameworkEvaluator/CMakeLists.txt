@@ -21,7 +21,7 @@ ADD_LIBRARY(DeepLearningSuite_FrameworkEvaluator OBJECT ${FrameworkEvaluator_SOU
 
 message("OPENCV DIRS:")
 message(${OpenCV_INCLUDE_DIRS})
-set(OpenCV_INCLUDE_DIRS /usr/local/include/opencv2)
+set(OpenCV_INCLUDE_DIRS /usr/local/include/opencv4)
 message("OPENCV DIRS:")
 message(${OpenCV_INCLUDE_DIRS})
 

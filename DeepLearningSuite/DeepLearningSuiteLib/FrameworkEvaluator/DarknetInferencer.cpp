@@ -35,31 +35,42 @@ DarknetInferencer::DarknetInferencer(const std::string &netConfig, const std::st
 
     	// Load the network
 	Net net = readNetFromDarknet(this->netConfig, this->netWeights);
-        net.setPreferableBackend(DNN_BACKEND_OPENCV);
-        net.setPreferableTarget(DNN_TARGET_CPU);
-	//net.setPreferableTarget(DNN_TARGET_OPENCL);
+        
+	// CPU
+	//net.setPreferableBackend(DNN_BACKEND_OPENCV);
+        //net.setPreferableTarget(DNN_TARGET_CPU); 
+	
+	// GPU
+	net.setPreferableBackend(DNN_BACKEND_CUDA);
+	net.setPreferableTarget(DNN_TARGET_CUDA);
+
 	this->net=net;
 	this->outNames=net.getUnconnectedOutLayersNames();
 	this->nmsThreshold = 0.4;
 }
 
 Sample DarknetInferencer::detectImp(const cv::Mat &image, double confThreshold) {
-	int inpWidth = (image.cols/32) * 32; // Width of network's input image
-	int inpHeight = (image.rows/32) * 32;;
+	//printf("OpenCV: %s", cv::getBuildInformation().c_str());
+	//int inpWidth = (image.cols/32) * 32; 
+	//int inpHeight = (image.rows/32) * 32;
+
+	int inpWidth = 416;
+	int inpHeight = 416;
 
         Mat rgbImage;
         resize(image, rgbImage, Size(inpWidth, inpHeight), 1, 1);
 
     	Mat blob;
-    	blobFromImage(rgbImage, blob, 1.0, cvSize(inpWidth, inpHeight), Scalar(), true, false, CV_8U);
-    	//blobFromImage(image, blob, 1.0, cvSize(image.cols, image.rows), Scalar(), true, false, CV_8U);
+    	blobFromImage(rgbImage, blob, 1.0, Size(inpWidth, inpHeight), Scalar(), true, false, CV_8U);
 	net.setInput(blob, "", 0.00392, Scalar());
-    	
+    	cout << "WIDTH: " << inpWidth << endl;
+	cout << "HEIGHT: " << inpHeight << endl;
 	// END preprocess
     	vector<Mat> outs;
 	cout << "Starting inference" << endl;
 	auto start = std::chrono::system_clock::now();
     	net.forward(outs, outNames);
+	cout << "END INFERENCE" <<endl;
 	auto end = std::chrono::system_clock::now();
 	chrono::duration<double> elapsed_seconds = end-start;
         cout << "Inference Time: " << elapsed_seconds.count() << " seconds" << endl;
