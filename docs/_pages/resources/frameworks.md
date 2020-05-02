@@ -66,17 +66,7 @@ Some sample pre-trained models are available at our [model zoo](../model_zoo), o
 
 ## Caffe
 
-For using Caffe, you will require OpenCV 3.4 or greater with it's dnn module built. Following are the steps to install OpenCV 3.4 from source, though we will be shipping compiled binary packages of the same in the future, so as to speed up installation.
-
-* ### Installation
-    ```
-    git clone https://github.com/opencv/opencv.git
-    git checkout 3.4
-    cmake -D WITH_QT=ON -D WITH_GTK=OFF ..
-    make -j4
-    sudo make install
-    ```
-    
-Then, just build again, and just look out for a warning stating ```OpenCV 3.4 not Found, Caffe Support will be disabled```. If that warning persists than OpenCV 3.4 or higher hasn't been installed correctly, any you may want to look into that, else you are Good to Go.
+For using Caffe, you will require OpenCV with it's dnn module built.
+Steps for installing OpenCV 4.2 are available in [installation](../../installation)
 
 To Use Caffe you would require some pre-trained models on Caffe, some are available at our own [model zoo](../model_zoo). But wait, you will also need to add custom parameters for Caffe, and our model zoo contains those parameters for each of the inferencer, just directly use that. 
