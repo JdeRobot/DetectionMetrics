@@ -62,8 +62,9 @@ endif(OpenCV_FOUND)
  add_subdirectory(SampleGenerationApp)
  add_subdirectory(Tools)
 
+if(roscpp_FOUND)
  add_subdirectory(detection_suite)
-
+endif()
  file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/ClassMappingHierarchy.xml
      DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
  file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/ClassMappingHierarchy.xml
