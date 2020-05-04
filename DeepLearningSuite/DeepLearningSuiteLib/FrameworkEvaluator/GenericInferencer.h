@@ -12,14 +12,14 @@
 #include <FrameworkEvaluator/TensorFlowInferencer.h>
 #include <FrameworkEvaluator/KerasInferencer.h>
 #include <FrameworkEvaluator/DarknetInferencer.h>
-
+#include <FrameworkEvaluator/PyTorchInferencer.h>
 // If Caffe is present include it's header files as well.
 #ifdef ENABLE_DNN_CAFFE
 #include <FrameworkEvaluator/CaffeInferencer.h>
 #endif
 
 // Inferencer can be implemented using any one of the following frameworks.
-enum INFERENCER_IMPLEMENTATIONS{INF_YOLO, INF_TENSORFLOW, INF_KERAS, INF_CAFFE};
+enum INFERENCER_IMPLEMENTATIONS{INF_YOLO, INF_TENSORFLOW, INF_KERAS, INF_CAFFE, INF_PYTORCH};
 
 
 class GenericInferencer {
@@ -36,6 +36,7 @@ private:
     DarknetInferencerPtr darknetInferencerPtr;
     TensorFlowInferencerPtr tensorFlowInferencerPtr;
     KerasInferencerPtr kerasInferencerPtr;
+    PyTorchInferencerPtr pyTorchInferencerPtr;
 
 #ifdef ENABLE_DNN_CAFFE
     CaffeInferencerPtr caffeInferencerPtr;

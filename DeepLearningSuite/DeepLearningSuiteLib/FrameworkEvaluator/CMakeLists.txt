@@ -10,6 +10,7 @@ SET(FrameworkEvaluator_SOURCE_FILES
   KerasInferencer
   Labelling
   DarknetInferencer
+  PyTorchInferencer
 )
 
 IF(ENABLE_DNN_CAFFE)
