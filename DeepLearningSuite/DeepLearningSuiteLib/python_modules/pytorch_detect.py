@@ -1,16 +1,25 @@
+import sys
+print("Python version")
+print (sys.version)
+print("Version info.")
+print (sys.version_info)
 import torch
 from torchvision import transforms
+import torchvision.models as models
 from torch.autograd import Variable
+from PIL import Image
 
 class PyTorchDetector:
     def __init__(self, patch_to_ckpt):
         model = models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        #device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        device = "cpu"
         #checkpoint = torch.load(checkpoint)
         model = model.to(device)
         model.eval()
 
     def run_inference_for_single_image(self, image):
+        print('RUN INFERENCE')
         detections = model(image)
         output_dict = {}
         output_dict['num_detections'] = len(detections[0]['labels'])
@@ -40,6 +49,8 @@ class PyTorchDetector:
         return output_dict
 
     def detect(self, img, threshold):
+        print('DETECT')
+        img_size=416
         img_path = '/home/docker/Projects/DetectionSuite/datasets/coco/oneval2014/COCO_val2014_000000397133.jpg'
         img = Image.open(img_path)
         Tensor = torch.cuda.FloatTensor
@@ -52,13 +63,16 @@ class PyTorchDetector:
 
         image_tensor = img_transforms(img).float()
         image_tensor = image_tensor.unsqueeze_(0)
-        input_img = Variable(image_tensor.type(Tensor))
+        #input_img = Variable(image_tensor.type(Tensor))
         print('Starting inference')
         start_time = time.time()
-        output_dict = self.run_inference_for_single_image(input_img)
+        #output_dict = self.run_inference_for_single_image(input_img)
+        output_dict = self.run_inference_for_single_image(input_tensor)
         print("Inference Time: " + str(time.time() - start_time) + " seconds")
 
-        pred_t = [output_dict['detection_scores'.index(x) for x in output_dict['detection_scores' if x > threshold][-1] # Get list of index with score greater than threshold.
+        #pred_t = [pred_score.index(x) for x in pred_score if x > threshold][-1]
+        #pred_t = [output_dict['detection_scores'].index(x) for x in output_dict['detection_scores'] if x > threshold][-1]
+        #pred_t = [output_dict['detection_scores'.index(x) for x in output_dict['detection_scores' if x > threshold][-1] # Get list of index with score greater than threshold.
         pred_boxes = pred_boxes[:pred_t+1]
         pred_class = pred_class[:pred_t+1]
         new_dict = {}
@@ -66,7 +80,10 @@ class PyTorchDetector:
         new_dict['detection_boxes'] = pred_boxes
         new_dict['detection_classes'] = pred_class
         new_dict['num_detections'] = len(new_dict['detection_scores'])
-
+        print(new_dict['detection_scores'])
+        print(new_dict['detection_boxes'])
+        print(new_dict['detection_classes'])
+        print(len(new_dict['detection_scores']))
         '''
         new_dict['detection_scores'] = output_dict['detection_scores'][output_dict['detection_scores']>=threshold]
         new_dict['detection_boxes'] = output_dict['detection_boxes'][0:len(new_dict['detection_scores']), :]

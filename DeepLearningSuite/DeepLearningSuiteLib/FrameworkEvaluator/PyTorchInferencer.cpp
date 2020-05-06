@@ -16,6 +16,7 @@ void PyTorchInferencer::CallBackFunc(int event, int x, int y, int flags, void* u
 PyTorchInferencer::PyTorchInferencer( const std::string &netConfig, const std::string &netWeights,const std::string& classNamesFile): netConfig(netConfig),netWeights(netWeights) {
 	LOG(INFO) << "PyTorch Constructor" << '\n';
 	this->classNamesFile=classNamesFile;
+	this->mousy = false;
 	/*
 	 * Code below adds path of python models to sys.path so as to enable python
 	 * interpreter to import custom python modules from the path mentioned. This will
@@ -35,7 +36,7 @@ PyTorchInferencer::PyTorchInferencer( const std::string &netConfig, const std::s
 	PyRun_SimpleString(string_to_run.c_str());
 	init();
 	LOG(INFO) << "Interpreter Initialized" << '\n';
-	pName = PyString_FromString("pytorch_detect");
+	pName = PyUnicode_FromString("pytorch_detect");
 	pModule = PyImport_Import(pName);
 	Py_DECREF(pName);
 
@@ -43,9 +44,9 @@ PyTorchInferencer::PyTorchInferencer( const std::string &netConfig, const std::s
 	if (pModule != NULL) {
 		pClass = PyObject_GetAttrString(pModule, "PyTorchDetector");
 		pArgs = PyTuple_New(1);
-		pmodel = PyString_FromString(netWeights.c_str());
+		pmodel = PyUnicode_FromString(netWeights.c_str());
 		PyTuple_SetItem(pArgs, 0, pmodel);
-		pInstance = PyInstance_New(pClass, pArgs, NULL);
+		pInstance = PyObject_CallObject(pClass, pArgs);
 		if (pInstance == NULL) {
 			Py_DECREF(pArgs);
 			PyErr_Print();
@@ -60,11 +61,11 @@ PyTorchInferencer::PyTorchInferencer( const std::string &netConfig, const std::s
 	if (pModule != NULL) {
 		pClass = PyObject_GetAttrString(pModule, "PyTorchDetector");
 		pArgs = PyTuple_New(1);
-		pmodel = PyString_FromString(netWeights.c_str());
+		pmodel = PyUnicode_FromString(netWeights.c_str());
 
 	
 		PyTuple_SetItem(pArgs, 0, pmodel);
-		pInstance = PyInstance_New(pClass, pArgs, NULL);
+		pInstance = PyObject_CallObject(pClass, pArgs);
 
 		if (pInstance == NULL)
 		{
@@ -81,24 +82,31 @@ PyTorchInferencer::PyTorchInferencer( const std::string &netConfig, const std::s
 
 }
 
-void PyTorchInferencer::init() {
+#if PY_MAJOR_VERSION >= 3
+int*
+#else
+void
+#endif
+PyTorchInferencer::init() {
 	import_array();
 }
 
 Sample PyTorchInferencer::detectImp(const cv::Mat &image, double confidence_threshold) {
+	LOG(ERROR) << "DETECT IMP" << "\n";
 	if(PyErr_CheckSignals() == -1) {
 		throw std::runtime_error("Keyboard Interrupt");
 	}
 	cv::Mat rgbImage;
 	cv::cvtColor(image,rgbImage,cv::COLOR_BGR2RGB);
 	if(!this->mousy){
+		LOG(ERROR) << "DETECT IMP 2" << "\n";
 		this->detections.clear();
 		int result = gettfInferences(rgbImage, confidence_threshold);
 		if (result == 0) {
 			LOG(ERROR) << "Error Occured during getting inferences" << '\n';
 		}
 	}
-
+	LOG(ERROR) << this->mousy << "\n";
 	Sample sample;
 	RectRegionsPtr regions(new RectRegions());
   	RleRegionsPtr rleRegions(new RleRegions());
@@ -123,6 +131,7 @@ Sample PyTorchInferencer::detectImp(const cv::Mat &image, double confidence_thre
 }
 
 void PyTorchInferencer::output_result(int num_detections, int width, int height, PyObject* bounding_boxes, PyObject* detection_scores, PyObject* classIds, PyObject* pDetection_masks ) {
+	LOG(ERROR) << "OUTPUT RESULT" << "\n";
 	this->hasMasks = false;
     	int mask_dims;
     	long long int* mask_shape;
@@ -210,17 +219,18 @@ int PyTorchInferencer::gettfInferences(const cv::Mat& image, double confidence_t
 		fprintf(stderr, "Cannot convert argument\n");
 		return 0;
 	}
-	pValue = PyObject_CallMethodObjArgs(pInstance, PyString_FromString("detect"), mynparr, conf, NULL);
+	LOG(ERROR) << "DETECT" << "\n";
+	pValue = PyObject_CallMethodObjArgs(pInstance, PyUnicode_FromString("detect"), mynparr, conf, NULL);
 	Py_DECREF(pArgs);
 	if (pValue != NULL) {
-		num_detections = _PyInt_AsInt( PyDict_GetItem(pValue, PyString_FromString("num_detections") ) );
+		num_detections = _PyLong_AsInt( PyDict_GetItem(pValue, PyUnicode_FromString("num_detections") ) );
 		printf("Num Detections: %d\n",  num_detections );
-		PyObject* pBounding_boxes = PyDict_GetItem(pValue, PyString_FromString("detection_boxes") );
-		PyObject* pDetection_scores = PyDict_GetItem(pValue, PyString_FromString("detection_scores") );
-		PyObject* classIds = PyDict_GetItem(pValue, PyString_FromString("detection_classes") );
-		PyObject* key = PyString_FromString("detection_masks");
+		PyObject* pBounding_boxes = PyDict_GetItem(pValue, PyUnicode_FromString("detection_boxes") );
+		PyObject* pDetection_scores = PyDict_GetItem(pValue, PyUnicode_FromString("detection_scores") );
+		PyObject* classIds = PyDict_GetItem(pValue, PyUnicode_FromString("detection_classes") );
+		PyObject* key = PyUnicode_FromString("detection_masks");
 		if (PyDict_Contains(pValue, key)) {
-			PyObject* pDetection_masks = PyDict_GetItem(pValue, PyString_FromString("detection_masks") );
+			PyObject* pDetection_masks = PyDict_GetItem(pValue, PyUnicode_FromString("detection_masks") );
             		output_result(num_detections, image.cols, image.rows, pBounding_boxes, pDetection_scores, classIds, pDetection_masks);
         	} else {
             		output_result(num_detections, image.cols, image.rows, pBounding_boxes, pDetection_scores, classIds);
