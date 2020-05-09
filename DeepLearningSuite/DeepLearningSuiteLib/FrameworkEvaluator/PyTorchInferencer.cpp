@@ -57,37 +57,14 @@ PyTorchInferencer::PyTorchInferencer( const std::string &netConfig, const std::s
 		fprintf(stderr, "Cannot find function \"pytorch_detect\"\n");
 	}
 	LOG(INFO) << "Detection Graph Loaded" << '\n';
-
-	if (pModule != NULL) {
-		pClass = PyObject_GetAttrString(pModule, "PyTorchDetector");
-		pArgs = PyTuple_New(1);
-		pmodel = PyUnicode_FromString(netWeights.c_str());
-
-	
-		PyTuple_SetItem(pArgs, 0, pmodel);
-		pInstance = PyObject_CallObject(pClass, pArgs);
-
-		if (pInstance == NULL)
-		{
-			Py_DECREF(pArgs);
-			PyErr_Print();
-		}
-	} else {
-		if (PyErr_Occurred())
-		PyErr_Print();
-		fprintf(stderr, "Cannot find function \"pytorch_detect\"\n");
-	}
-
-	LOG(INFO) << "Detection Graph Loaded" << '\n';
-
 }
 
-/*#if PY_MAJOR_VERSION >= 3
+#if PY_MAJOR_VERSION >= 3
 int*
 #else
 void
-#endif*/
-void PyTorchInferencer::init() {
+#endif
+PyTorchInferencer::init() {
 	import_array();
 }
 
@@ -106,7 +83,6 @@ Sample PyTorchInferencer::detectImp(const cv::Mat &image, double confidence_thre
 			LOG(ERROR) << "Error Occured during getting inferences" << '\n';
 		}
 	}
-	LOG(ERROR) << this->mousy << "\n";
 	Sample sample;
 	RectRegionsPtr regions(new RectRegions());
   	RleRegionsPtr rleRegions(new RleRegions());
@@ -130,18 +106,10 @@ Sample PyTorchInferencer::detectImp(const cv::Mat &image, double confidence_thre
 }
 
 void PyTorchInferencer::output_result(int num_detections, int width, int height, PyObject* bounding_boxes, PyObject* detection_scores, PyObject* classIds, PyObject* pDetection_masks ) {
-	LOG(ERROR) << "OUTPUT RESULT" << "\n";
 	this->hasMasks = false;
     	int mask_dims;
     	long long int* mask_shape;
-	LOG(ERROR) << "NUM DETECTIONS " << num_detections << "\n";	
-	LOG(ERROR) << "WIDTH " << width << "\n";
-	LOG(ERROR) << "HEIGHT" << height << "\n";
-	LOG(ERROR) << "BOUNDING BOXES" << bounding_boxes << "\n";
-	LOG(ERROR) << "CLASS IDS" << classIds << "\n";
-	LOG(ERROR) << "LLEGA AQUI" << "\n";
 	if( PyArray_Check(bounding_boxes) && PyArray_Check(detection_scores) && PyArray_Check(classIds) ) {
-		LOG(ERROR) << "ENTRA!11!!1!!!" << "\n";
 		PyArrayObject* detection_masks_cont = NULL;
 
         	if (pDetection_masks != NULL && PyArray_Check(pDetection_masks)) {
@@ -170,11 +138,10 @@ void PyTorchInferencer::output_result(int num_detections, int width, int height,
 			detections.push_back(detection());
 			detections[i].classId = classIds_data[classes++] - 1;
 			detections[i].probability = detection_scores_data[scores++];
-			detections[i].boundingBox.y = bounding_box_data[boxes++] * height;
 			detections[i].boundingBox.x = bounding_box_data[boxes++] * width;
-			detections[i].boundingBox.height = bounding_box_data[boxes++] * height - detections[i].boundingBox.y;
+			detections[i].boundingBox.y = bounding_box_data[boxes++] * height;
 			detections[i].boundingBox.width = bounding_box_data[boxes++] * width - detections[i].boundingBox.x;
-			LOG(ERROR) << "CLASS ID: " << detections[i].classId << " PROB: " << detections[i].probability << "\n";
+			detections[i].boundingBox.height = bounding_box_data[boxes++] * height - detections[i].boundingBox.y;
 			if (this->hasMasks) {
 				cv::Mat image_mask(height, width, CV_8UC1, cv::Scalar(0));
 				cv::Mat mask = cv::Mat(mask_shape[1], mask_shape[2], CV_32F, detection_masks_data + i*mask_shape[1]*mask_shape[2]);
@@ -193,11 +160,6 @@ void PyTorchInferencer::output_result(int num_detections, int width, int height,
 		Py_XDECREF(bounding_boxes);
 		Py_XDECREF(detection_scores);
 		Py_XDECREF(classIds);
-	} else {
-		LOG(ERROR) << "ERROR" << "\n";
-		LOG(ERROR) << "BOUNDING BOXES -> " << PyArray_Check(bounding_boxes) << "\n";
-		LOG(ERROR) << "DETECTION SCORES -> " << PyArray_Check(detection_scores) << "\n";
-		LOG(ERROR) << "CLASS IDS -> " << PyArray_Check(classIds) << "\n";
 	}
 }
 
@@ -230,7 +192,6 @@ int PyTorchInferencer::gettfInferences(const cv::Mat& image, double confidence_t
 		fprintf(stderr, "Cannot convert argument\n");
 		return 0;
 	}
-	LOG(ERROR) << "DETECT" << "\n";
 	pValue = PyObject_CallMethodObjArgs(pInstance, PyUnicode_FromString("detect"), mynparr, conf, NULL);
 	Py_DECREF(pArgs);
 	if (pValue != NULL) {
@@ -240,7 +201,6 @@ int PyTorchInferencer::gettfInferences(const cv::Mat& image, double confidence_t
 		PyObject* pDetection_scores = PyDict_GetItem(pValue, PyUnicode_FromString("detection_scores") );
 		PyObject* classIds = PyDict_GetItem(pValue, PyUnicode_FromString("detection_classes") );
 		PyObject* key = PyUnicode_FromString("detection_masks");
-		LOG(ERROR) << "CLASS IDS " << classIds << "\n";
 		if (PyDict_Contains(pValue, key)) {
 			PyObject* pDetection_masks = PyDict_GetItem(pValue, PyUnicode_FromString("detection_masks") );
             		output_result(num_detections, image.cols, image.rows, pBounding_boxes, pDetection_scores, classIds, pDetection_masks);
