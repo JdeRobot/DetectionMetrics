@@ -6,15 +6,34 @@ from PIL import Image
 import numpy as np
 import time
 
+#import torch.utils.model_zoo as model_zoo
+#
+#    We should ask for the .py where the model class is stored and the class name.
+#    Additionally, ask for the .pth to load the state dict. 
+#    With this info, load the model that will be tested.
+#
+
+import os, sys
+CURRENT_DIR = '/home/docker/pytorch_example/'
+sys.path.append(os.path.dirname(CURRENT_DIR))
+from  pytorch_model import resnet18
+model_urls = {
+  'resnet18': 'https://s3.amazonaws.com/pytorch/models/resnet18-5c106cde.pth',
+}
+
+
 class PyTorchDetector:
     def __init__(self, patch_to_ckpt):
-        self.model = models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
+        #self.model = models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
+        
+        self.model = resnet18()
+        self.model.load_state_dict(torch.load('/home/docker/resnet18-5c106cde.pth'))
+        #self.model.load_state_dict(model_zoo.load_url(model_urls['resnet18']))
+        
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        #device = "cpu"
-        #checkpoint = torch.load(checkpoint)
         self.model = self.model.to(device)
         self.model.eval()
-
+    
     def run_inference_for_single_image(self, image):
         self.model.eval()
         detections = self.model([image])
