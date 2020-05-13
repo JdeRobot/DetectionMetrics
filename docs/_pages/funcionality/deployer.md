@@ -54,14 +54,14 @@ to let DetectionStudio know more about the Inferencer.
     
    * ### 2.1. Net weights:
         Select the Network's Weights file. It would be *.pb* (frozen inference graph) for TensorFlow, 
-        *.h5* for Keras, *.caffemodel* for Caffe and *.weights* for Darknet.
+        *.h5* for Keras, *.caffemodel* for Caffe, *.weights* for Darknet and .pth for PyTorch.
    * ### 2.2. Net configuration file:
-        Configuration files aren't necessary for TensorFlow and Keras (any empty file would suffice), but for Darknet would need ```.cfg``` and for Caffe a ```.prototxt``` file.
+        Configuration files aren't necessary for TensorFlow and Keras (any empty file would suffice), but for Darknet would need ```.cfg```, for Caffe a ```.prototxt``` file and for PyTorch a ```.yml```.
    * ### 2.3. Inferencer names (or network class names):
         These are the class names on which the deep learning network was trained on. So, a file containing a list of class names in the correct order.
         See [datasets](../class_names/) for some class names file.
    * ### 2.4. Inferencer implementation (framework being used):
-        Currently support Darknet, TensorFlow, Keras and Caffe.  
+        Currently support Darknet, TensorFlow, PyTorch, Keras and Caffe.  
 
 **Note:** For Caffe, you might need to add some additional parameters specific to your model. Some samples are available at our [model zoo](../../resources/model_zoo/).
    

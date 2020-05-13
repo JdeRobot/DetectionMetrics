@@ -38,6 +38,11 @@ To install Keras:
     pip install keras
 ```
 
+To install Pytorch:
+```
+    pip install torch
+```
+
 # Compile and Install from source
 To use the latest version of DetectionStudio you need to compile and install it from source.
 To get started you can either read along or follow [these video tutorials](https://www.youtube.com/watch?v=HYuFFTnEn5s&list=PLgB5c9xg9C91DJ30WFlHfHAhMECeho-gU).
@@ -99,7 +104,7 @@ Below is a list of more optional dependencies you may require depending on your 
 DetectionStudio can currently read ROS and ICE Camera Streams. So, to enable Streaming support, install any one of them.
 
 * ### Inferencing Frameworks
-DetectionStudio currently supports many Inferencing Frameworks namely Darknet, TensorFlow, Keras and Caffe.
+DetectionStudio currently supports many Inferencing Frameworks namely Darknet, TensorFlow, Keras, PyTorch and Caffe.
 Each one of them has some dependencies, and are mentioned below.
 
     Choose your favourite one and go ahead.
@@ -115,7 +120,7 @@ Each one of them has some dependencies, and are mentioned below.
     Similarly, the only dependency for using Keras as an inferencing framework is Keras.
     
     * #### Caffe
-    For using Caffe as an inferencing framework, it is necessary to install OpenCV.
+    To use Caffe as an inferencing framework, it is necessary to install OpenCV.
 
 
 **Note:** Be Sure to checkout [functionality](../functionality/command_line_application) for tutorials on how to use the above mentioned functionalities and frameworks.  

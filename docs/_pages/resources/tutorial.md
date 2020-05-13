@@ -92,7 +92,7 @@ Configuring Parameters:
 
 * **Net Config:** Select Config file for the corresponding inferencer.
 
-* **Inferencer Implementation:** Can be Tensorflow, Keras, Caffe or Darknet.
+* **Inferencer Implementation:** Can be Tensorflow, Keras, Caffe, PyTorch or Darknet.
 
 * **Inferencer Names:** Dataset classNames using which the inferencer was trained.
 
