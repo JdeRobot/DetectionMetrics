@@ -31,6 +31,9 @@ GenericInferencer::GenericInferencer(const std::string &netConfig, const std::st
                 this->caffeInferencerPtr = CaffeInferencerPtr (new CaffeInferencer(netConfig, netWeights, classNames, inferencerParamsMap));
                 break;
 #endif
+	   case INF_PYTORCH:
+		this->pyTorchInferencerPtr = PyTorchInferencerPtr (new PyTorchInferencer(netConfig, netWeights, classNames));
+		break;	
           // If it does not belong to any of the 4 supported inferencers, log warning and break.
             default:
                 LOG(WARNING)<<implementation + " is not a valid inferencer implementation";
@@ -52,7 +55,7 @@ void GenericInferencer::configureAvailablesImplementations(std::vector<std::stri
     // If they don't exist an error should have popped up while building the tool.
     data.push_back("tensorflow");
     data.push_back("keras");
-
+    data.push_back("pytorch");
 // If Caffe exists push "caffe"
 #ifdef ENABLE_DNN_CAFFE
     data.push_back("caffe");
@@ -80,6 +83,10 @@ INFERENCER_IMPLEMENTATIONS GenericInferencer::getImplementation(const std::strin
     if (inferencerImplementation.compare("caffe")==0){
         return INF_CAFFE;
     }
+    // Check is the selected inferencer is PyTorch, if it matches exactly return INF_PYTORCH.
+    if (inferencerImplementation.compare("pytorch")==0){
+        return INF_PYTORCH;
+    }
 }
 
 /*
@@ -98,7 +105,8 @@ FrameworkInferencerPtr GenericInferencer::getInferencer() {
         case INF_CAFFE:
             return this->caffeInferencerPtr;
 #endif
-
+	case INF_PYTORCH:
+	    return this->pyTorchInferencerPtr;
         default:
             LOG(WARNING)<<imp + " is not a valid reader implementation";
             break;

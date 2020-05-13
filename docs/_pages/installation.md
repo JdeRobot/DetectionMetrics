@@ -38,6 +38,12 @@ To install Keras:
     pip install keras
 ```
 
+To install Pytorch:
+```
+    pip install torch
+```
+
+
 ## Using Docker  
 First you need to have docker installed in your computer. If no, assuming you are in Ubuntu, install it using the following command:
 
@@ -124,7 +130,7 @@ Below is a list of more optional dependencies you may require depending on your 
 DetectionSuite can currently read ROS and ICE Camera Streams. So, to enable Streaming support, install any one of them.
 
 * ### Inferencing Frameworks
-DetectionSuite currently supports many Inferencing Frameworks namely Darknet, TensorFlow, Keras and Caffe.
+DetectionSuite currently supports the following inferencing frameworks: darknet, TensorFlow, Keras, PyTorch and Caffe.
 Each one of them has some dependencies, and are mentioned below.
 
     Choose your favourite one and go ahead.
@@ -139,8 +145,11 @@ Each one of them has some dependencies, and are mentioned below.
     * #### Keras
     Similarly, the only dependency for using Keras as an inferencing framework is Keras.
     
+    * #### PyTorch
+    Install PyTorch.
+    
     * #### Caffe
-    For using Caffe as an inferencing framework, it is necessary to install OpenCV.
+    To use Caffe as an inferencing framework, it is necessary to install OpenCV.
 
 
 **Note:** Be Sure to checkout [functionality](../functionality/command_line_application) for tutorials on how to use the above mentioned functionalities and frameworks.  

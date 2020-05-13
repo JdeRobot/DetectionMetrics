@@ -30,6 +30,7 @@ The idea is to offer a generic infrastructure to evaluates object detection algo
 * TensorFlow
 * Keras
 * Caffe
+* PyTorch
 * Background substraction
 
 ##### Supported Inputs for Deploying Networks
