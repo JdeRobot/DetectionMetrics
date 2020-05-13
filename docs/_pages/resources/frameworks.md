@@ -8,7 +8,7 @@ sidebar:
   nav: "resources"
 ---
 
-DetectionSuite gives support for a set of different deep learning frameworks: Darknet, Tensorflow, Keras and Caffe.
+DetectionSuite gives support for a set of different deep learning frameworks: Darknet, Tensorflow, PyTorch, Keras and Caffe.
 Here, information on how to use each one of them with DetectionSuite is provided.
 
 ## Darknet
@@ -70,3 +70,15 @@ For using Caffe, you will require OpenCV with it's dnn module built.
 Steps for installing OpenCV 4.2 are available in [installation](../../installation)
 
 To Use Caffe you would require some pre-trained models on Caffe, some are available at our own [model zoo](../model_zoo). But wait, you will also need to add custom parameters for Caffe, and our model zoo contains those parameters for each of the inferencer, just directly use that. 
+
+## PyTorch
+
+Install Pytorch using `pip install torch`. 
+A `.yml` file is needed as configuration. The structure of the configuration file should contain the following:
+
+```
+modelPath: /path/to/model
+modelName: model_name **CLASS NAME**
+modelParameters: 100,True **PARAMETER THE CLASS NEEDS, IN ORDEN AND SEPARATED WITH COMMAS**
+importName: model_import **IMPORT NAME FOR THE MODEL import model**
+```
