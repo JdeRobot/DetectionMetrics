@@ -1,44 +1,73 @@
 import torch
 from torchvision import transforms
 from torch.autograd import Variable
-from PIL import Image
+#from PIL import Image
 import numpy as np
 import time
 import yaml
 import importlib
+import sys
+import os
 
 class PyTorchDetector:
     def __init__(self, patch_to_ckpt, configuration_file):
         with open(configuration_file, 'r') as stream:
             data_loaded = yaml.safe_load(stream)
-            print('Model path: ' + data_loaded['modelPath'])
-            print('Model name: ' + data_loaded['modelName'])
-            print('Import name: ' + data_loaded['importName'])
             model_path = data_loaded['modelPath']
             model_name = data_loaded['modelName']
             import_name = data_loaded['importName']
+            model_parameters = data_loaded['modelParameters']
         try:
             sys.path.append(os.path.dirname(model_path))
         except:
             print('Model path undefined')
+        sys.path.append(os.path.dirname(model_path))
         models = importlib.import_module(import_name)
-        self.model = getattr(models, model_name)(pretrained=True)
-
-        # self.model = models.detection.fasterrcnn_resnet50_fpn(pretrained=True)
-        # self.model.load_state_dict(torch.load(patch_to_ckpt), strict=False)
-        # self.model.load_state_dict(torch.load('/home/docker/resnet50-19c8e357.pth'), strict=False)
-        self.model.load_state_dict(torch.load(patch_to_ckpt), strict=False)
+        # Model parameters are converted to actual Python variables
+        variables = model_parameters.split(',')
+        for i, var in enumerate(variables):
+            name = 'variable'+str(i)
+            try:
+                value = int(var)
+            except Exception as e:
+                try:
+                    value = bool(var)
+                except Exception:
+                    value = var
+            setattr(self, name, value)
+        # The number of parameters modifies the way the function gets called
+        self.model = eval(self.get_model_function(len(variables)))
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.model = self.model.to(device)
         self.model.eval()
-    
+        
+    def get_model_function(self, x):
+        return {
+            1: 'getattr(models, model_name)(self.variable0)',
+            2: 'getattr(models, model_name)(self.variable0, self.variable1)',
+            3: 'getattr(models, model_name)(self.variable0, self.variable1, self.variable2)',
+            4: 'getattr(models, model_name)(self.variable0, self.variable1, self.variable2, self.variable3)',
+            5: 'getattr(models, model_name)(self.variable0, self.variable1, self.variable2, self.variable3, self.variable4)',
+            6: 'getattr(models, model_name)(self.variable0, self.variable1, self.variable2, self.variable3, self.variable4, self.variable5)',
+            7: 'getattr(models, model_name)(self.variable0, self.variable1, self.variable2, self.variable3, self.variable4, self.variable5, self.variable6)',
+            8: 'getattr(models, model_name)(self.variable0, self.variable1, self.variable2, self.variable3, self.variable4, self.variable5, self.variable6, self.variable7)',
+        }[x]
+
+
     def run_inference_for_single_image(self, image):
         self.model.eval()
         print('Starting inference')
-        start_time = time.time()
-        detections = self.model([image])
-        print("Inference Time: " + str(time.time() - start_time) + " seconds")
-        
+        try:
+            # Try with image tensor as list
+            start_time = time.time()
+            detections = self.model([image])
+            print("Inference Time: " + str(time.time() - start_time) + " seconds")
+        except TypeError:
+            # Try with image tensor alone
+            start_time = time.time()
+            image = image.unsqueeze(1)
+            detections = self.model(image)
+            print("Inference Time: " + str(time.time() - start_time) + " seconds")
         output_dict = {}
         output_dict['num_detections'] = len(detections[0]['labels'])
         output_dict['detection_classes'] = detections[0]['labels'].cpu().numpy()
@@ -46,18 +75,12 @@ class PyTorchDetector:
         output_dict['detection_scores'] = detections[0]['scores'].detach().cpu().numpy()
         return output_dict
 
-    def detect(self, img, threshold):
-        img_size=416
+    def detect(self, img, threshold): 
         Tensor = torch.cuda.FloatTensor
-
-        ratio = min(img_size/img.shape[0], img_size/img.shape[1])
-        imw = round(img.shape[0] * ratio)
-        imh = round(img.shape[1] * ratio)
         img_transforms=transforms.Compose([transforms.ToTensor(),])
         image_tensor = img_transforms(img)
         input_img = Variable(image_tensor.type(Tensor))
-        output_dict = self.run_inference_for_single_image(input_img)
-        
+        output_dict = self.run_inference_for_single_image(input_img)        
         
         new_dict = {}
         new_dict['detection_scores'] = output_dict['detection_scores'][output_dict['detection_scores']>=threshold]
