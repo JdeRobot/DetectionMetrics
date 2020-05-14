@@ -6,17 +6,17 @@ permalink: /installation/
 ---
 
 <br>
-# Install DetectionSuite application
+# Install Detection Studio application
  
-The application can be directly downloaded from the [repository releases](https://github.com/JdeRobot/DetectionSuite/releases/tag/continuous).
+The application can be directly downloaded from the [repository releases](https://github.com/JdeRobot/DetectionStudio/releases/tag/continuous).
 
 To run the app, first give executable permissions running:  
 ```
-    chmod a+x DetectionSuitexxxxx.AppImage
+    chmod a+x DetectionStudioxxxxx.AppImage
 ```
 and run it using:  
 ```
-    ./DetectionSuitexxxxx -c configFile
+    ./DetectionStudioxxxxx -c configFile
 ```
 
 
@@ -43,34 +43,8 @@ To install Pytorch:
     pip install torch
 ```
 
-
-## Using Docker  
-First you need to have docker installed in your computer. If no, assuming you are in Ubuntu, install it using the following command:
-
-```
-    sudo apt install docker.io
-```
-
-Now you need to start the docker deamon using
-```
-    sudo service docker start
-```
-
-After starting the deamon , get DetectionSuite docker file using
-```
-    sudo docker pull jderobot/dl-detectionsuite
-```
-
-Now run the docker image using
-```
-    sudo docker run -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix jderobot/dl-detectionsuite
-```
-where the ```-it``` flag instructs Docker to allocate a pseudo-TTY connected to the container’s stdin; creating an interactive ```bash``` shell in the container ,```-e``` tag is used to set the environment variable, in this case ```DISPLAY```, this is required because you will be using GUI for interaction through out rest of the tutorials.
-
-Voila!! You can now use DetectionSuite. Proceed to [beginner's tutorial](../resources/tutorial/) to get started.
-
 # Compile and Install from source
-To use the latest version of DetectionSuite you need to compile and install it from source.
+To use the latest version of Detection Studio you need to compile and install it from source.
 To get started you can either read along or follow [these video tutorials](https://www.youtube.com/watch?v=HYuFFTnEn5s&list=PLgB5c9xg9C91DJ30WFlHfHAhMECeho-gU).
 ## Requirements
 
@@ -127,10 +101,10 @@ Update and install
 Below is a list of more optional dependencies you may require depending on your usage.
 
 * ### Camera Streaming Support
-DetectionSuite can currently read ROS and ICE Camera Streams. So, to enable Streaming support, install any one of them.
+Detection Studio can currently read ROS and ICE Camera Streams. So, to enable Streaming support, install any one of them.
 
 * ### Inferencing Frameworks
-DetectionSuite currently supports the following inferencing frameworks: darknet, TensorFlow, Keras, PyTorch and Caffe.
+Detection Studio currently supports many Inferencing Frameworks namely Darknet, TensorFlow, Keras, PyTorch and Caffe.
 Each one of them has some dependencies, and are mentioned below.
 
     Choose your favourite one and go ahead.
@@ -145,22 +119,19 @@ Each one of them has some dependencies, and are mentioned below.
     * #### Keras
     Similarly, the only dependency for using Keras as an inferencing framework is Keras.
     
-    * #### PyTorch
-    Install PyTorch.
-    
     * #### Caffe
     To use Caffe as an inferencing framework, it is necessary to install OpenCV.
 
 
 **Note:** Be Sure to checkout [functionality](../functionality/command_line_application) for tutorials on how to use the above mentioned functionalities and frameworks.  
 
-# How to compile DetectionSuite:
+# How to compile Detection Studio:
 
 Once you have all the required dependencies installed just run:
 
 ```
-    git clone https://github.com/JdeRobot/DetectionSuite
-    cd DetectionSuite/DeepLearningSuite
+    git clone https://github.com/JdeRobot/DetectionStudio
+    cd DetectionStudio/DeepLearningSuite
     mkdir build && cd build
 ```
 ```
@@ -173,7 +144,7 @@ Once you have all the required dependencies installed just run:
 
 Once it is built, you will find various executables in different folders ready to be executed :smile:.
 
-## Starting with DetectionSuite
-The best way to start is with our [beginner's tutorial](../resources/tutorial/) for DetectionSuite.
+## Starting with Detection Studio
+The best way to start is with our [beginner's tutorial](../resources/tutorial/) for Detection Studio.
 
-If you have any issue feel free to drop a mail <vinay04sharma@icloud.com> or create an [issue](https://github.com/JdeRobot/DetectionSuite/issues) for the same.
+If you have any issue feel free to drop a mail <vinay04sharma@icloud.com> or create an [issue](https://github.com/JdeRobot/DetectionStudio/issues) for the same.

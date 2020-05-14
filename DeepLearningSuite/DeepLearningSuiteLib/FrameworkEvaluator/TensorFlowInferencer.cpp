@@ -148,7 +148,7 @@ Sample TensorFlowInferencer::detectImp(const cv::Mat &image, double confidence_t
 
 /*
 This function converts the output from python scripts into a fromat compatible
-DetectionSuite to read bounding boxes, classes and detection scores, which are
+DetectionStudio to read bounding boxes, classes and detection scores, which are
 drawn on the image to show detections.
 */
 
@@ -195,7 +195,7 @@ void TensorFlowInferencer::output_result(int num_detections, int width, int heig
 
 
 			detections.push_back(detection());
-			detections[i].classId = classIds_data[classes++] - 1;  // In TensorFlow id's start from 1 whereas detectionsuite starts from 0s
+			detections[i].classId = classIds_data[classes++] - 1;  // In TensorFlow id's start from 1 whereas DetectionStudio starts from 0s
 			detections[i].probability = detection_scores_data[scores++];
 
 			detections[i].boundingBox.y = bounding_box_data[boxes++] * height;
@@ -253,7 +253,7 @@ void TensorFlowInferencer::output_result(int num_detections, int width, int heig
 
 
 /* This function gets inferences from the Python script by calling coressponding
-function and the uses output_result() to convert it into a DetectionSuite C++
+function and the uses output_result() to convert it into a DetectionStudio C++
 readble format.
 */
 
