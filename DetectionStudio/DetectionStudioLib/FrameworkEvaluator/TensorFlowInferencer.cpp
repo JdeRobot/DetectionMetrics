@@ -117,7 +117,7 @@ Sample TensorFlowInferencer::detectImp(const cv::Mat &image, double confidence_t
 
 	Sample sample;
 	RectRegionsPtr regions(new RectRegions());
-  RleRegionsPtr rleRegions(new RleRegions());
+	RleRegionsPtr rleRegions(new RleRegions());
 	ClassTypeGeneric typeConverter(classNamesFile);
 
 	// Loop through all the new detections
@@ -140,7 +140,7 @@ Sample TensorFlowInferencer::detectImp(const cv::Mat &image, double confidence_t
 		*/
 	sample.setColorImage(image);
 	sample.setRectRegions(regions);
-  sample.setRleRegions(rleRegions);
+  	sample.setRleRegions(rleRegions);
 	sample.SetMousy(this->mousy);
 	this->mousy=false;
 	return sample;
@@ -157,11 +157,8 @@ void TensorFlowInferencer::output_result(int num_detections, int width, int heig
     this->hasMasks = false;
     int mask_dims;
     long long int* mask_shape;
-
 	if( PyArray_Check(bounding_boxes) && PyArray_Check(detection_scores) && PyArray_Check(classIds) ) {
-
         PyArrayObject* detection_masks_cont = NULL;
-
         if (pDetection_masks != NULL && PyArray_Check(pDetection_masks)) {
             detection_masks_cont = PyArray_GETCONTIGUOUS( (PyArrayObject*) pDetection_masks );
             this->hasMasks = true;
@@ -173,11 +170,8 @@ void TensorFlowInferencer::output_result(int num_detections, int width, int heig
         }
 
 		PyArrayObject* bounding_boxes_cont = PyArray_GETCONTIGUOUS( (PyArrayObject*) bounding_boxes );
-
 		PyArrayObject* detection_scores_cont = PyArray_GETCONTIGUOUS( (PyArrayObject*) detection_scores );
-
 		PyArrayObject* classIds_cont = PyArray_GETCONTIGUOUS( (PyArrayObject*) classIds );
-
 
 		float* bounding_box_data = (float*) bounding_boxes_cont->data; // not copying data
 		float* detection_scores_data = (float*) detection_scores_cont->data;
@@ -186,26 +180,17 @@ void TensorFlowInferencer::output_result(int num_detections, int width, int heig
         if (this->hasMasks) {
             detection_masks_data = (float*) detection_masks_cont->data;
         }
-
 		int i;
 		int boxes = 0, scores = 0, classes = 0, masks = 0;
 
 		for( i=0; i<num_detections; i++ ) {
-
-
-
 			detections.push_back(detection());
 			detections[i].classId = classIds_data[classes++] - 1;  // In TensorFlow id's start from 1 whereas DetectionStudio starts from 0s
 			detections[i].probability = detection_scores_data[scores++];
-
 			detections[i].boundingBox.y = bounding_box_data[boxes++] * height;
-
 			detections[i].boundingBox.x = bounding_box_data[boxes++] * width;
-
 			detections[i].boundingBox.height = bounding_box_data[boxes++] * height - detections[i].boundingBox.y;
-
 			detections[i].boundingBox.width = bounding_box_data[boxes++] * width - detections[i].boundingBox.x;
-
             if (this->hasMasks) {
 
                 cv::Mat image_mask(height, width, CV_8UC1, cv::Scalar(0));
@@ -239,11 +224,7 @@ void TensorFlowInferencer::output_result(int num_detections, int width, int heig
                 //cv::imshow("decoded mask", matrix_decoded);
                 //cv::waitKey(5000);
             }
-
-
 		}
-
-
 		// clean
 		Py_XDECREF(bounding_boxes);
 		Py_XDECREF(detection_scores);

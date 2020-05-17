@@ -1,8 +1,3 @@
-import sys
-print("Python version")
-print (sys.version)
-print("Version info.")
-print (sys.version_info)
 import numpy as np
 import sys
 from distutils.version import StrictVersion
@@ -42,39 +37,13 @@ class TensorFlowDetector:
                 if tensor_name in all_tensor_names:
                     self.tensor_dict[key] = tf.compat.v1.get_default_graph().get_tensor_by_name(
                         tensor_name)
-            #if 'detection_masks' in self.tensor_dict:
-        # The following processing is only for single image
-                #detection_boxes = tf.squeeze(self.tensor_dict['detection_boxes'], [0])
-                #detection_masks = tf.squeeze(self.tensor_dict['detection_masks'], [0])
-        # Reframe is required to translate mask from box coordinates to image coordinates and fit the image size.
-                #real_num_detection = tf.cast(self.tensor_dict['num_detections'][0], tf.int32)
-                #detection_boxes = tf.slice(detection_boxes, [0, 0], [real_num_detection, -1])
-                #detection_masks = tf.slice(detection_masks, [0, 0, 0], [real_num_detection, -1, -1])
-                #detection_masks_reframed = self.reframe_box_masks_to_image_masks(
-                #detection_masks, detection_boxes, image.shape[0], image.shape[1])
-                #detection_masks_reframed = tf.cast(
-                #tf.greater(detection_masks_reframed, 0.5), tf.uint8)
-        # Follow the convention by adding back the batch dimension
-                #self.tensor_dict['detection_masks'] = detection_masks
 
             self.image_tensor = tf.compat.v1.get_default_graph().get_tensor_by_name('image_tensor:0')
-
-
-
-        #self.image_tensor = detection_graph.get_tensor_by_name('image_tensor:0')
-        #self.detection_boxes =  detection_graph.get_tensor_by_name('detection_boxes:0')
-        #self.detection_scores = detection_graph.get_tensor_by_name('detection_scores:0')
-        #self.detection_classes = detection_graph.get_tensor_by_name('detection_classes:0')
-        #self.num_detections = detection_graph.get_tensor_by_name('num_detections:0')
 
         self.sess = tf.compat.v1.Session(graph=detection_graph)
         print("Initializing")
         dummy_tensor = np.zeros((1,1,1,3), dtype=np.int32)
         self.sess.run(self.tensor_dict, feed_dict={self.image_tensor: dummy_tensor})
-
-
-
-
 
 
     def run_inference_for_single_image(self, image):
@@ -97,6 +66,7 @@ class TensorFlowDetector:
 
         return output_dict
 
+
     def detect(self, img, threshold):
 
         print("Starting inference")
@@ -109,24 +79,14 @@ class TensorFlowDetector:
         #print image_np.shape
         #print image_passed.shape
 
-
         #detection_graph = load_graph(model_path)
-
-
 
         # Expand dimensions since the model expects images to have shape: [1, None, None, 3]
         # image_np_expanded = np.expand_dims(image_np, axis=0)
         # Actual detection.
 
-
         start_time = time.time()
-
-
         output_dict = self.run_inference_for_single_image(image_passed)
-        # Visualization of the results of a detection.
-
-
-
         print("Inference Time: " + str(time.time() - start_time) + " seconds")
 
         new_dict = {}
@@ -138,15 +98,6 @@ class TensorFlowDetector:
         if 'detection_masks' in output_dict:
             new_dict['detection_masks'] = output_dict['detection_masks'][0:len(new_dict['detection_scores']), :]
 
-        print('----- DETECTION SCORES -----')
-        print(new_dict['detection_scores'])
-        print('------ DETECTION BOXES -----')
-        print(new_dict['detection_boxes'])
-        print('------ DETECITON CLASSES ------')
-        print(new_dict['detection_classes'])
-        print('------ DETECTION NUMBER ------')
-        print(new_dict['num_detections'])
-        print(type(new_dict['detection_scores']))
         #mask = new_dict['detection_masks'][0]
         #mask = mask > 0.5
         #cv2.imshow("my mask", mask)
