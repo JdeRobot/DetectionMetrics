@@ -29,9 +29,9 @@ class PyTorchDetector:
             try:
                 value = int(var)
             except Exception as e:
-                try:
+                if (str(var) != 'True' and str(var) != 'False'):
                     value = str(var)
-                except Exception as e:
+                else:
                     value = bool(var)
             setattr(self, name, value)
         # The number of parameters modifies the way the function gets called
