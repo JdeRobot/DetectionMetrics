@@ -2,14 +2,26 @@
 
 [![Build Status](https://travis-ci.org/JdeRobot/DetectionSuite.svg?branch=master)](https://travis-ci.org/JdeRobot/DetectionSuite)
 
-### Please refer to the official documentation webpage [here](https://jderobot.github.io/DetectionStudio/).
+#### More info and documentation [here](https://jderobot.github.io/DetectionStudio/).
 
-DetectionStudio is a set of tool that simplify the evaluation of most common object detection datasets with several object detection neural networks.
+Detection Studio is a set of tool to evaluate object detection neural networks models over the common object detection datasets.
+The tools can be accessed using the GUI or the command line applications. In the picture below, the general architecture is displayed.
 
-The idea is to offer a generic infrastructure to evaluates object detection algorithms againts a dataset and compute most common statistics:
-* Intersecion Over Union
-* Precision
-* Recall
+![general_architecture](docs/assets/images/architecture.png)
+
+The tools provided are:
+* Viewer
+* Detection
+* Evaluator
+* Deployer
+* Converter
+* Command line application (CLI)
+* Detection Studio as ROS Node
+
+The idea is to offer a generic infrastructure to evaluate object detection models against a dataset and compute the common statistics:
+* mAP
+* mAR
+* Mean inference time.
 
 #### Supported Operating Systems:
 * Linux
@@ -41,23 +53,10 @@ The idea is to offer a generic infrastructure to evaluates object detection algo
 * JdeRobot Recorder Logs
 
 
-### Sample generation Tool
-Sample Generation Tool has been developed in order to simply the process of generation samples for datasets focused on object detection. The tools provides some features to reduce the time on labelling objects as rectangles.
-
-
 # Installation
 
-Check the intallation guide [here](https://jderobot.github.io/DetectionStudio/installation/).
+Check the installation guide [here](https://jderobot.github.io/DetectionStudio/installation/).
 
 # Starting with DetectionStudio
-The best way to start is with our [beginner's tutorial](https://jderobot.github.io/DetectionStudio/functionality/tutorial/) for DetectionStudio.
-If you have any issue feel free to drop a mail <vinay04sharma@icloud.com> or create an issue for the same.
-
-### DetectionStudio's sample images
-
-GUI             |  Screenshot 1
-:-------------------------:|:-------------------------:
-![](docs/assets/images/detection_studio_gui.png)  |  ![](./docs/assets/images/screen1.png)   
-Screenshot 2             |  Screenshot 3
-![](./docs/assets/images/screen2.png) |  ![](./docs/assets/images/screen3.png)
+The best way to start is with the [beginner's tutorial](https://jderobot.github.io/DetectionStudio/functionality/tutorial/) for DetectionStudio.
 
