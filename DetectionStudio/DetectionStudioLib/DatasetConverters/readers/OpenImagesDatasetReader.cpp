@@ -18,12 +18,13 @@ OpenImagesDatasetReader::OpenImagesDatasetReader(const std::string &path,const s
     appendDataset(path);
 }
 
-bool OpenImagesDatasetReader::find_img_directory(const path & dir_path, path & path_found) {
-    LOG(INFO) << dir_path.string() << '\n';
-    /*directory_iterator end_itr;
-    int count = 0;
 
-    for (directory_iterator itr(dir_path); itr != end_itr; ++itr) {
+bool OpenImagesDatasetReader::find_img_directory(const path & dir_path, path & path_found, std::string& img_dirname) {
+    LOG(INFO) << dir_path.string() << " " << img_dirname << '\n';
+
+    directory_iterator end_itr;
+    int count = 0;
+    for (directory_iterator itr( dir_path ); itr != end_itr; ++itr) {
         if (is_directory(itr->path())) {
             if (itr->path().filename().string() == img_dirname) {
                 path_found = itr->path();
@@ -31,10 +32,9 @@ bool OpenImagesDatasetReader::find_img_directory(const path & dir_path, path & p
             } else {
                 if (find_img_directory(itr->path(), path_found , img_dirname))
                 return true;
-           }
+            }
         }
-
-    }*/
+    }
     return false;
 }
 
@@ -113,44 +113,70 @@ std::vector<std::vector<std::string>> readCSV(std::istream &in) {
 
 
 bool OpenImagesDatasetReader::appendDataset(const std::string &datasetPath, const std::string &datasetPrefix) {
-    LOG(INFO) << "Dataset Path: " << datasetPath << '\n';
-	
+    	LOG(INFO) << "Dataset Path: " << datasetPath << '\n';
+    	
+    	std::string img_filename, img_dirname;
+    	path img_dir;
+    	path boostDatasetPath(datasetPath);
+    	std::string filename = boostDatasetPath.filename().string();
+	size_t first = filename.find_first_of('-');
+        img_dirname = filename.substr(0, first);
 
+
+	if (find_img_directory(boostDatasetPath.parent_path().parent_path(), img_dir,  img_dirname)) {
+            LOG(INFO) << "Image Directory Found: " << img_dir.string() << '\n';
+        } else {
+            throw std::invalid_argument("Corresponding Image Directory can't be located, please place it in the same Directory as annotations if you wish to continue without reading images");
+
+        }
 
 	std::ifstream file(datasetPath);
 	std::vector<std::vector<std::string>> table = readCSV(file); 
-
-LOG(INFO) << table[0][0] << "\n";
-LOG(INFO) << table.size() << "\n";
-LOG(INFO) << table[0].size() << "\n";
 	std::string previousImageID = table[1][0];
+	Sample imsample;
+	RectRegionsPtr rectRegions(new RectRegions());
+	imsample.setSampleID(previousImageID);
+	imsample.setColorImage(img_dir.string() + "/" + previousImageID + ".jpg");
 
 	for (int i = 1; i < table.size(); i++) {
 		if (previousImageID != table[i][0]) {
 			// Create the sample with all the stored bounding boxes and start the list again
-			LOG(INFO) << "IMAGE ID :" << table[i][0] << "\n";
-			LOG(INFO) << "LABEL NAME: " << table[i][2] << "\n";
-			previousImageID = table[i][0];
 
+			// Create complete new Sample
+			imsample.setRectRegions(rectRegions);
+			this->map_image_id[previousImageID] = imsample;
+
+			// Restart variables
+			rectRegions.reset(new RectRegions());
+			imsample.setSampleID(table[i][0]);
+			imsample.setColorImage(img_dir.string() + "/" + table[i][0] + ".jpg");
+			previousImageID = table[i][0];
 		} else {
 			// Save the bounding box in a list to then create the Sample
-			RectRegionsPtr rectRegions(new RectRegions());
-			LOG(INFO) << "IMAGE ID :" << table[i][4] << "\n"; 
+			
+			cv::Mat src = cv::imread(img_dir.string() + "/" + previousImageID + ".jpg");
+			int imgWidth = src.size().width;
+			int imgHeight = src.size().height;
+			
 			double x, y, w, h;
 
-            		x = atof(table[i][4].c_str());
-            		y = atof(table[i][6].c_str());
-            		w = atof(table[i][5].c_str()) - atof(table[i][4].c_str());
-            		h = atof(table[i][7].c_str()) - atof(table[i][6].c_str());
-
-	               cv::Rect_<double> bounding = cv::Rect_<double>(x , y , w , h);
-		       rectRegions->add(bounding, table[i][4], atof(table[i][3].c_str()), 0);
-
+            		x = atof(table[i][4].c_str()) * imgWidth;
+            		y = atof(table[i][6].c_str()) * imgHeight;
+            		w = (atof(table[i][5].c_str()) - atof(table[i][4].c_str())) * imgWidth;
+            		h = (atof(table[i][7].c_str()) - atof(table[i][6].c_str())) * imgHeight;
+			cv::Rect_<double> bounding = cv::Rect_<double>(x , y , w , h);
+		       rectRegions->add(bounding, table[i][2],atof(table[i][3].c_str()));
 		}
-		
-
 	}
 
+	this->samples.reserve(this->samples.size() + this->map_image_id.size());
+
+    	std::transform (this->map_image_id.begin(), this->map_image_id.end(),back_inserter(this->samples), [] (std::pair<std::string, Sample> const & pair)
+	{
+		return pair.second;						
+	});
+
+	//printDatasetStats();
 
 /*	std::ifstream inFile(datasetPath);
     path boostDatasetPath(datasetPath);
