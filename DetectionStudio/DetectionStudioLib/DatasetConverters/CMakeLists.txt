@@ -12,6 +12,7 @@ SET (DatasetConverters_SOURCE_FILES
   readers/ImageNetDatasetReader
   readers/SpinelloDatasetReader
   readers/OpenImagesDatasetReader
+  writers/OpenImagesDatasetWriter
   ClassTypeGeneric
   ClassTypeOwn
   ClassTypeMapper
