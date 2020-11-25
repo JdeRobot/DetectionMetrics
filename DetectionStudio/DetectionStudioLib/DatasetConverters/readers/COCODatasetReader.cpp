@@ -102,7 +102,7 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
 
             Sample imsample;
             imsample.setSampleID(std::to_string(id));
-            imsample.setColorImage(img_dir.string() + "/" + filename);
+            imsample.setColorImagePath(img_dir.string() + "/" + filename);
             if ( itr->HasMember("width") && itr->HasMember("height") ) {
                 imsample.setSampleDims((*itr)["width"].GetInt(), (*itr)["height"].GetInt());
             }

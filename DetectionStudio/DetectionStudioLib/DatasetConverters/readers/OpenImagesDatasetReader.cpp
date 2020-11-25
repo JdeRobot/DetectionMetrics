@@ -125,7 +125,7 @@ bool OpenImagesDatasetReader::appendDataset(const std::string &datasetPath, cons
     Sample imsample;
     RectRegionsPtr rectRegions(new RectRegions());
     imsample.setSampleID(previousImageID);
-    imsample.setColorImage(img_dir.string() + "/" + previousImageID + ".jpg");
+    imsample.setColorImagePath(img_dir.string() + "/" + previousImageID + ".jpg");
 
     for (int i = 1; i < table.size(); i++) {
 	if (previousImageID != table[i][0]) {
@@ -138,12 +138,14 @@ bool OpenImagesDatasetReader::appendDataset(const std::string &datasetPath, cons
 	    // Restart variables
 	    rectRegions.reset(new RectRegions());
 	    imsample.setSampleID(table[i][0]);
-	    imsample.setColorImage(img_dir.string() + "/" + table[i][0] + ".jpg");
+	    imsample.setColorImagePath(img_dir.string() + "/" + table[i][0] + ".jpg");
             previousImageID = table[i][0];
 	} else {
 	    // Save the bounding box in a list to then create the Sample
 			
-	    cv::Mat src = cv::imread(img_dir.string() + "/" + previousImageID + ".jpg");
+	    //cv::Mat src = cv::imread(img_dir.string() + "/" + previousImageID + ".jpg");
+	    LOG(INFO) << "IMG PATH: " << imsample.getColorImagePath() << "\n";
+	    cv::Mat src = cv::imread(imsample.getColorImagePath());
 	    int imgWidth = src.size().width;
 	    int imgHeight = src.size().height;
 			
