@@ -35,4 +35,14 @@ RUN cd ~ \
     && cmake .. \
     && make -j4
 
-CMD ["bash"]
+RUN mkdir /root/volume \
+    && mkdir /root/volume/datasets \
+    && mkdir /root/volume/datasets/cfg \
+    && mkdir /root/volume/datasets/eval \
+    && mkdir /root/volume/datasets/names \
+    && mkdir /root/volume/datasets/weights
+
+COPY ./appConfig.yml /root/DetectionStudio/DetectionStudio/build/DatasetEvaluationApp/appConfig.yml
+WORKDIR /root/DetectionStudio/DetectionStudio/build/DatasetEvaluationApp
+
+CMD ["./DatasetEvaluationApp"]
