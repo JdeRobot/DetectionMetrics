@@ -126,9 +126,9 @@ bool OpenImagesDatasetReader::appendDataset(const std::string &datasetPath, cons
     RectRegionsPtr rectRegions(new RectRegions());
     imsample.setSampleID(previousImageID);
     imsample.setColorImagePath(img_dir.string() + "/" + previousImageID + ".jpg");
-    LOG(INFO) << "Loading Instance for Sample: " + previousImageID;
 
     for (int i = 1; i < table.size(); i++) {
+	LOG(INFO) << "Loading Instance for Sample: " + previousImageID;
 	if (previousImageID != table[i][0]) {
 	    // Create the sample with all the stored bounding boxes and start the list again
 
