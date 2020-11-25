@@ -89,16 +89,17 @@ std::vector<std::string> readCSVRow(const std::string &row) {
 std::vector<std::vector<std::string>> readCSV(std::istream &in) {
     std::vector<std::vector<std::string>> table;
     std::string row;
-    int max_counter = 500;
-    int counter = 0;
-    while (!in.eof() and counter < max_counter) {
+    // Uncomment to debug with less samples
+    //int max_counter = 50;
+    //int counter = 0;
+    while (!in.eof() /*and counter < max_counter*/) {
         std::getline(in, row);
         if (in.bad() || in.fail()) {
             break;
         }
         auto fields = readCSVRow(row);
         table.push_back(fields);
-	counter++;
+	//counter++;
     }
     return table;
 }
