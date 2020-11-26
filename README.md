@@ -29,8 +29,8 @@ The idea is to offer a generic infrastructure to evaluate object detection model
 
 | Support | Detail                                                  |
 | ------ | ------------------------------------------------------------ |
-| Supported OS  | Linux, MacOS                 |
-| Supported datasets  | COCO, ImageNet, Pascal VOC, Jderobot recorder logs, Princeton RGB dataset, Spinello dataset |                |
+| Supported OS  | Multiplatform using Docker                 |
+| Supported datasets  | COCO, ImageNet, Pascal VOC, Jderobot recorder logs, Princeton RGB dataset, Spinello dataset, Open images dataset |                |
 | Supported frameworks   | TensorFlow, Keras, PyTorch, Yolo-OpenCV, Caffe, Background substraction  |
 | Supported inputs in Deployer   | WebCamera/USB Camera, Videos, Streams from ROS, Streams from ICE, JdeRobot Recorder Logs |
 
@@ -49,13 +49,13 @@ To quickly get started with Detection Studio, we provide a docker image.
 
 This will start the GUI, provide a configuration file (appConfig.yml can be used) and you are ready to go. Check out the [web](https://jderobot.github.io/DetectionStudio) for more information
 
-### Installation from source
+### Installation from source (Linux only)
 
-Check the installation guide [here](https://jderobot.github.io/DetectionStudio/installation/).
+Check the installation guide [here](https://jderobot.github.io/DetectionStudio/installation/). This is also the recommended installation 
+for **contributors**.
 
 # Starting with Detection Studio
 Check out the [beginner's tutorial](https://jderobot.github.io/DetectionStudio/resources/tutorial/).
-
 
 # General Detection Studio GUI
 
