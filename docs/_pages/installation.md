@@ -4,48 +4,25 @@ title: Installation
 permalink: /installation/
 
 ---
-
 <br>
-# Install Detection Studio application
+
+# Install Detection Studio using Docker
+
+To quickly get started with Detection Studio, we provide a docker image.
+
+* Download docker image and run it
+```
+    docker run -dit --name detection-studio -v [local_directory]:/root/volume/ -e DISPLAY=host.docker.internal:0 jderobot/detection-studio:latest
+```
+
+This will start the GUI, provide a configuration file (appConfig.yml can be used) and you are ready to go. Check out [functionality](/functionality/detector) for more information
+
+
+
+# Install Detection Studio from source for developers (only Linux)
  
-The application can be directly downloaded from the [repository releases](https://github.com/JdeRobot/DetectionStudio/releases/tag/continuous).
-
-To run the app, first give executable permissions running:  
-```
-    chmod a+x DetectionStudioxxxxx.AppImage
-```
-and run it using:  
-```
-    ./DetectionStudioxxxxx -c configFile
-```
-
-
-Requirements: `python` & `numpy`.
-
-To use Tensorflow and/or Keras, you would need to install them.
-
-To install Tensorflow:
-```
-    pip install tensorflow
-```
-or
-
-```
-    pip install tensorflow-gpu
-```
-To install Keras:
-```
-    pip install keras
-```
-
-To install Pytorch:
-```
-    pip install torch
-```
-
-# Compile and Install from source
 To use the latest version of Detection Studio you need to compile and install it from source.
-To get started you can either read along or follow [these video tutorials](https://www.youtube.com/watch?v=HYuFFTnEn5s&list=PLgB5c9xg9C91DJ30WFlHfHAhMECeho-gU).
+
 ## Requirements
 
 ### Common deps
@@ -60,7 +37,12 @@ To get started you can either read along or follow [these video tutorials](https
 |:-------------:|:-------------:|
 | `sudo apt install libgoogle-glog-dev libyaml-cpp-dev qt5-default libqt5svg5-dev` |    `brew install glog yaml-cpp qt` <br> Also, just add qt in your PATH by running: <br> `echo 'export PATH="/usr/local/opt/qt/bin:$PATH"' >> ~/.bash_profile`   |
 
-### OpenCV 4.2 (with CUDA GPU support) 
+
+### Inferencers
+
+Install only the inferencers that you need.
+
+* ### OpenCV 4.2 (with CUDA GPU support) including Darknet
 
 If you don't need GPU support (only applicable for Darknet YOLO with OpenCV), just ignore cmake options related with CUDA and GPU.
 
@@ -74,10 +56,39 @@ If you don't need GPU support (only applicable for Darknet YOLO with OpenCV), ju
 
 Reference: [How to use OpenCV DNN module with Nvdia GPUs, CUDA and CUDNN](https://www.pyimagesearch.com/2020/02/03/how-to-use-opencvs-dnn-module-with-nvidia-gpus-cuda-and-cudnn/)
 
+* ### Tensorflow 
 
-## Optional Dependencies
+To use Tensorflow and/or Keras, you would need to install them.
 
-### CUDA (For GPU support)
+To install Tensorflow:
+```
+    pip install tensorflow
+```
+or
+
+```
+    pip install tensorflow-gpu
+```
+
+* ### Keras 
+
+To install Keras:
+```
+    pip install keras
+```
+
+* ### PyTorch 
+
+
+To install PyTorch:
+```
+    pip install torch
+```
+
+
+### Optional Dependencies
+
+#### CUDA (For GPU support)
 
 ```
     NVIDIA_GPGKEY_SUM=d1be581509378368edeec8c1eb2958702feedf3bc3d17011adbf24efacce4ab5 && \
@@ -102,25 +113,6 @@ Below is a list of more optional dependencies you may require depending on your 
 
 * ### Camera Streaming Support
 Detection Studio can currently read ROS and ICE Camera Streams. So, to enable Streaming support, install any one of them.
-
-* ### Inferencing Frameworks
-Detection Studio currently supports many Inferencing Frameworks namely Darknet, TensorFlow, Keras, PyTorch and Caffe.
-Each one of them has some dependencies, and are mentioned below.
-
-    Choose your favourite one and go ahead.
-
-    * #### Darknet (jderobot fork)
-    Included in OpenCV libraries.
-
-    * #### TensorFlow
-    The only dependency for using TensorFlow as an inferencing framework is TensorFlow.
-    So, just install TensorFlow. It should be 1.4.1 or greater.
-
-    * #### Keras
-    Similarly, the only dependency for using Keras as an inferencing framework is Keras.
-    
-    * #### Caffe
-    To use Caffe as an inferencing framework, it is necessary to install OpenCV.
 
 
 **Note:** Be Sure to checkout [functionality](../functionality/command_line_application) for tutorials on how to use the above mentioned functionalities and frameworks.  

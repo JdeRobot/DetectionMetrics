@@ -20,6 +20,17 @@ The application comes with a GUI (based on Qt) but it can also be used through c
 
 {% include video id="gDP9nWCL0Vg" provider="youtube" %}
 
+# What's supported in Detection Studio.
+
+| Support | Detail                                                  |
+| ------ | ------------------------------------------------------------ |
+| Supported OS  | Multiplatform using Docker                 |
+| Supported datasets  | {::nomarkdown}<ul><li><a href="https://cocodataset.org/#home" target="blank">COCO</a></li><li><a href="http://www.image-net.org/" target="blank">ImageNet</a></li><li><a href="http://host.robots.ox.ac.uk/pascal/VOC/" target="blank">Pascal VOC</a></li><li>Jderobot recorder logs</li><li><a href="https://rgbd.cs.princeton.edu/" target="blank">Princeton RGB dataset</a></li><li><a href="http://www2.informatik.uni-freiburg.de/~spinello/RGBD-dataset.html" target="blank">Spinello dataset</a></li><li><a href="https://storage.googleapis.com/openimages/web/index.html" target="blank">Open images dataset</a></li></ul>{:/} |
+| Supported frameworks   | {::nomarkdown}<ul><li>TensorFlow</li><li>Keras</li><li>PyTorch</li><li>Yolo-OpenCV</li><li>Caffe</li><li>Background substraction</li></ul>{:/}  |
+| Supported inputs in Deployer   | {::nomarkdown}<ul><li>WebCamera/USB Camera</li><li>Videos</li><li>Streams from ROS</li><li>Streams from ICE</li><li>JdeRobot Recorder Logs</li></ul>{:/} |
+
+
+
 # Toolbox
 
 The application is designed to experiment with datasets and neural networks using various frameworks. Currently it comes with the following utilities:
@@ -76,20 +87,12 @@ Place your weights in weights directory, config files in cfg directory, classnam
 
 The top toolbar shows the different tools available.
 
-{:refdef: style="text-align: center;"}
-<img src="../assets/images/main_window.png" style="border: 5px solid black;" alt="GUI" title="GUI" width="1000" height="1000" />
-{: refdef}
 
-
+![Detector](../assets/images/main_window.png)
 
 # Example of detection and console output in Detection Studio
 
 Two image views are displayed, one with the ground truth and the other with the detected annotations.
 In the console output, log info is shown.
 
-
-{:refdef: style="text-align: center;"}
-<img src="../assets/images/detector.png" style="border: 5px solid black;" alt="Detector" title="Detector" width="1000" height="1000" />
-{: refdef}
-
-
+![Detector](../assets/images/detector.png)

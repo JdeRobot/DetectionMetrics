@@ -35,6 +35,8 @@ resources:
 
   - title: Resources
     children:
+      - title: "Datasets"
+        url: /resources/datasets
       - title: "Class Names"
         url: /resources/class_names
       - title: "Frameworks"
