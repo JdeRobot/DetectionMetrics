@@ -30,9 +30,9 @@ The idea is to offer a generic infrastructure to evaluate object detection model
 | Support | Detail                                                  |
 | ------ | ------------------------------------------------------------ |
 | Supported OS  | Multiplatform using Docker                 |
-| Supported datasets  | COCO, ImageNet, Pascal VOC, Jderobot recorder logs, Princeton RGB dataset, Spinello dataset, Open images dataset |                |
-| Supported frameworks   | TensorFlow, Keras, PyTorch, Yolo-OpenCV, Caffe, Background substraction  |
-| Supported inputs in Deployer   | WebCamera/USB Camera, Videos, Streams from ROS, Streams from ICE, JdeRobot Recorder Logs |
+| Supported datasets  | <ul><li>COCO</li><li>ImageNet</li><li>Pascal VOC</li><li>Jderobot recorder logs</li><li>Princeton RGB dataset</li><li>Spinello dataset</li><li>Open images dataset</li></ul> |                |
+| Supported frameworks   | <ul><li>TensorFlow</li><li>Keras</li><li>PyTorch</li><li>Yolo-OpenCV</li><li>Caffe</li><li>Background substraction</li></ul>  |
+| Supported inputs in Deployer   | <ul><li>WebCamera/USB Camera</li><li>Videos</li><li>Streams from ROS</li><li>Streams from ICE</li><li>JdeRobot Recorder Logs</li></ul> |
 
 
 
