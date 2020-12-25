@@ -227,8 +227,8 @@ void MainWindow::handleSelectOutputFolderButton() {
     QFileDialog *fd = new QFileDialog;
     QTreeView *tree = fd->findChild <QTreeView*>();
 #ifndef __APPLE__
-    tree->setRootIsDecorated(true);
-    tree->setItemsExpandable(false);
+    //tree->setRootIsDecorated(true);
+    //tree->setItemsExpandable(false);
 #endif
     fd->setFileMode(QFileDialog::Directory);
     fd->setOption(QFileDialog::ShowDirsOnly);
@@ -321,8 +321,8 @@ void MainWindow::handleSelectOutputFolderButtonDetector() {
     QFileDialog *fd = new QFileDialog;
     QTreeView *tree = fd->findChild <QTreeView*>();
 #ifndef __APPLE__
-    tree->setRootIsDecorated(true);
-    tree->setItemsExpandable(false);
+    //tree->setRootIsDecorated(true);
+    //tree->setItemsExpandable(false);
 #endif
     fd->setFileMode(QFileDialog::Directory);
     fd->setOption(QFileDialog::ShowDirsOnly);
@@ -340,8 +340,8 @@ void MainWindow::handleSelectDeployInputSource() {
     QFileDialog *fd = new QFileDialog;
     QTreeView *tree = fd->findChild <QTreeView*>();
 #ifndef __APPLE__
-    tree->setRootIsDecorated(true);
-    tree->setItemsExpandable(false);
+    //tree->setRootIsDecorated(true);
+    //tree->setItemsExpandable(false);
 #endif
     fd->setFileMode(QFileDialog::AnyFile);
 //    fd->setOption(QFileDialog::Show);
@@ -359,8 +359,8 @@ void MainWindow::handleSelectOutputFolderButtonDeployer() {
     QFileDialog *fd = new QFileDialog;
     QTreeView *tree = fd->findChild <QTreeView*>();
 #ifndef __APPLE__
-    tree->setRootIsDecorated(true);
-    tree->setItemsExpandable(false);
+    //tree->setRootIsDecorated(true);
+    //tree->setItemsExpandable(false);
 #endif
     fd->setFileMode(QFileDialog::Directory);
     //fd->setOption(QFileDialog::ShowDirsOnly);
