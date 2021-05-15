@@ -10,9 +10,9 @@ export ARCH=$(arch)
 
 if [[ "$TO_TEST" == "WITH_ROS_AND_ICE" ]];
 then
-APP=DetectionStudio_with_ROS_and_ICE
+APP=DetectionMetrics_with_ROS_and_ICE
 else
-APP=DetectionStudio
+APP=DetectionMetrics
 fi
 
 LOWERAPP=${APP,,}
@@ -39,7 +39,7 @@ cp -v `find /usr -iname 'libqxcb.so'` usr/bin/platforms
 find /usr -iname 'libqxcb.so' | xargs ldd | grep "=> /" | awk '{print $3}' | xargs -I '{}' cp -v '{}' usr/bin/platforms
 
 # Copying necessary python modules
-cp -v -r ../../DetectionStudioLib/python_modules usr/lib/
+cp -v -r ../../DetectionMetricsLib/python_modules usr/lib/
 
 cd usr/ ; find . -type f -exec sed -i -e 's|/usr|././|g' {} \; ; cd -
 

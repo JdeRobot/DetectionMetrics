@@ -12,7 +12,7 @@ public:
   Appcfg(int argc , char **argv);
   // To start the GUI
   void exec();
-  // Yaml node that stores all the required parameters to start DetectionStudio
+  // Yaml node that stores all the required parameters to start DetectionMetrics
   YAML::Node get_node();
 
 private:

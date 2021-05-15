@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/JdeRobot/DetectionSuite.svg?branch=master)](https://travis-ci.org/JdeRobot/DetectionSuite)
 
-#### More info and documentation [here](https://jderobot.github.io/DetectionStudio/).
+#### More info and documentation [here](https://jderobot.github.io/DetectionMetrics/).
 
 Detection Metrics is a set of tools to evaluate object detection neural networks models over the common object detection datasets.
 The tools can be accessed using the GUI or the command line applications. In the picture below, the general architecture is displayed.
@@ -11,14 +11,14 @@ The tools can be accessed using the GUI or the command line applications. In the
 ![general_architecture](docs/assets/images/architecture.png)
 
 The tools provided are:
-* [Viewer](https://jderobot.github.io/DetectionStudio/functionality/viewer/): view the dataset images with the annotations.
-* [Detector](https://jderobot.github.io/DetectionStudio/functionality/detector/): run a model over a dataset and get generate a new annotated dataset.
-* [Evaluator](https://jderobot.github.io/DetectionStudio/functionality/evaluator/): evaluate the ground truth dataset with another one and get the comparison metrics.
-* [Deployer](https://jderobot.github.io/DetectionStudio/functionality/deployer/): run a model over different inputs like a video or webcam and generate a new annotated dataset.
-* [Converter](https://jderobot.github.io/DetectionStudio/functionality/converter/): convert a dataset into another dataset format.
-* [Command line application (CLI)](https://jderobot.github.io/DetectionStudio/functionality/command_line_application/): access Detection Metrics toolset through command line
-* [Detection Metrics as ROS Node](https://jderobot.github.io/DetectionStudio/functionality/ros_node/): use Detection Metrics as a ROS Node.
-+ [Labelling](https://jderobot.github.io/DetectionStudio/resources/gsoc_19/): add or modify labels in the datasets in runtime when running Deployer.
+* [Viewer](https://jderobot.github.io/DetectionMetrics/functionality/viewer/): view the dataset images with the annotations.
+* [Detector](https://jderobot.github.io/DetectionMetrics/functionality/detector/): run a model over a dataset and get generate a new annotated dataset.
+* [Evaluator](https://jderobot.github.io/DetectionMetrics/functionality/evaluator/): evaluate the ground truth dataset with another one and get the comparison metrics.
+* [Deployer](https://jderobot.github.io/DetectionMetrics/functionality/deployer/): run a model over different inputs like a video or webcam and generate a new annotated dataset.
+* [Converter](https://jderobot.github.io/DetectionMetrics/functionality/converter/): convert a dataset into another dataset format.
+* [Command line application (CLI)](https://jderobot.github.io/DetectionMetrics/functionality/command_line_application/): access Detection Metrics toolset through command line
+* [Detection Metrics as ROS Node](https://jderobot.github.io/DetectionMetrics/functionality/ros_node/): use Detection Metrics as a ROS Node.
++ [Labelling](https://jderobot.github.io/DetectionMetrics/resources/gsoc_19/): add or modify labels in the datasets in runtime when running Deployer.
 
 The idea is to offer a generic infrastructure to evaluate object detection models against a dataset and compute the common statistics:
 * mAP
@@ -47,15 +47,15 @@ To quickly get started with Detection Metrics, we provide a docker image.
     docker run -dit --name detection-studio -v [local_directory]:/root/volume/ -e DISPLAY=host.docker.internal:0 jderobot/detection-studio:latest
 ```
 
-This will start the GUI, provide a configuration file (appConfig.yml can be used) and you are ready to go. Check out the [web](https://jderobot.github.io/DetectionStudio) for more information
+This will start the GUI, provide a configuration file (appConfig.yml can be used) and you are ready to go. Check out the [web](https://jderobot.github.io/DetectionMetrics) for more information
 
 ### Installation from source (Linux only)
 
-Check the installation guide [here](https://jderobot.github.io/DetectionStudio/installation/). This is also the recommended installation 
+Check the installation guide [here](https://jderobot.github.io/DetectionMetrics/installation/). This is also the recommended installation 
 for **contributors**.
 
 # Starting with Detection Metrics
-Check out the [beginner's tutorial](https://jderobot.github.io/DetectionStudio/resources/tutorial/).
+Check out the [beginner's tutorial](https://jderobot.github.io/DetectionMetrics/resources/tutorial/).
 
 # General Detection Metrics GUI
 

@@ -1,8 +1,8 @@
 #ifndef DEPLOYER_NODE
 #define DEPLOYER_NODE
 #include "std_msgs/String.h"
-#include "DetectionStudioROS/objects.h"
-#include "DetectionStudioROS/object.h"
+#include "DetectionMetricsROS/objects.h"
+#include "DetectionMetricsROS/object.h"
 
 #include <typeinfo>
 
@@ -33,8 +33,8 @@ private:
   GenericInferencer *inferencer;
   MassInferencer *massInferencer;
   std::string topic;
-  DetectionStudioROS::object detection;
-  DetectionStudioROS::objects detections;
+  DetectionMetricsROS::object detection;
+  DetectionMetricsROS::objects detections;
 };
 
 #endif

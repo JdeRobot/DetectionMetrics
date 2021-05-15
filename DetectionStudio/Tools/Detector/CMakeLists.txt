@@ -6,14 +6,14 @@ include_directories(
         ${config_INCLUDE_DIRS}
         ${CMAKE_CURRENT_LIST_DIR}
         ${QT_INCLUDE_DIRS}
-        ${DetectionStudio_INCLUDE_DIR}
+        ${DetectionMetrics_INCLUDE_DIR}
 
 )
 
 add_executable (detector detector.cpp)
 
 TARGET_LINK_LIBRARIES(detector
-        DetectionStudio
+        DetectionMetrics
         ${EXTRA_LIBS}
         ${QT_LIBRARIES}
         ${OpenCV_LIBRARIES}

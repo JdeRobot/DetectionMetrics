@@ -40,7 +40,7 @@ include(FindPkgConfig)
 
 FIND_PACKAGE(Boost REQUIRED program_options filesystem)
 
-set(DetectionStudio_INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/DetectionStudioLib)
+set(DetectionMetrics_INCLUDE_DIR ${CMAKE_CURRENT_LIST_DIR}/DetectionMetricsLib)
 SET( INTERFACES_CPP_DIR ${CMAKE_CURRENT_BINARY_DIR}/libs/interfaces/cpp/jderobot ${CMAKE_CURRENT_BINARY_DIR}/libs/interfaces/cpp)
 
 if(ZeroCIce_FOUND)
@@ -56,14 +56,14 @@ endif(OpenCV_FOUND)
 
  add_subdirectory(libs)
  if (QT_FOUND)
-   add_subdirectory(DetectionStudioLib)
+   add_subdirectory(DetectionMetricsLib)
    add_subdirectory(DatasetEvaluationApp)
  endif(QT_FOUND)
  add_subdirectory(SampleGenerationApp)
  add_subdirectory(Tools)
 
 if(roscpp_FOUND)
- add_subdirectory(DetectionStudioROS)
+ add_subdirectory(DetectionMetricsROS)
 endif()
  file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/ClassMappingHierarchy.xml
      DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

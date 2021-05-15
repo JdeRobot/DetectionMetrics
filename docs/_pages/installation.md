@@ -122,8 +122,8 @@ Detection Metrics can currently read ROS and ICE Camera Streams. So, to enable S
 Once you have all the required dependencies installed just run:
 
 ```
-    git clone https://github.com/JdeRobot/DetectionStudio
-    cd DetectionStudio/DetectionStudio
+    git clone https://github.com/JdeRobot/DetectionMetrics
+    cd DetectionMetrics/DetectionMetrics
     mkdir build && cd build
 ```
 ```
@@ -139,4 +139,4 @@ Once it is built, you will find various executables in different folders ready t
 ## Starting with Detection Metrics
 The best way to start is with our [beginner's tutorial](../resources/tutorial/) for Detection Metrics.
 
-If you have any issue feel free to drop a mail <vinay04sharma@icloud.com> or create an [issue](https://github.com/JdeRobot/DetectionStudio/issues) for the same.
+If you have any issue feel free to drop a mail <vinay04sharma@icloud.com> or create an [issue](https://github.com/JdeRobot/DetectionMetrics/issues) for the same.

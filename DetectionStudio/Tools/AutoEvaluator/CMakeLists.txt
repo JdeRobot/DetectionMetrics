@@ -17,14 +17,14 @@ include_directories(
         ${PYTHON_INCLUDE_DIRS}
         ${CMAKE_CURRENT_LIST_DIR}
         ${QT_INCLUDE_DIRS}
-        ${DetectionStudio_INCLUDE_DIR}
+        ${DetectionMetrics_INCLUDE_DIR}
 
 )
 
 add_executable (autoEvaluator autoEvaluator.cpp)
 
 TARGET_LINK_LIBRARIES(autoEvaluator
-        DetectionStudio
+        DetectionMetrics
         ${EXTRA_LIBS}
         ${QT_LIBRARIES}
         ${OpenCV_LIBRARIES}

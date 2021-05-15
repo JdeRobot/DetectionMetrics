@@ -44,7 +44,7 @@ resources:
       - title: "Model zoo"
         url: /resources/model_zoo
       - title: "Testing Detection Metrics"
-        url: /resources/testing_detectionstudio
+        url: /resources/testing_detectionmetrics
       - title: "Tutorial"
         url: /resources/tutorial
       - title: "New Functionality"

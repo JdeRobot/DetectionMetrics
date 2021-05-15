@@ -2,9 +2,9 @@ SET(Detectors_SOURCE_FILES
   Detector.h
 )
 
-ADD_LIBRARY(DetectionStudio_Detectors OBJECT ${Detectors_SOURCE_FILES})
+ADD_LIBRARY(DetectionMetrics_Detectors OBJECT ${Detectors_SOURCE_FILES})
 
-TARGET_INCLUDE_DIRECTORIES ( DetectionStudio_Detectors PUBLIC
+TARGET_INCLUDE_DIRECTORIES ( DetectionMetrics_Detectors PUBLIC
   ${OpenCV_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIR}
   ${depthLib_INCLUDE_DIRS}
@@ -16,6 +16,6 @@ TARGET_INCLUDE_DIRECTORIES ( DetectionStudio_Detectors PUBLIC
   ${jderobottypes_INCLUDE_DIRS}
   ${CMAKE_CURRENT_LIST_DIR}
   ${QT_INCLUDE_DIRS}
-  ${DetectionStudio_INCLUDE_DIR}
+  ${DetectionMetrics_INCLUDE_DIR}
 
 )

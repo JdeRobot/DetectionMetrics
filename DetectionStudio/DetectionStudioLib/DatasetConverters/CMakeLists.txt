@@ -30,9 +30,9 @@ SET (DatasetConverters_SOURCE_FILES
   liveReaders/VideoReader
 )
 
-ADD_LIBRARY(DetectionStudio_DatasetConverters OBJECT ${DatasetConverters_SOURCE_FILES})
+ADD_LIBRARY(DetectionMetrics_DatasetConverters OBJECT ${DatasetConverters_SOURCE_FILES})
 
-TARGET_INCLUDE_DIRECTORIES( DetectionStudio_DatasetConverters PUBLIC
+TARGET_INCLUDE_DIRECTORIES( DetectionMetrics_DatasetConverters PUBLIC
   ${OpenCV_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIR}
   ${config_INCLUDE_DIRS}
@@ -43,6 +43,6 @@ TARGET_INCLUDE_DIRECTORIES( DetectionStudio_DatasetConverters PUBLIC
   ${INTERFACES_CPP_DIR}
   ${jderobottypes_INCLUDE_DIRS}
   ${CMAKE_CURRENT_LIST_DIR}
-  ${DetectionStudio_INCLUDE_DIR}
+  ${DetectionMetrics_INCLUDE_DIR}
   ${QT_INCLUDE_DIRS}
 )

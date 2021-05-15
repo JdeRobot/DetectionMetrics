@@ -7,18 +7,18 @@ add_subdirectory(GenerationUtils)
 add_subdirectory(Regions)
 add_subdirectory(Utils)
 
-add_library(DetectionStudio SHARED
-              $<TARGET_OBJECTS:DetectionStudio_Common>
-              $<TARGET_OBJECTS:DetectionStudio_DatasetConverters>
-              $<TARGET_OBJECTS:DetectionStudio_Detectors>
-              $<TARGET_OBJECTS:DetectionStudio_FrameworkEvaluator>
-              $<TARGET_OBJECTS:DetectionStudio_GenerationUtils>
-              $<TARGET_OBJECTS:DetectionStudio_Regions>
-              $<TARGET_OBJECTS:DetectionStudio_Utils>
+add_library(DetectionMetrics SHARED
+              $<TARGET_OBJECTS:DetectionMetrics_Common>
+              $<TARGET_OBJECTS:DetectionMetrics_DatasetConverters>
+              $<TARGET_OBJECTS:DetectionMetrics_Detectors>
+              $<TARGET_OBJECTS:DetectionMetrics_FrameworkEvaluator>
+              $<TARGET_OBJECTS:DetectionMetrics_GenerationUtils>
+              $<TARGET_OBJECTS:DetectionMetrics_Regions>
+              $<TARGET_OBJECTS:DetectionMetrics_Utils>
             )
 
 
-TARGET_LINK_LIBRARIES(DetectionStudio
+TARGET_LINK_LIBRARIES(DetectionMetrics
                     ${OpenCV_LIBRARIES}
                     ${EXTRA_LIBS}
                     ${depthLib_LIBRARIES}

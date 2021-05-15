@@ -24,7 +24,7 @@ include_directories(
     ${jderobottypes_INCLUDE_DIRS}
     ${Ice_INCLUDE_DIR}
     ${OpenCV_INCLUDE_DIRS}
-    ${DetectionStudio_LIBS_DIR}
+    ${DetectionMetrics_LIBS_DIR}
     ${ros_INCLUDE_DIRS}
     ${INTERFACES_CPP_DIR}
     ${config_INCLUDE_DIRS}
@@ -84,7 +84,7 @@ target_link_libraries(${PROJECT_NAME}
     ${GLOG_LIBRARIES}
     colorspacesmm
     config
-    DetectionStudioUtils
+    DetectionMetricsUtils
     )
 
 

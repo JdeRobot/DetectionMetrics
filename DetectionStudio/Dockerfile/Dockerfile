@@ -29,8 +29,8 @@ RUN cd ~ \
     && make install
 
 RUN cd ~ \
-    && git clone https://github.com/JdeRobot/DetectionStudio \
-    && cd DetectionStudio/DetectionStudio \
+    && git clone https://github.com/JdeRobot/DetectionMetrics \
+    && cd DetectionMetrics/DetectionMetrics \
     && mkdir build && cd build \
     && cmake .. \
     && make -j4
@@ -42,7 +42,7 @@ RUN mkdir /root/volume \
     && mkdir /root/volume/datasets/names \
     && mkdir /root/volume/datasets/weights
 
-COPY ./appConfig.yml /root/DetectionStudio/DetectionStudio/build/DatasetEvaluationApp/appConfig.yml
-WORKDIR /root/DetectionStudio/DetectionStudio/build/DatasetEvaluationApp
+COPY ./appConfig.yml /root/DetectionMetrics/DetectionMetrics/build/DatasetEvaluationApp/appConfig.yml
+WORKDIR /root/DetectionMetrics/DetectionMetrics/build/DatasetEvaluationApp
 
 CMD ["./DatasetEvaluationApp"]

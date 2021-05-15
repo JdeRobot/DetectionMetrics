@@ -5,7 +5,7 @@ include_directories(
         ${Boost_INCLUDE_DIR}
         ${CMAKE_CURRENT_LIST_DIR}
         ${QT_INCLUDE_DIRS}
-        ${DetectionStudio_INCLUDE_DIR}
+        ${DetectionMetrics_INCLUDE_DIR}
 
 )
 
@@ -13,7 +13,7 @@ add_executable (converter  converter.cpp)
 
 
 TARGET_LINK_LIBRARIES(converter
-        DetectionStudio
+        DetectionMetrics
         ${EXTRA_LIBS}
         ${QT_LIBRARIES}
         ${OpenCV_LIBRARIES}

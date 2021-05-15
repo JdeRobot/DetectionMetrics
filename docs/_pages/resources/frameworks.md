@@ -38,7 +38,7 @@ Download one of them, uncompress it and place it into the weights directory.
 
 We will be using a COCO trained model for this example, but you can choose any model. Although you would have to create a class names file for that particular dataset written in a correct order.
 
-Sample ```coco.names``` file for COCO dataset: [coco.names](https://github.com/JdeRobot/DetectionStudio/blob/master/samples/names/coco.names).
+Sample ```coco.names``` file for COCO dataset: [coco.names](https://github.com/JdeRobot/DetectionMetrics/blob/master/samples/names/coco.names).
 All it contains is a list of classes being used for this dataset in the correct order.
 Place this file in the names directory.
 

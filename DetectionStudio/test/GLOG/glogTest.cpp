@@ -12,7 +12,7 @@ void myFunction() {
 
 
 int main(int argc, char **argv) {
-    std::string logPath = "/home/frivas/devel/machine-learning/DetectionStudio/cmake-build-debug/test/GLOG/";
+    std::string logPath = "/home/frivas/devel/machine-learning/DetectionMetrics/cmake-build-debug/test/GLOG/";
     google::InitGoogleLogging(argv[0]);
 //    google::SetLogDestination(0, std::string(logPath + "info.log").c_str());
 //    google::SetLogDestination(1, std::string(logPath + "warning.log").c_str());

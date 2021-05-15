@@ -25,7 +25,7 @@ DeployerNode::DeployerNode(int argc, char *argv[]){
   this->node = new ros::NodeHandle();
   this->sub = this->node->subscribe<sensor_msgs::Image>(this->topic, 10,boost::bind(&DeployerNode::ros_to_cv, _1, this));
   ros::NodeHandle *pub = new ros::NodeHandle();
-  this->pub = pub->advertise <DetectionStudioROS::objects>("my_topic", 10);
+  this->pub = pub->advertise <DetectionMetricsROS::objects>("my_topic", 10);
   ros::spin();
 }
 

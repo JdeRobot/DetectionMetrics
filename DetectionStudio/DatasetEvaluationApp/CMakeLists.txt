@@ -32,7 +32,7 @@ include_directories(
         ${Boost_INCLUDE_DIR}
         ${QT_INCLUDE_DIRS}
         ${CMAKE_CURRENT_LIST_DIR}
-        ${DetectionStudio_INCLUDE_DIR}
+        ${DetectionMetrics_INCLUDE_DIR}
 )
 
 
@@ -40,7 +40,7 @@ add_executable(DatasetEvaluationApp ${SOURCES})
 
 
 TARGET_LINK_LIBRARIES(DatasetEvaluationApp
-        DetectionStudio
+        DetectionMetrics
         ${OpenCV_LIBRARIES}
         ${JderobotInterfaces_LIBRARIES}
         ${EXTRA_LIBS}

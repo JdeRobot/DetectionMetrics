@@ -5,14 +5,14 @@ include_directories(
         ${config_INCLUDE_DIRS}
         ${CMAKE_CURRENT_LIST_DIR}
         ${QT_INCLUDE_DIRS}
-        ${DetectionStudio_INCLUDE_DIR}
+        ${DetectionMetrics_INCLUDE_DIR}
 
 )
 
 add_executable (splitter splitter.cpp)
 
 TARGET_LINK_LIBRARIES(splitter
-        DetectionStudio
+        DetectionMetrics
         ${EXTRA_LIBS}
         ${OpenCV_LIBRARIES}
         ${Boost_LIBRARIES}

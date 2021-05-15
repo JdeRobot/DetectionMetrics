@@ -4,7 +4,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 
 cmake_minimum_required(VERSION 2.8.3)
-project(DetectionStudioROS)
+project(DetectionMetricsROS)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
@@ -31,7 +31,7 @@ generate_messages(
 
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES DetectionStudioROS
+#  LIBRARIES DetectionMetricsROS
  CATKIN_DEPENDS  message_runtime
 #  DEPENDS system_lib
 )
@@ -57,14 +57,14 @@ include_directories(
         ${Boost_INCLUDE_DIR}
         ${QT_INCLUDE_DIRS}
         ${CMAKE_CURRENT_LIST_DIR}
-        ${CMAKE_CURRENT_LIST_DIR}/include/detectionstudio
-        ${DetectionStudio_INCLUDE_DIR}
+        ${CMAKE_CURRENT_LIST_DIR}/include/detectionmetrics
+        ${DetectionMetrics_INCLUDE_DIR}
         ${catkin_INCLUDE_DIRS}
 )
 
 add_executable(code src/code.cpp)
 target_link_libraries(code
-  DetectionStudio
+  DetectionMetrics
   ${OpenCV_LIBRARIES}
   ${JderobotInterfaces_LIBRARIES}
   ${EXTRA_LIBS}
@@ -79,7 +79,7 @@ target_link_libraries(code
 
 add_executable(detection_node src/detection_node.cpp)
 target_link_libraries(detection_node
-  DetectionStudio
+  DetectionMetrics
   ${OpenCV_LIBRARIES}
   ${JderobotInterfaces_LIBRARIES}
   ${EXTRA_LIBS}
@@ -92,11 +92,11 @@ target_link_libraries(detection_node
   crypto
 )
 
-add_executable(test src/test.cpp include/detectionstudio/DeployerNode.hpp src/DeployerNode.cpp)
+add_executable(test src/test.cpp include/detectionmetrics/DeployerNode.hpp src/DeployerNode.cpp)
 add_dependencies(test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 target_link_libraries(test
-  DetectionStudio
+  DetectionMetrics
   ${OpenCV_LIBRARIES}
   ${JderobotInterfaces_LIBRARIES}
   ${EXTRA_LIBS}

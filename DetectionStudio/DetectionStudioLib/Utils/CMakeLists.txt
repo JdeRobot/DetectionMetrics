@@ -34,13 +34,13 @@ include_directories(
         ${Boost_INCLUDE_DIR}
         ${QT_INCLUDE_DIRS}
         ${CMAKE_CURRENT_LIST_DIR}
-        ${DetectionStudio_INCLUDE_DIR}
+        ${DetectionMetrics_INCLUDE_DIR}
 )
 
-ADD_LIBRARY(DetectionStudio_Utils OBJECT ${Utils_SOURCE_FILES})
+ADD_LIBRARY(DetectionMetrics_Utils OBJECT ${Utils_SOURCE_FILES})
 
 
-TARGET_INCLUDE_DIRECTORIES (DetectionStudio_Utils PUBLIC
+TARGET_INCLUDE_DIRECTORIES (DetectionMetrics_Utils PUBLIC
   ${OpenCV_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIR}
   ${config_INCLUDE_DIRS}
@@ -48,6 +48,6 @@ TARGET_INCLUDE_DIRECTORIES (DetectionStudio_Utils PUBLIC
   ${GLOG_INCLUDE_DIRS}
   ${utils_INCLUDE_DIRS}
   ${CMAKE_CURRENT_LIST_DIR}
-  ${DetectionStudio_INCLUDE_DIR}
+  ${DetectionMetrics_INCLUDE_DIR}
   ${QT_INCLUDE_DIRS}
 )

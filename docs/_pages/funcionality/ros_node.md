@@ -27,7 +27,7 @@ source setup.bash
 While the video is playing, start the ros node with the following command:
 
 ```
-rosrun DetectionStudioROS test _topic:=<topic name> _configfile:=<path/to/configfile>
+rosrun DetectionMetricsROS test _topic:=<topic name> _configfile:=<path/to/configfile>
 ```
 
 *_topic* is the topic Detection Metrics is suscribed to and *_confilefile* the configuration file with the inferencer, class names...
