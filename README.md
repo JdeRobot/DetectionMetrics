@@ -1,7 +1,7 @@
 <a href="https://mmg-ai.com/en/"><img src="https://jderobot.github.io/assets/images/logo.png" width="100 " align="right" /></a>
 # Detection Studio
 
-[![Build Status](https://travis-ci.org/JdeRobot/DetectionSuite.svg?branch=master)](https://travis-ci.org/JdeRobot/DetectionSuite)
+[![Publish Docker image](https://github.com/JdeRobot/DetectionStudio/actions/workflows/main.yml/badge.svg)](https://github.com/JdeRobot/DetectionStudio/actions/workflows/main.yml)
 
 #### More info and documentation [here](https://jderobot.github.io/DetectionStudio/).
 
