@@ -6,7 +6,6 @@ include_directories(
         ${CMAKE_CURRENT_LIST_DIR}
         ${QT_INCLUDE_DIRS}
         ${DetectionMetrics_INCLUDE_DIR}
-
 )
 
 add_executable (converter  converter.cpp)
@@ -23,4 +22,4 @@ TARGET_LINK_LIBRARIES(converter
         ${PYTHON_LIBRARIES}
         ssl
         crypto
-        )
+)

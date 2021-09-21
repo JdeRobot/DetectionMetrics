@@ -8,6 +8,8 @@ SET (DatasetConverters_SOURCE_FILES
   readers/COCODatasetReader
   readers/PascalVOCDatasetReader
   readers/PrincetonDatasetReader
+  readers/TrafficSensorGTDatasetReader
+  readers/TrafficSensorOutputDatasetReader
   writers/PascalVOCDatasetWriter
   readers/ImageNetDatasetReader
   readers/SpinelloDatasetReader
