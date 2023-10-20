@@ -15,10 +15,12 @@
 #include <DatasetConverters/readers/DatasetReader.h>
 #include "OwnDatasetReader.h"
 #include "PrincetonDatasetReader.h"
+#include "TrafficSensorGTDatasetReader.h"
+#include "TrafficSensorOutputDatasetReader.h"
 #include "SamplesReader.h"
 
 
-enum READER_IMPLEMENTATIONS{OWN, SPINELLO, PASCALVOC, COCO, IMAGENET, YOLO_1, PRINCETON, OPENIMAGES};
+enum READER_IMPLEMENTATIONS{OWN, SPINELLO, PASCALVOC, COCO, IMAGENET, YOLO_1, PRINCETON, OPENIMAGES, TRAFFICSENSORGT, TRAFFICSENSOROUTPUT};
 
 
 class GenericDatasetReader {
@@ -40,6 +42,8 @@ private:
     COCODatasetReaderPtr cocoDatasetReaderPtr;
     ImageNetDatasetReaderPtr imagenetDatasetReaderPtr;
     OpenImagesDatasetReaderPtr openimagesDatasetReaderPtr;
+    TrafficSensorGTDatasetReaderPtr trafficSensorGTDatasetReaderPtr;
+    TrafficSensorOutputDatasetReaderPtr trafficSensorOutputDatasetReaderPtr;
     SamplesReaderPtr samplesReaderPtr;
 
     std::vector<std::string> availableImplementations;

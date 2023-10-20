@@ -11,10 +11,10 @@ GenericDatasetReader::GenericDatasetReader(const std::string &path, const std::s
     if (std::find(this->availableImplementations.begin(), this->availableImplementations.end(), readerImplementation) != this->availableImplementations.end()){
         imp = getImplementation(readerImplementation);
         switch (imp) {
-	    case OPENIMAGES:
+            case OPENIMAGES:
                 this->openimagesDatasetReaderPtr = OpenImagesDatasetReaderPtr( new OpenImagesDatasetReader(path,classNamesFile,imagesRequired));
                 break;
-	    case IMAGENET:
+            case IMAGENET:
                 this->imagenetDatasetReaderPtr = ImageNetDatasetReaderPtr( new ImageNetDatasetReader(path,classNamesFile,imagesRequired));
                 break;
             case COCO:
@@ -34,6 +34,12 @@ GenericDatasetReader::GenericDatasetReader(const std::string &path, const std::s
                 break;
             case PRINCETON:
                 this->princetonDatasetReaderPtr = PrincetonDatasetReaderPtr( new PrincetonDatasetReader(path,classNamesFile,imagesRequired));
+                break;
+            case TRAFFICSENSORGT:
+                this->trafficSensorGTDatasetReaderPtr = TrafficSensorGTDatasetReaderPtr(new TrafficSensorGTDatasetReader(path,classNamesFile,imagesRequired));
+                break;
+            case TRAFFICSENSOROUTPUT:
+                this->trafficSensorOutputDatasetReaderPtr = TrafficSensorOutputDatasetReaderPtr(new TrafficSensorOutputDatasetReader(path,classNamesFile,imagesRequired));
                 break;
             default:
                 LOG(WARNING)<<readerImplementation + " is not a valid reader implementation";
@@ -110,33 +116,31 @@ void GenericDatasetReader::configureAvailablesImplementations(std::vector<std::s
     data.push_back("Spinello");
     data.push_back("Own");
     data.push_back("Princeton");
-
+    data.push_back("Traffic Sensor GT");
+    data.push_back("Traffic Sensor Output");
 }
 
 READER_IMPLEMENTATIONS GenericDatasetReader::getImplementation(const std::string& readerImplementation) {
     if (readerImplementation == "Open Images") {
-	return OPENIMAGES;
-    }
-    if (readerImplementation == "ImageNet"){
+	    return OPENIMAGES;
+    } else if (readerImplementation == "ImageNet"){
         return IMAGENET;
-    }
-    if (readerImplementation == "COCO"){
+    } else if (readerImplementation == "COCO"){
         return COCO;
-    }
-    if (readerImplementation == "Pascal VOC"){
+    } else if (readerImplementation == "Pascal VOC"){
         return PASCALVOC;
-    }
-    if (readerImplementation == "YOLO"){
+    } else if (readerImplementation == "YOLO"){
         return YOLO_1;
-    }
-    if (readerImplementation == "Spinello"){
+    } else if (readerImplementation == "Spinello"){
         return SPINELLO;
-    }
-    if (readerImplementation == "Own"){
+    } else if (readerImplementation == "Own"){
         return OWN;
-    }
-    if (readerImplementation == "Princeton"){
+    } else if (readerImplementation == "Princeton"){
         return PRINCETON;
+    } else if (readerImplementation == "Traffic Sensor GT"){
+        return TRAFFICSENSORGT;
+    } else if (readerImplementation == "Traffic Sensor Output"){
+        return TRAFFICSENSOROUTPUT;
     }
 }
 
@@ -158,6 +162,10 @@ DatasetReaderPtr GenericDatasetReader::getReader() {
             return this->ownDatasetReaderPtr;
         case PRINCETON:
             return this->princetonDatasetReaderPtr;
+        case TRAFFICSENSORGT:
+            return this->trafficSensorGTDatasetReaderPtr;
+        case TRAFFICSENSOROUTPUT:
+            return this->trafficSensorOutputDatasetReaderPtr;
         default:
             LOG(WARNING)<<imp + " is not a valid reader implementation";
             break;

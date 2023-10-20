@@ -65,7 +65,6 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
     if(!a.IsArray())
         throw std::invalid_argument("Invalid Annotations file Passed, Images member isn't an array");
 
-
     std::string img_filename, img_dirname;
     std::size_t filename_id_start, filename_ext;
 
@@ -80,21 +79,17 @@ bool COCODatasetReader::appendDataset(const std::string &datasetPath, const std:
             LOG(INFO) << "Image Directory Found: " << img_dir.string() << '\n';
         } else {
             throw std::invalid_argument("Corresponding Image Directory can't be located, please place it in the same Directory as annotations if you wish to continue without reading images");
-
         }
 
         if(!doc.HasMember("images"))
             throw std::invalid_argument("Images Member not available, invalid annotations file passed");
-
 
         const rapidjson::Value& imgs = doc["images"];
 
         if(!imgs.IsArray())
             throw std::invalid_argument("Invalid Annotations file Passed, Images member isn't an array");
 
-
         for (rapidjson::Value::ConstValueIterator itr = imgs.Begin(); itr != imgs.End(); ++itr) {
-
             unsigned long int id = (*itr)["id"].GetUint64();
             std::string filename = (*itr)["file_name"].GetString();
 
