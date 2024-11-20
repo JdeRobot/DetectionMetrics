@@ -3,7 +3,7 @@
 # Detection Metrics
 
 
-#### Docs [here](https://html-preview.github.io/?https://github.com/JdeRobot/DetectionMetrics/tree/dph/v2/py_docs/_build/html/index.html)
+#### Docs [here](https://html-preview.github.io/?url=https://github.com/JdeRobot/DetectionMetrics/blob/dph/v2/py_docs/_build/html/index.html)
 
 Detection Metrics is a set of tools to evaluate semantic segmentation and object detection models. With a current focus on semantic segmentation in unstructured outdoor environments, it is built in such a way that it can be easily extended to new tasks, datasets or deep learning frameworks.
 
