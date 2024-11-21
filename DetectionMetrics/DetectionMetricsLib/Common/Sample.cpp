@@ -181,7 +181,7 @@ Sample::Sample(const std::string &path, const std::string &id,bool loadDepth) {
 
     if (boost::filesystem::exists(boost::filesystem::path(path + "/" + id + ".json")))
         this->rectRegions=RectRegionsPtr(new RectRegions(path + "/" + id + ".json"));
-    else{
+    else {
         LOG(ERROR) << "Error " + id + " sample has not associated detection";
     }
 

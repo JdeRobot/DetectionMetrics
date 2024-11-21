@@ -74,9 +74,8 @@ bool ImageNetDatasetReader::appendDataset(const std::string &datasetPath, const 
     boost::filesystem::path boostDatasetPath(datasetPath);
 
     if (!boost::filesystem::is_directory(boostDatasetPath)) {
-        throw std::invalid_argument("Invalid File received for Imagenet Parser");
+        throw std::invalid_argument("Invalid File received for ImageNet Parser");
     }
-
 
     path img_dir;
 
@@ -87,14 +86,11 @@ bool ImageNetDatasetReader::appendDataset(const std::string &datasetPath, const 
         } else {
             LOG(WARNING) << "Corresponding Image Directory, can't be located, Skipping" << '\n';
         }
-
     }
 
-
     boost::filesystem::directory_iterator end_itr;
-    for (boost::filesystem::directory_iterator itr(boostDatasetPath); itr!=end_itr; ++itr)
-    {
-        if (!boost::filesystem::is_directory(*itr)){
+    for (boost::filesystem::directory_iterator itr(boostDatasetPath); itr!=end_itr; ++itr) {
+        if (!boost::filesystem::is_directory(*itr)) {
             LOG(INFO) << itr->path().string() << '\n';
             boost::property_tree::ptree tree;
 
@@ -105,23 +101,18 @@ bool ImageNetDatasetReader::appendDataset(const std::string &datasetPath, const 
             std::string m_width = tree.get<std::string>("annotation.size.width");
             std::string m_height = tree.get<std::string>("annotation.size.height");
 
-
-
-
             Sample sample;
             sample.setSampleID(m_filename);
 
             if (imagesRequired) {
                 std::string imgPath = img_dir.string() + "/" + m_filename + ".JPEG";
                 sample.setColorImagePath(imgPath);
-
             }
-
 
             RectRegionsPtr rectRegions(new RectRegions());
 
             BOOST_FOREACH(boost::property_tree::ptree::value_type &v, tree.get_child("annotation")) {
-        // The data function is used to access the data stored in a node.
+                // The data function is used to access the data stored in a node.
                 if (v.first == "object") {
                     std::string object_name = v.second.get<std::string>("name");
                     int xmin = v.second.get<int>("bndbox.xmin");
@@ -131,13 +122,11 @@ bool ImageNetDatasetReader::appendDataset(const std::string &datasetPath, const 
 
                     cv::Rect bounding(xmin, ymin, xmax - xmin, ymax - ymin);
                     rectRegions->add(bounding,object_name);
-
                 }
             }
 
             sample.setRectRegions(rectRegions);
             this->samples.push_back(sample);
-
         }
     }
 

@@ -123,8 +123,8 @@ void DetectionsEvaluator::evaluate(bool isIouTypeBbox) {
 
     int start_s=clock();
 
-    if (gtSamples != detectionSamples){
-        LOG(WARNING) << "Both dataset has not the same number of elements";
+    if (gtSamples != detectionSamples) {
+        LOG(WARNING) << "Both dataset haven't got the same number of elements";
     }
 
     ClassTypeMapper classMapper(this->gt->getClassNamesFile());

@@ -12,15 +12,11 @@ OwnDatasetReader::OwnDatasetReader(const std::string &path,const std::string& cl
     appendDataset(path);
 }
 
-OwnDatasetReader::OwnDatasetReader(const bool imagesRequired):DatasetReader(imagesRequired) {
-
-}
+OwnDatasetReader::OwnDatasetReader(const bool imagesRequired):DatasetReader(imagesRequired) {}
 
 bool OwnDatasetReader::appendDataset(const std::string &datasetPath, const std::string &datasetPrefix) {
     boost::filesystem::directory_iterator end_itr;
     boost::filesystem::path boostPath(datasetPath);
-
-
     std::vector<std::string> filesID;
 
     for (boost::filesystem::directory_iterator itr(boostPath); itr!=end_itr; ++itr)
@@ -28,7 +24,6 @@ bool OwnDatasetReader::appendDataset(const std::string &datasetPath, const std::
         if ((is_regular_file(itr->status()) && itr->path().extension()==".json") && (itr->path().string().find("-region") == std::string::npos)) {
             filesID.push_back(itr->path().filename().stem().string());
         }
-
     }
 
     std::sort(filesID.begin(),filesID.end());

@@ -19,6 +19,4 @@ private:
 
 typedef boost::shared_ptr<PrincetonDatasetReader> PrincetonDatasetReaderPtr;
 
-
-
 #endif //SAMPLERGENERATOR_PRINCETONDATASETREADER_H
