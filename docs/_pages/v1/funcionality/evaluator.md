@@ -1,15 +1,15 @@
 ---
 layout: home
 title: Evaluator
-permalink: /functionality/evaluator/
+permalink: /v1/functionality/evaluator/
 
 
 sidebar:
-  nav: "functionality"
+  nav: "main_v1"
 ---
 
 
-The **Evaluator** takes two datasets, one considered the ground truth, and compares them based on different metrics. 
+The **Evaluator** takes two datasets, one considered the ground truth, and compares them based on different metrics.
 
 
 The calculated metrics are accurate. The same **Ground Truth** and detections combination were evaluated using COCO API and the results
@@ -49,15 +49,15 @@ In order to use the **Evaluator** functionality, the configuration file needs an
 
 ```
     datasetPath: /opt/datasets/
-    
+
     evaluationsPath: /opt/datasets/eval
-    
+
     weightsPath: /opt/datasets/weights
-    
+
     netCfgPath: /opt/datasets/cfg
-    
+
     namesPath: /opt/datasets/names
-    
+
     inferencesPath: /opt/datasets/
 ```
 

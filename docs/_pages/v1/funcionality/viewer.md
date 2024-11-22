@@ -1,11 +1,11 @@
 ---
 layout: home
 title: Viewer
-permalink: /functionality/viewer/
+permalink: /v1/functionality/viewer/
 
 
 sidebar:
-  nav: "functionality"
+  nav: "main_v1"
 ---
 
 **Viewer** tab is used to view various datasets. It reads the images and the annotation files to label them with their respective class names and displays the same.
@@ -47,4 +47,3 @@ And click **View**!
 
 Example video demonstrating it:
 {% include video id="VMd6ve8brTE" provider="youtube" %}
-

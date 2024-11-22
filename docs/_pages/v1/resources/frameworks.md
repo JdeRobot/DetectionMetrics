@@ -1,11 +1,11 @@
 ---
 layout: home
 title: Frameworks
-permalink: /resources/frameworks/
+permalink: /v1/resources/frameworks/
 
 
 sidebar:
-  nav: "resources"
+  nav: "main_v1"
 ---
 
 Detection Metrics gives support for a set of different deep learning frameworks: Darknet, Tensorflow, Keras, PyTorch and Caffe.
@@ -61,7 +61,7 @@ Below, an example video using SSD MobileNet COCO on TensorFlow framework in Dete
 
 For using Keras you must first have a Keras Trained Model Weights which are typically stored in an HDF5 file.
 **No configuration** file is needed since new versions of Keras now contain architecture, weights and optimizer state all in a single HDF5 file. [See docs for the same](https://keras.io/getting-started/faq/#how-can-i-save-a-keras-model).
-  
+
 Some sample pre-trained models are available at our [model zoo](../model_zoo), on different architectures and datasets.
 
 ## Caffe
@@ -69,11 +69,11 @@ Some sample pre-trained models are available at our [model zoo](../model_zoo), o
 For using Caffe, you will require OpenCV with it's dnn module built.
 Steps for installing OpenCV 4.2 are available in [installation](../../installation)
 
-To Use Caffe you would require some pre-trained models on Caffe, some are available at our own [model zoo](../model_zoo). But wait, you will also need to add custom parameters for Caffe, and our model zoo contains those parameters for each of the inferencer, just directly use that. 
+To Use Caffe you would require some pre-trained models on Caffe, some are available at our own [model zoo](../model_zoo). But wait, you will also need to add custom parameters for Caffe, and our model zoo contains those parameters for each of the inferencer, just directly use that.
 
 ## PyTorch
 
-Install Pytorch using `pip install torch`. 
+Install Pytorch using `pip install torch`.
 A `.yml` file is needed as configuration. The structure of the configuration file should contain the following:
 
 ```

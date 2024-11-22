@@ -1,11 +1,11 @@
 ---
 layout: home
 title: Detector
-permalink: /functionality/detector/
+permalink: /v1/functionality/detector/
 
 
 sidebar:
-  nav: "functionality"
+  nav: "main_v1"
 ---
 
 **Detector** runs over and input dataset containing images and outputs the detected objects (detection dataset) providing the network weights
@@ -49,7 +49,7 @@ This will output the new detections dataset to the folder described in the confi
 Using the GUI, the use of the available tools can be easier for a user. In this case select the different options from
 the lists and run it pressing **Detect**.
 
-The tool will start making detections in the images dataset. A window with the images detections will pop up, as shown 
+The tool will start making detections in the images dataset. A window with the images detections will pop up, as shown
 in the example video.
 
 The use of *Depth Images* (if available) is possible.

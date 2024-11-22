@@ -1,18 +1,18 @@
 ---
 layout: home
 title: Beginner's Tutorial
-permalink: /resources/tutorial/
+permalink: /v1/resources/tutorial/
 
 
 sidebar:
-  nav: "resources"
+  nav: "main_v1"
 ---
 
-Sample video depicting results of this tutorial:  
+Sample video depicting results of this tutorial:
 
 {% include video id="xX2c_Trp9qY" provider="youtube" %}
 
-Detection Metrics Supports lot's of functionalities for both Datasets and Inferencers, some of them are viewing different datasets (**Viewer**), converting datasets from one to another (**Converter**), generating detection datasets (**Detector**), 
+Detection Metrics Supports lot's of functionalities for both Datasets and Inferencers, some of them are viewing different datasets (**Viewer**), converting datasets from one to another (**Converter**), generating detection datasets (**Detector**),
 evaluating datasets using inferencers (**Evaluator**, **Auto Evaluator**) and finally deploying datasets(**Deployer**).
 
 Detection Metrics has both GUI app and command line tools to execute its functionalities.
@@ -24,7 +24,7 @@ Once you've build DetectionMetrics (for building, [refer here](../../installatio
 ```
 cd DetectionMetrics/build/DatasetEvaluationApp/
 ```
- 
+
 You will find an executable there, to run it you need:
 
 * Config file
@@ -75,14 +75,14 @@ netCfgPath: /opt/datasets/cfg
 namesPath: /opt/datasets/names
 ```
 
-If you have created the directories as mentioned above, then just copy paste, above data into ```appConfig.yml```, else make changes accordingly.  
+If you have created the directories as mentioned above, then just copy paste, above data into ```appConfig.yml```, else make changes accordingly.
 
 Now, we are good to go :zap: :boom: !!
 
 Just type ``` ./DatasetEvaluationApp -c appConfig.yml ```
 
-And you will see a GUI pop like this: 
- 
+And you will see a GUI pop like this:
+
 ![Detection Metrics StartUp](../../assets/images/detection_studio_gui.png)
 
 Configuring Parameters:

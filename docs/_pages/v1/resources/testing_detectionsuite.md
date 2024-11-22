@@ -1,11 +1,11 @@
 ---
 layout: home
 title: Testing Detection Metrics
-permalink: /resources/testing_detectionmetrics/
+permalink: /v1/resources/testing_detectionmetrics/
 
 
 sidebar:
-  nav: "resources"
+  nav: "main_v1"
 ---
 
 

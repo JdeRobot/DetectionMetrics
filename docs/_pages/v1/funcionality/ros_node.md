@@ -1,16 +1,16 @@
 ---
 layout: home
 title: ROS Node
-permalink: /functionality/ros_node/
+permalink: /v1/functionality/ros_node/
 
 
 sidebar:
-  nav: "functionality"
+  nav: "main_v1"
 ---
 
 Detection Metrics Deployer functionality is provided as a **ROS Node**.
-This node uses some input images stream (it could be a video) and 
-makes inferences over the images passed, detecting the objects in realtime. 
+This node uses some input images stream (it could be a video) and
+makes inferences over the images passed, detecting the objects in realtime.
 Currently it only supports tensorflow as inferencer, but a broader support is expected
 in the future.
 
@@ -50,7 +50,7 @@ rostopic echo /my_topic
 
 In the example, the node is subscribed to a stream using [video_stream_opencv ROS driver](https://github.com/ros-drivers/video_stream_opencv).
 In this case, the only needed file is video.launch, where the local video file should be set, so it detects it.
-After this stream is launched using 
+After this stream is launched using
 
 ```
 roslaunch video_stream_opencv video_file.launch

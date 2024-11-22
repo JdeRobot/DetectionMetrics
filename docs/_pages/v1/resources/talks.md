@@ -1,11 +1,11 @@
 ---
 layout: home
 title: Talks
-permalink: /resources/talks/
+permalink: /v1/resources/talks/
 
 
 sidebar:
-  nav: "resources"
+  nav: "main_v1"
 ---
 
 ### Seminar in MSc in Artificial Vision at URJC (Madrid) - March 2020. Presented by Sergio Paniego.

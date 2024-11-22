@@ -1,11 +1,11 @@
 ---
 layout: home
 title: Command line application
-permalink: /functionality/command_line_application/
+permalink: /v1/functionality/command_line_application/
 
 
 sidebar:
-  nav: "functionality"
+  nav: "main_v1"
 ---
 
 Detection Metrics supports both a Qt based UI and some command line based applications both requiring a config file to run.
@@ -14,14 +14,14 @@ Some users might prefer using the command line tools which can give results in a
 The current supported command line applications are:
 
 * [AutoEvaluator](#auto-evaluator)
-* [Converter](/functionality/converter/)
-* [Evaluator](/functionality/evaluator/)
+* [Converter](/v1/functionality/converter/)
+* [Evaluator](/v1/functionality/evaluator/)
 * [Splitter](#splitter)
-* [Detector](/functionality/detector/)
-* [Viewer](/functionality/viewer/)
+* [Detector](/v1/functionality/detector/)
+* [Viewer](/v1/functionality/viewer/)
 
 To access te different tools, navigate to ```build/Tools/``` and then enter the desired tool. One in the tool's directory
-run 
+run
 
 ```
 ./[Tool name] -c config.yml
@@ -40,7 +40,7 @@ All you need is config file containing details about the dataset(s) and network(
 The results are then written in CSV files in the output directory specified.
 
 To run this tool simply build this repository and navigate to ```build/Tools/AutoEvaluator```
-and run 
+and run
 
 ```
     ./autoEvaluator -c config.yml
@@ -100,20 +100,20 @@ Inferencers:
 
 -
     inferencerWeights:         /opt/datasets/weights/ssd_mobilenet_v2_coco_2018_03_29/frozen_inference_graph.pb
-    inferencerConfig:          /opt/datasets/cfg/foo.cfg              # TensorFlow doesn't need any config file, hence any 
+    inferencerConfig:          /opt/datasets/cfg/foo.cfg              # TensorFlow doesn't need any config file, hence any
     inferencerImplementation:  tensorflow                             # empty foo.cfg file
     inferencerNames:           /opt/datasets/names/coco.names
 
 -
     inferencerWeights:         /opt/datasets/weights/VGG_VOC0712_SSD_512x512_iter_120000.h5
     inferencerConfig:          /opt/datasets/cfg/foo.cfg              # New version Keras also doesn't need any file, all the
-    inferencerImplementation:  keras                                  # data is stored in the HDF5 file including model 
-    inferencerNames:           /opt/datasets/names/voc.names          # weights, configuration and optimizer state, hence we 
+    inferencerImplementation:  keras                                  # data is stored in the HDF5 file including model
+    inferencerNames:           /opt/datasets/names/voc.names          # weights, configuration and optimizer state, hence we
                                                                     # are using an empty foo.cfg file
 -
     inferencerWeights:         /opt/datasets/weights/VGG_VOC0712_SSD_512x512_iter_240000.h5
-    inferencerConfig:          /opt/datasets/cfg/foo.cfg              
-    inferencerImplementation:  keras                             
+    inferencerConfig:          /opt/datasets/cfg/foo.cfg
+    inferencerImplementation:  keras
     inferencerNames:           /opt/datasets/names/voc.names
 
 
@@ -131,10 +131,10 @@ This mapping is very robust, it can also map synonyms and subclasses.
 ## Splitter
 
 This tool takes a dataset and split it in two different parts (test set and train set). It needs a trainRatio that set the amount of data that goes into each set.
-An example of config.yml file would be: 
+An example of config.yml file would be:
 
 ```
-    inputPath: /opt/datasets/weights/annotations/instances_val2017.json 
+    inputPath: /opt/datasets/weights/annotations/instances_val2017.json
     readerImplementation: COCO
     writerImplementation: COCO
     outputPath: /opt/output/new-output-folder

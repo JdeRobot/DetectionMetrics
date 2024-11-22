@@ -1,11 +1,11 @@
 ---
 layout: home
 title: Model zoo
-permalink: /resources/model_zoo/
+permalink: /v1/resources/model_zoo/
 
 
 sidebar:
-  nav: "resources"
+  nav: "main_v1"
 ---
 
 Here, you can find models for the different supported frameworks.
@@ -19,7 +19,7 @@ We have made our own set of Keras Models, compatible with the latest version, re
 Here's the [link](http://wiki.jderobot.org/store/deeplearning-networks/Keras/).
 
 ## Caffe Models
-Caffe Models can be downloaded from [here](https://github.com/opencv/opencv/tree/master/samples/dnn#model-zoo) and the config files are available [here](https://github.com/opencv/opencv_extra/tree/master/testdata/dnn). We will soon index them at our own server, for easier access. 
+Caffe Models can be downloaded from [here](https://github.com/opencv/opencv/tree/master/samples/dnn#model-zoo) and the config files are available [here](https://github.com/opencv/opencv_extra/tree/master/testdata/dnn). We will soon index them at our own server, for easier access.
 
 
 |    Model | Scale |   Size WxH|   Mean subtraction | Channels order |

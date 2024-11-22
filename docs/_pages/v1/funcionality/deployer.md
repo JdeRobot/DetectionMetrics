@@ -1,11 +1,11 @@
 ---
 layout: home
 title: Deployer
-permalink: /functionality/deployer/
+permalink: /v1/functionality/deployer/
 
 
 sidebar:
-  nav: "functionality"
+  nav: "main_v1"
 ---
 
 This tool makes inferences using images from different sources. Having the input, the user provides the weights and several configuration parameters
@@ -19,10 +19,10 @@ Several inferencers and input sources are supported. This functionality is only 
 To run it navigate to ``` DatasetEvaluationApp/build``` and run
 
 ```
-    ./DatasetEvaluationApp -c appConfig.yml 
+    ./DatasetEvaluationApp -c appConfig.yml
 ```
 
-The inferences obtained can be written to a file providing it before executing and a threshold confidence 
+The inferences obtained can be written to a file providing it before executing and a threshold confidence
 limit can be set, so a detection is only considered if the confidence is over the threshold.
 
 ## 1. Input Images
@@ -51,9 +51,9 @@ After selecting **stream**, you can choose between the following:
 ## 2. Network
 As any other tool, you would need a network to infer, on any one of the supported frameworks. Just fill up the following parameters,
 to let Detection Metrics know more about the Inferencer.
-    
+
    * ### 2.1. Net weights:
-        Select the Network's Weights file. It would be *.pb* (frozen inference graph) for TensorFlow, 
+        Select the Network's Weights file. It would be *.pb* (frozen inference graph) for TensorFlow,
         *.h5* for Keras, *.caffemodel* for Caffe, *.weights* for Darknet and .pth for PyTorch.
    * ### 2.2. Net configuration file:
         Configuration files aren't necessary for TensorFlow and Keras (any empty file would suffice), but for Darknet would need ```.cfg```, for Caffe a ```.prototxt``` file and for PyTorch a ```.yml```.
@@ -61,11 +61,11 @@ to let Detection Metrics know more about the Inferencer.
         These are the class names on which the deep learning network was trained on. So, a file containing a list of class names in the correct order.
         See [datasets](../class_names/) for some class names file.
    * ### 2.4. Inferencer implementation (framework being used):
-        Currently support Darknet, TensorFlow, PyTorch, Keras and Caffe.  
+        Currently support Darknet, TensorFlow, PyTorch, Keras and Caffe.
 
-**Note:** For Caffe, you might need to add some additional parameters specific to your model. Some samples are available at our [model zoo](../../resources/model_zoo/).
-   
-After configuring all these parameters, you are good to go.  
-  
+**Note:** For Caffe, you might need to add some additional parameters specific to your model. Some samples are available at our [model zoo](../../v1/resources/model_zoo/).
+
+After configuring all these parameters, you are good to go.
+
 Also, all these parameters at once might seem scary and tedious to configure, but after you launch the GUI it will seem quite easy
 and almost all of them are self-explanatory.
