@@ -6,7 +6,7 @@ import pandas as pd
 from PIL import Image
 import torch
 from torch.utils.data import DataLoader, Dataset
-from torchvision.transforms import v2
+from torchvision.transforms import v2 as transforms
 from tqdm import tqdm
 
 from detectionmetrics.datasets.dataset import ImageSegmentationDataset
@@ -22,9 +22,9 @@ class ImageSegmentationTorchDataset(Dataset):
     :param dataset: Image segmentation dataset
     :type dataset: ImageSegmentationDataset
     :param transform: Transformation to be applied to images
-    :type transform: v2.Compose
+    :type transform: transforms.Compose
     :param target_transform: Transformation to be applied to labels
-    :type target_transform: v2.Compose
+    :type target_transform: transforms.Compose
     :param split: Split to be used from the dataset, defaults to "all"
     :type split: str, optional
     """
@@ -32,8 +32,8 @@ class ImageSegmentationTorchDataset(Dataset):
     def __init__(
         self,
         dataset: ImageSegmentationDataset,
-        transform: v2.Compose,
-        target_transform: v2.Compose,
+        transform: transforms.Compose,
+        target_transform: transforms.Compose,
         split: str = "all",
     ):
         # Filter split and make filenames global
@@ -93,31 +93,34 @@ class TorchImageSegmentationModel(ImageSegmentationModel):
         self.t_label = []
 
         if "image_size" in self.model_cfg:
-            self.t_in += [v2.Resize(tuple(self.model_cfg["image_size"]))]
+            self.t_in += [transforms.Resize(tuple(self.model_cfg["image_size"]))]
             self.t_label += [
-                v2.Resize(
+                transforms.Resize(
                     tuple(self.model_cfg["image_size"]),
-                    interpolation=v2.InterpolationMode.NEAREST_EXACT,
+                    interpolation=transforms.InterpolationMode.NEAREST_EXACT,
                 )
             ]
 
-        self.t_in += [v2.ToImage(), v2.ToDtype(torch.float32, scale=True)]
-        self.t_label += [v2.ToImage(), v2.ToDtype(torch.int64)]
+        self.t_in += [
+            transforms.ToImage(),
+            transforms.ToDtype(torch.float32, scale=True),
+        ]
+        self.t_label += [transforms.ToImage(), transforms.ToDtype(torch.int64)]
 
         if "normalization" in self.model_cfg:
             self.t_in += [
-                v2.Normalize(
+                transforms.Normalize(
                     mean=self.model_cfg["normalization"]["mean"],
                     std=self.model_cfg["normalization"]["std"],
                 )
             ]
 
-        self.t_in = v2.Compose(self.t_in)
-        self.t_label = v2.Compose(self.t_label)
-        self.t_out = v2.Compose(
+        self.t_in = transforms.Compose(self.t_in)
+        self.t_label = transforms.Compose(self.t_label)
+        self.t_out = transforms.Compose(
             [
                 lambda x: torch.argmax(x.squeeze(), axis=0).squeeze().to(torch.uint8),
-                v2.ToPILImage(),
+                transforms.ToPILImage(),
             ]
         )
 
