@@ -1,32 +1,27 @@
-<a href="https://mmg-ai.com/en/"><img src="https://jderobot.github.io/assets/images/logo.png" width="100 " align="right" /></a>
+<a href="https://mmg-ai.com/en/"><img src="https://jderobot.github.io/assets/images/logo.png" width="50" align="right" /></a>
 
 # DetectionMetrics
 
-### Project webpage [here](https://jderobot.github.io/DetectionMetrics)
+#### Project webpage [here](https://jderobot.github.io/DetectionMetrics)
 
-*DetectionMetrics* is a family of toolkits designed to unify and streamline the evaluation of perception models across different frameworks and datasets. With the release of ***DetectionMetrics v1*** we introduced a versatile suite of tools focused on object detection, supporting cross-framework evaluation and analysis. [Cite our work](#cite) if you use it in your research!
+>&#9888;&#65039; ***DetectionMetrics v1*** website referenced in our *Sensors* paper is still available [here](https://jderobot.github.io/DetectionMetrics/v1)
 
-<table style='font-size:100%'>
-  <tr>
-    <th><i>DetectionMetrics v1</i></th>
-    <th>&#128187; <a href="https://github.com/JdeRobot/DetectionMetrics/releases/tag/v1.0.0">Code</a></th>
-    <th>&#128214; <a href="/v1">Docs</a></th>
-    <th>&#128011; <a href="https://hub.docker.com/r/jderobot/detection-metrics">Docker</a></th>
-    <th>&#128240; <a href="https://www.mdpi.com/1424-8220/22/12/4575">Paper</a></th>
-  </tr>
-</table>
+*DetectionMetrics* is a family of toolkits designed to unify and streamline the evaluation of perception models across different frameworks and datasets. Looking for our published ***DetectionMetrics v1***? Check out all the [relevant links](#v1) below.
 
-Now, we're excited to introduce ***DetectionMetrics v2***! While retaining the flexibility of our previous release, *DetectionMetrics v2* is designed with an expanded focus on image segmentation, with plans to extend support to object detection and LiDAR applications. As we move forward, *v2* will be the actively maintained version, featuring continued updates and enhancements to keep pace with evolving AI and computer vision technologies.
+Now, we're excited to introduce ***DetectionMetrics v2***! While retaining the flexibility of our previous release, *DetectionMetrics* has been redesigned with an expanded focus on image segmentation, with plans to extend support to object detection and LiDAR applications. As we move forward, *v2* will be the actively maintained version, featuring continued updates and enhancements to keep pace with evolving AI and computer vision technologies.
 
 <table style='font-size:100%'>
   <tr>
     <th><i>DetectionMetrics v2</i></th>
     <th>&#128187; <a href="https://github.com/JdeRobot/DetectionMetrics">Code</a></th>
-    <th>&#128295; <a href="/v2/installation">Installation</a></th>
-    <th>&#129513; <a href="/v2/compatibility">Compatibility</a></th>
-    <th>&#128214; <a href="/py_docs/_build/html/index.html">Docs</a></th>
+    <th>&#128295; <a href="https://jderobot.github.io/DetectionMetrics/v2/installation">Installation</a></th>
+    <th>&#129513; <a href="https://jderobot.github.io/DetectionMetrics/v2/compatibility">Compatibility</a></th>
+    <th>&#128214; <a href="https://jderobot.github.io/DetectionMetrics/py_docs/_build/html/index.html">Docs</a></th>
   </tr>
 </table>
+
+In the following diagram you can see a broad overview of how the core classes in our library are organized (this might evolve quickly):
+![diagram](docs/assets/images/detectionmetricsv2_diagram.png)
 
 # What's supported in DetectionMetrics
 
@@ -99,6 +94,20 @@ Install your deep learning framework of preference in your environment. We have 
 - `tensorflow[and-cuda]==2.17.1`
 
 And it's done! You can check the `examples` directory for inspiration and run some of the scripts provided either by activating the created environment using `poetry shell` or directly running `poetry run python examples/<some_python_script.py>`.
+
+<h1 id="v1">DetectionMetrics v1</h1>
+
+Our previous release, ***DetectionMetrics v1***, introduced a versatile suite focused on object detection, supporting cross-framework evaluation and analysis. [Cite our work](#cite) if you use it in your research!
+
+<table style='font-size:100%'>
+  <tr>
+    <th><i>DetectionMetrics v1</i></th>
+    <th>&#128187; <a href="https://github.com/JdeRobot/DetectionMetrics/releases/tag/v1.0.0">Code</a></th>
+    <th>&#128214; <a href="/v1">Docs</a></th>
+    <th>&#128011; <a href="https://hub.docker.com/r/jderobot/detection-metrics">Docker</a></th>
+    <th>&#128240; <a href="https://www.mdpi.com/1424-8220/22/12/4575">Paper</a></th>
+  </tr>
+</table>
 
 <h1 id="cite">Cite our work</h1>
 
