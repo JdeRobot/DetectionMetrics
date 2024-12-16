@@ -33,7 +33,7 @@ def build_dataset(
 
     # Load and adapt ontology
     names, colors = uio.read_yaml(ontology_fname)
-    ontology = {names[idx]: {"idx": idx, "rgb": colors[idx]} for idx in names}
+    ontology = {names[idx]: {"idx": idx, "rgb": tuple(colors[idx])} for idx in names}
 
     # Get samples filenames
     train_split = [
@@ -99,12 +99,13 @@ class Rellis3dImageSegmentationDataset(dataset.ImageSegmentationDataset):
             "test": os.path.join(split_dir, "test.lst"),
         }
         dataset, ontology = build_dataset(dataset_dir, split_fnames, ontology_fname)
-        super().__init__(dataset, dataset_dir, ontology)
 
         # Convert to Pandas
-        cols = ["images", "label", "scene", "split"]
-        self.dataset = pd.DataFrame.from_dict(dataset, orient="index", columns=cols)
-        self.dataset.attrs = {"ontology": self.ontology}
+        cols = ["image", "label", "scene", "split"]
+        dataset = pd.DataFrame.from_dict(dataset, orient="index", columns=cols)
+        dataset.attrs = {"ontology": ontology}
+
+        super().__init__(dataset, dataset_dir, ontology)
 
 
 class Rellis3dLiDARSegmentationDataset(dataset.LiDARSegmentationDataset):
@@ -131,9 +132,10 @@ class Rellis3dLiDARSegmentationDataset(dataset.LiDARSegmentationDataset):
             "test": os.path.join(split_dir, "pt_test.lst"),
         }
         dataset, ontology = build_dataset(dataset_dir, split_fnames, ontology_fname)
-        super().__init__(dataset, dataset_dir, ontology)
 
         # Convert to Pandas
         cols = ["points", "label", "scene", "split"]
-        self.dataset = pd.DataFrame.from_dict(dataset, orient="index", columns=cols)
-        self.dataset.attrs = {"ontology": self.ontology}
+        dataset = pd.DataFrame.from_dict(dataset, orient="index", columns=cols)
+        dataset.attrs = {"ontology": ontology}
+
+        super().__init__(dataset, dataset_dir, ontology)
