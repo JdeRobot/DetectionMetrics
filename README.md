@@ -8,7 +8,7 @@
 
 *DetectionMetrics* is a family of toolkits designed to unify and streamline the evaluation of perception models across different frameworks and datasets. Looking for our published ***DetectionMetrics v1***? Check out all the [relevant links](#v1) below.
 
-Now, we're excited to introduce ***DetectionMetrics v2***! While retaining the flexibility of our previous release, *DetectionMetrics* has been redesigned with an expanded focus on image segmentation, with plans to extend support to object detection and LiDAR applications. As we move forward, *v2* will be the actively maintained version, featuring continued updates and enhancements to keep pace with evolving AI and computer vision technologies.
+Now, we're excited to introduce ***DetectionMetrics v2***! While retaining the flexibility of our previous release, *DetectionMetrics* has been redesigned with an expanded focus on image and LiDAR segmentation. As we move forward, *v2* will be the actively maintained version, featuring continued updates and enhancements to keep pace with evolving AI and computer vision technologies.
 
 <table style='font-size:100%'>
   <tr>
@@ -39,9 +39,8 @@ Now, we're excited to introduce ***DetectionMetrics v2***! While retaining the f
   </tr>
   <tr>
     <td>LiDAR</td>
-    <td>Coming soon</td>
-    <td>Coming soon</td>
-  </tr>
+    <td>Rellis3D, GOOSE, custom GAIA format</td>
+    <td>PyTorch (RandLA-Net from <a href="https://github.com/isl-org/Open3D-ML">Open3D-ML</a>)</td>  </tr>
   <tr>
     <td>Object detection</td>
     <td>Image</td>
@@ -123,3 +122,6 @@ Our previous release, ***DetectionMetrics v1***, introduced a versatile suite fo
   doi = {10.3390/s22124575},
 }
 ```
+
+# Acknowledgements
+Utils for LiDAR segmentation, such as sampling or recentering, are based on [Open3D-ML](https://github.com/isl-org/Open3D-ML).

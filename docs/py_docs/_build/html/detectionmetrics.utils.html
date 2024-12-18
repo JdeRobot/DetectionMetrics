@@ -94,7 +94,7 @@
 <span id="detectionmetrics-utils-conversion-module"></span><h2>detectionmetrics.utils.conversion module<a class="headerlink" href="#module-detectionmetrics.utils.conversion" title="Link to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="detectionmetrics.utils.conversion.get_ontology_conversion_lut">
-<span class="sig-prename descclassname"><span class="pre">detectionmetrics.utils.conversion.</span></span><span class="sig-name descname"><span class="pre">get_ontology_conversion_lut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old_ontology</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_ontology</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_translation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#detectionmetrics.utils.conversion.get_ontology_conversion_lut" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">detectionmetrics.utils.conversion.</span></span><span class="sig-name descname"><span class="pre">get_ontology_conversion_lut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">old_ontology</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_ontology</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_translation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignored_classes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#detectionmetrics.utils.conversion.get_ontology_conversion_lut" title="Link to this definition"></a></dt>
 <dd><p>Build a LUT that links old ontology and new ontology indices. If class names
 don’t match between the provided ontologies, user must provide an ontology
 translation dictionary with old and new class names as keys and values, respectively</p>
@@ -104,6 +104,7 @@ translation dictionary with old and new class names as keys and values, respecti
 <li><p><strong>old_ontology</strong> (<em>dict</em>) – Origin ontology definition</p></li>
 <li><p><strong>new_ontology</strong> (<em>dict</em>) – Target ontology definition</p></li>
 <li><p><strong>ontology_translation</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em><em>, </em><em>optional</em>) – Ontology translation dictionary, defaults to None</p></li>
+<li><p><strong>ignored_classes</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Classes to ignore from the old ontology, defaults to []</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -287,16 +288,19 @@ computed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="detectionmetrics.utils.metrics.Accuracy.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.utils.metrics.Accuracy.update" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.utils.metrics.Accuracy.update" title="Link to this definition"></a></dt>
 <dd><p>Accumulate accuracy values for a new set of samples</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pred</strong> (<em>np.ndarray</em>) – label encoded prediction array (batch, width, height)</p></li>
 <li><p><strong>gt</strong> (<em>np.ndarray</em>) – label encoded ground truth array (batch, width, height)</p></li>
+<li><p><strong>valid_mask</strong> – Binary mask where False elements will be igonred, defaults</p></li>
 </ul>
 </dd>
 </dl>
+<p>to None
+:type valid_mask: Optional[np.ndarray], optional</p>
 </dd></dl>
 
 </dd></dl>
@@ -328,16 +332,19 @@ and then the average per class is computed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="detectionmetrics.utils.metrics.IoU.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.utils.metrics.IoU.update" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.utils.metrics.IoU.update" title="Link to this definition"></a></dt>
 <dd><p>Accumulate IoU values for a new set of samples</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pred</strong> (<em>np.ndarray</em>) – one-hot encoded prediction array (batch, class, width, height)</p></li>
 <li><p><strong>gt</strong> (<em>np.ndarray</em>) – one-hot encoded ground truth array (batch, class, width, height)</p></li>
+<li><p><strong>valid_mask</strong> – Binary mask where False elements will be igonred, defaults</p></li>
 </ul>
 </dd>
 </dl>
+<p>to None
+:type valid_mask: Optional[np.ndarray], optional</p>
 </dd></dl>
 
 </dd></dl>
@@ -368,16 +375,19 @@ and then the average per class is computed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="detectionmetrics.utils.metrics.Metric.update">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.utils.metrics.Metric.update" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pred</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.utils.metrics.Metric.update" title="Link to this definition"></a></dt>
 <dd><p>Accumulate results for a new batch</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pred</strong> (<em>np.ndarray</em>) – Array containing prediction</p></li>
 <li><p><strong>gt</strong> (<em>np.ndarray</em>) – Array containing ground truth</p></li>
+<li><p><strong>valid_mask</strong> – Binary mask where False elements will be igonred, defaults</p></li>
 </ul>
 </dd>
 </dl>
+<p>to None
+:type valid_mask: Optional[np.ndarray], optional</p>
 </dd></dl>
 
 </dd></dl>
