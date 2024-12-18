@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Tuple
+from typing import Optional, Tuple
 
 import numpy as np
 
@@ -15,13 +15,18 @@ class Metric(ABC):
         self.n_classes = n_classes
 
     @abstractmethod
-    def update(self, pred: np.ndarray, gt: np.ndarray):
+    def update(
+        self, pred: np.ndarray, gt: np.ndarray, valid_mask: Optional[np.ndarray] = None
+    ):
         """Accumulate results for a new batch
 
         :param pred: Array containing prediction
         :type pred: np.ndarray
         :param gt: Array containing ground truth
         :type gt: np.ndarray
+        :param valid_mask: Binary mask where False elements will be igonred, defaults
+        to None
+        :type valid_mask: Optional[np.ndarray], optional
         """
         raise NotImplementedError
 
@@ -47,19 +52,29 @@ class IoU(Metric):
         super().__init__(n_classes)
         self.iou = np.zeros((0, n_classes), dtype=np.float64)
 
-    def update(self, pred: np.ndarray, gt: np.ndarray):
+    def update(
+        self, pred: np.ndarray, gt: np.ndarray, valid_mask: Optional[np.ndarray] = None
+    ):
         """Accumulate IoU values for a new set of samples
 
         :param pred: one-hot encoded prediction array (batch, class, width, height)
         :type pred: np.ndarray
         :param gt: one-hot encoded ground truth array (batch, class, width, height)
         :type gt: np.ndarray
+        :param valid_mask: Binary mask where False elements will be igonred, defaults
+        to None
+        :type valid_mask: Optional[np.ndarray], optional
         """
         assert pred.shape == gt.shape, "Pred. and GT shapes don't match"
         assert pred.shape[1] == self.n_classes, "Number of classes mismatch"
+        batch_size = pred.shape[0]
+
+        # Remove invalid elements
+        if valid_mask is not None:
+            pred = pred[valid_mask]
+            gt = gt[valid_mask]
 
         # Flatten spatial dimensions
-        batch_size = pred.shape[0]
         pred = pred.reshape(batch_size, self.n_classes, -1)
         gt = gt.reshape(batch_size, self.n_classes, -1)
 
@@ -102,18 +117,28 @@ class Accuracy(Metric):
         self.total_per_class = np.zeros((0, n_classes))
         self.accuracy_per_class = np.zeros((0, n_classes))
 
-    def update(self, pred: np.ndarray, gt: np.ndarray):
+    def update(
+        self, pred: np.ndarray, gt: np.ndarray, valid_mask: Optional[np.ndarray] = None
+    ):
         """Accumulate accuracy values for a new set of samples
 
         :param pred: label encoded prediction array (batch, width, height)
         :type pred: np.ndarray
         :param gt: label encoded ground truth array (batch, width, height)
         :type gt: np.ndarray
+        :param valid_mask: Binary mask where False elements will be igonred, defaults
+        to None
+        :type valid_mask: Optional[np.ndarray], optional
         """
         assert pred.shape == gt.shape, "Pred. and GT shapes don't match"
+        batch_size = pred.shape[0]
+
+        # Remove invalid elements
+        if valid_mask is not None:
+            pred = pred[valid_mask]
+            gt = gt[valid_mask]
 
         # Flatten spatial dimensions
-        batch_size = pred.shape[0]
         pred = pred.reshape(batch_size, -1)
         gt = gt.reshape(batch_size, -1)
 

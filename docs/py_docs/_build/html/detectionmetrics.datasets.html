@@ -94,20 +94,18 @@
 <span id="detectionmetrics-datasets-dataset-module"></span><h2>detectionmetrics.datasets.dataset module<a class="headerlink" href="#module-detectionmetrics.datasets.dataset" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="detectionmetrics.datasets.dataset.ImageSegmentationDataset">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">detectionmetrics.datasets.dataset.</span></span><span class="sig-name descname"><span class="pre">ImageSegmentationDataset</span></span><a class="headerlink" href="#detectionmetrics.datasets.dataset.ImageSegmentationDataset" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">detectionmetrics.datasets.dataset.</span></span><span class="sig-name descname"><span class="pre">ImageSegmentationDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.datasets.dataset.ImageSegmentationDataset" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#detectionmetrics.datasets.dataset.SegmentationDataset" title="detectionmetrics.datasets.dataset.SegmentationDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">SegmentationDataset</span></code></a></p>
 <p>Parent image segmentation dataset class</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="detectionmetrics.datasets.dataset.ImageSegmentationDataset.append">
-<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.datasets.dataset.ImageSegmentationDataset.append" title="Link to this definition"></a></dt>
-<dd><p>Append another dataset with common ontology</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>new_dataset</strong> (<em>Self</em>) – Dataset to be appended</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset</strong> (<em>pd.DataFrame</em>) – Image segmentation dataset as a pandas DataFrame</p></li>
+<li><p><strong>dataset_dir</strong> (<em>str</em>) – Dataset root directory</p></li>
+<li><p><strong>ontology</strong> (<em>dict</em>) – Dataset ontology definition</p></li>
+</ul>
 </dd>
 </dl>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="detectionmetrics.datasets.dataset.ImageSegmentationDataset.export">
 <span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outdir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.datasets.dataset.ImageSegmentationDataset.export" title="Link to this definition"></a></dt>
@@ -127,6 +125,109 @@
 
 </dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="detectionmetrics.datasets.dataset.LiDARSegmentationDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">detectionmetrics.datasets.dataset.</span></span><span class="sig-name descname"><span class="pre">LiDARSegmentationDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_kitti_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.datasets.dataset.LiDARSegmentationDataset" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#detectionmetrics.datasets.dataset.SegmentationDataset" title="detectionmetrics.datasets.dataset.SegmentationDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">SegmentationDataset</span></code></a></p>
+<p>Parent lidar segmentation dataset class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset</strong> (<em>pd.DataFrame</em>) – LiDAR segmentation dataset as a pandas DataFrame</p></li>
+<li><p><strong>dataset_dir</strong> (<em>str</em>) – Dataset root directory</p></li>
+<li><p><strong>ontology</strong> (<em>dict</em>) – Dataset ontology definition</p></li>
+<li><p><strong>is_kitti_format</strong> – Whether the linked files in the dataset are stored in</p></li>
+</ul>
+</dd>
+</dl>
+<p>SemanticKITTI format or not, defaults to True
+:type is_kitti_format: bool, optional</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="detectionmetrics.datasets.dataset.LiDARSegmentationDataset.export">
+<span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outdir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.datasets.dataset.LiDARSegmentationDataset.export" title="Link to this definition"></a></dt>
+<dd><p>Export dataset dataframe and LiDAR files in SemanticKITTI format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>outdir</strong> (<em>str</em>) – Directory where Parquet and LiDAR files will be stored</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectionmetrics.datasets.dataset.LiDARSegmentationDataset.make_fname_global">
+<span class="sig-name descname"><span class="pre">make_fname_global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.datasets.dataset.LiDARSegmentationDataset.make_fname_global" title="Link to this definition"></a></dt>
+<dd><p>Get all relative filenames in dataset and make global</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectionmetrics.datasets.dataset.LiDARSegmentationDataset.read_label">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#detectionmetrics.datasets.dataset.LiDARSegmentationDataset.read_label" title="Link to this definition"></a></dt>
+<dd><p>Read labels from a binary file in SemanticKITTI format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fname</strong> (<em>str</em>) – Binary file containing labels</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Numpy arrays containing semantic and instance labels</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[np.ndarray, np.ndarray]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectionmetrics.datasets.dataset.LiDARSegmentationDataset.read_points">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#detectionmetrics.datasets.dataset.LiDARSegmentationDataset.read_points" title="Link to this definition"></a></dt>
+<dd><p>Read points from a binary file in SemanticKITTI format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fname</strong> (<em>str</em>) – Binary file containing points</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Numpy array containing points</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="detectionmetrics.datasets.dataset.SegmentationDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">detectionmetrics.datasets.dataset.</span></span><span class="sig-name descname"><span class="pre">SegmentationDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.datasets.dataset.SegmentationDataset" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Abstract segmentation dataset class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset</strong> (<em>pd.DataFrame</em>) – Segmentation dataset as a pandas DataFrame</p></li>
+<li><p><strong>dataset_dir</strong> (<em>str</em>) – Dataset root directory</p></li>
+<li><p><strong>ontology</strong> (<em>dict</em>) – Dataset ontology definition</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="detectionmetrics.datasets.dataset.SegmentationDataset.append">
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.datasets.dataset.SegmentationDataset.append" title="Link to this definition"></a></dt>
+<dd><p>Append another dataset with common ontology</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>new_dataset</strong> (<em>Self</em>) – Dataset to be appended</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="detectionmetrics.datasets.dataset.SegmentationDataset.make_fname_global">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">make_fname_global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.datasets.dataset.SegmentationDataset.make_fname_global" title="Link to this definition"></a></dt>
+<dd><p>Get all relative filenames in dataset and make global</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-detectionmetrics.datasets.gaia">
 <span id="detectionmetrics-datasets-gaia-module"></span><h2>detectionmetrics.datasets.gaia module<a class="headerlink" href="#module-detectionmetrics.datasets.gaia" title="Link to this heading"></a></h2>
@@ -138,6 +239,35 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>dataset_fname</strong> (<em>str</em>) – Parquet dataset filename</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="detectionmetrics.datasets.gaia.GaiaLiDARSegmentationDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">detectionmetrics.datasets.gaia.</span></span><span class="sig-name descname"><span class="pre">GaiaLiDARSegmentationDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_fname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.datasets.gaia.GaiaLiDARSegmentationDataset" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#detectionmetrics.datasets.dataset.LiDARSegmentationDataset" title="detectionmetrics.datasets.dataset.LiDARSegmentationDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">LiDARSegmentationDataset</span></code></a></p>
+<p>Specific class for GAIA-styled LiDAR segmentation datasets</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dataset_fname</strong> (<em>str</em>) – Parquet dataset filename</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="detectionmetrics.datasets.gaia.build_dataset">
+<span class="sig-prename descclassname"><span class="pre">detectionmetrics.datasets.gaia.</span></span><span class="sig-name descname"><span class="pre">build_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_fname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#detectionmetrics.datasets.gaia.build_dataset" title="Link to this definition"></a></dt>
+<dd><p>Build dataset and ontology dictionaries from GAIA-like dataset structure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dataset_fname</strong> (<em>str</em>) – Parquet dataset filename</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dataset dataframe and directory, and onotology</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[pd.DataFrame, str, dict]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -171,8 +301,8 @@ test  -&gt; <a class="reference external" href="https://goose-dataset.de/storage
 <section id="module-detectionmetrics.datasets.rellis3d">
 <span id="detectionmetrics-datasets-rellis3d-module"></span><h2>detectionmetrics.datasets.rellis3d module<a class="headerlink" href="#module-detectionmetrics.datasets.rellis3d" title="Link to this heading"></a></h2>
 <dl class="py class">
-<dt class="sig sig-object py" id="detectionmetrics.datasets.rellis3d.Rellis3dImageSegmentationDataset">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">detectionmetrics.datasets.rellis3d.</span></span><span class="sig-name descname"><span class="pre">Rellis3dImageSegmentationDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_fname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.datasets.rellis3d.Rellis3dImageSegmentationDataset" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="detectionmetrics.datasets.rellis3d.Rellis3DImageSegmentationDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">detectionmetrics.datasets.rellis3d.</span></span><span class="sig-name descname"><span class="pre">Rellis3DImageSegmentationDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_fname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.datasets.rellis3d.Rellis3DImageSegmentationDataset" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#detectionmetrics.datasets.dataset.ImageSegmentationDataset" title="detectionmetrics.datasets.dataset.ImageSegmentationDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageSegmentationDataset</span></code></a></p>
 <p>Specific class for Rellis3D-styled image segmentation datasets. All data can
 be downloaded from the official repo (<a class="reference external" href="https://github.com/unmannedlab/RELLIS-3D">https://github.com/unmannedlab/RELLIS-3D</a>):</p>
@@ -194,6 +324,52 @@ extracted to
 :type split_dir: str
 :param ontology_fname: YAML file contained in the ontology compressed directory
 :type ontology_fname: str</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="detectionmetrics.datasets.rellis3d.Rellis3DLiDARSegmentationDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">detectionmetrics.datasets.rellis3d.</span></span><span class="sig-name descname"><span class="pre">Rellis3DLiDARSegmentationDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_fname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.datasets.rellis3d.Rellis3DLiDARSegmentationDataset" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#detectionmetrics.datasets.dataset.LiDARSegmentationDataset" title="detectionmetrics.datasets.dataset.LiDARSegmentationDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">LiDARSegmentationDataset</span></code></a></p>
+<p>Specific class for Rellis3D-styled LiDAR segmentation datasets. All data can
+be downloaded from the official repo (<a class="reference external" href="https://github.com/unmannedlab/RELLIS-3D">https://github.com/unmannedlab/RELLIS-3D</a>):</p>
+<blockquote>
+<div><p>points   -&gt; <a class="reference external" href="https://drive.google.com/file/d/1lDSVRf_kZrD0zHHMsKJ0V1GN9QATR4wH">https://drive.google.com/file/d/1lDSVRf_kZrD0zHHMsKJ0V1GN9QATR4wH</a>
+labels   -&gt; <a class="reference external" href="https://drive.google.com/file/d/12bsblHXtob60KrjV7lGXUQTdC5PhV8Er">https://drive.google.com/file/d/12bsblHXtob60KrjV7lGXUQTdC5PhV8Er</a>
+split    -&gt; <a class="reference external" href="https://drive.google.com/file/d/1raQJPySyqDaHpc53KPnJVl3Bln6HlcVS">https://drive.google.com/file/d/1raQJPySyqDaHpc53KPnJVl3Bln6HlcVS</a>
+ontology -&gt; <a class="reference external" href="https://drive.google.com/file/d/1K8Zf0ju_xI5lnx3NTDLJpVTs59wmGPI6">https://drive.google.com/file/d/1K8Zf0ju_xI5lnx3NTDLJpVTs59wmGPI6</a></p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_dir</strong> (<em>str</em>) – Directory where both points and labels have been extracted to</p></li>
+<li><p><strong>split_dir</strong> – Directory where train, val, and test files (.lst) have been</p></li>
+</ul>
+</dd>
+</dl>
+<p>extracted to
+:type split_dir: str
+:param ontology_fname: YAML file contained in the ontology compressed directory
+:type ontology_fname: str</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="detectionmetrics.datasets.rellis3d.build_dataset">
+<span class="sig-prename descclassname"><span class="pre">detectionmetrics.datasets.rellis3d.</span></span><span class="sig-name descname"><span class="pre">build_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split_fnames</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_fname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#detectionmetrics.datasets.rellis3d.build_dataset" title="Link to this definition"></a></dt>
+<dd><p>Build dataset and ontology dictionaries from Rellis3D dataset structure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dataset_dir</strong> – Directory where both RGB images and annotations have been</p>
+</dd>
+</dl>
+<p>extracted to
+:type dataset_dir: str
+:param split_fnames: Dictionary that contains the paths where train, val, and test
+split files (.lst) have been extracted to
+:type split_dir: str
+:param ontology_fname: YAML file contained in the ontology compressed directory
+:type ontology_fname: str
+:return: Dataset and onotology
+:rtype: Tuple[dict, dict]</p>
 </dd></dl>
 
 </section>

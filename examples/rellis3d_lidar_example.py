@@ -1,6 +1,6 @@
 import argparse
 
-from detectionmetrics.datasets.rellis3d import Rellis3DImageSegmentationDataset
+from detectionmetrics.datasets.rellis3d import Rellis3DLiDARSegmentationDataset
 
 
 def parse_args() -> argparse.Namespace:
@@ -14,7 +14,7 @@ def parse_args() -> argparse.Namespace:
         "--dataset_dir",
         type=str,
         required=True,
-        help="Directory where dataset images and labels are stored",
+        help="Directory where dataset points and labels are stored",
     )
     parser.add_argument(
         "--split_dir",
@@ -42,7 +42,7 @@ def main():
     """Main function"""
     args = parse_args()
 
-    dataset = Rellis3DImageSegmentationDataset(
+    dataset = Rellis3DLiDARSegmentationDataset(
         dataset_dir=args.dataset_dir,
         split_dir=args.split_dir,
         ontology_fname=args.ontology_fname,

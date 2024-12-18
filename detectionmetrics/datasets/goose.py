@@ -30,26 +30,23 @@ class GooseImageSegmentationDataset(ImageSegmentationDataset):
         val_dataset_dir: Optional[str] = None,
         test_dataset_dir: Optional[str] = None,
     ):
-        super().__init__()
-
         # Check that provided paths exist
         assert os.path.isdir(train_dataset_dir), "Train dataset directory not found"
         dataset_dirs = {"train": train_dataset_dir}
         if val_dataset_dir is not None:
-            assert os.path.isdir(val_dataset_dir)
-            dataset_dirs["val"] = val_dataset_dir, "Val. dataset directory not found"
+            assert os.path.isdir(val_dataset_dir), "Val. dataset directory not found"
+            dataset_dirs["val"] = val_dataset_dir
         if test_dataset_dir is not None:
-            assert os.path.isdir(test_dataset_dir)
-            dataset_dirs["test"] = test_dataset_dir, "Test dataset directory not found"
+            assert os.path.isdir(test_dataset_dir), "Test dataset directory not found"
+            dataset_dirs["test"] = test_dataset_dir
 
         # Load and adapt ontology
         ontology_fname = os.path.join(train_dataset_dir, "goose_label_mapping.csv")
         assert os.path.isfile(ontology_fname), "Ontology file not found"
 
-        ontology = pd.read_csv(ontology_fname)
-        self.ontology = {}
-        for idx, (name, _, _, color) in ontology.iterrows():
-            self.ontology[name] = {"idx": idx, "rgb": uc.hex_to_rgb(color)}
+        ontology, ontology_dataframe = ({}, pd.read_csv(ontology_fname))
+        for idx, (name, _, _, color) in ontology_dataframe.iterrows():
+            ontology[name] = {"idx": idx, "rgb": uc.hex_to_rgb(color)}
 
         # Build dataset as ordered python dictionary
         dataset = OrderedDict()
@@ -74,7 +71,9 @@ class GooseImageSegmentationDataset(ImageSegmentationDataset):
 
         # Convert to Pandas
         cols = ["image", "label", "scene", "split"]
-        self.dataset = pd.DataFrame.from_dict(dataset, orient="index", columns=cols)
+        dataset = pd.DataFrame.from_dict(dataset, orient="index", columns=cols)
 
         # Report results
         print(f"Samples retrieved: {len(dataset)}")
+
+        super().__init__(dataset, dataset_dir, ontology)

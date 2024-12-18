@@ -9,11 +9,57 @@ from torch.utils.data import DataLoader, Dataset
 from torchvision.transforms import v2 as transforms
 from tqdm import tqdm
 
-from detectionmetrics.datasets.dataset import ImageSegmentationDataset
-from detectionmetrics.models.model import ImageSegmentationModel
+from detectionmetrics.datasets import dataset as dm_dataset
+from detectionmetrics.models import model as dm_model
+from detectionmetrics.models import torch_model_utils as tmu
 import detectionmetrics.utils.conversion as uc
 import detectionmetrics.utils.io as uio
+import detectionmetrics.utils.lidar as ul
 import detectionmetrics.utils.metrics as um
+
+
+def data_to_device(
+    data: Union[tuple, list], device: torch.device
+) -> Union[tuple, list]:
+    """Move provided data to given device (CPU or GPU)
+
+    :param data: Data provided (it can be a single or multiple tensors)
+    :type data: Union[tuple, list]
+    :param device: Device to move data to
+    :type device: torch.device
+    :return: Data moved to device
+    :rtype: Union[tuple, list]
+    """
+    if isinstance(data, (tuple, list)):
+        return tuple(
+            d.to(device) if torch.is_tensor(d) else data_to_device(d, device)
+            for d in data
+        )
+    elif torch.is_tensor(data):
+        return data.to(device)
+    else:
+        return data
+
+
+def unsqueeze_data(data: Union[tuple, list], dim: int = 0) -> Union[tuple, list]:
+    """Unsqueeze provided data along given dimension
+
+    :param data: Data provided (it can be a single or multiple tensors)
+    :type data: Union[tuple, list]
+    :param dim: Dimension that will be unsqueezed, defaults to 0
+    :type dim: int, optional
+    :return: Unsqueezed data
+    :rtype: Union[tuple, list]
+    """
+    if isinstance(data, (tuple, list)):
+        return tuple(
+            d.unsqueeze(dim) if torch.is_tensor(d) else unsqueeze_data(d, dim)
+            for d in data
+        )
+    elif torch.is_tensor(data):
+        return data.unsqueeze(dim)
+    else:
+        return data
 
 
 class ImageSegmentationTorchDataset(Dataset):
@@ -31,7 +77,7 @@ class ImageSegmentationTorchDataset(Dataset):
 
     def __init__(
         self,
-        dataset: ImageSegmentationDataset,
+        dataset: dm_dataset.ImageSegmentationDataset,
         transform: transforms.Compose,
         target_transform: transforms.Compose,
         split: str = "all",
@@ -67,7 +113,83 @@ class ImageSegmentationTorchDataset(Dataset):
         return image, label
 
 
-class TorchImageSegmentationModel(ImageSegmentationModel):
+class LiDARSegmentationTorchDataset(Dataset):
+    """Dataset for LiDAR segmentation PyTorch models
+
+    :param dataset: LiDAR segmentation dataset
+    :type dataset: LiDARSegmentationDataset
+    :param model_cfg: Dictionary containing model configuration
+    :type model_cfg: dict
+    :param preprocess: Function for preprocessing point clouds
+    :type preprocess: callable
+    :param n_classes: Number of classes estimated by the model
+    :type n_classes: int
+    :param split: Split to be used from the dataset, defaults to "all"
+    :type split: str, optional
+    """
+
+    def __init__(
+        self,
+        dataset: dm_dataset.LiDARSegmentationDataset,
+        model_cfg: dict,
+        preprocess: callable,
+        n_classes: int,
+        split: str = "all",
+    ):
+        # Filter split and make filenames global
+        if split != "all":
+            dataset.dataset = dataset.dataset[dataset.dataset["split"] == split]
+        self.dataset = dataset
+        self.dataset.make_fname_global()
+
+        self.model_cfg = model_cfg
+        self.preprocess = preprocess
+        self.n_classes = n_classes
+
+    def __len__(self):
+        return len(self.dataset.dataset)
+
+    def __getitem__(
+        self, idx: int
+    ) -> Tuple[Union[np.ndarray, torch.Tensor], Union[np.ndarray, torch.Tensor]]:
+        """Prepare sample data: point cloud and label
+
+        :param idx: Sample index
+        :type idx: int
+        :return: Point cloud and corresponding label tensor or numpy arrays
+        :rtype: Tuple[np.ndarray, np.ndarray,]
+        """
+        # Read the point cloud and its labels
+        points = self.dataset.read_points(self.dataset.dataset.iloc[idx]["points"])
+        semantic_label, instance_label = self.dataset.read_label(
+            self.dataset.dataset.iloc[idx]["label"]
+        )
+
+        # Preprocess point cloud
+        preprocessed_points, search_tree, projected_indices = self.preprocess(
+            points, self.model_cfg
+        )
+
+        # Init sampler
+        sampler = None
+        if "sampler" in self.model_cfg:
+            sampler = ul.Sampler(
+                preprocessed_points,
+                search_tree,
+                self.model_cfg.get("num_points", 45056),
+                self.model_cfg["sampler"],
+                self.n_classes,
+            )
+
+        return (
+            preprocessed_points,
+            projected_indices,
+            (semantic_label, instance_label),
+            sampler,
+        )
+
+
+class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
 
     def __init__(self, model_fname: str, model_cfg: str, ontology_fname: str):
         """Image segmentation model for PyTorch framework
@@ -89,35 +211,37 @@ class TorchImageSegmentationModel(ImageSegmentationModel):
         self.model.eval()
 
         # Init transformations for input images, output labels, and GT labels
-        self.t_in = []
-        self.t_label = []
+        self.transform_input = []
+        self.transform_label = []
 
         if "image_size" in self.model_cfg:
-            self.t_in += [transforms.Resize(tuple(self.model_cfg["image_size"]))]
-            self.t_label += [
+            self.transform_input += [
+                transforms.Resize(tuple(self.model_cfg["image_size"]))
+            ]
+            self.transform_label += [
                 transforms.Resize(
                     tuple(self.model_cfg["image_size"]),
                     interpolation=transforms.InterpolationMode.NEAREST_EXACT,
                 )
             ]
 
-        self.t_in += [
+        self.transform_input += [
             transforms.ToImage(),
             transforms.ToDtype(torch.float32, scale=True),
         ]
-        self.t_label += [transforms.ToImage(), transforms.ToDtype(torch.int64)]
+        self.transform_label += [transforms.ToImage(), transforms.ToDtype(torch.int64)]
 
         if "normalization" in self.model_cfg:
-            self.t_in += [
+            self.transform_input += [
                 transforms.Normalize(
                     mean=self.model_cfg["normalization"]["mean"],
                     std=self.model_cfg["normalization"]["std"],
                 )
             ]
 
-        self.t_in = transforms.Compose(self.t_in)
-        self.t_label = transforms.Compose(self.t_label)
-        self.t_out = transforms.Compose(
+        self.transform_input = transforms.Compose(self.transform_input)
+        self.transform_label = transforms.Compose(self.transform_label)
+        self.transform_output = transforms.Compose(
             [
                 lambda x: torch.argmax(x.squeeze(), axis=0).squeeze().to(torch.uint8),
                 transforms.ToPILImage(),
@@ -132,29 +256,28 @@ class TorchImageSegmentationModel(ImageSegmentationModel):
         :return: segmenation result as PIL image
         :rtype: Image.Image
         """
-        tensor = self.t_in(image).unsqueeze(0).to(self.device)
-        result = self.model(tensor)
+        tensor = self.transform_input(image).unsqueeze(0).to(self.device)
 
-        # TODO: check if this is consistent across different models
-        if isinstance(result, dict):
-            result = result["out"]
+        with torch.no_grad():
+            result = self.model(tensor)
 
-        return self.t_out(result)
+            # TODO: check if this is consistent across different models
+            if isinstance(result, dict):
+                result = result["out"]
+
+        return self.transform_output(result)
 
     def eval(
         self,
-        dataset: ImageSegmentationDataset,
-        batch_size: int = 1,
+        dataset: dm_dataset.ImageSegmentationDataset,
         split: str = "all",
         ontology_translation: Optional[str] = None,
     ) -> pd.DataFrame:
         """Perform evaluation for an image segmentation dataset
 
-        :param dataset_test: Image segmentation dataset for which the evaluation will
+        :param dataset: Image segmentation dataset for which the evaluation will
         be performed
-        :type dataset_test: ImageSegmentationDataset
-        :param batch_size: Batch size, defaults to 1
-        :type batch_size: int, optional
+        :type dataset: ImageSegmentationDataset
         :param split: Split to be used from the dataset, defaults to "all"
         :type split: str, optional
         :param ontology_translation: JSON file containing translation between dataset
@@ -164,27 +287,26 @@ class TorchImageSegmentationModel(ImageSegmentationModel):
         :rtype: pd.DataFrame
         """
         # Build a LUT for transforming ontology if needed
-        lut_ontology = None
-        if dataset.ontology != self.ontology:
-            if ontology_translation is not None:
-                ontology_translation = uio.read_json(ontology_translation)
-            lut_ontology = uc.get_ontology_conversion_lut(
-                dataset.ontology, self.ontology, ontology_translation
-            )
-            lut_ontology = torch.tensor(lut_ontology, dtype=torch.int64).to(self.device)
+        lut_ontology = self.get_lut_ontology(dataset.ontology, ontology_translation)
+        lut_ontology = torch.tensor(lut_ontology, dtype=torch.int64).to(self.device)
+
+        # Retrieve ignored label indices
+        self.ignored_label_indices = []
+        for ignored_class in self.model_cfg.get("ignored_classes", []):
+            self.ignored_label_indices.append(dataset.ontology[ignored_class]["idx"])
 
         # Get PyTorch dataloader
         dataset = ImageSegmentationTorchDataset(
             dataset,
-            transform=self.t_in,
-            target_transform=self.t_label,
+            transform=self.transform_input,
+            target_transform=self.transform_label,
             split=split,
         )
 
         dataloader = DataLoader(
             dataset,
-            batch_size=batch_size,
-            num_workers=16,
+            batch_size=self.model_cfg.get("batch_size", 1),
+            num_workers=self.model_cfg.get("num_workers", 1),
         )
 
         # Init metrics
@@ -194,26 +316,51 @@ class TorchImageSegmentationModel(ImageSegmentationModel):
 
         # Evaluation loop
         with torch.no_grad():
-            pbar = tqdm(dataloader)
+            pbar = tqdm(dataloader, leave=True)
             for image, label in pbar:
-                pred = self.model(image.to(self.device))
-                if isinstance(pred, dict):
-                    pred = pred["out"]
+                # Perform inference
+                with torch.no_grad():
+                    pred = self.model(image.to(self.device))
+                    if isinstance(pred, dict):
+                        pred = pred["out"]
 
+                # Get valid points masks depending on ignored label indices
+                if self.ignored_label_indices:
+                    valid_mask = torch.ones_like(label, dtype=torch.bool)
+                    for idx in self.ignored_label_indices:
+                        valid_mask *= label != idx
+                else:
+                    valid_mask = None
+
+                # Convert labels if needed
                 if lut_ontology is not None:
                     label = lut_ontology[label]
 
+                # Prepare data and update accuracy
                 label = label.squeeze(dim=1).cpu()
                 pred = torch.argmax(pred, axis=1).cpu()
-                acc.update(pred.numpy(), label.numpy())
+                if valid_mask is not None:
+                    valid_mask = valid_mask.squeeze(dim=1).cpu()
 
+                acc.update(
+                    pred.numpy(),
+                    label.numpy(),
+                    valid_mask.numpy() if valid_mask is not None else None,
+                )
+
+                # Prepare data and update IoU
                 label = torch.nn.functional.one_hot(label, num_classes=self.n_classes)
                 label = label.permute(0, 3, 1, 2)
-
                 pred = torch.nn.functional.one_hot(pred, num_classes=self.n_classes)
                 pred = pred.permute(0, 3, 1, 2)
+                if valid_mask is not None:
+                    valid_mask = valid_mask.unsqueeze(1).repeat(1, self.n_classes, 1, 1)
 
-                iou.update(pred.numpy(), label.numpy())
+                iou.update(
+                    pred.numpy(),
+                    label.numpy(),
+                    valid_mask.numpy() if valid_mask is not None else None,
+                )
 
         # Get metrics results
         iou_per_class, iou = iou.compute()
@@ -228,6 +375,252 @@ class TorchImageSegmentationModel(ImageSegmentationModel):
                 "iou": iou_per_class[class_data["idx"]],
                 "acc": acc_per_class[class_data["idx"]],
             }
+        results["global"] = {"iou": iou, "acc": acc}
+
+        return pd.DataFrame(results)
+
+
+class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
+
+    def __init__(self, model_fname: str, model_cfg: str, ontology_fname: str):
+        """LiDAR segmentation model for PyTorch framework
+
+        :param model_fname: PyTorch model saved using TorchScript
+        :type model_fname: str
+        :param model_cfg: JSON file containing model configuration
+        :type model_cfg: str
+        :param ontology_fname: JSON file containing model output ontology
+        :type ontology_fname: str
+        """
+        super().__init__(ontology_fname, model_cfg)
+
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+        # Check that provided path exist and load model
+        assert os.path.isfile(model_fname), "Model file not found"
+        self.model = torch.jit.load(model_fname).to(self.device)
+        self.model.eval()
+
+        # Init model specific functions
+        if self.model_cfg["input_format"] == "o3d_randlanet":  # Open3D RandLaNet
+            self.preprocess = tmu.o3d_randlanet.preprocess
+            self.transform_input = tmu.o3d_randlanet.transform_input
+            self.update_probs = tmu.o3d_randlanet.update_probs
+            self.model_cfg["num_layers"] = sum(1 for _ in self.model.decoder.children())
+        else:
+            self.preprocess = tmu.preprocess
+            self.transform_input = tmu.transform_input
+            self.update_probs = tmu.update_probs
+
+        # Transformation for output labels
+        self.transform_output = (
+            lambda x: torch.argmax(x.squeeze(), axis=-1).squeeze().to(torch.uint8)
+        )
+
+    def inference(self, points: np.ndarray) -> np.ndarray:
+        """Perform inference for a single point cloud
+
+        :param points: Point cloud xyz array
+        :type points: np.ndarray
+        :return: Segmenation result as a point cloud with label indices
+        :rtype: np.ndarray
+        """
+        # Preprocess point cloud
+        points, search_tree, projected_indices = self.preprocess(
+            points, self.model_cfg
+        )
+
+        # Init sampler if needed
+        sampler = None
+        if "sampler" in self.model_cfg:
+            end_th = self.model_cfg.get("end_th", 0.5)
+            sampler = ul.Sampler(
+                points,
+                search_tree,
+                self.model_cfg.get("num_points", 45056),
+                self.model_cfg["sampler"],
+                self.n_classes,
+            )
+
+        # Iterate over the sampled point cloud until all points reach the end threshold.
+        # If no sampler is provided, the inference is performed in a single step.
+        infer_complete = False
+        while not infer_complete:
+            # Sample points if needed
+            selected_indices = None
+            if sampler is not None:
+                points, selected_indices, _ = sampler.sample()
+
+            # Get model input data
+            input_data = self.transform_input(points, self.model_cfg)
+            tensor = data_to_device(input_data, self.device)
+            tensor = unsqueeze_data(tensor)
+
+            # Perform inference
+            with torch.no_grad():
+                result = self.model(*tensor)
+
+                # TODO: check if this is consistent across different models
+                if isinstance(result, dict):
+                    result = result["out"]
+
+            # Update probabilities if sampler is used
+            if sampler is not None:
+                sampler.test_probs = self.update_probs(
+                    result,
+                    selected_indices,
+                    sampler.test_probs,
+                    self.n_classes,
+                )
+                if sampler.p[sampler.p > end_th].shape[0] == sampler.p.shape[0]:
+                    result = sampler.test_probs[projected_indices]
+                    infer_complete = True
+            else:
+                result = result.squeeze().cpu()[projected_indices].cuda()
+                infer_complete = True
+
+        return self.transform_output(result).cpu().numpy()
+
+    def eval(
+        self,
+        dataset: dm_dataset.LiDARSegmentationDataset,
+        split: str = "all",
+        ontology_translation: Optional[str] = None,
+    ) -> pd.DataFrame:
+        """Perform evaluation for a LiDAR segmentation dataset
+
+        :param dataset: LiDAR segmentation dataset for which the evaluation will
+        be performed
+        :type dataset: LiDARSegmentationDataset
+        :param split: Split to be used from the dataset, defaults to "all"
+        :type split: str, optional
+        :param ontology_translation: JSON file containing translation between dataset
+        and model output ontologies
+        :type ontology_translation: str, optional
+        :return: DataFrame containing evaluation results
+        :rtype: pd.DataFrame
+        """
+        # Build a LUT for transforming ontology if needed
+        lut_ontology = self.get_lut_ontology(dataset.ontology, ontology_translation)
+        lut_ontology = torch.tensor(lut_ontology, dtype=torch.int64).to(
+            self.device
+        )
+
+        # Retrieve ignored label indices
+        self.ignored_label_indices = []
+        for ignored_class in self.model_cfg.get("ignored_classes", []):
+            self.ignored_label_indices.append(dataset.ontology[ignored_class]["idx"])
+
+        # Get PyTorch dataset (no dataloader to avoid complexity with batching samplers)
+        dataset = LiDARSegmentationTorchDataset(
+            dataset,
+            model_cfg=self.model_cfg,
+            preprocess=self.preprocess,
+            n_classes=self.n_classes,
+            split=split,
+        )
+
+        # Init metrics
+        iou = um.IoU(self.n_classes)
+        acc = um.Accuracy(self.n_classes)
+
+        # Evaluation loop
+        results = {}
+        end_th = self.model_cfg.get("end_th", 0.5)
+        with torch.no_grad():
+            pbar = tqdm(dataset, total=len(dataset), leave=True)
+            for points, projected_indices, (label, _), sampler in pbar:
+                # Iterate over the sampled point cloud until all points reach the end
+                # threshold. If no sampler is provided, the inference is performed in a
+                # single step.
+                infer_complete = False
+                while not infer_complete:
+                    # Sample points if needed
+                    selected_indices = None
+                    if sampler is not None:
+                        points, selected_indices, _ = sampler.sample()
+
+                    # Get model input data
+                    input_data = self.transform_input(points, self.model_cfg)
+                    tensor = data_to_device(input_data, self.device)
+                    tensor = unsqueeze_data(tensor)
+
+                    # Perform inference
+                    with torch.no_grad():
+                        pred = self.model(*tensor)
+
+                        # TODO: check if this is consistent across different models
+                        if isinstance(pred, dict):
+                            pred = pred["out"]
+
+                    # Update probabilities if sampler is used
+                    if sampler is not None:
+                        sampler.test_probs = self.update_probs(
+                            pred,
+                            selected_indices,
+                            sampler.test_probs,
+                            self.n_classes,
+                        )
+                        if sampler.p[sampler.p > end_th].shape[0] == sampler.p.shape[0]:
+                            pred = sampler.test_probs[projected_indices]
+                            infer_complete = True
+                    else:
+                        pred = pred.squeeze().cpu()[projected_indices].cuda()
+                        infer_complete = True
+
+                # Get valid points masks depending on ignored label indices
+                label = torch.tensor(label, device=self.device)
+                if self.ignored_label_indices:
+                    valid_mask = torch.ones_like(label, dtype=torch.bool)
+                    for idx in self.ignored_label_indices:
+                        valid_mask *= label != idx
+                else:
+                    valid_mask = None
+
+                # Convert labels if needed
+                if lut_ontology is not None:
+                    label = lut_ontology[label]
+
+                # Prepare data and update accuracy
+                label = label.cpu().unsqueeze(0)
+                pred = self.transform_output(pred).cpu().unsqueeze(0).to(torch.int64)
+                if valid_mask is not None:
+                    valid_mask = valid_mask.cpu().unsqueeze(0)
+
+                acc.update(
+                    pred.numpy(),
+                    label.numpy(),
+                    valid_mask.numpy() if valid_mask is not None else None,
+                )
+
+                # Prepare data and update IoU
+                label = torch.nn.functional.one_hot(label, self.n_classes)
+                label = label.permute(0, 2, 1)
+                pred = torch.nn.functional.one_hot(pred, self.n_classes)
+                pred = pred.permute(0, 2, 1)
+                if valid_mask is not None:
+                    valid_mask = valid_mask.unsqueeze(1).repeat(1, self.n_classes, 1)
+
+                iou.update(
+                    pred.numpy(),
+                    label.numpy(),
+                    valid_mask.numpy() if valid_mask is not None else None,
+                )
+
+        # Get metrics results
+        iou_per_class, iou = iou.compute()
+        acc_per_class, acc = acc.compute()
+        iou_per_class = [float(n) for n in iou_per_class]
+        acc_per_class = [float(n) for n in acc_per_class]
+
+        # Build results dataframe
+        results = {}
+        for class_name, class_data in self.ontology.items():
+            if class_data["idx"] not in self.model_cfg.get("ignored_indices", []):
+                results[class_name] = {
+                    "iou": iou_per_class[class_data["idx"]],
+                    "acc": acc_per_class[class_data["idx"]],
+                }
         results["global"] = {"iou": iou, "acc": acc}
 
         return pd.DataFrame(results)
