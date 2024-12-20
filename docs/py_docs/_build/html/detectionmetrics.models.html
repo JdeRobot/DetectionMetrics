@@ -234,24 +234,35 @@ and model output ontologies
 
 <dl class="py method">
 <dt class="sig sig-object py" id="detectionmetrics.models.model.SegmentationModel.get_lut_ontology">
-<span class="sig-name descname"><span class="pre">get_lut_ontology</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_ontology</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_translation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.models.model.SegmentationModel.get_lut_ontology" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_lut_ontology</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_ontology</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_translation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.models.model.SegmentationModel.get_lut_ontology" title="Link to this definition"></a></dt>
 <dd><p>Build ontology lookup table (leave empty if ontologies match)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dataset_ontology</strong> (<em>dict</em>) – Image or LiDAR dataset ontology</p></li>
-<li><p><strong>ontology_translation</strong> – Dictionary containing translation between model and</p></li>
+<li><p><strong>ontology_translation</strong> – JSON file containing translation between model and</p></li>
 </ul>
 </dd>
 </dl>
 <p>dataset ontologies, defaults to None
-:type ontology_translation: Optional[dict], optional</p>
+:type ontology_translation: Optional[str], optional</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="detectionmetrics.models.model.SegmentationModel.inference">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inference</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#detectionmetrics.models.model.SegmentationModel.inference" title="Link to this definition"></a></dt>
-<dd><p>Perform inference</p>
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Image</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Image</span></span></span><a class="headerlink" href="#detectionmetrics.models.model.SegmentationModel.inference" title="Link to this definition"></a></dt>
+<dd><p>Perform inference for a single image or point cloud</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image</strong> (<em>Union</em><em>[</em><em>np.ndarray</em><em>, </em><em>Image.Image</em><em>]</em>) – Either a numpy array (LiDAR point cloud) or a PIL image</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Segmenation result as a point cloud or image with label indices</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[np.ndarray, Image.Image]</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>

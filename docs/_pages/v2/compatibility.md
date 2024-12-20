@@ -48,7 +48,7 @@ sidebar:
     - [GOOSE](https://goose-dataset.de/)
     - Custom GAIA format
 - Models:
-    - PyTorch ([TorchScript](https://pytorch.org/docs/stable/jit.html) format). Validated models: RandLA-Net from [Open3D-ML](https://github.com/isl-org/Open3D-ML).
+    - PyTorch ([TorchScript](https://pytorch.org/docs/stable/jit.html) format). Validated models: RandLA-Net and KPConv from [Open3D-ML](https://github.com/isl-org/Open3D-ML).
         - Input shape: defined by the `input_format` tag.
         - Output shape: `(num_points)`
         - JSON configuration file format:
