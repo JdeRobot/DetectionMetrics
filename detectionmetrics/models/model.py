@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 import os
-from typing import Optional
+from typing import Optional, Union
 
 import numpy as np
 import pandas as pd
@@ -34,8 +34,16 @@ class SegmentationModel(ABC):
         self.model = None
 
     @abstractmethod
-    def inference(self):
-        """Perform inference"""
+    def inference(
+        self, points: Union[np.ndarray, Image.Image]
+    ) -> Union[np.ndarray, Image.Image]:
+        """Perform inference for a single image or point cloud
+
+        :param image: Either a numpy array (LiDAR point cloud) or a PIL image
+        :type image: Union[np.ndarray, Image.Image]
+        :return: Segmenation result as a point cloud or image with label indices
+        :rtype: Union[np.ndarray, Image.Image]
+        """
         raise NotImplementedError
 
     @abstractmethod
@@ -59,14 +67,16 @@ class SegmentationModel(ABC):
         """
         raise NotImplementedError
 
-    def get_lut_ontology(self, dataset_ontology: dict, ontology_translation: Optional[dict] = None):
+    def get_lut_ontology(
+        self, dataset_ontology: dict, ontology_translation: Optional[str] = None
+    ):
         """Build ontology lookup table (leave empty if ontologies match)
 
         :param dataset_ontology: Image or LiDAR dataset ontology
         :type dataset_ontology: dict
-        :param ontology_translation: Dictionary containing translation between model and
+        :param ontology_translation: JSON file containing translation between model and
         dataset ontologies, defaults to None
-        :type ontology_translation: Optional[dict], optional
+        :type ontology_translation: Optional[str], optional
         """
         lut_ontology = None
         if dataset_ontology != self.ontology:

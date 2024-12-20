@@ -31,7 +31,7 @@ def data_to_device(
     :rtype: Union[tuple, list]
     """
     if isinstance(data, (tuple, list)):
-        return tuple(
+        return type(data)(
             d.to(device) if torch.is_tensor(d) else data_to_device(d, device)
             for d in data
         )
@@ -52,7 +52,7 @@ def unsqueeze_data(data: Union[tuple, list], dim: int = 0) -> Union[tuple, list]
     :rtype: Union[tuple, list]
     """
     if isinstance(data, (tuple, list)):
-        return tuple(
+        return type(data)(
             d.unsqueeze(dim) if torch.is_tensor(d) else unsqueeze_data(d, dim)
             for d in data
         )
@@ -174,9 +174,8 @@ class LiDARSegmentationTorchDataset(Dataset):
         sampler = None
         if "sampler" in self.model_cfg:
             sampler = ul.Sampler(
-                preprocessed_points,
+                preprocessed_points.shape[0],
                 search_tree,
-                self.model_cfg.get("num_points", 45056),
                 self.model_cfg["sampler"],
                 self.n_classes,
             )
@@ -403,10 +402,14 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
 
         # Init model specific functions
         if self.model_cfg["input_format"] == "o3d_randlanet":  # Open3D RandLaNet
-            self.preprocess = tmu.o3d_randlanet.preprocess
+            self.preprocess = tmu.preprocess
             self.transform_input = tmu.o3d_randlanet.transform_input
             self.update_probs = tmu.o3d_randlanet.update_probs
             self.model_cfg["num_layers"] = sum(1 for _ in self.model.decoder.children())
+        if self.model_cfg["input_format"] == "o3d_kpconv":  # Open3D KPConv
+            self.preprocess = tmu.preprocess
+            self.transform_input = tmu.o3d_kpconv.transform_input
+            self.update_probs = tmu.o3d_kpconv.update_probs
         else:
             self.preprocess = tmu.preprocess
             self.transform_input = tmu.transform_input
@@ -426,18 +429,15 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
         :rtype: np.ndarray
         """
         # Preprocess point cloud
-        points, search_tree, projected_indices = self.preprocess(
-            points, self.model_cfg
-        )
+        points, search_tree, projected_indices = self.preprocess(points, self.model_cfg)
 
         # Init sampler if needed
         sampler = None
         if "sampler" in self.model_cfg:
             end_th = self.model_cfg.get("end_th", 0.5)
             sampler = ul.Sampler(
-                points,
+                points.shape[0],
                 search_tree,
-                self.model_cfg.get("num_points", 45056),
                 self.model_cfg["sampler"],
                 self.n_classes,
             )
@@ -446,19 +446,17 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
         # If no sampler is provided, the inference is performed in a single step.
         infer_complete = False
         while not infer_complete:
-            # Sample points if needed
-            selected_indices = None
-            if sampler is not None:
-                points, selected_indices, _ = sampler.sample()
-
             # Get model input data
-            input_data = self.transform_input(points, self.model_cfg)
-            tensor = data_to_device(input_data, self.device)
-            tensor = unsqueeze_data(tensor)
+            input_data, selected_indices = self.transform_input(
+                points, self.model_cfg, sampler
+            )
+            input_data = data_to_device(input_data, self.device)
+            if self.model_cfg["input_format"] != "o3d_kpconv":
+                input_data = unsqueeze_data(input_data)
 
             # Perform inference
             with torch.no_grad():
-                result = self.model(*tensor)
+                result = self.model(*input_data)
 
                 # TODO: check if this is consistent across different models
                 if isinstance(result, dict):
@@ -466,12 +464,20 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
 
             # Update probabilities if sampler is used
             if sampler is not None:
-                sampler.test_probs = self.update_probs(
-                    result,
-                    selected_indices,
-                    sampler.test_probs,
-                    self.n_classes,
-                )
+                if self.model_cfg["input_format"] == "o3d_kpconv":
+                    sampler.test_probs = self.update_probs(
+                        result,
+                        selected_indices,
+                        sampler.test_probs,
+                        lengths=input_data[-1],
+                    )
+                else:
+                    sampler.test_probs = self.update_probs(
+                        result,
+                        selected_indices,
+                        sampler.test_probs,
+                        self.n_classes,
+                    )
                 if sampler.p[sampler.p > end_th].shape[0] == sampler.p.shape[0]:
                     result = sampler.test_probs[projected_indices]
                     infer_complete = True
@@ -502,9 +508,7 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
         """
         # Build a LUT for transforming ontology if needed
         lut_ontology = self.get_lut_ontology(dataset.ontology, ontology_translation)
-        lut_ontology = torch.tensor(lut_ontology, dtype=torch.int64).to(
-            self.device
-        )
+        lut_ontology = torch.tensor(lut_ontology, dtype=torch.int64).to(self.device)
 
         # Retrieve ignored label indices
         self.ignored_label_indices = []
@@ -529,38 +533,44 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
         end_th = self.model_cfg.get("end_th", 0.5)
         with torch.no_grad():
             pbar = tqdm(dataset, total=len(dataset), leave=True)
+            i = 0
             for points, projected_indices, (label, _), sampler in pbar:
                 # Iterate over the sampled point cloud until all points reach the end
                 # threshold. If no sampler is provided, the inference is performed in a
                 # single step.
                 infer_complete = False
                 while not infer_complete:
-                    # Sample points if needed
-                    selected_indices = None
-                    if sampler is not None:
-                        points, selected_indices, _ = sampler.sample()
-
                     # Get model input data
-                    input_data = self.transform_input(points, self.model_cfg)
-                    tensor = data_to_device(input_data, self.device)
-                    tensor = unsqueeze_data(tensor)
+                    input_data, selected_indices = self.transform_input(
+                        points, self.model_cfg, sampler
+                    )
+                    input_data = data_to_device(input_data, self.device)
+                    if self.model_cfg["input_format"] != "o3d_kpconv":
+                        input_data = unsqueeze_data(input_data)
 
                     # Perform inference
                     with torch.no_grad():
-                        pred = self.model(*tensor)
+                        pred = self.model(*input_data)
 
                         # TODO: check if this is consistent across different models
                         if isinstance(pred, dict):
                             pred = pred["out"]
 
-                    # Update probabilities if sampler is used
                     if sampler is not None:
-                        sampler.test_probs = self.update_probs(
-                            pred,
-                            selected_indices,
-                            sampler.test_probs,
-                            self.n_classes,
-                        )
+                        if self.model_cfg["input_format"] == "o3d_kpconv":
+                            sampler.test_probs = self.update_probs(
+                                pred,
+                                selected_indices,
+                                sampler.test_probs,
+                                lengths=input_data[-1],
+                            )
+                        else:
+                            sampler.test_probs = self.update_probs(
+                                pred,
+                                selected_indices,
+                                sampler.test_probs,
+                                self.n_classes,
+                            )
                         if sampler.p[sampler.p > end_th].shape[0] == sampler.p.shape[0]:
                             pred = sampler.test_probs[projected_indices]
                             infer_complete = True
@@ -606,6 +616,10 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
                     label.numpy(),
                     valid_mask.numpy() if valid_mask is not None else None,
                 )
+
+                i += 1
+                if i > 15:
+                    break
 
         # Get metrics results
         iou_per_class, iou = iou.compute()

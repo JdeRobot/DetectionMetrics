@@ -1,6 +1,6 @@
 import numpy as np
 import random
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 
 import open3d as o3d
 from sklearn.neighbors import KDTree
@@ -9,12 +9,10 @@ from sklearn.neighbors import KDTree
 class Sampler:
     """Init point cloud sampler
 
-    :param points: Point cloud data
-    :type points: np.ndarray
+    :param point_cloud_size: Total number of points in the point cloud
+    :type point_cloud_size: int
     :param search_tree: Search tree for the point cloud data
     :type search_tree: KDTree
-    :param num_points: Number of points to sample
-    :type num_points: int
     :param sampler_name: Sampler name (e.g. random, spatially_regular)
     :type sampler_name: str
     :param num_classes: Number of classes in the dataset
@@ -26,9 +24,8 @@ class Sampler:
 
     def __init__(
         self,
-        points: np.ndarray,
+        point_cloud_size: int,
         search_tree: KDTree,
-        num_points: int,
         sampler_name: str,
         num_classes: int,
         seed: int = 42,
@@ -36,16 +33,13 @@ class Sampler:
         np.random.seed(seed)
         random.seed(seed)
 
-        self.points = points
         self.search_tree = search_tree
-        self.num_points = num_points
-        self.total_num_points = points.shape[0]
         self.num_classes = num_classes
-        self.p = np.random.rand(self.total_num_points) * 1e-3
+        self.p = np.random.rand(point_cloud_size) * 1e-3
         self.min_p = float(np.min(self.p[-1]))
 
         self.test_probs = np.zeros(
-            (self.total_num_points, self.num_classes), dtype=np.float32
+            (point_cloud_size, self.num_classes), dtype=np.float32
         )
 
         if sampler_name == "random":
@@ -57,47 +51,70 @@ class Sampler:
                 f"Sampler {self.model_cfg['sampler']} not implemented"
             )
 
-    def _get_indices(self, center_point: np.ndarray) -> np.ndarray:
+    def _get_indices(
+        self, point_cloud_size: int, num_points: int, center_point: np.ndarray
+    ) -> np.ndarray:
         """Get indices to sample given a center point
 
+        :param point_cloud_size: Current point cloud size
+        :type point_cloud_size: int
+        :param num_points: Number of points to sample
+        :type num_points: int
         :param center_point: Center point for sampling
         :type center_point: np.ndarray
         :return: Indices of points to sample
         :rtype: np.ndarray
         """
         # Sample only if the number of points is less than the required number of points
-        if self.points.shape[0] < self.num_points:
-            diff = self.num_points - self.points.shape[0]
-            indices = np.array(range(self.points.shape[0]))
+        if point_cloud_size < num_points:
+            diff = num_points - point_cloud_size
+            indices = np.array(range(point_cloud_size))
             indices = list(indices) + list(random.choices(indices, k=diff))
             indices = np.asarray(indices)
         else:
-            indices = self.search_tree.query(center_point, k=self.num_points)[1][0]
+            indices = self.search_tree.query(center_point, k=num_points)[1][0]
 
         return indices
 
-    def random(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    def random(
+        self, points: np.ndarray, num_points: int
+    ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         """Random sampling
 
+        :param points: Point cloud data
+        :type points: np.ndarray
+        :param num_points: Number of points to sample
+        :type num_points: int
         :return: Sampled points, and their respective indices and center point
         :rtype: Tuple[np.ndarray, np.ndarray, np.ndarray]
         """
         # Get center point randomly
-        center_idx = np.random.choice(len(self.points), 1)
-        center_point = self.points[center_idx, :].reshape(1, -1)
+        center_idx = np.random.choice(len(points), 1)
+        center_point = points[center_idx, :].reshape(1, -1)
 
         # Get indices to sample and shuffle them
-        indices = self._get_indices(center_point)
+        indices = self._get_indices(points.shape[0], num_points, center_point)
         random.shuffle(indices)
 
         # Get sampled points
-        points = self.points[indices]
+        points = points[indices]
 
         return points, indices, center_point
 
-    def spatially_regular(self) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    def spatially_regular(
+        self,
+        points: np.ndarray,
+        num_points: Optional[int] = None,
+        radius: Optional[float] = None,
+    ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         """Spatially regular sampling
 
+        :param points: Point cloud data
+        :type points: np.ndarray
+        :param num_points: Number of points to sample
+        :type num_points: Optional[int]
+        :param radius: Radius for spatially regular sampling
+        :type radius: Optional[float]
         :return: Sampled points, and their respective indices and center point
         :rtype: Tuple[np.ndarray, np.ndarray, np.ndarray]
         """
@@ -105,10 +122,15 @@ class Sampler:
         while n < 2:
             # Keep as center point the one with the lowest probability
             center_idx = np.argmin(self.p)
-            center_point = self.points[center_idx, :].reshape(1, -1)
+            center_point = points[center_idx, :].reshape(1, -1)
 
             # Get indices to sample
-            indices = self._get_indices(center_point)
+            if radius is not None:
+                indices = self.search_tree.query_radius(center_point, r=radius)[0]
+            elif num_points is not None:
+                indices = self._get_indices(points.shape[0], num_points, center_point)
+            else:
+                raise ValueError("Either num_points or radius must be provided")
             n = len(indices)
 
             # Special case, less than 2 points in the cloud
@@ -117,7 +139,7 @@ class Sampler:
 
         # Shuffle indices and sample
         random.shuffle(indices)
-        points = self.points[indices]
+        points = points[indices]
 
         # Use inverse distance to center point as an increment in probability to be
         # sampled in the future

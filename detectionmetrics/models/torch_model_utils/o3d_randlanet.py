@@ -2,55 +2,41 @@ from typing import List, Optional, Tuple
 
 import numpy as np
 from open3d._ml3d.datasets.utils import DataProcessing
-from sklearn.neighbors import KDTree
 import torch
 
 import detectionmetrics.utils.lidar as ul
 
 
-def preprocess(
-    points: np.ndarray, cfg: Optional[dict] = {}
-) -> Tuple[np.ndarray, KDTree, np.ndarray]:
-    """Preprocess point cloud data
-
-    :param points: Point cloud data
-    :type points: np.ndarray
-    :param cfg: Dictionary containing model configuration, defaults to {}
-    :type cfg: Optional[dict], optional
-    :return: Subsampled points, search tree, and projected indices
-    :rtype: Tuple[np.ndarray, KDTree, np.ndarray]
-    """
-    # Keep only XYZ coordinates
-    points = np.array(points[:, 0:3], dtype=np.float32)
-
-    # Subsample points using a grid of given size
-    grid_size = cfg.get("grid_size", 0.06)
-    sub_points = DataProcessing.grid_subsampling(points, grid_size=grid_size)
-
-    # Create search tree so that we can project points back to the original point cloud
-    search_tree = KDTree(sub_points)
-    projected_indices = np.squeeze(search_tree.query(points, return_distance=False))
-    projected_indices = projected_indices.astype(np.int32)
-
-    return sub_points, search_tree, projected_indices
-
-
-def transform_input(points: np.ndarray, cfg: Optional[dict] = {}) -> Tuple[
-    torch.Tensor,
-    List[torch.Tensor],
-    List[torch.Tensor],
-    List[torch.Tensor],
-    List[torch.Tensor],
+def transform_input(
+    points: np.ndarray, cfg: dict, sampler: Optional[ul.Sampler] = None
+) -> Tuple[
+    Tuple[
+        torch.Tensor,
+        List[torch.Tensor],
+        List[torch.Tensor],
+        List[torch.Tensor],
+        List[torch.Tensor],
+    ],
+    np.ndarray,
 ]:
     """Transform point cloud data into input data for the model
 
     :param points: Point cloud data
     :type points: np.ndarray
-    :param cfg: Dictionary containing model configuration file, defaults to {}
-    :type cfg: Optional[dict], optional
-    :return: Model input data
-    :rtype: Tuple[ torch.Tensor, List[torch.Tensor], List[torch.Tensor], List[torch.Tensor], List[torch.Tensor], ]
+    :param cfg: Dictionary containing model configuration file
+    :type cfg: dict
+    :param sampler: Object for sampling point cloud, defaults to None
+    :type sampler: Optional[ul.Sampler], optional
+    :return: Model input data and selected indices
+    :rtype: Tuple[ Tuple[ torch.Tensor, List[torch.Tensor], List[torch.Tensor], List[torch.Tensor], List[torch.Tensor], ], np.ndarray, ]
     """
+    # Sample points if required
+    selected_indices = None
+    if sampler is not None:
+        points, selected_indices, _ = sampler.sample(
+            points, cfg.get("num_points", 45056)
+        )
+
     # Recenter point cloud if required
     if "recenter" in cfg:
         points = ul.recenter(points, cfg["recenter"]["dims"])
@@ -84,7 +70,7 @@ def transform_input(points: np.ndarray, cfg: Optional[dict] = {}) -> Tuple[
         input_neighbors,
         input_pools,
         input_up_samples,
-    )
+    ), selected_indices
 
 
 def update_probs(
