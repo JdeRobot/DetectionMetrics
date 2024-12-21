@@ -164,17 +164,14 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
     def eval(
         self,
         dataset: ImageSegmentationDataset,
-        batch_size: int = 1,
         split: str = "all",
         ontology_translation: Optional[str] = None,
     ) -> pd.DataFrame:
         """Perform evaluation for an image segmentation dataset
 
-        :param dataset_test: Image segmentation dataset for which the evaluation will
+        :param dataset: Image segmentation dataset for which the evaluation will
         be performed
-        :type dataset_test: ImageSegmentationDataset
-        :param batch_size: Batch size, defaults to 1
-        :type batch_size: int, optional
+        :type dataset: ImageSegmentationDataset
         :param split: Split to be used from the dataset, defaults to "all"
         :type split: str, optional
         :param ontology_translation: JSON file containing translation between dataset
@@ -184,19 +181,13 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
         :rtype: pd.DataFrame
         """
         # Build a LUT for transforming ontology if needed
-        lut_ontology = None
-        if dataset.ontology != self.ontology:
-            if ontology_translation is not None:
-                ontology_translation = uio.read_json(ontology_translation)
-            lut_ontology = uc.get_ontology_conversion_lut(
-                dataset.ontology, self.ontology, ontology_translation
-            )
+        lut_ontology = self.get_lut_ontology(dataset.ontology, ontology_translation)
 
         # Get Tensorflow dataset
         dataset = ImageSegmentationTensorflowDataset(
             dataset,
             image_size=self.model_cfg["image_size"],
-            batch_size=batch_size,
+            batch_size=self.model_cfg.get("batch_size", 1),
             split=split,
             lut_ontology=lut_ontology,
         )

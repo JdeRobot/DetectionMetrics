@@ -8,7 +8,7 @@
 
 *DetectionMetrics* is a family of toolkits designed to unify and streamline the evaluation of perception models across different frameworks and datasets. Looking for our published ***DetectionMetrics v1***? Check out all the [relevant links](#v1) below.
 
-Now, we're excited to introduce ***DetectionMetrics v2***! While retaining the flexibility of our previous release, *DetectionMetrics* has been redesigned with an expanded focus on image segmentation, with plans to extend support to object detection and LiDAR applications. As we move forward, *v2* will be the actively maintained version, featuring continued updates and enhancements to keep pace with evolving AI and computer vision technologies.
+Now, we're excited to introduce ***DetectionMetrics v2***! While retaining the flexibility of our previous release, *DetectionMetrics* has been redesigned with an expanded focus on image and LiDAR segmentation. As we move forward, *v2* will be the actively maintained version, featuring continued updates and enhancements to keep pace with evolving AI and computer vision technologies.
 
 <table style='font-size:100%'>
   <tr>
@@ -39,9 +39,8 @@ Now, we're excited to introduce ***DetectionMetrics v2***! While retaining the f
   </tr>
   <tr>
     <td>LiDAR</td>
-    <td>Coming soon</td>
-    <td>Coming soon</td>
-  </tr>
+    <td>Rellis3D, GOOSE, custom GAIA format</td>
+    <td>PyTorch (RandLA-Net and KPConv from <a href="https://github.com/isl-org/Open3D-ML">Open3D-ML</a>)</td>  </tr>
   <tr>
     <td>Object detection</td>
     <td>Image</td>
@@ -91,6 +90,8 @@ Install your deep learning framework of preference in your environment. We have 
 - `torchvision==0.19.1`
 - `tensorflow[and-cuda]==2.17.1`
 
+If you are using LiDAR, Open3D currently requires `torch==2.0*`.
+
 And it's done! You can check the `examples` directory for inspiration and run some of the scripts provided either by activating the created environment using `poetry shell` or directly running `poetry run python examples/<some_python_script.py>`.
 
 <h1 id="v1">DetectionMetrics v1</h1>
@@ -123,3 +124,6 @@ Our previous release, ***DetectionMetrics v1***, introduced a versatile suite fo
   doi = {10.3390/s22124575},
 }
 ```
+
+# Acknowledgements
+Utils for LiDAR segmentation, such as sampling or recentering, are based on [Open3D-ML](https://github.com/isl-org/Open3D-ML).
