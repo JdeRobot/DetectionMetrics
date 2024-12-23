@@ -1,4 +1,4 @@
-from typing import Optional, Tuple
+from typing import List, Optional, Tuple
 
 
 import numpy as np
@@ -52,6 +52,7 @@ def get_ontology_conversion_lut(
     old_ontology: dict,
     new_ontology: dict,
     ontology_translation: Optional[dict] = None,
+    ignored_classes: Optional[List[str]] = [],
 ) -> np.ndarray:
     """Build a LUT that links old ontology and new ontology indices. If class names
     don't match between the provided ontologies, user must provide an ontology
@@ -63,6 +64,8 @@ def get_ontology_conversion_lut(
     :type new_ontology: dict
     :param ontology_translation: Ontology translation dictionary, defaults to None
     :type ontology_translation: Optional[dict], optional
+    :param ignored_classes: Classes to ignore from the old ontology, defaults to []
+    :type ignored_classes: Optional[List[str]], optional
     :return: numpy array associating old and new ontology indices
     :rtype: np.ndarray
     """
@@ -74,6 +77,9 @@ def get_ontology_conversion_lut(
             new_class_idx = new_ontology[new_class_name]["idx"]
             lut[old_class_idx] = new_class_idx
     else:
+        old_ontology = old_ontology.copy()
+        for class_name in ignored_classes:
+            del old_ontology[class_name]
         assert set(old_ontology.keys()) == set(
             new_ontology.keys()
         ), "Ontologies classes are not compatible"

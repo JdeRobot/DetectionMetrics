@@ -23,7 +23,8 @@ sidebar:
             "normalization": {
                 "mean": [<r>, <g>, <b>],
                 "std": [<r>, <g>, <b>]
-            }
+            },
+            "batch_size": 4
         }
         ```
     - Tensorflow ([SavedModel](https://www.tensorflow.org/guide/saved_mode`) format):
@@ -33,15 +34,53 @@ sidebar:
 
         ```json
         {
-            "image_size": [<height>, <width>]
+            "image_size": [<height>, <width>],
+            "batch_size": 4
         }
         ```
     - ONNX: coming soon
 - Metrics:
-    - Intersection over Union (IoU)
+    - Intersection over Union (IoU), Accuracy
 
-# LiDAR semantic segmentation
-Coming soon.
+# Image semantic segmentation
+- Datasets:
+    - [Rellis3D](https://www.unmannedlab.org/research/RELLIS-3D)
+    - [GOOSE](https://goose-dataset.de/)
+    - Custom GAIA format
+- Models:
+    - PyTorch ([TorchScript](https://pytorch.org/docs/stable/jit.html) format). Validated models: RandLA-Net and KPConv from [Open3D-ML](https://github.com/isl-org/Open3D-ML).
+        - Input shape: defined by the `input_format` tag.
+        - Output shape: `(num_points)`
+        - JSON configuration file format:
+
+        ```json
+        {
+            "seed": 42,
+            "input_format": "o3d_randlanet",
+            "sampler": "spatially_regular",
+            "recenter": {
+                "dims": [
+                    0,
+                    1
+                ]
+            },
+            "ignored_classes": [
+                "void"
+            ],
+            "num_points": 45056,
+            "grid_size": 0.06,
+            "num_neighbors": 16,
+            "sub_sampling_ratio": [
+                4,
+                4,
+                4,
+                4
+            ]
+        }
+        ```
+    - ONNX: coming soon
+- Metrics:
+    - Intersection over Union (IoU), Accuracy
 
 # Object detection
 Coming soon.

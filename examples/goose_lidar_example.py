@@ -1,6 +1,6 @@
 import argparse
 
-from detectionmetrics.datasets.rellis3d import Rellis3DImageSegmentationDataset
+from detectionmetrics.datasets.goose import GOOSELiDARSegmentationDataset
 
 
 def parse_args() -> argparse.Namespace:
@@ -10,23 +10,21 @@ def parse_args() -> argparse.Namespace:
     :rtype: argparse.Namespace
     """
     parser = argparse.ArgumentParser()
+
     parser.add_argument(
-        "--dataset_dir",
+        "--train_dataset_dir",
         type=str,
-        required=True,
-        help="Directory where dataset images and labels are stored",
+        help="Directory where train dataset split is stored",
     )
     parser.add_argument(
-        "--split_dir",
+        "--val_dataset_dir",
         type=str,
-        required=True,
-        help="Directory where .lst files defining the dataset split are stored",
+        help="Directory where validation dataset split is stored",
     )
     parser.add_argument(
-        "--ontology_fname",
+        "--test_dataset_dir",
         type=str,
-        required=True,
-        help="YAML file containing dataset ontology",
+        help="Directory where test dataset split is stored",
     )
     parser.add_argument(
         "--outdir",
@@ -42,10 +40,10 @@ def main():
     """Main function"""
     args = parse_args()
 
-    dataset = Rellis3DImageSegmentationDataset(
-        dataset_dir=args.dataset_dir,
-        split_dir=args.split_dir,
-        ontology_fname=args.ontology_fname,
+    dataset = GOOSELiDARSegmentationDataset(
+        train_dataset_dir=args.train_dataset_dir,
+        val_dataset_dir=args.val_dataset_dir,
+        test_dataset_dir=args.test_dataset_dir,
     )
     dataset.export(args.outdir)
 
