@@ -19,6 +19,7 @@ scikit-learn = "^1.6.0"
 open3d = "^0.18.0"
 addict = "^2.4.0"
 matplotlib = "^3.10.0"
+click = "^8.1.8"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.10.0"
@@ -30,6 +31,10 @@ sphinx-rtd-theme = "^3.0.2"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.0.0"
+
+[tool.poetry.scripts]
+dm_evaluate = "detectionmetrics.cli.evaluate:evaluate"
+dm_batch = "detectionmetrics.cli.batch:batch"
 
 [build-system]
 requires = ["poetry-core"]
