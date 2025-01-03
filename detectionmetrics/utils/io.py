@@ -1,6 +1,7 @@
+from glob import glob
 import json
 from PIL import Image
-
+import re
 from typing import List
 
 import yaml
@@ -67,3 +68,18 @@ def get_image_mode(fname: str) -> str:
     """
     with Image.open(fname) as img:
         return img.mode
+
+
+def extract_wildcard_matches(pattern: str) -> list:
+    """Given a pattern with wildcards, extract the matches
+
+    :param pattern: 'Globable' pattern with wildcards
+    :type pattern: str
+    :return: Matches found in the pattern
+    :rtype: list
+    """
+    regex_pattern = re.escape(pattern).replace(r"\*", "(.*?)")
+    regex = re.compile(regex_pattern)
+    files = glob(pattern)
+    matches = [regex.match(file).groups() for file in files if regex.match(file)]
+    return matches
