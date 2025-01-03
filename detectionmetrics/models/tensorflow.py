@@ -12,9 +12,9 @@ from tqdm import tqdm
 
 from detectionmetrics.datasets.dataset import ImageSegmentationDataset
 from detectionmetrics.models.model import ImageSegmentationModel
-import detectionmetrics.utils.conversion as uc
-import detectionmetrics.utils.io as uio
 import detectionmetrics.utils.metrics as um
+
+tf.config.optimizer.set_experimental_options({"layout_optimizer": False})
 
 
 class ImageSegmentationTensorflowDataset:
@@ -231,4 +231,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
             }
         results["global"] = {"iou": iou, "acc": acc}
 
-        return pd.DataFrame(results)
+        results = pd.DataFrame(results)
+        results.index.name = "metric"
+
+        return results
