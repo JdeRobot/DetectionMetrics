@@ -7,7 +7,7 @@ sidebar:
   nav: "main_v2"
 ---
 
-# Image semantic segmentation
+## Image semantic segmentation
 - Datasets:
     - [Rellis3D](https://www.unmannedlab.org/research/RELLIS-3D)
     - [GOOSE](https://goose-dataset.de/)
@@ -42,7 +42,7 @@ sidebar:
 - Metrics:
     - Intersection over Union (IoU), Accuracy
 
-# Image semantic segmentation
+## LiDAR semantic segmentation
 - Datasets:
     - [Rellis3D](https://www.unmannedlab.org/research/RELLIS-3D)
     - [GOOSE](https://goose-dataset.de/)
@@ -82,5 +82,5 @@ sidebar:
 - Metrics:
     - Intersection over Union (IoU), Accuracy
 
-# Object detection
+## Object detection
 Coming soon.

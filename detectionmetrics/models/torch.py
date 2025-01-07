@@ -632,4 +632,7 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
                 }
         results["global"] = {"iou": iou, "acc": acc}
 
-        return pd.DataFrame(results)
+        results = pd.DataFrame(results)
+        results.index.name = "metric"
+
+        return results

@@ -26,9 +26,9 @@ def build_dataset(
     :param data_suffix: File suffix to be used to filter data (e.g., windshield_vis.png
     or vls128.bin)
     :type data_suffix: str
-    :param data_suffix: File suffix to be used to filter labels (e.g., vis_labelids.png
+    :param label_suffix: File suffix to be used to filter labels (e.g., vis_labelids.png
     or goose.label)
-    :type data_suffix: str
+    :type label_suffix: str
     :param val_dataset_dir: Directory containing validation data, defaults to None
     :type val_dataset_dir: str, optional
     :param test_dataset_dir: Directory containing test data, defaults to None
