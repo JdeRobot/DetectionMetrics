@@ -92,7 +92,14 @@ Install your deep learning framework of preference in your environment. We have 
 
 If you are using LiDAR, Open3D currently requires `torch==2.0*`.
 
-And it's done! You can check the `examples` directory for inspiration and run some of the scripts provided either by activating the created environment using `poetry shell` or directly running `poetry run python examples/<some_python_script.py>`.
+# Usage
+As of now, *DetectionMetrics* can either be used as a Python library or as a command-line application.
+
+### Library
+You can check the `examples` directory for inspiration. If you are using *poetry*, you can run the scripts provided either by activating the created environment using `poetry shell` or directly running `poetry run python examples/<some_python_script.py>`.
+
+### Command-line interface
+DetectionMetrics currently provides a CLI with two commands, `dm_evaluate` and `dm_batch`. Thanks to the configuration in the `pyproject.toml` file, we can simply run `poetry install` from the root directory and use them without explicitly invoking the Python files. More details are provided in [DetectionMetrics website](https://jderobot.github.io/DetectionMetrics/v2/usage/cli).
 
 <h1 id="v1">DetectionMetrics v1</h1>
 
