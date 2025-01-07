@@ -4,6 +4,8 @@ main:
     url: /v2/installation
   - title: Compatibility
     url: /v2/compatibility
+  - title: Usage
+    url: /v2/usage/
   - title: DetectionMetrics v1
     url: /v1
   - title: About
@@ -60,3 +62,17 @@ main_v2:
     url: /v2/installation
   - title: Compatibility
     url: /v2/compatibility
+    children:
+    - title: "Image semantic segmentation"
+      url: /v2/compatibility/#image-semantic-segmentation
+    - title: "LiDAR semantic segmentation"
+      url: /v2/compatibility/#lidar-semantic-segmentation
+    - title: "Object detection"
+      url: /v2/compatibility/#object-detection
+  - title: Usage
+    url: /v2/usage
+    children:
+      - title: "Library"
+        url: /v2/usage/#library
+      - title: "Command-line interface"
+        url: /v2/usage/#command-line-interface
