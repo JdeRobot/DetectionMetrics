@@ -157,7 +157,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
         # TODO: check if this is consistent across different models
         result = self.model.signatures["serving_default"](tensor)
         if isinstance(result, dict):
-            result = result["output_0"]
+            result = list(result.values())[0]
 
         return self.t_out(result)
 
@@ -195,18 +195,19 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
         # Init metrics
         results = {}
         iou = um.IoU(self.n_classes)
-        acc = um.Accuracy(self.n_classes)
+        cm = um.ConfusionMatrix(self.n_classes)
 
         # Evaluation loop
         pbar = tqdm(dataset.dataset)
         for image, label in pbar:
+            # TODO: check if this is consistent across different models
             pred = self.model.signatures["serving_default"](image)
             if isinstance(pred, dict):
-                pred = pred["output_0"]
+                pred = list(pred.values())[0]
 
             label = tf.squeeze(label, axis=3)
             pred = tf.argmax(pred, axis=3)
-            acc.update(pred.numpy(), label.numpy())
+            cm.update(pred.numpy(), label.numpy())
 
             pred = tf.one_hot(pred, self.n_classes)
             pred = tf.transpose(pred, perm=[0, 3, 1, 2])
@@ -218,7 +219,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
 
         # Get metrics results
         iou_per_class, iou = iou.compute()
-        acc_per_class, acc = acc.compute()
+        acc_per_class, acc = cm.get_accuracy()
         iou_per_class = [float(n) for n in iou_per_class]
         acc_per_class = [float(n) for n in acc_per_class]
 
