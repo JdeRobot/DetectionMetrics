@@ -87,97 +87,76 @@ class IoU(Metric):
         self.iou = np.append(self.iou, iou, axis=0)
 
     def compute(self) -> np.ndarray:
-        """Get IoU (global and per class)
+        """Get IoU (per class and mIoU)
 
-        :return: per class IoU, and global IoU
+        :return: per class IoU, and mean IoU
         :rtype: Tuple[float, np.ndarray]
         """
-        return np.nanmean(self.iou, axis=0), np.nanmean(self.iou)
+        iou_per_class = np.nanmean(self.iou, axis=0)
+        return iou_per_class, np.nanmean(iou_per_class)
 
 
-class Accuracy(Metric):
-    r"""Compute accuracy as:
-
-    .. math::
-        \text{Accuracy} = \frac{1}{N}\sum_i^N 1(y_i = \hat{y}_i)
-
-    Accuracy per sample and class is accumulated and then the average per class is
-    computed.
+class ConfusionMatrix:
+    """Class to compute and store the confusion matrix, as well as related metrics
+    (e.g. accuracy, precision, recall, etc.)
 
     :param n_classes: Number of classes to evaluate
     :type n_classes: int
     """
 
     def __init__(self, n_classes: int):
-        super().__init__(n_classes)
-        self.correct = []
-        self.total = []
-        self.accuracy = []
-        self.correct_per_class = np.zeros((0, n_classes))
-        self.total_per_class = np.zeros((0, n_classes))
-        self.accuracy_per_class = np.zeros((0, n_classes))
+        self.n_classes = n_classes
+        self.confusion_matrix = np.zeros((n_classes, n_classes), dtype=np.int64)
 
     def update(
         self, pred: np.ndarray, gt: np.ndarray, valid_mask: Optional[np.ndarray] = None
-    ):
-        """Accumulate accuracy values for a new set of samples
+    ) -> np.ndarray:
+        """Update the confusion matrix with new predictions and ground truth
 
-        :param pred: label encoded prediction array (batch, width, height)
+        :param pred: Array containing prediction
         :type pred: np.ndarray
-        :param gt: label encoded ground truth array (batch, width, height)
+        :param gt: Array containing ground truth
         :type gt: np.ndarray
-        :param valid_mask: Binary mask where False elements will be igonred, defaults
+        :param valid_mask: Binary mask where False elements will be ignored, defaults
         to None
         :type valid_mask: Optional[np.ndarray], optional
+        :return: Updated confusion matrix
+        :rtype: np.ndarray
         """
         assert pred.shape == gt.shape, "Pred. and GT shapes don't match"
-        batch_size = pred.shape[0]
 
-        # Remove invalid elements
+        # Build mask of valid elements
+        mask = (gt >= 0) & (gt < self.n_classes)
         if valid_mask is not None:
-            pred = pred[valid_mask]
-            gt = gt[valid_mask]
+            mask &= valid_mask
 
-        # Flatten spatial dimensions
-        pred = pred.reshape(batch_size, -1)
-        gt = gt.reshape(batch_size, -1)
+        # Update confusion matrix
+        self.confusion_matrix += np.bincount(
+            self.n_classes * gt[mask].astype(int) + pred[mask].astype(int),
+            minlength=self.n_classes**2,
+        ).reshape(self.n_classes, self.n_classes)
 
-        # Accumulate total number of pixels and correct pixels
-        correct = np.sum(pred == gt)
-        total = np.size(gt)
+    def compute(self) -> np.ndarray:
+        """Get confusion matrix
 
-        self.correct.append(correct)
-        self.total.append(total)
-        self.accuracy.append(correct / total)
+        :return: confusion matrix
+        :rtype: np.ndarray
+        """
+        return self.confusion_matrix
 
-        # Accumulate number of pixels and correct pixels per class
-        correct_per_class = np.zeros((batch_size, self.n_classes))
-        total_per_class = np.zeros((batch_size, self.n_classes))
-        for class_idx in range(self.n_classes):
-            mask = gt == class_idx
-            class_total = np.sum(mask, axis=1)
-            correct_per_class[:, class_idx] = np.sum((pred == gt) & mask, axis=1)
-            total_per_class[:, class_idx] = class_total
+    def get_accuracy(self) -> Tuple[np.ndarray, float]:
+        r"""Compute accuracy from confusion matrix as:
 
-            correct_per_class[class_total == 0, class_idx] = np.nan
-            total_per_class[class_total == 0, class_idx] = np.nan
-
-        self.correct_per_class = np.append(
-            self.correct_per_class, correct_per_class, axis=0
-        )
-        self.total_per_class = np.append(self.total_per_class, total_per_class, axis=0)
-        self.accuracy_per_class = np.append(
-            self.accuracy_per_class, correct_per_class / total_per_class, axis=0
-        )
-
-    def compute(self) -> Tuple[float, np.ndarray]:
-        """Get accuracy (global and per class)
+        .. math::
+            \text{Accuracy} = \frac{1}{N}\sum_i^N 1(y_i = \hat{y}_i)
 
         :return: per class accuracy, and global accuracy
-        :rtype: Tuple[float, np.ndarray]
+        :rtype: Tuple[np.ndarray, float]
         """
-        acc_per_class = np.nansum(self.correct_per_class, axis=0) / np.nansum(
-            self.total_per_class, axis=0
+        correct_per_class = np.diag(self.confusion_matrix)
+        total_per_class = np.sum(self.confusion_matrix, axis=1)
+        acc_per_class = np.where(
+            total_per_class > 0, correct_per_class / total_per_class, np.nan
         )
-        acc = np.nansum(self.correct) / np.nansum(self.total)
+        acc = np.sum(correct_per_class) / np.sum(total_per_class)
         return acc_per_class, acc

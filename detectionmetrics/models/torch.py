@@ -12,8 +12,6 @@ from tqdm import tqdm
 from detectionmetrics.datasets import dataset as dm_dataset
 from detectionmetrics.models import model as dm_model
 from detectionmetrics.models import torch_model_utils as tmu
-import detectionmetrics.utils.conversion as uc
-import detectionmetrics.utils.io as uio
 import detectionmetrics.utils.lidar as ul
 import detectionmetrics.utils.metrics as um
 
@@ -224,11 +222,24 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
                 )
             ]
 
-        self.transform_input += [
-            transforms.ToImage(),
-            transforms.ToDtype(torch.float32, scale=True),
-        ]
-        self.transform_label += [transforms.ToImage(), transforms.ToDtype(torch.int64)]
+        try:
+            self.transform_input += [
+                transforms.ToImage(),
+                transforms.ToDtype(torch.float32, scale=True),
+            ]
+            self.transform_label += [
+                transforms.ToImage(),
+                transforms.ToDtype(torch.int64),
+            ]
+        except AttributeError:  # adapt for older versions of torchvision transforms v2
+            self.transform_input += [
+                transforms.ToImageTensor(),
+                transforms.ConvertDtype(torch.float32),
+            ]
+            self.transform_label += [
+                transforms.ToImageTensor(),
+                transforms.ToDtype(torch.int64),
+            ]
 
         if "normalization" in self.model_cfg:
             self.transform_input += [
@@ -311,7 +322,7 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
         # Init metrics
         results = {}
         iou = um.IoU(self.n_classes)
-        acc = um.Accuracy(self.n_classes)
+        cm = um.ConfusionMatrix(self.n_classes)
 
         # Evaluation loop
         with torch.no_grad():
@@ -335,13 +346,13 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
                 if lut_ontology is not None:
                     label = lut_ontology[label]
 
-                # Prepare data and update accuracy
+                # Prepare data and update confusion matrix
                 label = label.squeeze(dim=1).cpu()
                 pred = torch.argmax(pred, axis=1).cpu()
                 if valid_mask is not None:
                     valid_mask = valid_mask.squeeze(dim=1).cpu()
 
-                acc.update(
+                cm.update(
                     pred.numpy(),
                     label.numpy(),
                     valid_mask.numpy() if valid_mask is not None else None,
@@ -363,7 +374,7 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
 
         # Get metrics results
         iou_per_class, iou = iou.compute()
-        acc_per_class, acc = acc.compute()
+        acc_per_class, acc = cm.get_accuracy()
         iou_per_class = [float(n) for n in iou_per_class]
         acc_per_class = [float(n) for n in acc_per_class]
 
@@ -526,7 +537,7 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
 
         # Init metrics
         iou = um.IoU(self.n_classes)
-        acc = um.Accuracy(self.n_classes)
+        cm = um.ConfusionMatrix(self.n_classes)
 
         # Evaluation loop
         results = {}
@@ -590,13 +601,13 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
                 if lut_ontology is not None:
                     label = lut_ontology[label]
 
-                # Prepare data and update accuracy
+                # Prepare data and update confusion matrix
                 label = label.cpu().unsqueeze(0)
                 pred = self.transform_output(pred).cpu().unsqueeze(0).to(torch.int64)
                 if valid_mask is not None:
                     valid_mask = valid_mask.cpu().unsqueeze(0)
 
-                acc.update(
+                cm.update(
                     pred.numpy(),
                     label.numpy(),
                     valid_mask.numpy() if valid_mask is not None else None,
@@ -618,7 +629,7 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
 
         # Get metrics results
         iou_per_class, iou = iou.compute()
-        acc_per_class, acc = acc.compute()
+        acc_per_class, acc = cm.get_accuracy()
         iou_per_class = [float(n) for n in iou_per_class]
         acc_per_class = [float(n) for n in acc_per_class]
 
