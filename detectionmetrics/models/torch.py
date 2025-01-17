@@ -198,7 +198,7 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
         :param ontology_fname: JSON file containing model output ontology
         :type ontology_fname: str
         """
-        super().__init__(ontology_fname, model_cfg)
+        super().__init__(model_fname, ontology_fname, model_cfg)
 
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -402,7 +402,7 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
         :param ontology_fname: JSON file containing model output ontology
         :type ontology_fname: str
         """
-        super().__init__(ontology_fname, model_cfg)
+        super().__init__(model_fname, ontology_fname, model_cfg)
 
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

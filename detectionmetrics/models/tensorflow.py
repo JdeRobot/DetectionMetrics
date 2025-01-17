@@ -125,7 +125,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
     """
 
     def __init__(self, model_fname: str, model_cfg: str, ontology_fname: str):
-        super().__init__(ontology_fname, model_cfg)
+        super().__init__(model_fname, ontology_fname, model_cfg)
 
         # Check that provided path exist and load model
         assert os.path.isdir(model_fname), "Model file not found"
