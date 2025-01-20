@@ -170,10 +170,11 @@ class ConfusionMatrix:
         """
         true_positives = np.diag(self.confusion_matrix)
         predicted_positives = np.sum(self.confusion_matrix, axis=0)
-        precision = np.where(
+        precision_per_class = np.where(
             predicted_positives > 0, true_positives / predicted_positives, np.nan
         )
-        return precision
+        global_precision = np.sum(true_positives) / np.sum(predicted_positives)
+        return precision_per_class, global_precision
 
     def get_recall(self) -> np.ndarray:
         """Compute recall from Confusion matrix.
@@ -184,20 +185,26 @@ class ConfusionMatrix:
         """
         true_positives = np.diag(self.confusion_matrix)
         actual_positives = np.sum(self.confusion_matrix, axis=1)
-        recall = np.where(
+        recall_per_class = np.where(
             actual_positives > 0, true_positives / actual_positives, np.nan
         )
-        return recall
+        global_recall = np.sum(true_positives)/ np.sum(actual_positives)
+        return recall_per_class, global_recall
 
-    def get_f1_score(self) -> np.ndarray:
-        """Compute F1-score for each class
+    def get_f1_score(self) -> Tuple[np.ndarray, float]:
+        """Compute F1-score for each class and global F1-score.
 
-        :return: per class F1-score
-        :rtype: np.ndarray
+        :return: per class F1-score and global F1-score
+        :rtype: Tuple[np.ndarray, float]
         """
-        precision = self.get_precision()
-        recall = self.get_recall()
-        f1_score = np.where(
-            (precision + recall) > 0, 2 * (precision * recall) / (precision + recall), np.nan
+        precision_per_class, global_precision = self.get_precision()
+        recall_per_class, global_recall = self.get_recall()
+        f1_score_per_class = np.where(
+            (precision_per_class + recall_per_class) > 0,
+            2 * (precision_per_class * recall_per_class) / (precision_per_class + recall_per_class),
+            np.nan
         )
-        return f1_score
+        global_f1_score = (
+            2 * global_precision * global_recall
+        ) / (global_precision + global_recall) if (global_precision + global_recall) > 0 else 0.0
+        return f1_score_per_class, global_f1_score
