@@ -42,10 +42,11 @@ poetry shell
 ## Common
 Install your deep learning framework of preference in your environment. We have tested:
 - CUDA Version: `12.6`
-- `torch==2.4.1`
-- `torchvision==0.19.1`
-- `tensorflow[and-cuda]==2.17.1`
+- `torch==2.4.1` and `torchvision==0.19.1`.
+- `torch==2.2.2` and `torchvision==0.17.2`.
+- `tensorflow==2.17.1`
+- `tensorflow==2.16.1`
 
-If you are using LiDAR, Open3D currently requires `torch==2.0*`.
+If you are using LiDAR, Open3D currently requires `torch==2.2*`.
 
 And it's done! You can check the `examples` directory for inspiration and run some of the scripts provided either by activating the created environment using `poetry shell` or directly running `poetry run python examples/<some_python_script.py>`.
