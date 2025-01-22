@@ -23,17 +23,27 @@ class SegmentationModel(ABC):
     :type model_cfg: str
     :param ontology_fname: JSON file containing model output ontology
     :type ontology_fname: str
+    :param model_fname: Model file or directory, defaults to None
+    :type model_fname: Optional[str], optional
     """
 
     def __init__(
-        self, model: Any, model_type: str, model_cfg: str, ontology_fname: str
+        self,
+        model: Any,
+        model_type: str,
+        model_cfg: str,
+        ontology_fname: str,
+        model_fname: Optional[str] = None,
     ):
         self.model = model
         self.model_type = model_type
+        self.model_fname = model_fname
 
         # Check that provided paths exist
         assert os.path.isfile(ontology_fname), "Ontology file not found"
         assert os.path.isfile(model_cfg), "Model configuration not found"
+        if self.model_fname is not None:
+            assert os.path.exists(model_fname), "Model file or directory not found"
 
         # Read ontology and model configuration
         self.ontology = uio.read_json(ontology_fname)
@@ -73,6 +83,18 @@ class SegmentationModel(ABC):
         """
         raise NotImplementedError
 
+    @abstractmethod
+    def get_computational_cost(self, runs: int = 30, warm_up_runs: int = 5) -> dict:
+        """Get different metrics related to the computational cost of the model
+
+        :param runs: Number of runs to measure inference time, defaults to 30
+        :type runs: int, optional
+        :param warm_up_runs: Number of warm-up runs, defaults to 5
+        :type warm_up_runs: int, optional
+        :return: Dictionary containing computational cost information
+        """
+        raise NotImplementedError
+
     def get_lut_ontology(
         self, dataset_ontology: dict, ontology_translation: Optional[str] = None
     ):
@@ -107,12 +129,19 @@ class ImageSegmentationModel(SegmentationModel):
     :type model_cfg: str
     :param ontology_fname: JSON file containing model output ontology
     :type ontology_fname: str
+    :param model_fname: Model file or directory
+    :type model_fname: Optional[str], optional
     """
 
     def __init__(
-        self, model: Any, model_type: str, model_cfg: str, ontology_fname: str
+        self,
+        model: Any,
+        model_type: str,
+        model_cfg: str,
+        ontology_fname: str,
+        model_fname: Optional[str] = None,
     ):
-        super().__init__(model, model_type, model_cfg, ontology_fname)
+        super().__init__(model, model_type, model_cfg, ontology_fname, model_fname)
 
     @abstractmethod
     def inference(self, image: Image.Image) -> Image.Image:
@@ -157,12 +186,19 @@ class LiDARSegmentationModel(SegmentationModel):
     :type model_cfg: str
     :param ontology_fname: JSON file containing model output ontology
     :type ontology_fname: str
+    :param model_fname: Model file or directory
+    :type model_fname: Optional[str], optional
     """
 
     def __init__(
-        self, model: Any, model_type: str, model_cfg: str, ontology_fname: str
+        self,
+        model: Any,
+        model_type: str,
+        model_cfg: str,
+        ontology_fname: str,
+        model_fname: Optional[str] = None,
     ):
-        super().__init__(model, model_type, model_cfg, ontology_fname)
+        super().__init__(model, model_type, model_cfg, ontology_fname, model_fname)
 
     @abstractmethod
     def inference(self, points: np.ndarray) -> np.ndarray:
