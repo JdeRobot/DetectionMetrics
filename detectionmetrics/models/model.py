@@ -66,8 +66,7 @@ class SegmentationModel(ABC):
         :type dataset: ImageSegmentationDataset
         :param split: Split to be used from the dataset, defaults to "all"
         :type split: str, optional
-        :param ontology_translation: JSON file containing translation between dataset
-        and model output ontologies
+        :param ontology_translation: JSON file containing translation between dataset and model output ontologies
         :type ontology_translation: str, optional
         :return: DataFrame containing evaluation results
         :rtype: pd.DataFrame
@@ -81,8 +80,7 @@ class SegmentationModel(ABC):
 
         :param dataset_ontology: Image or LiDAR dataset ontology
         :type dataset_ontology: dict
-        :param ontology_translation: JSON file containing translation between model and
-        dataset ontologies, defaults to None
+        :param ontology_translation: JSON file containing translation between model and dataset ontologies, defaults to None
         :type ontology_translation: Optional[str], optional
         """
         lut_ontology = None
@@ -105,8 +103,7 @@ class ImageSegmentationModel(SegmentationModel):
     :type model: Any
     :param model_type: Model type (e.g. scripted, compiled, etc.)
     :type model_type: str
-    :param model_cfg: JSON file containing model configuration (e.g. image size or
-    normalization parameters)
+    :param model_cfg: JSON file containing model configuration (e.g. image size or normalization parameters)
     :type model_cfg: str
     :param ontology_fname: JSON file containing model output ontology
     :type ontology_fname: str
@@ -137,13 +134,11 @@ class ImageSegmentationModel(SegmentationModel):
     ) -> pd.DataFrame:
         """Perform evaluation for an image segmentation dataset
 
-        :param dataset: Image segmentation dataset for which the evaluation will
-        be performed
+        :param dataset: Image segmentation dataset for which the evaluation will be performed
         :type dataset: ImageSegmentationDataset
         :param split: Split to be used from the dataset, defaults to "all"
         :type split: str, optional
-        :param ontology_translation: JSON file containing translation between dataset
-        and model output ontologies
+        :param ontology_translation: JSON file containing translation between dataset and model output ontologies
         :type ontology_translation: str, optional
         :return: DataFrame containing evaluation results
         :rtype: pd.DataFrame
@@ -158,8 +153,7 @@ class LiDARSegmentationModel(SegmentationModel):
     :type model: Any
     :param model_type: Model type (e.g. scripted, compiled, etc.)
     :type model_type: str
-    :param model_cfg: JSON file containing model configuration (e.g. sampling method,
-    input format, etc.)
+    :param model_cfg: JSON file containing model configuration (e.g. sampling method, input format, etc.)
     :type model_cfg: str
     :param ontology_fname: JSON file containing model output ontology
     :type ontology_fname: str
@@ -190,13 +184,11 @@ class LiDARSegmentationModel(SegmentationModel):
     ) -> pd.DataFrame:
         """Perform evaluation for a LiDAR segmentation dataset
 
-        :param dataset: LiDAR segmentation dataset for which the evaluation will be
-        be performed
+        :param dataset: LiDAR segmentation dataset for which the evaluation will be performed
         :type dataset: LiDARSegmentationDataset
         :param split: Split to be used from the dataset, defaults to "all"
         :type split: str, optional
-        :param ontology_translation: JSON file containing translation between dataset
-        and model output ontologies
+        :param ontology_translation: JSON file containing translation between dataset and model output ontologies
         :type ontology_translation: str, optional
         :return: DataFrame containing evaluation results
         :rtype: pd.DataFrame

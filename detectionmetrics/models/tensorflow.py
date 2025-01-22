@@ -117,8 +117,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
     """Image segmentation model for Tensorflow framework
 
 
-    :param model: Either the filename of a Tensorflow model in SavedModel format or the
-    model already loaded into an arbitrary Tensorflow or Keras model.
+    :param model: Either the filename of a Tensorflow model in SavedModel format or the model already loaded into an arbitrary Tensorflow or Keras model.
     :type model: Union[str, torch.nn.Module]
     :param model_cfg: JSON file containing model configuration
     :type model_cfg: str
@@ -191,13 +190,11 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
     ) -> pd.DataFrame:
         """Perform evaluation for an image segmentation dataset
 
-        :param dataset: Image segmentation dataset for which the evaluation will
-        be performed
+        :param dataset: Image segmentation dataset for which the evaluation will be performed
         :type dataset: ImageSegmentationDataset
         :param split: Split to be used from the dataset, defaults to "all"
         :type split: str, optional
-        :param ontology_translation: JSON file containing translation between dataset
-        and model output ontologies
+        :param ontology_translation: JSON file containing translation between dataset and model output ontologies
         :type ontology_translation: str, optional
         :return: DataFrame containing evaluation results
         :rtype: pd.DataFrame
