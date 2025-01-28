@@ -161,7 +161,7 @@ class ConfusionMatrix:
         acc = np.sum(correct_per_class) / np.sum(total_per_class)
         return acc_per_class, acc
 
-    def get_precision(self) -> np.ndarray:
+    def get_precision(self) -> Tuple[np.ndarray, float]:
         """Compute precision from confusion matrix. 
         Precision = true positives/ predicted positives.
 
@@ -176,9 +176,9 @@ class ConfusionMatrix:
         global_precision = np.sum(true_positives) / np.sum(predicted_positives)
         return precision_per_class, global_precision
 
-    def get_recall(self) -> np.ndarray:
+    def get_recall(self) -> Tuple[np.ndarray, float]:
         """Compute recall from Confusion matrix.
-        Recall = true positives / 
+        Recall = true positives / actual positives.
 
         :return: per class recall
         :rtype: np.ndarray
@@ -193,6 +193,7 @@ class ConfusionMatrix:
 
     def get_f1_score(self) -> Tuple[np.ndarray, float]:
         """Compute F1-score for each class and global F1-score.
+        F1 score = 2 * (precision * recall) / (precision + recall)
 
         :return: per class F1-score and global F1-score
         :rtype: Tuple[np.ndarray, float]
@@ -207,4 +208,5 @@ class ConfusionMatrix:
         global_f1_score = (
             2 * global_precision * global_recall
         ) / (global_precision + global_recall) if (global_precision + global_recall) > 0 else 0.0
+        
         return f1_score_per_class, global_f1_score
