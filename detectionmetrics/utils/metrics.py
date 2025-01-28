@@ -98,7 +98,7 @@ class IoU(Metric):
 
 class ConfusionMatrix:
     """Class to compute and store the confusion matrix, as well as related metrics
-    (e.g. accuracy, precision, recall, etc.)
+    (e.g. accuracy, precision, recall, F1-score, etc.)
 
     :param n_classes: Number of classes to evaluate
     :type n_classes: int
@@ -160,3 +160,53 @@ class ConfusionMatrix:
         )
         acc = np.sum(correct_per_class) / np.sum(total_per_class)
         return acc_per_class, acc
+
+    def get_precision(self) -> Tuple[np.ndarray, float]:
+        """Compute precision from confusion matrix. 
+        Precision = true positives/ predicted positives.
+
+        :return: per class precision
+        :rtype: np.ndarray
+        """
+        true_positives = np.diag(self.confusion_matrix)
+        predicted_positives = np.sum(self.confusion_matrix, axis=0)
+        precision_per_class = np.where(
+            predicted_positives > 0, true_positives / predicted_positives, np.nan
+        )
+        global_precision = np.sum(true_positives) / np.sum(predicted_positives)
+        return precision_per_class, global_precision
+
+    def get_recall(self) -> Tuple[np.ndarray, float]:
+        """Compute recall from Confusion matrix.
+        Recall = true positives / actual positives.
+
+        :return: per class recall
+        :rtype: np.ndarray
+        """
+        true_positives = np.diag(self.confusion_matrix)
+        actual_positives = np.sum(self.confusion_matrix, axis=1)
+        recall_per_class = np.where(
+            actual_positives > 0, true_positives / actual_positives, np.nan
+        )
+        global_recall = np.sum(true_positives)/ np.sum(actual_positives)
+        return recall_per_class, global_recall
+
+    def get_f1_score(self) -> Tuple[np.ndarray, float]:
+        """Compute F1-score for each class and global F1-score.
+        F1 score = 2 * (precision * recall) / (precision + recall)
+
+        :return: per class F1-score and global F1-score
+        :rtype: Tuple[np.ndarray, float]
+        """
+        precision_per_class, global_precision = self.get_precision()
+        recall_per_class, global_recall = self.get_recall()
+        f1_score_per_class = np.where(
+            (precision_per_class + recall_per_class) > 0,
+            2 * (precision_per_class * recall_per_class) / (precision_per_class + recall_per_class),
+            np.nan
+        )
+        global_f1_score = (
+            2 * global_precision * global_recall
+        ) / (global_precision + global_recall) if (global_precision + global_recall) > 0 else 0.0
+        
+        return f1_score_per_class, global_f1_score
