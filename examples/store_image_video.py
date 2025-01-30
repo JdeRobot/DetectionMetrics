@@ -3,11 +3,13 @@ import os
 import shutil
 import subprocess
 
-from detectionmetrics.datasets.gaia import GaiaLiDARSegmentationDataset
-from detectionmetrics.models.torch import TorchLiDARSegmentationModel
-import detectionmetrics.utils.conversion as uc
-import detectionmetrics.utils.lidar as ul
+import numpy as np
+from PIL import Image
 from tqdm import tqdm
+
+from detectionmetrics.datasets import GaiaImageSegmentationDataset
+from detectionmetrics.models import TorchImageSegmentationModel
+import detectionmetrics.utils.conversion as uc
 
 
 def parse_args() -> argparse.Namespace:
@@ -65,17 +67,7 @@ def parse_args() -> argparse.Namespace:
         default=10,
         help="Frames per second for the output video",
     )
-    parser.add_argument(
-        "--resolution",
-        type=str,
-        default="1920x1080",
-        help="Resolution of the output video (e.g. 1920x1080)",
-    )
-
-    args = parser.parse_args()
-    args.resolution = tuple(int(d) for d in args.resolution.split("x"))
-
-    return args
+    return parser.parse_args()
 
 
 def main():
@@ -87,17 +79,17 @@ def main():
     if args.model is not None:
         assert args.model_cfg is not None, "Model configuration file is required"
         assert args.ontology is not None, "Ontology file is required"
-        model = TorchLiDARSegmentationModel(args.model, args.model_cfg, args.ontology)
+        model = TorchImageSegmentationModel(args.model, args.model_cfg, args.ontology)
 
     # Init dataset
-    dataset = GaiaLiDARSegmentationDataset(args.dataset)
+    dataset = GaiaImageSegmentationDataset(args.dataset)
     dataset.make_fname_global()
 
     # Filter dataset if required
-    if args.split is not None:
-        dataset.dataset = dataset.dataset[dataset.dataset["split"] == args.split]
     if args.scene is not None:
         dataset.dataset = dataset.dataset[dataset.dataset["scene"] == args.scene]
+    if args.split is not None:
+        dataset.dataset = dataset.dataset[dataset.dataset["split"] == args.split]
 
     # Create output and temporary directory
     tmp_dir, _ = os.path.splitext(args.out_fname)
@@ -109,20 +101,17 @@ def main():
     pbar = tqdm(enumerate(dataset.dataset.iterrows()), total=len(dataset.dataset))
     for idx, (sample_name, sample_data) in pbar:
         pbar.set_description(f"Processing sample {sample_name}")
-        point_cloud = dataset.read_points(sample_data["points"])
 
         if model is not None:
-            label = model.inference(point_cloud)
+            image = Image.open(sample_data["image"])
+            label = model.inference(image)
             lut = uc.ontology_to_rgb_lut(model.ontology)
         else:
-            label, _ = dataset.read_label(sample_data["label"])
+            label = Image.open(sample_data["label"])
             lut = uc.ontology_to_rgb_lut(dataset.ontology)
-        colors = lut[label] / 255.0
-
-        rendered_image = ul.render_point_cloud(
-            point_cloud[:, :3], colors, resolution=args.resolution
-        )
-        rendered_image.save(os.path.join(tmp_dir, f"frame_{idx:06d}.png"))
+        label_rgb = lut[np.asarray(label)].astype(np.uint8)
+        label_rgb = Image.fromarray(label_rgb)
+        label_rgb.save(os.path.join(tmp_dir, f"frame_{idx:06d}.png"))
 
     # Create video with ffmpeg command
     ffmpeg_command = [
