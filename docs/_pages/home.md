@@ -4,27 +4,29 @@ permalink: /
 header:
   overlay_color: "#5e616c"
   overlay_image: /assets/images/cover/test_header_shear_3.png
-  #actions:
-  #  - label: "<i class='fas fa-download'></i> Install now"
-  #    url: "/installation/"
+  actions:
+   - label: "<i class='fas fa-download'></i> Learn more and contribute"
+     url: "https://github.com/JdeRobot/DetectionMetrics"
 excerpt:
   Unified evaluation for perception models
 ---
 >&#9888;&#65039; ***DetectionMetrics v1*** website referenced in our *Sensors* paper is still available [here](https://jderobot.github.io/DetectionMetrics/v1)
 
 # What is DetectionMetrics?
-*DetectionMetrics* is a family of toolkits designed to unify and streamline the evaluation of perception models across different frameworks and datasets. Looking for our published ***DetectionMetrics v1***? Check out all the [relevant links](#v1) below.
+*DetectionMetrics* is a toolkit designed to unify and streamline the evaluation of perception models across different frameworks and datasets. Looking for our published ***DetectionMetrics v1***? Check out all the [relevant links](#v1) below.
 
 Now, we're excited to introduce ***DetectionMetrics v2***! While retaining the flexibility of our previous release, *DetectionMetrics* has been redesigned with an expanded focus expanded focus on image and LiDAR segmentation. As we move forward, *v2* will be the actively maintained version, featuring continued updates and enhancements to keep pace with evolving AI and computer vision technologies.
 
-<table style='font-size:100%'>
-  <tr>
-    <th>&#128187; <a href="https://github.com/JdeRobot/DetectionMetrics">Code</a></th>
-    <th>&#128295; <a href="https://jderobot.github.io/DetectionMetrics/v2/installation">Installation</a></th>
-    <th>&#129513; <a href="https://jderobot.github.io/DetectionMetrics/v2/compatibility">Compatibility</a></th>
-    <th>&#128214; <a href="https://jderobot.github.io/DetectionMetrics/py_docs/_build/html/index.html">Docs</a></th>
-  </tr>
+<table class='centered-table'>
+    <tr>
+        <th>&#128187; <a href="https://github.com/JdeRobot/DetectionMetrics">Code</a></th>
+        <th>&#128295; <a href="https://jderobot.github.io/DetectionMetrics/v2/installation">Installation</a></th>
+        <th>&#129513; <a href="https://jderobot.github.io/DetectionMetrics/v2/compatibility">Compatibility</a></th>
+        <th>&#128214; <a href="https://jderobot.github.io/DetectionMetrics/py_docs/_build/html/index.html">Docs</a></th>
+    </tr>
 </table>
+
+{% include video id="PYS57dNiDAg" provider="youtube" %}
 
 ![diagram](../assets/images/detectionmetricsv2_diagram.png)
 
