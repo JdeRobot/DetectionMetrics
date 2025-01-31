@@ -6,3 +6,14 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+.centered-table {
+  display: flex;
+  justify-content: center;
+  font-size: 100%;
+}
+
+.centered-table table {
+  width: auto;
+  border-collapse: collapse;
+}
