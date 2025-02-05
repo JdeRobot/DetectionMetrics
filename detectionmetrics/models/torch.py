@@ -1,3 +1,4 @@
+from collections import defaultdict
 import os
 import time
 from typing import Any, Optional, Tuple, Union
@@ -384,9 +385,9 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
         lut_ontology = torch.tensor(lut_ontology, dtype=torch.int64).to(self.device)
 
         # Retrieve ignored label indices
-        self.ignored_label_indices = []
+        ignored_label_indices = []
         for ignored_class in self.model_cfg.get("ignored_classes", []):
-            self.ignored_label_indices.append(dataset.ontology[ignored_class]["idx"])
+            ignored_label_indices.append(dataset.ontology[ignored_class]["idx"])
 
         # Get PyTorch dataloader
         dataset = ImageSegmentationTorchDataset(
@@ -404,8 +405,7 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
 
         # Init metrics
         results = {}
-        iou = um.IoU(self.n_classes)
-        cm = um.ConfusionMatrix(self.n_classes)
+        metrics_factory = um.MetricsFactory(self.n_classes)
 
         # Evaluation loop
         with torch.no_grad():
@@ -418,9 +418,9 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
                         pred = pred["out"]
 
                 # Get valid points masks depending on ignored label indices
-                if self.ignored_label_indices:
+                if ignored_label_indices:
                     valid_mask = torch.ones_like(label, dtype=torch.bool)
-                    for idx in self.ignored_label_indices:
+                    for idx in ignored_label_indices:
                         valid_mask *= label != idx
                 else:
                     valid_mask = None
@@ -429,46 +429,40 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
                 if lut_ontology is not None:
                     label = lut_ontology[label]
 
-                # Prepare data and update confusion matrix
+                # Prepare data and update metrics factory
                 label = label.squeeze(dim=1).cpu()
                 pred = torch.argmax(pred, axis=1).cpu()
                 if valid_mask is not None:
                     valid_mask = valid_mask.squeeze(dim=1).cpu()
 
-                cm.update(
+                metrics_factory.update(
                     pred.numpy(),
                     label.numpy(),
                     valid_mask.numpy() if valid_mask is not None else None,
                 )
-
-                # Prepare data and update IoU
-                label = torch.nn.functional.one_hot(label, num_classes=self.n_classes)
-                label = label.permute(0, 3, 1, 2)
-                pred = torch.nn.functional.one_hot(pred, num_classes=self.n_classes)
-                pred = pred.permute(0, 3, 1, 2)
-                if valid_mask is not None:
-                    valid_mask = valid_mask.unsqueeze(1).repeat(1, self.n_classes, 1, 1)
-
-                iou.update(
-                    pred.numpy(),
-                    label.numpy(),
-                    valid_mask.numpy() if valid_mask is not None else None,
-                )
-
-        # Get metrics results
-        iou_per_class, iou = iou.compute()
-        acc_per_class, acc = cm.get_accuracy()
-        iou_per_class = [float(n) for n in iou_per_class]
-        acc_per_class = [float(n) for n in acc_per_class]
 
         # Build results dataframe
-        results = {}
-        for class_name, class_data in self.ontology.items():
-            results[class_name] = {
-                "iou": iou_per_class[class_data["idx"]],
-                "acc": acc_per_class[class_data["idx"]],
-            }
-        results["global"] = {"iou": iou, "acc": acc}
+        results = defaultdict(dict)
+
+        # Add per class and global metrics
+        for metric in metrics_factory.get_metric_names():
+            per_class = metrics_factory.get_metric_per_name(metric, per_class=True)
+
+            for class_name, class_data in self.ontology.items():
+                results[class_name][metric] = float(per_class[class_data["idx"]])
+
+            if metric not in ["tp", "fp", "fn", "tn"]:
+                for avg_method in ["macro", "micro"]:
+                    results[avg_method][metric] = metrics_factory.get_averaged_metric(
+                        metric, avg_method
+                    )
+
+        # Add confusion matrix
+        for class_name_a, class_data_a in self.ontology.items():
+            for class_name_b, class_data_b in self.ontology.items():
+                results[class_name_a][class_name_b] = metrics_factory.confusion_matrix[
+                    class_data_a["idx"], class_data_b["idx"]
+                ]
 
         return pd.DataFrame(results)
 
@@ -630,9 +624,9 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
         lut_ontology = torch.tensor(lut_ontology, dtype=torch.int64).to(self.device)
 
         # Retrieve ignored label indices
-        self.ignored_label_indices = []
+        ignored_label_indices = []
         for ignored_class in self.model_cfg.get("ignored_classes", []):
-            self.ignored_label_indices.append(dataset.ontology[ignored_class]["idx"])
+            ignored_label_indices.append(dataset.ontology[ignored_class]["idx"])
 
         # Get PyTorch dataset (no dataloader to avoid complexity with batching samplers)
         dataset = LiDARSegmentationTorchDataset(
@@ -644,8 +638,7 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
         )
 
         # Init metrics
-        iou = um.IoU(self.n_classes)
-        cm = um.ConfusionMatrix(self.n_classes)
+        metrics_factory = um.MetricsFactory(self.n_classes)
 
         # Evaluation loop
         results = {}
@@ -698,9 +691,9 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
 
                 # Get valid points masks depending on ignored label indices
                 label = torch.tensor(label, device=self.device)
-                if self.ignored_label_indices:
+                if ignored_label_indices:
                     valid_mask = torch.ones_like(label, dtype=torch.bool)
-                    for idx in self.ignored_label_indices:
+                    for idx in ignored_label_indices:
                         valid_mask *= label != idx
                 else:
                     valid_mask = None
@@ -709,52 +702,42 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
                 if lut_ontology is not None:
                     label = lut_ontology[label]
 
-                # Prepare data and update confusion matrix
+                # Prepare data and update metrics factory
                 label = label.cpu().unsqueeze(0)
                 pred = self.transform_output(pred).cpu().unsqueeze(0).to(torch.int64)
                 if valid_mask is not None:
                     valid_mask = valid_mask.cpu().unsqueeze(0)
 
-                cm.update(
+                metrics_factory.update(
                     pred.numpy(),
                     label.numpy(),
                     valid_mask.numpy() if valid_mask is not None else None,
                 )
-
-                # Prepare data and update IoU
-                label = torch.nn.functional.one_hot(label, self.n_classes)
-                label = label.permute(0, 2, 1)
-                pred = torch.nn.functional.one_hot(pred, self.n_classes)
-                pred = pred.permute(0, 2, 1)
-                if valid_mask is not None:
-                    valid_mask = valid_mask.unsqueeze(1).repeat(1, self.n_classes, 1)
-
-                iou.update(
-                    pred.numpy(),
-                    label.numpy(),
-                    valid_mask.numpy() if valid_mask is not None else None,
-                )
-
-        # Get metrics results
-        iou_per_class, iou = iou.compute()
-        acc_per_class, acc = cm.get_accuracy()
-        iou_per_class = [float(n) for n in iou_per_class]
-        acc_per_class = [float(n) for n in acc_per_class]
 
         # Build results dataframe
-        results = {}
-        for class_name, class_data in self.ontology.items():
-            if class_data["idx"] not in self.model_cfg.get("ignored_indices", []):
-                results[class_name] = {
-                    "iou": iou_per_class[class_data["idx"]],
-                    "acc": acc_per_class[class_data["idx"]],
-                }
-        results["global"] = {"iou": iou, "acc": acc}
+        results = defaultdict(dict)
 
-        results = pd.DataFrame(results)
-        results.index.name = "metric"
+        # Add per class and global metrics
+        for metric in metrics_factory.get_metric_names():
+            per_class = metrics_factory.get_metric_per_name(metric, per_class=True)
 
-        return results
+            for class_name, class_data in self.ontology.items():
+                results[class_name][metric] = float(per_class[class_data["idx"]])
+
+            if metric not in ["tp", "fp", "fn", "tn"]:
+                for avg_method in ["macro", "micro"]:
+                    results[avg_method][metric] = metrics_factory.get_averaged_metric(
+                        metric, avg_method
+                    )
+
+        # Add confusion matrix
+        for class_name_a, class_data_a in self.ontology.items():
+            for class_name_b, class_data_b in self.ontology.items():
+                results[class_name_a][class_name_b] = metrics_factory.confusion_matrix[
+                    class_data_a["idx"], class_data_b["idx"]
+                ]
+
+        return pd.DataFrame(results)
 
     def get_computational_cost(self, runs: int = 30, warm_up_runs: int = 5) -> dict:
         """Get different metrics related to the computational cost of the model

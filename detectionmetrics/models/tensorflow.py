@@ -1,3 +1,4 @@
+from collections import defaultdict
 import os
 import time
 from typing import List, Optional, Tuple, Union
@@ -94,6 +95,8 @@ class ImageSegmentationTensorflowDataset:
     :type split: str, optional
     :param lut_ontology: LUT to transform label classes, defaults to None
     :type lut_ontology: dict, optional
+    :param normalization: Parameters for normalizing input images, defaults to None
+    :type normalization: dict, optional
     """
 
     def __init__(
@@ -103,8 +106,14 @@ class ImageSegmentationTensorflowDataset:
         batch_size: int = 1,
         split: str = "all",
         lut_ontology: Optional[dict] = None,
+        normalization: Optional[dict] = None,
     ):
         self.image_size = image_size
+        self.normalization = None
+        if normalization is not None:
+            mean = tf.constant(normalization["mean"], dtype=tf.float32)
+            std = tf.constant(normalization["std"], dtype=tf.float32)
+            self.normalization = {"mean": mean, "std": std}
 
         # Filter split and make filenames global
         if split != "all":
@@ -155,8 +164,16 @@ class ImageSegmentationTensorflowDataset:
         # Resize (use NN to avoid interpolation when dealing with labels)
         method = "nearest" if label else "bilinear"
         image = tf_image.resize(images=image, size=self.image_size, method=method)
+
+        # If label, round values to avoid interpolation artifacts
         if label:
             image = tf.round(image)
+
+        # If normalization parameters are provided, normalize image
+        else:
+            if self.normalization is not None:
+                image = tf.cast(image, tf.float32) / 255.0
+                image = (image - self.normalization["mean"]) / self.normalization["std"]
 
         return image
 
@@ -217,6 +234,11 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
             tensor = tf.convert_to_tensor(image)
             tensor = tf_image.resize(images=tensor, size=self.model_cfg["image_size"])
             tensor = tf.expand_dims(tensor, axis=0)
+            if "normalization" in self.model_cfg:
+                mean = tf.constant(self.model_cfg["normalization"]["mean"])
+                std = tf.constant(self.model_cfg["normalization"]["std"])
+                tensor = tf.cast(tensor, tf.float32) / 255.0
+                tensor = (tensor - mean) / std
             return tensor
 
         self.t_in = t_in
@@ -275,18 +297,23 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
             batch_size=self.model_cfg.get("batch_size", 1),
             split=split,
             lut_ontology=lut_ontology,
+            normalization=self.model_cfg.get("normalization", None),
         )
+
+        # Retrieve ignored label indices
+        ignored_label_indices = []
+        for ignored_class in self.model_cfg.get("ignored_classes", []):
+            ignored_label_indices.append(dataset.ontology[ignored_class]["idx"])
 
         # Init metrics
         results = {}
-        iou = um.IoU(self.n_classes)
-        cm = um.ConfusionMatrix(self.n_classes)
+        metrics_factory = um.MetricsFactory(self.n_classes)
 
         # Evaluation loop
         pbar = tqdm(dataset.dataset)
         for image, label in pbar:
             if self.model_type == "native":
-                pred = self.model(image)
+                pred = self.model(image, training=False)
             elif self.model_type == "compiled":
                 pred = self.model.signatures["serving_default"](image)
             else:
@@ -295,37 +322,48 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
             if isinstance(pred, dict):
                 pred = list(pred.values())[0]
 
+            # Get valid points masks depending on ignored label indices
+            if ignored_label_indices:
+                valid_mask = tf.ones_like(label, dtype=tf.bool)
+                for idx in ignored_label_indices:
+                    valid_mask *= label != idx
+            else:
+                valid_mask = None
+
             label = tf.squeeze(label, axis=3)
             pred = tf.argmax(pred, axis=3)
-            cm.update(pred.numpy(), label.numpy())
-
-            pred = tf.one_hot(pred, self.n_classes)
-            pred = tf.transpose(pred, perm=[0, 3, 1, 2])
-
-            label = tf.one_hot(label, self.n_classes)
-            label = tf.transpose(label, perm=[0, 3, 1, 2])
-
-            iou.update(pred.numpy(), label.numpy())
-
-        # Get metrics results
-        iou_per_class, iou = iou.compute()
-        acc_per_class, acc = cm.get_accuracy()
-        iou_per_class = [float(n) for n in iou_per_class]
-        acc_per_class = [float(n) for n in acc_per_class]
+            if valid_mask is not None:
+                valid_mask = tf.squeeze(valid_mask, axis=3)
+            metrics_factory.update(
+                pred.numpy(),
+                label.numpy(),
+                valid_mask.numpy() if valid_mask is not None else None,
+            )
 
         # Build results dataframe
-        results = {}
-        for class_name, class_data in self.ontology.items():
-            results[class_name] = {
-                "iou": iou_per_class[class_data["idx"]],
-                "acc": acc_per_class[class_data["idx"]],
-            }
-        results["global"] = {"iou": iou, "acc": acc}
+        results = defaultdict(dict)
 
-        results = pd.DataFrame(results)
-        results.index.name = "metric"
+        # Add per class and global metrics
+        for metric in metrics_factory.get_metric_names():
+            per_class = metrics_factory.get_metric_per_name(metric, per_class=True)
 
-        return results
+            for class_name, class_data in self.ontology.items():
+                results[class_name][metric] = float(per_class[class_data["idx"]])
+
+            if metric not in ["tp", "fp", "fn", "tn"]:
+                for avg_method in ["macro", "micro"]:
+                    results[avg_method][metric] = metrics_factory.get_averaged_metric(
+                        metric, avg_method
+                    )
+
+        # Add confusion matrix
+        for class_name_a, class_data_a in self.ontology.items():
+            for class_name_b, class_data_b in self.ontology.items():
+                results[class_name_a][class_name_b] = metrics_factory.confusion_matrix[
+                    class_data_a["idx"], class_data_b["idx"]
+                ]
+
+        return pd.DataFrame(results)
 
     def get_computational_cost(self, runs: int = 30, warm_up_runs: int = 5) -> dict:
         """Get different metrics related to the computational cost of the model

@@ -1,20 +1,32 @@
-from abc import ABC, abstractmethod
-from typing import Optional, Tuple
+import math
+from typing import Optional
 
 import numpy as np
 
 
-class Metric(ABC):
-    """Abstract class for metrics
+class MetricsFactory:
+    """'Factory' class to accumulate results and compute metrics
 
     :param n_classes: Number of classes to evaluate
     :type n_classes: int
     """
 
+    METRIC_NAMES = [
+        "tp",
+        "fp",
+        "fn",
+        "tn",
+        "precision",
+        "recall",
+        "accuracy",
+        "f1_score",
+        "iou",
+    ]
+
     def __init__(self, n_classes: int):
         self.n_classes = n_classes
+        self.confusion_matrix = np.zeros((n_classes, n_classes), dtype=np.int64)
 
-    @abstractmethod
     def update(
         self, pred: np.ndarray, gt: np.ndarray, valid_mask: Optional[np.ndarray] = None
     ):
@@ -27,100 +39,9 @@ class Metric(ABC):
         :param valid_mask: Binary mask where False elements will be igonred, defaults to None
         :type valid_mask: Optional[np.ndarray], optional
         """
-        raise NotImplementedError
-
-    @abstractmethod
-    def compute(self) -> np.ndarray:
-        """Get final values
-
-        :return: Array containing final values
-        :rtype: np.ndarray
-        """
-        raise NotImplementedError
-
-
-class IoU(Metric):
-    """Compute Intersection over Union (IoU). IoU per sample and class is accumulated
-    and then the average per class is computed.
-
-    :param n_classes: Number of classes to evaluate
-    :type n_classes: int
-    """
-
-    def __init__(self, n_classes: int):
-        super().__init__(n_classes)
-        self.iou = np.zeros((0, n_classes), dtype=np.float64)
-
-    def update(
-        self, pred: np.ndarray, gt: np.ndarray, valid_mask: Optional[np.ndarray] = None
-    ):
-        """Accumulate IoU values for a new set of samples
-
-        :param pred: one-hot encoded prediction array (batch, class, width, height)
-        :type pred: np.ndarray
-        :param gt: one-hot encoded ground truth array (batch, class, width, height)
-        :type gt: np.ndarray
-        :param valid_mask: Binary mask where False elements will be igonred, defaults to None
-        :type valid_mask: Optional[np.ndarray], optional
-        """
-        assert pred.shape == gt.shape, "Pred. and GT shapes don't match"
-        assert pred.shape[1] == self.n_classes, "Number of classes mismatch"
-        batch_size = pred.shape[0]
-
-        # Remove invalid elements
-        if valid_mask is not None:
-            pred = pred[valid_mask]
-            gt = gt[valid_mask]
-
-        # Flatten spatial dimensions
-        pred = pred.reshape(batch_size, self.n_classes, -1)
-        gt = gt.reshape(batch_size, self.n_classes, -1)
-
-        # Compute intersection and union for each sample
-        intersection = np.sum(pred * gt, axis=-1)
-        union = np.sum(pred + gt, axis=-1) - intersection
-        iou = np.where(union > 0, intersection / union, np.nan)
-
-        # Accumulate
-        self.iou = np.append(self.iou, iou, axis=0)
-
-    def compute(self) -> np.ndarray:
-        """Get IoU (per class and mIoU)
-
-        :return: per class IoU, and mean IoU
-        :rtype: Tuple[float, np.ndarray]
-        """
-        iou_per_class = np.nanmean(self.iou, axis=0)
-        return iou_per_class, np.nanmean(iou_per_class)
-
-
-class ConfusionMatrix:
-    """Class to compute and store the confusion matrix, as well as related metrics
-    (e.g. accuracy, precision, recall, F1-score, etc.)
-
-    :param n_classes: Number of classes to evaluate
-    :type n_classes: int
-    """
-
-    def __init__(self, n_classes: int):
-        self.n_classes = n_classes
-        self.confusion_matrix = np.zeros((n_classes, n_classes), dtype=np.int64)
-
-    def update(
-        self, pred: np.ndarray, gt: np.ndarray, valid_mask: Optional[np.ndarray] = None
-    ) -> np.ndarray:
-        """Update the confusion matrix with new predictions and ground truth
-
-        :param pred: Array containing prediction
-        :type pred: np.ndarray
-        :param gt: Array containing ground truth
-        :type gt: np.ndarray
-        :param valid_mask: Binary mask where False elements will be ignored, defaults to None
-        :type valid_mask: Optional[np.ndarray], optional
-        :return: Updated confusion matrix
-        :rtype: np.ndarray
-        """
-        assert pred.shape == gt.shape, "Pred. and GT shapes don't match"
+        assert pred.shape == gt.shape, "Prediction and GT shapes don't match"
+        assert np.issubdtype(pred.dtype, np.integer), "Prediction should be integer"
+        assert np.issubdtype(gt.dtype, np.integer), "GT should be integer"
 
         # Build mask of valid elements
         mask = (gt >= 0) & (gt < self.n_classes)
@@ -128,82 +49,205 @@ class ConfusionMatrix:
             mask &= valid_mask
 
         # Update confusion matrix
-        self.confusion_matrix += np.bincount(
+        if np.count_nonzero(gt >= 16):
+            pass
+
+        # Update confusion matrix
+        new_entry = np.bincount(
             self.n_classes * gt[mask].astype(int) + pred[mask].astype(int),
             minlength=self.n_classes**2,
-        ).reshape(self.n_classes, self.n_classes)
+        )
+        self.confusion_matrix += new_entry.reshape(self.n_classes, self.n_classes)
 
-    def compute(self) -> np.ndarray:
+    def get_metric_names(self) -> list[str]:
+        """Get available metric names
+
+        :return: List of available metric names
+        :rtype: list[str]
+        """
+        return self.METRIC_NAMES
+
+    def get_confusion_matrix(self) -> np.ndarray:
         """Get confusion matrix
 
-        :return: confusion matrix
+        :return: Confusion matrix
         :rtype: np.ndarray
         """
         return self.confusion_matrix
 
-    def get_accuracy(self) -> Tuple[np.ndarray, float]:
-        r"""Compute accuracy from confusion matrix as:
+    def get_tp(self, per_class: bool = True) -> np.ndarray | int:
+        """True Positives
 
-        .. math::
-            \text{Accuracy} = \frac{1}{N}\sum_i^N 1(y_i = \hat{y}_i)
-
-        :return: per class accuracy, and global accuracy
-        :rtype: Tuple[np.ndarray, float]
+        :param per_class: Return per class TP, defaults to True
+        :type per_class: bool, optional
+        :return: True Positives
+        :rtype: np.ndarray | int
         """
-        correct_per_class = np.diag(self.confusion_matrix)
-        total_per_class = np.sum(self.confusion_matrix, axis=1)
-        acc_per_class = np.where(
-            total_per_class > 0, correct_per_class / total_per_class, np.nan
-        )
-        acc = np.sum(correct_per_class) / np.sum(total_per_class)
-        return acc_per_class, acc
+        tp = np.diag(self.confusion_matrix)
+        return tp if per_class else int(np.nansum(tp))
 
-    def get_precision(self) -> Tuple[np.ndarray, float]:
-        """Compute precision from confusion matrix.
-        Precision = true positives/ predicted positives.
+    def get_fp(self, per_class: bool = True) -> np.ndarray | int:
+        """False Positives
 
-        :return: per class precision
-        :rtype: np.ndarray
+        :param per_class: Return per class FP, defaults to True
+        :type per_class: bool, optional
+        :return: True Positives
+        :rtype: np.ndarray | int
         """
-        true_positives = np.diag(self.confusion_matrix)
-        predicted_positives = np.sum(self.confusion_matrix, axis=0)
-        precision_per_class = np.where(
-            predicted_positives > 0, true_positives / predicted_positives, np.nan
-        )
-        global_precision = np.sum(true_positives) / np.sum(predicted_positives)
-        return precision_per_class, global_precision
+        fp = self.confusion_matrix.sum(axis=0) - np.diag(self.confusion_matrix)
+        return fp if per_class else int(np.nansum(fp))
 
-    def get_recall(self) -> Tuple[np.ndarray, float]:
-        """Compute recall from Confusion matrix.
-        Recall = true positives / actual positives.
+    def get_fn(self, per_class: bool = True) -> np.ndarray | int:
+        """False negatives
 
-        :return: per class recall
-        :rtype: np.ndarray
+        :param per_class: Return per class FN, defaults to True
+        :type per_class: bool, optional
+        :return: True Positives
+        :rtype: np.ndarray | int
         """
-        true_positives = np.diag(self.confusion_matrix)
-        actual_positives = np.sum(self.confusion_matrix, axis=1)
-        recall_per_class = np.where(
-            actual_positives > 0, true_positives / actual_positives, np.nan
-        )
-        global_recall = np.sum(true_positives)/ np.sum(actual_positives)
-        return recall_per_class, global_recall
+        fn = self.confusion_matrix.sum(axis=1) - np.diag(self.confusion_matrix)
+        return fn if per_class else int(np.nansum(fn))
 
-    def get_f1_score(self) -> Tuple[np.ndarray, float]:
-        """Compute F1-score for each class and global F1-score.
-        F1 score = 2 * (precision * recall) / (precision + recall)
+    def get_tn(self, per_class: bool = True) -> np.ndarray | int:
+        """True negatives
 
-        :return: per class F1-score and global F1-score
-        :rtype: Tuple[np.ndarray, float]
+        :param per_class: Return per class TN, defaults to True
+        :type per_class: bool, optional
+        :return: True Positives
+        :rtype: np.ndarray | int
         """
-        precision_per_class, global_precision = self.get_precision()
-        recall_per_class, global_recall = self.get_recall()
-        f1_score_per_class = np.where(
-            (precision_per_class + recall_per_class) > 0,
-            2 * (precision_per_class * recall_per_class) / (precision_per_class + recall_per_class),
-            np.nan
-        )
-        global_f1_score = (
-            2 * global_precision * global_recall
-        ) / (global_precision + global_recall) if (global_precision + global_recall) > 0 else 0.0
+        total = self.confusion_matrix.sum()
+        tn = total - (self.get_tp() + self.get_fp() + self.get_fn())
+        return tn if per_class else int(np.nansum(tn))
 
-        return f1_score_per_class, global_f1_score
+    def get_precision(self, per_class: bool = True) -> np.ndarray | float:
+        """Precision = TP / (TP + FP)
+
+        :param per_class: Return per class precision, defaults to True
+        :type per_class: bool, optional
+        :return: True Positives
+        :rtype: np.ndarray | int
+        """
+        tp = self.get_tp(per_class)
+        fp = self.get_fp(per_class)
+        denominator = tp + fp
+
+        if np.isscalar(denominator):
+            return float(tp / denominator) if denominator > 0 else math.nan
+        else:
+            return np.where(denominator > 0, tp / denominator, np.nan)
+
+    def get_recall(self, per_class: bool = True) -> np.ndarray | float:
+        """Recall = TP / (TP + FN)
+
+        :param per_class: Return per class recall, defaults to True
+        :type per_class: bool, optional
+        :return: True Positives
+        :rtype: np.ndarray | int
+        """
+        tp = self.get_tp(per_class)
+        fn = self.get_fn(per_class)
+        denominator = tp + fn
+
+        if np.isscalar(denominator):
+            return float(tp / denominator) if denominator > 0 else math.nan
+        else:
+            return np.where(denominator > 0, tp / denominator, np.nan)
+
+    def get_accuracy(self, per_class: bool = True) -> np.ndarray | float:
+        """Accuracy = (TP + TN) / (TP + FP + FN + TN)
+
+        :param per_class: Return per class accuracy, defaults to True
+        :type per_class: bool, optional
+        :return: True Positives
+        :rtype: np.ndarray | int
+        """
+        tp = self.get_tp(per_class)
+        fp = self.get_fp(per_class)
+        fn = self.get_fn(per_class)
+        tn = self.get_tn(per_class)
+        total = tp + fp + fn + tn
+
+        if np.isscalar(total):
+            return float((tp + tn) / total) if total > 0 else math.nan
+        else:
+            return np.where(total > 0, (tp + tn) / total, np.nan)
+
+    def get_f1_score(self, per_class: bool = True) -> np.ndarray | float:
+        """F1-score = 2 * (Precision * Recall) / (Precision + Recall)
+
+        :param per_class: Return per class F1 score, defaults to True
+        :type per_class: bool, optional
+        :return: True Positives
+        :rtype: np.ndarray | int
+        """
+        precision = self.get_precision(per_class)
+        recall = self.get_recall(per_class)
+        denominator = precision + recall
+
+        if np.isscalar(denominator):
+            return (
+                2 * (precision * recall) / denominator if denominator > 0 else math.nan
+            )
+        else:
+            return np.where(
+                denominator > 0, 2 * (precision * recall) / denominator, np.nan
+            )
+
+    def get_iou(self, per_class: bool = True) -> np.ndarray | float:
+        """IoU = TP / (TP + FP + FN)
+
+        :param per_class: Return per class IoU, defaults to True
+        :type per_class: bool, optional
+        :return: True Positives
+        :rtype: np.ndarray | int
+        """
+        tp = self.get_tp(per_class)
+        fp = self.get_fp(per_class)
+        fn = self.get_fn(per_class)
+        union = tp + fp + fn
+
+        if np.isscalar(union):
+            return float(tp / union) if union > 0 else math.nan
+        else:
+            return np.where(union > 0, tp / union, np.nan)
+
+    def get_averaged_metric(
+        self, metric_name: str, method: str, weights: Optional[np.ndarray] = None
+    ) -> float:
+        """Get average metric value
+
+        :param metric: Name of the metric to compute
+        :type metric: str
+        :param method: Method to use for averaging ('macro', 'micro' or 'weighted')
+        :type method: str
+        :param weights: Weights for weighted averaging, defaults to None
+        :type weights: Optional[np.ndarray], optional
+        :return: Average metric value
+        :rtype: float
+        """
+        metric = getattr(self, f"get_{metric_name}")
+        if method == "macro":
+            return float(np.nanmean(metric(per_class=True)))
+        if method == "micro":
+            return float(metric(per_class=False))
+        if method == "weighted":
+            assert (
+                weights is not None
+            ), "Weights should be provided for weighted averaging"
+            return float(np.nansum(metric * weights))
+        raise ValueError(f"Unknown method {method}")
+
+    def get_metric_per_name(
+        self, metric_name: str, per_class: bool = True
+    ) -> np.ndarray | float | int:
+        """Get metric value by name
+
+        :param metric_name: Name of the metric to compute
+        :type metric_name: str
+        :param per_class: Return per class metric, defaults to True
+        :type per_class: bool, optional
+        :return: Metric value
+        :rtype: np.ndarray | float | int
+        """
+        return getattr(self, f"get_{metric_name}")(per_class=per_class)
