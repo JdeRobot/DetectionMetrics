@@ -91,8 +91,8 @@ class ImageSegmentationTensorflowDataset:
     :type image_size: Tuple[int, int]
     :param batch_size: Batch size, defaults to 1
     :type batch_size: int, optional
-    :param split: Split to be used from the dataset, defaults to "all"
-    :type split: str, optional
+    :param splits: Splits to be used from the dataset, defaults to ["test"]
+    :type splits: str, optional
     :param lut_ontology: LUT to transform label classes, defaults to None
     :type lut_ontology: dict, optional
     :param normalization: Parameters for normalizing input images, defaults to None
@@ -104,7 +104,7 @@ class ImageSegmentationTensorflowDataset:
         dataset: ImageSegmentationDataset,
         image_size: Tuple[int, int],
         batch_size: int = 1,
-        split: str = "all",
+        splits: List[str] = ["test"],
         lut_ontology: Optional[dict] = None,
         normalization: Optional[dict] = None,
     ):
@@ -116,8 +116,7 @@ class ImageSegmentationTensorflowDataset:
             self.normalization = {"mean": mean, "std": std}
 
         # Filter split and make filenames global
-        if split != "all":
-            dataset.dataset = dataset.dataset[dataset.dataset["split"] == split]
+        dataset.dataset = dataset.dataset[dataset.dataset["split"].isin(splits)]
         dataset.make_fname_global()
 
         self.lut_ontology = None
@@ -273,15 +272,15 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
     def eval(
         self,
         dataset: ImageSegmentationDataset,
-        split: str = "all",
+        split: str | List[str] = "test",
         ontology_translation: Optional[str] = None,
     ) -> pd.DataFrame:
         """Perform evaluation for an image segmentation dataset
 
         :param dataset: Image segmentation dataset for which the evaluation will be performed
         :type dataset: ImageSegmentationDataset
-        :param split: Split to be used from the dataset, defaults to "all"
-        :type split: str, optional
+        :param split: Split to be used from the dataset, defaults to "test"
+        :type split: str | List[str], optional
         :param ontology_translation: JSON file containing translation between dataset and model output ontologies
         :type ontology_translation: str, optional
         :return: DataFrame containing evaluation results
@@ -295,7 +294,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
             dataset,
             image_size=self.model_cfg["image_size"],
             batch_size=self.model_cfg.get("batch_size", 1),
-            split=split,
+            splits=[split] if isinstance(split, str) else split,
             lut_ontology=lut_ontology,
             normalization=self.model_cfg.get("normalization", None),
         )
