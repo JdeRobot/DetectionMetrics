@@ -528,6 +528,26 @@ translation dictionary with old and new class names as keys and values, respecti
 
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="detectionmetrics.utils.metrics.get_metrics_dataframe">
+<span class="sig-prename descclassname"><span class="pre">detectionmetrics.utils.metrics.</span></span><span class="sig-name descname"><span class="pre">get_metrics_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metrics_factory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#detectionmetrics.utils.metrics.MetricsFactory" title="detectionmetrics.utils.metrics.MetricsFactory"><span class="pre">MetricsFactory</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#detectionmetrics.utils.metrics.get_metrics_dataframe" title="Link to this definition"></a></dt>
+<dd><p>Build a DataFrame with all metrics (global and per class) plus confusion matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metrics_factory</strong> (<a class="reference internal" href="#detectionmetrics.utils.metrics.MetricsFactory" title="detectionmetrics.utils.metrics.MetricsFactory"><em>MetricsFactory</em></a>) – Properly updated MetricsFactory object</p></li>
+<li><p><strong>ontology</strong> (<em>dict</em>) – Ontology dictionary</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame with all metrics</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="module-detectionmetrics.utils">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-detectionmetrics.utils" title="Link to this heading"></a></h2>
