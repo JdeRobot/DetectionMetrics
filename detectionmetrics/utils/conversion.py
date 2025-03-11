@@ -14,7 +14,14 @@ def hex_to_rgb(hex: str) -> Tuple[int, ...]:
     :rtype: Tuple[int, ...]
     """
     hex = hex.strip("#")
-    return tuple(int(hex[i : i + 2], 16) for i in (0, 2, 4))
+    if len(hex) != 6:
+        raise ValueError("Invalid hex code: Must be exactly 6 characters long")
+    
+    try:
+        rgb = tuple(int(hex[i : i + 2], 16) for i in (0, 2, 4))
+        return rgb
+    except:
+        raise ValueError("Invalid hex code: Contains non-hexadecimal characters")
 
 
 def ontology_to_rgb_lut(ontology: dict) -> np.ndarray:
