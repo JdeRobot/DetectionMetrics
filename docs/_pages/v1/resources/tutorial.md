@@ -17,7 +17,7 @@ evaluating datasets using inferencers (**Evaluator**, **Auto Evaluator**) and fi
 
 Detection Metrics has both GUI app and command line tools to execute its functionalities.
 
-But as a beginner on should always start with GUI app, named ```DatasetEvaluationApp```. We will start with ```Deployer Tab``` in the same app.
+But as a beginner one should always start with GUI app, named ```DatasetEvaluationApp```. We will start with ```Deployer Tab``` in the same app.
 
 Once you've build DetectionMetrics (for building, [refer here](../../installation/)), navigate to DatasetEvaluationApp directory in the build directory using the following command from Detection Metrics's root directory:
 
