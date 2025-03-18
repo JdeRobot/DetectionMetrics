@@ -47,31 +47,21 @@ def test_recall(metrics_factory):
     
     assert np.allclose(computed_recall, expected_recall, equal_nan=True)
 
-
 def test_accuracy(metrics_factory):
-    """Test accuracy calculation"""
+    """Test global accuracy calculation (non per-class)"""
     pred = np.array([0, 1, 2, 2, 1])
     gt = np.array([0, 1, 1, 2, 2])
 
     metrics_factory.update(pred, gt)
 
-    TP = np.sum(metrics_factory.get_tp(per_class=False))
-    FP = np.sum(metrics_factory.get_fp(per_class=False))
-    FN = np.sum(metrics_factory.get_fn(per_class=False))
-    TN = np.sum(metrics_factory.get_tn(per_class=False))
-    total_predictions = np.sum(metrics_factory.get_confusion_matrix())  # Total number of elements
+    TP = metrics_factory.get_tp(per_class=False)
+    total = metrics_factory.get_confusion_matrix().sum()
 
-    # Match the expected formula with the function logic
-    expected_accuracy = TP / total_predictions if total_predictions > 0 else math.nan
+   
+    expected_accuracy = TP / total if total > 0 else math.nan
+
     computed_accuracy = metrics_factory.get_accuracy(per_class=False)
-
-    print(f"TP: {TP}, FP: {FP}, FN: {FN}, TN: {TN}")
-    print(f"Total Predictions: {total_predictions}")
-    print(f"Computed Accuracy: {computed_accuracy}, Expected Accuracy: {expected_accuracy}")
-
-    assert np.isclose(computed_accuracy, expected_accuracy, equal_nan=True), \
-        f"Expected {expected_accuracy}, but got {computed_accuracy}"
-
+    assert np.isclose(computed_accuracy, expected_accuracy, equal_nan=True)
 
 def test_f1_score(metrics_factory):
     """Test F1-score calculation"""
