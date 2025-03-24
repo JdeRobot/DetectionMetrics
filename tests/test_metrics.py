@@ -55,10 +55,12 @@ def test_accuracy(metrics_factory):
     metrics_factory.update(pred, gt)
 
     TP = metrics_factory.get_tp(per_class=False)
-    total = metrics_factory.get_confusion_matrix().sum()
+    FP = metrics_factory.get_fp(per_class=False)
+    FN = metrics_factory.get_fn(per_class=False)
+    TN = metrics_factory.get_tn(per_class=False)
 
-   
-    expected_accuracy = TP / total if total > 0 else math.nan
+    total = TP + FP + FN + TN
+    expected_accuracy = (TP + TN) / total if total > 0 else math.nan
 
     computed_accuracy = metrics_factory.get_accuracy(per_class=False)
     assert np.isclose(computed_accuracy, expected_accuracy, equal_nan=True)
