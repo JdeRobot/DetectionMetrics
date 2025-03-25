@@ -60,7 +60,12 @@ def test_get_image_mode(tmp_path):
 def test_extract_wildcard_matches(tmp_path):
     (tmp_path / "file1.txt").touch()
     (tmp_path / "file2.txt").touch()
-
-    with patch("detectionmetrics.utils.io.glob", return_value=[str(tmp_path / "file1.txt"), str(tmp_path / "file2.txt")]):
+    with patch(
+        "detectionmetrics.utils.io.glob",
+        return_value=[
+            str(tmp_path / "file1.txt"),
+            str(tmp_path / "file2.txt")
+        ],
+    ):
         matches = extract_wildcard_matches(str(tmp_path / "*.txt"))
         assert len(matches) == 2
