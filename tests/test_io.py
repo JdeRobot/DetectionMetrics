@@ -1,3 +1,4 @@
+import json
 from PIL import Image
 from unittest.mock import mock_open, patch
 from detectionmetrics.utils.io import (
@@ -45,7 +46,8 @@ def test_write_json():
     # Retrieve all calls to write()
     written_data = "".join(call.args[0] for call in mock_file().write.call_args_list)
 
-    assert json.loads(written_data) == data  
+    assert json.loads(written_data) == data
+
 
 # Test get_image_mode
 def test_get_image_mode(tmp_path):
@@ -62,10 +64,7 @@ def test_extract_wildcard_matches(tmp_path):
     (tmp_path / "file2.txt").touch()
     with patch(
         "detectionmetrics.utils.io.glob",
-        return_value=[
-            str(tmp_path / "file1.txt"),
-            str(tmp_path / "file2.txt")
-        ],
+        return_value=[str(tmp_path / "file1.txt"), str(tmp_path / "file2.txt")],
     ):
         matches = extract_wildcard_matches(str(tmp_path / "*.txt"))
         assert len(matches) == 2
