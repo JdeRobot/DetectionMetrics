@@ -1,7 +1,3 @@
-import pytest
-import json
-import yaml
-import os
 from PIL import Image
 from unittest.mock import mock_open, patch
 from detectionmetrics.utils.io import (
