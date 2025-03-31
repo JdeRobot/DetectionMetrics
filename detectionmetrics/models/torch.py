@@ -163,39 +163,49 @@ def get_computational_cost(
 
 
 class CustomResize(torch.nn.Module):
-    """Custom rescale transformation for PyTorch
+    """Custom rescale transformation for PyTorch. If only one dimension is provided,
+    the aspect ratio is preserved.
 
-    :param target_size: Target size for the image
-    :type target_size: Tuple[int, int]
-    :param keep_aspect: Flag to keep aspect ratio
-    :type keep_aspect: bool, defaults to False
+    :param width: Target width for resizing
+    :type width: Optional[int], optional
+    :param height: Target height for resizing
+    :type height: Optional[int], optional
     :param interpolation: Interpolation mode for resizing (e.g. NEAREST, BILINEAR)
     :type interpolation: F.InterpolationMode, defaults to F.InterpolationMode.BILINEAR
+    :param closest_divisor: Closest divisor for the target size, defaults to 16. Only applies to the dimension not provided.
+    :type closest_divisor: int, optional
     """
 
     def __init__(
         self,
-        target_size: Tuple[int, int],
-        keep_aspect: bool = False,
+        width: Optional[int] = None,
+        height: Optional[int] = None,
         interpolation: F.InterpolationMode = F.InterpolationMode.BILINEAR,
+        closest_divisor: int = 16,
     ):
         super().__init__()
-        self.target_size = target_size
-        self.keep_aspect = keep_aspect
+        self.width = width
+        self.height = height
         self.interpolation = interpolation
+        self.closest_divisor = closest_divisor
 
     def forward(self, image: Image.Image) -> Image.Image:
-        new_size = self.target_size
-        if self.keep_aspect:
-            h, w = image.size
-            resize_factor = max((self.target_size[0] / h, self.target_size[1] / w))
-            new_size = int(h * resize_factor), int(w * resize_factor)
+        w, h = image.size
+        old_size = (h, w)
 
-        if new_size != image.size:
+        if self.width is None:
+            w = int((self.height / image.size[1]) * image.size[0])
+            h = self.height
+        if self.height is None:
+            h = int((self.width / image.size[0]) * image.size[1])
+            w = self.width
+
+        h = round(h / self.closest_divisor) * self.closest_divisor
+        w = round(w / self.closest_divisor) * self.closest_divisor
+        new_size = (h, w)
+
+        if new_size != old_size:
             image = F.resize(image, new_size, self.interpolation)
-
-        if self.keep_aspect:
-            image = F.center_crop(image, self.target_size)
 
         return image
 
@@ -376,21 +386,29 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
         self.transform_input = []
         self.transform_label = []
 
-        if "image_size" in self.model_cfg:
+        if "resize" in self.model_cfg:
             self.transform_input += [
                 CustomResize(
-                    tuple(self.model_cfg["image_size"]),
-                    keep_aspect=self.model_cfg.get("keep_aspect", False),
+                    width=self.model_cfg["resize"].get("width", None),
+                    height=self.model_cfg["resize"].get("height", None),
                     interpolation=F.InterpolationMode.BILINEAR,
                 )
             ]
             self.transform_label += [
                 CustomResize(
-                    tuple(self.model_cfg["image_size"]),
-                    keep_aspect=self.model_cfg.get("keep_aspect", False),
+                    width=self.model_cfg["resize"].get("width", None),
+                    height=self.model_cfg["resize"].get("height", None),
                     interpolation=F.InterpolationMode.NEAREST,
                 )
             ]
+
+        if "crop" in self.model_cfg:
+            crop_size = (
+                self.model_cfg["crop"]["height"],
+                self.model_cfg["crop"]["width"],
+            )
+            self.transform_input += [transforms.CenterCrop(crop_size)]
+            self.transform_label += [transforms.CenterCrop(crop_size)]
 
         try:
             self.transform_input += [
@@ -447,7 +465,7 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
                         dict(
                             ori_shape=tensor.shape[2:],
                             img_shape=tensor.shape[2:],
-                            pad_shape=image.shape[2:],
+                            pad_shape=tensor.shape[2:],
                             padding_size=[0, 0, 0, 0],
                         )
                     ]
