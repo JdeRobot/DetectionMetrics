@@ -11,6 +11,7 @@ from detectionmetrics.datasets import dataset as dm_dataset
 import detectionmetrics.utils.conversion as uc
 import detectionmetrics.utils.io as uio
 
+
 class PerceptionModel(ABC):
     """Base class for all vision perception models (e.g., segmentation, detection).
 
@@ -94,6 +95,7 @@ class PerceptionModel(ABC):
                 self.model_cfg.get("ignored_classes", []),
             )
         return lut_ontology
+
 
 class SegmentationModel(PerceptionModel):
     """Parent segmentation model class
