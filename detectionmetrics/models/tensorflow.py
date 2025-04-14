@@ -37,7 +37,8 @@ def get_computational_cost(
     :type runs: int, optional
     :param warm_up_runs: Number of warm-up runs, defaults to 5
     :type warm_up_runs: int, optional
-    :return: Dictionary containing computational cost information
+    :return: DataFrame containing computational cost information
+    :rtype: pd.DataFrame
     """
     # Get model size (if possible) and number of parameters
     if model_fname is not None:
@@ -73,51 +74,83 @@ def get_computational_cost(
         inference_times.append(time.time() - start_time)
 
     # Retrieve computational cost information
-    return {
-        "input_shape": dummy_input.shape.as_list(),
-        "size_mb": size_mb,
-        "n_params": int(n_params),
-        "inference_time_s": np.mean(inference_times),
+    result = {
+        "input_shape": ["x".join(map(str, dummy_input.shape.as_list()))],
+        "n_params": [int(n_params)],
+        "size_mb": [size_mb],
+        "inference_time_s": [np.mean(inference_times)],
     }
+    return pd.DataFrame.from_dict(result)
 
 
 def resize_image(
     image: tf.Tensor,
-    target_size: Tuple[int, int],
     method: str,
-    keep_aspect: bool = False,
+    width: Optional[int] = None,
+    height: Optional[int] = None,
+    closest_divisor: int = 16,
 ) -> tf.Tensor:
-    """Resize tensorflow image to target size
+    """Resize tensorflow image to target size. If only one dimension is provided, the
+    aspect ratio is preserved.
 
     :param image: Input image tensor
     :type image: tf.Tensor
-    :param target_size: Target size for the image
-    :type target_size: Tuple[int, int]
     :param method: Resizing method (e.g. bilinear, nearest)
     :type method: str
-    :param keep_aspect: Whether to keep aspect ratio when resizing images. If true, resize to match smaller sides size and crop center. Defaults to False
-    :type keep_aspect: bool, optional
+    :param width: Target width for resizing
+    :type width: Optional[int], optional
+    :param height: Target height for resizing
+    :type height: Optional[int], optional
+    :param closest_divisor: Closest divisor for the target size, defaults to 16. Only applies to the dimension not provided.
+    :type closest_divisor: int, optional
     :return: Resized image tensor
     :rtype: tf.Tensor
     """
-    # If keep_aspect is True, resize to match smaller side
-    if keep_aspect:
-        original_size = tf.cast(tf.shape(image)[:2], tf.float32)
-        resize_size = tf.cast(tf.convert_to_tensor(target_size), tf.float32)
-        scale_factor = tf.reduce_max(resize_size / original_size)
-        resize_size = tf.cast(tf.round(original_size * scale_factor), tf.int32)
-    else:
-        resize_size = target_size
+    old_size = tf.cast(tf.shape(image)[:2], tf.float32)
+    old_h = old_size[0]
+    old_w = old_size[1]
 
-    image = tf_image.resize(images=image, size=resize_size, method=method)
+    h, w = (old_h, old_w)
+    if width is None:
+        w = int((height / old_h) * old_w)
+        h = height
+    if height is None:
+        h = int((width / old_w) * old_h)
+        w = width
 
-    # If keep_aspect is True, crop center to match target size
-    if keep_aspect:
-        y0 = (resize_size[0] - target_size[0]) // 2
-        x0 = (resize_size[1] - target_size[1]) // 2
-        image = tf_image.crop_to_bounding_box(
-            image, y0, x0, target_size[1], target_size[0]
-        )
+    h = (h / closest_divisor) * closest_divisor
+    w = (w / closest_divisor) * closest_divisor
+    new_size = [int(h), int(w)]
+
+    image = tf_image.resize(
+        images=image, size=tf.cast(new_size, tf.int32), method=method
+    )
+
+    return image
+
+
+def crop_center(image: tf.Tensor, width: int, height: int) -> tf.Tensor:
+    """Crop tensorflow image center to target size
+
+    :param image: Input image tensor
+    :type image: tf.Tensor
+    :param width: Target width for cropping
+    :type width: int
+    :param height: Target width for cropping
+    :type height: int
+    :return: Cropped image tensor
+    :rtype: tf.Tensor
+    """
+    old_size = tf.cast(tf.shape(image)[:2], tf.float32)
+    old_h = old_size[0]
+    old_w = old_size[1]
+
+    offset_height = int((old_h - height) // 2)
+    offset_width = int((old_w - width) // 2)
+
+    image = tf.image.crop_to_bounding_box(
+        image, offset_height, offset_width, height, width
+    )
 
     return image
 
@@ -127,8 +160,10 @@ class ImageSegmentationTensorflowDataset:
 
     :param dataset: Image segmentation dataset
     :type dataset: ImageSegmentationDataset
-    :param image_size: Image size in pixels (width, height)
-    :type image_size: Tuple[int, int]
+    :param resize: Target size for resizing images, defaults to None
+    :type resize: Optional[Tuple[int, int]], optional
+    :param crop: Target size for center cropping images, defaults to None
+    :type crop: Optional[Tuple[int, int]], optional
     :param batch_size: Batch size, defaults to 1
     :type batch_size: int, optional
     :param splits: Splits to be used from the dataset, defaults to ["test"]
@@ -144,14 +179,16 @@ class ImageSegmentationTensorflowDataset:
     def __init__(
         self,
         dataset: ImageSegmentationDataset,
-        image_size: Tuple[int, int],
+        resize: Optional[Tuple[int, int]] = None,
+        crop: Optional[Tuple[int, int]] = None,
         batch_size: int = 1,
         splits: List[str] = ["test"],
         lut_ontology: Optional[dict] = None,
         normalization: Optional[dict] = None,
         keep_aspect: bool = False,
     ):
-        self.image_size = image_size
+        self.resize = resize
+        self.crop = crop
         self.normalization = None
         if normalization is not None:
             mean = tf.constant(normalization["mean"], dtype=tf.float32)
@@ -209,8 +246,20 @@ class ImageSegmentationTensorflowDataset:
             )
 
         # Resize (use NN to avoid interpolation when dealing with labels)
-        method = "nearest" if label else "bilinear"
-        image = resize_image(image, self.image_size, method, self.keep_aspect)
+        if self.resize is not None:
+            method = "nearest" if label else "bilinear"
+            image = resize_image(
+                image,
+                method=method,
+                width=self.resize.get("width", None),
+                height=self.resize.get("height", None),
+            )
+        if self.crop is not None:
+            image = crop_center(
+                image,
+                width=self.crop.get("width", None),
+                height=self.crop.get("height", None),
+            )
 
         # If label, round values to avoid interpolation artifacts
         if label:
@@ -281,18 +330,28 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
         # Init transformation for input images
         def t_in(image):
             tensor = tf.convert_to_tensor(image)
-            tensor = resize_image(
-                tensor,
-                target_size=self.model_cfg["image_size"],
-                method="bilinear",
-                keep_aspect=self.model_cfg.get("keep_aspect", False),
-            )
+
+            if "resize" in self.model_cfg:
+                tensor = resize_image(
+                    method="bilinear",
+                    width=self.model_cfg["resize"].get("width", None),
+                    height=self.model_cfg["resize"].get("height", None),
+                )
+
+            if "crop" in self.model_cfg:
+                tensor = crop_center(
+                    tensor,
+                    width=self.model_cfg["crop"].get("width", None),
+                    height=self.model_cfg["crop"].get("height", None),
+                )
+
             tensor = tf.expand_dims(tensor, axis=0)
             if "normalization" in self.model_cfg:
                 mean = tf.constant(self.model_cfg["normalization"]["mean"])
                 std = tf.constant(self.model_cfg["normalization"]["std"])
                 tensor = tf.cast(tensor, tf.float32) / 255.0
                 tensor = (tensor - mean) / std
+
             return tensor
 
         self.t_in = t_in
@@ -364,7 +423,8 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
         # Get Tensorflow dataset
         dataset = ImageSegmentationTensorflowDataset(
             dataset,
-            image_size=self.model_cfg["image_size"],
+            resize=self.model_cfg.get("resize", None),
+            crop=self.model_cfg.get("crop", None),
             batch_size=self.model_cfg.get("batch_size", 1),
             splits=[split] if isinstance(split, str) else split,
             lut_ontology=lut_ontology,
@@ -432,16 +492,23 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
 
         return um.get_metrics_dataframe(metrics_factory, self.ontology)
 
-    def get_computational_cost(self, runs: int = 30, warm_up_runs: int = 5) -> dict:
+    def get_computational_cost(
+        self,
+        image_size: Tuple[int] = None,
+        runs: int = 30,
+        warm_up_runs: int = 5,
+    ) -> dict:
         """Get different metrics related to the computational cost of the model
 
+        :param image_size: Image size used for inference
+        :type image_size: Tuple[int], optional
         :param runs: Number of runs to measure inference time, defaults to 30
         :type runs: int, optional
         :param warm_up_runs: Number of warm-up runs, defaults to 5
         :type warm_up_runs: int, optional
         :return: Dictionary containing computational cost information
         """
-        dummy_input = tf.random.normal([1, *self.model_cfg["image_size"], 3])
+        dummy_input = tf.random.normal([1, *image_size, 3])
         return get_computational_cost(
             self.model, dummy_input, self.model_fname, runs, warm_up_runs
         )
