@@ -119,7 +119,6 @@ class SegmentationModel(ABC):
                 dataset_ontology,
                 self.ontology,
                 ontology_translation,
-                self.model_cfg.get("ignored_classes", []),
             )
         return lut_ontology
 
