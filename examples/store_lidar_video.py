@@ -115,7 +115,7 @@ def main():
             label = model.inference(point_cloud)
             lut = uc.ontology_to_rgb_lut(model.ontology)
         else:
-            label, _ = dataset.read_label(sample_data["label"])
+            label = dataset.read_label(sample_data["label"])
             lut = uc.ontology_to_rgb_lut(dataset.ontology)
         colors = lut[label] / 255.0
 
