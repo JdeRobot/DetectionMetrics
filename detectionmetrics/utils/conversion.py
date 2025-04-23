@@ -57,7 +57,8 @@ def get_ontology_conversion_lut(
     old_ontology: dict,
     new_ontology: dict,
     ontology_translation: Optional[dict] = None,
-    ignored_classes: Optional[List[str]] = None,
+    classes_to_remove: Optional[List[str]] = None,
+    lut_dtype: Optional[np.dtype] = np.uint8,
 ) -> np.ndarray:
     """Build a LUT that links old ontology and new ontology indices. If class names
     don't match between the provided ontologies, user must provide an ontology
@@ -69,18 +70,20 @@ def get_ontology_conversion_lut(
     :type new_ontology: dict
     :param ontology_translation: Ontology translation dictionary, defaults to None
     :type ontology_translation: Optional[dict], optional
-    :param ignored_classes: Classes to ignore from the old ontology, defaults to None
-    :type ignored_classes: Optional[List[str]], optional
+    :param classes_to_remove: Classes to be removed from the old ontology, defaults to None
+    :type classes_to_remove: Optional[List[str]], optional
+    :param lut_dtype: Type for the ontology conversion LUT, defaults to np.uint8
+    :type lut_dtype: Optional[np.dtype], optional
     :return: numpy array associating old and new ontology indices
     :rtype: np.ndarray
     """
-    ignored_classes = [] if ignored_classes is None else ignored_classes
+    classes_to_remove = [] if classes_to_remove is None else classes_to_remove
 
     max_idx = max(class_data["idx"] for class_data in old_ontology.values())
-    lut = np.zeros((max_idx + 1), dtype=np.uint8)
+    lut = np.zeros((max_idx + 1), dtype=lut_dtype)
     if ontology_translation is not None:
-        # Deleting ignored classes that exist in ontology_translation
-        for class_name in ignored_classes:
+        # Deleting requested classes from ontology translation
+        for class_name in classes_to_remove:
             if class_name in ontology_translation:
                 del ontology_translation[class_name]
 
@@ -91,7 +94,8 @@ def get_ontology_conversion_lut(
             lut[old_class_idx] = new_class_idx
     else:
         old_ontology = old_ontology.copy()
-        for class_name in ignored_classes:  # Deleting ignored classes from old_ontology
+        # Deleting classes requested from old ontology
+        for class_name in classes_to_remove:
             del old_ontology[class_name]
         assert set(old_ontology.keys()) == set(  # Checking ontology compatibility
             new_ontology.keys()
