@@ -11,6 +11,7 @@ from tqdm import tqdm
 
 import detectionmetrics.utils.io as uio
 import detectionmetrics.utils.conversion as uc
+import detectionmetrics.utils.lidar as ul
 
 
 class SegmentationDataset(ABC):
@@ -126,7 +127,7 @@ class ImageSegmentationDataset(SegmentationDataset):
         outdir: str,
         new_ontology: Optional[dict] = None,
         ontology_translation: Optional[dict] = None,
-        ignored_classes: Optional[List[str]] = None,
+        classes_to_remove: Optional[List[str]] = None,
         resize: Optional[Tuple[int, int]] = None,
         include_label_count: bool = True,
     ):
@@ -138,8 +139,8 @@ class ImageSegmentationDataset(SegmentationDataset):
         :type new_ontology: dict
         :param ontology_translation: Ontology translation dictionary, defaults to None
         :type ontology_translation: Optional[dict], optional
-        :param ignored_classes: Classes to ignore from the old ontology, defaults to []
-        :type ignored_classes: Optional[List[str]], optional
+        :param classes_to_remove: Classes to remove from the old ontology, defaults to []
+        :type classes_to_remove: Optional[List[str]], optional
         :param resize: Resize images and labels to the given dimensions, defaults to None
         :type resize: Optional[Tuple[int, int]], optional
         :param include_label_count: Whether to include class weights in the dataset, defaults to True
@@ -162,7 +163,8 @@ class ImageSegmentationDataset(SegmentationDataset):
                 old_ontology=self.ontology,
                 new_ontology=new_ontology,
                 ontology_translation=ontology_translation,
-                ignored_classes=ignored_classes,
+                classes_to_remove=classes_to_remove,
+                lut_dtype=np.uint32
             )
             n_classes = max(c["idx"] for c in new_ontology.values()) + 1
         else:
@@ -340,7 +342,8 @@ class LiDARSegmentationDataset(SegmentationDataset):
         outdir: str,
         new_ontology: Optional[dict] = None,
         ontology_translation: Optional[dict] = None,
-        ignored_classes: Optional[List[str]] = [],
+        classes_to_remove: Optional[List[str]] = [],
+        include_label_count: bool = True,
     ):
         """Export dataset dataframe and LiDAR files in SemanticKITTI format. Optionally, modify ontology before exporting.
 
@@ -350,8 +353,10 @@ class LiDARSegmentationDataset(SegmentationDataset):
         :type new_ontology: dict
         :param ontology_translation: Ontology translation dictionary, defaults to None
         :type ontology_translation: Optional[dict], optional
-        :param ignored_classes: Classes to ignore from the old ontology, defaults to []
-        :type ignored_classes: Optional[List[str]], optional
+        :param classes_to_remove: Classes to remove from the old ontology, defaults to []
+        :type classes_to_remove: Optional[List[str]], optional
+        :param include_label_count: Whether to include class weights in the dataset, defaults to True
+        :type include_label_count: bool, optional
         """
         os.makedirs(outdir, exist_ok=True)
 
@@ -360,14 +365,25 @@ class LiDARSegmentationDataset(SegmentationDataset):
         if ontology_translation is not None and new_ontology is None:
             raise ValueError("New ontology must be provided")
 
+        # Create ontology conversion lookup table if needed and get number of classes
         ontology_conversion_lut = None
         if new_ontology is not None:
             ontology_conversion_lut = uc.get_ontology_conversion_lut(
                 old_ontology=self.ontology,
                 new_ontology=new_ontology,
                 ontology_translation=ontology_translation,
-                ignored_classes=ignored_classes,
+                classes_to_remove=classes_to_remove,
             )
+            n_classes = max(c["idx"] for c in new_ontology.values()) + 1
+        else:
+            n_classes = max(c["idx"] for c in self.ontology.values()) + 1
+
+        # Check if label count is missing and create empty array if needed
+        label_count_missing = include_label_count and (
+            not self.has_label_count or new_ontology is not None
+        )
+        if label_count_missing:
+            label_count = np.zeros(n_classes, dtype=np.uint64)
 
         pbar = tqdm(self.dataset.iterrows())
 
@@ -392,13 +408,21 @@ class LiDARSegmentationDataset(SegmentationDataset):
                     label_fname = os.path.join(self.dataset_dir, label_fname)
 
             # If format is not appropriate: read, convert, and rewrite sample
-            if not self.is_kitti_format or ontology_conversion_lut is not None:
+            if (
+                not self.is_kitti_format
+                or ontology_conversion_lut is not None
+                or label_count_missing
+            ):
                 points = self.read_points(points_fname)
-                label, _ = self.read_label(label_fname)
+                label = self.read_label(label_fname)
                 if ontology_conversion_lut is not None:
-                    label = ontology_conversion_lut[label]
+                    label = ontology_conversion_lut[label].astype(np.uint32)
                 points.tofile(os.path.join(outdir, rel_points_fname))
                 label.tofile(os.path.join(outdir, rel_label_fname))
+
+                if label_count_missing:
+                    indices, counts = np.unique(label, return_counts=True)
+                    label_count[indices] += counts.astype(np.uint64)
             else:
                 shutil.copy2(points_fname, os.path.join(outdir, rel_points_fname))
                 shutil.copy2(label_fname, os.path.join(outdir, rel_label_fname))
@@ -406,9 +430,15 @@ class LiDARSegmentationDataset(SegmentationDataset):
             self.dataset.at[sample_name, "points"] = rel_points_fname
             self.dataset.at[sample_name, "label"] = rel_label_fname
 
+        # Update dataset directory and ontology if needed
         self.dataset_dir = outdir
+        self.ontology = new_ontology if new_ontology is not None else self.ontology
 
         # Write ontology and store relative path in dataset attributes
+        if label_count_missing:
+            for class_data in self.ontology.values():
+                class_data["label_count"] = int(label_count[class_data["idx"]])
+
         ontology_fname = "ontology.json"
         self.dataset.attrs = {"ontology_fname": ontology_fname}
         uio.write_json(os.path.join(outdir, ontology_fname), self.ontology)
@@ -418,27 +448,23 @@ class LiDARSegmentationDataset(SegmentationDataset):
 
     @staticmethod
     def read_points(fname: str) -> np.ndarray:
-        """Read points from a binary file in SemanticKITTI format
+        """Read point cloud. Defaults to SemanticKITTI format
 
-        :param fname: Binary file containing points
+        :param fname: File containing point cloud
         :type fname: str
         :return: Numpy array containing points
         :rtype: np.ndarray
         """
-        points = np.fromfile(fname, dtype=np.float32)
-        return points.reshape((-1, 4))
+        return ul.read_semantickitti_points(fname)
 
     @staticmethod
     def read_label(fname: str) -> Tuple[np.ndarray, np.ndarray]:
-        """Read labels from a binary file in SemanticKITTI format
+        """Read semantic labels. Defaults to SemanticKITTI format
 
         :param fname: Binary file containing labels
         :type fname: str
-        :return: Numpy arrays containing semantic and instance labels
-        :rtype: Tuple[np.ndarray, np.ndarray]
+        :return: Numpy arrays containing semantic labels
+        :rtype: np.ndarray
         """
-        label = np.fromfile(fname, dtype=np.uint32)
-        label = label.reshape((-1))
-        semantic_label = label & 0xFFFF
-        instance_label = label >> 16
-        return semantic_label.astype(np.int32), instance_label.astype(np.int32)
+        label, _ = ul.read_semantickitti_label(fname)
+        return label
