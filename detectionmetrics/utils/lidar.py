@@ -280,3 +280,29 @@ def render_point_cloud(
     renderer.scene.clear_geometry()
 
     return image
+
+
+def read_semantickitti_points(fname: str) -> np.ndarray:
+    """Read points from a binary file in SemanticKITTI format
+
+    :param fname: Binary file containing points
+    :type fname: str
+    :return: Numpy array containing points
+    :rtype: np.ndarray
+    """
+    points = np.fromfile(fname, dtype=np.float32)
+    return points.reshape((-1, 4))
+
+def read_semantickitti_label(fname: str) -> Tuple[np.ndarray, np.ndarray]:
+    """Read labels from a binary file in SemanticKITTI format
+
+    :param fname: Binary file containing labels
+    :type fname: str
+    :return: Numpy arrays containing semantic and instance labels
+    :rtype: Tuple[np.ndarray, np.ndarray]
+    """
+    label = np.fromfile(fname, dtype=np.uint32)
+    label = label.reshape((-1))
+    semantic_label = label & 0xFFFF
+    instance_label = label >> 16
+    return semantic_label, instance_label
