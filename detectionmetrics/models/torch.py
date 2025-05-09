@@ -13,60 +13,22 @@ from tqdm import tqdm
 
 from detectionmetrics.datasets import dataset as dm_dataset
 from detectionmetrics.models import model as dm_model
-from detectionmetrics.models import torch_model_utils as tmu
 import detectionmetrics.utils.metrics as um
-import detectionmetrics.utils.lidar as ul
 import detectionmetrics.utils.torch as ut
 
 
-AVAILABLE_INPUT_FORMATS_LIDAR = ["o3d_randlanet", "o3d_kpconv", "mmdet3d"]
+AVAILABLE_MODEL_FORMATS_LIDAR = ["o3d_randlanet", "o3d_kpconv", "mmdet3d"]
 
 
-def raise_unknown_input_format_lidar(input_format: str) -> None:
-    """Raise an exception if the LiDAR model input format is unknown
+def raise_unknown_model_format_lidar(model_format: str) -> None:
+    """Raise an exception if the LiDAR model format is unknown
 
-    :param input_format: Input format string
+    :param input_format: Model format string
     :type input_format: str
     """
-    msg = f"Unknown input format: {input_format}."
-    msg += f"Available formats: {AVAILABLE_INPUT_FORMATS_LIDAR}"
+    msg = f"Unknown model format: {model_format}."
+    msg += f"Available formats: {AVAILABLE_MODEL_FORMATS_LIDAR}"
     raise Exception(msg)
-
-
-def get_mmdet3d_sample(
-    points_fname: str,
-    label_fname: Optional[str] = None,
-    name: Optional[str] = None,
-    idx: Optional[int] = None,
-    n_feats: int = 4,
-) -> dict:
-    """Get sample data for mmdetection3d models
-
-    :param points_fname: filename of the point cloud
-    :type points_fname: str
-    :param label_fname: filename of the semantic label, defaults to None
-    :type label_fname: Optional[str], optional
-    :param name: sample name, defaults to None
-    :type name: Optional[str], optional
-    :param idx: sample numerical index, defaults to None
-    :type idx: Optional[int], optional
-    :param n_feats: number of features, typically [x, y, z, r], defaults to 4
-    :type n_feats: int, optional
-    :return: Sample data dictionary
-    :rtype: dict
-    """
-
-    return {
-        "lidar_points": {
-            "lidar_path": points_fname,
-            "num_pts_feats": n_feats,
-        },
-        "pts_semantic_mask_path": label_fname,
-        "sample_id": name,
-        "sample_idx": idx,
-        "num_pts_feats": n_feats,
-        "lidar_path": points_fname,
-    }
 
 
 def get_computational_cost(
@@ -256,8 +218,8 @@ class LiDARSegmentationTorchDataset(Dataset):
     :type dataset: LiDARSegmentationDataset
     :param model_cfg: Dictionary containing model configuration
     :type model_cfg: dict
-    :param preprocess: Function for preprocessing point clouds
-    :type preprocess: callable
+    :param get_sample: Function for loading sample data
+    :type get_sample: callable
     :param splits: Splits to be used from the dataset, defaults to ["test"]
     :type splits: str, optional
     """
@@ -266,101 +228,33 @@ class LiDARSegmentationTorchDataset(Dataset):
         self,
         dataset: dm_dataset.LiDARSegmentationDataset,
         model_cfg: dict,
-        preprocess: callable,
+        get_sample: callable,
         splits: str = ["test"],
     ):
         # Filter split and make filenames global
         dataset.dataset = dataset.dataset[dataset.dataset["split"].isin(splits)]
         self.dataset = dataset
         self.dataset.make_fname_global()
-
         self.model_cfg = model_cfg
-        self.preprocess = preprocess
+        self.get_sample = get_sample
 
     def __len__(self):
         return len(self.dataset.dataset)
 
-    def __getitem__(
-        self, idx: int
-    ) -> Tuple[Union[np.ndarray, torch.Tensor], Union[np.ndarray, torch.Tensor]]:
-        """Prepare sample data: point cloud and label
+    def __getitem__(self, idx: int):
+        """Prepare sample data
 
         :param idx: Sample index
         :type idx: int
-        :return: Sample index, point cloud, projected indices, semantic label, and sampler
-        :rtype: Tuple[str, np.ndarray, np.ndarray, np.ndarray, ul.Sampler]
+        :return: Sample data required by the model
         """
-        # Read the point cloud and its labels
-        points = self.dataset.read_points(self.dataset.dataset.iloc[idx]["points"])
-        semantic_label = self.dataset.read_label(
-            self.dataset.dataset.iloc[idx]["label"]
-        )
-
-        # Preprocess point cloud
-        preprocessed_points, projected_indices, sampler = self.preprocess(
-            points, self.model_cfg
-        )
-
-        return (
-            self.dataset.dataset.index[idx],
-            preprocessed_points,
-            projected_indices,
-            semantic_label,
-            sampler,
-        )
-
-
-class LiDARSegmentationMMDet3DDataset(Dataset):
-    """Dataset for LiDAR segmentation PyTorch - mmdetection3d models
-
-    :param dataset: LiDAR segmentation dataset
-    :type dataset: LiDARSegmentationDataset
-    :param model_cfg: Dictionary containing model configuration
-    :type model_cfg: dict
-    :param preprocess: Function for preprocessing point clouds
-    :type preprocess: callable
-    :param n_classes: Number of classes estimated by the model
-    :type n_classes: int
-    :param splits: Splits to be used from the dataset, defaults to ["test"]
-    :type splits: str, optional
-    """
-
-    def __init__(
-        self,
-        dataset: dm_dataset.LiDARSegmentationDataset,
-        model_cfg: dict,
-        preprocess: callable,
-        splits: str = ["test"],
-    ):
-        # Filter split and make filenames global
-        dataset.dataset = dataset.dataset[dataset.dataset["split"].isin(splits)]
-        self.dataset = dataset
-        self.dataset.make_fname_global()
-
-        self.model_cfg = model_cfg
-        self.preprocess = preprocess
-
-    def __len__(self):
-        return len(self.dataset.dataset)
-
-    def __getitem__(
-        self, idx: int
-    ) -> Tuple[Union[np.ndarray, torch.Tensor], Union[np.ndarray, torch.Tensor]]:
-        """Prepare sample data: point cloud and label
-
-        :param idx: Sample index
-        :type idx: int
-        :return: Point cloud and corresponding label tensor or numpy arrays
-        :rtype: Tuple[np.ndarray, np.ndarray,]
-        """
-        sample = get_mmdet3d_sample(
+        return self.get_sample(
             points_fname=self.dataset.dataset.iloc[idx]["points"],
+            model_cfg=self.model_cfg,
             label_fname=self.dataset.dataset.iloc[idx]["label"],
             name=self.dataset.dataset.index[idx],
             idx=idx,
-            n_feats=self.model_cfg.get("n_feats", 4),
         )
-        return self.preprocess(sample)
 
 
 class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
@@ -701,35 +595,21 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
         self.model = self.model.to(self.device).eval()
 
         # Init specific attributes and update model configuration
-        self.end_th = self.model_cfg.get("end_th", 0.5)
-        self.input_format = self.model_cfg["input_format"]
-        self.model_cfg["n_classes"] = self.n_classes
+        self.model_format = self.model_cfg["model_format"]
 
         # Init model specific functions
-        if "o3d" in self.input_format:  # Open3D-ML
-            self.preprocess = tmu.o3d.preprocess
-            self.transform_output = (
-                lambda x: torch.argmax(x.squeeze(), axis=-1).squeeze().cpu().numpy()
-            )
-            self._inference = tmu.o3d.inference
-            if self.input_format == "o3d_randlanet":  # Open3D RandLaNet
-                self.transform_input = tmu.o3d.randlanet.transform_input
-                self.update_probs = tmu.o3d.randlanet.update_probs
-                decoder_layers = self.model.decoder.children()
-                self.model_cfg["num_layers"] = sum(1 for _ in decoder_layers)
-            elif self.input_format == "o3d_kpconv":  # Open3D KPConv
-                self.transform_input = tmu.o3d.kpconv.transform_input
-                self.update_probs = tmu.o3d.kpconv.update_probs
-            else:
-                raise raise_unknown_input_format_lidar(self.input_format)
-        elif self.input_format == "mmdet3d":
-            self.preprocess = tmu.mmdet3d.preprocess
-            self._inference = tmu.mmdet3d.inference
-            self.transform_input = None
-            self.update_probs = None
-            self.transform_output = lambda x: x.cpu().numpy()
+        if self.model_format == "mmdet3d":
+            from detectionmetrics.models.lidar_torch_utils import mmdet3d
+
+            self._get_sample = mmdet3d.get_sample
+            self._inference = mmdet3d.inference
+        elif "o3d" in self.model_format:
+            from detectionmetrics.models.lidar_torch_utils import o3d
+
+            self._get_sample = o3d.get_sample
+            self._inference = o3d.inference
         else:
-            raise raise_unknown_input_format_lidar(self.input_format)
+            raise raise_unknown_model_format_lidar(self.model_format)
 
     def inference(self, points_fname: str) -> np.ndarray:
         """Perform inference for a single point cloud
@@ -740,23 +620,10 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
         :rtype: np.ndarray
         """
         # Preprocess point cloud
+        sample = self._get_sample(points_fname, self.model_cfg)
+        pred, _, _ = self._inference(sample, self.model, self.model_cfg)
 
-        if "o3d" in self.input_format:
-            points = ul.read_semantickitti_points(points_fname)
-            sample = self.preprocess(points, self.model_cfg)
-            points_fname, projected_indices, sampler = sample
-            pred = self._inference(points_fname, projected_indices, sampler, self)
-        elif self.input_format == "mmdet3d":
-            sample = get_mmdet3d_sample(
-                points_fname=points_fname, n_feats=self.model_cfg.get("n_feats", 4)
-            )
-            sample = self.preprocess(sample)
-            pred = self._inference(sample, self.model)
-            pred = pred.pred_pts_seg.pts_semantic_mask
-        else:
-            raise_unknown_input_format_lidar(self.input_format)
-
-        return self.transform_output(pred)
+        return pred.squeeze().cpu().numpy()
 
     def eval(
         self,
@@ -800,16 +667,11 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
         for ignored_class in self.model_cfg.get("ignored_classes", []):
             ignored_label_indices.append(dataset.ontology[ignored_class]["idx"])
 
-        # Get PyTorch dataset (no dataloader to avoid complexity with batching samplers)
-        dataset_type = (
-            LiDARSegmentationMMDet3DDataset
-            if self.input_format == "mmdet3d"
-            else LiDARSegmentationTorchDataset
-        )
-        dataset = dataset_type(
+        # Get PyTorch dataloader
+        dataset = LiDARSegmentationTorchDataset(
             dataset,
-            model_cfg=self.model_cfg,
-            preprocess=self.preprocess,
+            self.model_cfg,
+            self._get_sample,
             splits=[split] if isinstance(split, str) else split,
         )
 
@@ -821,23 +683,7 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
             pbar = tqdm(dataset, total=len(dataset), leave=True)
             for sample in pbar:
                 # Perform inference
-                if "o3d" in self.input_format:
-                    name, points, projected_indices, label, sampler = sample
-                    label = torch.tensor(label, device=self.device)
-                    pred = self._inference(points, projected_indices, sampler, self)
-                elif self.input_format == "mmdet3d":
-                    pred_samples = self._inference(sample, self.model)
-                    if not isinstance(pred_samples, list):
-                        pred_samples = [pred_samples]
-                    pred, label = [], []
-                    for pred_sample in pred_samples:
-                        name = pred_sample.metainfo["sample_id"]
-                        pred.append(pred_sample.pred_pts_seg.pts_semantic_mask)
-                        label.append(pred_sample.gt_pts_seg.pts_semantic_mask)
-                    pred = torch.stack(pred, dim=0)
-                    label = torch.stack(label, dim=0)
-                else:
-                    raise_unknown_input_format_lidar(self.input_format)
+                pred, label, name = self._inference(sample, self.model, self.model_cfg)
 
                 # Get valid points masks depending on ignored label indices
                 if ignored_label_indices:
@@ -852,10 +698,10 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
                     label = lut_ontology[label]
 
                 # Prepare data and update metrics factory
-                label = label.cpu().unsqueeze(0).numpy()
-                pred = pred.cpu().unsqueeze(0).to(torch.int64).numpy()
+                label = label.cpu().numpy()
+                pred = pred.cpu().numpy()
                 if valid_mask is not None:
-                    valid_mask = valid_mask.cpu().unsqueeze(0).numpy()
+                    valid_mask = valid_mask.cpu().numpy()
 
                 metrics_factory.update(pred, label, valid_mask)
 
@@ -899,7 +745,7 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
 
         dummy_input, _ = self.transform_input(dummy_points, self.model_cfg, sampler)
         dummy_input = ut.data_to_device(dummy_input, self.device)
-        if self.input_format != "o3d_kpconv":
+        if self.model_format != "o3d_kpconv":
             dummy_input = ut.unsqueeze_data(dummy_input)
 
         # Get computational cost

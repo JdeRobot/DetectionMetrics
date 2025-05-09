@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 import os
-from typing import Any, List, Optional, Union
+from typing import Any, List, Optional, Tuple, Union
 
 import numpy as np
 import pandas as pd
@@ -49,6 +49,7 @@ class SegmentationModel(ABC):
         self.ontology = uio.read_json(ontology_fname)
         self.model_cfg = uio.read_json(model_cfg)
         self.n_classes = len(self.ontology)
+        self.model_cfg["n_classes"] = self.n_classes
 
     @abstractmethod
     def inference(
@@ -89,18 +90,6 @@ class SegmentationModel(ABC):
         """
         raise NotImplementedError
 
-    @abstractmethod
-    def get_computational_cost(self, runs: int = 30, warm_up_runs: int = 5) -> dict:
-        """Get different metrics related to the computational cost of the model
-
-        :param runs: Number of runs to measure inference time, defaults to 30
-        :type runs: int, optional
-        :param warm_up_runs: Number of warm-up runs, defaults to 5
-        :type warm_up_runs: int, optional
-        :return: Dictionary containing computational cost information
-        """
-        raise NotImplementedError
-
     def get_lut_ontology(
         self, dataset_ontology: dict, ontology_translation: Optional[str] = None
     ):
@@ -119,6 +108,7 @@ class SegmentationModel(ABC):
                 dataset_ontology,
                 self.ontology,
                 ontology_translation,
+                classes_to_remove=self.model_cfg.get("classes_to_remove", None),
             )
         return lut_ontology
 
@@ -185,6 +175,24 @@ class ImageSegmentationModel(SegmentationModel):
         """
         raise NotImplementedError
 
+    @abstractmethod
+    def get_computational_cost(
+        self,
+        image_size: Tuple[int] = None,
+        runs: int = 30,
+        warm_up_runs: int = 5,
+    ) -> dict:
+        """Get different metrics related to the computational cost of the model
+
+        :param image_size: Image size used for inference
+        :type image_size: Tuple[int], optional
+        :param runs: Number of runs to measure inference time, defaults to 30
+        :type runs: int, optional
+        :param warm_up_runs: Number of warm-up runs, defaults to 5
+        :type warm_up_runs: int, optional
+        :return: Dictionary containing computational cost information
+        """
+        raise NotImplementedError
 
 class LiDARSegmentationModel(SegmentationModel):
     """Parent LiDAR segmentation model class
@@ -212,11 +220,11 @@ class LiDARSegmentationModel(SegmentationModel):
         super().__init__(model, model_type, model_cfg, ontology_fname, model_fname)
 
     @abstractmethod
-    def inference(self, points: np.ndarray) -> np.ndarray:
-        """Perform inference for a single image
+    def inference(self, points_fname: np.ndarray) -> np.ndarray:
+        """Perform inference for a single point cloud
 
-        :param image: Point cloud xyz array
-        :type image: np.ndarray
+        :param points_fname: Point cloud in SemanticKITTI .bin format
+        :type points_fname: str
         :return: Segmenation result as a point cloud with label indices
         :rtype: np.ndarray
         """
@@ -245,5 +253,17 @@ class LiDARSegmentationModel(SegmentationModel):
         :type results_per_sample: bool, optional
         :return: DataFrame containing evaluation results
         :rtype: pd.DataFrame
+        """
+        raise NotImplementedError
+
+    @abstractmethod
+    def get_computational_cost(self, runs: int = 30, warm_up_runs: int = 5) -> dict:
+        """Get different metrics related to the computational cost of the model
+
+        :param runs: Number of runs to measure inference time, defaults to 30
+        :type runs: int, optional
+        :param warm_up_runs: Number of warm-up runs, defaults to 5
+        :type warm_up_runs: int, optional
+        :return: Dictionary containing computational cost information
         """
         raise NotImplementedError
