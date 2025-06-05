@@ -13,10 +13,10 @@ import detectionmetrics.utils.io as uio
 import detectionmetrics.utils.conversion as uc
 
 
-class SegmentationDataset(ABC):
-    """Abstract segmentation dataset class
+class PerceptionDataset(ABC):
+    """Abstract perception dataset class.
 
-    :param dataset: Segmentation dataset as a pandas DataFrame
+    :param dataset: Segmentation/Detection dataset as a pandas DataFrame
     :type dataset: pd.DataFrame
     :param dataset_dir: Dataset root directory
     :type dataset_dir: str
@@ -57,10 +57,11 @@ class SegmentationDataset(ABC):
                     self.ontology[class_name]["idx"]
                     == new_dataset.ontology[class_name]["idx"]
                 ), "Ontologies don't match"
-                assert (
-                    self.ontology[class_name]["rgb"]
-                    == new_dataset.ontology[class_name]["rgb"]
-                ), "Ontologies don't match"
+                if "rgb" in self.ontology[class_name] and "rgb" in new_dataset.ontology[class_name]:
+                    assert (
+                        self.ontology[class_name]["rgb"]
+                        == new_dataset.ontology[class_name]["rgb"]
+                    ), "Ontologies don't match"
 
                 # Accumulate label count
                 self.ontology[class_name]["label_count"] += new_dataset.ontology[
@@ -82,6 +83,20 @@ class SegmentationDataset(ABC):
         :param splits: Dataset splits to consider, defaults to ["train", "val"]
         :type splits: List[str], optional
         :return: Label count for the dataset
+        :rtype: np.ndarray
+        """
+        raise NotImplementedError
+
+class SegmentationDataset(PerceptionDataset):
+    """Abstract perception dataset class."""
+
+    @abstractmethod
+    def read_label(self, fname: str) -> np.ndarray:
+        """Read label from an image file
+
+        :param fname: Image file containing labels
+        :type fname: str
+        :return: Numpy array containing labels
         :rtype: np.ndarray
         """
         raise NotImplementedError
