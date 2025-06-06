@@ -13,10 +13,10 @@ import detectionmetrics.utils.io as uio
 import detectionmetrics.utils.conversion as uc
 
 
-class SegmentationDataset(ABC):
-    """Abstract segmentation dataset class
+class PerceptionDataset(ABC):
+    """Abstract perception dataset class.
 
-    :param dataset: Segmentation dataset as a pandas DataFrame
+    :param dataset: Segmentation/Detection dataset as a pandas DataFrame
     :type dataset: pd.DataFrame
     :param dataset_dir: Dataset root directory
     :type dataset_dir: str
@@ -57,10 +57,11 @@ class SegmentationDataset(ABC):
                     self.ontology[class_name]["idx"]
                     == new_dataset.ontology[class_name]["idx"]
                 ), "Ontologies don't match"
-                assert (
-                    self.ontology[class_name]["rgb"]
-                    == new_dataset.ontology[class_name]["rgb"]
-                ), "Ontologies don't match"
+                if "rgb" in self.ontology[class_name] and "rgb" in new_dataset.ontology[class_name]:
+                    assert (
+                        self.ontology[class_name]["rgb"]
+                        == new_dataset.ontology[class_name]["rgb"]
+                    ), "Ontologies don't match"
 
                 # Accumulate label count
                 self.ontology[class_name]["label_count"] += new_dataset.ontology[
@@ -82,6 +83,20 @@ class SegmentationDataset(ABC):
         :param splits: Dataset splits to consider, defaults to ["train", "val"]
         :type splits: List[str], optional
         :return: Label count for the dataset
+        :rtype: np.ndarray
+        """
+        raise NotImplementedError
+
+class SegmentationDataset(PerceptionDataset):
+    """Abstract perception dataset class."""
+
+    @abstractmethod
+    def read_label(self, fname: str) -> np.ndarray:
+        """Read label from an image file
+
+        :param fname: Image file containing labels
+        :type fname: str
+        :return: Numpy array containing labels
         :rtype: np.ndarray
         """
         raise NotImplementedError
@@ -442,3 +457,90 @@ class LiDARSegmentationDataset(SegmentationDataset):
         semantic_label = label & 0xFFFF
         instance_label = label >> 16
         return semantic_label.astype(np.int32), instance_label.astype(np.int32)
+
+class DetectionDataset(PerceptionDataset, ABC):
+    """Abstract perception detection dataset class."""
+
+    @abstractmethod
+    def read_annotation(self, fname: str):
+        """Read detection annotation from a file.
+
+        :param fname: Annotation file name
+        """
+        raise NotImplementedError
+    
+    def get_label_count(self, splits: Optional[List[str]] = None):
+        """Count detection labels per class for given splits.
+
+        :param splits: List of splits to consider
+        :return: Numpy array of label counts per class
+        """
+        if splits is None:
+            splits = ["train", "val"]
+
+        df = self.dataset[self.dataset["split"].isin(splits)]
+        n_classes = max(c["idx"] for c in self.ontology.values()) + 1
+        label_count = np.zeros(n_classes, dtype=np.uint64)
+
+        for annotation_file in tqdm(df["annotation"], desc="Counting labels"):
+            annots = self.read_annotation(annotation_file)
+            for annot in annots:
+                class_idx = annot["category_id"]  #Should override the key category_id if needed in specific dataset class
+                label_count[class_idx] += 1
+
+        return label_count
+
+
+class ImageDetectionDataset(DetectionDataset):
+    """Image detection dataset class."""
+
+    def make_fname_global(self):
+        """Convert relative filenames in 'image' and 'annotation' columns to global paths."""
+        if self.dataset_dir is not None:
+            self.dataset["image"] = self.dataset["image"].apply(
+                lambda x: os.path.join(self.dataset_dir, x) if x is not None else None
+            )
+            self.dataset["annotation"] = self.dataset["annotation"].apply(
+                lambda x: os.path.join(self.dataset_dir, x) if x is not None else None
+            )
+            self.dataset_dir = None  
+
+    def read_annotation(self, fname: str):
+        """Read detection annotation from a file.
+
+        Override this based on annotation format (e.g., COCO JSON, XML, TXT).
+
+        :param fname: Annotation filename
+        :return: Parsed annotations (e.g., list of dicts)
+        """
+        # TODO implement COCO or VOC parsing in their classes separately.
+        raise NotImplementedError("Implement annotation reading logic")
+
+
+class LiDARDetectionDataset(DetectionDataset):
+    """LiDAR detection dataset class."""
+
+    def __init__(self, dataset: pd.DataFrame, dataset_dir: str, ontology: dict, is_kitti_format: bool = True):
+        super().__init__(dataset, dataset_dir, ontology)
+        self.is_kitti_format = is_kitti_format
+
+    def make_fname_global(self):
+        if self.dataset_dir is not None:
+            self.dataset["points"] = self.dataset["points"].apply(
+                lambda x: os.path.join(self.dataset_dir, x) if x is not None else None
+            )
+            self.dataset["annotation"] = self.dataset["annotation"].apply(
+                lambda x: os.path.join(self.dataset_dir, x) if x is not None else None
+            )
+            self.dataset_dir = None
+
+    def read_annotation(self, fname: str):
+        """Read LiDAR detection annotation.
+
+        For example, read KITTI format label files or custom format.
+
+        :param fname: Annotation file path
+        :return: Parsed annotations (e.g., list of dicts)
+        """
+        # TODO Implement format specific parsing
+        raise NotImplementedError("Implement LiDAR detection annotation reading")
