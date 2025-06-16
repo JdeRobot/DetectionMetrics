@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 
-from detectionmetrics.datasets.perecption import PerceptionDataset
+from detectionmetrics.datasets.perception import PerceptionDataset
 import detectionmetrics.utils.io as uio
 import detectionmetrics.utils.conversion as uc
 
