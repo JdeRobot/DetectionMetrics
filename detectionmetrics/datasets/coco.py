@@ -1,6 +1,7 @@
 from pycocotools.coco import COCO
 import os
 import pandas as pd
+from typing import Tuple,List 
 
 from detectionmetrics.datasets.detection import ImageDetectionDataset
 
@@ -45,24 +46,29 @@ class CocoDataset(ImageDetectionDataset):
             })
         return pd.DataFrame(rows)
 
-    def read_annotation(self, fname: str):
-        """Read and return COCO-format annotations.
+    def read_annotation(self, fname: str) -> Tuple[List[List[float]], List[int]]:
+        """Return bounding boxes and labels for a given image ID.
 
-        :param fname: COCO annotation file path.
-        :return: List of annotation dictionaries.
+        :param fname: str (image_id in string form)
+        :return: Tuple of (boxes, labels)
         """
-        image_id = int(fname)
+        # Extract image ID (fname might be a path or ID string)
+        try:
+            image_id = int(os.path.basename(fname))  # handles both '123' and '/path/to/123'
+        except ValueError:
+            raise ValueError(f"Invalid annotation ID: {fname}")
+
         ann_ids = self.coco.getAnnIds(imgIds=image_id)
         anns = self.coco.loadAnns(ann_ids)
 
-        return [
-            {
-                "image_id": ann["image_id"],
-                "category_id": ann["category_id"],
-                "bbox": ann["bbox"],
-                "iscrowd": ann.get("iscrowd", 0),
-                "area": ann.get("area", ann["bbox"][2] * ann["bbox"][3]),
-                "id": ann.get("id")
-            }
-            for ann in anns
-        ]
+        boxes = []
+        labels = []
+
+        for ann in anns:
+            # Convert [x, y, width, height] to [x1, y1, x2, y2]
+            x, y, w, h = ann["bbox"]
+            boxes.append([x, y, x + w, y + h])
+            labels.append(ann["category_id"])
+
+        return boxes, labels
+

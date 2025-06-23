@@ -14,6 +14,7 @@ from tqdm import tqdm
 
 from detectionmetrics.datasets import detection as dm_detection_dataset
 from detectionmetrics.models import detection as dm_detection_model
+from detectionmetrics.utils import detection_metrics as um
 
 
 def data_to_device(
@@ -148,7 +149,10 @@ class ImageDetectionTorchDataset(Dataset):
         # Filter split and make file paths global
         dataset.dataset = dataset.dataset[dataset.dataset["split"].isin(splits)]
         self.dataset = dataset
-        self.dataset.make_fname_global()
+        # Only make image paths global (absolute), not annotation IDs
+        self.dataset.dataset["image"] = self.dataset.dataset["image"].apply(
+            lambda fname: os.path.join(self.dataset.dataset_dir, fname)
+        )
 
         self.transform = transform
 
@@ -183,4 +187,225 @@ class ImageDetectionTorchDataset(Dataset):
 
         return self.dataset.dataset.index[idx], image, target
 
-#TODO  TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
+class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
+    def __init__(
+        self,
+        model: Union[str, torch.nn.Module],
+        model_cfg: str,
+        ontology_fname: str,
+    ):
+        """Image detection model for PyTorch framework
+
+        :param model: Either the filename of a TorchScript model or the model already loaded into a PyTorch module.
+        :type model: Union[str, torch.nn.Module]
+        :param model_cfg: JSON file containing model configuration
+        :type model_cfg: str
+        :param ontology_fname: JSON file containing model output ontology
+        :type ontology_fname: str
+        """
+        # Get device (GPU, MPS, or CPU)
+        self.device = torch.device(
+            "cuda"
+            if torch.cuda.is_available()
+            else "mps" if torch.backends.mps.is_available()
+            else "cpu"
+        )
+
+        # Load model from file or use passed instance
+        if isinstance(model, str):
+            assert os.path.isfile(model), "Torch model file not found"
+            model_fname = model
+            try:
+                model = torch.jit.load(model, map_location=self.device)
+                model_type = "compiled"
+            except Exception:
+                print("Model is not a TorchScript model. Loading as native PyTorch model.")
+                model = torch.load(model, map_location=self.device)
+                model_type = "native"
+        elif isinstance(model, torch.nn.Module):
+            model_fname = None
+            model_type = "native"
+        else:
+            raise ValueError("Model must be a filename or a torch.nn.Module")
+
+        # Init parent class
+        super().__init__(model, model_type, model_cfg, ontology_fname, model_fname)
+        self.model = self.model.to(self.device).eval()
+
+        # Build input transforms (resize, normalize, etc.)
+        self.transform_input = []
+
+        if "resize" in self.model_cfg:
+            self.transform_input += [
+                transforms.Resize(
+                    size=(
+                        self.model_cfg["resize"].get("height", None),
+                        self.model_cfg["resize"].get("width", None),
+                    ),
+                    interpolation=transforms.InterpolationMode.BILINEAR,
+                )
+            ]
+
+        if "crop" in self.model_cfg:
+            crop_size = (
+                self.model_cfg["crop"]["height"],
+                self.model_cfg["crop"]["width"],
+            )
+            self.transform_input += [transforms.CenterCrop(crop_size)]
+
+        try:
+            self.transform_input += [
+                transforms.ToImage(),
+                transforms.ToDtype(torch.float32, scale=True),
+            ]
+        except AttributeError:
+            self.transform_input += [
+                transforms.ToImageTensor(),
+                transforms.ConvertDtype(torch.float32),
+            ]
+
+        if "normalization" in self.model_cfg:
+            self.transform_input += [
+                transforms.Normalize(
+                    mean=self.model_cfg["normalization"]["mean"],
+                    std=self.model_cfg["normalization"]["std"],
+                )
+            ]
+
+        self.transform_input = transforms.Compose(self.transform_input)
+
+    def inference(self, image: Image.Image) -> Dict[str, torch.Tensor]:
+        """Perform object detection inference for a single image
+
+        :param image: PIL image
+        :type image: Image.Image
+        :return: Dictionary with keys 'boxes', 'labels', 'scores'
+        :rtype: Dict[str, torch.Tensor]
+        """
+        tensor = self.transform_input(image).unsqueeze(0).to(self.device)
+
+        with torch.no_grad():
+            result = self.model(tensor)[0]  # Return only first image's result
+
+        return result
+
+    def eval(
+        self,
+        dataset: dm_detection_dataset.ImageDetectionDataset,
+        split: str | List[str] = "test",
+        ontology_translation: Optional[str] = None,
+        predictions_outdir: Optional[str] = None,
+        results_per_sample: bool = False,
+    ) -> pd.DataFrame:
+        """Evaluate model over a detection dataset and compute metrics
+
+        :param dataset: Image detection dataset
+        :type dataset: ImageDetectionDataset
+        :param split: Dataset split(s) to evaluate
+        :type split: str | List[str]
+        :param ontology_translation: Optional translation for class mapping
+        :type ontology_translation: Optional[str]
+        :param predictions_outdir: Directory to save predictions, if desired
+        :type predictions_outdir: Optional[str]
+        :param results_per_sample: Store per-sample metrics
+        :type results_per_sample: bool
+        :return: DataFrame containing evaluation results
+        :rtype: pd.DataFrame
+        """
+        if results_per_sample and predictions_outdir is None:
+            raise ValueError("predictions_outdir required if results_per_sample is True")
+
+        if predictions_outdir is not None:
+            os.makedirs(predictions_outdir, exist_ok=True)
+
+        # Build LUT if ontology translation is provided
+        lut_ontology = self.get_lut_ontology(dataset.ontology, ontology_translation)
+
+        # Create DataLoader
+        dataset = ImageDetectionTorchDataset(
+            dataset,
+            transform=self.transform_input,
+            splits=[split] if isinstance(split, str) else split,
+        )
+
+        dataloader = DataLoader(
+            dataset,
+            batch_size=self.model_cfg.get("batch_size", 1),
+            num_workers=self.model_cfg.get("num_workers", 1),
+            collate_fn=lambda x: tuple(zip(*x)),  # handles variable-size targets
+        )
+
+        # Init metrics
+        metrics_factory = um.DetectionMetricsFactory(self.n_classes)
+
+        with torch.no_grad():
+            pbar = tqdm(dataloader, leave=True)
+            for image_ids, images, targets in pbar:
+                images = [img.to(self.device) for img in images]
+                predictions = self.model(images)
+
+                for i in range(len(images)):
+                    gt = targets[i]
+                    pred = predictions[i]
+
+                    # Apply ontology translation if needed
+                    if lut_ontology is not None:
+                        gt["labels"] = torch.tensor(
+                            [lut_ontology[l.item()] for l in gt["labels"]],
+                            dtype=torch.int64,
+                        )
+
+                    # Update metrics
+                    metrics_factory.update(gt["boxes"], gt["labels"],pred["boxes"], pred["labels"], pred["scores"])
+
+                    # Store predictions if needed
+                    if predictions_outdir is not None:
+                        sample_id = image_ids[i]
+                        pred_boxes = pred["boxes"].cpu().numpy()
+                        pred_labels = pred["labels"].cpu().numpy()
+                        pred_scores = pred["scores"].cpu().numpy()
+                        out_data = []
+
+                        for box, label, score in zip(pred_boxes, pred_labels, pred_scores):
+                            out_data.append({
+                                "image_id": sample_id,
+                                "label": self.ontology[label]["name"],
+                                "score": float(score),
+                                "bbox": box.tolist(),
+                            })
+
+                        df = pd.DataFrame(out_data)
+                        df.to_json(
+                            os.path.join(predictions_outdir, f"{sample_id}.json"),
+                            orient="records",
+                            indent=2,
+                        )
+
+                        if results_per_sample:
+                            sample_mf = um.DetectionMetricsFactory(n_classes=self.n_classes)
+                            sample_mf.update(gt["boxes"], gt["labels"],pred["boxes"], pred["labels"], pred["scores"])
+                            sample_df = um.get_metrics_dataframe(sample_mf, self.ontology)
+                            sample_df.to_csv(
+                                os.path.join(predictions_outdir, f"{sample_id}_metrics.csv")
+                            )
+
+        return metrics_factory.get_metrics_dataframe(metrics_factory, self.ontology)
+
+    def get_computational_cost(
+        self, image_size: Tuple[int], runs: int = 30, warm_up_runs: int = 5
+    ) -> dict:
+        """Get computational cost metrics like inference time
+
+        :param image_size: Size of input image (H, W)
+        :type image_size: Tuple[int]
+        :param runs: Number of repeated runs to average over
+        :type runs: int
+        :param warm_up_runs: Warm-up runs before timing
+        :type warm_up_runs: int
+        :return: Dictionary with computational cost details
+        :rtype: dict
+        """
+        dummy_input = torch.randn(1, 3, *image_size).to(self.device)
+        return get_computational_cost(
+            self.model, dummy_input, self.model_fname, runs, warm_up_runs
+        )
