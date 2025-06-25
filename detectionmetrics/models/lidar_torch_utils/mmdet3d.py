@@ -18,6 +18,7 @@ def get_sample(
     label_fname: Optional[str] = None,
     name: Optional[str] = None,
     idx: Optional[int] = None,
+    has_intensity: bool = True,
 ) -> dict:
     """Get sample data for mmdetection3d models
 
@@ -31,6 +32,8 @@ def get_sample(
     :type name: Optional[str], optional
     :param idx: sample numerical index, defaults to None
     :type idx: Optional[int], optional
+    :param has_intensity: whether the point cloud has intensity values, defaults to True
+    :type has_intensity: bool, optional
     :return: Sample data dictionary
     :rtype: dict
     """
@@ -47,7 +50,10 @@ def get_sample(
     }
 
     n_feats = sample["num_pts_feats"]
-    transforms = [LoadPointsFromFile(coord_type="LIDAR", load_dim=4, use_dim=n_feats)]
+    load_dim = 4 if has_intensity else 3
+    transforms = [
+        LoadPointsFromFile(coord_type="LIDAR", load_dim=load_dim, use_dim=n_feats)
+    ]
     if sample["pts_semantic_mask_path"] is not None:
         transforms.append(
             LoadAnnotations3D(

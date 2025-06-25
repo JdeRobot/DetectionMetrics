@@ -6,6 +6,7 @@ import torch
 import utils.depth_map_utils as depth_map_utils
 
 import detectionmetrics.utils.torch as ut
+import detectionmetrics.utils.lidar as ul
 
 
 def range_projection(current_vertex, fov_up=3.0, fov_down=-25.0, proj_H=64, proj_W=900):
@@ -142,6 +143,7 @@ def get_sample(
     label_fname: Optional[str] = None,
     name: Optional[str] = None,
     idx: Optional[int] = None,
+    has_intensity: bool = True,
 ) -> dict:
     """Get sample data for mmdetection3d models
 
@@ -155,18 +157,17 @@ def get_sample(
     :type name: Optional[str], optional
     :param idx: sample numerical index, defaults to None
     :type idx: Optional[int], optional
+    :param has_intensity: whether the point cloud has intensity values, defaults to True
+    :type has_intensity: bool, optional
     :return: Sample data dictionary
     :rtype: dict
     """
-    raw_data = np.fromfile(points_fname, dtype=np.float32)
-    raw_data = raw_data.reshape((-1, 4))
+    raw_data = ul.read_semantickitti_points(points_fname, has_intensity)
 
     labels, ref_labels = None, None
     if label_fname is not None:
-        annotated_data = np.fromfile(label_fname, dtype=np.uint32)
-        annotated_data = annotated_data.reshape((-1, 1))
-        labels = annotated_data & 0xFFFF  # delete high 16 digits binary
-        labels = labels.astype(np.uint8)
+        labels = ul.read_semantickitti_label(label_fname)
+        labels = labels.reshape((-1, 1)).astype(np.uint8)
         ref_labels = labels.copy()
 
     xyz = raw_data[:, :3]

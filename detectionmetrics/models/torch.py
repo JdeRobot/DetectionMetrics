@@ -260,6 +260,7 @@ class LiDARSegmentationTorchDataset(Dataset):
             label_fname=self.dataset.dataset.iloc[idx]["label"],
             name=self.dataset.dataset.index[idx],
             idx=idx,
+            has_intensity=self.dataset.has_intensity,
         )
 
 
@@ -604,7 +605,7 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
         self.model_format = self.model_cfg["model_format"]
 
         # Init model specific functions
-        model_format = self.model_format.split('_')[0]
+        model_format = self.model_format.split("_")[0]
         model_utils_module_str = (
             f"detectionmetrics.models.lidar_torch_utils.{model_format}"
         )
@@ -615,16 +616,24 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
         self._get_sample = model_utils_module.get_sample
         self._inference = model_utils_module.inference
 
-    def inference(self, points_fname: str) -> np.ndarray:
+    def inference(
+        self,
+        points_fname: str,
+        has_intensity: bool = True,
+    ) -> np.ndarray:
         """Perform inference for a single point cloud
 
         :param points_fname: Point cloud in SemanticKITTI .bin format
         :type points_fname: str
+        :param has_intensity: Whether the point cloud has intensity values, defaults to True
+        :type has_intensity: bool, optional
         :return: Segmenation result as a point cloud with label indices
         :rtype: np.ndarray
         """
         # Preprocess point cloud
-        sample = self._get_sample(points_fname, self.model_cfg)
+        sample = self._get_sample(
+            points_fname, self.model_cfg, has_intensity=has_intensity
+        )
         pred, _, _ = self._inference(sample, self.model, self.model_cfg)
 
         return pred.squeeze().cpu().numpy()

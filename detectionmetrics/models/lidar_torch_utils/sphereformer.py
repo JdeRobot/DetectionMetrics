@@ -6,6 +6,7 @@ import torch
 from util.data_util import data_prepare
 
 import detectionmetrics.utils.torch as ut
+import detectionmetrics.utils.lidar as ul
 
 
 def collate_fn(samples: List[dict]) -> dict:
@@ -51,6 +52,7 @@ def get_sample(
     label_fname: Optional[str] = None,
     name: Optional[str] = None,
     idx: Optional[int] = None,
+    has_intensity: bool = True,
 ) -> dict:
     """Get sample data for mmdetection3d models
 
@@ -64,18 +66,16 @@ def get_sample(
     :type name: Optional[str], optional
     :param idx: sample numerical index, defaults to None
     :type idx: Optional[int], optional
+    :param has_intensity: whether the point cloud has intensity values, defaults to True
+    :type has_intensity: bool, optional
     :return: Sample data dictionary
     :rtype: dict
     """
-    feats = np.fromfile(points_fname, dtype=np.float32)
-    feats = feats.reshape((-1, 4))[:, : model_cfg["n_feats"]]
+    feats = ul.read_semantickitti_points(points_fname, has_intensity)
+    feats = feats[:, : model_cfg["n_feats"]]
 
     annotated_data = np.fromfile(label_fname, dtype=np.uint32)
     annotated_data = annotated_data.reshape((-1, 1))
-    labels = annotated_data & 0xFFFF  # delete high 16 digits binary
-    labels = labels.astype(np.uint8)
-    instance_label = annotated_data >> 16
-    instance_label = instance_label.reshape(-1)
 
     xyz = feats[:, :3]
 
