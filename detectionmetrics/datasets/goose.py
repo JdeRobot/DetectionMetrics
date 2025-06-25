@@ -16,6 +16,7 @@ def build_dataset(
     train_dataset_dir: Optional[str] = None,
     val_dataset_dir: Optional[str] = None,
     test_dataset_dir: Optional[str] = None,
+    is_goose_ex: bool = False,
 ) -> Tuple[dict, dict]:
     """Build dataset and ontology dictionaries from GOOSE dataset structure
 
@@ -31,6 +32,8 @@ def build_dataset(
     :type val_dataset_dir: str, optional
     :param test_dataset_dir: Directory containing test data, defaults to None
     :type test_dataset_dir: str, optional
+    :param is_goose_ex: Whether the dataset is GOOSE Ex or GOOSE, defaults to False
+    :type is_goose_ex: bool, optional
     :return: Dataset and onotology
     :rtype: Tuple[dict, dict]
     """
@@ -66,13 +69,23 @@ def build_dataset(
         train_data = os.path.join(dataset_dir, f"{data_type}/{split}/*/*_{data_suffix}")
         for data_fname in glob(train_data):
             sample_dir, sample_base_name = os.path.split(data_fname)
-            sample_base_name = sample_base_name.split("__")[-1]
+
+            # GOOSE Ex uses a different label file naming convention
+            if is_goose_ex:
+                sample_base_name = "sequence" + sample_base_name.split("_sequence")[-1]
+            else:
+                sample_base_name = sample_base_name.split("__")[-1]
+
             sample_base_name = sample_base_name.split("_" + data_suffix)[0]
 
             scene = os.path.split(sample_dir)[-1]
             sample_name = f"{scene}-{sample_base_name}"
 
-            label_base_name = f"{scene}__{sample_base_name}_{label_suffix}"
+            if is_goose_ex:
+                label_base_name = f"{scene}_{sample_base_name}_{label_suffix}"
+            else:
+                label_base_name = f"{scene}__{sample_base_name}_{label_suffix}"
+
             label_fname = os.path.join(
                 dataset_dir, "labels", split, scene, label_base_name
             )
@@ -131,9 +144,9 @@ class GOOSEImageSegmentationDataset(dm_dataset.ImageSegmentationDataset):
 class GOOSELiDARSegmentationDataset(dm_dataset.LiDARSegmentationDataset):
     """Specific class for GOOSE-styled LiDAR segmentation datasets. All data can be
     downloaded from the official webpage (https://goose-dataset.de):
-    train -> https://goose-dataset.de/storage/goose_3d_train.zip
-    val   -> https://goose-dataset.de/storage/goose_3d_val.zip
-    test  -> https://goose-dataset.de/storage/goose_3d_test.zip
+    train -> https://goose-dataset.de/storage/gooseEx_3d_train.zip
+    val   -> https://goose-dataset.de/storage/gooseEx_3d_val.zip
+    test  -> https://goose-dataset.de/storage/gooseEx_3d_test.zip
 
     :param train_dataset_dir: Directory containing training data
     :type train_dataset_dir: str
@@ -141,6 +154,8 @@ class GOOSELiDARSegmentationDataset(dm_dataset.LiDARSegmentationDataset):
     :type val_dataset_dir: str, optional
     :param test_dataset_dir: Directory containing test data, defaults to None
     :type test_dataset_dir: str, optional
+    :param is_goose_ex: Whether the dataset is GOOSE Ex or GOOSE, defaults to False
+    :type is_goose_ex: bool, optional
     """
 
     def __init__(
@@ -148,14 +163,16 @@ class GOOSELiDARSegmentationDataset(dm_dataset.LiDARSegmentationDataset):
         train_dataset_dir: Optional[str] = None,
         val_dataset_dir: Optional[str] = None,
         test_dataset_dir: Optional[str] = None,
+        is_goose_ex: bool = False,
     ):
         dataset, ontology = build_dataset(
             "lidar",
-            "vls128.bin",
+            "pcl.bin" if is_goose_ex else "vls128.bin",
             "goose.label",
             train_dataset_dir,
             val_dataset_dir,
             test_dataset_dir,
+            is_goose_ex=is_goose_ex,
         )
 
         # Convert to Pandas
