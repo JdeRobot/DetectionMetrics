@@ -348,6 +348,7 @@ class LiDARSegmentationDataset(SegmentationDataset):
         ontology_translation: Optional[dict] = None,
         classes_to_remove: Optional[List[str]] = [],
         include_label_count: bool = True,
+        remove_origin: bool = False,
     ):
         """Export dataset dataframe and LiDAR files in SemanticKITTI format. Optionally, modify ontology before exporting.
 
@@ -361,6 +362,8 @@ class LiDARSegmentationDataset(SegmentationDataset):
         :type classes_to_remove: Optional[List[str]], optional
         :param include_label_count: Whether to include class weights in the dataset, defaults to True
         :type include_label_count: bool, optional
+        :param remove_origin: Whether to remove the origin from the point cloud (mostly for removing RELLIS-3D spurious points), defaults to False
+        :type remove_origin: bool, optional
         """
         os.makedirs(outdir, exist_ok=True)
 
@@ -384,7 +387,7 @@ class LiDARSegmentationDataset(SegmentationDataset):
 
         # Check if label count is missing and create empty array if needed
         label_count_missing = include_label_count and (
-            not self.has_label_count or new_ontology is not None
+            not self.has_label_count or new_ontology is not None or remove_origin
         )
         if label_count_missing:
             label_count = np.zeros(n_classes, dtype=np.uint64)
@@ -416,17 +419,26 @@ class LiDARSegmentationDataset(SegmentationDataset):
                 not self.is_kitti_format
                 or ontology_conversion_lut is not None
                 or label_count_missing
+                or remove_origin
             ):
                 points = self.read_points(points_fname)
                 label = self.read_label(label_fname)
+
+                # Convert label to new ontology if needed
                 if ontology_conversion_lut is not None:
                     label = ontology_conversion_lut[label].astype(np.uint32)
+
+                # Remove points in coordinate origin if needed
+                if remove_origin:
+                    mask = np.all(points[:, :3] != 0, axis=1)
+                    points = points[mask]
+                    label = label[mask]
+
                 points.tofile(os.path.join(outdir, rel_points_fname))
                 label.tofile(os.path.join(outdir, rel_label_fname))
 
-                if label_count_missing:
-                    indices, counts = np.unique(label, return_counts=True)
-                    label_count[indices] += counts.astype(np.uint64)
+                indices, counts = np.unique(label, return_counts=True)
+                label_count[indices] += counts.astype(np.uint64)
             else:
                 shutil.copy2(points_fname, os.path.join(outdir, rel_points_fname))
                 shutil.copy2(label_fname, os.path.join(outdir, rel_label_fname))
