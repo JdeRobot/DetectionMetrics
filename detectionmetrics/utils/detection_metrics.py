@@ -28,6 +28,22 @@ class DetectionMetricsFactory:
         if hasattr(pred_labels, 'detach'): pred_labels = pred_labels.detach().cpu().numpy()
         if hasattr(pred_scores, 'detach'): pred_scores = pred_scores.detach().cpu().numpy()
 
+        # Handle empty inputs
+        if len(gt_boxes) == 0 and len(pred_boxes) == 0:
+            return  # Nothing to process
+        
+        # Handle case where there are predictions but no ground truth
+        if len(gt_boxes) == 0:
+            for p_label, score in zip(pred_labels, pred_scores):
+                self.results[p_label].append((score, 0))  # All are false positives
+            return
+        
+        # Handle case where there is ground truth but no predictions
+        if len(pred_boxes) == 0:
+            for g_label in gt_labels:
+                self.results[g_label].append((None, -1))  # All are false negatives
+            return
+
         matches = self._match_predictions(
             gt_boxes, gt_labels, pred_boxes, pred_labels, pred_scores
         )
@@ -147,6 +163,14 @@ class DetectionMetricsFactory:
             values = [v for v in metrics_dict[metric].values() if not pd.isna(v)]
             metrics_dict[metric]["mean"] = np.mean(values) if values else np.nan
 
+        # Add overall mAP if available
+        if -1 in all_metrics:
+            for metric in ["AP", "Precision", "Recall", "TP", "FP", "FN"]:
+                if metric == "AP":
+                    metrics_dict[metric]["mAP"] = all_metrics[-1].get(metric, np.nan)
+                else:
+                    metrics_dict[metric]["mAP"] = np.nan
+
         df = pd.DataFrame(metrics_dict)
         return df.T  # metrics as rows, classes as columns (with mean)
 
@@ -177,15 +201,28 @@ def compute_ap(tps, fps, fn):
     tps = np.array(tps, dtype=np.float32)
     fps = np.array(fps, dtype=np.float32)
 
+    # Handle edge cases
+    if len(tps) == 0:
+        if fn == 0:
+            return 1.0, [1.0], [1.0]  # Perfect case: no predictions, no ground truth
+        else:
+            return 0.0, [0.0], [0.0]  # No predictions but there was ground truth
+
     tp_cumsum = np.cumsum(tps)
     fp_cumsum = np.cumsum(fps)
 
     if tp_cumsum.size:
         denom = tp_cumsum[-1] + fn
-        recalls = tp_cumsum / denom
+        if denom > 0:
+            recalls = tp_cumsum / denom
+        else:
+            recalls = np.zeros_like(tp_cumsum)
     else:
         recalls = []
-    precisions = tp_cumsum / (tp_cumsum + fp_cumsum + 1e-6) if tp_cumsum.size else []
+    
+    # Compute precision with proper handling of division by zero
+    denominator = tp_cumsum + fp_cumsum
+    precisions = np.where(denominator > 0, tp_cumsum / denominator, 0.0)
 
     # VOC-style 11-point interpolation
     ap = 0

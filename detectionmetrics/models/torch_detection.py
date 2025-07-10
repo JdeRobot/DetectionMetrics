@@ -345,7 +345,7 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
         )
 
         # Init metrics
-        metrics_factory = um.DetectionMetricsFactory(self.n_classes)
+        metrics_factory = um.DetectionMetricsFactory(iou_threshold=0.5,num_classes=self.n_classes)
 
         with torch.no_grad():
             pbar = tqdm(dataloader, leave=True)
