@@ -72,11 +72,11 @@ class CocoDataset(ImageDetectionDataset):
         
         super().__init__(dataset=dataset, dataset_dir=image_dir, ontology=ontology)
 
-    def read_annotation(self, fname: str) -> Tuple[List[List[float]], List[int]]:
-        """Return bounding boxes and labels for a given image ID.
+    def read_annotation(self, fname: str) -> Tuple[List[List[float]], List[int], List[int]]:
+        """Return bounding boxes, labels, and category_ids for a given image ID.
 
         :param fname: str (image_id in string form)
-        :return: Tuple of (boxes, labels)
+        :return: Tuple of (boxes, labels, category_ids)
         """
         # Extract image ID (fname might be a path or ID string)
         try:
@@ -89,12 +89,14 @@ class CocoDataset(ImageDetectionDataset):
 
         boxes = []
         labels = []
+        category_ids = []
 
         for ann in anns:
             # Convert [x, y, width, height] to [x1, y1, x2, y2]
             x, y, w, h = ann["bbox"]
             boxes.append([x, y, x + w, y + h])
             labels.append(ann["category_id"])
+            category_ids.append(ann["category_id"])
 
-        return boxes, labels
+        return boxes, labels, category_ids
 
