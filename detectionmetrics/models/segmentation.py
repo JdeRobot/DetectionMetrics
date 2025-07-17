@@ -12,6 +12,7 @@ from detectionmetrics.models.perception import PerceptionModel
 import detectionmetrics.utils.conversion as uc
 import detectionmetrics.utils.io as uio
 
+
 class SegmentationModel(PerceptionModel):
     """Parent segmentation model class
 
@@ -201,4 +202,3 @@ class LiDARSegmentationModel(SegmentationModel):
         :rtype: pd.DataFrame
         """
         raise NotImplementedError
-

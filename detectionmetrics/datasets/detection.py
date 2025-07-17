@@ -13,6 +13,7 @@ from detectionmetrics.datasets.perception import PerceptionDataset
 import detectionmetrics.utils.io as uio
 import detectionmetrics.utils.conversion as uc
 
+
 class DetectionDataset(PerceptionDataset):
     """Abstract perception detection dataset class."""
 
@@ -23,7 +24,7 @@ class DetectionDataset(PerceptionDataset):
         :param fname: Annotation file name
         """
         raise NotImplementedError
-    
+
     def get_label_count(self, splits: Optional[List[str]] = None):
         """Count detection labels per class for given splits.
 
@@ -40,7 +41,9 @@ class DetectionDataset(PerceptionDataset):
         for annotation_file in tqdm(df["annotation"], desc="Counting labels"):
             annots = self.read_annotation(annotation_file)
             for annot in annots:
-                class_idx = annot["category_id"]  #Should override the key category_id if needed in specific dataset class
+                class_idx = annot[
+                    "category_id"
+                ]  # Should override the key category_id if needed in specific dataset class
                 label_count[class_idx] += 1
 
         return label_count
@@ -58,7 +61,7 @@ class ImageDetectionDataset(DetectionDataset):
             self.dataset["annotation"] = self.dataset["annotation"].apply(
                 lambda x: os.path.join(self.dataset_dir, x) if x is not None else None
             )
-            self.dataset_dir = None  
+            self.dataset_dir = None
 
     def read_annotation(self, fname: str):
         """Read detection annotation from a file.
@@ -75,7 +78,13 @@ class ImageDetectionDataset(DetectionDataset):
 class LiDARDetectionDataset(DetectionDataset):
     """LiDAR detection dataset class."""
 
-    def __init__(self, dataset: pd.DataFrame, dataset_dir: str, ontology: dict, is_kitti_format: bool = True):
+    def __init__(
+        self,
+        dataset: pd.DataFrame,
+        dataset_dir: str,
+        ontology: dict,
+        is_kitti_format: bool = True,
+    ):
         super().__init__(dataset, dataset_dir, ontology)
         self.is_kitti_format = is_kitti_format
 

@@ -123,7 +123,9 @@ def build_dataset(dataset_dir: str, split_fnames: dict) -> Tuple[dict, dict]:
     return dataset, ontology
 
 
-class WildscenesImageSegmentationDataset(dm_segmentation_dataset.ImageSegmentationDataset):
+class WildscenesImageSegmentationDataset(
+    dm_segmentation_dataset.ImageSegmentationDataset
+):
     """Specific class for Wildscenes-styled image segmentation datasets. All data can
     be downloaded from the official repo (https://github.com/unmannedlab/RELLIS-3D):
     dataset  -> https://data.csiro.au/collection/csiro:61541

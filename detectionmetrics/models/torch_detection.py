@@ -19,7 +19,7 @@ from detectionmetrics.utils import detection_metrics as um
 
 def data_to_device(
     data: Union[Dict[str, torch.Tensor], List[Dict[str, torch.Tensor]]],
-    device: torch.device
+    device: torch.device,
 ) -> Union[Dict[str, torch.Tensor], List[Dict[str, torch.Tensor]]]:
     """Move detection input or target data (dict or list of dicts) to the specified device.
 
@@ -127,7 +127,6 @@ def get_computational_cost(
     return pd.DataFrame.from_dict(result)
 
 
-
 class ImageDetectionTorchDataset(Dataset):
     """Dataset for image detection PyTorch models
 
@@ -143,7 +142,7 @@ class ImageDetectionTorchDataset(Dataset):
         self,
         dataset: dm_detection_dataset.ImageDetectionDataset,
         transform: transforms.Compose,
-        splits: List[str] = ["test"]
+        splits: List[str] = ["test"],
     ):
         # Filter split and make filenames global
         dataset.dataset = dataset.dataset[dataset.dataset["split"].isin(splits)]
@@ -156,7 +155,9 @@ class ImageDetectionTorchDataset(Dataset):
     def __len__(self):
         return len(self.dataset.dataset)
 
-    def __getitem__(self, idx: int) -> Tuple[int, torch.Tensor, Dict[str, torch.Tensor]]:
+    def __getitem__(
+        self, idx: int
+    ) -> Tuple[int, torch.Tensor, Dict[str, torch.Tensor]]:
         """
         Load image and annotations, apply transforms.
 
@@ -168,21 +169,22 @@ class ImageDetectionTorchDataset(Dataset):
         ann_path = row["annotation"]
 
         image = Image.open(image_path).convert("RGB")
-        boxes, labels = self.dataset.read_annotation(ann_path)
+        boxes, labels, cat_ids = self.dataset.read_annotation(ann_path)
 
         # Convert boxes/labels to tensors
         boxes = torch.as_tensor(boxes, dtype=torch.float32)  # [N, 4]
         labels = torch.as_tensor(labels, dtype=torch.int64)  # [N]
 
         target = {
-            "boxes": boxes,     # shape [N, 4] in [x1, y1, x2, y2] format
-            "labels": labels,   # shape [N]
+            "boxes": boxes,  # shape [N, 4] in [x1, y1, x2, y2] format
+            "labels": labels,  # shape [N]
         }
 
         if self.transform:
             image, target = self.transform(image, target)
 
         return self.dataset.dataset.index[idx], image, target
+
 
 class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
     def __init__(
@@ -204,8 +206,7 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
         self.device = torch.device(
             "cuda"
             if torch.cuda.is_available()
-            else "mps" if torch.backends.mps.is_available()
-            else "cpu"
+            else "mps" if torch.backends.mps.is_available() else "cpu"
         )
 
         # Load model from file or use passed instance
@@ -216,7 +217,9 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
                 model = torch.jit.load(model, map_location=self.device)
                 model_type = "compiled"
             except Exception:
-                print("Model is not a TorchScript model. Loading as native PyTorch model.")
+                print(
+                    "Model is not a TorchScript model. Loading as native PyTorch model."
+                )
                 model = torch.load(model, map_location=self.device)
                 model_type = "native"
         elif isinstance(model, torch.nn.Module):
@@ -228,6 +231,9 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
         # Init parent class
         super().__init__(model, model_type, model_cfg, ontology_fname, model_fname)
         self.model = self.model.to(self.device).eval()
+
+        # --- Add reverse mapping for idx to class_name ---
+        self.idx_to_class_name = {v["idx"]: k for k, v in self.ontology.items()}
 
         # Build input transforms (resize, normalize, etc.)
         self.transform_input = []
@@ -287,11 +293,11 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
         # Apply threshold filtering from model config
         confidence_threshold = self.model_cfg.get("confidence_threshold", 0.5)
         if confidence_threshold > 0:
-            keep_mask = result['scores'] >= confidence_threshold
+            keep_mask = result["scores"] >= confidence_threshold
             result = {
-                'boxes': result['boxes'][keep_mask],
-                'labels': result['labels'][keep_mask],
-                'scores': result['scores'][keep_mask]
+                "boxes": result["boxes"][keep_mask],
+                "labels": result["labels"][keep_mask],
+                "scores": result["scores"][keep_mask],
             }
 
         return result
@@ -320,7 +326,9 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
         :rtype: pd.DataFrame
         """
         if results_per_sample and predictions_outdir is None:
-            raise ValueError("predictions_outdir required if results_per_sample is True")
+            raise ValueError(
+                "predictions_outdir required if results_per_sample is True"
+            )
 
         if predictions_outdir is not None:
             os.makedirs(predictions_outdir, exist_ok=True)
@@ -344,8 +352,13 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
             collate_fn=lambda x: tuple(zip(*x)),  # handles variable-size targets
         )
 
+        # Get iou_threshold from model config, default to 0.5 if not present
+        iou_threshold = self.model_cfg.get("iou_threshold", 0.5)
+
         # Init metrics
-        metrics_factory = um.DetectionMetricsFactory(iou_threshold=0.5,num_classes=self.n_classes)
+        metrics_factory = um.DetectionMetricsFactory(
+            iou_threshold=iou_threshold, num_classes=self.n_classes
+        )
 
         with torch.no_grad():
             pbar = tqdm(dataloader, leave=True)
@@ -363,13 +376,15 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
                     pred = predictions[i]
 
                     # Apply confidence threshold filtering
-                    confidence_threshold = self.model_cfg.get("confidence_threshold", 0.5)
+                    confidence_threshold = self.model_cfg.get(
+                        "confidence_threshold", 0.5
+                    )
                     if confidence_threshold > 0:
-                        keep_mask = pred['scores'] >= confidence_threshold
+                        keep_mask = pred["scores"] >= confidence_threshold
                         pred = {
-                            'boxes': pred['boxes'][keep_mask],
-                            'labels': pred['labels'][keep_mask],
-                            'scores': pred['scores'][keep_mask]
+                            "boxes": pred["boxes"][keep_mask],
+                            "labels": pred["labels"][keep_mask],
+                            "scores": pred["scores"][keep_mask],
                         }
 
                     # Apply ontology translation if needed
@@ -377,7 +392,13 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
                         gt["labels"] = lut_ontology[gt["labels"]]
 
                     # Update metrics
-                    metrics_factory.update(gt["boxes"], gt["labels"], pred["boxes"], pred["labels"], pred["scores"])
+                    metrics_factory.update(
+                        gt["boxes"],
+                        gt["labels"],
+                        pred["boxes"],
+                        pred["labels"],
+                        pred["scores"],
+                    )
 
                     # Store predictions if needed
                     if predictions_outdir is not None:
@@ -387,19 +408,21 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
                         pred_scores = pred["scores"].cpu().numpy()
                         out_data = []
 
-                        for box, label, score in zip(pred_boxes, pred_labels, pred_scores):
+                        for box, label, score in zip(
+                            pred_boxes, pred_labels, pred_scores
+                        ):
                             # Convert label index to class name using model ontology
-                            label_str = str(label)
-                            if label_str in self.ontology:
-                                class_name = self.ontology[label_str]["name"]
-                            else:
-                                class_name = f"class_{label_str}"
-                            out_data.append({
-                                "image_id": sample_id,
-                                "label": class_name,
-                                "score": float(score),
-                                "bbox": box.tolist(),
-                            })
+                            class_name = self.idx_to_class_name.get(
+                                int(label), f"class_{label}"
+                            )
+                            out_data.append(
+                                {
+                                    "image_id": sample_id,
+                                    "label": class_name,
+                                    "score": float(score),
+                                    "bbox": box.tolist(),
+                                }
+                            )
 
                         df = pd.DataFrame(out_data)
                         df.to_json(
@@ -409,11 +432,21 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
                         )
 
                         if results_per_sample:
-                            sample_mf = um.DetectionMetricsFactory(num_classes=self.n_classes)
-                            sample_mf.update(gt["boxes"], gt["labels"],pred["boxes"], pred["labels"], pred["scores"])
+                            sample_mf = um.DetectionMetricsFactory(
+                                iou_threshold=iou_threshold, num_classes=self.n_classes
+                            )
+                            sample_mf.update(
+                                gt["boxes"],
+                                gt["labels"],
+                                pred["boxes"],
+                                pred["labels"],
+                                pred["scores"],
+                            )
                             sample_df = sample_mf.get_metrics_dataframe(self.ontology)
                             sample_df.to_csv(
-                                os.path.join(predictions_outdir, f"{sample_id}_metrics.csv")
+                                os.path.join(
+                                    predictions_outdir, f"{sample_id}_metrics.csv"
+                                )
                             )
 
         return metrics_factory.get_metrics_dataframe(self.ontology)

@@ -13,6 +13,7 @@ from detectionmetrics.datasets.perception import PerceptionDataset
 import detectionmetrics.utils.io as uio
 import detectionmetrics.utils.conversion as uc
 
+
 class SegmentationDataset(PerceptionDataset):
     """Abstract perception dataset class."""
 
@@ -383,4 +384,3 @@ class LiDARSegmentationDataset(SegmentationDataset):
         semantic_label = label & 0xFFFF
         instance_label = label >> 16
         return semantic_label.astype(np.int32), instance_label.astype(np.int32)
-

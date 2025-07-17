@@ -22,22 +22,27 @@ class DetectionMetricsFactory:
         """
 
         # Convert torch tensors to numpy
-        if hasattr(gt_boxes, 'detach'): gt_boxes = gt_boxes.detach().cpu().numpy()
-        if hasattr(gt_labels, 'detach'): gt_labels = gt_labels.detach().cpu().numpy()
-        if hasattr(pred_boxes, 'detach'): pred_boxes = pred_boxes.detach().cpu().numpy()
-        if hasattr(pred_labels, 'detach'): pred_labels = pred_labels.detach().cpu().numpy()
-        if hasattr(pred_scores, 'detach'): pred_scores = pred_scores.detach().cpu().numpy()
+        if hasattr(gt_boxes, "detach"):
+            gt_boxes = gt_boxes.detach().cpu().numpy()
+        if hasattr(gt_labels, "detach"):
+            gt_labels = gt_labels.detach().cpu().numpy()
+        if hasattr(pred_boxes, "detach"):
+            pred_boxes = pred_boxes.detach().cpu().numpy()
+        if hasattr(pred_labels, "detach"):
+            pred_labels = pred_labels.detach().cpu().numpy()
+        if hasattr(pred_scores, "detach"):
+            pred_scores = pred_scores.detach().cpu().numpy()
 
         # Handle empty inputs
         if len(gt_boxes) == 0 and len(pred_boxes) == 0:
             return  # Nothing to process
-        
+
         # Handle case where there are predictions but no ground truth
         if len(gt_boxes) == 0:
             for p_label, score in zip(pred_labels, pred_scores):
                 self.results[p_label].append((score, 0))  # All are false positives
             return
-        
+
         # Handle case where there is ground truth but no predictions
         if len(pred_boxes) == 0:
             for g_label in gt_labels:
@@ -71,7 +76,9 @@ class DetectionMetricsFactory:
 
         ious = compute_iou_matrix(pred_boxes, gt_boxes)  # shape: (num_preds, num_gts)
 
-        for i, (p_box, p_label, score) in enumerate(zip(pred_boxes, pred_labels, pred_scores)):
+        for i, (p_box, p_label, score) in enumerate(
+            zip(pred_boxes, pred_labels, pred_scores)
+        ):
             max_iou = 0
             max_j = -1
 
@@ -141,7 +148,6 @@ class DetectionMetricsFactory:
 
         return metrics
 
-
     def get_metrics_dataframe(self, ontology: dict) -> pd.DataFrame:
         """
         Get results as a pandas DataFrame.
@@ -163,14 +169,6 @@ class DetectionMetricsFactory:
             values = [v for v in metrics_dict[metric].values() if not pd.isna(v)]
             metrics_dict[metric]["mean"] = np.mean(values) if values else np.nan
 
-        # Add overall mAP if available
-        if -1 in all_metrics:
-            for metric in ["AP", "Precision", "Recall", "TP", "FP", "FN"]:
-                if metric == "AP":
-                    metrics_dict[metric]["mAP"] = all_metrics[-1].get(metric, np.nan)
-                else:
-                    metrics_dict[metric]["mAP"] = np.nan
-
         df = pd.DataFrame(metrics_dict)
         return df.T  # metrics as rows, classes as columns (with mean)
 
@@ -185,6 +183,7 @@ def compute_iou_matrix(pred_boxes: np.ndarray, gt_boxes: np.ndarray) -> np.ndarr
             iou_matrix[i, j] = compute_iou(pb, gb)
     return iou_matrix
 
+
 def compute_iou(boxA, boxB):
     xA = max(boxA[0], boxB[0])
     yA = max(boxA[1], boxB[1])
@@ -196,6 +195,7 @@ def compute_iou(boxA, boxB):
     boxBArea = (boxB[2] - boxB[0]) * (boxB[3] - boxB[1])
     iou = interArea / float(boxAArea + boxBArea - interArea)
     return iou
+
 
 def compute_ap(tps, fps, fn):
     tps = np.array(tps, dtype=np.float32)
@@ -219,7 +219,7 @@ def compute_ap(tps, fps, fn):
             recalls = np.zeros_like(tp_cumsum)
     else:
         recalls = []
-    
+
     # Compute precision with proper handling of division by zero
     denominator = tp_cumsum + fp_cumsum
     precisions = np.where(denominator > 0, tp_cumsum / denominator, 0.0)

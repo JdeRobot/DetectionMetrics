@@ -57,7 +57,10 @@ class PerceptionDataset(ABC):
                     self.ontology[class_name]["idx"]
                     == new_dataset.ontology[class_name]["idx"]
                 ), "Ontologies don't match"
-                if "rgb" in self.ontology[class_name] and "rgb" in new_dataset.ontology[class_name]:
+                if (
+                    "rgb" in self.ontology[class_name]
+                    and "rgb" in new_dataset.ontology[class_name]
+                ):
                     assert (
                         self.ontology[class_name]["rgb"]
                         == new_dataset.ontology[class_name]["rgb"]

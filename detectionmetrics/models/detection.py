@@ -12,6 +12,7 @@ from detectionmetrics.models.perception import PerceptionModel
 import detectionmetrics.utils.conversion as uc
 import detectionmetrics.utils.io as uio
 
+
 class DetectionModel(PerceptionModel):
     """Parent detection model class
 
@@ -38,9 +39,7 @@ class DetectionModel(PerceptionModel):
         super().__init__(model, model_type, model_cfg, ontology_fname, model_fname)
 
     @abstractmethod
-    def inference(
-        self, data: Union[np.ndarray, Image.Image]
-    ) -> List[dict]:
+    def inference(self, data: Union[np.ndarray, Image.Image]) -> List[dict]:
         """Perform inference for a single input (image or point cloud)
 
         :param data: Input image or LiDAR point cloud
@@ -75,6 +74,7 @@ class DetectionModel(PerceptionModel):
         :rtype: pd.DataFrame
         """
         raise NotImplementedError
+
 
 class ImageDetectionModel(DetectionModel):
     """Parent image detection model class
@@ -137,6 +137,7 @@ class ImageDetectionModel(DetectionModel):
         :rtype: pd.DataFrame
         """
         raise NotImplementedError
+
 
 class LiDARDetectionModel(DetectionModel):
     """Parent LiDAR detection model class
