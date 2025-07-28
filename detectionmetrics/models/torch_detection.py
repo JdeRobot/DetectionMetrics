@@ -192,6 +192,7 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
         model: Union[str, torch.nn.Module],
         model_cfg: str,
         ontology_fname: str,
+        device: torch.device = None,
     ):
         """Image detection model for PyTorch framework
 
@@ -201,13 +202,17 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
         :type model_cfg: str
         :param ontology_fname: JSON file containing model output ontology
         :type ontology_fname: str
+        :param device: torch.device to use (optional). If not provided, will auto-select cuda, mps, or cpu.
         """
-        # Get device (GPU, MPS, or CPU)
-        self.device = torch.device(
-            "cuda"
-            if torch.cuda.is_available()
-            else "mps" if torch.backends.mps.is_available() else "cpu"
-        )
+        # Get device (GPU, MPS, or CPU) if not provided
+        if device is None:
+            self.device = torch.device(
+                "cuda"
+                if torch.cuda.is_available()
+                else "mps" if torch.backends.mps.is_available() else "cpu"
+            )
+        else:
+            self.device = device
 
         # Load model from file or use passed instance
         if isinstance(model, str):
