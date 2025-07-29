@@ -314,6 +314,7 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
         ontology_translation: Optional[str] = None,
         predictions_outdir: Optional[str] = None,
         results_per_sample: bool = False,
+        progress_callback=None,
     ) -> pd.DataFrame:
         """Evaluate model over a detection dataset and compute metrics
 
@@ -327,6 +328,8 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
         :type predictions_outdir: Optional[str]
         :param results_per_sample: Store per-sample metrics
         :type results_per_sample: bool
+        :param progress_callback: Optional callback function for progress updates in Streamlit UI
+        :type progress_callback: Optional[Callable[[int, int], None]]
         :return: DataFrame containing evaluation results
         :rtype: pd.DataFrame
         """
@@ -365,9 +368,19 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
             iou_threshold=iou_threshold, num_classes=self.n_classes
         )
 
+        # Calculate total samples for progress tracking
+        total_samples = len(dataloader.dataset)
+        processed_samples = 0
+
         with torch.no_grad():
-            pbar = tqdm(dataloader, leave=True)
-            for image_ids, images, targets in pbar:
+            # Use tqdm if no progress callback provided, otherwise use regular iteration
+            if progress_callback is None:
+                pbar = tqdm(dataloader, leave=True)
+                iterator = pbar
+            else:
+                iterator = dataloader
+            
+            for image_ids, images, targets in iterator:
                 # Defensive check for empty images
                 if not images or any(img.numel() == 0 for img in images):
                     print("Skipping batch: empty image tensor detected.")
@@ -453,8 +466,16 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
                                     predictions_outdir, f"{sample_id}_metrics.csv"
                                 )
                             )
+                    
+                    processed_samples += 1
+                    
+                    # Call progress callback if provided
+                    if progress_callback is not None:
+                        progress_callback(processed_samples, total_samples)
 
         return metrics_factory.get_metrics_dataframe(self.ontology)
+
+
 
     def get_computational_cost(
         self, image_size: Tuple[int], runs: int = 30, warm_up_runs: int = 5

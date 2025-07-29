@@ -185,7 +185,7 @@ def inference_tab():
     load_col1, load_col2, load_col3 = st.columns([1, 2, 1])
     with load_col2:
         load_model = st.button(
-            "Save Model",
+            "Load Model",
             type="primary",
             use_container_width=True,
             help="Load the model with the provided configuration"
