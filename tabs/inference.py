@@ -258,5 +258,48 @@ def inference_tab():
                         with col3:
                             max_confidence = float(predictions['scores'].max())
                             st.metric("Max Confidence", f"{max_confidence:.3f}")
+                        
+                        # Display and download detection results
+                        st.markdown("#### Detection Results")
+                        
+                        # Convert predictions to JSON format
+                        detection_results = []
+                        boxes = predictions.get('boxes', torch.empty(0)).cpu().numpy()
+                        labels = predictions.get('labels', torch.empty(0)).cpu().numpy()
+                        scores = predictions.get('scores', torch.empty(0)).cpu().numpy()
+                        
+                        for i in range(len(scores)):
+                            # Get class name if available
+                            class_name = label_map.get(int(labels[i]), f"class_{labels[i]}") if label_map else f"class_{labels[i]}"
+                            
+                            detection_results.append({
+                                "detection_id": i,
+                                "class_id": int(labels[i]),
+                                "class_name": class_name,
+                                "confidence": float(scores[i]),
+                                "bbox": {
+                                    "x1": float(boxes[i][0]),
+                                    "y1": float(boxes[i][1]),
+                                    "x2": float(boxes[i][2]),
+                                    "y2": float(boxes[i][3])
+                                },
+                                "bbox_xyxy": boxes[i].tolist()
+                            })
+                        
+                        # Display JSON in expandable section
+                        with st.expander(" View Detection Results (JSON)", expanded=False):
+                            st.json(detection_results)
+                        
+                        # Download JSON file
+                        json_str = json.dumps(detection_results, indent=2)
+                        st.download_button(
+                            label="Download Detection Results as JSON",
+                            data=json_str,
+                            file_name="detection_results.json",
+                            mime="application/json",
+                            help="Download the detection results as a JSON file"
+                        )
+                    else:
+                        st.info("No detections found in the image.")
                 except Exception as e:
                     st.error(f"Failed to run inference: {e}") 
