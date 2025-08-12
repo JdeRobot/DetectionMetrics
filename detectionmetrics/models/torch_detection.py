@@ -473,7 +473,11 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
                     if progress_callback is not None:
                         progress_callback(processed_samples, total_samples)
 
-        return metrics_factory.get_metrics_dataframe(self.ontology)
+        # Return both the DataFrame and the metrics factory for access to precision-recall curves
+        return {
+            "metrics_df": metrics_factory.get_metrics_dataframe(self.ontology),
+            "metrics_factory": metrics_factory
+        }
 
 
 

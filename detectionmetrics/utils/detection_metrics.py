@@ -9,6 +9,8 @@ class DetectionMetricsFactory:
         self.iou_threshold = iou_threshold
         self.num_classes = num_classes
         self.results = defaultdict(list)  # stores detection results per class
+        # Store raw data for multi-threshold evaluation
+        self.raw_data = []  # List of (gt_boxes, gt_labels, pred_boxes, pred_labels, pred_scores)
 
     def update(self, gt_boxes, gt_labels, pred_boxes, pred_labels, pred_scores):
         """
@@ -32,6 +34,9 @@ class DetectionMetricsFactory:
             pred_labels = pred_labels.detach().cpu().numpy()
         if hasattr(pred_scores, "detach"):
             pred_scores = pred_scores.detach().cpu().numpy()
+
+        # Store raw data for multi-threshold evaluation
+        self.raw_data.append((gt_boxes, gt_labels, pred_boxes, pred_labels, pred_scores))
 
         # Handle empty inputs
         if len(gt_boxes) == 0 and len(pred_boxes) == 0:
@@ -63,13 +68,19 @@ class DetectionMetricsFactory:
         pred_boxes: np.ndarray,
         pred_labels: List[int],
         pred_scores: List[float],
+        iou_threshold: Optional[float] = None,
     ) -> Dict[int, List[Tuple[float, int]]]:
         """
         Match predictions to ground truth and return per-class TP/FP flags with scores.
 
+        Args:
+            iou_threshold: If provided, overrides self.iou_threshold
+
         Returns:
             Dict[label_id, List[(score, tp_or_fp)]]
         """
+        if iou_threshold is None:
+            iou_threshold = self.iou_threshold
 
         results = defaultdict(list)
         used = set()
@@ -90,7 +101,7 @@ class DetectionMetricsFactory:
                     max_iou = iou
                     max_j = j
 
-            if max_iou >= self.iou_threshold:
+            if max_iou >= iou_threshold:
                 results[p_label].append((score, 1))  # True positive
                 used.add(max_j)
             else:
@@ -148,6 +159,124 @@ class DetectionMetricsFactory:
 
         return metrics
 
+    def compute_coco_map(self) -> float:
+        """
+        Compute COCO-style mAP (mean AP over IoU thresholds 0.5:0.05:0.95).
+        
+        Returns:
+            float: mAP@[0.5:0.95]
+        """
+        iou_thresholds = np.arange(0.5, 1.0, 0.05)
+        aps = []
+        
+        for iou_thresh in iou_thresholds:
+            # Reset results for this threshold
+            threshold_results = defaultdict(list)
+            
+            # Process all raw data with current threshold
+            for gt_boxes, gt_labels, pred_boxes, pred_labels, pred_scores in self.raw_data:
+                # Handle empty inputs
+                if len(gt_boxes) == 0 and len(pred_boxes) == 0:
+                    continue
+                
+                # Handle case where there are predictions but no ground truth
+                if len(gt_boxes) == 0:
+                    for p_label, score in zip(pred_labels, pred_scores):
+                        threshold_results[p_label].append((score, 0))  # All are false positives
+                    continue
+                
+                # Handle case where there is ground truth but no predictions
+                if len(pred_boxes) == 0:
+                    for g_label in gt_labels:
+                        threshold_results[g_label].append((None, -1))  # All are false negatives
+                    continue
+                
+                matches = self._match_predictions(
+                    gt_boxes, gt_labels, pred_boxes, pred_labels, pred_scores, iou_thresh
+                )
+                
+                for label in matches:
+                    threshold_results[label].extend(matches[label])
+            
+            # Compute AP for this threshold
+            threshold_ap_values = []
+            for label, detections in threshold_results.items():
+                detections = sorted(
+                    [d for d in detections if d[0] is not None], key=lambda x: -x[0]
+                )
+                tps = [d[1] == 1 for d in detections]
+                fps = [d[1] == 0 for d in detections]
+                fn_count = sum(1 for d in threshold_results[label] if d[1] == -1)
+                
+                ap, _, _ = compute_ap(tps, fps, fn_count)
+                threshold_ap_values.append(ap)
+            
+            # Mean AP for this threshold
+            if threshold_ap_values:
+                aps.append(np.mean(threshold_ap_values))
+            else:
+                aps.append(0.0)
+        
+        # Return mean over all thresholds
+        return np.mean(aps) if aps else 0.0
+
+    def get_overall_precision_recall_curve(self) -> Dict[str, List[float]]:
+        """
+        Get overall precision-recall curve data (aggregated across all classes).
+        
+        Returns:
+            Dict[str, List[float]] with keys 'precision' and 'recall'
+        """
+        all_detections = []
+        
+        # Collect all detections from all classes
+        for label, detections in self.results.items():
+            all_detections.extend(detections)
+        
+        if len(all_detections) == 0:
+            return {"precision": [0.0], "recall": [0.0]}
+        
+        # Sort by score
+        all_detections = sorted(
+            [d for d in all_detections if d[0] is not None], key=lambda x: -x[0]
+        )
+        
+        tps = [d[1] == 1 for d in all_detections]
+        fps = [d[1] == 0 for d in all_detections]
+        fn_count = sum(1 for d in all_detections if d[1] == -1)
+        
+        _, precision, recall = compute_ap(tps, fps, fn_count)
+        
+        return {
+            "precision": precision.tolist() if hasattr(precision, 'tolist') else list(precision),
+            "recall": recall.tolist() if hasattr(recall, 'tolist') else list(recall)
+        }
+
+    def compute_auc_pr(self) -> float:
+        """
+        Compute the Area Under the Precision-Recall Curve (AUC-PR).
+        
+        Returns:
+            float: Area under the precision-recall curve
+        """
+        curve_data = self.get_overall_precision_recall_curve()
+        precision = np.array(curve_data['precision'])
+        recall = np.array(curve_data['recall'])
+        
+        # Handle edge cases
+        if len(precision) == 0 or len(recall) == 0:
+            return 0.0
+        
+        # Sort by recall to ensure proper integration
+        sorted_indices = np.argsort(recall)
+        recall_sorted = recall[sorted_indices]
+        precision_sorted = precision[sorted_indices]
+        
+        # Compute AUC using trapezoidal rule
+        auc = np.trapz(precision_sorted, recall_sorted)
+        
+        return float(auc)
+
     def get_metrics_dataframe(self, ontology: dict) -> pd.DataFrame:
         """
         Get results as a pandas DataFrame.
@@ -168,6 +297,20 @@ class DetectionMetricsFactory:
             # Compute mean (ignore NaN for mean)
             values = [v for v in metrics_dict[metric].values() if not pd.isna(v)]
             metrics_dict[metric]["mean"] = np.mean(values) if values else np.nan
+
+        # Add COCO-style mAP
+        coco_map = self.compute_coco_map()
+        metrics_dict["mAP@[0.5:0.95]"] = {}
+        for class_name in class_names:
+            metrics_dict["mAP@[0.5:0.95]"][class_name] = np.nan  # Per-class not applicable
+        metrics_dict["mAP@[0.5:0.95]"]["mean"] = coco_map
+
+        # Add AUC-PR
+        auc_pr = self.compute_auc_pr()
+        metrics_dict["AUC-PR"] = {}
+        for class_name in class_names:
+            metrics_dict["AUC-PR"][class_name] = np.nan  # Per-class not applicable
+        metrics_dict["AUC-PR"]["mean"] = auc_pr
 
         df = pd.DataFrame(metrics_dict)
         return df.T  # metrics as rows, classes as columns (with mean)

@@ -115,6 +115,11 @@ def evaluator_tab():
                     status_text.text(f"Processing: {processed}/{total} images ({progress:.1%})")
                 
                 # Run evaluation with progress tracking
+                # Limit dataset to first 10 images for faster evaluation
+                original_dataset = dataset.dataset
+                dataset.dataset = dataset.dataset.head(10)
+                # st.info(f"Using first 10 images for evaluation")
+
                 results = model.eval(
                     dataset=dataset,
                     split=split,
@@ -151,21 +156,29 @@ def evaluator_tab():
 def display_evaluation_results(results):
     """Display evaluation results in a comprehensive format"""
     
-    if results is None or results.empty:
+    if results is None:
         st.warning("No evaluation results to display.")
         return
     
-    # Convert results to DataFrame if it's not already
-    if not isinstance(results, pd.DataFrame):
-        st.error("Results format not supported.")
+    # Handle new results format (dictionary with metrics_df and metrics_factory)
+    if isinstance(results, dict):
+        metrics_df = results.get("metrics_df")
+        metrics_factory = results.get("metrics_factory")
+    else:
+        # Fallback for old format
+        metrics_df = results
+        metrics_factory = None
+    
+    if metrics_df is None or metrics_df.empty:
+        st.warning("No evaluation results to display.")
         return
     
     # Display summary metrics
     st.markdown("#### Summary Metrics")
     
     # Get mean metrics - mean is a column
-    if 'mean' in results.columns:
-        mean_metrics = results['mean']
+    if 'mean' in metrics_df.columns:
+        mean_metrics = metrics_df['mean']
         
         col1, col2, col3, col4 = st.columns(4)
         with col1:
@@ -177,12 +190,90 @@ def display_evaluation_results(results):
         with col4:
             total_detections = mean_metrics.get('TP', 0) + mean_metrics.get('FP', 0)
             st.metric("Total Detections", f"{total_detections:.0f}")
+        
+        # Add COCO mAP and AUC-PR in a second row
+        col5, col6, col7, col8 = st.columns(4)
+        with col5:
+            coco_map = mean_metrics.get('mAP@[0.5:0.95]', 0)
+            st.metric("mAP@[0.5:0.95]", f"{coco_map:.3f}")
+        with col6:
+            auc_pr = mean_metrics.get('AUC-PR', 0)
+            st.metric("AUC-PR", f"{auc_pr:.3f}")
+        with col7:
+            # Empty column for spacing
+            st.empty()
+        with col8:
+            # Empty column for spacing
+            st.empty()
+    
+    # Display Precision-Recall Curve
+    if metrics_factory is not None:
+        st.markdown("#### Precision-Recall Curve")
+        
+        try:
+            # Get the precision-recall curve data
+            curve_data = metrics_factory.get_overall_precision_recall_curve()
+            auc_pr = metrics_factory.compute_auc_pr()
+            
+            # Create the plot using streamlit's plotly integration
+            import plotly.graph_objects as go
+            from plotly.subplots import make_subplots
+            
+            # Create the precision-recall curve
+            fig = go.Figure()
+            
+            # Add the curve
+            fig.add_trace(go.Scatter(
+                x=curve_data['recall'],
+                y=curve_data['precision'],
+                mode='lines',
+                name='Precision-Recall Curve',
+                line=dict(color='blue', width=2),
+                fill='tonexty',
+                fillcolor='rgba(0, 0, 255, 0.1)'
+            ))
+            
+            # Add AUC-PR annotation
+            fig.add_annotation(
+                x=0.6,
+                y=0.2,
+                text=f'AUC-PR: {auc_pr:.3f}',
+                showarrow=False,
+                font=dict(size=12),
+                bgcolor='white',
+                bordercolor='black',
+                borderwidth=1
+            )
+            
+            # Update layout
+            fig.update_layout(
+                # title='Overall Precision-Recall Curve',
+                xaxis_title='Recall',
+                yaxis_title='Precision',
+                xaxis=dict(range=[0, 1]),
+                yaxis=dict(range=[0, 1]),
+                showlegend=True,
+                height=500
+            )
+            
+            # Add grid
+            fig.update_xaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+            fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
+            
+            st.plotly_chart(fig, use_container_width=True)
+            
+        except Exception as e:
+            st.error(f"Error plotting precision-recall curve: {e}")
+            st.info("Precision-recall curve data not available.")
     
     # Display per-class metrics
     st.markdown("#### Per-Class Metrics")
     
     # Filter out the 'mean' column for per-class display
-    per_class_results = results.drop(columns=['mean']) if 'mean' in results.columns else results
+    per_class_results = metrics_df.drop(columns=['mean']) if 'mean' in metrics_df.columns else metrics_df
+    
+    # Remove overall metrics rows (AUC-PR and mAP@[0.5:0.95]) from per-class display
+    per_class_results = per_class_results.drop(['AUC-PR', 'mAP@[0.5:0.95]'], errors='ignore')
     
     # Create a more readable display
     display_df = per_class_results.copy()
@@ -199,7 +290,7 @@ def display_evaluation_results(results):
     st.markdown("#### Download Results")
     
     # Convert to CSV for download
-    csv = results.to_csv(index=True)
+    csv = metrics_df.to_csv(index=True)
     st.download_button(
         label="📥 Download Results as CSV",
         data=csv,
@@ -210,23 +301,35 @@ def display_evaluation_results(results):
     # Show detailed statistics
     with st.expander("📊 Detailed Statistics"):
         st.markdown("**Results Shape:**")
-        st.write(f"Rows: {results.shape[0]}, Columns: {results.shape[1]}")
+        st.write(f"Rows: {metrics_df.shape[0]}, Columns: {metrics_df.shape[1]}")
         
         st.markdown("**Available Metrics:**")
-        st.write(list(results.columns))
+        st.write(list(metrics_df.columns))
         
         st.markdown("**Class Names:**")
-        st.write(list(results.index) if len(results.index) > 0 else "No classes found")
+        st.write(list(metrics_df.index) if len(metrics_df.index) > 0 else "No classes found")
         
         st.markdown("**DataFrame Info:**")
-        st.write("Index:", results.index.tolist())
-        st.write("Columns:", results.columns.tolist())
+        st.write("Index:", metrics_df.index.tolist())
+        st.write("Columns:", metrics_df.columns.tolist())
         
         st.markdown("**Sample Data:**")
-        st.dataframe(results.head(), use_container_width=True)
+        st.dataframe(metrics_df.head(), use_container_width=True)
         
         if 'evaluation_config' in st.session_state:
             st.markdown("**Evaluation Configuration:**")
             config = st.session_state['evaluation_config']
             for key, value in config.items():
-                st.write(f"- {key}: {value}") 
+                st.write(f"- {key}: {value}")
+        
+        # Show precision-recall curve data if available
+        if metrics_factory is not None:
+            st.markdown("**Precision-Recall Curve Data:**")
+            try:
+                curve_data = metrics_factory.get_overall_precision_recall_curve()
+                st.write(f"Number of points: {len(curve_data['precision'])}")
+                st.write(f"Precision range: {min(curve_data['precision']):.3f} - {max(curve_data['precision']):.3f}")
+                st.write(f"Recall range: {min(curve_data['recall']):.3f} - {max(curve_data['recall']):.3f}")
+                st.write(f"AUC-PR: {metrics_factory.compute_auc_pr():.3f}")
+            except Exception as e:
+                st.write(f"Error accessing curve data: {e}") 
