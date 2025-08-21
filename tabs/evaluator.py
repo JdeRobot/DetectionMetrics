@@ -10,47 +10,54 @@ def evaluator_tab():
     st.header("Evaluator")
     st.markdown("Evaluate your model on the loaded dataset using detection metrics.")
     
-    # Check if we have the required objects from other tabs
+    # Check if we have the required objects from sidebar inputs
     dataset_available = False
     model_available = False
+    dataset = None
+    model = None
     
-    # Check for dataset from dataset viewer tab
-    if 'dataset_path' in st.session_state and st.session_state['dataset_path']:
-        dataset_path = st.session_state['dataset_path']
-        dataset_type = st.session_state.get('dataset_type_selectbox', 'Coco')
-        split = st.session_state.get('split_selectbox', 'val')
-        
-        # Try to load the dataset
+    # Check for dataset from sidebar inputs
+    dataset_path = st.session_state.get('dataset_path', '')
+    dataset_type = st.session_state.get('dataset_type_selectbox', 'Coco')
+    split = st.session_state.get('split_selectbox', 'val')
+    
+    # Try to get existing dataset from session state first
+    dataset_key = f"{dataset_path}_{split}"
+    if dataset_key in st.session_state:
+        dataset = st.session_state[dataset_key]
+        dataset_available = True
+        st.success(f"✅ Dataset loaded: {dataset_path} ({split} split) - {len(dataset.dataset)} samples")
+    elif dataset_path and os.path.isdir(dataset_path):
         try:
             if dataset_type.lower() == "coco":
                 img_dir = os.path.join(dataset_path, f"images/{split}2017")
                 ann_file = os.path.join(dataset_path, "annotations", f"instances_{split}2017.json")
                 
                 if os.path.isdir(img_dir) and os.path.isfile(ann_file):
-                    dataset_key = f"{dataset_path}_{split}"
-                    if dataset_key not in st.session_state:
-                        st.session_state[dataset_key] = CocoDataset(annotation_file=ann_file, image_dir=img_dir, split=split)
-                        # Make filenames global - this is crucial for evaluation
-                        st.session_state[dataset_key].make_fname_global()
+                    st.session_state[dataset_key] = CocoDataset(
+                        annotation_file=ann_file, image_dir=img_dir, split=split
+                    )
+                    # Make filenames global - this is crucial for evaluation
+                    st.session_state[dataset_key].make_fname_global()
                     dataset = st.session_state[dataset_key]
                     dataset_available = True
                     st.success(f"✅ Dataset loaded: {dataset_path} ({split} split) - {len(dataset.dataset)} samples")
                 else:
-                    st.warning("⚠️ Dataset files not found. Please load a dataset in the Dataset Viewer tab.")
+                    st.warning("⚠️ Dataset files not found. Please check the dataset path and split in the sidebar.")
             else:
                 st.warning("⚠️ Only COCO datasets are currently supported for evaluation.")
         except Exception as e:
             st.error(f"❌ Error loading dataset: {e}")
     else:
-        st.warning("⚠️ No dataset loaded. Please load a dataset in the Dataset Viewer tab.")
+        st.warning("⚠️ No dataset path provided. Please set the dataset path in the sidebar.")
     
-    # Check for model from inference tab
+    # Check for model from sidebar (loaded via Load Model button)
     if 'detection_model' in st.session_state and st.session_state.detection_model is not None:
         model = st.session_state.detection_model
         model_available = True
         st.success("✅ Model loaded and ready for evaluation")
     else:
-        st.warning("⚠️ No model loaded. Please load a model in the Inference tab.")
+        st.warning("⚠️ No model loaded. Please load a model using the 'Load Model' button in the sidebar.")
     
     # Evaluation configuration
     st.markdown("### Evaluation Configuration")
@@ -100,9 +107,7 @@ def evaluator_tab():
                 # Use model config as is (no confidence threshold override)
                 eval_config = model.model_cfg.copy()
                 
-                # Debug information
-                st.info(f"Dataset has {len(dataset.dataset)} samples")
-                st.info(f"Model configuration: {eval_config}")
+                # Ready to evaluate
                 
                 # Create progress bar for evaluation
                 progress_bar = st.progress(0)
@@ -110,24 +115,40 @@ def evaluator_tab():
                 
                 def progress_callback(processed, total):
                     """Progress callback for Streamlit UI"""
-                    progress = processed / total
-                    progress_bar.progress(progress)
-                    status_text.text(f"Processing: {processed}/{total} images ({progress:.1%})")
+                    try:
+                        progress = processed / total if total > 0 else 0
+                        progress_bar.progress(progress)
+                        status_text.text(f"Processing: {processed}/{total} images ({progress:.1%})")
+                    except Exception as e:
+                        st.error(f"Progress callback error: {e}")
                 
                 # Run evaluation with progress tracking
-                # Limit dataset to first 10 images for faster evaluation
-                original_dataset = dataset.dataset
-                dataset.dataset = dataset.dataset.head(10)
-                # st.info(f"Using first 10 images for evaluation")
+                # Use full dataset for evaluation
 
-                results = model.eval(
-                    dataset=dataset,
-                    split=split,
-                    ontology_translation=ontology_translation_path,
-                    predictions_outdir=predictions_outdir,
-                    results_per_sample=save_predictions,
-                    progress_callback=progress_callback
-                )
+                try:
+                    # Filter dataset to only first 10 images for evaluation
+                    if hasattr(dataset, "dataset"):
+                        # Create a shallow copy of the dataset object with only first 10 rows
+                        import copy
+                        dataset_subset = copy.copy(dataset)
+                        dataset_subset.dataset = dataset.dataset.iloc[:10].copy()
+                    else:
+                        st.warning("Dataset object does not have a 'dataset' attribute; using as is.")
+                        dataset_subset = dataset
+
+                    results = model.eval(
+                        dataset=dataset_subset,
+                        split=split,
+                        ontology_translation=ontology_translation_path,
+                        predictions_outdir=predictions_outdir,
+                        results_per_sample=save_predictions,
+                        progress_callback=progress_callback
+                    )
+                except Exception as e:
+                    st.error(f"Error in model.eval(): {e}")
+                    return
+                
+                # Results ready
                 
                 # Clear progress elements
                 progress_bar.empty()
