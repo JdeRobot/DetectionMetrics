@@ -70,6 +70,7 @@ st.session_state.setdefault("nms_threshold", 0.5)
 st.session_state.setdefault("max_detections", 100)
 st.session_state.setdefault("device", "cpu")
 st.session_state.setdefault("batch_size", 1)
+st.session_state.setdefault("evaluation_step", 5)
 st.session_state.setdefault("detection_model", None)
 st.session_state.setdefault("detection_model_loaded", False)
 
@@ -182,6 +183,15 @@ with st.sidebar:
                     step=1,
                     key="batch_size",
                 )
+                st.number_input(
+                    "Evaluation Step",
+                    min_value=0,
+                    max_value=1000,
+                    value=st.session_state.get("evaluation_step", 10),
+                    step=1,
+                    key="evaluation_step",
+                    help="Update UI with intermediate metrics every N images (0 = disable intermediate updates)"
+                )
 
         # Load model action in sidebar
         from detectionmetrics.models.torch_detection import TorchImageDetectionModel
@@ -220,12 +230,14 @@ with st.sidebar:
                     max_detections = int(st.session_state.get('max_detections', 100))
                     device = st.session_state.get('device', 'cpu')
                     batch_size = int(st.session_state.get('batch_size', 1))
+                    evaluation_step = int(st.session_state.get('evaluation_step', 5))
                     config_data = {
                         "confidence_threshold": confidence_threshold,
                         "nms_threshold": nms_threshold,
                         "max_detections_per_image": max_detections,
                         "device": device,
                         "batch_size": batch_size,
+                        "evaluation_step": evaluation_step,
                     }
                     with tempfile.NamedTemporaryFile(delete=False, suffix='.json', mode='w') as tmp_cfg:
                         json.dump(config_data, tmp_cfg)

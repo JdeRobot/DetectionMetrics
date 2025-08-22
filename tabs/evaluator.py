@@ -113,6 +113,10 @@ def evaluator_tab():
                 progress_bar = st.progress(0)
                 status_text = st.empty()
                 
+                # Create placeholders for intermediate metrics that will be updated in place
+                intermediate_metrics_placeholder = st.empty()
+                intermediate_table_placeholder = st.empty()
+                
                 def progress_callback(processed, total):
                     """Progress callback for Streamlit UI"""
                     try:
@@ -121,6 +125,42 @@ def evaluator_tab():
                         status_text.text(f"Processing: {processed}/{total} images ({progress:.1%})")
                     except Exception as e:
                         st.error(f"Progress callback error: {e}")
+                
+                def metrics_callback(metrics_df, processed, total):
+                    """Metrics callback for intermediate results display"""
+                    try:
+                        # Update the metrics placeholder with current summary metrics
+                        if 'mean' in metrics_df.columns:
+                            mean_metrics = metrics_df['mean']
+                            
+                            with intermediate_metrics_placeholder.container():
+                                st.markdown(f"#### 📊 Intermediate Results (after {processed} images)")
+                                
+                                col1, col2, col3 = st.columns(3)
+                                with col1:
+                                    st.metric("mAP", f"{mean_metrics.get('AP', 0):.3f}")
+                                with col2:
+                                    st.metric("Mean Precision", f"{mean_metrics.get('Precision', 0):.3f}")
+                                with col3:
+                                    st.metric("Mean Recall", f"{mean_metrics.get('Recall', 0):.3f}")
+                        
+                        # Update the table placeholder with current per-class results
+                        per_class_results = metrics_df.drop(columns=['mean']) if 'mean' in metrics_df.columns else metrics_df
+                        per_class_results = per_class_results.drop(['AUC-PR', 'mAP@[0.5:0.95]'], errors='ignore')
+                        
+                        # Round for display
+                        display_df = per_class_results.copy()
+                        numeric_columns = display_df.select_dtypes(include=['float64', 'int64']).columns
+                        for col in numeric_columns:
+                            if col in display_df.columns:
+                                display_df[col] = display_df[col].round(3)
+                        
+                        with intermediate_table_placeholder.container():
+                            st.markdown("#### Per-Class Metrics (Intermediate)")
+                            st.dataframe(display_df, use_container_width=True)
+                            
+                    except Exception as e:
+                        st.error(f"Metrics callback error: {e}")
                 
                 # Run evaluation with progress tracking
                 # Use full dataset for evaluation
@@ -131,7 +171,7 @@ def evaluator_tab():
                         # Create a shallow copy of the dataset object with only first 10 rows
                         import copy
                         dataset_subset = copy.copy(dataset)
-                        dataset_subset.dataset = dataset.dataset.iloc[:10].copy()
+                        dataset_subset.dataset = dataset.dataset.iloc[:100].copy()
                     else:
                         st.warning("Dataset object does not have a 'dataset' attribute; using as is.")
                         dataset_subset = dataset
@@ -142,7 +182,8 @@ def evaluator_tab():
                         ontology_translation=ontology_translation_path,
                         predictions_outdir=predictions_outdir,
                         results_per_sample=save_predictions,
-                        progress_callback=progress_callback
+                        progress_callback=progress_callback,
+                        metrics_callback=metrics_callback
                     )
                 except Exception as e:
                     st.error(f"Error in model.eval(): {e}")
@@ -150,9 +191,11 @@ def evaluator_tab():
                 
                 # Results ready
                 
-                # Clear progress elements
+                # Clear progress elements and intermediate results
                 progress_bar.empty()
                 status_text.empty()
+                intermediate_metrics_placeholder.empty()
+                intermediate_table_placeholder.empty()
                 
                 # Store results in session state
                 st.session_state['evaluation_results'] = results
@@ -201,7 +244,7 @@ def display_evaluation_results(results):
     if 'mean' in metrics_df.columns:
         mean_metrics = metrics_df['mean']
         
-        col1, col2, col3, col4 = st.columns(4)
+        col1, col2, col3, col4, col5 = st.columns(5)
         with col1:
             st.metric("mAP", f"{mean_metrics.get('AP', 0):.3f}")
         with col2:
@@ -209,25 +252,33 @@ def display_evaluation_results(results):
         with col3:
             st.metric("Mean Recall", f"{mean_metrics.get('Recall', 0):.3f}")
         with col4:
-            total_detections = mean_metrics.get('TP', 0) + mean_metrics.get('FP', 0)
-            st.metric("Total Detections", f"{total_detections:.0f}")
-        
-        # Add COCO mAP and AUC-PR in a second row
-        col5, col6, col7, col8 = st.columns(4)
-        with col5:
             coco_map = mean_metrics.get('mAP@[0.5:0.95]', 0)
             st.metric("mAP@[0.5:0.95]", f"{coco_map:.3f}")
-        with col6:
+        with col5:
             auc_pr = mean_metrics.get('AUC-PR', 0)
             st.metric("AUC-PR", f"{auc_pr:.3f}")
-        with col7:
-            # Empty column for spacing
-            st.empty()
-        with col8:
-            # Empty column for spacing
-            st.empty()
     
-    # Display Precision-Recall Curve
+    # Display per-class metrics first
+    st.markdown("#### Per-Class Metrics")
+    
+    # Filter out the 'mean' column for per-class display
+    per_class_results = metrics_df.drop(columns=['mean']) if 'mean' in metrics_df.columns else metrics_df
+    
+    # Remove overall metrics rows (AUC-PR and mAP@[0.5:0.95]) from per-class display
+    per_class_results = per_class_results.drop(['AUC-PR', 'mAP@[0.5:0.95]'], errors='ignore')
+    
+    # Create a more readable display
+    display_df = per_class_results.copy()
+    
+    # Round numeric columns for better display
+    numeric_columns = display_df.select_dtypes(include=['float64', 'int64']).columns
+    for col in numeric_columns:
+        if col in display_df.columns:
+            display_df[col] = display_df[col].round(3)
+    
+    st.dataframe(display_df, use_container_width=True)
+
+    # Now display Precision-Recall Curve
     if metrics_factory is not None:
         st.markdown("#### Precision-Recall Curve")
         
@@ -287,38 +338,38 @@ def display_evaluation_results(results):
             st.error(f"Error plotting precision-recall curve: {e}")
             st.info("Precision-recall curve data not available.")
     
-    # Display per-class metrics
-    st.markdown("#### Per-Class Metrics")
-    
-    # Filter out the 'mean' column for per-class display
-    per_class_results = metrics_df.drop(columns=['mean']) if 'mean' in metrics_df.columns else metrics_df
-    
-    # Remove overall metrics rows (AUC-PR and mAP@[0.5:0.95]) from per-class display
-    per_class_results = per_class_results.drop(['AUC-PR', 'mAP@[0.5:0.95]'], errors='ignore')
-    
-    # Create a more readable display
-    display_df = per_class_results.copy()
-    
-    # Round numeric columns for better display
-    numeric_columns = display_df.select_dtypes(include=['float64', 'int64']).columns
-    for col in numeric_columns:
-        if col in display_df.columns:
-            display_df[col] = display_df[col].round(3)
-    
-    st.dataframe(display_df, use_container_width=True)
-    
     # Download results
     st.markdown("#### Download Results")
     
     # Convert to CSV for download
     csv = metrics_df.to_csv(index=True)
     st.download_button(
-        label="📥 Download Results as CSV",
+        label="📥 Download per class metrics",
         data=csv,
         file_name="evaluation_results.csv",
         mime="text/csv"
     )
-    
+    try:
+        curve_data = metrics_factory.get_overall_precision_recall_curve() if metrics_factory is not None else None
+        if curve_data is not None:
+            import io
+            import pandas as pd
+            pr_points_df = pd.DataFrame({
+                "recall": curve_data["recall"],
+                "precision": curve_data["precision"]
+            })
+            pr_csv = pr_points_df.to_csv(index=False)
+            st.download_button(
+                label="📈 Download precision-recall points",
+                data=pr_csv,
+                file_name="precision_recall_points.csv",
+                mime="text/csv"
+            )
+        else:
+            st.write("No precision-recall data available.")
+    except Exception as e:
+        st.write(f"Error preparing precision-recall points: {e}")
+
     # Show detailed statistics
     with st.expander("📊 Detailed Statistics"):
         st.markdown("**Results Shape:**")
