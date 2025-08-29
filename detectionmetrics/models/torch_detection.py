@@ -192,6 +192,7 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
         model: Union[str, torch.nn.Module],
         model_cfg: str,
         ontology_fname: str,
+        device: torch.device = None,
     ):
         """Image detection model for PyTorch framework
 
@@ -201,13 +202,17 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
         :type model_cfg: str
         :param ontology_fname: JSON file containing model output ontology
         :type ontology_fname: str
+        :param device: torch.device to use (optional). If not provided, will auto-select cuda, mps, or cpu.
         """
-        # Get device (GPU, MPS, or CPU)
-        self.device = torch.device(
-            "cuda"
-            if torch.cuda.is_available()
-            else "mps" if torch.backends.mps.is_available() else "cpu"
-        )
+        # Get device (GPU, MPS, or CPU) if not provided
+        if device is None:
+            self.device = torch.device(
+                "cuda"
+                if torch.cuda.is_available()
+                else "mps" if torch.backends.mps.is_available() else "cpu"
+            )
+        else:
+            self.device = device
 
         # Load model from file or use passed instance
         if isinstance(model, str):
@@ -309,6 +314,8 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
         ontology_translation: Optional[str] = None,
         predictions_outdir: Optional[str] = None,
         results_per_sample: bool = False,
+        progress_callback=None,
+        metrics_callback=None,
     ) -> pd.DataFrame:
         """Evaluate model over a detection dataset and compute metrics
 
@@ -322,6 +329,10 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
         :type predictions_outdir: Optional[str]
         :param results_per_sample: Store per-sample metrics
         :type results_per_sample: bool
+        :param progress_callback: Optional callback function for progress updates in Streamlit UI
+        :type progress_callback: Optional[Callable[[int, int], None]]
+        :param metrics_callback: Optional callback function for intermediate metrics updates in Streamlit UI
+        :type metrics_callback: Optional[Callable[[pd.DataFrame, int, int], None]]
         :return: DataFrame containing evaluation results
         :rtype: pd.DataFrame
         """
@@ -345,24 +356,48 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
             splits=[split] if isinstance(split, str) else split,
         )
 
+        # This ensures compatibility with Streamlit and callback functions
+        if progress_callback is not None and metrics_callback is not None:
+            num_workers = 0
+        else:
+            num_workers = self.model_cfg.get("num_workers")
+
         dataloader = DataLoader(
             dataset,
             batch_size=self.model_cfg.get("batch_size", 1),
-            num_workers=self.model_cfg.get("num_workers", 1),
-            collate_fn=lambda x: tuple(zip(*x)),  # handles variable-size targets
+            num_workers=num_workers,
+            collate_fn=lambda batch: tuple(
+                zip(*batch)
+            ),  # handles variable-size targets
         )
 
         # Get iou_threshold from model config, default to 0.5 if not present
         iou_threshold = self.model_cfg.get("iou_threshold", 0.5)
+
+        # Get evaluation_step from model config, default to None (no intermediate updates)
+        evaluation_step = self.model_cfg.get("evaluation_step", None)
+        # If evaluation_step is 0, treat as None (disabled)
+        if evaluation_step == 0:
+            evaluation_step = None
 
         # Init metrics
         metrics_factory = um.DetectionMetricsFactory(
             iou_threshold=iou_threshold, num_classes=self.n_classes
         )
 
+        # Calculate total samples for progress tracking
+        total_samples = len(dataloader.dataset)
+        processed_samples = 0
+
         with torch.no_grad():
-            pbar = tqdm(dataloader, leave=True)
-            for image_ids, images, targets in pbar:
+            # Use tqdm if no progress callback provided, otherwise use regular iteration
+            if progress_callback is None:
+                pbar = tqdm(dataloader, leave=True)
+                iterator = pbar
+            else:
+                iterator = dataloader
+
+            for image_ids, images, targets in iterator:
                 # Defensive check for empty images
                 if not images or any(img.numel() == 0 for img in images):
                     print("Skipping batch: empty image tensor detected.")
@@ -449,7 +484,31 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
                                 )
                             )
 
-        return metrics_factory.get_metrics_dataframe(self.ontology)
+                    processed_samples += 1
+
+                    # Call progress callback if provided
+                    if progress_callback is not None:
+                        progress_callback(processed_samples, total_samples)
+
+                    # Call metrics callback if provided and evaluation_step is reached
+                    if (
+                        metrics_callback is not None
+                        and evaluation_step is not None
+                        and processed_samples % evaluation_step == 0
+                    ):
+                        # Get intermediate metrics
+                        intermediate_metrics = metrics_factory.get_metrics_dataframe(
+                            self.ontology
+                        )
+                        metrics_callback(
+                            intermediate_metrics, processed_samples, total_samples
+                        )
+
+        # Return both the DataFrame and the metrics factory for access to precision-recall curves
+        return {
+            "metrics_df": metrics_factory.get_metrics_dataframe(self.ontology),
+            "metrics_factory": metrics_factory,
+        }
 
     def get_computational_cost(
         self, image_size: Tuple[int], runs: int = 30, warm_up_runs: int = 5
