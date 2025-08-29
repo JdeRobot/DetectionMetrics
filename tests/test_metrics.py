@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from detectionmetrics.utils.metrics import SegmentationMetricsFactory
+from detectionmetrics.utils.segmentation_metrics import SegmentationMetricsFactory
 
 
 @pytest.fixture

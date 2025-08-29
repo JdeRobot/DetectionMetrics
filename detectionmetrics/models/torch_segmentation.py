@@ -16,7 +16,7 @@ from detectionmetrics.datasets import segmentation as dm_segmentation_dataset
 from detectionmetrics.models import segmentation as dm_segmentation_model
 from detectionmetrics.models import torch_model_utils as tmu
 import detectionmetrics.utils.lidar as ul
-import detectionmetrics.utils.metrics as um
+import detectionmetrics.utils.segmentation_metrics as um
 
 
 def data_to_device(
