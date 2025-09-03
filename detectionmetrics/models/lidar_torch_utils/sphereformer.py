@@ -30,7 +30,8 @@ def collate_fn(samples: List[dict]) -> dict:
     coords = torch.cat(coords)
     xyz = torch.cat(xyz)
     feats = torch.cat(feats)
-    labels = torch.cat(labels)
+    if any(label is None for label in labels):
+        labels = None
     offset = torch.IntTensor(offset)
     inds_recons = torch.cat(inds_recons)
 
@@ -74,14 +75,16 @@ def get_sample(
     feats = ul.read_semantickitti_points(points_fname, has_intensity)
     feats = feats[:, : model_cfg["n_feats"]]
 
-    annotated_data = np.fromfile(label_fname, dtype=np.uint32)
-    annotated_data = annotated_data.reshape((-1, 1))
+    labels_in = None
+    if label_fname is not None:
+        annotated_data = np.fromfile(label_fname, dtype=np.uint32)
+        annotated_data = annotated_data.reshape((-1, 1))
+        labels_in = annotated_data.astype(np.uint8).reshape(-1)
 
     xyz = feats[:, :3]
 
     xyz = np.clip(xyz, model_cfg["pc_range"][0], model_cfg["pc_range"][1])
 
-    labels_in = annotated_data.astype(np.uint8).reshape(-1)
 
     coords, xyz, feats, labels, inds_reconstruct = data_prepare(
         xyz,

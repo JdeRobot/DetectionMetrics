@@ -166,7 +166,7 @@ def get_sample(
 
     labels, ref_labels = None, None
     if label_fname is not None:
-        labels = ul.read_semantickitti_label(label_fname)
+        labels, _ = ul.read_semantickitti_label(label_fname)
         labels = labels.reshape((-1, 1)).astype(np.uint8)
         ref_labels = labels.copy()
 
