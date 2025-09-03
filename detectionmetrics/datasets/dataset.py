@@ -226,7 +226,7 @@ class ImageSegmentationDataset(SegmentationDataset):
 
                     # Convert label to new ontology if needed
                     if ontology_conversion_lut is not None:
-                        label = ontology_conversion_lut[label]
+                        label = ontology_conversion_lut[label].astype(np.uint8)
 
                     # Resize label if needed
                     if resize is not None:
