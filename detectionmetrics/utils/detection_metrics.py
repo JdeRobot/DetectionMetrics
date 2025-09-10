@@ -21,6 +21,7 @@ class DetectionMetricsFactory:
         self.raw_data = (
             []
         )  # List of (gt_boxes, gt_labels, pred_boxes, pred_labels, pred_scores)
+        self.gt_counts = defaultdict(int)  # Count of GT instances per class
 
     def update(self, gt_boxes, gt_labels, pred_boxes, pred_labels, pred_scores):
         """Add a batch of predictions and ground truths.
@@ -76,6 +77,10 @@ class DetectionMetricsFactory:
 
         for label in matches:
             self.results[label].extend(matches[label])
+
+        # Update ground truth counts
+        for g_label in gt_labels:
+            self.gt_counts[int(g_label)] += 1
 
     def _match_predictions(
         self,
@@ -148,6 +153,10 @@ class DetectionMetricsFactory:
         ap_values = []
 
         for label, detections in self.results.items():
+            # Skip classes with no ground truth instances
+            if self.gt_counts.get(int(label), 0) == 0:
+                continue
+
             detections = sorted(
                 [d for d in detections if d[0] is not None], key=lambda x: -x[0]
             )
@@ -193,7 +202,6 @@ class DetectionMetricsFactory:
 
         for iou_thresh in iou_thresholds:
             # Reset results for this threshold
-            gt_counts = defaultdict(int)
             threshold_results = defaultdict(list)
 
             # Process all raw data with current threshold
@@ -204,10 +212,6 @@ class DetectionMetricsFactory:
                 pred_labels,
                 pred_scores,
             ) in self.raw_data:
-                # Count ground truth instances
-                for g in gt_labels:
-                    gt_counts[int(g)] += 1
-
                 # Handle empty inputs
                 if len(gt_boxes) == 0 and len(pred_boxes) == 0:
                     continue
@@ -244,7 +248,7 @@ class DetectionMetricsFactory:
             threshold_ap_values = []
             for label, detections in threshold_results.items():
                 # Skip classes with no ground truth instances
-                if gt_counts.get(int(label), 0) == 0:
+                if self.gt_counts.get(int(label), 0) == 0:
                     continue
 
                 detections = sorted(
