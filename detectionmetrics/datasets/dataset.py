@@ -440,8 +440,13 @@ class LiDARSegmentationDataset(SegmentationDataset):
                 indices, counts = np.unique(label, return_counts=True)
                 label_count[indices] += counts.astype(np.uint64)
             else:
-                shutil.copy2(points_fname, os.path.join(outdir, rel_points_fname))
-                shutil.copy2(label_fname, os.path.join(outdir, rel_label_fname))
+                new_points_fname = os.path.join(outdir, rel_points_fname)
+                new_label_fname = os.path.join(outdir, rel_label_fname)
+                try:
+                    shutil.copy2(points_fname, new_points_fname)
+                    shutil.copy2(label_fname, new_label_fname)
+                except shutil.SameFileError:
+                    pass  # Source and destination are the same file
 
             self.dataset.at[sample_name, "points"] = rel_points_fname
             self.dataset.at[sample_name, "label"] = rel_label_fname
