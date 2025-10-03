@@ -296,19 +296,28 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
             tf.argmax(tf.squeeze(x), axis=2).numpy().astype(np.uint8)
         )
 
-    def predict(self, image: Image.Image) -> Image.Image:
+    def predict(
+        self, image: Image.Image, return_sample: bool = False
+    ) -> Union[Image.Image, Tuple[Image.Image, tf.Tensor]]:
         """Perform prediction for a single image
 
         :param image: PIL image
         :type image: Image.Image
-        :return: Segmentation result as PIL image
-        :rtype: Image.Image
+        :param return_sample: Whether to return the sample data along with predictions, defaults to False
+        :type return_sample: bool, optional
+        :return: Segmentation result as a PIL image or a tuple with the segmentation result and the input sample tensor
+        :rtype: Union[Image.Image, Tuple[Image.Image, tf.Tensor]]
         """
-        tensor = self.t_in(image)
-        result = self.predict(tensor)
-        return self.t_out(result)
+        sample = self.t_in(image)
+        result = self.inference(sample)
+        result = self.t_out(result)
 
-    def predict(self, tensor_in: tf.Tensor) -> tf.Tensor:
+        if return_sample:
+            return result, sample
+        else:
+            return result
+
+    def inference(self, tensor_in: tf.Tensor) -> tf.Tensor:
         """Perform inference for a tensor
 
         :param tensor_in: Input point cloud tensor
@@ -390,7 +399,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
         for idx, image, label in pbar:
             idx = idx.numpy()
 
-            pred = self.predict(image)
+            pred = self.inference(image)
 
             # Get valid points masks depending on ignored label indices
             if ignored_label_indices:
@@ -463,7 +472,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
 
         # Measure inference time with GPU synchronization
         for _ in range(warm_up_runs):
-            self.predict(dummy_input)
+            self.inference(dummy_input)
 
         has_gpu = bool(tf.config.list_physical_devices("GPU"))
         inference_times = []
@@ -473,7 +482,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
                 tf.config.experimental.set_synchronous_execution(True)
 
             start_time = time.time()
-            self.predict(dummy_input)
+            self.inference(dummy_input)
 
             if has_gpu:
                 tf.config.experimental.set_synchronous_execution(True)

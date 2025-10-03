@@ -318,19 +318,28 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
             ]
         )
 
-    def predict(self, image: Image.Image) -> Image.Image:
+    def predict(
+        self, image: Image.Image, return_sample: bool = False
+    ) -> Union[Image.Image, Tuple[Image.Image, torch.Tensor]]:
         """Perform prediction for a single image
 
         :param image: PIL image
         :type image: Image.Image
-        :return: Segmentation result as a PIL image
-        :rtype: Image.Image
+        :param return_sample: Whether to return the sample data along with predictions, defaults to False
+        :type return_sample: bool, optional
+        :return: Segmentation result as a PIL image or a tuple with the segmentation result and the input sample tensor
+        :rtype: Union[Image.Image, Tuple[Image.Image, torch.Tensor]]
         """
-        tensor = self.transform_input(image).unsqueeze(0).to(self.device)
-        result = self.predict(tensor)
-        return self.transform_output(result)
+        sample = self.transform_input(image).unsqueeze(0).to(self.device)
+        result = self.inference(sample)
+        result = self.transform_output(result)
 
-    def predict(self, tensor_in: torch.Tensor) -> torch.Tensor:
+        if return_sample:
+            return result, sample
+        else:
+            return result
+
+    def inference(self, tensor_in: torch.Tensor) -> torch.Tensor:
         """Perform inference for a tensor
 
         :param tensor_in: Input point cloud tensor
@@ -425,7 +434,7 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
             pbar = tqdm(dataloader, leave=True)
             for idx, image, label in pbar:
                 # Perform inference
-                pred = self.predict(image)
+                pred = self.inference(image)
 
                 # Get valid points masks depending on ignored label indices
                 if ignored_label_indices:
@@ -501,13 +510,13 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
         dummy_tuple = dummy_input if isinstance(dummy_input, tuple) else (dummy_input,)
 
         for _ in range(warm_up_runs):
-            self.predict(dummy_tuple[0])
+            self.inference(dummy_tuple[0])
 
         inference_times = []
         for _ in range(runs):
             torch.cuda.synchronize()
             start_time = time.time()
-            self.predict(dummy_tuple[0])
+            self.inference(dummy_tuple[0])
             torch.cuda.synchronize()
             end_time = time.time()
             inference_times.append(end_time - start_time)
@@ -589,23 +598,30 @@ class TorchLiDARSegmentationModel(dm_model.LiDARSegmentationModel):
         self,
         points_fname: str,
         has_intensity: bool = True,
-    ) -> np.ndarray:
+        return_sample: bool = False,
+    ) -> Union[np.ndarray, Tuple[np.ndarray, Any]]:
         """Perform prediction for a single point cloud
 
         :param points_fname: Point cloud in SemanticKITTI .bin format
         :type points_fname: str
         :param has_intensity: Whether the point cloud has intensity values, defaults to True
         :type has_intensity: bool, optional
-        :return: Segmenation result as a point cloud with label indices
-        :rtype: np.ndarray
+        :param return_sample: Whether to return the sample data along with predictions, defaults to False
+        :type return_sample: bool, optional
+        :return: Segmentation result as a numpy array or a tuple with the segmentation result and the input sample data
+        :rtype: Union[np.ndarray, Tuple[np.ndarray, Any]]
         """
         # Preprocess point cloud
         sample = self._get_sample(
             points_fname, self.model_cfg, has_intensity=has_intensity
         )
-        pred, _, _ = self.inference(sample, self.model, self.model_cfg)
+        result, _, _ = self.inference(sample, self.model, self.model_cfg)
+        result = result.squeeze().cpu().numpy()
 
-        return pred.squeeze().cpu().numpy()
+        if return_sample:
+            return result, sample
+        else:
+            return result
 
     def eval(
         self,
