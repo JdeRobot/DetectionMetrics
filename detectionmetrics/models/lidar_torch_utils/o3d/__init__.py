@@ -42,7 +42,7 @@ def inference(
     model_format = model_cfg["model_format"]
     end_th = model_cfg.get("end_th", 0.5)
 
-    processing_time = {"preprocessing": 0, "inference": 0}
+    processing_time = {"preprocessing": 0, "inference": 0, "postprocessing": 0}
 
     if "kpconv" in model_format:
         transform_input = kpconv.transform_input
