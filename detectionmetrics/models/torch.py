@@ -1,4 +1,5 @@
 import importlib
+import inspect
 import os
 import time
 import tempfile
@@ -9,13 +10,21 @@ import pandas as pd
 from PIL import Image
 import torch
 from torch.utils.data import DataLoader, Dataset
-
 try:
     from torchvision.transforms import v2 as transforms
     from torchvision.transforms.v2 import functional as F
+    from torchvision.transforms.v2.functional import InterpolationMode
 except ImportError:
     from torchvision.transforms import transforms
     from torchvision.transforms import functional as F
+    try:
+        from torchvision.transforms.functional import InterpolationMode
+    except ImportError:
+        from PIL import Image
+        class InterpolationMode:
+            NEAREST = Image.NEAREST
+            BILINEAR = Image.BILINEAR
+            BICUBIC = Image.BICUBIC
 from tqdm import tqdm
 
 from detectionmetrics.datasets import dataset as dm_dataset
@@ -71,7 +80,7 @@ class CustomResize(torch.nn.Module):
     :param height: Target height for resizing
     :type height: Optional[int], optional
     :param interpolation: Interpolation mode for resizing (e.g. NEAREST, BILINEAR)
-    :type interpolation: F.InterpolationMode, defaults to F.InterpolationMode.BILINEAR
+    :type interpolation: InterpolationMode, defaults to InterpolationMode.BILINEAR
     :param closest_divisor: Closest divisor for the target size, defaults to 16. Only applies to the dimension not provided.
     :type closest_divisor: int, optional
     """
@@ -80,7 +89,7 @@ class CustomResize(torch.nn.Module):
         self,
         width: Optional[int] = None,
         height: Optional[int] = None,
-        interpolation: F.InterpolationMode = F.InterpolationMode.BILINEAR,
+        interpolation: InterpolationMode = InterpolationMode.BILINEAR,
         closest_divisor: int = 16,
     ):
         super().__init__()
@@ -263,14 +272,14 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
                 CustomResize(
                     width=self.model_cfg["resize"].get("width", None),
                     height=self.model_cfg["resize"].get("height", None),
-                    interpolation=F.InterpolationMode.BILINEAR,
+                    interpolation=InterpolationMode.BILINEAR,
                 )
             ]
             self.transform_label += [
                 CustomResize(
                     width=self.model_cfg["resize"].get("width", None),
                     height=self.model_cfg["resize"].get("height", None),
-                    interpolation=F.InterpolationMode.NEAREST,
+                    interpolation=InterpolationMode.NEAREST,
                 )
             ]
 
@@ -282,24 +291,40 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
             self.transform_input += [transforms.CenterCrop(crop_size)]
             self.transform_label += [transforms.CenterCrop(crop_size)]
 
+        # Build transforms compatible from 0.8.x → latest
         try:
+            # torchvision >= 0.15 (v2 API)
             self.transform_input += [
                 transforms.ToImage(),
                 transforms.ToDtype(torch.float32, scale=True),
             ]
             self.transform_label += [
                 transforms.ToImage(),
-                transforms.ToDtype(torch.int64),
+                transforms.ToDtype(torch.int64, scale=False),
             ]
-        except AttributeError:  # adapt for older versions of torchvision transforms v2
-            self.transform_input += [
-                transforms.ToImageTensor(),
-                transforms.ConvertDtype(torch.float32),
-            ]
-            self.transform_label += [
-                transforms.ToImageTensor(),
-                transforms.ToDtype(torch.int64),
-            ]
+
+        except Exception:
+            # torchvision < 0.15
+            if hasattr(transforms, "ToImageTensor"):
+                # ~0.10–0.14 era:
+                self.transform_input += [
+                    transforms.ToImageTensor(),
+                    transforms.ConvertDtype(torch.float32),
+                ]
+                self.transform_label += [
+                    transforms.ToImageTensor(),
+                    transforms.ToDtype(torch.int64),
+                ]
+            else:
+                # 0.8.x fallback
+                self.transform_input += [
+                    transforms.ToTensor(),
+                ]
+                self.transform_label += [
+                    transforms.Lambda(
+                        lambda p: torch.from_numpy(np.array(p, dtype=np.int64))
+                    ),
+                ]
 
         if "normalization" in self.model_cfg:
             self.transform_input += [
@@ -340,19 +365,21 @@ class TorchImageSegmentationModel(dm_model.ImageSegmentationModel):
         """
         with torch.no_grad():
             # Perform inference
-            if hasattr(self.model, "inference"):  # e.g. mmsegmentation models
-                tensor_out = self.model.inference(
-                    tensor_in.to(self.device),
-                    [
-                        dict(
-                            ori_shape=tensor_in.shape[2:],
-                            img_shape=tensor_in.shape[2:],
-                            pad_shape=tensor_in.shape[2:],
-                            padding_size=[0, 0, 0, 0],
-                        )
-                    ]
-                    * tensor_in.shape[0],
-                )
+            if hasattr(self.model, "inference"):  # mmsegmentation models
+                tensor_in = tensor_in.to(self.device)
+                meta = [
+                    dict(
+                        ori_shape=tensor_in.shape[2:],
+                        img_shape=tensor_in.shape[2:],
+                        pad_shape=tensor_in.shape[2:],
+                        padding_size=[0, 0, 0, 0],
+                        flip=False,
+                    )
+                ] * tensor_in.shape[0]
+
+                sig = inspect.signature(self.model.inference)
+                kwargs = {"rescale": True} if "rescale" in sig.parameters else {}
+                tensor_out = self.model.inference(tensor_in, meta, **kwargs)
             else:
                 tensor_out = self.model(tensor_in.to(self.device))
 
