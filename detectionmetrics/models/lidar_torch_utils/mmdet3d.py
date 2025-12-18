@@ -91,6 +91,7 @@ def inference(
     sample: dict,
     model: torch.nn.Module,
     model_cfg: dict,
+    ignore_index: Optional[List[int]] = None,
     measure_processing_time: bool = False,
 ) -> Tuple[
     Tuple[torch.Tensor, Optional[torch.Tensor], Optional[List[str]]], Optional[dict]
@@ -105,8 +106,10 @@ def inference(
     :type model_cfg: dict
     :param measure_processing_time: whether to measure processing time, defaults to False
     :type measure_processing_time: bool, optional
+    :param ignore_index: list of class indices to ignore during inference, defaults to None
+    :type ignore_index: Optional[List[int]], optional
     :return: predictions, labels (if available), sample names and optionally processing time
-    :rtype: Tuple[ Tuple[torch.Tensor, Optional[torch.Tensor], Optional[List[str
+    :rtype: Tuple[ Tuple[torch.Tensor, Optional[torch.Tensor], Optional[List[str]]], Optional[dict] ]
     """
     single_sample = not isinstance(sample["data_samples"], list)
     if single_sample:
@@ -133,7 +136,10 @@ def inference(
 
     preds, labels, names = ([], [], []) if has_labels else ([], None, None)
     for output in outputs:
-        preds.append(output.pred_pts_seg.pts_semantic_mask)
+        if ignore_index is not None:
+            output.pts_seg_logits.pts_seg_logits[ignore_index] = -1e9
+        pred = torch.argmax(output.pts_seg_logits.pts_seg_logits, dim=0)
+        preds.append(pred)
         if has_labels:
             labels.append(output.gt_pts_seg.pts_semantic_mask)
             names.append(output.metainfo["sample_id"])

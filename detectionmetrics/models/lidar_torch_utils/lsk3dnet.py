@@ -145,7 +145,7 @@ def get_sample(
     name: Optional[str] = None,
     idx: Optional[int] = None,
     has_intensity: bool = True,
-    measure_processing_time: bool = False
+    measure_processing_time: bool = False,
 ) -> Tuple[dict, Optional[dict]]:
     """Get sample data for mmdetection3d models
 
@@ -237,7 +237,11 @@ def get_sample(
 
 
 def inference(
-    sample: dict, model: torch.nn.Module, model_cfg: dict, measure_processing_time: bool = False
+    sample: dict,
+    model: torch.nn.Module,
+    model_cfg: dict,
+    ignore_index: Optional[List[int]] = None,
+    measure_processing_time: bool = False,
 ) -> Tuple[torch.Tensor, Optional[torch.Tensor], Optional[List[str]]]:
     """Perform inference on a sample using an mmdetection3D model
 
@@ -247,6 +251,8 @@ def inference(
     :type model: torch.nn.Module
     :param model_cfg: model configuration
     :type model_cfg: dict
+    :param ignore_index: list of class indices to ignore during inference, defaults to None
+    :type ignore_index: Optional[List[int]], optional
     :param measure_processing_time: whether to measure processing time, defaults to False
     :type measure_processing_time: bool, optional
     :return: tuple of (predictions, labels, names) and processing time dictionary (if measured)
@@ -269,6 +275,8 @@ def inference(
         end = time.perf_counter()
         processing_time = {"inference_n_voxelization": end - start}
 
+    if ignore_index is not None:
+        pred["logits"][:, ignore_index] = -1e9
     pred["logits"] = torch.argmax(pred["logits"], dim=1)
 
     has_labels = pred["labels"][0] is not None

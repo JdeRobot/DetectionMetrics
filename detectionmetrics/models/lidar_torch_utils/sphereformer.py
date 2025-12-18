@@ -55,7 +55,7 @@ def get_sample(
     name: Optional[str] = None,
     idx: Optional[int] = None,
     has_intensity: bool = True,
-    measure_processing_time: bool = False
+    measure_processing_time: bool = False,
 ) -> Tuple[dict, Optional[dict]]:
     """Get sample data for mmdetection3d models
 
@@ -123,7 +123,11 @@ def get_sample(
 
 
 def inference(
-    sample: dict, model: torch.nn.Module, model_cfg: dict, measure_processing_time: bool = False
+    sample: dict,
+    model: torch.nn.Module,
+    model_cfg: dict,
+    ignore_index: Optional[List[int]] = None,
+    measure_processing_time: bool = False,
 ) -> Tuple[Tuple[torch.Tensor, Optional[torch.Tensor], List[str]], Optional[dict]]:
     """Perform inference on a sample using an mmdetection3D model
 
@@ -135,6 +139,8 @@ def inference(
     :type model_cfg: dict
     :param measure_processing_time: whether to measure processing time, defaults to False
     :type measure_processing_time: bool, optional
+    :param ignore_index: list of class indices to ignore during inference, defaults to None
+    :type ignore_index: Optional[List[int]], optional
     :return: tuple of (predictions, labels, names) and processing time dictionary (if measured)
     :rtype: Tuple[Tuple[torch.Tensor, Optional[torch.Tensor], List[str]], Optional[dict]]
     """
@@ -188,6 +194,8 @@ def inference(
         processing_time["inference"] = end - start
 
     preds = preds[inds_reconstruct, :]
+    if ignore_index is not None:
+        preds[:, ignore_index] = -1e9
     preds = torch.argmax(preds, dim=1)
 
     if measure_processing_time:
