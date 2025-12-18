@@ -5,7 +5,7 @@ from typing import Tuple
 
 import pandas as pd
 
-from detectionmetrics.datasets import dataset as dm_dataset
+from detectionmetrics.datasets import segmentation as dm_segmentation_dataset
 
 
 def build_dataset(
@@ -82,7 +82,9 @@ def build_dataset(
     return dataset, parsed_ontology
 
 
-class WildscenesImageSegmentationDataset(dm_dataset.ImageSegmentationDataset):
+class WildscenesImageSegmentationDataset(
+    dm_segmentation_dataset.ImageSegmentationDataset
+):
     """Specific class for Wildscenes-styled image segmentation datasets. All data can
     be downloaded from the official repo:
     dataset  -> https://data.csiro.au/collection/csiro:61541

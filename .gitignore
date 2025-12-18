@@ -8,3 +8,5 @@ dist
 poetry.lock
 
 local/
+
+.DS_Store

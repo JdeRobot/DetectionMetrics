@@ -9,8 +9,10 @@ sidebar:
 
 ## Image semantic segmentation
 - Datasets:
+    - **[RUGD](http://rugd.vision/)**
     - **[Rellis3D](https://www.unmannedlab.org/research/RELLIS-3D)**
     - **[GOOSE](https://goose-dataset.de/)**
+    - **[WildScenes](https://csiro-robotics.github.io/WildScenes/)**
     - **Custom GAIA format**: *Parquet* file containing samples and labels relative paths and a JSON file with the dataset ontology.
     - **Generic**: simply assumes a different directory per split, different suffixes for samples and labels, and a JSON file containing the dataset ontology.
 - Models:
@@ -52,18 +54,69 @@ sidebar:
 - Datasets:
     - **[Rellis3D](https://www.unmannedlab.org/research/RELLIS-3D)**
     - **[GOOSE](https://goose-dataset.de/)**
+    - **[WildScenes](https://csiro-robotics.github.io/WildScenes/)**
     - **Custom GAIA format**: *Parquet* file containing samples and labels relative paths and a JSON file with the dataset ontology.
     - **Generic**: simply assumes a different directory per split, different suffixes for samples and labels, and a JSON file containing the dataset ontology.
 - Models:
-    - **PyTorch ([TorchScript](https://pytorch.org/docs/stable/jit.html) compiled format and native modules)**. As of now, we have tested RandLA-Net and KPConv from [Open3D-ML](https://github.com/isl-org/Open3D-ML).
+    - **PyTorch ([TorchScript](https://pytorch.org/docs/stable/jit.html) compiled format and native modules)**. As of now, we have tested <a href="https://github.com/isl-org/Open3D-ML">Open3D-ML</a>, <a href="https://github.com/open-mmlab/mmdetection3d">mmdetection3d</a>, <a href="https://github.com/dvlab-research/SphereFormer">SphereFormer</a>, and <a href="https://github.com/FengZicai/LSK3DNet">LSK3DNet</a> models.
         - Input shape: defined by the `input_format` tag.
         - Output shape: `(num_points)`
-        - JSON configuration file format:
+        - JSON configuration file format examples (different depending on the model):
 
         ```json
         {
-            "seed": 42,
-            "input_format": "o3d_randlanet",
+            "model_format": <"o3d_randlanet" | "o3d_kpconv" | "mmdet3d" | "sphereformer" | "lsk3dnet">,
+            "n_feats": <3|4>,  // without/with intensity
+            "seed": <int>,
+            // -- EXTRA PARAMETERS PER MODEL (EXAMPLES) --
+            // o3d kpconv
+            "sampler": "spatially_regular",
+            "min_in_points": 10000,
+            "max_in_points": 20000,
+            "in_radius": 4.0,
+            "recenter": {
+                "dims": [
+                    0,
+                    1,
+                    2
+                ]
+            },
+            "first_subsampling_dl": 0.075,
+            "conv_radius": 2.5,
+            "architecture": [
+                "simple",
+                "resnetb",
+                "resnetb_strided",
+                "resnetb",
+                "resnetb",
+                "resnetb_strided",
+                "resnetb",
+                "resnetb",
+                "resnetb_strided",
+                "resnetb",
+                "resnetb",
+                "resnetb_strided",
+                "resnetb",
+                "nearest_upsample",
+                "unary",
+                "nearest_upsample",
+                "unary",
+                "nearest_upsample",
+                "unary",
+                "nearest_upsample",
+                "unary"
+            ],
+            "num_layers": 5,
+            "num_points": 45056,
+            "grid_size": 0.075,
+            "num_neighbors": 16,
+            "sub_sampling_ratio": [
+                4,
+                4,
+                4,
+                4
+            ],
+            // o3d randlanet
             "sampler": "spatially_regular",
             "recenter": {
                 "dims": [
@@ -71,17 +124,45 @@ sidebar:
                     1
                 ]
             },
-            "ignored_classes": [
-                "void"
-            ],
             "num_points": 45056,
-            "grid_size": 0.06,
+            "grid_size": 0.075,
             "num_neighbors": 16,
             "sub_sampling_ratio": [
                 4,
                 4,
                 4,
                 4
+            ],
+            // sphereformer
+            "voxel_size": [
+                0.05,
+                0.05,
+                0.05
+            ],
+            "voxel_max": 120000,
+            "pc_range": [
+                [
+                    -22,
+                    -17,
+                    -4
+                ],
+                [
+                    30,
+                    18,
+                    13
+                ]
+            ],
+            "xyz_norm": false,
+            // lsk3dnet
+            "min_volume_space": [
+                -120,
+                -120,
+                -6
+            ],
+            "max_volume_space": [
+                120,
+                120,
+                11
             ]
         }
         ```
@@ -91,5 +172,44 @@ sidebar:
 - Computational cost:
     - Number of parameters, average inference time, model size
 
-## Object detection
-Coming soon.
+## Image object detection
+- Datasets:
+    - **[COCO](https://cocodataset.org/)**: Standard COCO format with JSON annotations and image directory structure
+    - **[YOLO](https://docs.ultralytics.com/datasets/detect/)**.
+- Models:
+    - **PyTorch ([TorchScript](https://pytorch.org/docs/stable/jit.html) compiled format and native modules)**:
+        - Input shape: `(batch, channels, height, width)`
+        - Output shape: `(batch, num_detections, 6)` where each detection contains `[x1, y1, x2, y2, confidence, class_id]`
+        - Output shape (torchscript-exported YOLO models): `(num_box_coords + num_classes, num_candidate_boxes)`
+        - JSON configuration file format:
+
+        ```json
+        {
+            "normalization": {
+                "mean": [<r>, <g>, <b>],
+                "std": [<r>, <g>, <b>]
+            },
+            "resize": {  # optional
+                "width": <px>,
+                "height": <px>
+            },
+            "confidence_threshold": <float>,
+            "nms_threshold": <float>,
+            "max_detections_per_image": <int>,
+            "batch_size": <n>,
+            "device": "<cpu|cuda|mps>",
+            "evaluation_step": <int>  # for live progress updates during evaluation
+            "model_format": "<coco|yolo>"
+        }
+        ```
+- Metrics:
+    - Mean Average Precision (mAP), including COCO-style mAP@[0.5:0.95:0.05]
+    - Area Under the Precision-Recall Curve (AUC-PR)
+    - Precision, Recall, F1-Score
+    - Per-class metrics and confusion matrices
+- Computational cost:
+    - Number of parameters, average inference time, model size
+- GUI Support:
+    - Real-time inference visualization
+    - Interactive dataset browsing
+    - Progress tracking during evaluation

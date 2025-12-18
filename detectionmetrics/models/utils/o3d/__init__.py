@@ -10,7 +10,7 @@ except Exception:
     print("Open3D-ML3D not available")
 from sklearn.neighbors import KDTree
 
-from detectionmetrics.models.lidar_torch_utils.o3d import kpconv, randlanet
+from detectionmetrics.models.utils.o3d import randlanet, kpconv
 from detectionmetrics.utils import lidar as ul
 import detectionmetrics.utils.torch as ut
 

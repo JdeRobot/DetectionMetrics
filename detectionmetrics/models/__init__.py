@@ -1,7 +1,7 @@
 REGISTRY = {}
 
 try:
-    from detectionmetrics.models.torch import (
+    from detectionmetrics.models.torch_segmentation import (
         TorchImageSegmentationModel,
         TorchLiDARSegmentationModel,
     )
@@ -10,6 +10,13 @@ try:
     REGISTRY["torch_lidar_segmentation"] = TorchLiDARSegmentationModel
 except ImportError:
     print("Torch not available")
+
+try:
+    from detectionmetrics.models.torch_detection import TorchImageDetectionModel
+
+    REGISTRY["torch_image_detection"] = TorchImageDetectionModel
+except ImportError:
+    print("Torch detection not available")
 
 try:
     from detectionmetrics.models.tensorflow import TensorflowImageSegmentationModel

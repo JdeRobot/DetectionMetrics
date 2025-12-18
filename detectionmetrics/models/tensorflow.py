@@ -11,11 +11,12 @@ from tensorflow import image as tf_image
 from tensorflow import io as tf_io
 from tqdm import tqdm
 
-from detectionmetrics.datasets.dataset import ImageSegmentationDataset
-from detectionmetrics.models.model import ImageSegmentationModel
+from detectionmetrics.datasets.segmentation import ImageSegmentationDataset
+from detectionmetrics.models.segmentation import ImageSegmentationModel
 import detectionmetrics.utils.conversion as uc
 import detectionmetrics.utils.io as uio
-import detectionmetrics.utils.metrics as um
+import detectionmetrics.utils.segmentation_metrics as um
+
 
 tf.config.optimizer.set_experimental_options({"layout_optimizer": False})
 
@@ -414,7 +415,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
             ignored_label_indices.append(eval_ontology[ignored_class]["idx"])
 
         # Init metrics
-        metrics_factory = um.MetricsFactory(n_classes)
+        metrics_factory = um.SegmentationMetricsFactory(n_classes)
 
         # Evaluation loop
         pbar = tqdm(dataset.dataset)
@@ -456,7 +457,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
                         sample_valid_mask = (
                             valid_mask[i] if valid_mask is not None else None
                         )
-                        sample_mf = um.MetricsFactory(n_classes)
+                        sample_mf = um.SegmentationMetricsFactory(n_classes)
                         sample_mf.update(sample_pred, sample_label, sample_valid_mask)
                         sample_df = um.get_metrics_dataframe(sample_mf, eval_ontology)
                         sample_df.to_csv(

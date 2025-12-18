@@ -20,10 +20,10 @@ detectionmetrics.utils.io module
    :undoc-members:
    :show-inheritance:
 
-detectionmetrics.utils.metrics module
+detectionmetrics.utils.segmentation_metrics module
 -------------------------------------
 
-.. automodule:: detectionmetrics.utils.metrics
+.. automodule:: detectionmetrics.utils.segmentation_metrics
    :members:
    :undoc-members:
    :show-inheritance:
