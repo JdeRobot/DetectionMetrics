@@ -51,10 +51,6 @@ class MetricsFactory:
             mask &= valid_mask
 
         # Update confusion matrix
-        if np.count_nonzero(gt >= 16):
-            pass
-
-        # Update confusion matrix
         new_entry = np.bincount(
             self.n_classes * gt[mask].astype(int) + pred[mask].astype(int),
             minlength=self.n_classes**2,
