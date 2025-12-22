@@ -578,19 +578,39 @@ class TorchLiDARSegmentationModel(dm_segmentation_model.LiDARSegmentationModel):
 
         # Init model specific functions
         model_format = self.model_format.split("_")[0]
-        model_utils_module_str = (
-            f"detectionmetrics.models.lidar_torch_utils.{model_format}"
-        )
+        model_utils_module_str = f"detectionmetrics.models.utils.{model_format}"
         try:
             model_utils_module = importlib.import_module(model_utils_module_str)
         except ImportError:
-            raise_unknown_model_format_lidar(model_format)
+            raise_unknown_model_format_lidar(self.model_format)
         self._get_sample = model_utils_module.get_sample
-        self.inference = model_utils_module.inference
+        self._inference = model_utils_module.inference
         if hasattr(model_utils_module, "reset_sampler"):
             self._reset_sampler = model_utils_module.reset_sampler
         else:
             self._reset_sampler = None
+
+    def inference(
+        self,
+        sample: dict,
+        model: torch.nn.Module,
+        model_cfg: dict,
+        measure_processing_time: bool = False,
+    ) -> Tuple[Tuple[torch.Tensor, Optional[torch.Tensor], List[str]], Optional[dict]]:
+        """Perform inference for a sample
+
+        :param sample: Sample data
+        :type sample: dict
+        :param model: PyTorch model
+        :type model: torch.nn.Module
+        :param model_cfg: Dictionary containing model configuration
+        :type model_cfg: dict
+        :param measure_processing_time: whether to measure processing time, defaults to False
+        :type measure_processing_time: bool, optional
+        :return: tuple of (predictions, labels, names) and processing time dictionary (if measured)
+        :rtype: Tuple[Tuple[torch.Tensor, Optional[torch.Tensor], List[str]], Optional[dict]]
+        """
+        return self._inference(sample, model, model_cfg, measure_processing_time)
 
     def predict(
         self,

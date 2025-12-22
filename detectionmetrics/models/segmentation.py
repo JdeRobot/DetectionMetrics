@@ -52,7 +52,7 @@ class SegmentationModel(PerceptionModel):
         raise NotImplementedError
 
     @abstractmethod
-    def predict(self, tensor_in):
+    def inference(self, tensor_in):
         """Perform inference for a tensor
 
         :param tensor_in: Input tensor (image or point cloud)
