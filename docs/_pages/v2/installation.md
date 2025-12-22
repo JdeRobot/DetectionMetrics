@@ -50,3 +50,6 @@ Install your deep learning framework of preference in your environment. We have 
 If you are using LiDAR, Open3D currently requires `torch==2.2*`.
 
 And it's done! You can check the `examples` directory for inspiration and run some of the scripts provided either by activating the created environment using `poetry shell` or directly running `poetry run python examples/<some_python_script.py>`.
+
+### Additional environments
+Some LiDAR segmentation models, such as SphereFormer and LSK3DNet, require a dedicated installation workflow. Refer to [additional_envs/INSTRUCTIONS.md](additional_envs/INSTRUCTIONS.md) for detailed setup instructions.

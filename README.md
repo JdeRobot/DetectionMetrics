@@ -94,6 +94,9 @@ Install your deep learning framework of preference in your environment. We have 
 
 If you are using LiDAR, Open3D currently requires `torch==2.2*`.
 
+### Additional environments
+Some LiDAR segmentation models, such as SphereFormer and LSK3DNet, require a dedicated installation workflow. Refer to [additional_envs/INSTRUCTIONS.md](additional_envs/INSTRUCTIONS.md) for detailed setup instructions.
+
 # Usage
 DetectionMetrics can be used in three ways: through the **interactive GUI** (detection only), as a **Python library**, or via the **command-line interface** (segmentation and detection).
 
