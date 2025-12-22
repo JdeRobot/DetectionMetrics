@@ -166,8 +166,9 @@ Our previous release, ***DetectionMetrics v1***, introduced a versatile suite fo
   doi = {10.3390/s22124575},
 }
 ```
+
 # How to Contribute
 _To make your first contribution, follow this [Guide](https://github.com/JdeRobot/DetectionMetrics/blob/master/CONTRIBUTING.md)._
 
 # Acknowledgements
-Utils for LiDAR segmentation, such as sampling or recentering, are based on [Open3D-ML](https://github.com/isl-org/Open3D-ML).
+LiDAR segmentation support is built upon open-source work from [Open3D-ML](https://github.com/isl-org/Open3D-ML), [mmdetection3d](https://github.com/open-mmlab/mmdetection3d), [SphereFormer](https://github.com/dvlab-research/SphereFormer), and [LSK3DNet](https://github.com/FengZicai/LSK3DNet).
