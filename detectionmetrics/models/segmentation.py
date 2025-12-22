@@ -66,7 +66,7 @@ class SegmentationModel(PerceptionModel):
     def eval(
         self,
         dataset: dm_segentation_dataset.SegmentationDataset,
-        split: str | List[str] = "test",
+        split: Union[str, List[str]] = "test",
         ontology_translation: Optional[str] = None,
         translations_direction: str = "dataset_to_model",
         predictions_outdir: Optional[str] = None,
@@ -136,7 +136,7 @@ class ImageSegmentationModel(SegmentationModel):
     def eval(
         self,
         dataset: dm_segentation_dataset.ImageSegmentationDataset,
-        split: str | List[str] = "test",
+        split: Union[str, List[str]] = "test",
         ontology_translation: Optional[str] = None,
         translations_direction: str = "dataset_to_model",
         predictions_outdir: Optional[str] = None,
@@ -230,7 +230,7 @@ class LiDARSegmentationModel(SegmentationModel):
     def eval(
         self,
         dataset: dm_segentation_dataset.LiDARSegmentationDataset,
-        split: str | List[str] = "test",
+        split: Union[str, List[str]] = "test",
         ontology_translation: Optional[str] = None,
         translations_direction: str = "dataset_to_model",
         predictions_outdir: Optional[str] = None,

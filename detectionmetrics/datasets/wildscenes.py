@@ -159,7 +159,9 @@ class WildscenesImageSegmentationDataset(
         super().__init__(dataset, dataset_dir, ontology)
 
 
-class WildscenesLiDARSegmentationDataset(dm_dataset.LiDARSegmentationDataset):
+class WildscenesLiDARSegmentationDataset(
+    dm_segmentation_dataset.LiDARSegmentationDataset
+):
     """Specific class for Wildscenes-styled LiDAR segmentation datasets. All data can
     be downloaded from the official repo:
     dataset  -> https://data.csiro.au/collection/csiro:61541

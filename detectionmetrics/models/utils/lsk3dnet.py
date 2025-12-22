@@ -243,11 +243,11 @@ def inference(
     ignore_index: Optional[List[int]] = None,
     measure_processing_time: bool = False,
 ) -> Tuple[torch.Tensor, Optional[torch.Tensor], Optional[List[str]]]:
-    """Perform inference on a sample using an mmdetection3D model
+    """Perform inference on a sample using an LSK3DNet model
 
     :param sample: sample data dictionary
     :type sample: dict
-    :param model: mmdetection3D model
+    :param model: LSK3DNet model
     :type model: torch.nn.Module
     :param model_cfg: model configuration
     :type model_cfg: dict

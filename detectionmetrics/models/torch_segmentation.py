@@ -26,7 +26,13 @@ import detectionmetrics.utils.segmentation_metrics as um
 import detectionmetrics.utils.torch as ut
 
 
-AVAILABLE_MODEL_FORMATS_LIDAR = ["o3d_randlanet", "o3d_kpconv", "mmdet3d"]
+AVAILABLE_MODEL_FORMATS_LIDAR = [
+    "o3d_randlanet",
+    "o3d_kpconv",
+    "mmdet3d",
+    "sphereformer",
+    "lsk3dnet",
+]
 
 
 def raise_unknown_model_format_lidar(model_format: str) -> None:
@@ -369,7 +375,7 @@ class TorchImageSegmentationModel(dm_segmentation_model.ImageSegmentationModel):
     def eval(
         self,
         dataset: dm_segmentation_dataset.ImageSegmentationDataset,
-        split: str | List[str] = "test",
+        split: Union[str, List[str]] = "test",
         ontology_translation: Optional[str] = None,
         predictions_outdir: Optional[str] = None,
         results_per_sample: bool = False,
@@ -463,7 +469,9 @@ class TorchImageSegmentationModel(dm_segmentation_model.ImageSegmentationModel):
                             sample_valid_mask = (
                                 valid_mask[i] if valid_mask is not None else None
                             )
-                            sample_mf = um.SegmentationMetricsFactory(n_classes=self.n_classes)
+                            sample_mf = um.SegmentationMetricsFactory(
+                                n_classes=self.n_classes
+                            )
                             sample_mf.update(
                                 sample_pred, sample_label, sample_valid_mask
                             )
@@ -647,7 +655,7 @@ class TorchLiDARSegmentationModel(dm_segmentation_model.LiDARSegmentationModel):
     def eval(
         self,
         dataset: dm_segmentation_dataset.LiDARSegmentationDataset,
-        split: str | List[str] = "test",
+        split: Union[str, List[str]] = "test",
         ontology_translation: Optional[str] = None,
         translation_direction: str = "dataset_to_model",
         predictions_outdir: Optional[str] = None,

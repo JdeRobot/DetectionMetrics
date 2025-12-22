@@ -268,7 +268,7 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
             # Default to 640x640 when no resize is specified
             resize_height = 640
             resize_width = 640
-            
+
         self.transform_input += [
             transforms.Resize(
                 size=(resize_height, resize_width),
@@ -325,7 +325,7 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
     def eval(
         self,
         dataset: dm_detection_dataset.ImageDetectionDataset,
-        split: str | List[str] = "test",
+        split: Union[str, List[str]] = "test",
         ontology_translation: Optional[str] = None,
         predictions_outdir: Optional[str] = None,
         results_per_sample: bool = False,
@@ -337,7 +337,7 @@ class TorchImageDetectionModel(dm_detection_model.ImageDetectionModel):
         :param dataset: Image detection dataset
         :type dataset: ImageDetectionDataset
         :param split: Dataset split(s) to evaluate
-        :type split: str | List[str]
+        :type split: Union[str, List[str]]
         :param ontology_translation: Optional translation for class mapping
         :type ontology_translation: Optional[str]
         :param predictions_outdir: Directory to save predictions, if desired

@@ -33,6 +33,8 @@ def collate_fn(samples: List[dict]) -> dict:
     feats = torch.cat(feats)
     if any(label is None for label in labels):
         labels = None
+    else:
+        labels = torch.cat(labels)
     offset = torch.IntTensor(offset)
     inds_recons = torch.cat(inds_recons)
 
@@ -129,11 +131,11 @@ def inference(
     ignore_index: Optional[List[int]] = None,
     measure_processing_time: bool = False,
 ) -> Tuple[Tuple[torch.Tensor, Optional[torch.Tensor], List[str]], Optional[dict]]:
-    """Perform inference on a sample using an mmdetection3D model
+    """Perform inference on a sample using an SphereFormer model
 
     :param sample: sample data dictionary
     :type sample: dict
-    :param model: mmdetection3D model
+    :param model: SphereFormer model
     :type model: torch.nn.Module
     :param model_cfg: model configuration
     :type model_cfg: dict
