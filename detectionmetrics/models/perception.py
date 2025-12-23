@@ -47,6 +47,7 @@ class PerceptionModel(ABC):
         self.ontology = uio.read_json(ontology_fname)
         self.model_cfg = uio.read_json(model_cfg)
         self.n_classes = len(self.ontology)
+        self.model_cfg["n_classes"] = self.n_classes
 
     @abstractmethod
     def inference(
@@ -90,6 +91,6 @@ class PerceptionModel(ABC):
                 dataset_ontology,
                 self.ontology,
                 ontology_translation,
-                self.model_cfg.get("ignored_classes", []),
+                classes_to_remove=self.model_cfg.get("classes_to_remove", None),
             )
         return lut_ontology

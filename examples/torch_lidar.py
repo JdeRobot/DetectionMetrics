@@ -58,6 +58,13 @@ def parse_args() -> argparse.Namespace:
         help="JSON file containing translation between dataset and model classes",
     )
     parser.add_argument(
+        "--translation_direction",
+        type=str,
+        choices=["dataset_to_model", "model_to_dataset"],
+        default="dataset_to_model",
+        help="Direction of the ontology translation",
+    )
+    parser.add_argument(
         "--predictions_outdir",
         type=str,
         required=False,
@@ -75,16 +82,17 @@ def main():
     dataset = GaiaLiDARSegmentationDataset(args.dataset)
 
     if args.point_cloud is not None:
-        point_cloud = dataset.read_points(args.point_cloud)
-        result = model.inference(point_cloud)
+        result = model.predict(args.point_cloud)
         lut = uc.ontology_to_rgb_lut(model.ontology)
         colors = lut[result] / 255.0
+        point_cloud = dataset.read_points(args.point_cloud)
         ul.view_point_cloud(point_cloud[:, :3], colors)
 
     results = model.eval(
         dataset,
         split=args.split,
         ontology_translation=args.ontology_translation,
+        translation_direction=args.translation_direction,
         predictions_outdir=args.predictions_outdir,
         results_per_sample=args.predictions_outdir is not None,
     )

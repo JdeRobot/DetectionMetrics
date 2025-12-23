@@ -1,19 +1,22 @@
 [tool.poetry]
-name = "detectionmetrics"
-version = "2.4.0"
-description = "Tools for evaluating segmentation and object detection models"
+name = "detectionmetrics-lsk3dnet"
+version = "0.0.0"
+description = "LSK3DNet-compatible version of DetectionMetrics"
 authors = ["JdeRobot", "d.pascualhe <d.pascualhe@gmail.com>"]
 readme = "README.md"
 license = "LICENSE"
+packages = [
+    { include = "detectionmetrics" }
+]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.9"
 tqdm = "^4.65.0"
 pandas = "^2.2.3"
 PyYAML = "^6.0.2"
 pyarrow = "^18.0.0"
 pillow = "^11.0.0"
-numpy = "1.26.4"
+numpy = "1.23.5"
 opencv-python-headless = "^4.10.0.84"
 scikit-learn = "^1.6.0"
 open3d = "^0.19.0"
@@ -21,11 +24,6 @@ addict = "^2.4.0"
 matplotlib = "^3.6.0"
 click = "^8.1.8"
 tensorboard = "^2.18.0"
-pycocotools = { version = "^2.0.7", markers = "sys_platform != 'win32'" }
-pycocotools-windows = { version = "^2.0.0.2", markers = "sys_platform == 'win32'" }
-Streamlit = "1.46.0"
-streamlit-image-select = "^0.6.0"
-supervision = "^0.18.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.10.0"

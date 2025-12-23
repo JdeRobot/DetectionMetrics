@@ -4,7 +4,7 @@ import os
 from PIL import Image
 
 from detectionmetrics.datasets.gaia import GaiaImageSegmentationDataset
-from detectionmetrics.models.tensorflow import TensorflowImageSegmentationModel
+from detectionmetrics.models.tf_segmentation import TensorflowImageSegmentationModel
 import detectionmetrics.utils.conversion as uc
 
 
@@ -73,7 +73,7 @@ def main():
 
     if args.image is not None:
         image = Image.open(args.image).convert("RGB")
-        result = model.inference(image)
+        result = model.predict(image)
         result = uc.label_to_rgb(result, model.ontology)
         result.show()
 

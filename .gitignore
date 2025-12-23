@@ -8,3 +8,6 @@ dist
 poetry.lock
 
 local/
+third_party/
+
+.DS_Store

@@ -19,7 +19,7 @@ except ImportError:
     print("Torch detection not available")
 
 try:
-    from detectionmetrics.models.tensorflow import TensorflowImageSegmentationModel
+    from detectionmetrics.models.tf_segmentation import TensorflowImageSegmentationModel
 
     REGISTRY["tensorflow_image_segmentation"] = TensorflowImageSegmentationModel
 except ImportError:

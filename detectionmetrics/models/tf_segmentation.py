@@ -13,74 +13,12 @@ from tqdm import tqdm
 
 from detectionmetrics.datasets.segmentation import ImageSegmentationDataset
 from detectionmetrics.models.segmentation import ImageSegmentationModel
+import detectionmetrics.utils.conversion as uc
+import detectionmetrics.utils.io as uio
 import detectionmetrics.utils.segmentation_metrics as um
 
+
 tf.config.optimizer.set_experimental_options({"layout_optimizer": False})
-
-
-def get_computational_cost(
-    model: tf.Module,
-    dummy_input: tf.Tensor,
-    model_fname: Optional[str] = None,
-    runs: int = 30,
-    warm_up_runs: int = 5,
-) -> dict:
-    """Get different metrics related to the computational cost of the model
-
-    :param model: Loaded TensorFlow SavedModel
-    :type model: tf.Module
-    :param dummy_input: Dummy input data for the model
-    :type dummy_input: tf.Tensor
-    :param model_fname: Model filename used to measure model size, defaults to None
-    :type model_fname: Optional[str], optional
-    :param runs: Number of runs to measure inference time, defaults to 30
-    :type runs: int, optional
-    :param warm_up_runs: Number of warm-up runs, defaults to 5
-    :type warm_up_runs: int, optional
-    :return: DataFrame containing computational cost information
-    :rtype: pd.DataFrame
-    """
-    # Get model size (if possible) and number of parameters
-    if model_fname is not None:
-        size_mb = sum(
-            os.path.getsize(os.path.join(dirpath, f))
-            for dirpath, _, files in os.walk(model_fname)
-            for f in files
-        )
-        size_mb /= 1024**2
-    else:
-        size_mb = None
-
-    n_params = sum(np.prod(var.shape) for var in model.variables.variables)
-
-    # Measure inference time with GPU synchronization
-    infer = model.signatures["serving_default"]
-    for _ in range(warm_up_runs):
-        _ = infer(dummy_input)
-
-    has_gpu = bool(tf.config.list_physical_devices("GPU"))
-    inference_times = []
-
-    for _ in range(runs):
-        if has_gpu:
-            tf.config.experimental.set_synchronous_execution(True)
-
-        start_time = time.time()
-        _ = infer(dummy_input)
-
-        if has_gpu:
-            tf.config.experimental.set_synchronous_execution(True)
-
-        inference_times.append(time.time() - start_time)
-
-    # Retrieve computational cost information
-    result = {
-        "input_shape": ["x".join(map(str, dummy_input.shape.as_list()))],
-        "n_params": [int(n_params)],
-        "size_mb": [size_mb],
-        "inference_time_s": [np.mean(inference_times)],
-    }
-    return pd.DataFrame.from_dict(result)
 
 
 def resize_image(
@@ -361,33 +299,53 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
             tf.argmax(tf.squeeze(x), axis=2).numpy().astype(np.uint8)
         )
 
-    def inference(self, image: Image.Image) -> Image.Image:
-        """Perform inference for a single image
+    def predict(
+        self, image: Image.Image, return_sample: bool = False
+    ) -> Union[Image.Image, Tuple[Image.Image, tf.Tensor]]:
+        """Perform prediction for a single image
 
         :param image: PIL image
         :type image: Image.Image
-        :return: segmenation result as PIL image
-        :rtype: Image.Image
+        :param return_sample: Whether to return the sample data along with predictions, defaults to False
+        :type return_sample: bool, optional
+        :return: Segmentation result as a PIL image or a tuple with the segmentation result and the input sample tensor
+        :rtype: Union[Image.Image, Tuple[Image.Image, tf.Tensor]]
         """
-        tensor = self.t_in(image)
+        sample = self.t_in(image)
+        result = self.inference(sample)
+        result = self.t_out(result)
 
+        if return_sample:
+            return result, sample
+        else:
+            return result
+
+    def inference(self, tensor_in: tf.Tensor) -> tf.Tensor:
+        """Perform inference for a tensor
+
+        :param tensor_in: Input point cloud tensor
+        :type tensor_in: tf.Tensor
+        :return: Segmentation result as tensor
+        :rtype: tf.Tensor
+        """
         if self.model_type == "native":
-            result = self.model(tensor)
+            tensor_out = self.model(tensor_in, training=False)
         elif self.model_type == "compiled":
-            result = self.model.signatures["serving_default"](tensor)
+            tensor_out = self.model.signatures["serving_default"](tensor_in)
         else:
             raise ValueError("Model type not recognized")
 
-        if isinstance(result, dict):
-            result = list(result.values())[0]
+        if isinstance(tensor_out, dict):
+            tensor_out = list(tensor_out.values())[0]
 
-        return self.t_out(result)
+        return tensor_out
 
     def eval(
         self,
         dataset: ImageSegmentationDataset,
-        split: str | List[str] = "test",
+        split: Union[str, List[str]] = "test",
         ontology_translation: Optional[str] = None,
+        translations_direction: str = "dataset_to_model",
         predictions_outdir: Optional[str] = None,
         results_per_sample: bool = False,
     ) -> pd.DataFrame:
@@ -396,9 +354,11 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
         :param dataset: Image segmentation dataset for which the evaluation will be performed
         :type dataset: ImageSegmentationDataset
         :param split: Split to be used from the dataset, defaults to "test"
-        :type split: str | List[str], optional
+        :type split: Union[str, List[str]], optional
         :param ontology_translation: JSON file containing translation between dataset and model output ontologies
         :type ontology_translation: str, optional
+        :param translations_direction: Direction of the ontology translation. Either "dataset_to_model" or "model_to_dataset", defaults to "dataset_to_model"
+        :type translations_direction: str, optional
         :param predictions_outdir: Directory to save predictions per sample, defaults to None. If None, predictions are not saved.
         :type predictions_outdir: Optional[str], optional
         :param results_per_sample: Whether to store results per sample or not, defaults to False. If True, predictions_outdir must be provided.
@@ -417,8 +377,23 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
             os.makedirs(predictions_outdir, exist_ok=True)
 
         # Build a LUT for transforming ontology if needed
-        lut_ontology = self.get_lut_ontology(dataset.ontology, ontology_translation)
-        dataset_ontology = dataset.ontology
+        eval_ontology = self.ontology
+
+        if ontology_translation is not None:
+            ontology_translation = uio.read_json(ontology_translation)
+            if translations_direction == "dataset_to_model":
+                lut_ontology = uc.get_ontology_conversion_lut(
+                    dataset.ontology, self.ontology, ontology_translation
+                )
+            else:
+                eval_ontology = dataset.ontology
+                lut_ontology = uc.get_ontology_conversion_lut(
+                    self.ontology, dataset.ontology, ontology_translation
+                )
+        else:
+            lut_ontology = None
+
+        n_classes = len(eval_ontology)
 
         # Get Tensorflow dataset
         dataset = ImageSegmentationTensorflowDataset(
@@ -427,7 +402,9 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
             crop=self.model_cfg.get("crop", None),
             batch_size=self.model_cfg.get("batch_size", 1),
             splits=[split] if isinstance(split, str) else split,
-            lut_ontology=lut_ontology,
+            lut_ontology=(
+                lut_ontology if translations_direction == "dataset_to_model" else None
+            ),
             normalization=self.model_cfg.get("normalization", None),
             keep_aspect=self.model_cfg.get("keep_aspect", False),
         )
@@ -435,25 +412,17 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
         # Retrieve ignored label indices
         ignored_label_indices = []
         for ignored_class in self.model_cfg.get("ignored_classes", []):
-            ignored_label_indices.append(dataset_ontology[ignored_class]["idx"])
+            ignored_label_indices.append(eval_ontology[ignored_class]["idx"])
 
         # Init metrics
-        metrics_factory = um.SegmentationMetricsFactory(self.n_classes)
+        metrics_factory = um.SegmentationMetricsFactory(n_classes)
 
         # Evaluation loop
         pbar = tqdm(dataset.dataset)
         for idx, image, label in pbar:
             idx = idx.numpy()
 
-            if self.model_type == "native":
-                pred = self.model(image, training=False)
-            elif self.model_type == "compiled":
-                pred = self.model.signatures["serving_default"](image)
-            else:
-                raise ValueError("Model type not recognized")
-
-            if isinstance(pred, dict):
-                pred = list(pred.values())[0]
+            pred = self.inference(image)
 
             # Get valid points masks depending on ignored label indices
             if ignored_label_indices:
@@ -469,6 +438,13 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
             if valid_mask is not None:
                 valid_mask = tf.squeeze(valid_mask, axis=3).numpy()
 
+            # Convert predictions to dataset ontology if needed
+            if (
+                lut_ontology is not None
+                and translations_direction == "model_to_dataset"
+            ):
+                pred = lut_ontology[pred]
+
             metrics_factory.update(pred, label, valid_mask)
 
             # Store predictions and results per sample if required
@@ -481,16 +457,16 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
                         sample_valid_mask = (
                             valid_mask[i] if valid_mask is not None else None
                         )
-                        sample_mf = um.SegmentationMetricsFactory(n_classes=self.n_classes)
+                        sample_mf = um.SegmentationMetricsFactory(n_classes)
                         sample_mf.update(sample_pred, sample_label, sample_valid_mask)
-                        sample_df = um.get_metrics_dataframe(sample_mf, self.ontology)
+                        sample_df = um.get_metrics_dataframe(sample_mf, eval_ontology)
                         sample_df.to_csv(
                             os.path.join(predictions_outdir, f"{sample_idx}.csv")
                         )
                     pred = Image.fromarray(np.squeeze(pred).astype(np.uint8))
                     pred.save(os.path.join(predictions_outdir, f"{sample_idx}.png"))
 
-        return um.get_metrics_dataframe(metrics_factory, self.ontology)
+        return um.get_metrics_dataframe(metrics_factory, eval_ontology)
 
     def get_computational_cost(
         self,
@@ -508,7 +484,46 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
         :type warm_up_runs: int, optional
         :return: Dictionary containing computational cost information
         """
+        # Generate dummy input
         dummy_input = tf.random.normal([1, *image_size, 3])
-        return get_computational_cost(
-            self.model, dummy_input, self.model_fname, runs, warm_up_runs
-        )
+
+        # Get model size (if possible) and number of parameters
+        if self.model_fname is not None:
+            size_mb = sum(
+                os.path.getsize(os.path.join(dirpath, f))
+                for dirpath, _, files in os.walk(self.model_fname)
+                for f in files
+            )
+            size_mb /= 1024**2
+        else:
+            size_mb = None
+
+        n_params = sum(np.prod(var.shape) for var in self.model.variables.variables)
+
+        # Measure inference time with GPU synchronization
+        for _ in range(warm_up_runs):
+            self.inference(dummy_input)
+
+        has_gpu = bool(tf.config.list_physical_devices("GPU"))
+        inference_times = []
+
+        for _ in range(runs):
+            if has_gpu:
+                tf.config.experimental.set_synchronous_execution(True)
+
+            start_time = time.time()
+            self.inference(dummy_input)
+
+            if has_gpu:
+                tf.config.experimental.set_synchronous_execution(True)
+
+            inference_times.append(time.time() - start_time)
+
+        # Retrieve computational cost information
+        result = {
+            "input_shape": ["x".join(map(str, dummy_input.shape.as_list()))],
+            "n_params": [int(n_params)],
+            "size_mb": [size_mb],
+            "inference_time_s": [np.mean(inference_times)],
+        }
+        return pd.DataFrame.from_dict(result)

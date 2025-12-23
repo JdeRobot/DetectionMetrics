@@ -57,8 +57,4 @@ Emails:
 
 <sergiopaniegoblanco@gmail.com>
 
-<vinay0410sharma@gmail.com>
-
-<justjeevan07@gmail.com>
-
 <josemaria.plaza@gmail.com>

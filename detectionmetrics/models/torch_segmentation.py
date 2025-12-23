@@ -1,6 +1,7 @@
-from collections import defaultdict
+import importlib
 import os
 import time
+import tempfile
 from typing import Any, List, Optional, Tuple, Union
 
 import numpy as np
@@ -8,77 +9,41 @@ import pandas as pd
 from PIL import Image
 import torch
 from torch.utils.data import DataLoader, Dataset
-from torchvision.transforms import v2 as transforms
-from torchvision.transforms.v2 import functional as F
+
+try:
+    from torchvision.transforms import v2 as transforms
+    from torchvision.transforms.v2 import functional as F
+except ImportError:
+    from torchvision.transforms import transforms
+    from torchvision.transforms import functional as F
 from tqdm import tqdm
 
 from detectionmetrics.datasets import segmentation as dm_segmentation_dataset
 from detectionmetrics.models import segmentation as dm_segmentation_model
-from detectionmetrics.models import torch_model_utils as tmu
-import detectionmetrics.utils.lidar as ul
+import detectionmetrics.utils.conversion as uc
+import detectionmetrics.utils.io as uio
 import detectionmetrics.utils.segmentation_metrics as um
+import detectionmetrics.utils.torch as ut
 
 
-def data_to_device(
-    data: Union[tuple, list], device: torch.device
-) -> Union[tuple, list]:
-    """Move provided data to given device (CPU or GPU)
+AVAILABLE_MODEL_FORMATS_LIDAR = [
+    "o3d_randlanet",
+    "o3d_kpconv",
+    "mmdet3d",
+    "sphereformer",
+    "lsk3dnet",
+]
 
-    :param data: Data provided (it can be a single or multiple tensors)
-    :type data: Union[tuple, list]
-    :param device: Device to move data to
-    :type device: torch.device
-    :return: Data moved to device
-    :rtype: Union[tuple, list]
+
+def raise_unknown_model_format_lidar(model_format: str) -> None:
+    """Raise an exception if the LiDAR model format is unknown
+
+    :param input_format: Model format string
+    :type input_format: str
     """
-    if isinstance(data, (tuple, list)):
-        return type(data)(
-            d.to(device) if torch.is_tensor(d) else data_to_device(d, device)
-            for d in data
-        )
-    elif torch.is_tensor(data):
-        return data.to(device)
-    else:
-        return data
-
-
-def get_data_shape(data: Union[tuple, list]) -> Union[tuple, list]:
-    """Get the shape of the provided data
-
-    :param data: Data provided (it can be a single or multiple tensors)
-    :type data: Union[tuple, list]
-    :return: Data shape
-    :rtype: Union[tuple, list]
-    """
-    if isinstance(data, (tuple, list)):
-        return type(data)(
-            tuple(d.shape) if torch.is_tensor(d) else get_data_shape(d) for d in data
-        )
-    elif torch.is_tensor(data):
-        return tuple(data.shape)
-    else:
-        return tuple(data.shape)
-
-
-def unsqueeze_data(data: Union[tuple, list], dim: int = 0) -> Union[tuple, list]:
-    """Unsqueeze provided data along given dimension
-
-    :param data: Data provided (it can be a single or multiple tensors)
-    :type data: Union[tuple, list]
-    :param dim: Dimension that will be unsqueezed, defaults to 0
-    :type dim: int, optional
-    :return: Unsqueezed data
-    :rtype: Union[tuple, list]
-    """
-    if isinstance(data, (tuple, list)):
-        return type(data)(
-            d.unsqueeze(dim) if torch.is_tensor(d) else unsqueeze_data(d, dim)
-            for d in data
-        )
-    elif torch.is_tensor(data):
-        return data.unsqueeze(dim)
-    else:
-        return data
+    msg = f"Unknown model format: {model_format}."
+    msg += f"Available formats: {AVAILABLE_MODEL_FORMATS_LIDAR}"
+    raise Exception(msg)
 
 
 def get_computational_cost(
@@ -103,63 +68,6 @@ def get_computational_cost(
     :return: DataFrame containing computational cost information
     :rtype: pd.DataFrame
     """
-    # Get model size if possible
-    if model_fname is not None:
-        size_mb = os.path.getsize(model_fname) / 1024**2
-    else:
-        size_mb = None
-
-    # Measure inference time with GPU synchronization
-    dummy_tuple = dummy_input if isinstance(dummy_input, tuple) else (dummy_input,)
-
-    for _ in range(warm_up_runs):
-        if hasattr(model, "inference"):  # e.g. mmsegmentation models
-            model.inference(
-                *dummy_tuple,
-                [
-                    dict(
-                        ori_shape=dummy_tuple[0].shape[2:],
-                        img_shape=dummy_tuple[0].shape[2:],
-                        pad_shape=dummy_tuple[0].shape[2:],
-                        padding_size=[0, 0, 0, 0],
-                    )
-                ]
-                * dummy_tuple[0].shape[0],
-            )
-        else:
-            model(*dummy_tuple)
-
-    inference_times = []
-    for _ in range(runs):
-        torch.cuda.synchronize()
-        start_time = time.time()
-        if hasattr(model, "inference"):  # e.g. mmsegmentation models
-            model.inference(
-                *dummy_tuple,
-                [
-                    dict(
-                        ori_shape=dummy_tuple[0].shape[2:],
-                        img_shape=dummy_tuple[0].shape[2:],
-                        pad_shape=dummy_tuple[0].shape[2:],
-                        padding_size=[0, 0, 0, 0],
-                    )
-                ]
-                * dummy_tuple[0].shape[0],
-            )
-        else:
-            model(*dummy_tuple)
-        torch.cuda.synchronize()
-        end_time = time.time()
-        inference_times.append(end_time - start_time)
-
-    result = {
-        "input_shape": ["x".join(map(str, get_data_shape(dummy_input)))],
-        "n_params": [sum(p.numel() for p in model.parameters())],
-        "size_mb": [size_mb],
-        "inference_time_s": [np.mean(inference_times)],
-    }
-
-    return pd.DataFrame.from_dict(result)
 
 
 class CustomResize(torch.nn.Module):
@@ -256,16 +164,14 @@ class ImageSegmentationTorchDataset(Dataset):
 
 
 class LiDARSegmentationTorchDataset(Dataset):
-    """Dataset for LiDAR segmentation PyTorch models
+    """Dataset for LiDAR segmentation PyTorch - Open3D-ML models
 
     :param dataset: LiDAR segmentation dataset
     :type dataset: LiDARSegmentationDataset
     :param model_cfg: Dictionary containing model configuration
     :type model_cfg: dict
-    :param preprocess: Function for preprocessing point clouds
-    :type preprocess: callable
-    :param n_classes: Number of classes estimated by the model
-    :type n_classes: int
+    :param get_sample: Function for loading sample data
+    :type get_sample: callable
     :param splits: Splits to be used from the dataset, defaults to ["test"]
     :type splits: str, optional
     """
@@ -274,59 +180,33 @@ class LiDARSegmentationTorchDataset(Dataset):
         self,
         dataset: dm_segmentation_dataset.LiDARSegmentationDataset,
         model_cfg: dict,
-        preprocess: callable,
-        n_classes: int,
+        get_sample: callable,
         splits: str = ["test"],
     ):
         # Filter split and make filenames global
         dataset.dataset = dataset.dataset[dataset.dataset["split"].isin(splits)]
         self.dataset = dataset
         self.dataset.make_fname_global()
-
         self.model_cfg = model_cfg
-        self.preprocess = preprocess
-        self.n_classes = n_classes
+        self.get_sample = get_sample
 
     def __len__(self):
         return len(self.dataset.dataset)
 
-    def __getitem__(
-        self, idx: int
-    ) -> Tuple[Union[np.ndarray, torch.Tensor], Union[np.ndarray, torch.Tensor]]:
-        """Prepare sample data: point cloud and label
+    def __getitem__(self, idx: int):
+        """Prepare sample data
 
         :param idx: Sample index
         :type idx: int
-        :return: Point cloud and corresponding label tensor or numpy arrays
-        :rtype: Tuple[np.ndarray, np.ndarray,]
+        :return: Sample data required by the model
         """
-        # Read the point cloud and its labels
-        points = self.dataset.read_points(self.dataset.dataset.iloc[idx]["points"])
-        semantic_label, instance_label = self.dataset.read_label(
-            self.dataset.dataset.iloc[idx]["label"]
-        )
-
-        # Preprocess point cloud
-        preprocessed_points, search_tree, projected_indices = self.preprocess(
-            points, self.model_cfg
-        )
-
-        # Init sampler
-        sampler = None
-        if "sampler" in self.model_cfg:
-            sampler = ul.Sampler(
-                preprocessed_points.shape[0],
-                search_tree,
-                self.model_cfg["sampler"],
-                self.n_classes,
-            )
-
-        return (
-            self.dataset.dataset.index[idx],
-            preprocessed_points,
-            projected_indices,
-            (semantic_label, instance_label),
-            sampler,
+        return self.get_sample(
+            points_fname=self.dataset.dataset.iloc[idx]["points"],
+            model_cfg=self.model_cfg,
+            label_fname=self.dataset.dataset.iloc[idx]["label"],
+            name=self.dataset.dataset.index[idx],
+            idx=idx,
+            has_intensity=self.dataset.has_intensity,
         )
 
 
@@ -440,43 +320,62 @@ class TorchImageSegmentationModel(dm_segmentation_model.ImageSegmentationModel):
             ]
         )
 
-    def inference(self, image: Image.Image) -> Image.Image:
-        """Perform inference for a single image
+    def predict(
+        self, image: Image.Image, return_sample: bool = False
+    ) -> Union[Image.Image, Tuple[Image.Image, torch.Tensor]]:
+        """Perform prediction for a single image
 
         :param image: PIL image
         :type image: Image.Image
-        :return: segmenation result as PIL image
-        :rtype: Image.Image
+        :param return_sample: Whether to return the sample data along with predictions, defaults to False
+        :type return_sample: bool, optional
+        :return: Segmentation result as a PIL image or a tuple with the segmentation result and the input sample tensor
+        :rtype: Union[Image.Image, Tuple[Image.Image, torch.Tensor]]
         """
-        tensor = self.transform_input(image).unsqueeze(0).to(self.device)
+        sample = self.transform_input(image).unsqueeze(0).to(self.device)
+        result = self.inference(sample)
+        result = self.transform_output(result)
 
+        if return_sample:
+            return result, sample
+        else:
+            return result
+
+    def inference(self, tensor_in: torch.Tensor) -> torch.Tensor:
+        """Perform inference for a tensor
+
+        :param tensor_in: Input point cloud tensor
+        :type tensor_in: torch.Tensor
+        :return: Segmentation result as tensor
+        :rtype: torch.Tensor
+        """
         with torch.no_grad():
             # Perform inference
             if hasattr(self.model, "inference"):  # e.g. mmsegmentation models
-                result = self.model.inference(
-                    tensor.to(self.device),
+                tensor_out = self.model.inference(
+                    tensor_in.to(self.device),
                     [
                         dict(
-                            ori_shape=tensor.shape[2:],
-                            img_shape=tensor.shape[2:],
-                            pad_shape=tensor.shape[2:],
+                            ori_shape=tensor_in.shape[2:],
+                            img_shape=tensor_in.shape[2:],
+                            pad_shape=tensor_in.shape[2:],
                             padding_size=[0, 0, 0, 0],
                         )
                     ]
-                    * tensor.shape[0],
+                    * tensor_in.shape[0],
                 )
             else:
-                result = self.model(tensor.to(self.device))
+                tensor_out = self.model(tensor_in.to(self.device))
 
-            if isinstance(result, dict):
-                result = result["out"]
+            if isinstance(tensor_out, dict):
+                tensor_out = tensor_out["out"]
 
-        return self.transform_output(result)
+        return tensor_out
 
     def eval(
         self,
         dataset: dm_segmentation_dataset.ImageSegmentationDataset,
-        split: str | List[str] = "test",
+        split: Union[str, List[str]] = "test",
         ontology_translation: Optional[str] = None,
         predictions_outdir: Optional[str] = None,
         results_per_sample: bool = False,
@@ -486,7 +385,7 @@ class TorchImageSegmentationModel(dm_segmentation_model.ImageSegmentationModel):
         :param dataset: Image segmentation dataset for which the evaluation will be performed
         :type dataset: ImageSegmentationDataset
         :param split: Split or splits to be used from the dataset, defaults to "test"
-        :type split: str | List[str], optional
+        :type split: Union[str, List[str]], optional
         :param ontology_translation: JSON file containing translation between dataset and model output ontologies
         :type ontology_translation: str, optional
         :param predictions_outdir: Directory to save predictions per sample, defaults to None. If None, predictions are not saved.
@@ -507,7 +406,9 @@ class TorchImageSegmentationModel(dm_segmentation_model.ImageSegmentationModel):
             os.makedirs(predictions_outdir, exist_ok=True)
 
         # Build a LUT for transforming ontology if needed
-        lut_ontology = self.get_lut_ontology(dataset.ontology, ontology_translation)
+        lut_ontology = uc.get_ontology_conversion_lut(
+            self.ontology, dataset.ontology, ontology_translation
+        )
         lut_ontology = torch.tensor(lut_ontology, dtype=torch.int64).to(self.device)
 
         # Retrieve ignored label indices
@@ -537,24 +438,7 @@ class TorchImageSegmentationModel(dm_segmentation_model.ImageSegmentationModel):
             pbar = tqdm(dataloader, leave=True)
             for idx, image, label in pbar:
                 # Perform inference
-                if hasattr(self.model, "inference"):  # e.g. mmsegmentation models
-                    pred = self.model.inference(
-                        image.to(self.device),
-                        [
-                            dict(
-                                ori_shape=image.shape[2:],
-                                img_shape=image.shape[2:],
-                                pad_shape=image.shape[2:],
-                                padding_size=[0, 0, 0, 0],
-                            )
-                        ]
-                        * image.shape[0],
-                    )
-                else:
-                    pred = self.model(image.to(self.device))
-
-                if isinstance(pred, dict):
-                    pred = pred["out"]
+                pred = self.inference(image)
 
                 # Get valid points masks depending on ignored label indices
                 if ignored_label_indices:
@@ -585,7 +469,9 @@ class TorchImageSegmentationModel(dm_segmentation_model.ImageSegmentationModel):
                             sample_valid_mask = (
                                 valid_mask[i] if valid_mask is not None else None
                             )
-                            sample_mf = um.SegmentationMetricsFactory(n_classes=self.n_classes)
+                            sample_mf = um.SegmentationMetricsFactory(
+                                n_classes=self.n_classes
+                            )
                             sample_mf.update(
                                 sample_pred, sample_label, sample_valid_mask
                             )
@@ -617,10 +503,38 @@ class TorchImageSegmentationModel(dm_segmentation_model.ImageSegmentationModel):
         :type warm_up_runs: int, optional
         :return: Dictionary containing computational cost information
         """
+        # Create dummy input
         dummy_input = torch.randn(1, 3, *image_size).to(self.device)
-        return get_computational_cost(
-            self.model, dummy_input, self.model_fname, runs, warm_up_runs
-        )
+
+        # Get model size if possible
+        if self.model_fname is not None:
+            size_mb = os.path.getsize(self.model_fname) / 1024**2
+        else:
+            size_mb = None
+
+        # Measure inference time with GPU synchronization
+        dummy_tuple = dummy_input if isinstance(dummy_input, tuple) else (dummy_input,)
+
+        for _ in range(warm_up_runs):
+            self.inference(dummy_tuple[0])
+
+        inference_times = []
+        for _ in range(runs):
+            torch.cuda.synchronize()
+            start_time = time.time()
+            self.inference(dummy_tuple[0])
+            torch.cuda.synchronize()
+            end_time = time.time()
+            inference_times.append(end_time - start_time)
+
+        result = {
+            "input_shape": ["x".join(map(str, ut.get_data_shape(dummy_input)))],
+            "n_params": [sum(p.numel() for p in self.model.parameters())],
+            "size_mb": [size_mb],
+            "inference_time_s": [np.mean(inference_times)],
+        }
+
+        return pd.DataFrame.from_dict(result)
 
 
 class TorchLiDARSegmentationModel(dm_segmentation_model.LiDARSegmentationModel):
@@ -655,6 +569,7 @@ class TorchLiDARSegmentationModel(dm_segmentation_model.LiDARSegmentationModel):
                 print("Model is not a TorchScript model. Loading as a PyTorch module.")
                 model = torch.load(model, map_location=self.device)
                 model_type = "native"
+
         # Otherwise, check that it is a PyTorch module
         elif isinstance(model, torch.nn.Module):
             model_fname = None
@@ -666,98 +581,83 @@ class TorchLiDARSegmentationModel(dm_segmentation_model.LiDARSegmentationModel):
         super().__init__(model, model_type, model_cfg, ontology_fname, model_fname)
         self.model = self.model.to(self.device).eval()
 
+        # Init specific attributes and update model configuration
+        self.model_format = self.model_cfg["model_format"]
+
         # Init model specific functions
-        if self.model_cfg["input_format"] == "o3d_randlanet":  # Open3D RandLaNet
-            self.preprocess = tmu.preprocess
-            self.transform_input = tmu.o3d_randlanet.transform_input
-            self.update_probs = tmu.o3d_randlanet.update_probs
-            self.model_cfg["num_layers"] = sum(1 for _ in self.model.decoder.children())
-        if self.model_cfg["input_format"] == "o3d_kpconv":  # Open3D KPConv
-            self.preprocess = tmu.preprocess
-            self.transform_input = tmu.o3d_kpconv.transform_input
-            self.update_probs = tmu.o3d_kpconv.update_probs
+        model_format = self.model_format.split("_")[0]
+        model_utils_module_str = f"detectionmetrics.models.utils.{model_format}"
+        try:
+            model_utils_module = importlib.import_module(model_utils_module_str)
+        except ImportError:
+            raise_unknown_model_format_lidar(self.model_format)
+        self._get_sample = model_utils_module.get_sample
+        self._inference = model_utils_module.inference
+        if hasattr(model_utils_module, "reset_sampler"):
+            self._reset_sampler = model_utils_module.reset_sampler
         else:
-            self.preprocess = tmu.preprocess
-            self.transform_input = tmu.transform_input
-            self.update_probs = tmu.update_probs
+            self._reset_sampler = None
 
-        # Transformation for output labels
-        self.transform_output = (
-            lambda x: torch.argmax(x.squeeze(), axis=-1).squeeze().to(torch.uint8)
-        )
+    def inference(
+        self,
+        sample: dict,
+        model: torch.nn.Module,
+        model_cfg: dict,
+        measure_processing_time: bool = False,
+    ) -> Tuple[Tuple[torch.Tensor, Optional[torch.Tensor], List[str]], Optional[dict]]:
+        """Perform inference for a sample
 
-    def inference(self, points: np.ndarray) -> np.ndarray:
-        """Perform inference for a single point cloud
+        :param sample: Sample data
+        :type sample: dict
+        :param model: PyTorch model
+        :type model: torch.nn.Module
+        :param model_cfg: Dictionary containing model configuration
+        :type model_cfg: dict
+        :param measure_processing_time: whether to measure processing time, defaults to False
+        :type measure_processing_time: bool, optional
+        :return: tuple of (predictions, labels, names) and processing time dictionary (if measured)
+        :rtype: Tuple[Tuple[torch.Tensor, Optional[torch.Tensor], List[str]], Optional[dict]]
+        """
+        return self._inference(sample, model, model_cfg, measure_processing_time)
 
-        :param points: Point cloud xyz array
-        :type points: np.ndarray
-        :return: Segmenation result as a point cloud with label indices
-        :rtype: np.ndarray
+    def predict(
+        self,
+        points_fname: str,
+        has_intensity: bool = True,
+        return_sample: bool = False,
+        ignore_index: Optional[List[int]] = None,
+    ) -> Union[np.ndarray, Tuple[np.ndarray, Any]]:
+        """Perform prediction for a single point cloud
+
+        :param points_fname: Point cloud in SemanticKITTI .bin format
+        :type points_fname: str
+        :param has_intensity: Whether the point cloud has intensity values, defaults to True
+        :type has_intensity: bool, optional
+        :param return_sample: Whether to return the sample data along with predictions, defaults to False
+        :type return_sample: bool, optional
+        :param ignore_index: List of class indices to ignore during prediction, defaults to None
+        :type ignore_index: Optional[List[int]], optional
+        :return: Segmentation result as a numpy array or a tuple with the segmentation result and the input sample data
+        :rtype: Union[np.ndarray, Tuple[np.ndarray, Any]]
         """
         # Preprocess point cloud
-        points, search_tree, projected_indices = self.preprocess(points, self.model_cfg)
+        sample = self._get_sample(
+            points_fname, self.model_cfg, has_intensity=has_intensity
+        )
+        result, _, _ = self.inference(sample, self.model, self.model_cfg, ignore_index)
+        result = result.squeeze().cpu().numpy()
 
-        # Init sampler if needed
-        sampler = None
-        if "sampler" in self.model_cfg:
-            end_th = self.model_cfg.get("end_th", 0.5)
-            sampler = ul.Sampler(
-                points.shape[0],
-                search_tree,
-                self.model_cfg["sampler"],
-                self.n_classes,
-            )
-
-        # Iterate over the sampled point cloud until all points reach the end threshold.
-        # If no sampler is provided, the inference is performed in a single step.
-        infer_complete = False
-        while not infer_complete:
-            # Get model input data
-            input_data, selected_indices = self.transform_input(
-                points, self.model_cfg, sampler
-            )
-            input_data = data_to_device(input_data, self.device)
-            if self.model_cfg["input_format"] != "o3d_kpconv":
-                input_data = unsqueeze_data(input_data)
-
-            # Perform inference
-            with torch.no_grad():
-                result = self.model(*input_data)
-
-                # TODO: check if this is consistent across different models
-                if isinstance(result, dict):
-                    result = result["out"]
-
-            # Update probabilities if sampler is used
-            if sampler is not None:
-                if self.model_cfg["input_format"] == "o3d_kpconv":
-                    sampler.test_probs = self.update_probs(
-                        result,
-                        selected_indices,
-                        sampler.test_probs,
-                        lengths=input_data[-1],
-                    )
-                else:
-                    sampler.test_probs = self.update_probs(
-                        result,
-                        selected_indices,
-                        sampler.test_probs,
-                        self.n_classes,
-                    )
-                if sampler.p[sampler.p > end_th].shape[0] == sampler.p.shape[0]:
-                    result = sampler.test_probs[projected_indices]
-                    infer_complete = True
-            else:
-                result = result.squeeze().cpu()[projected_indices].cuda()
-                infer_complete = True
-
-        return self.transform_output(result).cpu().numpy()
+        if return_sample:
+            return result, sample
+        else:
+            return result
 
     def eval(
         self,
         dataset: dm_segmentation_dataset.LiDARSegmentationDataset,
-        split: str | List[str] = "test",
+        split: Union[str, List[str]] = "test",
         ontology_translation: Optional[str] = None,
+        translation_direction: str = "dataset_to_model",
         predictions_outdir: Optional[str] = None,
         results_per_sample: bool = False,
     ) -> pd.DataFrame:
@@ -766,9 +666,11 @@ class TorchLiDARSegmentationModel(dm_segmentation_model.LiDARSegmentationModel):
         :param dataset: LiDAR segmentation dataset for which the evaluation will be performed
         :type dataset: LiDARSegmentationDataset
         :param split: Split or splits to be used from the dataset, defaults to "test"
-        :type split: str | List[str], optional
+        :type split: Union[str, List[str]], optional
         :param ontology_translation: JSON file containing translation between dataset and model output ontologies
-        :type ontology_translation: str, optional
+        :type ontology_translation: Optional[str], optional
+        :param translation_direction: Direction of the ontology translation, either 'dataset_to_model' or 'model_to_dataset', defaults to "dataset_to_model"
+        :type translation_direction: str, optional
         :param predictions_outdir: Directory to save predictions per sample, defaults to None. If None, predictions are not saved.
         :type predictions_outdir: Optional[str], optional
         :param results_per_sample: Whether to store results per sample or not, defaults to False. If True, predictions_outdir must be provided.
@@ -787,75 +689,50 @@ class TorchLiDARSegmentationModel(dm_segmentation_model.LiDARSegmentationModel):
             os.makedirs(predictions_outdir, exist_ok=True)
 
         # Build a LUT for transforming ontology if needed
-        lut_ontology = self.get_lut_ontology(dataset.ontology, ontology_translation)
-        lut_ontology = torch.tensor(lut_ontology, dtype=torch.int64).to(self.device)
+        eval_ontology = self.ontology
+
+        if ontology_translation is not None:
+            ontology_translation = uio.read_json(ontology_translation)
+            if translation_direction == "dataset_to_model":
+                lut_ontology = uc.get_ontology_conversion_lut(
+                    dataset.ontology, self.ontology, ontology_translation
+                )
+            else:
+                eval_ontology = dataset.ontology
+                lut_ontology = uc.get_ontology_conversion_lut(
+                    self.ontology, dataset.ontology, ontology_translation
+                )
+
+            lut_ontology = torch.tensor(lut_ontology, dtype=torch.int64).to(self.device)
+        else:
+            lut_ontology = None
+
+        n_classes = len(eval_ontology)
 
         # Retrieve ignored label indices
         ignored_label_indices = []
         for ignored_class in self.model_cfg.get("ignored_classes", []):
             ignored_label_indices.append(dataset.ontology[ignored_class]["idx"])
 
-        # Get PyTorch dataset (no dataloader to avoid complexity with batching samplers)
+        # Get PyTorch dataloader
         dataset = LiDARSegmentationTorchDataset(
             dataset,
-            model_cfg=self.model_cfg,
-            preprocess=self.preprocess,
-            n_classes=self.n_classes,
+            self.model_cfg,
+            self._get_sample,
             splits=[split] if isinstance(split, str) else split,
         )
 
         # Init metrics
-        metrics_factory = um.SegmentationMetricsFactory(self.n_classes)
+        metrics_factory = um.SegmentationMetricsFactory(n_classes)
 
         # Evaluation loop
-        end_th = self.model_cfg.get("end_th", 0.5)
         with torch.no_grad():
             pbar = tqdm(dataset, total=len(dataset), leave=True)
-            for idx, points, projected_indices, (label, _), sampler in pbar:
-                # Iterate over the sampled point cloud until all points reach the end
-                # threshold. If no sampler is provided, the inference is performed in a
-                # single step.
-                infer_complete = False
-                while not infer_complete:
-                    # Get model input data
-                    input_data, selected_indices = self.transform_input(
-                        points, self.model_cfg, sampler
-                    )
-                    input_data = data_to_device(input_data, self.device)
-                    if self.model_cfg["input_format"] != "o3d_kpconv":
-                        input_data = unsqueeze_data(input_data)
-
-                    # Perform inference
-                    pred = self.model(*input_data)
-
-                    # TODO: check if this is consistent across different models
-                    if isinstance(pred, dict):
-                        pred = pred["out"]
-
-                    if sampler is not None:
-                        if self.model_cfg["input_format"] == "o3d_kpconv":
-                            sampler.test_probs = self.update_probs(
-                                pred,
-                                selected_indices,
-                                sampler.test_probs,
-                                lengths=input_data[-1],
-                            )
-                        else:
-                            sampler.test_probs = self.update_probs(
-                                pred,
-                                selected_indices,
-                                sampler.test_probs,
-                                self.n_classes,
-                            )
-                        if sampler.p[sampler.p > end_th].shape[0] == sampler.p.shape[0]:
-                            pred = sampler.test_probs[projected_indices]
-                            infer_complete = True
-                    else:
-                        pred = pred.squeeze().cpu()[projected_indices].cuda()
-                        infer_complete = True
+            for sample in pbar:
+                # Perform inference
+                pred, label, name = self.inference(sample, self.model, self.model_cfg)
 
                 # Get valid points masks depending on ignored label indices
-                label = torch.tensor(label, device=self.device)
                 if ignored_label_indices:
                     valid_mask = torch.ones_like(label, dtype=torch.bool)
                     for idx in ignored_label_indices:
@@ -865,70 +742,118 @@ class TorchLiDARSegmentationModel(dm_segmentation_model.LiDARSegmentationModel):
 
                 # Convert labels if needed
                 if lut_ontology is not None:
-                    label = lut_ontology[label]
+                    if translation_direction == "dataset_to_model":
+                        label = lut_ontology[label]
+                    else:
+                        pred = lut_ontology[pred]
 
                 # Prepare data and update metrics factory
-                label = label.cpu().unsqueeze(0).numpy()
-                pred = self.transform_output(pred)
-                pred = pred.cpu().unsqueeze(0).to(torch.int64).numpy()
+                label = label.cpu().numpy()
+                pred = pred.cpu().numpy()
                 if valid_mask is not None:
-                    valid_mask = valid_mask.cpu().unsqueeze(0).numpy()
+                    valid_mask = valid_mask.cpu().numpy()
 
                 metrics_factory.update(pred, label, valid_mask)
 
                 # Store predictions and results per sample if required
                 if predictions_outdir is not None:
-                    for i, (sample_idx, sample_pred, sample_label) in enumerate(
-                        zip(idx, pred, label)
+                    for i, (sample_name, sample_pred, sample_label) in enumerate(
+                        zip(name, pred, label)
                     ):
                         if results_per_sample:
                             sample_valid_mask = (
                                 valid_mask[i] if valid_mask is not None else None
                             )
-                            sample_mf = um.SegmentationMetricsFactory(n_classes=self.n_classes)
+                            sample_mf = um.SegmentationMetricsFactory(n_classes)
                             sample_mf.update(
                                 sample_pred, sample_label, sample_valid_mask
                             )
                             sample_df = um.get_metrics_dataframe(
-                                sample_mf, self.ontology
+                                sample_mf, eval_ontology
                             )
                             sample_df.to_csv(
-                                os.path.join(predictions_outdir, f"{sample_idx}.csv")
+                                os.path.join(predictions_outdir, f"{sample_name}.csv")
                             )
                         pred.tofile(
-                            os.path.join(predictions_outdir, f"{sample_idx}.bin")
+                            os.path.join(predictions_outdir, f"{sample_name}.bin")
                         )
 
-        return um.get_metrics_dataframe(metrics_factory, self.ontology)
+        return um.get_metrics_dataframe(metrics_factory, eval_ontology)
 
-    def get_computational_cost(self, runs: int = 30, warm_up_runs: int = 5) -> dict:
+    def get_computational_cost(
+        self,
+        point_cloud_range: Tuple[int, int, int, int, int, int] = (
+            -50,
+            -50,
+            -5,
+            50,
+            50,
+            5,
+        ),
+        num_points: int = 100000,
+        has_intensity: bool = False,
+        runs: int = 30,
+        warm_up_runs: int = 5,
+    ) -> dict:
         """Get different metrics related to the computational cost of the model
 
+        :param point_cloud_range: Point cloud range (meters), defaults to (-50, -50, -5, 50, 50, 5)
+        :type point_cloud_range: Tuple[int, int, int, int, int, int], optional
+        :param num_points: Number of points in the point cloud, defaults to 100000
+        :type num_points: int, optional
+        :param has_intensity: Whether the point cloud has intensity values, defaults to False
+        :type has_intensity: bool, optional
         :param runs: Number of runs to measure inference time, defaults to 30
         :type runs: int, optional
         :param warm_up_runs: Number of warm-up runs, defaults to 5
         :type warm_up_runs: int, optional
         :return: Dictionary containing computational cost information
         """
-        # Build dummy input data (process is a bit complex for LiDAR models)
-        dummy_points = np.random.rand(1000000, 4)
-        dummy_points, search_tree, _ = self.preprocess(dummy_points, self.model_cfg)
+        # Build dummy point cloud using uniform distribution
+        dummy_points = np.random.uniform(
+            low=point_cloud_range[0:3],
+            high=point_cloud_range[3:6],
+            size=(num_points, 3 + int(has_intensity)),
+        ).astype(np.float32)
 
-        sampler = None
-        if "sampler" in self.model_cfg:
-            sampler = ul.Sampler(
-                point_cloud_size=dummy_points.shape[0],
-                search_tree=search_tree,
-                sampler_name=self.model_cfg["sampler"],
-                num_classes=self.n_classes,
+        # Store in a secure temporary .bin file
+        with tempfile.NamedTemporaryFile(suffix=".bin") as tmp_file:
+            dummy_points.tofile(tmp_file.name)
+            sample = self._get_sample(
+                tmp_file.name, self.model_cfg, has_intensity=has_intensity
             )
 
-        dummy_input, _ = self.transform_input(dummy_points, self.model_cfg, sampler)
-        dummy_input = data_to_device(dummy_input, self.device)
-        if self.model_cfg["input_format"] != "o3d_kpconv":
-            dummy_input = unsqueeze_data(dummy_input)
+        # Get model size if possible
+        if self.model_fname is not None:
+            size_mb = os.path.getsize(self.model_fname) / 1024**2
+        else:
+            size_mb = None
 
-        # Get computational cost
-        return get_computational_cost(
-            self.model, dummy_input, self.model_fname, runs, warm_up_runs
-        )
+        # Measure inference time with GPU synchronization
+        for _ in range(warm_up_runs):
+            if "o3d" in self.model_format:  # reset random sampling for Open3D-ML models
+                subsampled_points, _, sampler, _, _, _ = sample
+                self._reset_sampler(sampler, subsampled_points.shape[0], self.n_classes)
+
+            self.inference(sample, self.model, self.model_cfg)
+
+        inference_times = []
+        for _ in range(runs):
+            if "o3d" in self.model_format:  # reset random sampling for Open3D-ML models
+                subsampled_points, _, sampler, _, _, _ = sample
+                self._reset_sampler(sampler, subsampled_points.shape[0], self.n_classes)
+            torch.cuda.synchronize()
+            start_time = time.time()
+            self.inference(sample, self.model, self.model_cfg)
+            torch.cuda.synchronize()
+            end_time = time.time()
+            inference_times.append(end_time - start_time)
+
+        result = {
+            "input_shape": ["x".join(map(str, ut.get_data_shape(dummy_points)))],
+            "n_params": [sum(p.numel() for p in self.model.parameters())],
+            "size_mb": [size_mb],
+            "inference_time_s": [np.mean(inference_times)],
+        }
+
+        return pd.DataFrame.from_dict(result)

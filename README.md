@@ -41,8 +41,8 @@ Now, we're excited to introduce ***DetectionMetrics v2***! While retaining the f
   </tr>
   <tr>
     <td>LiDAR</td>
-    <td>Rellis3D, GOOSE, custom GAIA format</td>
-    <td>PyTorch (tested with RandLA-Net and KPConv from <a href="https://github.com/isl-org/Open3D-ML">Open3D-ML</a>)</td>  </tr>
+    <td>Rellis3D, GOOSE, WildScenes, custom GAIA format</td>
+    <td>PyTorch (tested with <a href="https://github.com/isl-org/Open3D-ML">Open3D-ML</a>, <a href="https://github.com/open-mmlab/mmdetection3d">mmdetection3d</a>, <a href="https://github.com/dvlab-research/SphereFormer">SphereFormer</a>, and <a href="https://github.com/FengZicai/LSK3DNet">LSK3DNet</a> models)</td>  </tr>
   <tr>
     <td>Object detection</td>
     <td>Image</td>
@@ -93,6 +93,9 @@ Install your deep learning framework of preference in your environment. We have 
 - `tensorflow==2.16.1`
 
 If you are using LiDAR, Open3D currently requires `torch==2.2*`.
+
+### Additional environments
+Some LiDAR segmentation models, such as SphereFormer and LSK3DNet, require a dedicated installation workflow. Refer to [additional_envs/INSTRUCTIONS.md](additional_envs/INSTRUCTIONS.md) for detailed setup instructions.
 
 # Usage
 DetectionMetrics can be used in three ways: through the **interactive GUI** (detection only), as a **Python library**, or via the **command-line interface** (segmentation and detection).
@@ -166,8 +169,9 @@ Our previous release, ***DetectionMetrics v1***, introduced a versatile suite fo
   doi = {10.3390/s22124575},
 }
 ```
+
 # How to Contribute
 _To make your first contribution, follow this [Guide](https://github.com/JdeRobot/DetectionMetrics/blob/master/CONTRIBUTING.md)._
 
 # Acknowledgements
-Utils for LiDAR segmentation, such as sampling or recentering, are based on [Open3D-ML](https://github.com/isl-org/Open3D-ML).
+LiDAR segmentation support is built upon open-source work from [Open3D-ML](https://github.com/isl-org/Open3D-ML), [mmdetection3d](https://github.com/open-mmlab/mmdetection3d), [SphereFormer](https://github.com/dvlab-research/SphereFormer), and [LSK3DNet](https://github.com/FengZicai/LSK3DNet).

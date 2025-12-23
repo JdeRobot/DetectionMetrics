@@ -49,8 +49,8 @@ Now, we're excited to introduce ***DetectionMetrics v2***! While retaining the f
   </tr>
   <tr>
     <td>LiDAR</td>
-    <td>Rellis3D, GOOSE, custom GAIA format</td>
-    <td>PyTorch (tested with RandLA-Net and KPConv from <a href="https://github.com/isl-org/Open3D-ML">Open3D-ML</a>)</td>  </tr>
+    <td>Rellis3D, GOOSE, WildScenes, custom GAIA format</td>
+    <td>PyTorch (tested with <a href="https://github.com/isl-org/Open3D-ML">Open3D-ML</a>, <a href="https://github.com/open-mmlab/mmdetection3d">mmdetection3d</a>, <a href="https://github.com/dvlab-research/SphereFormer">SphereFormer</a>, and <a href="https://github.com/FengZicai/LSK3DNet">LSK3DNet</a> models)</td>  </tr>
   <tr>
     <td>Object detection</td>
     <td>Image</td>
