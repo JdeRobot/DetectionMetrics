@@ -152,7 +152,7 @@ timm==0.6.12
 tinycss2==1.2.1
 torch-scatter==2.1.0
 torchmetrics==0.5.0
-tornado==6.2
+tornado==6.5
 tqdm==4.64.1
 traitlets==5.9.0
 trimesh==3.21.3
