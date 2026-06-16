@@ -41,7 +41,18 @@ def parse_split(ctx, param, value):
 @click.option(
     "--dataset_format",
     type=click.Choice(
-        ["gaia", "rellis3d", "goose", "generic", "rugd", "coco"],
+        [
+            "gaia",
+            "rellis3d",
+            "goose",
+            "generic",
+            "rugd",
+            "coco",
+            "cityscapes",
+            "nuimages",
+            "yolo",
+            "wildscenes",
+        ],
         case_sensitive=False,
     ),
     show_default=True,
