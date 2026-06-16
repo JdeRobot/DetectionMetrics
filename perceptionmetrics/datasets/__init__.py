@@ -19,8 +19,12 @@ from perceptionmetrics.datasets.rellis3d import (
     Rellis3DLiDARSegmentationDataset,
 )
 from perceptionmetrics.datasets.rugd import RUGDImageSegmentationDataset
-from perceptionmetrics.datasets.wildscenes import WildscenesImageSegmentationDataset
+from perceptionmetrics.datasets.wildscenes import (
+    WildscenesImageSegmentationDataset,
+    WildscenesLiDARSegmentationDataset,
+)
 from perceptionmetrics.datasets.cityscapes import CityscapesImageSegmentationDataset
+from perceptionmetrics.datasets.yolo import YOLODataset
 
 try:
     from perceptionmetrics.datasets.coco import CocoDataset
@@ -40,10 +44,11 @@ REGISTRY = {
     "rellis3d_lidar_segmentation": Rellis3DLiDARSegmentationDataset,
     "rugd_image_segmentation": RUGDImageSegmentationDataset,
     "wildscenes_image_segmentation": WildscenesImageSegmentationDataset,
+    "wildscenes_lidar_segmentation": WildscenesLiDARSegmentationDataset,
     "cityscapes_image_segmentation": CityscapesImageSegmentationDataset,
     "nuimages_image_segmentation": NuImagesSegmentationDataset,
-    "nuimages_detection": NuImagesDetectionDataset,
-    "cityscapes_image_segmentation": CityscapesImageSegmentationDataset,
+    "nuimages_image_detection": NuImagesDetectionDataset,
+    "yolo_image_detection": YOLODataset,
 }
 
 if CocoDataset is not None:
