@@ -1,3 +1,4 @@
+from typing import OrderedDict
 from glob import glob
 import logging
 import os
@@ -30,13 +31,13 @@ def build_dataset(
 
     # Check that image directory exists
     if dataset_dir is None:
-        dataset_dir = dataset_info["path"]
+        dataset_dir = dataset_info.get("path")
     assert os.path.isdir(dataset_dir), f"Dataset directory not found: {dataset_dir}"
 
     # Build ontology from dataset configuration
-
     ontology = {}
     names = dataset_info["names"]
+
     # Support both list and dictionary formats for YOLO datasets
     if isinstance(names, list):
         names = {i: name for i, name in enumerate(names)}
@@ -47,34 +48,87 @@ def build_dataset(
         }
 
     # Build dataset DataFrame
-    rows = []
+    dataset = OrderedDict()
     for split in ["train", "val", "test"]:
-        split_path = dataset_info.get(split)
-        if not split_path:
+        split_paths = dataset_info.get(split)
+        if not split_paths:
             logging.warning(
                 "Split '%s' is missing or has no path defined in '%s'; skipping.",
                 split,
                 dataset_fname,
             )
             continue
-        images_dir = os.path.join(dataset_dir, split_path)
-        labels_dir = os.path.join(dataset_dir, split_path.replace("images", "labels"))
-        for label_fname in glob(os.path.join(labels_dir, "*.txt")):
-            label_basename = os.path.basename(label_fname)
-            image_basename = label_basename.replace(".txt", f".{im_ext}")
-            image_fname = os.path.join(images_dir, image_basename)
-            if not os.path.isfile(image_fname):
-                continue
 
-            rows.append(
-                {
-                    "image": os.path.join("images", split, image_basename),
-                    "annotation": os.path.join("labels", split, label_basename),
-                    "split": split,
-                }
-            )
+        if isinstance(split_paths, str):
+            split_paths = [split_paths]
 
-    dataset = pd.DataFrame(rows)
+        def _make_path_abs(p: str) -> str:
+            """Make path absolute if it is relative"""
+            return os.path.join(dataset_dir, p) if not os.path.isabs(p) else p
+
+        def _add_to_dataset(image_fname: str, label_fname: str, split: str) -> None:
+            """Add a sample to the dataset DataFrame"""
+            if os.path.isfile(image_fname) and os.path.isfile(label_fname):
+                sample_name = os.path.basename(image_fname).split(".")[0]
+                dataset[sample_name] = (
+                    os.path.relpath(image_fname, dataset_dir),
+                    os.path.relpath(label_fname, dataset_dir),
+                    split,
+                )
+
+        for sp in split_paths:
+            sp = _make_path_abs(sp)
+
+            # Parse as txt file containing list of image paths
+            if sp.endswith(".txt"):
+                if not os.path.isfile(sp):
+                    continue
+
+                with open(sp, "r") as f:
+                    image_lines = [
+                        line.strip() for line in f.readlines() if line.strip()
+                    ]
+
+                for image_rel in image_lines:
+                    image_rel = image_rel.replace("./", "")
+                    image_fname = _make_path_abs(image_rel)
+
+                    images_dir, labels_dir = (
+                        f"{os.sep}images{os.sep}",
+                        f"{os.sep}labels{os.sep}",
+                    )
+                    if images_dir in image_fname:
+                        label_fname = (
+                            labels_dir.join(image_fname.rsplit(images_dir, 1)).rsplit(
+                                ".", 1
+                            )[0]
+                            + ".txt"
+                        )
+                    else:
+                        label_fname = image_fname.rsplit(".", 1)[0] + ".txt"
+
+                    _add_to_dataset(image_fname, label_fname, split)
+
+            else:
+                if "images" in sp:
+                    labels_dir = sp.replace("images", "labels")
+                else:
+                    labels_dir = os.path.join(
+                        dataset_dir, "labels", os.path.basename(sp)
+                    )
+
+                if not os.path.isdir(labels_dir):
+                    continue
+
+                for label_fname in glob(os.path.join(labels_dir, "*.txt")):
+                    label_basename = os.path.basename(label_fname)
+                    image_basename = label_basename.replace(".txt", f".{im_ext}")
+                    image_fname = os.path.join(images_dir, image_basename)
+
+                    _add_to_dataset(image_fname, label_fname, split)
+
+    cols = ["image", "annotation", "split"]
+    dataset = pd.DataFrame.from_dict(dataset, orient="index", columns=cols)
     dataset.attrs = {"ontology": ontology}
 
     return dataset, ontology, dataset_dir
@@ -105,7 +159,7 @@ class YOLODataset(ImageDetectionDataset):
 
     def read_annotation(
         self, fname: str, image_size: Optional[Tuple[int, int]] = None
-    ) -> Tuple[List[List[float]], List[int], List[int]]:
+    ) -> Tuple[List[List[float]], List[int]]:
         """Return bounding boxes, and category indices for a given image ID.
 
         :param fname: Annotation path
