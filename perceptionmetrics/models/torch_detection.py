@@ -270,7 +270,7 @@ class TorchImageDetectionModel(detection_model.ImageDetectionModel):
             def __init__(self, model):
                 super().__init__()
                 self.inner_model = model
-            
+
             # Handle input precision, tuple extraction, and output precision
             def forward(self, x):
                 out = self.inner_model(x)
@@ -381,7 +381,6 @@ class TorchImageDetectionModel(detection_model.ImageDetectionModel):
         :return: Dictionary with keys 'boxes', 'labels', 'scores'
         :rtype: Dict[str, torch.Tensor]
         """
-        tensor_in = tensor_in.to(self.device, dtype=self.model_dtype)
         if self.closest_divisor is not None:
             tensor_in, (orig_h, orig_w) = pad_to_closest_divisor(
                 tensor_in, self.closest_divisor
@@ -499,7 +498,7 @@ class TorchImageDetectionModel(detection_model.ImageDetectionModel):
                     print("Skipping batch: empty image tensor detected.")
                     continue
 
-                images = torch.stack(images).to(self.device, dtype=self.model_dtype)
+                images = torch.stack(images).to(self.device)
 
                 if self.closest_divisor is not None:
                     images, (orig_h, orig_w) = pad_to_closest_divisor(
