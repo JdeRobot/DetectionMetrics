@@ -171,7 +171,7 @@ with st.sidebar:
             if enable_resize:
                 resize_strategy = st.radio(
                     "Resize Strategy",
-                    ["Fixed Dimensions", "Min Side"],
+                    ["Min Side", "Max Side", "Fixed Dimensions"],
                     key="resize_strategy",
                     horizontal=True,
                     label_visibility="collapsed",
@@ -199,7 +199,7 @@ with st.sidebar:
                             key="resize_width",
                             help="Width to resize images for inference",
                         )
-                else:
+                elif resize_strategy == "Min Side":
                     st.number_input(
                         "Min Side",
                         min_value=1,
@@ -209,6 +209,34 @@ with st.sidebar:
                         key="min_side",
                         help="Minimum size of the shorter side of the image",
                     )
+                elif resize_strategy == "Max Side":
+                    st.number_input(
+                        "Max Side",
+                        min_value=1,
+                        max_value=4096,
+                        value=640,
+                        step=1,
+                        key="max_side",
+                        help="Maximum size of the longer side of the image",
+                    )
+                else:
+                    st.error("Invalid resize strategy selected")
+
+            # Pad to closest multiple
+            enable_pad = st.checkbox(
+                "Enable Padding to Closest Multiple", value=True, key="enable_pad"
+            )
+
+            if enable_pad:
+                st.number_input(
+                    "Divisor",
+                    min_value=1,
+                    max_value=128,
+                    value=32,
+                    step=1,
+                    key="pad_divisor",
+                    help="Pad image dimensions to the closest multiple of this value",
+                )
 
             # Crop Logic
             enable_crop = st.checkbox("Enable Center Crop", key="enable_crop")
@@ -303,9 +331,21 @@ with st.sidebar:
                                 "height": resize_height,
                                 "width": resize_width,
                             }
-                        else:
+                        elif resize_strategy == "Min Side":
                             min_side = int(st.session_state.get("min_side", 640))
                             resize_cfg = {"min_side": min_side}
+                        elif resize_strategy == "Max Side":
+                            max_side = int(st.session_state.get("max_side", 640))
+                            resize_cfg = {"max_side": max_side}
+                        else:
+                            st.error("Invalid resize strategy selected")
+
+                    if enable_pad:
+                        pad_divisor = int(st.session_state.get("pad_divisor", 32))
+                        if resize_cfg is not None:
+                            resize_cfg["closest_divisor"] = pad_divisor
+                        else:
+                            resize_cfg = {"closest_divisor": pad_divisor}
 
                     config_data = {
                         "confidence_threshold": confidence_threshold,
