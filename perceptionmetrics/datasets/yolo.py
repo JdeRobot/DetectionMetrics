@@ -123,7 +123,7 @@ def build_dataset(
                 for label_fname in glob(os.path.join(labels_dir, "*.txt")):
                     label_basename = os.path.basename(label_fname)
                     image_basename = label_basename.replace(".txt", f".{im_ext}")
-                    image_fname = os.path.join(images_dir, image_basename)
+                    image_fname = os.path.join(sp, image_basename)
 
                     _add_to_dataset(image_fname, label_fname, split)
 
