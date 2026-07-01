@@ -264,13 +264,13 @@ class TorchImageDetectionModel(detection_model.ImageDetectionModel):
 
         # Init parent class
         super().__init__(model, model_type, model_cfg, ontology_fname, model_fname)
-        
+
         # Define the Wrapper with DType Alignment
         class DetectionModelWrapper(torch.nn.Module):
             def __init__(self, model):
                 super().__init__()
                 self.inner_model = model
-
+            
             # Handle input precision, tuple extraction, and output precision
             def forward(self, x):
                 out = self.inner_model(x)

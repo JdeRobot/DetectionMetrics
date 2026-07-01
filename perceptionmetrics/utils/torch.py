@@ -103,24 +103,25 @@ def get_resize_args(resize_cfg: dict) -> dict:
     max_side = resize_cfg.get("max_side")
 
     if fixed_h is not None and fixed_w is not None:
-        if min_side is not None:
+        if min_side is not None or max_side is not None:
             raise ValueError(
-                "Resize config cannot satisfy both fixed dimensions (width/height) and min_side. They are mutually exclusive."
+                "Resize config cannot satisfy both fixed dimensions (width/height) and "
+                "min_side/max_side. They are mutually exclusive."
             )
         resize_args["size"] = (fixed_h, fixed_w)
-    elif min_side is not None:
+    elif min_side is not None or max_side is not None:
         resize_args["size"] = min_side
+        resize_args["max_size"] = max_side
         if fixed_h is not None or fixed_w is not None:
             raise ValueError(
-                "Resize config cannot satisfy both fixed dimensions (width/height) and min_side. They are mutually exclusive."
+                "Resize config cannot satisfy both fixed dimensions (width/height) and "
+                "min_side/max_side. They are mutually exclusive."
             )
     else:
         raise ValueError(
-            "Resize config must contain either 'height' and 'width' or 'min_side' and 'max_side'."
+            "Resize config must contain either 'height' and 'width' or 'min_side' "
+            "and/or 'max_side'."
         )
-
-    if max_side is not None:
-        resize_args["max_size"] = max_side
 
     return resize_args
 
