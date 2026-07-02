@@ -74,9 +74,7 @@ def inference_tab():
         with st.spinner("Running inference..."):
             try:
                 image = Image.open(image_file).convert("RGB")
-                predictions, sample_tensor = st.session_state.detection_model.predict(
-                    image, return_sample=True
-                )
+                predictions = st.session_state.detection_model.predict(image)
 
                 label_map = getattr(
                     st.session_state.detection_model, "idx_to_class_name", None
