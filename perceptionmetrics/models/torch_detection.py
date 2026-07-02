@@ -270,7 +270,7 @@ class TorchImageDetectionModel(detection_model.ImageDetectionModel):
             def __init__(self, model):
                 super().__init__()
                 self.inner_model = model
-            
+
             # Handle input precision, tuple extraction, and output precision
             def forward(self, x):
                 out = self.inner_model(x)
