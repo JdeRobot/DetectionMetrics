@@ -1,7 +1,11 @@
 import streamlit as st
 from tabs.tasks.image_detection.dataset_viewer import render_image_detection_viewer
-from tabs.tasks.image_segmentation.dataset_viewer import render_image_segmentation_viewer
-from tabs.tasks.lidar_segmentation.dataset_viewer import render_lidar_segmentation_viewer   
+from tabs.tasks.image_segmentation.dataset_viewer import (
+    render_image_segmentation_viewer,
+)
+from tabs.tasks.lidar_segmentation.dataset_viewer import (
+    render_lidar_segmentation_viewer,
+)
 
 
 def dataset_viewer_tab():

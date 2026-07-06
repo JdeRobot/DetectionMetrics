@@ -16,6 +16,7 @@ def browse_predictions_outdir():
 
 
 def render_image_detection_evaluator():
+    """Render the image detection evaluator tab in Streamlit."""
     st.header("Evaluator")
     st.markdown("Evaluate your model on the loaded dataset using PerceptionMetrics.")
 
@@ -109,7 +110,9 @@ def render_image_detection_evaluator():
                 "<div style='margin-bottom: 1.75rem;'></div>", unsafe_allow_html=True
             )
             st.button(
-                "Browse", on_click=browse_predictions_outdir, key="browse_preds_outdir"
+                "Browse",
+                on_click=browse_predictions_outdir,
+                key="browse_preds_outdir",
             )
 
         predictions_outdir_input = st.session_state.get("predictions_outdir")

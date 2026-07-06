@@ -9,14 +9,23 @@ from tabs.tasks.utils import browse_folder
 
 
 def browse_dataset_path():
-    st.session_state.dataset_path = browse_folder()
+    folder = browse_folder()
+    if folder:
+        st.session_state.dataset_path = folder
 
 
 def render_image_detection_sidebar(available_devices):
+    """Render the sidebar for the image detection task in Streamlit.
+    :param available_devices: List of available devices for model inference
+    :type available_devices: list
+    """
+
     with st.expander("Image Detection Dataset", expanded=True):
         col1, col2 = st.columns(2)
         with col1:
-            st.selectbox("Type", ["COCO", "YOLO"], key="dataset_type") # split into two columns
+            st.selectbox(
+                "Type", ["COCO", "YOLO"], key="dataset_type"
+            )  # split into two columns
         with col2:
             st.selectbox("Split", ["train", "val", "test"], key="split")
 
@@ -25,10 +34,14 @@ def render_image_detection_sidebar(available_devices):
             st.text_input("Dataset Folder", key="dataset_path")
         with col2:
             st.markdown(
-                "<div style='margin-bottom: 1.75rem;'></div>", # add some spacing to align with the text input
+                "<div style='margin-bottom: 1.75rem;'></div>",  # add some spacing to align with the text input
                 unsafe_allow_html=True,
             )
-            st.button("Browse", on_click=browse_dataset_path) # add a button to browse for the dataset folder
+            st.button(
+                "Browse",
+                on_click=browse_dataset_path,
+                key="browse_detection_dataset_path",
+            )
 
         if st.session_state.get("dataset_type", "COCO") == "YOLO":
             st.file_uploader(
@@ -57,7 +70,7 @@ def render_image_detection_sidebar(available_devices):
             ["Manual Configuration", "Upload Config File"],
             key="config_option",
             horizontal=True,
-        ) # radio button to select between manual configuration and uploading a config file
+        )  # radio button to select between manual configuration and uploading a config file
         if (
             st.session_state.get("config_option", "Manual Configuration")
             == "Upload Config File"
@@ -80,7 +93,12 @@ def render_image_detection_sidebar(available_devices):
         ):
             load_image_detection_model()
 
+
 def _render_manual_detection_model_config(available_devices):
+    """Render the manual configuration options for the image detection model in the sidebar.
+    :param available_devices: List of available devices for model inference
+    :type available_devices: list
+    """
     col1, col2 = st.columns(2)
     with col1:
         st.slider(
@@ -113,8 +131,7 @@ def _render_manual_detection_model_config(available_devices):
             ["torchvision", "YOLO"],
             index=(
                 0
-                if st.session_state.get("model_format", "torchvision")
-                == "torchvision"
+                if st.session_state.get("model_format", "torchvision") == "torchvision"
                 else 1
             ),
             key="model_format",
@@ -207,7 +224,9 @@ def _render_manual_detection_model_config(available_devices):
                 help="Center crop width",
             )
 
+
 def load_image_detection_model():
+    """Load the image detection model based on the provided configuration and ontology files."""
     from perceptionmetrics.models.torch_detection import TorchImageDetectionModel
 
     model_file = st.session_state.get("model_file")
@@ -241,7 +260,12 @@ def load_image_detection_model():
                     st.session_state.detection_model_loaded = False
                     st.error(f"Failed to load model: {e}")
 
+
 def _write_detection_config() -> Optional[str]:
+    """Write the detection configuration to a temporary JSON file based on the selected configuration method.
+    :return: Path to the temporary JSON configuration file or None if an error occurred
+    :rtype: Optional[str]
+    """
     config_option = st.session_state.get("config_option", "Manual Configuration")
     config_file = (
         st.session_state.get("config_file")
@@ -267,7 +291,12 @@ def _write_detection_config() -> Optional[str]:
         st.error(f"Failed to prepare configuration: {e}")
         return None
 
+
 def _manual_detection_config() -> dict:
+    """Generate a configuration dictionary based on the manual configuration options in the sidebar.
+    :return: Configuration dictionary
+    :rtype: dict
+    """
     resize_cfg = None
     if st.session_state.get("enable_resize", True):
         resize_strategy = st.session_state.get("resize_strategy", "Fixed Dimensions")
@@ -284,9 +313,7 @@ def _manual_detection_config() -> dict:
             st.session_state.get("confidence_threshold", 0.5)
         ),
         "nms_threshold": float(st.session_state.get("nms_threshold", 0.5)),
-        "max_detections_per_image": int(
-            st.session_state.get("max_detections", 100)
-        ),
+        "max_detections_per_image": int(st.session_state.get("max_detections", 100)),
         "device": st.session_state.get("device", "cpu"),
         "batch_size": int(st.session_state.get("batch_size", 1)),
         "evaluation_step": int(st.session_state.get("evaluation_step", 5)),
@@ -303,7 +330,15 @@ def _manual_detection_config() -> dict:
 
     return config_data
 
+
 def _uploaded_json_to_tempfile(uploaded_file) -> Optional[str]:
+    """Save the uploaded JSON file to a temporary file and return its path.
+    :param uploaded_file: Uploaded JSON file
+    :type uploaded_file: UploadedFile
+    :return: Path to the temporary JSON file or None if an error occurred
+    :rtype: Optional[str]
+    """
+
     try:
         data = json.load(uploaded_file)
         with tempfile.NamedTemporaryFile(
@@ -315,7 +350,14 @@ def _uploaded_json_to_tempfile(uploaded_file) -> Optional[str]:
         st.error(f"Failed to load JSON file: {e}")
         return None
 
+
 def _uploaded_model_to_tempfile(uploaded_file) -> Optional[str]:
+    """Save the uploaded model file to a temporary file and return its path.
+    :param uploaded_file: Uploaded model file
+    :type uploaded_file: UploadedFile
+    :return: Path to the temporary model file or None if an error occurred
+    :rtype: Optional[str]
+    """
     try:
         suffix = os.path.splitext(uploaded_file.name)[1] or ".pt"
         with tempfile.NamedTemporaryFile(

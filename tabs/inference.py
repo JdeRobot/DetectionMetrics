@@ -3,6 +3,7 @@ from tabs.tasks.image_detection.inference import render_image_detection_inferenc
 from tabs.tasks.image_segmentation.inference import render_image_segmentation_inference
 from tabs.tasks.lidar_segmentation.inference import render_lidar_segmentation_inference
 
+
 def inference_tab():
     task = st.session_state.get("task", "Image Detection")
 
@@ -10,7 +11,6 @@ def inference_tab():
         render_image_detection_inference()
         return
 
-    
     if task == "Image Segmentation":
         render_image_segmentation_inference()
         return

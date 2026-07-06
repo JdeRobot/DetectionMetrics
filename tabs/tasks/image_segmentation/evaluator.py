@@ -5,6 +5,7 @@ import tempfile
 import streamlit as st
 
 from perceptionmetrics.datasets.cityscapes import CityscapesImageSegmentationDataset
+from perceptionmetrics.datasets.nuimages import NuImagesSegmentationDataset
 from tabs.tasks.utils import browse_folder
 
 
@@ -15,11 +16,12 @@ def browse_segmentation_predictions_outdir():
 
 
 def render_image_segmentation_evaluator():
+    """Render the image segmentation evaluator tab in the Streamlit app."""
     st.header("Evaluator")
     st.markdown("Evaluate your model on the loaded dataset using PerceptionMetrics.")
 
     dataset_type = st.session_state.get("segmentation_dataset_type", "Cityscapes")
-    if dataset_type != "Cityscapes":
+    if dataset_type not in ["Cityscapes", "NuImages"]:
         st.info(f"{dataset_type} image segmentation evaluation is not wired yet.")
         return
 
@@ -32,39 +34,65 @@ def render_image_segmentation_evaluator():
         st.warning(
             "No dataset path provided. Please set the dataset path in the sidebar."
         )
+    elif dataset_type == "NuImages" and split == "test":
+        st.warning("NuImages segmentation evaluation supports train and val splits.")
     else:
         try:
-            roots = {"train": None, "val": None, "test": None}
-            roots[split] = dataset_path
-            dataset_key = (
-                "cityscapes_segmentation_evaluation_dataset",
-                os.path.abspath(dataset_path),
-                split,
-                st.session_state.get(
-                    "segmentation_image_dir",
-                    "leftImg8bit_trainvaltest/leftImg8bit",
-                ),
-                st.session_state.get("segmentation_label_dir", "gtFine"),
-                st.session_state.get(
-                    "segmentation_image_suffix", "_leftImg8bit.png"
-                ),
-                st.session_state.get(
-                    "segmentation_label_suffix", "_gtFine_labelIds.png"
-                ),
-                st.session_state.get("segmentation_use_train_id", False),
-            )
-
-            if dataset_key not in st.session_state:
-                st.session_state[dataset_key] = CityscapesImageSegmentationDataset(
-                    train_dataset_root=roots["train"],
-                    val_dataset_root=roots["val"],
-                    test_dataset_root=roots["test"],
-                    image_dir=dataset_key[3],
-                    label_dir=dataset_key[4],
-                    image_suffix=dataset_key[5],
-                    label_suffix=dataset_key[6],
-                    use_train_id=dataset_key[7],
+            if dataset_type == "Cityscapes":
+                roots = {"train": None, "val": None, "test": None}
+                roots[split] = dataset_path
+                dataset_key = (
+                    "cityscapes_segmentation_evaluation_dataset",
+                    os.path.abspath(dataset_path),
+                    split,
+                    st.session_state.get(
+                        "segmentation_image_dir",
+                        "leftImg8bit_trainvaltest/leftImg8bit",
+                    ),
+                    st.session_state.get("segmentation_label_dir", "gtFine"),
+                    st.session_state.get(
+                        "segmentation_image_suffix", "_leftImg8bit.png"
+                    ),
+                    st.session_state.get(
+                        "segmentation_label_suffix", "_gtFine_labelIds.png"
+                    ),
+                    st.session_state.get("segmentation_use_train_id", False),
                 )
+
+                if dataset_key not in st.session_state:
+                    st.session_state[dataset_key] = CityscapesImageSegmentationDataset(
+                        train_dataset_root=roots["train"],
+                        val_dataset_root=roots["val"],
+                        test_dataset_root=roots["test"],
+                        image_dir=dataset_key[3],
+                        label_dir=dataset_key[4],
+                        image_suffix=dataset_key[5],
+                        label_suffix=dataset_key[6],
+                        use_train_id=dataset_key[7],
+                    )
+            else:
+                version = st.session_state.get(
+                    "nuimages_segmentation_version", "v1.0-mini"
+                )
+                labels_rel_dir = st.session_state.get(
+                    "nuimages_segmentation_labels_dir",
+                    "generated/nuimages_segmentation_labels",
+                )
+                dataset_key = (
+                    "nuimages_segmentation_evaluation_dataset",
+                    os.path.abspath(dataset_path),
+                    version,
+                    split,
+                    labels_rel_dir,
+                )
+
+                if dataset_key not in st.session_state:
+                    st.session_state[dataset_key] = NuImagesSegmentationDataset(
+                        dataset_dir=dataset_path,
+                        version=version,
+                        split=split,
+                        labels_rel_dir=labels_rel_dir,
+                    )
 
             dataset = st.session_state[dataset_key]
             st.success(
@@ -116,10 +144,16 @@ def render_image_segmentation_evaluator():
         key="segmentation_ontology_translation",
         help="JSON file for translating between dataset and model ontologies.",
     )
-    st.info(
-        "For Cityscapes SegFormer models, use train-ID labels or provide a "
-        "label-ID to train-ID ontology translation."
-    )
+    if dataset_type == "Cityscapes":
+        st.info(
+            "For Cityscapes SegFormer models, use train-ID labels or provide a "
+            "label-ID to train-ID ontology translation."
+        )
+    elif dataset_type == "NuImages":
+        st.info(
+            "For NuImages SegFormer models, upload "
+            "nuimages_to_model_ontology_translation.json and use dataset_to_model."
+        )
 
     translation_direction = st.selectbox(
         "Translation Direction",
@@ -153,9 +187,11 @@ def render_image_segmentation_evaluator():
                         json.dump(json.load(ontology_translation), tmp_trans)
                         ontology_translation_path = tmp_trans.name
 
-                predictions_outdir = predictions_outdir.strip() if (
-                    save_predictions and predictions_outdir
-                ) else None
+                predictions_outdir = (
+                    predictions_outdir.strip()
+                    if (save_predictions and predictions_outdir)
+                    else None
+                )
                 if predictions_outdir is not None:
                     os.makedirs(predictions_outdir, exist_ok=True)
 
@@ -172,9 +208,7 @@ def render_image_segmentation_evaluator():
 
                 def metrics_callback(metrics_df, processed, total):
                     with intermediate_metrics_placeholder.container():
-                        st.markdown(
-                            f"#### Results (after {processed}/{total} images)"
-                        )
+                        st.markdown(f"#### Results (after {processed}/{total} images)")
                         display_segmentation_evaluation_results(
                             metrics_df, show_download=False
                         )
@@ -206,10 +240,12 @@ def render_image_segmentation_evaluator():
 
 
 def display_segmentation_evaluation_results(results, show_download=True):
+    """Display the evaluation results in a Streamlit dataframe and provide a download button.
+    Param results: pd.DataFrame, the evaluation results to display
+    Param show_download: bool, whether to show the download button for the results"""
     if results is None or results.empty:
         st.warning("No evaluation results to display.")
         return
-
 
     st.markdown("#### Metrics")
     display_df = results.copy()

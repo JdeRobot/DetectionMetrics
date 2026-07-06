@@ -3,12 +3,11 @@ from typing import Optional
 import streamlit as st
 import json
 from PIL import Image
+
 try:
     import torch
 except ImportError:
-    raise ImportError(
-        "PyTorch is required for GUI-based inference and evaluation. "
-    )
+    raise ImportError("PyTorch is required for GUI-based inference and evaluation. ")
 
 
 def draw_detections(image: Image, predictions: dict, label_map: Optional[dict] = None):
@@ -49,6 +48,8 @@ def draw_detections(image: Image, predictions: dict, label_map: Optional[dict] =
 
 
 def render_image_detection_inference():
+    """Render the image detection inference tab in Streamlit."""
+
     st.header("Model Inference")
     st.markdown("Select an image and run inference using the loaded model.")
 

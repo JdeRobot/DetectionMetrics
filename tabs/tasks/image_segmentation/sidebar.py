@@ -14,27 +14,41 @@ IMAGE_SEGMENTATION_DATASETS = [
     "GOOSE",
 ]
 
+MODEL_INPUT_DATASETS = ["Cityscapes", "NuImages"]
+
 
 def browse_dataset_path():
-    st.session_state.dataset_path = browse_folder()
+    folder = browse_folder()
+    if folder:
+        st.session_state.dataset_path = folder
 
 
 def browse_segmentation_model_path():
     if st.session_state.get("segmentation_model_type") == "Hugging Face SegFormer":
-        st.session_state.segmentation_model_path = browse_folder()
+        path = browse_folder()
     else:
-        st.session_state.segmentation_model_path = browse_file()
+        path = browse_file()
+
+    if path:
+        st.session_state.segmentation_model_path = path
 
 
 def browse_segmentation_config_path():
-    st.session_state.segmentation_config_path = browse_file()
+    path = browse_file()
+    if path:
+        st.session_state.segmentation_config_path = path
 
 
 def browse_segmentation_ontology_path():
-    st.session_state.segmentation_ontology_path = browse_file()
+    path = browse_file()
+    if path:
+        st.session_state.segmentation_ontology_path = path
 
 
 def render_image_segmentation_sidebar(_available_devices):
+    """Render the sidebar for the image segmentation task in Streamlit.
+    param _available_devices: List of available devices for model inference.
+    """
     with st.expander("Image Segmentation Dataset", expanded=True):
         col1, col2 = st.columns(2)
         with col1:
@@ -54,16 +68,25 @@ def render_image_segmentation_sidebar(_available_devices):
                 "<div style='margin-bottom: 1.75rem;'></div>",
                 unsafe_allow_html=True,
             )
-            st.button("Browse", on_click=browse_dataset_path)
+            st.button(
+                "Browse",
+                on_click=browse_dataset_path,
+                key="browse_segmentation_dataset_path",
+            )
 
         if dataset_type == "Cityscapes":
             render_cityscapes_dataset_inputs()
+        elif dataset_type == "NuImages":
+            render_nuimages_dataset_inputs()
         else:
             st.info(f"{dataset_type} image segmentation inputs are not wired yet.")
 
     with st.expander("Image Segmentation Model", expanded=False):
-        if st.session_state.get("segmentation_dataset_type", "Cityscapes") != "Cityscapes":
-            st.info("Image segmentation model loading is wired for Cityscapes first.")
+        dataset_type = st.session_state.get("segmentation_dataset_type", "Cityscapes")
+        if dataset_type not in MODEL_INPUT_DATASETS:
+            st.info(
+                f"Image segmentation model loading is not wired for {dataset_type} yet."
+            )
             return
 
         render_segmentation_model_inputs()
@@ -78,6 +101,7 @@ def render_image_segmentation_sidebar(_available_devices):
 
 
 def render_cityscapes_dataset_inputs():
+    """Render the input fields for the Cityscapes dataset in the sidebar."""
     st.text_input(
         "Image Directory",
         value="leftImg8bit_trainvaltest/leftImg8bit",
@@ -106,7 +130,26 @@ def render_cityscapes_dataset_inputs():
     )
 
 
+def render_nuimages_dataset_inputs():
+    """Render the input fields for the NuImages dataset in the sidebar."""
+    st.text_input(
+        "Version",
+        value="v1.0-mini",
+        key="nuimages_segmentation_version",
+        help="nuImages version, for example v1.0-mini, v1.0-train, or v1.0-val.",
+    )
+    st.text_input(
+        "Generated Labels Directory",
+        value="generated/nuimages_segmentation_labels",
+        key="nuimages_segmentation_labels_dir",
+        help="Relative directory where generated segmentation masks are stored.",
+    )
+    if st.session_state.get("split") == "test":
+        st.warning("NuImages segmentation supports train/val-style splits, not test.")
+
+
 def render_segmentation_model_inputs():
+    """Render the input fields for the image segmentation model in the sidebar."""
     model_type = st.selectbox(
         "Model Type",
         ["Torch Model File", "Hugging Face SegFormer"],
@@ -116,7 +159,11 @@ def render_segmentation_model_inputs():
     col1, col2 = st.columns([3, 1])
     with col1:
         st.text_input(
-            "Model Path" if model_type == "Torch Model File" else "Model Name or Folder",
+            (
+                "Model Path"
+                if model_type == "Torch Model File"
+                else "Model Name or Folder"
+            ),
             key="segmentation_model_path",
             help=(
                 "Path to a TorchScript model or saved PyTorch model file."
@@ -173,6 +220,7 @@ def render_segmentation_model_inputs():
 
 
 def load_image_segmentation_model():
+    """Render the image segmentation model in the sidebar."""
     from perceptionmetrics.models.torch_segmentation import TorchImageSegmentationModel
 
     model_type = st.session_state.get("segmentation_model_type", "Torch Model File")
@@ -208,6 +256,10 @@ def load_image_segmentation_model():
 
 
 def load_model_for_type(model_type, model_path):
+    """Load a model based on the specified type and path.
+    param model_type: Type of the model to load (e.g., "Torch Model File", "Hugging Face SegFormer").
+    param model_path: Path to the model file or directory.
+    """
     if model_type == "Torch Model File":
         if not os.path.isfile(model_path):
             raise ValueError(

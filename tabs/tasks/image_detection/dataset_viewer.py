@@ -6,6 +6,7 @@ from tabs.tasks.utils import render_image_grid
 
 
 def render_image_detection_viewer():
+    """Render the image detection dataset viewer tab in Streamlit."""
     import tempfile
     from perceptionmetrics.datasets.coco import CocoDataset
     from perceptionmetrics.datasets.yolo import YOLODataset
