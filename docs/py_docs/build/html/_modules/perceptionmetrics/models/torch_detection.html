@@ -257,46 +257,12 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">perceptionmetrics.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">detection</span> <span class="k">as</span> <span class="n">detection_model</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">perceptionmetrics.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">detection_metrics</span> <span class="k">as</span> <span class="n">um</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">perceptionmetrics.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">image</span> <span class="k">as</span> <span class="n">ui</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">perceptionmetrics.utils.torch</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_device_info</span>
-
-
-<div class="viewcode-block" id="get_resize_args">
-<a class="viewcode-back" href="../../../api/perceptionmetrics.models.html#perceptionmetrics.models.torch_detection.get_resize_args">[docs]</a>
-<span class="k">def</span><span class="w"> </span><span class="nf">get_resize_args</span><span class="p">(</span><span class="n">resize_cfg</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Get the resize arguments for torchvision.transforms.Resize from the configuration.</span>
-
-<span class="sd">    :param resize_cfg: Resize configuration dictionary</span>
-<span class="sd">    :return: Dictionary with arguments for transforms.Resize</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">resize_args</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;interpolation&quot;</span><span class="p">:</span> <span class="n">transforms</span><span class="o">.</span><span class="n">InterpolationMode</span><span class="o">.</span><span class="n">BILINEAR</span><span class="p">}</span>
-    <span class="n">fixed_h</span> <span class="o">=</span> <span class="n">resize_cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">)</span>
-    <span class="n">fixed_w</span> <span class="o">=</span> <span class="n">resize_cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">)</span>
-    <span class="n">min_side</span> <span class="o">=</span> <span class="n">resize_cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;min_side&quot;</span><span class="p">)</span>
-    <span class="n">max_side</span> <span class="o">=</span> <span class="n">resize_cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;max_side&quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">fixed_h</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">fixed_w</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">min_side</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="s2">&quot;Resize config cannot satisfy both fixed dimensions (width/height) and min_side. They are mutually exclusive.&quot;</span>
-            <span class="p">)</span>
-        <span class="n">resize_args</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fixed_h</span><span class="p">,</span> <span class="n">fixed_w</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">min_side</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">resize_args</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">min_side</span>
-        <span class="k">if</span> <span class="n">fixed_h</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">fixed_w</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="s2">&quot;Resize config cannot satisfy both fixed dimensions (width/height) and min_side. They are mutually exclusive.&quot;</span>
-            <span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-            <span class="s2">&quot;Resize config must contain either &#39;height&#39; and &#39;width&#39; or &#39;min_side&#39; and &#39;max_side&#39;.&quot;</span>
-        <span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">max_side</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">resize_args</span><span class="p">[</span><span class="s2">&quot;max_size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">max_side</span>
-
-    <span class="k">return</span> <span class="n">resize_args</span></div>
-
+<span class="kn">from</span><span class="w"> </span><span class="nn">perceptionmetrics.utils.torch</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">get_device_info</span><span class="p">,</span>
+    <span class="n">get_resize_args</span><span class="p">,</span>
+    <span class="n">inverse_transform_boxes</span><span class="p">,</span>
+    <span class="n">pad_to_closest_divisor</span><span class="p">,</span>
+<span class="p">)</span>
 
 
 <div class="viewcode-block" id="data_to_device">
@@ -482,6 +448,7 @@
         <span class="n">target</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;boxes&quot;</span><span class="p">:</span> <span class="n">boxes</span><span class="p">,</span>  <span class="c1"># [N, 4]</span>
             <span class="s2">&quot;labels&quot;</span><span class="p">:</span> <span class="n">category_indices</span><span class="p">,</span>  <span class="c1"># [N]</span>
+            <span class="s2">&quot;orig_size&quot;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">image</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">height</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">int32</span><span class="p">),</span>
         <span class="p">}</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">:</span>
@@ -552,13 +519,13 @@
 
         <span class="c1"># Init parent class</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">model_type</span><span class="p">,</span> <span class="n">model_cfg</span><span class="p">,</span> <span class="n">ontology_fname</span><span class="p">,</span> <span class="n">model_fname</span><span class="p">)</span>
-        
+
         <span class="c1"># Define the Wrapper with DType Alignment</span>
         <span class="k">class</span><span class="w"> </span><span class="nc">DetectionModelWrapper</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
             <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
                 <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">inner_model</span> <span class="o">=</span> <span class="n">model</span>
-            
+
             <span class="c1"># Handle input precision, tuple extraction, and output precision</span>
             <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
                 <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner_model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -597,10 +564,13 @@
         <span class="c1"># Build input transforms (resize, normalize, etc.)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">transform_input</span> <span class="o">=</span> <span class="p">[]</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">closest_divisor</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="n">resize_cfg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model_cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;resize&quot;</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">resize_cfg</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">resize_args</span> <span class="o">=</span> <span class="n">get_resize_args</span><span class="p">(</span><span class="n">resize_cfg</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">transform_input</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="o">**</span><span class="n">resize_args</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">closest_divisor</span> <span class="o">=</span> <span class="n">resize_cfg</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;closest_divisor&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">resize_cfg</span><span class="p">:</span>
+                <span class="n">resize_args</span> <span class="o">=</span> <span class="n">get_resize_args</span><span class="p">(</span><span class="n">resize_cfg</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">transform_input</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="o">**</span><span class="n">resize_args</span><span class="p">))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;resize_cfg&#39; missing in model config. No resizing will be applied.&quot;</span><span class="p">)</span>
 
@@ -646,8 +616,14 @@
 <span class="sd">        :return: Detection result or a tuple with the detection result and the input sample tensor</span>
 <span class="sd">        :rtype: Union[Dict[str, torch.Tensor], Tuple[Dict[str, torch.Tensor], torch.Tensor]]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">orig_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>
         <span class="n">sample</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform_input</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
         <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inference</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+
+        <span class="c1"># Scale bounding boxes back to the original image size</span>
+        <span class="n">result</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">inverse_transform_boxes</span><span class="p">(</span>
+            <span class="n">result</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">],</span> <span class="n">orig_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform_input</span><span class="o">.</span><span class="n">transforms</span>
+        <span class="p">)</span>
 
         <span class="k">if</span> <span class="n">return_sample</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">result</span><span class="p">,</span> <span class="n">sample</span>
@@ -665,11 +641,21 @@
 <span class="sd">        :return: Dictionary with keys &#39;boxes&#39;, &#39;labels&#39;, &#39;scores&#39;</span>
 <span class="sd">        :rtype: Dict[str, torch.Tensor]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">closest_divisor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">tensor_in</span><span class="p">,</span> <span class="p">(</span><span class="n">orig_h</span><span class="p">,</span> <span class="n">orig_w</span><span class="p">)</span> <span class="o">=</span> <span class="n">pad_to_closest_divisor</span><span class="p">(</span>
+                <span class="n">tensor_in</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">closest_divisor</span>
+            <span class="p">)</span>
+
         <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
             <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">tensor_in</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># only first image</span>
 
         <span class="c1"># Apply threshold filtering from model config</span>
         <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">postprocess_detection</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">postprocess_args</span><span class="p">)</span>
+
+        <span class="c1"># Crop/clamp the bounding boxes to the original shape before padding</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">closest_divisor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">result</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">][:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">][:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">orig_w</span><span class="p">)</span>
+            <span class="n">result</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">][:,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">][:,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">orig_h</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">result</span></div>
 
@@ -776,6 +762,12 @@
                     <span class="k">continue</span>
 
                 <span class="n">images</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">images</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">closest_divisor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="n">images</span><span class="p">,</span> <span class="p">(</span><span class="n">orig_h</span><span class="p">,</span> <span class="n">orig_w</span><span class="p">)</span> <span class="o">=</span> <span class="n">pad_to_closest_divisor</span><span class="p">(</span>
+                        <span class="n">images</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">closest_divisor</span>
+                    <span class="p">)</span>
+
                 <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
 
                 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">)):</span>
@@ -786,6 +778,15 @@
 
                     <span class="c1"># Post-process predictions</span>
                     <span class="n">pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">postprocess_detection</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">postprocess_args</span><span class="p">)</span>
+
+                    <span class="c1"># Crop/clamp the bounding boxes to the original shape before padding</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">closest_divisor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">pred</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">][:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span> <span class="o">=</span> <span class="n">pred</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">][:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span>
+                            <span class="mi">0</span><span class="p">,</span> <span class="n">orig_w</span>
+                        <span class="p">)</span>
+                        <span class="n">pred</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">][:,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span> <span class="o">=</span> <span class="n">pred</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">][:,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span>
+                            <span class="mi">0</span><span class="p">,</span> <span class="n">orig_h</span>
+                        <span class="p">)</span>
 
                     <span class="c1"># Apply ontology translation if needed</span>
                     <span class="k">if</span> <span class="n">lut_ontology</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -809,8 +810,15 @@
                         <span class="c1"># Save JSON with predictions and csv with metrics per sample</span>
                         <span class="k">if</span> <span class="n">results_per_sample</span><span class="p">:</span>
                             <span class="n">out_data</span> <span class="o">=</span> <span class="p">[]</span>
+
+                            <span class="n">orig_pred_boxes</span> <span class="o">=</span> <span class="n">inverse_transform_boxes</span><span class="p">(</span>
+                                <span class="n">boxes</span><span class="o">=</span><span class="n">pred</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">(),</span>
+                                <span class="n">orig_size</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">gt</span><span class="p">[</span><span class="s2">&quot;orig_size&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()),</span>
+                                <span class="n">input_transforms</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">transform_input</span><span class="o">.</span><span class="n">transforms</span><span class="p">,</span>
+                            <span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+
                             <span class="k">for</span> <span class="n">box</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
-                                <span class="n">pred_boxes</span><span class="p">,</span> <span class="n">pred_labels</span><span class="p">,</span> <span class="n">pred_scores</span>
+                                <span class="n">orig_pred_boxes</span><span class="p">,</span> <span class="n">pred_labels</span><span class="p">,</span> <span class="n">pred_scores</span>
                             <span class="p">):</span>
                                 <span class="c1"># Convert label index to class name using model ontology</span>
                                 <span class="n">class_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">idx_to_class_name</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>

@@ -1196,6 +1196,65 @@ independent evaluations without creating a new object.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="perceptionmetrics.utils.torch.get_resize_args">
+<span class="sig-prename descclassname"><span class="pre">perceptionmetrics.utils.torch.</span></span><span class="sig-name descname"><span class="pre">get_resize_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">resize_cfg</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/utils/torch.html#get_resize_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.utils.torch.get_resize_args" title="Link to this definition">¶</a></dt>
+<dd><p>Get the resize arguments for torchvision.transforms.Resize from the configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>resize_cfg</strong> (<em>dict</em>) – Resize configuration dictionary</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary with arguments for transforms.Resize</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="perceptionmetrics.utils.torch.inverse_transform_boxes">
+<span class="sig-prename descclassname"><span class="pre">perceptionmetrics.utils.torch.</span></span><span class="sig-name descname"><span class="pre">inverse_transform_boxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">boxes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orig_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_transforms</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/utils/torch.html#inverse_transform_boxes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.utils.torch.inverse_transform_boxes" title="Link to this definition">¶</a></dt>
+<dd><p>Map bounding boxes from the transformed image space back to the original image space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>boxes</strong> (<em>torch.Tensor</em>) – Bounding boxes in [N, 4] format</p></li>
+<li><p><strong>orig_size</strong> (<em>tuple</em><em>(</em><em>int</em><em>, </em><em>int</em><em>)</em>) – Original image size (width, height)</p></li>
+<li><p><strong>input_transforms</strong> (<em>transforms.Compose</em>) – Transforms to be applied to images</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Bounding boxes mapped back to the original image space</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>torch.Tensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="perceptionmetrics.utils.torch.pad_to_closest_divisor">
+<span class="sig-prename descclassname"><span class="pre">perceptionmetrics.utils.torch.</span></span><span class="sig-name descname"><span class="pre">pad_to_closest_divisor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closest_divisor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/utils/torch.html#pad_to_closest_divisor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.utils.torch.pad_to_closest_divisor" title="Link to this definition">¶</a></dt>
+<dd><p>Pad a tensor with zeros right and bottom so that its height and width are a multiple
+of closest_divisor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tensor</strong> (<em>torch.Tensor</em>) – Input tensor of shape (…, H, W)</p></li>
+<li><p><strong>closest_divisor</strong> (<em>int</em>) – The divisor to pad to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Padded tensor and original (H, W)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[torch.Tensor, Tuple[int, int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="perceptionmetrics.utils.torch.unsqueeze_data">
 <span class="sig-prename descclassname"><span class="pre">perceptionmetrics.utils.torch.</span></span><span class="sig-name descname"><span class="pre">unsqueeze_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/utils/torch.html#unsqueeze_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.utils.torch.unsqueeze_data" title="Link to this definition">¶</a></dt>
 <dd><p>Unsqueeze provided data along given dimension</p>
@@ -1353,6 +1412,9 @@ independent evaluations without creating a new object.</p>
 <li><a class="reference internal" href="#perceptionmetrics.utils.torch.data_to_device"><code class="docutils literal notranslate"><span class="pre">data_to_device()</span></code></a></li>
 <li><a class="reference internal" href="#perceptionmetrics.utils.torch.get_data_shape"><code class="docutils literal notranslate"><span class="pre">get_data_shape()</span></code></a></li>
 <li><a class="reference internal" href="#perceptionmetrics.utils.torch.get_device_info"><code class="docutils literal notranslate"><span class="pre">get_device_info()</span></code></a></li>
+<li><a class="reference internal" href="#perceptionmetrics.utils.torch.get_resize_args"><code class="docutils literal notranslate"><span class="pre">get_resize_args()</span></code></a></li>
+<li><a class="reference internal" href="#perceptionmetrics.utils.torch.inverse_transform_boxes"><code class="docutils literal notranslate"><span class="pre">inverse_transform_boxes()</span></code></a></li>
+<li><a class="reference internal" href="#perceptionmetrics.utils.torch.pad_to_closest_divisor"><code class="docutils literal notranslate"><span class="pre">pad_to_closest_divisor()</span></code></a></li>
 <li><a class="reference internal" href="#perceptionmetrics.utils.torch.unsqueeze_data"><code class="docutils literal notranslate"><span class="pre">unsqueeze_data()</span></code></a></li>
 </ul>
 </li>
