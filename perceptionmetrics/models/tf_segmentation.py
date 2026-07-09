@@ -47,20 +47,23 @@ def resize_image(
     old_h = old_size[0]
     old_w = old_size[1]
 
-    h, w = (old_h, old_w)
-    if width is None:
-        w = int((height / old_h) * old_w)
+    if width is None and height is None:
+        h, w = old_h, old_w
+    elif width is None:
+        w = (height / old_h) * old_w
         h = height
-    if height is None:
-        h = int((width / old_w) * old_h)
+    elif height is None:
+        h = (width / old_w) * old_h
         w = width
+    else:
+        h, w = height, width
 
-    h = (h / closest_divisor) * closest_divisor
-    w = (w / closest_divisor) * closest_divisor
-    new_size = [int(h), int(w)]
+    h = tf.math.round(tf.cast(h, tf.float32) / closest_divisor) * closest_divisor
+    w = tf.math.round(tf.cast(w, tf.float32) / closest_divisor) * closest_divisor
+    new_size = tf.cast([h, w], tf.int32)
 
     image = tf_image.resize(
-        images=image, size=tf.cast(new_size, tf.int32), method=method
+        images=image, size=new_size, method=method
     )
 
     return image

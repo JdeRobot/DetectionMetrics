@@ -53,9 +53,15 @@ class CustomResize(torch.nn.Module):
     :type width: Optional[int], optional
     :param height: Target height for resizing
     :type height: Optional[int], optional
+    :param keep_aspect_ratio: Whether to keep the aspect ratio of the image (only if both width and height are provided)
+    :type keep_aspect_ratio: bool, optional
+    :param pad: Whether to pad the image to the target size (only if keep_aspect_ratio is True and both width and height are provided)
+    :type pad: bool, optional
+    :param fill: Fill color for padding (0-255) (only if keep_aspect_ratio and pad are True and both width and height are provided)
+    :type fill: int, optional
     :param interpolation: Interpolation mode for resizing (e.g. NEAREST, BILINEAR)
     :type interpolation: F.InterpolationMode, defaults to F.InterpolationMode.BILINEAR
-    :param closest_divisor: Closest divisor for the target size, defaults to 16. Only applies to the dimension not provided.
+    :param closest_divisor: Closest divisor for the target size, defaults to 16.
     :type closest_divisor: int, optional
     """
 
@@ -63,26 +69,70 @@ class CustomResize(torch.nn.Module):
         self,
         width: Optional[int] = None,
         height: Optional[int] = None,
+        keep_aspect_ratio: bool = True,
+        pad: bool = False,
+        fill: int = 0,
         interpolation: F.InterpolationMode = F.InterpolationMode.BILINEAR,
         closest_divisor: int = 16,
     ):
         super().__init__()
         self.width = width
         self.height = height
+        self.keep_aspect_ratio = keep_aspect_ratio
+        self.pad = pad
+        self.fill = fill
         self.interpolation = interpolation
         self.closest_divisor = closest_divisor
 
     def forward(self, image: Image.Image) -> Image.Image:
-        old_size = image.size
-        w = self.width or int((self.height / old_size[1]) * old_size[0])
-        h = self.height or int((self.width / old_size[0]) * old_size[1])
+        old_w, old_h = image.size
 
-        h = round(h / self.closest_divisor) * self.closest_divisor
-        w = round(w / self.closest_divisor) * self.closest_divisor
-        new_size = (h, w)
+        # Calculate target dimensions
+        is_padding_needed = False
+        if self.width is None and self.height is None:
+            w, h = old_w, old_h
+        elif self.width is None and self.height is not None:
+            h = self.height
+            w = int((self.height / old_h) * old_w)
+        elif self.width is not None and self.height is None:
+            w = self.width
+            h = int((self.width / old_w) * old_h)
+        else:  # Both width and height are provided
+            if self.keep_aspect_ratio:
+                # Find the scale factor that fits the image within the bounding box
+                scale = min(self.width / old_w, self.height / old_h)
+                w = int(old_w * scale)
+                h = int(old_h * scale)
+                is_padding_needed = self.pad
+            else:  # Stretch
+                w = self.width
+                h = self.height
 
-        if new_size != old_size:
-            image = F.resize(image, new_size, self.interpolation)
+        # Round to the closest divisor
+        if not is_padding_needed:
+            w = round(w / self.closest_divisor) * self.closest_divisor
+            h = round(h / self.closest_divisor) * self.closest_divisor
+
+        # Apply resizing if the size changes
+        if (h, w) != (old_h, old_w):
+            image = F.resize(image, (h, w), self.interpolation)
+
+        # Apply padding to the target size if needed
+        if is_padding_needed:
+            # Match target size requirements to the closest divisor constraint
+            target_w = round(self.width / self.closest_divisor) * self.closest_divisor
+            target_h = round(self.height / self.closest_divisor) * self.closest_divisor
+
+            pad_w = target_w - w
+            pad_h = target_h - h
+
+            if pad_w > 0 or pad_h > 0:
+                left = pad_w // 2
+                top = pad_h // 2
+                right = pad_w - left
+                bottom = pad_h - top
+
+                image = F.pad(image, [left, top, right, bottom], fill=self.fill)
 
         return image
 
@@ -242,21 +292,49 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
         self.transform_input = []
         self.transform_label = []
 
+        self.eval_on_original_size = self.model_cfg.get("eval_on_original_size", False)
+
         if "resize" in self.model_cfg:
+            resize_cfg = self.model_cfg["resize"]
+            pad_cfg = resize_cfg.get("pad")
+
+            pad = pad_cfg is not None
+            image_fill, label_fill = 0, 0
+            if pad:
+                if (
+                    not isinstance(pad_cfg, dict)
+                    or "image_fill" not in pad_cfg
+                    or "label_fill" not in pad_cfg
+                ):
+                    raise ValueError(
+                        "'pad' must be a dictionary with 'image_fill' and 'label_fill'."
+                    )
+                image_fill = pad_cfg["image_fill"]
+                label_fill = pad_cfg["label_fill"]
+
             self.transform_input += [
                 CustomResize(
-                    width=self.model_cfg["resize"].get("width", None),
-                    height=self.model_cfg["resize"].get("height", None),
+                    width=resize_cfg.get("width", None),
+                    height=resize_cfg.get("height", None),
+                    keep_aspect_ratio=resize_cfg.get("keep_aspect_ratio", True),
+                    pad=pad,
+                    fill=image_fill,
                     interpolation=F.InterpolationMode.BILINEAR,
+                    closest_divisor=resize_cfg.get("closest_divisor", 16),
                 )
             ]
-            self.transform_label += [
-                CustomResize(
-                    width=self.model_cfg["resize"].get("width", None),
-                    height=self.model_cfg["resize"].get("height", None),
-                    interpolation=F.InterpolationMode.NEAREST,
-                )
-            ]
+            if not self.eval_on_original_size:
+                self.transform_label += [
+                    CustomResize(
+                        width=resize_cfg.get("width", None),
+                        height=resize_cfg.get("height", None),
+                        keep_aspect_ratio=resize_cfg.get("keep_aspect_ratio", True),
+                        pad=pad,
+                        fill=label_fill,
+                        interpolation=F.InterpolationMode.NEAREST,
+                        closest_divisor=resize_cfg.get("closest_divisor", 16),
+                    )
+                ]
 
         if "crop" in self.model_cfg:
             crop_size = (
@@ -264,7 +342,8 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
                 self.model_cfg["crop"]["width"],
             )
             self.transform_input += [transforms.CenterCrop(crop_size)]
-            self.transform_label += [transforms.CenterCrop(crop_size)]
+            if not self.eval_on_original_size:
+                self.transform_label += [transforms.CenterCrop(crop_size)]
 
         try:
             self.transform_input += [
@@ -297,9 +376,75 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
         self.transform_label = transforms.Compose(self.transform_label)
         self.transform_output = transforms.Compose(
             [
-                lambda x: torch.argmax(x.squeeze(), axis=0).squeeze().to(torch.uint8),
+                lambda x: torch.argmax(x.squeeze(), dim=0).squeeze().to(torch.uint8),
                 transforms.ToPILImage(),
             ]
+        )
+
+    def _reverse_resize_and_pad(
+        self, pred: torch.Tensor, original_size: Tuple[int, int]
+    ) -> torch.Tensor:
+        """Reverse the resizing and padding operations to match the original size.
+
+        :param pred: Prediction tensor of shape (B, C, H, W)
+        :param original_size: Original spatial size (H, W)
+        :return: Reversed prediction tensor
+        """
+        if "resize" not in self.model_cfg:
+            return torch.nn.functional.interpolate(
+                pred, size=original_size, mode="bilinear", align_corners=False
+            )
+
+        resize_cfg = self.model_cfg["resize"]
+        target_width = resize_cfg.get("width", None)
+        target_height = resize_cfg.get("height", None)
+        keep_aspect_ratio = resize_cfg.get("keep_aspect_ratio", True)
+        pad = resize_cfg.get("pad") is not None
+        closest_divisor = resize_cfg.get("closest_divisor", 16)
+
+        old_h, old_w = original_size
+
+        # Recalculate intermediate size
+        if target_width is None and target_height is None:
+            w, h = old_w, old_h
+        elif target_width is None and target_height is not None:
+            h = target_height
+            w = int((target_height / old_h) * old_w)
+        elif target_width is not None and target_height is None:
+            w = target_width
+            h = int((target_width / old_w) * old_h)
+        else:
+            if keep_aspect_ratio:
+                scale = min(target_width / old_w, target_height / old_h)
+                w = int(old_w * scale)
+                h = int(old_h * scale)
+            else:
+                w = target_width
+                h = target_height
+
+        w = round(w / closest_divisor) * closest_divisor
+        h = round(h / closest_divisor) * closest_divisor
+
+        # Unpad if necessary
+        if (
+            target_width is not None
+            and target_height is not None
+            and keep_aspect_ratio
+            and pad
+        ):
+            tgt_w = round(target_width / closest_divisor) * closest_divisor
+            tgt_h = round(target_height / closest_divisor) * closest_divisor
+            pad_w = tgt_w - w
+            pad_h = tgt_h - h
+
+            if pad_w > 0 or pad_h > 0:
+                left = pad_w // 2
+                top = pad_h // 2
+                pred = pred[..., top : top + h, left : left + w]
+
+        # Interpolate back to original size
+        return torch.nn.functional.interpolate(
+            pred, size=original_size, mode="bilinear", align_corners=False
         )
 
     def predict(
@@ -316,6 +461,10 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
         """
         sample = self.transform_input(image).unsqueeze(0).to(self.device)
         result = self.inference(sample)
+
+        if self.eval_on_original_size:
+            result = self._reverse_resize_and_pad(result, (image.height, image.width))
+
         result = self.transform_output(result)
 
         if return_sample:
@@ -426,6 +575,10 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
 
         # Retrieve ignored label indices
         ignored_label_indices = []
+        resize_cfg = self.model_cfg.get("resize", {})
+        pad_cfg = resize_cfg.get("pad")
+        if pad_cfg is not None:
+            ignored_label_indices.append(pad_cfg["label_fill"])
         for ignored_class in self.model_cfg.get("ignored_classes", []):
             ignored_label_indices.append(dataset.ontology[ignored_class]["idx"])
 
@@ -453,6 +606,10 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
             for idx, image, label in pbar:
                 # Perform inference
                 pred = self.inference(image)
+
+                if self.eval_on_original_size:
+                    pred = self._reverse_resize_and_pad(pred, label.shape[-2:])
+
                 pred = torch.argmax(pred, dim=1)
 
                 # Get valid points masks depending on ignored label indices
