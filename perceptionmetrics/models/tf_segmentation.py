@@ -347,7 +347,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
         dataset: ImageSegmentationDataset,
         split: Union[str, List[str]] = "test",
         ontology_translation: Optional[str] = None,
-        translations_direction: str = "dataset_to_model",
+        translation_direction: str = "dataset_to_model",
         predictions_outdir: Optional[str] = None,
         results_per_sample: bool = False,
     ) -> pd.DataFrame:
@@ -359,8 +359,8 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
         :type split: Union[str, List[str]], optional
         :param ontology_translation: JSON file containing translation between dataset and model output ontologies
         :type ontology_translation: str, optional
-        :param translations_direction: Direction of the ontology translation. Either "dataset_to_model" or "model_to_dataset", defaults to "dataset_to_model"
-        :type translations_direction: str, optional
+        :param translation_direction: Direction of the ontology translation. Either "dataset_to_model" or "model_to_dataset", defaults to "dataset_to_model"
+        :type translation_direction: str, optional
         :param predictions_outdir: Directory to save predictions per sample, defaults to None. If None, predictions are not saved.
         :type predictions_outdir: Optional[str], optional
         :param results_per_sample: Whether to store results per sample or not, defaults to False. If True, predictions_outdir must be provided.
@@ -383,7 +383,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
 
         if ontology_translation is not None:
             ontology_translation = uio.read_json(ontology_translation)
-            if translations_direction == "dataset_to_model":
+            if translation_direction == "dataset_to_model":
                 lut_ontology = uc.get_ontology_conversion_lut(
                     dataset.ontology, self.ontology, ontology_translation
                 )
@@ -405,7 +405,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
             batch_size=self.model_cfg.get("batch_size", 1),
             splits=[split] if isinstance(split, str) else split,
             lut_ontology=(
-                lut_ontology if translations_direction == "dataset_to_model" else None
+                lut_ontology if translation_direction == "dataset_to_model" else None
             ),
             normalization=self.model_cfg.get("normalization", None),
             keep_aspect=self.model_cfg.get("keep_aspect", False),
@@ -443,7 +443,7 @@ class TensorflowImageSegmentationModel(ImageSegmentationModel):
             # Convert predictions to dataset ontology if needed
             if (
                 lut_ontology is not None
-                and translations_direction == "model_to_dataset"
+                and translation_direction == "model_to_dataset"
             ):
                 pred = lut_ontology[pred]
 

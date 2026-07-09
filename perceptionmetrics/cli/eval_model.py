@@ -134,6 +134,13 @@ def parse_split(ctx, param, value):
     help="Name of the split or splits separated by commas to be evaluated",
 )
 @click.option(
+    "--translation_direction",
+    type=click.Choice(["dataset_to_model", "model_to_dataset"], case_sensitive=False),
+    show_default=True,
+    default="dataset_to_model",
+    help="Direction of the ontology translation",
+)
+@click.option(
     "--ontology_translation",
     type=click.Path(exists=True, dir_okay=False),
     help="JSON file containing translation between dataset and model classes",
@@ -170,6 +177,7 @@ def eval_model(
     label_suffix,
     dataset_ontology,
     split,
+    translation_direction,
     ontology_translation,
     out_fname,
     predictions_outdir,
@@ -202,6 +210,7 @@ def eval_model(
     results = model.eval(
         dataset,
         split=split,
+        translation_direction=translation_direction,
         ontology_translation=ontology_translation,
         predictions_outdir=predictions_outdir,
         results_per_sample=predictions_outdir is not None,

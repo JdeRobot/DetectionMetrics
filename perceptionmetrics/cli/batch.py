@@ -158,6 +158,9 @@ def batch(command, jobs_cfg):
                         "label_suffix": dataset_cfg.get("label_suffix", None),
                         "dataset_ontology": dataset_cfg.get("ontology", None),
                         "split": dataset_cfg["split"],
+                        "translation_direction": jobs_cfg.get(
+                            "translation_direction", None
+                        ),
                         "ontology_translation": jobs_cfg.get(
                             "ontology_translation", None
                         ),

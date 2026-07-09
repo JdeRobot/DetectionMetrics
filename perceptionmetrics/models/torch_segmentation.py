@@ -192,7 +192,6 @@ class LiDARSegmentationTorchDataset(Dataset):
 
 
 class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
-
     def __init__(
         self,
         model: Union[str, torch.nn.Module],
@@ -212,7 +211,9 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
         self.device = torch.device(
             "cuda"
             if torch.cuda.is_available()
-            else "mps" if torch.backends.mps.is_available() else "cpu"
+            else "mps"
+            if torch.backends.mps.is_available()
+            else "cpu"
         )
 
         # If 'model' contains a string, check that it is a valid filename and load model
@@ -383,7 +384,7 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
         :type split: Union[str, List[str]], optional
         :param ontology_translation: JSON file containing translation between dataset and model output ontologies
         :type ontology_translation: Optional[str], optional
-        :param translation_direction: Direction of the ontology translation, either 'dataset_to_model' or 'model_to_dataset', defaults to "dataset_to_model"
+        :param translation_direction: Direction of the ontology translation. Either "dataset_to_model" or "model_to_dataset", defaults to "dataset_to_model"
         :type translation_direction: str, optional
         :param predictions_outdir: Directory to save predictions per sample, defaults to None. If None, predictions are not saved.
         :type predictions_outdir: Optional[str], optional
@@ -402,7 +403,7 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
         if predictions_outdir is not None:
             os.makedirs(predictions_outdir, exist_ok=True)
 
-        # Build a LUT for transforming ontology if needed (aligned with TorchLiDARSegmentationModel.eval)
+        # Build a LUT for transforming ontology if needed
         eval_ontology = self.ontology
 
         if ontology_translation is not None:
@@ -443,6 +444,7 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
         )
 
         # Init metrics
+        metrics_factory = um.SegmentationMetricsFactory(n_classes)
         metrics_factory = um.SegmentationMetricsFactory(n_classes)
 
         # Evaluation loop
@@ -554,7 +556,6 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
 
 
 class TorchLiDARSegmentationModel(segmentation_model.LiDARSegmentationModel):
-
     def __init__(
         self, model: Union[str, torch.nn.Module], model_cfg: str, ontology_fname: str
     ):
@@ -571,7 +572,9 @@ class TorchLiDARSegmentationModel(segmentation_model.LiDARSegmentationModel):
         self.device = torch.device(
             "cuda"
             if torch.cuda.is_available()
-            else "mps" if torch.backends.mps.is_available() else "cpu"
+            else "mps"
+            if torch.backends.mps.is_available()
+            else "cpu"
         )
 
         # If 'model' contains a string, check that it is a valid filename and load model
