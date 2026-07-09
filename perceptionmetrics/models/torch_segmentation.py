@@ -678,26 +678,29 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
         :type warm_up_runs: int, optional
         :return: Dictionary containing computational cost information
         """
-        # Create dummy input
-        dummy_input = torch.randn(1, 3, *image_size).to(self.device)
-
         # Get model size if possible
         if self.model_fname is not None:
             size_mb = os.path.getsize(self.model_fname) / 1024**2
         else:
             size_mb = None
 
-        # Measure inference time with GPU synchronization
-        dummy_tuple = dummy_input if isinstance(dummy_input, tuple) else (dummy_input,)
+        # Create dummy input
+        def get_input():
+            dummy = torch.randn(1, 3, *image_size).to(self.device)
+            dummy = dummy if isinstance(dummy, tuple) else (dummy,)
+            return dummy[0]
 
+        # Warm-up runs
         for _ in range(warm_up_runs):
-            self.inference(dummy_tuple[0])
+            self.inference(get_input())
 
+        # Measure inference time with GPU synchronization
         inference_times = []
         for _ in range(runs):
+            dummy_input = get_input()
             torch.cuda.synchronize()
             start_time = time.time()
-            self.inference(dummy_tuple[0])
+            self.inference(dummy_input)
             torch.cuda.synchronize()
             end_time = time.time()
             inference_times.append(end_time - start_time)
