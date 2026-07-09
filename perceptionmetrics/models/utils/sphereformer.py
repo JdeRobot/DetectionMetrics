@@ -127,9 +127,9 @@ def get_sample(
 def inference(
     sample: dict,
     model: torch.nn.Module,
-    model_cfg: dict,
     ignore_index: Optional[List[int]] = None,
     measure_processing_time: bool = False,
+    return_logits: bool = False,
 ) -> Tuple[Tuple[torch.Tensor, Optional[torch.Tensor], List[str]], Optional[dict]]:
     """Perform inference on a sample using an SphereFormer model
 
@@ -137,12 +137,12 @@ def inference(
     :type sample: dict
     :param model: SphereFormer model
     :type model: torch.nn.Module
-    :param model_cfg: model configuration
-    :type model_cfg: dict
     :param measure_processing_time: whether to measure processing time, defaults to False
     :type measure_processing_time: bool, optional
     :param ignore_index: list of class indices to ignore during inference, defaults to None
     :type ignore_index: Optional[List[int]], optional
+    :param return_logits: whether to return logits, defaults to False
+    :type return_logits: bool, optional
     :return: tuple of (predictions, labels, names) and processing time dictionary (if measured)
     :rtype: Tuple[Tuple[torch.Tensor, Optional[torch.Tensor], List[str]], Optional[dict]]
     """
@@ -198,7 +198,8 @@ def inference(
     preds = preds[inds_reconstruct, :]
     if ignore_index is not None:
         preds[:, ignore_index] = -1e9
-    preds = torch.argmax(preds, dim=1)
+    if not return_logits:
+        preds = torch.argmax(preds, dim=1)
 
     if measure_processing_time:
         return (preds, labels, names), processing_time

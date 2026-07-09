@@ -781,8 +781,9 @@ class TorchLiDARSegmentationModel(segmentation_model.LiDARSegmentationModel):
         self,
         sample: dict,
         model: torch.nn.Module,
-        model_cfg: dict,
+        ignore_index: Optional[List[int]] = None,
         measure_processing_time: bool = False,
+        return_logits: bool = False,
     ) -> Tuple[Tuple[torch.Tensor, Optional[torch.Tensor], List[str]], Optional[dict]]:
         """Perform inference for a sample
 
@@ -790,14 +791,18 @@ class TorchLiDARSegmentationModel(segmentation_model.LiDARSegmentationModel):
         :type sample: dict
         :param model: PyTorch model
         :type model: torch.nn.Module
-        :param model_cfg: Dictionary containing model configuration
-        :type model_cfg: dict
+        :param ignore_index: List of class indices to ignore during prediction
+        :type ignore_index: Optional[List[int]]
         :param measure_processing_time: whether to measure processing time, defaults to False
         :type measure_processing_time: bool, optional
+        :param return_logits: whether to return logits, defaults to False
+        :type return_logits: bool, optional
         :return: tuple of (predictions, labels, names) and processing time dictionary (if measured)
         :rtype: Tuple[Tuple[torch.Tensor, Optional[torch.Tensor], List[str]], Optional[dict]]
         """
-        return self._inference(sample, model, model_cfg, measure_processing_time)
+        return self._inference(
+            sample, model, ignore_index, measure_processing_time, return_logits
+        )
 
     def predict(
         self,
@@ -823,7 +828,7 @@ class TorchLiDARSegmentationModel(segmentation_model.LiDARSegmentationModel):
         sample = self._get_sample(
             points_fname, self.model_cfg, has_intensity=has_intensity
         )
-        result, _, _ = self.inference(sample, self.model, self.model_cfg, ignore_index)
+        result, _, _ = self.inference(sample, self.model, ignore_index)
         result = result.squeeze().cpu().numpy()
 
         if return_sample:
@@ -1014,7 +1019,7 @@ class TorchLiDARSegmentationModel(segmentation_model.LiDARSegmentationModel):
                 subsampled_points, _, sampler, _, _, _ = sample
                 self._reset_sampler(sampler, subsampled_points.shape[0], self.n_classes)
 
-            self.inference(sample, self.model, self.model_cfg)
+            self.inference(sample, self.model)
 
         inference_times = []
         for _ in range(runs):
@@ -1023,7 +1028,7 @@ class TorchLiDARSegmentationModel(segmentation_model.LiDARSegmentationModel):
                 self._reset_sampler(sampler, subsampled_points.shape[0], self.n_classes)
             torch.cuda.synchronize()
             start_time = time.time()
-            self.inference(sample, self.model, self.model_cfg)
+            self.inference(sample, self.model)
             torch.cuda.synchronize()
             end_time = time.time()
             inference_times.append(end_time - start_time)
