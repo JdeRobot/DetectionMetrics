@@ -612,7 +612,20 @@
                 <span class="n">tensor_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">tensor_in</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">device</span><span class="p">))</span>
 
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tensor_out</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-                <span class="n">tensor_out</span> <span class="o">=</span> <span class="n">tensor_out</span><span class="p">[</span><span class="s2">&quot;out&quot;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="s2">&quot;out&quot;</span> <span class="ow">in</span> <span class="n">tensor_out</span><span class="p">:</span>
+                    <span class="n">tensor_out</span> <span class="o">=</span> <span class="n">tensor_out</span><span class="p">[</span><span class="s2">&quot;out&quot;</span><span class="p">]</span>
+                <span class="k">elif</span> <span class="s2">&quot;logits&quot;</span> <span class="ow">in</span> <span class="n">tensor_out</span><span class="p">:</span>
+                    <span class="n">tensor_out</span> <span class="o">=</span> <span class="n">tensor_out</span><span class="p">[</span><span class="s2">&quot;logits&quot;</span><span class="p">]</span>
+            <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">tensor_out</span><span class="p">,</span> <span class="s2">&quot;logits&quot;</span><span class="p">):</span>
+                <span class="n">tensor_out</span> <span class="o">=</span> <span class="n">tensor_out</span><span class="o">.</span><span class="n">logits</span>
+
+            <span class="k">if</span> <span class="n">tensor_out</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span> <span class="o">!=</span> <span class="n">tensor_in</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]:</span>
+                <span class="n">tensor_out</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span>
+                    <span class="n">tensor_out</span><span class="p">,</span>
+                    <span class="n">size</span><span class="o">=</span><span class="n">tensor_in</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:],</span>
+                    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;bilinear&quot;</span><span class="p">,</span>
+                    <span class="n">align_corners</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="p">)</span>
 
         <span class="k">return</span> <span class="n">tensor_out</span></div>
 

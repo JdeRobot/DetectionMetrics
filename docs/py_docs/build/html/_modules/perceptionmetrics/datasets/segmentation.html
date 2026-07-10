@@ -242,7 +242,7 @@
 <span></span><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">abstractmethod</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -253,6 +253,7 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">perceptionmetrics.utils.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">uio</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">perceptionmetrics.utils.conversion</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">uc</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">perceptionmetrics.utils.lidar</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ul</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">perceptionmetrics.utils.segmentation_metrics</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">um</span>
 
 
 <div class="viewcode-block" id="SegmentationDataset">
@@ -502,6 +503,124 @@
             <span class="n">label_count</span><span class="p">[</span><span class="n">indices</span><span class="p">]</span> <span class="o">+=</span> <span class="n">counts</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint64</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">label_count</span></div>
+
+
+<div class="viewcode-block" id="ImageSegmentationDataset.eval_preds">
+<a class="viewcode-back" href="../../../api/perceptionmetrics.datasets.html#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset.eval_preds">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">eval_preds</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">predictions_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">split</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+        <span class="n">ontology_translation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">translation_direction</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;dataset_to_model&quot;</span><span class="p">,</span>
+        <span class="n">pred_ontology</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">ignored_classes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">results_per_sample</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Evaluate pre-computed predictions stored on disk against GT labels. The predictions directory must mirror the GT dataset layout.</span>
+
+<span class="sd">        :param predictions_dir: Root directory containing prediction label images.</span>
+<span class="sd">        :type predictions_dir: str</span>
+<span class="sd">        :param split: Split or splits to evaluate, defaults to &quot;test&quot;</span>
+<span class="sd">        :type split: Union[str, List[str]], optional</span>
+<span class="sd">        :param ontology_translation: Translation dictionary between GT and prediction ontologies. Only required when the two ontologies differ.</span>
+<span class="sd">        :type ontology_translation: Optional[dict], optional</span>
+<span class="sd">        :param translation_direction: Direction of the ontology translation. ``&quot;dataset_to_model&quot;`` maps GT labels to the prediction ontology (metrics are reported in the prediction ontology). ``&quot;model_to_dataset&quot;`` maps predictions to the GT ontology (metrics are reported in the GT ontology). Defaults to ``&quot;dataset_to_model&quot;``.</span>
+<span class="sd">        :type translation_direction: str, optional</span>
+<span class="sd">        :param pred_ontology: Ontology used by the predictions. If ``None``, it is assumed to match the GT ontology.</span>
+<span class="sd">        :type pred_ontology: Optional[dict], optional</span>
+<span class="sd">        :param ignored_classes: List of class names to exclude from evaluation. These class names must exist in the GT ontology.</span>
+<span class="sd">        :type ignored_classes: Optional[List[str]], optional</span>
+<span class="sd">        :param results_per_sample: If ``True``, per-sample CSV results are saved next to each prediction file inside predictions_dir.</span>
+<span class="sd">        :type results_per_sample: bool, optional</span>
+<span class="sd">        :return: DataFrame containing evaluation results</span>
+<span class="sd">        :rtype: pd.DataFrame</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">splits</span> <span class="o">=</span> <span class="p">[</span><span class="n">split</span><span class="p">]</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">split</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="k">else</span> <span class="n">split</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_validate_splits</span><span class="p">(</span><span class="n">splits</span><span class="p">)</span>
+
+        <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">splits</span><span class="p">)]</span>
+
+        <span class="c1"># Determine the evaluation ontology and build a LUT if needed</span>
+        <span class="n">eval_ontology</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span>
+        <span class="n">lut_ontology</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span> <span class="n">pred_ontology</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">pred_ontology</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span>
+
+        <span class="k">if</span> <span class="n">pred_ontology</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">ontology_translation</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;&#39;ontology_translation&#39; must be provided when GT and prediction &quot;</span>
+                    <span class="s2">&quot;ontologies differ.&quot;</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">translation_direction</span> <span class="o">==</span> <span class="s2">&quot;dataset_to_model&quot;</span><span class="p">:</span>
+                <span class="n">eval_ontology</span> <span class="o">=</span> <span class="n">pred_ontology</span>
+                <span class="n">lut_ontology</span> <span class="o">=</span> <span class="n">uc</span><span class="o">.</span><span class="n">get_ontology_conversion_lut</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span><span class="p">,</span> <span class="n">pred_ontology</span><span class="p">,</span> <span class="n">ontology_translation</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">lut_ontology</span> <span class="o">=</span> <span class="n">uc</span><span class="o">.</span><span class="n">get_ontology_conversion_lut</span><span class="p">(</span>
+                    <span class="n">pred_ontology</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ontology</span><span class="p">,</span> <span class="n">ontology_translation</span>
+                <span class="p">)</span>
+
+        <span class="n">n_classes</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">eval_ontology</span><span class="p">)</span>
+
+        <span class="c1"># Retrieve ignored label indices</span>
+        <span class="n">ignored_label_indices</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">ignored_classes</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">cls_name</span> <span class="ow">in</span> <span class="n">ignored_classes</span><span class="p">:</span>
+                <span class="n">ignored_label_indices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ontology</span><span class="p">[</span><span class="n">cls_name</span><span class="p">][</span><span class="s2">&quot;idx&quot;</span><span class="p">])</span>
+
+        <span class="c1"># Init metrics</span>
+        <span class="n">metrics_factory</span> <span class="o">=</span> <span class="n">um</span><span class="o">.</span><span class="n">SegmentationMetricsFactory</span><span class="p">(</span><span class="n">n_classes</span><span class="p">)</span>
+
+        <span class="n">pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">(),</span> <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">leave</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">sample_name</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">pbar</span><span class="p">:</span>
+            <span class="n">pbar</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Evaluating sample: </span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Read GT label</span>
+            <span class="n">gt_label_fname</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset_dir</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">gt_label_fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_dir</span><span class="p">,</span> <span class="n">gt_label_fname</span><span class="p">)</span>
+            <span class="n">gt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_label</span><span class="p">(</span><span class="n">gt_label_fname</span><span class="p">)</span>
+
+            <span class="c1"># Read prediction label</span>
+            <span class="n">pred_label_fname</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">]</span>
+            <span class="n">pred_label_fname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">predictions_dir</span><span class="p">,</span> <span class="n">pred_label_fname</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">pred_label_fname</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Prediction file not found: </span><span class="si">{</span><span class="n">pred_label_fname</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+            <span class="n">pred</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">pred_label_fname</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+            <span class="c1"># Build valid mask from ignored classes</span>
+            <span class="n">valid_mask</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span> <span class="n">ignored_label_indices</span><span class="p">:</span>
+                <span class="n">valid_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">gt</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">ignored_label_indices</span><span class="p">:</span>
+                    <span class="n">valid_mask</span> <span class="o">&amp;=</span> <span class="n">gt</span> <span class="o">!=</span> <span class="n">idx</span>
+
+            <span class="c1"># Apply ontology translation</span>
+            <span class="k">if</span> <span class="n">lut_ontology</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">translation_direction</span> <span class="o">==</span> <span class="s2">&quot;dataset_to_model&quot;</span><span class="p">:</span>
+                    <span class="n">gt</span> <span class="o">=</span> <span class="n">lut_ontology</span><span class="p">[</span><span class="n">gt</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">pred</span> <span class="o">=</span> <span class="n">lut_ontology</span><span class="p">[</span><span class="n">pred</span><span class="p">]</span>
+
+            <span class="n">metrics_factory</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">gt</span><span class="p">,</span> <span class="n">valid_mask</span><span class="p">)</span>
+
+            <span class="c1"># Per-sample results</span>
+            <span class="k">if</span> <span class="n">results_per_sample</span><span class="p">:</span>
+                <span class="n">sample_mf</span> <span class="o">=</span> <span class="n">um</span><span class="o">.</span><span class="n">SegmentationMetricsFactory</span><span class="p">(</span><span class="n">n_classes</span><span class="p">)</span>
+                <span class="n">sample_mf</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">gt</span><span class="p">,</span> <span class="n">valid_mask</span><span class="p">)</span>
+                <span class="n">sample_df</span> <span class="o">=</span> <span class="n">um</span><span class="o">.</span><span class="n">get_metrics_dataframe</span><span class="p">(</span><span class="n">sample_mf</span><span class="p">,</span> <span class="n">eval_ontology</span><span class="p">)</span>
+                <span class="n">sample_csv</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                    <span class="n">predictions_dir</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;split&quot;</span><span class="p">],</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s2">.csv&quot;</span>
+                <span class="p">)</span>
+                <span class="n">sample_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">sample_csv</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">um</span><span class="o">.</span><span class="n">get_metrics_dataframe</span><span class="p">(</span><span class="n">metrics_factory</span><span class="p">,</span> <span class="n">eval_ontology</span><span class="p">)</span></div>
 </div>
 
 
@@ -703,7 +822,44 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">label</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ul</span><span class="o">.</span><span class="n">read_semantickitti_label</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">label</span></div>
+
+
+<div class="viewcode-block" id="LiDARSegmentationDataset.eval_preds">
+<a class="viewcode-back" href="../../../api/perceptionmetrics.datasets.html#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset.eval_preds">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">eval_preds</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">predictions_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">split</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+        <span class="n">ontology_translation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">translation_direction</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;dataset_to_model&quot;</span><span class="p">,</span>
+        <span class="n">pred_ontology</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">ignored_classes</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">results_per_sample</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Evaluate pre-computed predictions stored on disk against GT labels.</span>
+
+<span class="sd">        :param predictions_dir: Root directory containing prediction label files.</span>
+<span class="sd">        :type predictions_dir: str</span>
+<span class="sd">        :param split: Split or splits to evaluate, defaults to &quot;test&quot;</span>
+<span class="sd">        :type split: Union[str, List[str]], optional</span>
+<span class="sd">        :param ontology_translation: Translation dictionary between GT and prediction ontologies. Only required when the two ontologies differ.</span>
+<span class="sd">        :type ontology_translation: Optional[dict], optional</span>
+<span class="sd">        :param translation_direction: Direction of the ontology translation. ``&quot;dataset_to_model&quot;`` maps GT labels to the prediction ontology. ``&quot;model_to_dataset&quot;`` maps predictions to the GT ontology. Defaults to ``&quot;dataset_to_model&quot;``.</span>
+<span class="sd">        :type translation_direction: str, optional</span>
+<span class="sd">        :param pred_ontology: Ontology used by the predictions. If ``None``, it is assumed to match the GT ontology.</span>
+<span class="sd">        :type pred_ontology: Optional[dict], optional</span>
+<span class="sd">        :param ignored_classes: List of class names to exclude from evaluation. These class names must exist in the GT ontology.</span>
+<span class="sd">        :type ignored_classes: Optional[List[str]], optional</span>
+<span class="sd">        :param results_per_sample: If ``True``, per-sample results are saved next to each prediction file inside predictions_dir.</span>
+<span class="sd">        :type results_per_sample: bool, optional</span>
+<span class="sd">        :return: DataFrame containing evaluation results</span>
+<span class="sd">        :rtype: pd.DataFrame</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span>
+            <span class="s2">&quot;eval_preds is not yet implemented for LiDARSegmentationDataset&quot;</span>
+        <span class="p">)</span></div>
 </div>
+
 
 </pre></div>
         </article>

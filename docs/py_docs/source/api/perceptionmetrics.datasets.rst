@@ -4,6 +4,14 @@ perceptionmetrics.datasets package
 Submodules
 ----------
 
+perceptionmetrics.datasets.cityscapes module
+--------------------------------------------
+
+.. automodule:: perceptionmetrics.datasets.cityscapes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 perceptionmetrics.datasets.coco module
 --------------------------------------
 
@@ -44,6 +52,14 @@ perceptionmetrics.datasets.goose module
    :undoc-members:
    :show-inheritance:
 
+perceptionmetrics.datasets.nuimages module
+------------------------------------------
+
+.. automodule:: perceptionmetrics.datasets.nuimages
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 perceptionmetrics.datasets.perception module
 --------------------------------------------
 
@@ -72,6 +88,14 @@ perceptionmetrics.datasets.segmentation module
 ----------------------------------------------
 
 .. automodule:: perceptionmetrics.datasets.segmentation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+perceptionmetrics.datasets.semantickitti module
+-----------------------------------------------
+
+.. automodule:: perceptionmetrics.datasets.semantickitti
    :members:
    :undoc-members:
    :show-inheritance:

@@ -255,8 +255,12 @@
 <li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.cli.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.cli.html#module-perceptionmetrics.cli.batch">perceptionmetrics.cli.batch module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.cli.html#module-perceptionmetrics.cli.computational_cost">perceptionmetrics.cli.computational_cost module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.cli.html#module-perceptionmetrics.cli.evaluate">perceptionmetrics.cli.evaluate module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.cli.html#perceptionmetrics.cli.evaluate.parse_split"><code class="docutils literal notranslate"><span class="pre">parse_split()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.cli.html#module-perceptionmetrics.cli.eval_model">perceptionmetrics.cli.eval_model module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.cli.html#perceptionmetrics.cli.eval_model.parse_split"><code class="docutils literal notranslate"><span class="pre">parse_split()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.cli.html#module-perceptionmetrics.cli.eval_preds">perceptionmetrics.cli.eval_preds module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.cli.html#perceptionmetrics.cli.eval_preds.parse_split"><code class="docutils literal notranslate"><span class="pre">parse_split()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.cli.html#module-perceptionmetrics.cli">Module contents</a><ul>
@@ -268,6 +272,13 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="perceptionmetrics.datasets.html">perceptionmetrics.datasets package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.datasets.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.datasets.html#module-perceptionmetrics.datasets.cityscapes">perceptionmetrics.datasets.cityscapes module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.cityscapes.CityscapesImageSegmentationDataset"><code class="docutils literal notranslate"><span class="pre">CityscapesImageSegmentationDataset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.cityscapes.build_dataset"><code class="docutils literal notranslate"><span class="pre">build_dataset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.cityscapes.build_dataset_ontology"><code class="docutils literal notranslate"><span class="pre">build_dataset_ontology()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.cityscapes.build_train_id_ontology_translation"><code class="docutils literal notranslate"><span class="pre">build_train_id_ontology_translation()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.datasets.html#module-perceptionmetrics.datasets.coco">perceptionmetrics.datasets.coco module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.coco.CocoDataset"><code class="docutils literal notranslate"><span class="pre">CocoDataset</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.coco.CocoDataset.read_annotation"><code class="docutils literal notranslate"><span class="pre">CocoDataset.read_annotation()</span></code></a></li>
@@ -284,11 +295,13 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.detection.ImageDetectionDataset"><code class="docutils literal notranslate"><span class="pre">ImageDetectionDataset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.detection.ImageDetectionDataset.eval_preds"><code class="docutils literal notranslate"><span class="pre">ImageDetectionDataset.eval_preds()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.detection.ImageDetectionDataset.make_fname_global"><code class="docutils literal notranslate"><span class="pre">ImageDetectionDataset.make_fname_global()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.detection.ImageDetectionDataset.read_annotation"><code class="docutils literal notranslate"><span class="pre">ImageDetectionDataset.read_annotation()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.detection.LiDARDetectionDataset"><code class="docutils literal notranslate"><span class="pre">LiDARDetectionDataset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.detection.LiDARDetectionDataset.eval_preds"><code class="docutils literal notranslate"><span class="pre">LiDARDetectionDataset.eval_preds()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.detection.LiDARDetectionDataset.make_fname_global"><code class="docutils literal notranslate"><span class="pre">LiDARDetectionDataset.make_fname_global()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.detection.LiDARDetectionDataset.read_annotation"><code class="docutils literal notranslate"><span class="pre">LiDARDetectionDataset.read_annotation()</span></code></a></li>
 </ul>
@@ -314,6 +327,17 @@
 <li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.goose.build_dataset"><code class="docutils literal notranslate"><span class="pre">build_dataset()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.datasets.html#module-perceptionmetrics.datasets.nuimages">perceptionmetrics.datasets.nuimages module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.nuimages.NuImagesDetectionDataset"><code class="docutils literal notranslate"><span class="pre">NuImagesDetectionDataset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.nuimages.NuImagesDetectionDataset.read_annotation"><code class="docutils literal notranslate"><span class="pre">NuImagesDetectionDataset.read_annotation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.nuimages.NuImagesSegmentationDataset"><code class="docutils literal notranslate"><span class="pre">NuImagesSegmentationDataset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.nuimages.build_nuimages_detection_dataset"><code class="docutils literal notranslate"><span class="pre">build_nuimages_detection_dataset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.nuimages.build_nuimages_segmentation_dataset"><code class="docutils literal notranslate"><span class="pre">build_nuimages_segmentation_dataset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.nuimages.nuimages_detection"><code class="docutils literal notranslate"><span class="pre">nuimages_detection</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.datasets.html#module-perceptionmetrics.datasets.perception">perceptionmetrics.datasets.perception module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.perception.PerceptionDataset"><code class="docutils literal notranslate"><span class="pre">PerceptionDataset</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.perception.PerceptionDataset.append"><code class="docutils literal notranslate"><span class="pre">PerceptionDataset.append()</span></code></a></li>
@@ -336,6 +360,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.datasets.html#module-perceptionmetrics.datasets.segmentation">perceptionmetrics.datasets.segmentation module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset"><code class="docutils literal notranslate"><span class="pre">ImageSegmentationDataset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset.eval_preds"><code class="docutils literal notranslate"><span class="pre">ImageSegmentationDataset.eval_preds()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset.export"><code class="docutils literal notranslate"><span class="pre">ImageSegmentationDataset.export()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset.get_label_count"><code class="docutils literal notranslate"><span class="pre">ImageSegmentationDataset.get_label_count()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset.make_fname_global"><code class="docutils literal notranslate"><span class="pre">ImageSegmentationDataset.make_fname_global()</span></code></a></li>
@@ -343,6 +368,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset"><code class="docutils literal notranslate"><span class="pre">LiDARSegmentationDataset</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset.eval_preds"><code class="docutils literal notranslate"><span class="pre">LiDARSegmentationDataset.eval_preds()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset.export"><code class="docutils literal notranslate"><span class="pre">LiDARSegmentationDataset.export()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset.make_fname_global"><code class="docutils literal notranslate"><span class="pre">LiDARSegmentationDataset.make_fname_global()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset.read_label"><code class="docutils literal notranslate"><span class="pre">LiDARSegmentationDataset.read_label()</span></code></a></li>
@@ -353,6 +379,13 @@
 <li class="toctree-l4"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.segmentation.SegmentationDataset.read_label"><code class="docutils literal notranslate"><span class="pre">SegmentationDataset.read_label()</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.datasets.html#module-perceptionmetrics.datasets.semantickitti">perceptionmetrics.datasets.semantickitti module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.semantickitti.SemanticKITTILiDARSegmentationDataset"><code class="docutils literal notranslate"><span class="pre">SemanticKITTILiDARSegmentationDataset</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.semantickitti.build_dataset"><code class="docutils literal notranslate"><span class="pre">build_dataset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.semantickitti.build_ontology"><code class="docutils literal notranslate"><span class="pre">build_ontology()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.datasets.html#perceptionmetrics.datasets.semantickitti.build_train_id_ontology_translation"><code class="docutils literal notranslate"><span class="pre">build_train_id_ontology_translation()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.datasets.html#module-perceptionmetrics.datasets.wildscenes">perceptionmetrics.datasets.wildscenes module</a><ul>
@@ -472,7 +505,6 @@
 <li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.models.html#perceptionmetrics.models.torch_detection.data_to_device"><code class="docutils literal notranslate"><span class="pre">data_to_device()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.models.html#perceptionmetrics.models.torch_detection.get_computational_cost"><code class="docutils literal notranslate"><span class="pre">get_computational_cost()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.models.html#perceptionmetrics.models.torch_detection.get_data_shape"><code class="docutils literal notranslate"><span class="pre">get_data_shape()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.models.html#perceptionmetrics.models.torch_detection.get_resize_args"><code class="docutils literal notranslate"><span class="pre">get_resize_args()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="perceptionmetrics.models.html#module-perceptionmetrics.models.torch_segmentation">perceptionmetrics.models.torch_segmentation module</a><ul>
@@ -587,6 +619,9 @@
 <li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.utils.html#perceptionmetrics.utils.torch.data_to_device"><code class="docutils literal notranslate"><span class="pre">data_to_device()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.utils.html#perceptionmetrics.utils.torch.get_data_shape"><code class="docutils literal notranslate"><span class="pre">get_data_shape()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.utils.html#perceptionmetrics.utils.torch.get_device_info"><code class="docutils literal notranslate"><span class="pre">get_device_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.utils.html#perceptionmetrics.utils.torch.get_resize_args"><code class="docutils literal notranslate"><span class="pre">get_resize_args()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.utils.html#perceptionmetrics.utils.torch.inverse_transform_boxes"><code class="docutils literal notranslate"><span class="pre">inverse_transform_boxes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.utils.html#perceptionmetrics.utils.torch.pad_to_closest_divisor"><code class="docutils literal notranslate"><span class="pre">pad_to_closest_divisor()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="perceptionmetrics.utils.html#perceptionmetrics.utils.torch.unsqueeze_data"><code class="docutils literal notranslate"><span class="pre">unsqueeze_data()</span></code></a></li>
 </ul>
 </li>

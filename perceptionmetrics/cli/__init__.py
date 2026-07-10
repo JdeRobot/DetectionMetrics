@@ -1,11 +1,13 @@
 from perceptionmetrics import datasets
 from perceptionmetrics import models
-from perceptionmetrics.cli.evaluate import evaluate
+from perceptionmetrics.cli.eval_model import eval_model
+from perceptionmetrics.cli.eval_preds import eval_preds
 from perceptionmetrics.cli.computational_cost import computational_cost
 from perceptionmetrics.datasets.coco import find_img_dir_and_ann_file
 
 REGISTRY = {
-    "evaluate": evaluate,
+    "eval_model": eval_model,
+    "eval_preds": eval_preds,
     "computational_cost": computational_cost,
 }
 
@@ -56,18 +58,18 @@ def get_dataset(
         if dataset_format == "rellis3d" and ontology is None:
             raise ValueError("--dataset_ontology is required for 'rellis3d' format")
 
-    elif dataset_format in ["goose", "generic"]:
+    elif dataset_format in ["goose", "generic", "cityscapes"]:
         if "train" in split and train_dataset_dir is None:
             raise ValueError(
-                "--train_dataset_dir is required for 'train' split in 'goose' and 'generic' formats"
+                f"--train_dataset_dir is required for 'train' split in '{dataset_format}' format"
             )
         elif "val" in split and val_dataset_dir is None:
             raise ValueError(
-                "--val_dataset_dir is required for 'val' split in 'goose' and 'generic' formats"
+                f"--val_dataset_dir is required for 'val' split in '{dataset_format}' format"
             )
         elif "test" in split and test_dataset_dir is None:
             raise ValueError(
-                "--test_dataset_dir is required for 'test' split in 'goose' and 'generic' formats"
+                f"--test_dataset_dir is required for 'test' split in '{dataset_format}' format"
             )
 
         if dataset_format == "generic":
@@ -88,18 +90,27 @@ def get_dataset(
         if dataset_dir is None:
             raise ValueError("--dataset_dir is required for 'coco' format")
 
+    elif dataset_format == "yolo":
+        if dataset_fname is None:
+            raise ValueError("--dataset_fname is required for 'yolo' format")
+
+    elif dataset_format == "nuimages":
+        if dataset_dir is None:
+            raise ValueError("--dataset_dir is required for 'nuimages' format")
+
     else:
         raise ValueError(f"Dataset format not supported: {dataset_format}")
 
     # Get arguments to init dataset
     if dataset_format == "gaia":
         dataset_args = {"dataset_fname": dataset_fname}
-    elif dataset_format == "rellis3d":
+    elif dataset_format in ["rellis3d", "wildscenes"]:
         dataset_args = {
             "dataset_dir": dataset_dir,
             "split_dir": split_dir,
-            "ontology_fname": ontology,
         }
+        if dataset_format == "rellis3d":
+            dataset_args["ontology_fname"] = ontology
     elif dataset_format == "goose":
         dataset_args = {
             "train_dataset_dir": train_dataset_dir,
@@ -114,6 +125,12 @@ def get_dataset(
             "train_dataset_dir": train_dataset_dir,
             "val_dataset_dir": val_dataset_dir,
             "test_dataset_dir": test_dataset_dir,
+        }
+    elif dataset_format == "cityscapes":
+        dataset_args = {
+            "train_dataset_root": train_dataset_dir,
+            "val_dataset_root": val_dataset_dir,
+            "test_dataset_root": test_dataset_dir,
         }
     elif dataset_format == "rugd":
         dataset_args = {
@@ -134,6 +151,18 @@ def get_dataset(
             "annotation_file": annotation_file,
             "image_dir": image_dir,
             "split": split_name,
+        }
+    elif dataset_format == "yolo":
+        dataset_args = {
+            "dataset_fname": dataset_fname,
+            "dataset_dir": dataset_dir,
+        }
+    elif dataset_format == "nuimages":
+        if len(split) > 1:
+            raise ValueError("NuImages format currently supports only one split at a time")
+        dataset_args = {
+            "dataset_dir": dataset_dir,
+            "split": split[0],
         }
     else:
         raise ValueError(f"Dataset format not supported: {dataset_format}")

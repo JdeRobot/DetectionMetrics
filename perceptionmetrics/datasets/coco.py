@@ -1,3 +1,4 @@
+from typing import OrderedDict
 from pycocotools.coco import COCO
 import os
 import re
@@ -88,18 +89,18 @@ def build_coco_dataset(
         }
 
     # Build dataset DataFrame from COCO image IDs
-    rows = []
+    dataset = OrderedDict()
     for img_id in coco.getImgIds():
         img_info = coco.loadImgs(img_id)[0]
-        rows.append(
-            {
-                "image": img_info["file_name"],
-                "annotation": str(img_id),
-                "split": split,  # Use provided split parameter
-            }
+        sample_name = os.path.basename(img_info["file_name"]).split(".")[0]
+        dataset[sample_name] = (
+            img_info["file_name"],
+            str(img_id),
+            split,  # Use provided split parameter
         )
 
-    dataset = pd.DataFrame(rows)
+    cols = ["image", "annotation", "split"]
+    dataset = pd.DataFrame.from_dict(dataset, orient="index", columns=cols)
     dataset.attrs = {"ontology": ontology}
 
     return dataset, ontology
