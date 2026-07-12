@@ -191,7 +191,7 @@ class DetectionMetricsFactory:
                 "AP": ap,
                 "Precision": precision_val,
                 "Recall": recall_val,
-                "F1": f1_score,   
+                "F1": f1_score,
                 "TP": sum(tps),
                 "FP": sum(fps),
                 "FN": fn_count,
@@ -307,7 +307,7 @@ class DetectionMetricsFactory:
             return {"precision": [0.0], "recall": [0.0]}
 
         fn_count = sum(1 for d in all_detections if d[1] == -1)
-        
+
         # Sort by score
         all_detections = sorted(
             [d for d in all_detections if d[0] is not None], key=lambda x: -x[0]
@@ -362,7 +362,7 @@ class DetectionMetricsFactory:
         metrics_dict = {}
         class_names = list(ontology.keys())
 
-        for metric in ["AP", "Precision", "Recall","F1","TP", "FP", "FN"]:
+        for metric in ["AP", "Precision", "Recall", "F1", "TP", "FP", "FN"]:
             metrics_dict[metric] = {}
             for class_name, class_data in ontology.items():
                 idx = class_data["idx"]
