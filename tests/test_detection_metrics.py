@@ -73,7 +73,12 @@ def test_compute_metrics(metrics_factory):
 
 def test_compute_iou_matrix_basic():
     """Verify that the matrix correctly maps N predictions to M ground truths."""
-    pred_boxes = np.array([[0, 0, 10, 10], [20, 20, 30, 30]])  # Pred 0  # Pred 1
+    pred_boxes = np.array(
+        [
+            [0, 0, 10, 10],  # Pred 0
+            [20, 20, 30, 30],  # Pred 1
+        ]
+    )
     gt_boxes = np.array(
         [
             [0, 0, 10, 10],  # GT 0: Exact match with Pred 0

@@ -74,19 +74,15 @@ def inference_tab():
         with st.spinner("Running inference..."):
             try:
                 image = Image.open(image_file).convert("RGB")
-                predictions, sample_tensor = st.session_state.detection_model.predict(
-                    image, return_sample=True
-                )
-                from torchvision.transforms import v2 as transforms
+                predictions = st.session_state.detection_model.predict(image)
 
-                img_to_draw = transforms.ToPILImage()(sample_tensor[0])
                 label_map = getattr(
                     st.session_state.detection_model, "idx_to_class_name", None
                 )
-                result_img = draw_detections(img_to_draw, predictions, label_map)
+                result_img = draw_detections(image, predictions, label_map)
 
                 st.markdown("#### Detection Results")
-                st.image(result_img, caption="Detection Results", width="stretch")
+                st.image(result_img, caption="Detection Results", width="content")
 
                 # Display detection statistics
                 if (

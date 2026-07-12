@@ -20,10 +20,18 @@ perceptionmetrics.cli.computational\_cost module
    :undoc-members:
    :show-inheritance:
 
-perceptionmetrics.cli.evaluate module
--------------------------------------
+perceptionmetrics.cli.eval\_model module
+----------------------------------------
 
-.. automodule:: perceptionmetrics.cli.evaluate
+.. automodule:: perceptionmetrics.cli.eval_model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+perceptionmetrics.cli.eval\_preds module
+----------------------------------------
+
+.. automodule:: perceptionmetrics.cli.eval_preds
    :members:
    :undoc-members:
    :show-inheritance:

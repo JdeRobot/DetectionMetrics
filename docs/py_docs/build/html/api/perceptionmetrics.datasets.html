@@ -250,6 +250,93 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
 </section>
+<section id="module-perceptionmetrics.datasets.cityscapes">
+<span id="perceptionmetrics-datasets-cityscapes-module"></span><h2>perceptionmetrics.datasets.cityscapes module<a class="headerlink" href="#module-perceptionmetrics.datasets.cityscapes" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.cityscapes.CityscapesImageSegmentationDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">perceptionmetrics.datasets.cityscapes.</span></span><span class="sig-name descname"><span class="pre">CityscapesImageSegmentationDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_dataset_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_dataset_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_dataset_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'leftImg8bit_trainvaltest/leftImg8bit'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gtFine'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'_leftImg8bit.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'_gtFine_labelIds.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_train_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/cityscapes.html#CityscapesImageSegmentationDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.cityscapes.CityscapesImageSegmentationDataset" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset" title="perceptionmetrics.datasets.segmentation.ImageSegmentationDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageSegmentationDataset</span></code></a></p>
+<p>Specific class for Cityscapes-styled image segmentation datasets. The dataset can be
+downloaded from the official webpage (<a class="reference external" href="https://www.cityscapes-dataset.com">https://www.cityscapes-dataset.com</a>):
+images -&gt; leftImg8bit_trainvaltest.zip
+labels -&gt; gtFine_trainvaltest.zip</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>train_dataset_root</strong> (<em>str</em><em>, </em><em>optional</em>) – Root directory containing training data, defaults to None</p></li>
+<li><p><strong>val_dataset_root</strong> (<em>str</em><em>, </em><em>optional</em>) – Root directory containing validation data, defaults to None</p></li>
+<li><p><strong>test_dataset_root</strong> (<em>str</em><em>, </em><em>optional</em>) – Root directory containing test data, defaults to None</p></li>
+<li><p><strong>image_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Subdirectory containing images within each dataset directory, defaults to “leftImg8bit_trainvaltest/leftImg8bit”</p></li>
+<li><p><strong>label_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Subdirectory containing labels within each dataset directory, defaults to “gtFine”</p></li>
+<li><p><strong>image_suffix</strong> (<em>str</em><em>, </em><em>optional</em>) – File suffix used to filter image files, defaults to “_leftImg8bit.png”</p></li>
+<li><p><strong>label_suffix</strong> (<em>str</em><em>, </em><em>optional</em>) – File suffix used to filter label files, defaults to “_gtFine_labelIds.png”</p></li>
+<li><p><strong>use_train_id</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to use train IDs instead of Cityscapes label IDs, defaults to False</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.cityscapes.build_dataset">
+<span class="sig-prename descclassname"><span class="pre">perceptionmetrics.datasets.cityscapes.</span></span><span class="sig-name descname"><span class="pre">build_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_dataset_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_dataset_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_dataset_root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'leftImg8bit_trainvaltest/leftImg8bit'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'gtFine'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'_leftImg8bit.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'_gtFine_labelIds.png'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_train_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/cityscapes.html#build_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.cityscapes.build_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Build dataset and ontology dictionaries from Cityscapes dataset structure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>train_dataset_root</strong> (<em>str</em><em>, </em><em>optional</em>) – Root directory containing training data, defaults to None</p></li>
+<li><p><strong>val_dataset_root</strong> (<em>str</em><em>, </em><em>optional</em>) – Root directory containing validation data, defaults to None</p></li>
+<li><p><strong>test_dataset_root</strong> (<em>str</em><em>, </em><em>optional</em>) – Root directory containing test data, defaults to None</p></li>
+<li><p><strong>image_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Subdirectory containing images within each dataset directory, defaults to “leftImg8bit_trainvaltest/leftImg8bit”</p></li>
+<li><p><strong>label_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Subdirectory containing labels within each dataset directory, defaults to “gtFine”</p></li>
+<li><p><strong>image_suffix</strong> (<em>str</em><em>, </em><em>optional</em>) – File suffix used to filter image files, defaults to “_leftImg8bit.png”</p></li>
+<li><p><strong>label_suffix</strong> (<em>str</em><em>, </em><em>optional</em>) – File suffix used to filter label files, defaults to “_gtFine_labelIds.png”</p></li>
+<li><p><strong>use_train_id</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to use train IDs instead of Cityscapes label IDs, defaults to False</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dataset and ontology dictionaries</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[dict, dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.cityscapes.build_dataset_ontology">
+<span class="sig-prename descclassname"><span class="pre">perceptionmetrics.datasets.cityscapes.</span></span><span class="sig-name descname"><span class="pre">build_dataset_ontology</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">use_train_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/cityscapes.html#build_dataset_ontology"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.cityscapes.build_dataset_ontology" title="Link to this definition">¶</a></dt>
+<dd><p>Build ontology dictionary from Cityscapes dataset labels</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>use_train_id</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to use train IDs instead of Cityscapes label IDs, defaults to False</p></li>
+<li><p><strong>ontology_fname</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Optional JSON file path where the ontology should be saved, defaults to None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Ontology dictionary mapping class names to label metadata</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.cityscapes.build_train_id_ontology_translation">
+<span class="sig-prename descclassname"><span class="pre">perceptionmetrics.datasets.cityscapes.</span></span><span class="sig-name descname"><span class="pre">build_train_id_ontology_translation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/cityscapes.html#build_train_id_ontology_translation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.cityscapes.build_train_id_ontology_translation" title="Link to this definition">¶</a></dt>
+<dd><p>Build ontology translation from Cityscapes label IDs to train IDs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Translation dictionary mapping raw Cityscapes class names to train ID class names</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 <section id="module-perceptionmetrics.datasets.coco">
 <span id="perceptionmetrics-datasets-coco-module"></span><h2>perceptionmetrics.datasets.coco module<a class="headerlink" href="#module-perceptionmetrics.datasets.coco" title="Link to this heading">¶</a></h2>
 <dl class="py class">
@@ -395,6 +482,31 @@ annotation retrieval without needing a separate cache.</p>
 </dd>
 </dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.detection.ImageDetectionDataset.eval_preds">
+<span class="sig-name descname"><span class="pre">eval_preds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predictions_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'test'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_translation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translation_direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dataset_to_model'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred_ontology</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignored_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_per_sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/detection.html#ImageDetectionDataset.eval_preds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.detection.ImageDetectionDataset.eval_preds" title="Link to this definition">¶</a></dt>
+<dd><p>Evaluate pre-computed predictions stored on disk against GT annotations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>predictions_dir</strong> (<em>str</em>) – Root directory containing prediction annotation files.</p></li>
+<li><p><strong>split</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Split or splits to evaluate, defaults to “test”</p></li>
+<li><p><strong>ontology_translation</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em><em>, </em><em>optional</em>) – Translation dictionary between GT and prediction ontologies. Only required when the two ontologies differ.</p></li>
+<li><p><strong>translation_direction</strong> (<em>str</em><em>, </em><em>optional</em>) – Direction of the ontology translation. <code class="docutils literal notranslate"><span class="pre">&quot;dataset_to_model&quot;</span></code> maps GT labels to the prediction ontology. <code class="docutils literal notranslate"><span class="pre">&quot;model_to_dataset&quot;</span></code> maps predictions to the GT ontology. Defaults to <code class="docutils literal notranslate"><span class="pre">&quot;dataset_to_model&quot;</span></code>.</p></li>
+<li><p><strong>pred_ontology</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em><em>, </em><em>optional</em>) – Ontology used by the predictions. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, it is assumed to match the GT ontology.</p></li>
+<li><p><strong>ignored_classes</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – List of class names to exclude from evaluation. These class names must exist in the GT ontology.</p></li>
+<li><p><strong>results_per_sample</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, per-sample results are saved next to each prediction file inside predictions_dir.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing evaluation results</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="perceptionmetrics.datasets.detection.ImageDetectionDataset.make_fname_global">
 <span class="sig-name descname"><span class="pre">make_fname_global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/detection.html#ImageDetectionDataset.make_fname_global"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.detection.ImageDetectionDataset.make_fname_global" title="Link to this definition">¶</a></dt>
 <dd><p>Convert relative filenames in ‘image’ and ‘annotation’ columns to global paths.</p>
@@ -432,6 +544,31 @@ annotation retrieval without needing a separate cache.</p>
 </ul>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.detection.LiDARDetectionDataset.eval_preds">
+<span class="sig-name descname"><span class="pre">eval_preds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predictions_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'test'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_translation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translation_direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dataset_to_model'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred_ontology</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignored_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_per_sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/detection.html#LiDARDetectionDataset.eval_preds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.detection.LiDARDetectionDataset.eval_preds" title="Link to this definition">¶</a></dt>
+<dd><p>Evaluate pre-computed predictions stored on disk against GT annotations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>predictions_dir</strong> (<em>str</em>) – Root directory containing prediction annotation files.</p></li>
+<li><p><strong>split</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Split or splits to evaluate, defaults to “test”</p></li>
+<li><p><strong>ontology_translation</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em><em>, </em><em>optional</em>) – Translation dictionary between GT and prediction ontologies. Only required when the two ontologies differ.</p></li>
+<li><p><strong>translation_direction</strong> (<em>str</em><em>, </em><em>optional</em>) – Direction of the ontology translation. <code class="docutils literal notranslate"><span class="pre">&quot;dataset_to_model&quot;</span></code> maps GT labels to the prediction ontology. <code class="docutils literal notranslate"><span class="pre">&quot;model_to_dataset&quot;</span></code> maps predictions to the GT ontology. Defaults to <code class="docutils literal notranslate"><span class="pre">&quot;dataset_to_model&quot;</span></code>.</p></li>
+<li><p><strong>pred_ontology</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em><em>, </em><em>optional</em>) – Ontology used by the predictions. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, it is assumed to match the GT ontology.</p></li>
+<li><p><strong>ignored_classes</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – List of class names to exclude from evaluation. These class names must exist in the GT ontology.</p></li>
+<li><p><strong>results_per_sample</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, per-sample results are saved next to each prediction file inside predictions_dir.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing evaluation results</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="perceptionmetrics.datasets.detection.LiDARDetectionDataset.make_fname_global">
 <span class="sig-name descname"><span class="pre">make_fname_global</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/detection.html#LiDARDetectionDataset.make_fname_global"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.detection.LiDARDetectionDataset.make_fname_global" title="Link to this definition">¶</a></dt>
@@ -651,6 +788,131 @@ test  -&gt; <a class="reference external" href="https://goose-dataset.de/storage
 </dd></dl>
 
 </section>
+<section id="module-perceptionmetrics.datasets.nuimages">
+<span id="perceptionmetrics-datasets-nuimages-module"></span><h2>perceptionmetrics.datasets.nuimages module<a class="headerlink" href="#module-perceptionmetrics.datasets.nuimages" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.nuimages.NuImagesDetectionDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">perceptionmetrics.datasets.nuimages.</span></span><span class="sig-name descname"><span class="pre">NuImagesDetectionDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'v1.0-mini'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'train'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/nuimages.html#NuImagesDetectionDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.nuimages.NuImagesDetectionDataset" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#perceptionmetrics.datasets.detection.ImageDetectionDataset" title="perceptionmetrics.datasets.detection.ImageDetectionDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageDetectionDataset</span></code></a></p>
+<p>Dataset class for nuImages 2D object detection.</p>
+<p>Inherits from ImageDetectionDataset and parses 2D bounding boxes
+from nuImages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_dir</strong> (<em>str</em>) – Path to the nuImages dataset root.</p></li>
+<li><p><strong>version</strong> (<em>str</em>) – nuImages version to load, defaults to “v1.0-mini”.</p></li>
+<li><p><strong>split</strong> (<em>str</em>) – Dataset split (“train” or “val”).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.nuimages.NuImagesDetectionDataset.read_annotation">
+<span class="sig-name descname"><span class="pre">read_annotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/nuimages.html#NuImagesDetectionDataset.read_annotation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.nuimages.NuImagesDetectionDataset.read_annotation" title="Link to this definition">¶</a></dt>
+<dd><p>Read annotations for a single nuImages sample and return 2D bounding boxes and class indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fname</strong> (<em>str</em>) – Sample token or filename.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple containing:
+- List of bounding boxes <code class="docutils literal notranslate"><span class="pre">[[x1,</span> <span class="pre">y1,</span> <span class="pre">x2,</span> <span class="pre">y2],</span> <span class="pre">...]</span></code>.
+- List of corresponding class indices.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[List[List[float]], List[int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.nuimages.NuImagesSegmentationDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">perceptionmetrics.datasets.nuimages.</span></span><span class="sig-name descname"><span class="pre">NuImagesSegmentationDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'v1.0-mini'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'train'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_rel_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'generated/nuimages_segmentation_labels'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/nuimages.html#NuImagesSegmentationDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.nuimages.NuImagesSegmentationDataset" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset" title="perceptionmetrics.datasets.segmentation.ImageSegmentationDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageSegmentationDataset</span></code></a></p>
+<p>Dataset class for nuImages 2D surface segmentation.
+Inherits from ImageSegmentationDataset and constructs semantic segmentation masks</p>
+<p>param dataset_dir: Path to the nuImages dataset root.
+:type dataset_dir: str
+:type version: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>
+:param version: nuImages version to load, defaults to “v1.0-mini”.
+:type version: str
+:type split: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>
+:param split: Dataset split (“train” or “val”).
+:type split: str
+:type labels_rel_dir: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>
+:param labels_rel_dir: Relative directory within the dataset where generated segmentation label images will be stored, defaults to “generated/nuimages_segmentation_labels”.
+:type labels_rel_dir: str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_dir</strong> (<em>str</em>)</p></li>
+<li><p><strong>version</strong> (<em>str</em>)</p></li>
+<li><p><strong>split</strong> (<em>str</em>)</p></li>
+<li><p><strong>labels_rel_dir</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.nuimages.build_nuimages_detection_dataset">
+<span class="sig-prename descclassname"><span class="pre">perceptionmetrics.datasets.nuimages.</span></span><span class="sig-name descname"><span class="pre">build_nuimages_detection_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'v1.0-mini'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'train'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nuim_object</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/nuimages.html#build_nuimages_detection_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.nuimages.build_nuimages_detection_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Build a nuImages 2D detection dataset index.</p>
+<p>Iterates through the nuImages scenes and samples, collects image paths for a given camera, and constructs a dataset index along with a category ontology mapping class names to integer indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_dir</strong> (<em>str</em>) – Path to the nuImages dataset root directory.</p></li>
+<li><p><strong>version</strong> (<em>str</em>) – nuImages dataset version to load, defaults to “v1.0-mini”.</p></li>
+<li><p><strong>split</strong> (<em>str</em>) – Dataset split to load (“train” or “val”), defaults to “train”.</p></li>
+<li><p><strong>nuim_object</strong> (<em>Optional</em><em>[</em><em>NuImages</em><em>]</em>) – Optional pre-initialized NuImages object to reuse, defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple containing:
+- A pandas DataFrame with columns [“image”, “annotation”, “split”] for each sample.
+- An ontology dictionary mapping category names to indices.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[pd.DataFrame, dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.nuimages.build_nuimages_segmentation_dataset">
+<span class="sig-prename descclassname"><span class="pre">perceptionmetrics.datasets.nuimages.</span></span><span class="sig-name descname"><span class="pre">build_nuimages_segmentation_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'v1.0-mini'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'train'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_rel_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'generated/nuimages_segmentation_labels'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nuim_object</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/nuimages.html#build_nuimages_segmentation_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.nuimages.build_nuimages_segmentation_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Build a nuImages semantic segmentation dataset index and masks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_dir</strong> (<em>str</em>) – Path to the nuImages dataset root directory.</p></li>
+<li><p><strong>version</strong> (<em>str</em>) – nuImages dataset version to load, defaults to “v1.0-mini”.</p></li>
+<li><p><strong>split</strong> (<em>str</em>) – Dataset split to load (“train” or “val”), defaults to “train”.</p></li>
+<li><p><strong>labels_rel_dir</strong> (<em>str</em>) – Relative directory for segmentation labels, defaults to “generated/nuimages_segmentation_labels”.</p></li>
+<li><p><strong>nuim_object</strong> (<em>Optional</em><em>[</em><em>NuImages</em><em>]</em>) – Optional pre-initialized NuImages object to reuse, defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple containing:
+- A pandas DataFrame with columns [“image”, “label”, “split”] for each sample.
+- An ontology dictionary mapping category names to indices.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[pd.DataFrame, dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.nuimages.nuimages_detection">
+<span class="sig-prename descclassname"><span class="pre">perceptionmetrics.datasets.nuimages.</span></span><span class="sig-name descname"><span class="pre">nuimages_detection</span></span><a class="headerlink" href="#perceptionmetrics.datasets.nuimages.nuimages_detection" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#perceptionmetrics.datasets.nuimages.NuImagesDetectionDataset" title="perceptionmetrics.datasets.nuimages.NuImagesDetectionDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">NuImagesDetectionDataset</span></code></a></p>
+</dd></dl>
+
+</section>
 <section id="module-perceptionmetrics.datasets.perception">
 <span id="perceptionmetrics-datasets-perception-module"></span><h2>perceptionmetrics.datasets.perception module<a class="headerlink" href="#module-perceptionmetrics.datasets.perception" title="Link to this heading">¶</a></h2>
 <dl class="py class">
@@ -830,6 +1092,31 @@ ontology -&gt; <a class="reference external" href="https://drive.google.com/file
 </dd>
 </dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.segmentation.ImageSegmentationDataset.eval_preds">
+<span class="sig-name descname"><span class="pre">eval_preds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predictions_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'test'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_translation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translation_direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dataset_to_model'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred_ontology</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignored_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_per_sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/segmentation.html#ImageSegmentationDataset.eval_preds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset.eval_preds" title="Link to this definition">¶</a></dt>
+<dd><p>Evaluate pre-computed predictions stored on disk against GT labels. The predictions directory must mirror the GT dataset layout.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>predictions_dir</strong> (<em>str</em>) – Root directory containing prediction label images.</p></li>
+<li><p><strong>split</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Split or splits to evaluate, defaults to “test”</p></li>
+<li><p><strong>ontology_translation</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em><em>, </em><em>optional</em>) – Translation dictionary between GT and prediction ontologies. Only required when the two ontologies differ.</p></li>
+<li><p><strong>translation_direction</strong> (<em>str</em><em>, </em><em>optional</em>) – Direction of the ontology translation. <code class="docutils literal notranslate"><span class="pre">&quot;dataset_to_model&quot;</span></code> maps GT labels to the prediction ontology (metrics are reported in the prediction ontology). <code class="docutils literal notranslate"><span class="pre">&quot;model_to_dataset&quot;</span></code> maps predictions to the GT ontology (metrics are reported in the GT ontology). Defaults to <code class="docutils literal notranslate"><span class="pre">&quot;dataset_to_model&quot;</span></code>.</p></li>
+<li><p><strong>pred_ontology</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em><em>, </em><em>optional</em>) – Ontology used by the predictions. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, it is assumed to match the GT ontology.</p></li>
+<li><p><strong>ignored_classes</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – List of class names to exclude from evaluation. These class names must exist in the GT ontology.</p></li>
+<li><p><strong>results_per_sample</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, per-sample CSV results are saved next to each prediction file inside predictions_dir.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing evaluation results</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="perceptionmetrics.datasets.segmentation.ImageSegmentationDataset.export">
 <span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outdir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_ontology</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_translation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes_to_remove</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_label_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/segmentation.html#ImageSegmentationDataset.export"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset.export" title="Link to this definition">¶</a></dt>
 <dd><p>Export dataset dataframe and image files in SemanticKITTI format. Optionally, modify ontology before exporting.</p>
@@ -905,6 +1192,31 @@ ontology -&gt; <a class="reference external" href="https://drive.google.com/file
 </ul>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset.eval_preds">
+<span class="sig-name descname"><span class="pre">eval_preds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predictions_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'test'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_translation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">translation_direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'dataset_to_model'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred_ontology</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignored_classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_per_sample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/segmentation.html#LiDARSegmentationDataset.eval_preds"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset.eval_preds" title="Link to this definition">¶</a></dt>
+<dd><p>Evaluate pre-computed predictions stored on disk against GT labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>predictions_dir</strong> (<em>str</em>) – Root directory containing prediction label files.</p></li>
+<li><p><strong>split</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Split or splits to evaluate, defaults to “test”</p></li>
+<li><p><strong>ontology_translation</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em><em>, </em><em>optional</em>) – Translation dictionary between GT and prediction ontologies. Only required when the two ontologies differ.</p></li>
+<li><p><strong>translation_direction</strong> (<em>str</em><em>, </em><em>optional</em>) – Direction of the ontology translation. <code class="docutils literal notranslate"><span class="pre">&quot;dataset_to_model&quot;</span></code> maps GT labels to the prediction ontology. <code class="docutils literal notranslate"><span class="pre">&quot;model_to_dataset&quot;</span></code> maps predictions to the GT ontology. Defaults to <code class="docutils literal notranslate"><span class="pre">&quot;dataset_to_model&quot;</span></code>.</p></li>
+<li><p><strong>pred_ontology</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em><em>, </em><em>optional</em>) – Ontology used by the predictions. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, it is assumed to match the GT ontology.</p></li>
+<li><p><strong>ignored_classes</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – List of class names to exclude from evaluation. These class names must exist in the GT ontology.</p></li>
+<li><p><strong>results_per_sample</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, per-sample results are saved next to each prediction file inside predictions_dir.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing evaluation results</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset.export">
 <span class="sig-name descname"><span class="pre">export</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outdir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_ontology</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_translation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes_to_remove</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_label_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/segmentation.html#LiDARSegmentationDataset.export"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset.export" title="Link to this definition">¶</a></dt>
@@ -999,6 +1311,95 @@ ontology -&gt; <a class="reference external" href="https://drive.google.com/file
 </dd></dl>
 
 </section>
+<section id="module-perceptionmetrics.datasets.semantickitti">
+<span id="perceptionmetrics-datasets-semantickitti-module"></span><h2>perceptionmetrics.datasets.semantickitti module<a class="headerlink" href="#module-perceptionmetrics.datasets.semantickitti" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.semantickitti.SemanticKITTILiDARSegmentationDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">perceptionmetrics.datasets.semantickitti.</span></span><span class="sig-name descname"><span class="pre">SemanticKITTILiDARSegmentationDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/semantickitti.html#SemanticKITTILiDARSegmentationDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.semantickitti.SemanticKITTILiDARSegmentationDataset" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset" title="perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">LiDARSegmentationDataset</span></code></a></p>
+<p>Specific class for SemanticKITTI-styled LiDAR segmentation datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_dir</strong> (<em>str</em>) – Directory where SemanticKITTI data has been extracted to</p></li>
+<li><p><strong>config_fname</strong> (<em>str</em>) – SemanticKITTI YAML config containing ontology and splits</p></li>
+<li><p><strong>split</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Split or splits to load. Accepts “train”, “val”/”valid”, and “test”.
+Loads all splits if None, defaults to None</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.semantickitti.build_dataset">
+<span class="sig-prename descclassname"><span class="pre">perceptionmetrics.datasets.semantickitti.</span></span><span class="sig-name descname"><span class="pre">build_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">split</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/semantickitti.html#build_dataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.semantickitti.build_dataset" title="Link to this definition">¶</a></dt>
+<dd><p>Build dataset and ontology dictionaries from SemanticKITTI dataset structure</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_dir</strong> (<em>str</em>) – Directory where SemanticKITTI data has been extracted to</p></li>
+<li><p><strong>config_fname</strong> (<em>str</em>) – SemanticKITTI YAML config containing ontology and splits</p></li>
+<li><p><strong>split</strong> (<em>Optional</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Split or splits to load. Loads all splits if None, defaults to None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dataset and ontology</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[dict, dict]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.semantickitti.build_ontology">
+<span class="sig-prename descclassname"><span class="pre">perceptionmetrics.datasets.semantickitti.</span></span><span class="sig-name descname"><span class="pre">build_ontology</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_fname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_train_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ontology_fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/semantickitti.html#build_ontology"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.semantickitti.build_ontology" title="Link to this definition">¶</a></dt>
+<dd><p>Build SemanticKITTI ontology.</p>
+<p>If use_train_id=False, builds the raw SemanticKITTI ontology using raw label IDs
+such as 0, 10, 11, 40, 252, etc.</p>
+<p>If use_train_id=True, builds the compact training ontology using train IDs
+from learning_map_inv, usually 0 to 19.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>config_fname</strong> (<em>str</em>) – SemanticKITTI YAML config file.</p></li>
+<li><p><strong>use_train_id</strong> (<em>bool</em>) – Whether to build compact train-ID ontology, defaults to False.</p></li>
+<li><p><strong>ontology_fname</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Optional output JSON file to save ontology.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Ontology dictionary.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="perceptionmetrics.datasets.semantickitti.build_train_id_ontology_translation">
+<span class="sig-prename descclassname"><span class="pre">perceptionmetrics.datasets.semantickitti.</span></span><span class="sig-name descname"><span class="pre">build_train_id_ontology_translation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_fname</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/perceptionmetrics/datasets/semantickitti.html#build_train_id_ontology_translation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#perceptionmetrics.datasets.semantickitti.build_train_id_ontology_translation" title="Link to this definition">¶</a></dt>
+<dd><p>Build ontology translation from raw SemanticKITTI classes to train-ID classes.</p>
+<p>The translation is based on SemanticKITTI’s learning_map.</p>
+<p class="rubric">Example</p>
+<p>moving-car -&gt; car
+moving-person -&gt; person
+parking -&gt; parking
+road -&gt; road</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>config_fname</strong> (<em>str</em>) – SemanticKITTI YAML config file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary mapping raw class names to train-ID class names.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 <section id="module-perceptionmetrics.datasets.wildscenes">
 <span id="perceptionmetrics-datasets-wildscenes-module"></span><h2>perceptionmetrics.datasets.wildscenes module<a class="headerlink" href="#module-perceptionmetrics.datasets.wildscenes" title="Link to this heading">¶</a></h2>
 <dl class="py class">
@@ -1087,7 +1488,7 @@ split    -&gt; <a class="reference external" href="https://github.com/csiro-robo
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]], <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]</span></p>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]], <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]</span></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Tuple of (boxes, category_indices)</p>
@@ -1181,6 +1582,13 @@ split    -&gt; <a class="reference external" href="https://github.com/csiro-robo
             <ul>
 <li><a class="reference internal" href="#">perceptionmetrics.datasets package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-perceptionmetrics.datasets.cityscapes">perceptionmetrics.datasets.cityscapes module</a><ul>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.cityscapes.CityscapesImageSegmentationDataset"><code class="docutils literal notranslate"><span class="pre">CityscapesImageSegmentationDataset</span></code></a></li>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.cityscapes.build_dataset"><code class="docutils literal notranslate"><span class="pre">build_dataset()</span></code></a></li>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.cityscapes.build_dataset_ontology"><code class="docutils literal notranslate"><span class="pre">build_dataset_ontology()</span></code></a></li>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.cityscapes.build_train_id_ontology_translation"><code class="docutils literal notranslate"><span class="pre">build_train_id_ontology_translation()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-perceptionmetrics.datasets.coco">perceptionmetrics.datasets.coco module</a><ul>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.coco.CocoDataset"><code class="docutils literal notranslate"><span class="pre">CocoDataset</span></code></a><ul>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.coco.CocoDataset.read_annotation"><code class="docutils literal notranslate"><span class="pre">CocoDataset.read_annotation()</span></code></a></li>
@@ -1197,11 +1605,13 @@ split    -&gt; <a class="reference external" href="https://github.com/csiro-robo
 </ul>
 </li>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.detection.ImageDetectionDataset"><code class="docutils literal notranslate"><span class="pre">ImageDetectionDataset</span></code></a><ul>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.detection.ImageDetectionDataset.eval_preds"><code class="docutils literal notranslate"><span class="pre">ImageDetectionDataset.eval_preds()</span></code></a></li>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.detection.ImageDetectionDataset.make_fname_global"><code class="docutils literal notranslate"><span class="pre">ImageDetectionDataset.make_fname_global()</span></code></a></li>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.detection.ImageDetectionDataset.read_annotation"><code class="docutils literal notranslate"><span class="pre">ImageDetectionDataset.read_annotation()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.detection.LiDARDetectionDataset"><code class="docutils literal notranslate"><span class="pre">LiDARDetectionDataset</span></code></a><ul>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.detection.LiDARDetectionDataset.eval_preds"><code class="docutils literal notranslate"><span class="pre">LiDARDetectionDataset.eval_preds()</span></code></a></li>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.detection.LiDARDetectionDataset.make_fname_global"><code class="docutils literal notranslate"><span class="pre">LiDARDetectionDataset.make_fname_global()</span></code></a></li>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.detection.LiDARDetectionDataset.read_annotation"><code class="docutils literal notranslate"><span class="pre">LiDARDetectionDataset.read_annotation()</span></code></a></li>
 </ul>
@@ -1227,6 +1637,17 @@ split    -&gt; <a class="reference external" href="https://github.com/csiro-robo
 <li><a class="reference internal" href="#perceptionmetrics.datasets.goose.build_dataset"><code class="docutils literal notranslate"><span class="pre">build_dataset()</span></code></a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#module-perceptionmetrics.datasets.nuimages">perceptionmetrics.datasets.nuimages module</a><ul>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.nuimages.NuImagesDetectionDataset"><code class="docutils literal notranslate"><span class="pre">NuImagesDetectionDataset</span></code></a><ul>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.nuimages.NuImagesDetectionDataset.read_annotation"><code class="docutils literal notranslate"><span class="pre">NuImagesDetectionDataset.read_annotation()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.nuimages.NuImagesSegmentationDataset"><code class="docutils literal notranslate"><span class="pre">NuImagesSegmentationDataset</span></code></a></li>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.nuimages.build_nuimages_detection_dataset"><code class="docutils literal notranslate"><span class="pre">build_nuimages_detection_dataset()</span></code></a></li>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.nuimages.build_nuimages_segmentation_dataset"><code class="docutils literal notranslate"><span class="pre">build_nuimages_segmentation_dataset()</span></code></a></li>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.nuimages.nuimages_detection"><code class="docutils literal notranslate"><span class="pre">nuimages_detection</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-perceptionmetrics.datasets.perception">perceptionmetrics.datasets.perception module</a><ul>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.perception.PerceptionDataset"><code class="docutils literal notranslate"><span class="pre">PerceptionDataset</span></code></a><ul>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.perception.PerceptionDataset.append"><code class="docutils literal notranslate"><span class="pre">PerceptionDataset.append()</span></code></a></li>
@@ -1249,6 +1670,7 @@ split    -&gt; <a class="reference external" href="https://github.com/csiro-robo
 </li>
 <li><a class="reference internal" href="#module-perceptionmetrics.datasets.segmentation">perceptionmetrics.datasets.segmentation module</a><ul>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset"><code class="docutils literal notranslate"><span class="pre">ImageSegmentationDataset</span></code></a><ul>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset.eval_preds"><code class="docutils literal notranslate"><span class="pre">ImageSegmentationDataset.eval_preds()</span></code></a></li>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset.export"><code class="docutils literal notranslate"><span class="pre">ImageSegmentationDataset.export()</span></code></a></li>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset.get_label_count"><code class="docutils literal notranslate"><span class="pre">ImageSegmentationDataset.get_label_count()</span></code></a></li>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.segmentation.ImageSegmentationDataset.make_fname_global"><code class="docutils literal notranslate"><span class="pre">ImageSegmentationDataset.make_fname_global()</span></code></a></li>
@@ -1256,6 +1678,7 @@ split    -&gt; <a class="reference external" href="https://github.com/csiro-robo
 </ul>
 </li>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset"><code class="docutils literal notranslate"><span class="pre">LiDARSegmentationDataset</span></code></a><ul>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset.eval_preds"><code class="docutils literal notranslate"><span class="pre">LiDARSegmentationDataset.eval_preds()</span></code></a></li>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset.export"><code class="docutils literal notranslate"><span class="pre">LiDARSegmentationDataset.export()</span></code></a></li>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset.make_fname_global"><code class="docutils literal notranslate"><span class="pre">LiDARSegmentationDataset.make_fname_global()</span></code></a></li>
 <li><a class="reference internal" href="#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset.read_label"><code class="docutils literal notranslate"><span class="pre">LiDARSegmentationDataset.read_label()</span></code></a></li>
@@ -1266,6 +1689,13 @@ split    -&gt; <a class="reference external" href="https://github.com/csiro-robo
 <li><a class="reference internal" href="#perceptionmetrics.datasets.segmentation.SegmentationDataset.read_label"><code class="docutils literal notranslate"><span class="pre">SegmentationDataset.read_label()</span></code></a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-perceptionmetrics.datasets.semantickitti">perceptionmetrics.datasets.semantickitti module</a><ul>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.semantickitti.SemanticKITTILiDARSegmentationDataset"><code class="docutils literal notranslate"><span class="pre">SemanticKITTILiDARSegmentationDataset</span></code></a></li>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.semantickitti.build_dataset"><code class="docutils literal notranslate"><span class="pre">build_dataset()</span></code></a></li>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.semantickitti.build_ontology"><code class="docutils literal notranslate"><span class="pre">build_ontology()</span></code></a></li>
+<li><a class="reference internal" href="#perceptionmetrics.datasets.semantickitti.build_train_id_ontology_translation"><code class="docutils literal notranslate"><span class="pre">build_train_id_ontology_translation()</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#module-perceptionmetrics.datasets.wildscenes">perceptionmetrics.datasets.wildscenes module</a><ul>
