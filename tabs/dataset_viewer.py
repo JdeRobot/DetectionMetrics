@@ -11,9 +11,7 @@ def dataset_viewer_tab():
     from perceptionmetrics.datasets.yolo import YOLODataset
     import numpy as np
     from PIL import Image
-    from supervision.draw.color import ColorPalette
-    from supervision.detection.annotate import BoxAnnotator
-    from supervision.detection.core import Detections
+    from perceptionmetrics.utils.image import draw_detections
 
     # Get inputs from session state
     dataset_path = st.session_state.get("dataset_path", "")
@@ -288,16 +286,12 @@ def dataset_viewer_tab():
                 else:
                     class_names = [str(cat_id) for cat_id in category_indices]
 
-                # Annotate image
-                palette = ColorPalette.default()
-                detections = Detections(
-                    xyxy=np.array(boxes), class_id=np.array(category_indices)
-                )
-                annotator = BoxAnnotator(
-                    color=palette, text_scale=0.7, text_thickness=1, text_padding=2
-                )
-                annotated_img = annotator.annotate(
-                    scene=img_np, detections=detections, labels=class_names
+                # Annotate image using the shared, version-adaptive helper
+                annotated_img = draw_detections(
+                    image=img,
+                    boxes=np.array(boxes),
+                    class_ids=np.array(category_indices),
+                    class_names=class_names,
                 )
 
                 # Resize for display
