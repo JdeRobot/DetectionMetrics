@@ -1,5 +1,9 @@
-import torch
 import pytest
+
+# skip these tests when unavailable
+torch = pytest.importorskip("torch")
+pytest.importorskip("torchvision")
+
 from perceptionmetrics.utils.torch import data_to_device, get_data_shape, unsqueeze_data
 
 
