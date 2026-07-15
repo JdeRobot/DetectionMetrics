@@ -8,6 +8,8 @@ from tabs.tasks.utils import browse_file, browse_folder
 IMAGE_SEGMENTATION_DATASETS = [
     "Cityscapes",
     "NuImages",
+    "GAIA",
+    "Generic",
     "Wildscenes",
     "RUGD",
     "Rellis3D",
@@ -144,9 +146,6 @@ def render_nuimages_dataset_inputs():
         key="nuimages_segmentation_labels_dir",
         help="Relative directory where generated segmentation masks are stored.",
     )
-    if st.session_state.get("split") == "test":
-        st.warning("NuImages segmentation supports train/val-style splits, not test.")
-
 
 def render_segmentation_model_inputs():
     """Render the input fields for the image segmentation model in the sidebar."""

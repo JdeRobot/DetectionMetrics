@@ -10,6 +10,8 @@ from perceptionmetrics.datasets.nuimages import NuImagesSegmentationDataset
 from tabs.tasks.utils import render_image_grid
 
 
+
+
 def _overlay_mask(image, label, ontology, opacity):
     """Overlay a segmentation mask on an image.
     param image: PIL Image object of the original image.
@@ -42,48 +44,51 @@ def _overlay_mask(image, label, ontology, opacity):
 def render_image_segmentation_viewer():
     """Render the image segmentation dataset viewer tab in Streamlit."""
     dataset_type = st.session_state.get("segmentation_dataset_type", "Cityscapes")
-
-    st.header("Dataset Viewer")
-
-    if dataset_type == "Cityscapes":
-        _render_cityscapes_viewer()
-        return
-
-    if dataset_type == "NuImages":
-        _render_nuimages_viewer()
-        return
-
-    st.info(f"{dataset_type} image segmentation viewer is not wired yet.")
-
-
-def _render_cityscapes_viewer():
-    """Render the Cityscapes dataset viewer in Streamlit."""
-
     dataset_path = st.session_state.get("dataset_path", "")
     split = st.session_state.get("split", "val")
 
+    st.header("Dataset Viewer")
+
     if not dataset_path or not os.path.isdir(dataset_path):
-        st.warning("Please select a valid Cityscapes dataset folder.")
+        st.warning("Please select a valid image segmentation dataset folder.")
         return
 
     try:
-        dataset = _load_cityscapes_dataset(dataset_path, split)
+        dataset = load_image_segmentation_dataset(dataset_type, dataset_path, split)
     except Exception as exc:
-        st.error(f"Failed to load Cityscapes dataset: {exc}")
+        st.error(f"Failed to load image segmentation dataset: {exc}")
         return
 
+    render_segmentation_dataset_viewer(
+        dataset=dataset,
+        dataset_type=dataset_type,
+        split=split,
+        state_prefix="image_segmentation",
+        context=f"{dataset_path}_{split}",
+    )
+
+
+
+def render_segmentation_dataset_viewer(
+    dataset,
+    dataset_type,
+    split,
+    state_prefix,
+    context,
+):
+    """Render a loaded image segmentation dataset."""
     split_df = dataset.dataset[dataset.dataset["split"] == split]
     if split_df.empty:
-        st.warning(f"No Cityscapes samples found for split '{split}'.")
+        st.warning(f"No {dataset_type} samples found for split '{split}'.")
         return
 
-    sample_names = split_df.index.tolist()
+    sample_names = split_df.index.astype(str).tolist()
     image_paths = split_df["image"].tolist()
     selected_img_path, sample_name = render_image_grid(
         item_names=sample_names,
         image_paths=image_paths,
-        state_prefix="cityscapes_segmentation",
-        context=f"{dataset_path}_{split}",
+        state_prefix=state_prefix,
+        context=context,
         search_label="sample",
     )
 
@@ -97,24 +102,20 @@ def _render_cityscapes_viewer():
         max_value=1.0,
         value=0.45,
         step=0.05,
-        key="cityscapes_segmentation_mask_opacity",
+        key=f"{state_prefix}_mask_opacity",
     )
 
-    row = split_df.loc[sample_name]
+    row_key = sample_name
+    if row_key not in split_df.index and sample_name.isdigit():
+        row_key = int(sample_name)
+
+    row = split_df.loc[row_key]
     image_fname = row["image"]
     label_fname = row["label"]
 
     try:
         image = Image.open(image_fname).convert("RGB")
-        if label_fname.endswith("_gtFine_color.png"):
-            label_rgb = np.array(Image.open(label_fname).convert("RGB"))
-            label = np.zeros(label_rgb.shape[:2], dtype=np.uint8)
-            for class_data in dataset.ontology.values():
-                class_idx = int(class_data["idx"])
-                rgb = np.array(class_data["rgb"], dtype=np.uint8)
-                label[(label_rgb == rgb).all(axis=2)] = class_idx
-        else:
-            label = dataset.read_label(label_fname)
+        label = dataset.read_label(label_fname)
     except Exception as exc:
         st.error(f"Failed to read sample '{sample_name}': {exc}")
         return
@@ -131,7 +132,15 @@ def _render_cityscapes_viewer():
         st.dataframe(_classes_dataframe(dataset.ontology), use_container_width=True)
 
 
-def _load_cityscapes_dataset(dataset_path, split):
+def load_image_segmentation_dataset(dataset_type, dataset_path, split):
+    if dataset_type == "Cityscapes":
+        return load_cityscapes_dataset(dataset_path, split)
+    if dataset_type == "NuImages":
+        return load_nuimages_dataset(dataset_path, split)
+    raise ValueError(f"{dataset_type} image segmentation dataset is not wired yet.")
+
+
+def load_cityscapes_dataset(dataset_path, split):
     """Load the Cityscapes dataset based on the provided path and split.
     param dataset_path: Path to the Cityscapes dataset directory.
     param split: Dataset split to load (e.g., "train", "val", "test").
@@ -168,77 +177,7 @@ def _load_cityscapes_dataset(dataset_path, split):
     return st.session_state[dataset_key]
 
 
-def _render_nuimages_viewer():
-    """Render the NuImages dataset viewer in Streamlit."""
-    dataset_path = st.session_state.get("dataset_path", "")
-    split = st.session_state.get("split", "val")
-
-    if split == "test":
-        st.warning("NuImages segmentation viewer supports train and val splits.")
-        return
-
-    if not dataset_path or not os.path.isdir(dataset_path):
-        st.warning("Please select a valid NuImages dataset folder.")
-        return
-
-    try:
-        dataset = _load_nuimages_dataset(dataset_path, split)
-    except Exception as exc:
-        st.error(f"Failed to load NuImages dataset: {exc}")
-        return
-
-    split_df = dataset.dataset[dataset.dataset["split"] == split]
-    if split_df.empty:
-        st.warning(f"No NuImages samples found for split '{split}'.")
-        return
-
-    sample_names = split_df.index.astype(str).tolist()
-    image_paths = split_df["image"].tolist()
-    selected_img_path, sample_name = render_image_grid(
-        item_names=sample_names,
-        image_paths=image_paths,
-        state_prefix="nuimages_segmentation",
-        context=f"{dataset_path}_{split}_{st.session_state.get('nuimages_segmentation_version', 'v1.0-mini')}",
-        search_label="sample",
-    )
-
-    if not selected_img_path:
-        st.info("Select an image to view the ground truth mask.")
-        return
-
-    mask_opacity = st.slider(
-        "Mask Opacity",
-        min_value=0.0,
-        max_value=1.0,
-        value=0.45,
-        step=0.05,
-        key="nuimages_segmentation_mask_opacity",
-    )
-
-    row = split_df.loc[int(sample_name) if sample_name.isdigit() else sample_name]
-    image_fname = row["image"]
-    label_fname = row["label"]
-
-    try:
-        image = Image.open(image_fname).convert("RGB")
-        label = dataset.read_label(label_fname)
-    except Exception as exc:
-        st.error(f"Failed to read sample '{sample_name}': {exc}")
-        return
-
-    overlay = _overlay_mask(image, label, dataset.ontology, mask_opacity)
-
-    image_col, overlay_col = st.columns(2)
-    with image_col:
-        st.image(image, caption="Image", use_container_width=True)
-    with overlay_col:
-        st.image(overlay, caption="Ground Truth Overlay", use_container_width=True)
-
-    with st.expander("Classes", expanded=False):
-        st.dataframe(_classes_dataframe(dataset.ontology), use_container_width=True)
-
-
-def _load_nuimages_dataset(dataset_path, split):
+def load_nuimages_dataset(dataset_path, split):
     """Load the NuImages dataset based on the provided path and split.
     param dataset_path: Path to the NuImages dataset directory.
     param split: Dataset split to load (e.g., "train", "val").
