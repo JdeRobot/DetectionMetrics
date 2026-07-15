@@ -108,17 +108,20 @@ def get_computational_cost(
                 model(*dummy_tuple)
 
     # Measure inference time
+    use_cuda = next(model.parameters()).device.type == "cuda"
     inference_times = []
     for _ in range(runs):
-        torch.cuda.synchronize()
-        start = time.time()
+        if use_cuda:
+            torch.cuda.synchronize()
+        start = time.perf_counter()
         with torch.no_grad():
             if hasattr(model, "inference"):
                 model.inference(*dummy_tuple)
             else:
                 model(*dummy_tuple)
-        torch.cuda.synchronize()
-        inference_times.append(time.time() - start)
+        if use_cuda:
+            torch.cuda.synchronize()
+        inference_times.append(time.perf_counter() - start)
 
     # Get number of parameters
     n_params = sum(p.numel() for p in model.parameters())
@@ -306,10 +309,14 @@ class TorchImageDetectionModel(detection_model.ImageDetectionModel):
         # Load confidence and NMS thresholds from config
         self.confidence_threshold = self.model_cfg.get("confidence_threshold", 0.5)
         self.nms_threshold = self.model_cfg.get("nms_threshold", 0.3)
+        self.max_detections_per_image = self.model_cfg.get(
+            "max_detections_per_image", -1
+        )
 
         self.postprocess_args = [self.confidence_threshold]
         if self.model_format == "yolo":
             self.postprocess_args.append(self.nms_threshold)
+        self.postprocess_args.append(self.max_detections_per_image)
 
         # Add reverse mapping for idx to class_name
         self.idx_to_class_name = {v["idx"]: k for k, v in self.ontology.items()}
