@@ -123,6 +123,8 @@ def render_lidar_segmentation_viewer():
         colors=colors,
         point_size=point_size,
         hover_text=hover_text,
+        color_values=points[:, 3] if color_by == "Intensity" else None,
+        colorbar_title="Intensity" if color_by == "Intensity" else None,
         chart_key=f"semantic_kitti_viewer_{st.session_state.get('semantic_kitti_view_reset', 0)}",
     )
 
@@ -153,6 +155,8 @@ def render_point_cloud_plotly(
     colors,
     point_size=2.0,
     hover_text=None,
+    color_values=None,
+    colorbar_title=None,
     chart_key=None,
 ):
     """
@@ -173,14 +177,24 @@ def render_point_cloud_plotly(
         st.warning("No points to render.")
         return
 
-    colors = np.asarray(colors, dtype=np.float32)
+    marker_color = None
+    marker_colorscale = None
+    marker_showscale = False
+    marker_colorbar = None
 
-    if colors.max() <= 1.0:
-        colors = colors * 255.0
+    if color_values is not None:
+        marker_color = np.asarray(color_values, dtype=np.float32)
+        marker_colorscale = [[0.0, "rgb(0,89,13)"], [1.0, "rgb(255,242,0)"]]
+        marker_showscale = True
+        marker_colorbar = dict(title=colorbar_title or "Value")
+    else:
+        colors = np.asarray(colors, dtype=np.float32)
 
-    colors = np.clip(colors, 0, 255).astype(np.uint8)
+        if colors.max() <= 1.0:
+            colors = colors * 255.0
 
-    color_strings = [f"rgb({r},{g},{b})" for r, g, b in colors]
+        colors = np.clip(colors, 0, 255).astype(np.uint8)
+        marker_color = [f"rgb({r},{g},{b})" for r, g, b in colors]
 
     fig = graph_objects.Figure(
         data=[
@@ -191,7 +205,10 @@ def render_point_cloud_plotly(
                 mode="markers",
                 marker=dict(
                     size=point_size,
-                    color=color_strings,
+                    color=marker_color,
+                    colorscale=marker_colorscale,
+                    showscale=marker_showscale,
+                    colorbar=marker_colorbar,
                     opacity=0.95,
                 ),
                 text=hover_text,
@@ -286,7 +303,7 @@ def classes_dataframe(ontology):
 
 def intensity_to_colors(intensity):
     """Convert intensity values to RGB colors for visualization.
-    
+
     :param intensity: Array of intensity values.
     :type intensity: np.ndarray
     :return: Array of RGB colors.

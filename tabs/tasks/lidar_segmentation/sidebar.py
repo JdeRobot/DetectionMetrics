@@ -4,42 +4,76 @@ from tabs.tasks.utils import browse_file, browse_folder
 
 
 def browse_lidar_dataset_path():
+    """ Callback function to browse for the LiDAR dataset path. """
     folder = browse_folder()
     if folder:
         st.session_state.dataset_path = folder
 
 
 def browse_lidar_config_path():
+    """ Callback function to browse for the LiDAR config path. """
     file_path = browse_file()
     if file_path:
         st.session_state.lidar_config_path = file_path
 
 
 def browse_lidar_mmdet3d_config_path():
+    """ Callback function to browse for the LiDAR MMDetection3D config path. """
     file_path = browse_file()
     if file_path:
         st.session_state.lidar_mmdet3d_config_path = file_path
 
 
 def browse_lidar_checkpoint_path():
+    """ Callback function to browse for the LiDAR checkpoint path. """
     file_path = browse_file()
     if file_path:
         st.session_state.lidar_checkpoint_path = file_path
 
 
 def browse_lidar_model_config_path():
+    """ Callback function to browse for the LiDAR model config path. """
     file_path = browse_file()
     if file_path:
         st.session_state.lidar_model_config_path = file_path
 
 
 def browse_lidar_ontology_path():
+    """ Callback function to browse for the LiDAR ontology path. """
     file_path = browse_file()
     if file_path:
         st.session_state.lidar_ontology_path = file_path
 
+def render_lidar_path_input(label, key, browse_callback, help_text):
+    """ Render a text input with a browse button for LiDAR paths.
+    :param label: Label for the text input.
+    :type label: str
+    :param key: Key for the text input in Streamlit session state.
+    :type key: str
+    :param browse_callback: Callback function to be called when the browse button is clicked.
+    :type browse_callback: function
+    :param help_text: Help text to be displayed for the text input.
+    :type help_text: str"""
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        st.text_input(label, key=key, help=help_text)
+    with col2:
+        st.markdown(
+            "<div style='margin-bottom: 1.75rem;'></div>",
+            unsafe_allow_html=True,
+        )
+        st.button(
+            "Browse",
+            on_click=browse_callback,
+            key=f"browse_{key}",
+        )
 
 def render_lidar_segmentation_sidebar(_available_devices):
+    """ Render the sidebar for LiDAR segmentation.
+    :param _available_devices: List of available devices for model inference.
+    :type _available_devices: list
+    """
+    
     with st.expander("LiDAR Segmentation Dataset", expanded=True):
         st.selectbox(
             "Type",
@@ -107,23 +141,10 @@ def render_lidar_segmentation_sidebar(_available_devices):
             load_lidar_segmentation_model()
 
 
-def render_lidar_path_input(label, key, browse_callback, help_text):
-    col1, col2 = st.columns([3, 1])
-    with col1:
-        st.text_input(label, key=key, help=help_text)
-    with col2:
-        st.markdown(
-            "<div style='margin-bottom: 1.75rem;'></div>",
-            unsafe_allow_html=True,
-        )
-        st.button(
-            "Browse",
-            on_click=browse_callback,
-            key=f"browse_{key}",
-        )
 
 
 def load_lidar_segmentation_model():
+    """ Load the LiDAR segmentation model based on the provided configuration and checkpoint paths. """
     mmdet3d_config_path = st.session_state.get("lidar_mmdet3d_config_path", "")
     checkpoint_path = st.session_state.get("lidar_checkpoint_path", "")
     model_config_path = st.session_state.get("lidar_model_config_path", "")

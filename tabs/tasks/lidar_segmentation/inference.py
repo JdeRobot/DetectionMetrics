@@ -113,6 +113,8 @@ def render_lidar_segmentation_inference():
             points=points[:, :3],
             colors=intensity_colors,
             point_size=point_size,
+            color_values=points[:, 3],
+            colorbar_title="Intensity",
             chart_key=(
                 "semantic_kitti_inference_intensity_"
                 f"{st.session_state.get('semantic_kitti_inference_view_reset', 0)}"
