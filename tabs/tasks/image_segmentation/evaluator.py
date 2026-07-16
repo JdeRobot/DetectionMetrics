@@ -11,6 +11,7 @@ from tabs.tasks.utils import browse_folder
 
 
 def browse_segmentation_predictions_outdir():
+    """Callback for updating the predictions output directory text input."""
     folder = browse_folder()
     if folder:
         st.session_state.segmentation_predictions_outdir = folder
@@ -186,8 +187,10 @@ def render_image_segmentation_evaluator():
 
 def display_segmentation_evaluation_results(results, show_download=True):
     """Display the evaluation results in a Streamlit dataframe and provide a download button.
-    Param results: pd.DataFrame, the evaluation results to display
-    Param show_download: bool, whether to show the download button for the results"""
+    :param results: pd.DataFrame, the evaluation results to display
+    :type results: pd.DataFrame
+    :param show_download: bool, whether to show the download button for the results
+    :type show_download: bool"""
     if results is None or results.empty:
         st.warning("No evaluation results to display.")
         return

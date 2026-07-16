@@ -20,12 +20,14 @@ MODEL_INPUT_DATASETS = ["Cityscapes", "NuImages"]
 
 
 def browse_dataset_path():
+    """Callback for updating the dataset path text input."""
     folder = browse_folder()
     if folder:
         st.session_state.dataset_path = folder
 
 
 def browse_segmentation_model_path():
+    """Callback for updating the segmentation model path text input."""
     if st.session_state.get("segmentation_model_type") == "Hugging Face SegFormer":
         path = browse_folder()
     else:
@@ -36,12 +38,14 @@ def browse_segmentation_model_path():
 
 
 def browse_segmentation_config_path():
+    """Callback for updating the segmentation config path text input."""
     path = browse_file()
     if path:
         st.session_state.segmentation_config_path = path
 
 
 def browse_segmentation_ontology_path():
+    """Callback for updating the segmentation ontology path text input."""
     path = browse_file()
     if path:
         st.session_state.segmentation_ontology_path = path
@@ -49,7 +53,8 @@ def browse_segmentation_ontology_path():
 
 def render_image_segmentation_sidebar(_available_devices):
     """Render the sidebar for the image segmentation task in Streamlit.
-    param _available_devices: List of available devices for model inference.
+    :param _available_devices: List of available devices for model inference.
+    :type _available_devices: list
     """
     with st.expander("Image Segmentation Dataset", expanded=True):
         col1, col2 = st.columns(2)
@@ -146,6 +151,7 @@ def render_nuimages_dataset_inputs():
         key="nuimages_segmentation_labels_dir",
         help="Relative directory where generated segmentation masks are stored.",
     )
+
 
 def render_segmentation_model_inputs():
     """Render the input fields for the image segmentation model in the sidebar."""
@@ -256,8 +262,12 @@ def load_image_segmentation_model():
 
 def load_model_for_type(model_type, model_path):
     """Load a model based on the specified type and path.
-    param model_type: Type of the model to load (e.g., "Torch Model File", "Hugging Face SegFormer").
-    param model_path: Path to the model file or directory.
+    :param model_type: Type of the model to load (e.g., "Torch Model File", "Hugging Face SegFormer").
+    :type model_type: str
+    :param model_path: Path to the model file or directory.
+    :type model_path: str
+    :return: Loaded model instance.
+    :rtype: object
     """
     if model_type == "Torch Model File":
         if not os.path.isfile(model_path):

@@ -10,16 +10,18 @@ from perceptionmetrics.datasets.nuimages import NuImagesSegmentationDataset
 from tabs.tasks.utils import render_image_grid
 
 
-
-
 def _overlay_mask(image, label, ontology, opacity):
     """Overlay a segmentation mask on an image.
-    param image: PIL Image object of the original image.
-    param label: 2D numpy array of the segmentation mask.
-    param ontology: Dictionary mapping class names to their properties, including 'idx' and 'rgb'.
-    param opacity: Float value between 0 and 1 indicating the opacity of the overlay.
-    return: PIL Image object of the image with the overlay applied.
-
+    :param image: PIL Image object of the original image.
+    :type image: PIL.Image
+    :param label: 2D numpy array of the segmentation mask.
+    :type label: np.ndarray
+    :param ontology: Dictionary mapping class names to their properties, including 'idx' and 'rgb'.
+    :type ontology: dict
+    :param opacity: Float value between 0 and 1 indicating the opacity of the overlay.
+    :type opacity: float
+    :return: PIL Image object of the image with the overlay applied.
+    :rtype: PIL.Image
     """
     image_np = np.array(image)
     color_mask = np.zeros((*label.shape, 3), dtype=np.uint8)
@@ -59,7 +61,7 @@ def render_image_segmentation_viewer():
         st.error(f"Failed to load image segmentation dataset: {exc}")
         return
 
-    render_segmentation_dataset_viewer(
+    display_loaded_segmentation_dataset(
         dataset=dataset,
         dataset_type=dataset_type,
         split=split,
@@ -68,15 +70,26 @@ def render_image_segmentation_viewer():
     )
 
 
-
-def render_segmentation_dataset_viewer(
+def display_loaded_segmentation_dataset(
     dataset,
     dataset_type,
     split,
     state_prefix,
     context,
 ):
-    """Render a loaded image segmentation dataset."""
+    """
+    Display a loaded image segmentation dataset.
+    ;param dataset: Instance of the loaded image segmentation dataset.
+    :type dataset : CityscapesImageSegmentationDataset or NuImagesSegmentationDataset
+    ;param dataset_type: Type of the dataset (e.g., "Cityscapes", "NuImages")
+    :type dataset_type : str
+    ;param split: Dataset split to display (e.g., "train", "val", "test")
+    :type split : str
+    ;param state_prefix: Prefix for Streamlit session state keys to avoid collisions.
+    :type state_prefix : str
+    ;param context: Context string for the dataset, used in session state keys.
+    :type context : str
+    """
     split_df = dataset.dataset[dataset.dataset["split"] == split]
     if split_df.empty:
         st.warning(f"No {dataset_type} samples found for split '{split}'.")
@@ -133,6 +146,16 @@ def render_segmentation_dataset_viewer(
 
 
 def load_image_segmentation_dataset(dataset_type, dataset_path, split):
+    """Load an image segmentation dataset based on the provided type, path, and split.
+    :param dataset_type: Type of the dataset (e.g., "Cityscapes", "NuImages")
+    :type dataset_type : str
+    :param dataset_path: Path to the dataset directory.
+    :type dataset_path : str
+    :param split: Dataset split to load (e.g., "train", "val", "test")
+    :type split : str
+    :return: Instance of the loaded image segmentation dataset.
+    :rtype: CityscapesImageSegmentationDataset or NuImagesSegmentationDataset
+    """
     if dataset_type == "Cityscapes":
         return load_cityscapes_dataset(dataset_path, split)
     if dataset_type == "NuImages":
@@ -141,10 +164,14 @@ def load_image_segmentation_dataset(dataset_type, dataset_path, split):
 
 
 def load_cityscapes_dataset(dataset_path, split):
-    """Load the Cityscapes dataset based on the provided path and split.
-    param dataset_path: Path to the Cityscapes dataset directory.
-    param split: Dataset split to load (e.g., "train", "val", "test").
-    return: Instance of CityscapesImageSegmentationDataset as a session state variable.
+    """
+    Load the Cityscapes dataset based on the provided path and split.
+    :param dataset_path: Path to the Cityscapes dataset directory.
+    :type dataset_path: str
+    :param split: Dataset split to load (e.g., "train", "val", "test").
+    :type split: str
+    :return: Instance of CityscapesImageSegmentationDataset as a session state variable.
+    :rtype: CityscapesImageSegmentationDataset
     """
     roots = {"train": None, "val": None, "test": None}
     roots[split] = dataset_path
@@ -179,30 +206,30 @@ def load_cityscapes_dataset(dataset_path, split):
 
 def load_nuimages_dataset(dataset_path, split):
     """Load the NuImages dataset based on the provided path and split.
-    param dataset_path: Path to the NuImages dataset directory.
-    param split: Dataset split to load (e.g., "train", "val").
-    return: Instance of NuImagesSegmentationDataset as a session state variable.
+    :param dataset_path: Path to the NuImages dataset directory.
+    :type dataset_path: str
+    :param split: Dataset split to load (e.g., "train", "val").
+    :type split: str
+    :return: Instance of NuImagesSegmentationDataset as a session state variable.
+    :rtype: NuImagesSegmentationDataset
     """
-
-    version = st.session_state.get("nuimages_segmentation_version", "v1.0-mini")
-    labels_rel_dir = st.session_state.get(
-        "nuimages_segmentation_labels_dir",
-        "generated/nuimages_segmentation_labels",
-    )
     dataset_key = (
         "nuimages_segmentation_dataset",
         os.path.abspath(dataset_path),
-        version,
         split,
-        labels_rel_dir,
+        st.session_state.get("nuimages_segmentation_version", "v1.0-mini"),
+        st.session_state.get(
+            "nuimages_segmentation_labels_dir",
+            "generated/nuimages_segmentation_labels",
+        ),
     )
 
     if dataset_key not in st.session_state:
         st.session_state[dataset_key] = NuImagesSegmentationDataset(
             dataset_dir=dataset_path,
-            version=version,
-            split=split,
-            labels_rel_dir=labels_rel_dir,
+            version=dataset_key[3],
+            split=dataset_key[2],
+            labels_rel_dir=dataset_key[4],
         )
 
     return st.session_state[dataset_key]
@@ -210,8 +237,10 @@ def load_nuimages_dataset(dataset_path, split):
 
 def _classes_dataframe(ontology):
     """Convert the ontology dictionary to a pandas DataFrame for display.
-    param ontology: Dictionary mapping class names to their properties, including 'idx', 'train_id', 'category', and 'rgb'.
-    return: pandas DataFrame with columns ['class', 'id', 'train_id', 'category', 'rgb'].
+    :param ontology: Dictionary mapping class names to their properties, including 'idx', 'train_id', 'category', and 'rgb'.
+    :type ontology: dict
+    :return: pandas DataFrame with columns ['class', 'id', 'train_id', 'category', 'rgb'].
+    :rtype: pd.DataFrame
     """
     rows = []
     for class_name, class_data in ontology.items():
