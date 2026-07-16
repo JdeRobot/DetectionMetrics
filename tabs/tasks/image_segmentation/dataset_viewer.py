@@ -1,3 +1,4 @@
+from ast import Load
 import os
 
 import numpy as np
@@ -44,7 +45,7 @@ def _overlay_mask(image, label, ontology, opacity):
 
 
 def render_image_segmentation_viewer():
-    """Render the image segmentation dataset viewer tab in Streamlit."""
+    """Load the selected image segmentation dataset and render the viewer tab."""
     dataset_type = st.session_state.get("segmentation_dataset_type", "Cityscapes")
     dataset_path = st.session_state.get("dataset_path", "")
     split = st.session_state.get("split", "val")
@@ -78,16 +79,16 @@ def display_loaded_segmentation_dataset(
     context,
 ):
     """
-    Display a loaded image segmentation dataset.
-    ;param dataset: Instance of the loaded image segmentation dataset.
+    Display samples, masks, and class information for a loaded dataset.
+    :param dataset: Instance of the loaded image segmentation dataset.
     :type dataset : CityscapesImageSegmentationDataset or NuImagesSegmentationDataset
-    ;param dataset_type: Type of the dataset (e.g., "Cityscapes", "NuImages")
+    :param dataset_type: Type of the dataset (e.g., "Cityscapes", "NuImages")
     :type dataset_type : str
-    ;param split: Dataset split to display (e.g., "train", "val", "test")
+    :param split: Dataset split to display (e.g., "train", "val", "test")
     :type split : str
-    ;param state_prefix: Prefix for Streamlit session state keys to avoid collisions.
+    :param state_prefix: Prefix for Streamlit session state keys to avoid collisions.
     :type state_prefix : str
-    ;param context: Context string for the dataset, used in session state keys.
+    :param context: Context string for the dataset, used in session state keys.
     :type context : str
     """
     split_df = dataset.dataset[dataset.dataset["split"] == split]
