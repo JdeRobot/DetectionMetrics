@@ -2,8 +2,9 @@
 import os
 import tempfile
 import pytest
-import torch
-from PIL import Image
+
+torch = pytest.importorskip("torch", reason="torch not installed in this environment")
+
 
 from perceptionmetrics.models.torch_detection import TorchImageDetectionModel
 from perceptionmetrics.models.torch_segmentation import TorchImageSegmentationModel
