@@ -1,9 +1,10 @@
-from perceptionmetrics.utils.exception import PerceptionMetricsException
 from perceptionmetrics.utils.logging_config import get_logger, add_file_handler
 
 _logger = get_logger(__name__)
-# add_file_handler("logs/run.log")
 
+# For file based logging.
+# add_file_handler("logs/run.log")    
+ 
 REGISTRY = {}
 
 try:
