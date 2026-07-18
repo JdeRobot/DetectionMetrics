@@ -355,7 +355,20 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
                 tensor_out = self.model(tensor_in.to(self.device))
 
             if isinstance(tensor_out, dict):
-                tensor_out = tensor_out["out"]
+                if "out" in tensor_out:
+                    tensor_out = tensor_out["out"]
+                elif "logits" in tensor_out:
+                    tensor_out = tensor_out["logits"]
+            elif hasattr(tensor_out, "logits"):
+                tensor_out = tensor_out.logits
+
+            if tensor_out.shape[-2:] != tensor_in.shape[-2:]:
+                tensor_out = torch.nn.functional.interpolate(
+                    tensor_out,
+                    size=tensor_in.shape[-2:],
+                    mode="bilinear",
+                    align_corners=False,
+                )
 
         return tensor_out
 
@@ -522,6 +535,7 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
             size_mb = None
 
         # Measure inference time with GPU synchronization
+        use_cuda = self.device.type == "cuda"
         dummy_tuple = dummy_input if isinstance(dummy_input, tuple) else (dummy_input,)
 
         for _ in range(warm_up_runs):
@@ -529,11 +543,13 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
 
         inference_times = []
         for _ in range(runs):
-            torch.cuda.synchronize()
-            start_time = time.time()
+            if use_cuda:
+                torch.cuda.synchronize()
+            start_time = time.perf_counter()
             self.inference(dummy_tuple[0])
-            torch.cuda.synchronize()
-            end_time = time.time()
+            if use_cuda:
+                torch.cuda.synchronize()
+            end_time = time.perf_counter()
             inference_times.append(end_time - start_time)
 
         result = {
@@ -846,6 +862,7 @@ class TorchLiDARSegmentationModel(segmentation_model.LiDARSegmentationModel):
             size_mb = None
 
         # Measure inference time with GPU synchronization
+        use_cuda = self.device.type == "cuda"
         for _ in range(warm_up_runs):
             if "o3d" in self.model_format:  # reset random sampling for Open3D-ML models
                 subsampled_points, _, sampler, _, _, _ = sample
@@ -858,11 +875,13 @@ class TorchLiDARSegmentationModel(segmentation_model.LiDARSegmentationModel):
             if "o3d" in self.model_format:  # reset random sampling for Open3D-ML models
                 subsampled_points, _, sampler, _, _, _ = sample
                 self._reset_sampler(sampler, subsampled_points.shape[0], self.n_classes)
-            torch.cuda.synchronize()
-            start_time = time.time()
+            if use_cuda:
+                torch.cuda.synchronize()
+            start_time = time.perf_counter()
             self.inference(sample, self.model, self.model_cfg)
-            torch.cuda.synchronize()
-            end_time = time.time()
+            if use_cuda:
+                torch.cuda.synchronize()
+            end_time = time.perf_counter()
             inference_times.append(end_time - start_time)
 
         result = {
