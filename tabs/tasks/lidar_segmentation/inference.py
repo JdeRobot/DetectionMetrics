@@ -9,6 +9,7 @@ from tabs.tasks.lidar_segmentation.dataset_viewer import (
     get_label_colors,
     get_label_names,
     intensity_to_colors,
+    render_intensity_clip_slider,
     render_point_cloud_plotly,
     subsample_points,
 )
@@ -60,6 +61,19 @@ def render_lidar_segmentation_inference():
         st.info("Upload a `.bin` point cloud to run inference.")
         return
 
+    try:
+        uploaded_points = np.frombuffer(points_file.getbuffer(), dtype=np.float32).reshape(
+            -1, 4
+        )
+    except Exception as exc:
+        st.error(f"Failed to read uploaded point cloud: {exc}")
+        return
+
+    intensity_clip_range = render_intensity_clip_slider(
+        uploaded_points[:, 3],
+        key="semantic_kitti_inference_intensity_clip_range",
+    )
+
     if not st.button(
         "Run LiDAR Inference",
         type="primary",
@@ -83,7 +97,7 @@ def render_lidar_segmentation_inference():
             points, pred = subsample_points(points, pred, max_points)
             pred_colors = get_label_colors(pred, model.ontology)
             pred_names = get_label_names(pred, model.ontology)
-            intensity_colors = intensity_to_colors(points[:, 3])
+            intensity_colors = intensity_to_colors(points[:, 3], intensity_clip_range)
         except Exception as exc:
             st.error(f"Failed to run inference for '{points_file.name}': {exc}")
             return
@@ -113,8 +127,9 @@ def render_lidar_segmentation_inference():
             points=points[:, :3],
             colors=intensity_colors,
             point_size=point_size,
-            color_values=points[:, 3],
+            color_values=np.clip(points[:, 3], *intensity_clip_range),
             colorbar_title="Intensity",
+            color_range=intensity_clip_range,
             chart_key=(
                 "semantic_kitti_inference_intensity_"
                 f"{st.session_state.get('semantic_kitti_inference_view_reset', 0)}"

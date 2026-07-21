@@ -101,12 +101,17 @@ def render_lidar_segmentation_viewer():
         labels = dataset.read_label(row["label"]) if row["label"] else None
 
         points, labels = subsample_points(points, labels, max_points)
+        intensity_clip_range = None
         if color_by == "Semantic Labels" and labels is not None:
             colors = get_label_colors(labels, dataset.ontology)
             hover_text = get_label_names(labels, dataset.ontology)
             color_source = "semantic labels"
         else:
-            colors = intensity_to_colors(points[:, 3])
+            intensity_clip_range = render_intensity_clip_slider(
+                points[:, 3],
+                key="semantic_kitti_intensity_clip_range",
+            )
+            colors = intensity_to_colors(points[:, 3], intensity_clip_range)
             hover_text = None
             color_source = "intensity"
 
@@ -123,8 +128,13 @@ def render_lidar_segmentation_viewer():
         colors=colors,
         point_size=point_size,
         hover_text=hover_text,
-        color_values=points[:, 3] if color_by == "Intensity" else None,
+        color_values=(
+            np.clip(points[:, 3], *intensity_clip_range)
+            if color_by == "Intensity"
+            else None
+        ),
         colorbar_title="Intensity" if color_by == "Intensity" else None,
+        color_range=intensity_clip_range if color_by == "Intensity" else None,
         chart_key=f"semantic_kitti_viewer_{st.session_state.get('semantic_kitti_view_reset', 0)}",
     )
 
@@ -157,6 +167,7 @@ def render_point_cloud_plotly(
     hover_text=None,
     color_values=None,
     colorbar_title=None,
+    color_range=None,
     chart_key=None,
 ):
     """
@@ -169,6 +180,12 @@ def render_point_cloud_plotly(
     :type point_size: float
     :param hover_text: Text to display on hover for each point.
     :type hover_text: list[str] or None
+    :param color_values: Numeric values used for the Plotly colorbar.
+    :type color_values: np.ndarray or None
+    :param colorbar_title: Title to display on the colorbar.
+    :type colorbar_title: str or None
+    :param color_range: Min and max values used for color scaling.
+    :type color_range: tuple[float, float] or None
     :param chart_key: Key for the Streamlit chart.
     :type chart_key: str or None
     """
@@ -196,6 +213,18 @@ def render_point_cloud_plotly(
         colors = np.clip(colors, 0, 255).astype(np.uint8)
         marker_color = [f"rgb({r},{g},{b})" for r, g, b in colors]
 
+    marker = dict(
+        size=point_size,
+        color=marker_color,
+        colorscale=marker_colorscale,
+        showscale=marker_showscale,
+        colorbar=marker_colorbar,
+        opacity=0.95,
+    )
+    if color_range is not None and color_range[0] != color_range[1]:
+        marker["cmin"] = color_range[0]
+        marker["cmax"] = color_range[1]
+
     fig = graph_objects.Figure(
         data=[
             graph_objects.Scatter3d(
@@ -203,14 +232,7 @@ def render_point_cloud_plotly(
                 y=points[:, 1],
                 z=points[:, 2],
                 mode="markers",
-                marker=dict(
-                    size=point_size,
-                    color=marker_color,
-                    colorscale=marker_colorscale,
-                    showscale=marker_showscale,
-                    colorbar=marker_colorbar,
-                    opacity=0.95,
-                ),
+                marker=marker,
                 text=hover_text,
                 hovertemplate=(
                     "x=%{x:.2f}<br>y=%{y:.2f}<br>z=%{z:.2f}<br>"
@@ -301,11 +323,36 @@ def classes_dataframe(ontology):
     return pd.DataFrame(rows)
 
 
-def intensity_to_colors(intensity):
+def render_intensity_clip_slider(intensity, key):
+    """Render an intensity clipping slider and return the selected range."""
+    intensity = np.asarray(intensity, dtype=np.float32)
+    min_intensity = float(np.min(intensity))
+    max_intensity = float(np.max(intensity))
+
+    if min_intensity == max_intensity:
+        st.info(f"Intensity is constant at {min_intensity:.3f}.")
+        return min_intensity, max_intensity
+
+    clip_range = st.slider(
+        "Intensity Clip Range",
+        min_value=min_intensity,
+        max_value=max_intensity,
+        value=(min_intensity, max_intensity),
+        step=(max_intensity - min_intensity) / 100.0,
+        key=key,
+        help="Values outside this range are clipped before color normalization.",
+    )
+    st.caption(f"Intensity clipped to [{clip_range[0]:.3f}, {clip_range[1]:.3f}]")
+    return clip_range
+
+
+def intensity_to_colors(intensity, clip_range=None):
     """Convert intensity values to RGB colors for visualization.
 
     :param intensity: Array of intensity values.
     :type intensity: np.ndarray
+    :param clip_range: Min and max intensity values to clip before normalization.
+    :type clip_range: tuple[float, float] or None
     :return: Array of RGB colors.
     :rtype: np.ndarray
     """
@@ -314,12 +361,19 @@ def intensity_to_colors(intensity):
     if intensity.size == 0:
         return np.empty((0, 3), dtype=np.float32)
 
-    intensity = intensity - intensity.min()
+    if clip_range is None:
+        min_intensity = float(intensity.min())
+        max_intensity = float(intensity.max())
+    else:
+        min_intensity, max_intensity = clip_range
 
-    max_intensity = intensity.max()
+    intensity = np.clip(intensity, min_intensity, max_intensity)
+    intensity = intensity - min_intensity
 
-    if max_intensity > 0:
-        intensity = intensity / max_intensity
+    intensity_range = max_intensity - min_intensity
+
+    if intensity_range > 0:
+        intensity = intensity / intensity_range
 
     green = np.array([0.0, 0.35, 0.05], dtype=np.float32)
     yellow = np.array([1.0, 0.95, 0.0], dtype=np.float32)
