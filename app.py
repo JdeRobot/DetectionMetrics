@@ -47,7 +47,7 @@ with st.sidebar:
         "Task",
         ["Image Detection", "Image Segmentation", "Lidar Segmentation"],
         key="task",
-        help="Image segmentation is currently a placeholder.",
+        help="",
     )
 
     if task == "Image Detection":
