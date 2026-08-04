@@ -29,7 +29,7 @@ def render_image_detection_sidebar(available_devices):
         with col2:
             st.selectbox("Split", ["train", "val", "test"], key="split")
 
-        col1, col2 = st.columns([3, 1])
+        col1, col2 = st.columns([3.5, 2.5])
         with col1:
             st.text_input("Dataset Folder", key="dataset_path")
         with col2:
@@ -41,6 +41,7 @@ def render_image_detection_sidebar(available_devices):
                 "Browse",
                 on_click=browse_dataset_path,
                 key="browse_detection_dataset_path",
+                use_container_width=True,
             )
 
         if st.session_state.get("dataset_type", "COCO") == "YOLO":
@@ -119,7 +120,7 @@ def _render_manual_detection_model_config(available_devices):
         )
         st.number_input(
             "Max Detections/Image",
-            min_value=1,
+            min_value=-1,
             max_value=1000,
             step=1,
             key="max_detections",
@@ -160,7 +161,7 @@ def _render_manual_detection_model_config(available_devices):
     if enable_resize:
         resize_strategy = st.radio(
             "Resize Strategy",
-            ["Fixed Dimensions", "Min Side"],
+            ["Min Side", "Max Side", "Fixed Dimensions"],
             key="resize_strategy",
             horizontal=True,
             label_visibility="collapsed",
@@ -188,7 +189,7 @@ def _render_manual_detection_model_config(available_devices):
                     key="resize_width",
                     help="Width to resize images for inference",
                 )
-        else:
+        elif resize_strategy == "Min Side":
             st.number_input(
                 "Min Side",
                 min_value=1,
@@ -198,6 +199,33 @@ def _render_manual_detection_model_config(available_devices):
                 key="min_side",
                 help="Minimum size of the shorter side of the image",
             )
+        elif resize_strategy == "Max Side":
+            st.number_input(
+                "Max Side",
+                min_value=1,
+                max_value=4096,
+                value=640,
+                step=1,
+                key="max_side",
+                help="Maximum size of the longer side of the image",
+            )
+        else:
+            st.error("Invalid resize strategy selected")
+
+    enable_pad = st.checkbox(
+        "Enable Padding to Closest Multiple", value=True, key="enable_pad"
+    )
+
+    if enable_pad:
+        st.number_input(
+            "Divisor",
+            min_value=1,
+            max_value=128,
+            value=32,
+            step=1,
+            key="pad_divisor",
+            help="Pad image dimensions to the closest multiple of this value",
+        )
 
     enable_crop = st.checkbox("Enable Center Crop", key="enable_crop")
 
@@ -305,15 +333,17 @@ def _manual_detection_config() -> dict:
                 "height": int(st.session_state.get("resize_height", 640)),
                 "width": int(st.session_state.get("resize_width", 640)),
             }
-        else:
+        elif resize_strategy == "Min Side":
             resize_cfg = {"min_side": int(st.session_state.get("min_side", 640))}
+        elif resize_strategy == "Max Side":
+            resize_cfg = {"max_side": int(st.session_state.get("max_side", 640))}
 
     config_data = {
         "confidence_threshold": float(
             st.session_state.get("confidence_threshold", 0.5)
         ),
         "nms_threshold": float(st.session_state.get("nms_threshold", 0.5)),
-        "max_detections_per_image": int(st.session_state.get("max_detections", 100)),
+        "max_detections_per_image": int(st.session_state.get("max_detections", -1)),
         "device": st.session_state.get("device", "cpu"),
         "batch_size": int(st.session_state.get("batch_size", 1)),
         "evaluation_step": int(st.session_state.get("evaluation_step", 5)),
@@ -321,6 +351,13 @@ def _manual_detection_config() -> dict:
     }
     if resize_cfg is not None:
         config_data["resize"] = resize_cfg
+
+    if st.session_state.get("enable_pad", True):
+        pad_divisor = int(st.session_state.get("pad_divisor", 32))
+        if resize_cfg is not None:
+            resize_cfg["closest_divisor"] = pad_divisor
+        else:
+            config_data["resize"] = {"closest_divisor": pad_divisor}
 
     if st.session_state.get("enable_crop", False):
         config_data["crop"] = {
