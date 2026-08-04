@@ -782,13 +782,13 @@
             <span class="k">if</span> <span class="n">has_gpu</span><span class="p">:</span>
                 <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">set_synchronous_execution</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
-            <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">inference</span><span class="p">(</span><span class="n">dummy_input</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">has_gpu</span><span class="p">:</span>
                 <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">set_synchronous_execution</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
-            <span class="n">inference_times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
+            <span class="n">inference_times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span>
 
         <span class="c1"># Retrieve computational cost information</span>
         <span class="n">result</span> <span class="o">=</span> <span class="p">{</span>

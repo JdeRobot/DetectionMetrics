@@ -19,43 +19,12 @@ from perceptionmetrics.datasets import detection as detection_dataset
 from perceptionmetrics.models import detection as detection_model
 from perceptionmetrics.utils import detection_metrics as um
 from perceptionmetrics.utils import image as ui
-from perceptionmetrics.utils.torch import get_device_info
-
-
-def get_resize_args(resize_cfg: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Get the resize arguments for torchvision.transforms.Resize from the configuration.
-
-    :param resize_cfg: Resize configuration dictionary
-    :return: Dictionary with arguments for transforms.Resize
-    """
-    resize_args = {"interpolation": transforms.InterpolationMode.BILINEAR}
-    fixed_h = resize_cfg.get("height")
-    fixed_w = resize_cfg.get("width")
-    min_side = resize_cfg.get("min_side")
-    max_side = resize_cfg.get("max_side")
-
-    if fixed_h is not None and fixed_w is not None:
-        if min_side is not None:
-            raise ValueError(
-                "Resize config cannot satisfy both fixed dimensions (width/height) and min_side. They are mutually exclusive."
-            )
-        resize_args["size"] = (fixed_h, fixed_w)
-    elif min_side is not None:
-        resize_args["size"] = min_side
-        if fixed_h is not None or fixed_w is not None:
-            raise ValueError(
-                "Resize config cannot satisfy both fixed dimensions (width/height) and min_side. They are mutually exclusive."
-            )
-    else:
-        raise ValueError(
-            "Resize config must contain either 'height' and 'width' or 'min_side' and 'max_side'."
-        )
-
-    if max_side is not None:
-        resize_args["max_size"] = max_side
-
-    return resize_args
+from perceptionmetrics.utils.torch import (
+    get_device_info,
+    get_resize_args,
+    inverse_transform_boxes,
+    pad_to_closest_divisor,
+)
 
 
 def data_to_device(
@@ -139,17 +108,20 @@ def get_computational_cost(
                 model(*dummy_tuple)
 
     # Measure inference time
+    use_cuda = next(model.parameters()).device.type == "cuda"
     inference_times = []
     for _ in range(runs):
-        torch.cuda.synchronize()
-        start = time.time()
+        if use_cuda:
+            torch.cuda.synchronize()
+        start = time.perf_counter()
         with torch.no_grad():
             if hasattr(model, "inference"):
                 model.inference(*dummy_tuple)
             else:
                 model(*dummy_tuple)
-        torch.cuda.synchronize()
-        inference_times.append(time.time() - start)
+        if use_cuda:
+            torch.cuda.synchronize()
+        inference_times.append(time.perf_counter() - start)
 
     # Get number of parameters
     n_params = sum(p.numel() for p in model.parameters())
@@ -235,6 +207,7 @@ class ImageDetectionTorchDataset(Dataset):
         target = {
             "boxes": boxes,  # [N, 4]
             "labels": category_indices,  # [N]
+            "orig_size": torch.tensor([image.width, image.height], dtype=torch.int32),
         }
 
         if self.transform:
@@ -302,13 +275,13 @@ class TorchImageDetectionModel(detection_model.ImageDetectionModel):
 
         # Init parent class
         super().__init__(model, model_type, model_cfg, ontology_fname, model_fname)
-        
+
         # Define the Wrapper with DType Alignment
         class DetectionModelWrapper(torch.nn.Module):
             def __init__(self, model):
                 super().__init__()
                 self.inner_model = model
-            
+
             # Handle input precision, tuple extraction, and output precision
             def forward(self, x):
                 out = self.inner_model(x)
@@ -336,10 +309,14 @@ class TorchImageDetectionModel(detection_model.ImageDetectionModel):
         # Load confidence and NMS thresholds from config
         self.confidence_threshold = self.model_cfg.get("confidence_threshold", 0.5)
         self.nms_threshold = self.model_cfg.get("nms_threshold", 0.3)
+        self.max_detections_per_image = self.model_cfg.get(
+            "max_detections_per_image", -1
+        )
 
         self.postprocess_args = [self.confidence_threshold]
         if self.model_format == "yolo":
             self.postprocess_args.append(self.nms_threshold)
+        self.postprocess_args.append(self.max_detections_per_image)
 
         # Add reverse mapping for idx to class_name
         self.idx_to_class_name = {v["idx"]: k for k, v in self.ontology.items()}
@@ -347,10 +324,13 @@ class TorchImageDetectionModel(detection_model.ImageDetectionModel):
         # Build input transforms (resize, normalize, etc.)
         self.transform_input = []
 
+        self.closest_divisor = None
         resize_cfg = self.model_cfg.get("resize")
         if resize_cfg is not None:
-            resize_args = get_resize_args(resize_cfg)
-            self.transform_input.append(transforms.Resize(**resize_args))
+            self.closest_divisor = resize_cfg.pop("closest_divisor", None)
+            if resize_cfg:
+                resize_args = get_resize_args(resize_cfg)
+                self.transform_input.append(transforms.Resize(**resize_args))
         else:
             print("'resize_cfg' missing in model config. No resizing will be applied.")
 
@@ -394,8 +374,14 @@ class TorchImageDetectionModel(detection_model.ImageDetectionModel):
         :return: Detection result or a tuple with the detection result and the input sample tensor
         :rtype: Union[Dict[str, torch.Tensor], Tuple[Dict[str, torch.Tensor], torch.Tensor]]
         """
+        orig_size = (image.width, image.height)
         sample = self.transform_input(image).unsqueeze(0).to(self.device)
         result = self.inference(sample)
+
+        # Scale bounding boxes back to the original image size
+        result["boxes"] = inverse_transform_boxes(
+            result["boxes"], orig_size, self.transform_input.transforms
+        )
 
         if return_sample:
             return result, sample
@@ -410,11 +396,21 @@ class TorchImageDetectionModel(detection_model.ImageDetectionModel):
         :return: Dictionary with keys 'boxes', 'labels', 'scores'
         :rtype: Dict[str, torch.Tensor]
         """
+        if self.closest_divisor is not None:
+            tensor_in, (orig_h, orig_w) = pad_to_closest_divisor(
+                tensor_in, self.closest_divisor
+            )
+
         with torch.no_grad():
             result = self.model(tensor_in.to(self.device))[0]  # only first image
 
         # Apply threshold filtering from model config
         result = self.postprocess_detection(result, *self.postprocess_args)
+
+        # Crop/clamp the bounding boxes to the original shape before padding
+        if self.closest_divisor is not None:
+            result["boxes"][:, [0, 2]] = result["boxes"][:, [0, 2]].clamp(0, orig_w)
+            result["boxes"][:, [1, 3]] = result["boxes"][:, [1, 3]].clamp(0, orig_h)
 
         return result
 
@@ -518,6 +514,12 @@ class TorchImageDetectionModel(detection_model.ImageDetectionModel):
                     continue
 
                 images = torch.stack(images).to(self.device)
+
+                if self.closest_divisor is not None:
+                    images, (orig_h, orig_w) = pad_to_closest_divisor(
+                        images, self.closest_divisor
+                    )
+
                 predictions = self.model(images)
 
                 for i in range(len(images)):
@@ -528,6 +530,15 @@ class TorchImageDetectionModel(detection_model.ImageDetectionModel):
 
                     # Post-process predictions
                     pred = self.postprocess_detection(pred, *self.postprocess_args)
+
+                    # Crop/clamp the bounding boxes to the original shape before padding
+                    if self.closest_divisor is not None:
+                        pred["boxes"][:, [0, 2]] = pred["boxes"][:, [0, 2]].clamp(
+                            0, orig_w
+                        )
+                        pred["boxes"][:, [1, 3]] = pred["boxes"][:, [1, 3]].clamp(
+                            0, orig_h
+                        )
 
                     # Apply ontology translation if needed
                     if lut_ontology is not None:
@@ -551,8 +562,15 @@ class TorchImageDetectionModel(detection_model.ImageDetectionModel):
                         # Save JSON with predictions and csv with metrics per sample
                         if results_per_sample:
                             out_data = []
+
+                            orig_pred_boxes = inverse_transform_boxes(
+                                boxes=pred["boxes"].cpu(),
+                                orig_size=tuple(gt["orig_size"].tolist()),
+                                input_transforms=self.transform_input.transforms,
+                            ).numpy()
+
                             for box, label, score in zip(
-                                pred_boxes, pred_labels, pred_scores
+                                orig_pred_boxes, pred_labels, pred_scores
                             ):
                                 # Convert label index to class name using model ontology
                                 class_name = self.idx_to_class_name.get(

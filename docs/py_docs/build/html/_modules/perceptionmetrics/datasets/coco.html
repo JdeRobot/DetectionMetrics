@@ -239,7 +239,8 @@
         </div>
         <article role="main" id="furo-main-content">
           <h1>Source code for perceptionmetrics.datasets.coco</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pycocotools.coco</span><span class="w"> </span><span class="kn">import</span> <span class="n">COCO</span>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pycocotools.coco</span><span class="w"> </span><span class="kn">import</span> <span class="n">COCO</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -334,18 +335,18 @@
         <span class="p">}</span>
 
     <span class="c1"># Build dataset DataFrame from COCO image IDs</span>
-    <span class="n">rows</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">img_id</span> <span class="ow">in</span> <span class="n">coco</span><span class="o">.</span><span class="n">getImgIds</span><span class="p">():</span>
         <span class="n">img_info</span> <span class="o">=</span> <span class="n">coco</span><span class="o">.</span><span class="n">loadImgs</span><span class="p">(</span><span class="n">img_id</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-            <span class="p">{</span>
-                <span class="s2">&quot;image&quot;</span><span class="p">:</span> <span class="n">img_info</span><span class="p">[</span><span class="s2">&quot;file_name&quot;</span><span class="p">],</span>
-                <span class="s2">&quot;annotation&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">img_id</span><span class="p">),</span>
-                <span class="s2">&quot;split&quot;</span><span class="p">:</span> <span class="n">split</span><span class="p">,</span>  <span class="c1"># Use provided split parameter</span>
-            <span class="p">}</span>
+        <span class="n">sample_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">img_info</span><span class="p">[</span><span class="s2">&quot;file_name&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">dataset</span><span class="p">[</span><span class="n">sample_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">img_info</span><span class="p">[</span><span class="s2">&quot;file_name&quot;</span><span class="p">],</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">img_id</span><span class="p">),</span>
+            <span class="n">split</span><span class="p">,</span>  <span class="c1"># Use provided split parameter</span>
         <span class="p">)</span>
 
-    <span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">,</span> <span class="s2">&quot;annotation&quot;</span><span class="p">,</span> <span class="s2">&quot;split&quot;</span><span class="p">]</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">cols</span><span class="p">)</span>
     <span class="n">dataset</span><span class="o">.</span><span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ontology&quot;</span><span class="p">:</span> <span class="n">ontology</span><span class="p">}</span>
 
     <span class="k">return</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">ontology</span></div>

@@ -239,9 +239,11 @@
         </div>
         <article role="main" id="furo-main-content">
           <h1>Source code for perceptionmetrics.utils.torch</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Union</span>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">F</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torchvision.transforms</span><span class="w"> </span><span class="kn">import</span> <span class="n">v2</span> <span class="k">as</span> <span class="n">transforms</span>
 
 
 <div class="viewcode-block" id="data_to_device">
@@ -335,6 +337,149 @@
     <span class="n">best_device</span> <span class="o">=</span> <span class="n">available_devices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="k">return</span> <span class="n">best_device</span><span class="p">,</span> <span class="n">available_devices</span></div>
+
+
+
+<div class="viewcode-block" id="get_resize_args">
+<a class="viewcode-back" href="../../../api/perceptionmetrics.utils.html#perceptionmetrics.utils.torch.get_resize_args">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_resize_args</span><span class="p">(</span><span class="n">resize_cfg</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get the resize arguments for torchvision.transforms.Resize from the configuration.</span>
+
+<span class="sd">    :param resize_cfg: Resize configuration dictionary</span>
+<span class="sd">    :type resize_cfg: dict</span>
+<span class="sd">    :return: Dictionary with arguments for transforms.Resize</span>
+<span class="sd">    :rtype: dict</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">resize_args</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;interpolation&quot;</span><span class="p">:</span> <span class="n">transforms</span><span class="o">.</span><span class="n">InterpolationMode</span><span class="o">.</span><span class="n">BILINEAR</span><span class="p">}</span>
+    <span class="n">fixed_h</span> <span class="o">=</span> <span class="n">resize_cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">)</span>
+    <span class="n">fixed_w</span> <span class="o">=</span> <span class="n">resize_cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">)</span>
+    <span class="n">min_side</span> <span class="o">=</span> <span class="n">resize_cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;min_side&quot;</span><span class="p">)</span>
+    <span class="n">max_side</span> <span class="o">=</span> <span class="n">resize_cfg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;max_side&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">fixed_h</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">fixed_w</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">min_side</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">max_side</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Resize config cannot satisfy both fixed dimensions (width/height) and &quot;</span>
+                <span class="s2">&quot;min_side/max_side. They are mutually exclusive.&quot;</span>
+            <span class="p">)</span>
+        <span class="n">resize_args</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">fixed_h</span><span class="p">,</span> <span class="n">fixed_w</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">min_side</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">max_side</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">resize_args</span><span class="p">[</span><span class="s2">&quot;size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">min_side</span>
+        <span class="n">resize_args</span><span class="p">[</span><span class="s2">&quot;max_size&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">max_side</span>
+        <span class="k">if</span> <span class="n">fixed_h</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">fixed_w</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;Resize config cannot satisfy both fixed dimensions (width/height) and &quot;</span>
+                <span class="s2">&quot;min_side/max_side. They are mutually exclusive.&quot;</span>
+            <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;Resize config must contain either &#39;height&#39; and &#39;width&#39; or &#39;min_side&#39; &quot;</span>
+            <span class="s2">&quot;and/or &#39;max_side&#39;.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">resize_args</span></div>
+
+
+
+<div class="viewcode-block" id="pad_to_closest_divisor">
+<a class="viewcode-back" href="../../../api/perceptionmetrics.utils.html#perceptionmetrics.utils.torch.pad_to_closest_divisor">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pad_to_closest_divisor</span><span class="p">(</span>
+    <span class="n">tensor</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">closest_divisor</span><span class="p">:</span> <span class="nb">int</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pad a tensor with zeros right and bottom so that its height and width are a multiple</span>
+<span class="sd">    of closest_divisor.</span>
+
+<span class="sd">    :param tensor: Input tensor of shape (..., H, W)</span>
+<span class="sd">    :type tensor: torch.Tensor</span>
+<span class="sd">    :param closest_divisor: The divisor to pad to</span>
+<span class="sd">    :type closest_divisor: int</span>
+<span class="sd">    :return: Padded tensor and original (H, W)</span>
+<span class="sd">    :rtype: Tuple[torch.Tensor, Tuple[int, int]]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">tensor</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+    <span class="n">pad_h</span> <span class="o">=</span> <span class="p">(</span><span class="n">closest_divisor</span> <span class="o">-</span> <span class="p">(</span><span class="n">h</span> <span class="o">%</span> <span class="n">closest_divisor</span><span class="p">))</span> <span class="o">%</span> <span class="n">closest_divisor</span>
+    <span class="n">pad_w</span> <span class="o">=</span> <span class="p">(</span><span class="n">closest_divisor</span> <span class="o">-</span> <span class="p">(</span><span class="n">w</span> <span class="o">%</span> <span class="n">closest_divisor</span><span class="p">))</span> <span class="o">%</span> <span class="n">closest_divisor</span>
+
+    <span class="k">if</span> <span class="n">pad_h</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">pad_w</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">tensor</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pad_w</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pad_h</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;constant&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">tensor</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="inverse_transform_boxes">
+<a class="viewcode-back" href="../../../api/perceptionmetrics.utils.html#perceptionmetrics.utils.torch.inverse_transform_boxes">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">inverse_transform_boxes</span><span class="p">(</span>
+    <span class="n">boxes</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">,</span>
+    <span class="n">orig_size</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span>
+    <span class="n">input_transforms</span><span class="p">:</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Map bounding boxes from the transformed image space back to the original image space.</span>
+
+<span class="sd">    :param boxes: Bounding boxes in [N, 4] format</span>
+<span class="sd">    :type boxes: torch.Tensor</span>
+<span class="sd">    :param orig_size: Original image size (width, height)</span>
+<span class="sd">    :type orig_size: tuple(int, int)</span>
+<span class="sd">    :param input_transforms: Transforms to be applied to images</span>
+<span class="sd">    :type input_transforms: transforms.Compose</span>
+<span class="sd">    :return: Bounding boxes mapped back to the original image space</span>
+<span class="sd">    :rtype: torch.Tensor</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">w_curr</span><span class="p">,</span> <span class="n">h_curr</span> <span class="o">=</span> <span class="n">orig_size</span>
+    <span class="n">spatial_ops</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">input_transforms</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">):</span>
+            <span class="n">size</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">size</span>
+            <span class="n">max_size</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="s2">&quot;max_size&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+                <span class="nb">isinstance</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">))</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">size</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+            <span class="p">):</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">size</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">else</span> <span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">w_curr</span> <span class="o">&lt;=</span> <span class="n">h_curr</span> <span class="ow">and</span> <span class="n">w_curr</span> <span class="o">==</span> <span class="n">s</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span>
+                    <span class="n">h_curr</span> <span class="o">&lt;=</span> <span class="n">w_curr</span> <span class="ow">and</span> <span class="n">h_curr</span> <span class="o">==</span> <span class="n">s</span>
+                <span class="p">):</span>
+                    <span class="n">new_h</span><span class="p">,</span> <span class="n">new_w</span> <span class="o">=</span> <span class="n">h_curr</span><span class="p">,</span> <span class="n">w_curr</span>
+                <span class="k">elif</span> <span class="n">w_curr</span> <span class="o">&lt;</span> <span class="n">h_curr</span><span class="p">:</span>
+                    <span class="n">new_w</span> <span class="o">=</span> <span class="n">s</span>
+                    <span class="n">new_h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">h_curr</span> <span class="o">/</span> <span class="n">w_curr</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">new_h</span> <span class="o">=</span> <span class="n">s</span>
+                    <span class="n">new_w</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="n">w_curr</span> <span class="o">/</span> <span class="n">h_curr</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">max_size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">new_w</span><span class="p">,</span> <span class="n">new_h</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">max_size</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">new_w</span> <span class="o">&gt;</span> <span class="n">new_h</span><span class="p">:</span>
+                            <span class="n">new_w</span> <span class="o">=</span> <span class="n">max_size</span>
+                            <span class="n">new_h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">max_size</span> <span class="o">*</span> <span class="n">h_curr</span> <span class="o">/</span> <span class="n">w_curr</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">new_h</span> <span class="o">=</span> <span class="n">max_size</span>
+                            <span class="n">new_w</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">max_size</span> <span class="o">*</span> <span class="n">w_curr</span> <span class="o">/</span> <span class="n">h_curr</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_h</span><span class="p">,</span> <span class="n">new_w</span> <span class="o">=</span> <span class="n">size</span>
+
+            <span class="n">spatial_ops</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">w_curr</span> <span class="o">/</span> <span class="n">new_w</span><span class="p">,</span> <span class="n">h_curr</span> <span class="o">/</span> <span class="n">new_h</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+            <span class="n">w_curr</span><span class="p">,</span> <span class="n">h_curr</span> <span class="o">=</span> <span class="n">new_w</span><span class="p">,</span> <span class="n">new_h</span>
+
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">transforms</span><span class="o">.</span><span class="n">CenterCrop</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                <span class="n">new_h</span><span class="p">,</span> <span class="n">new_w</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">size</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_h</span><span class="p">,</span> <span class="n">new_w</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">size</span>
+            <span class="n">top</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">((</span><span class="n">h_curr</span> <span class="o">-</span> <span class="n">new_h</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">))</span>
+            <span class="n">left</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">((</span><span class="n">w_curr</span> <span class="o">-</span> <span class="n">new_w</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">))</span>
+            <span class="n">spatial_ops</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span><span class="p">))</span>
+            <span class="n">w_curr</span><span class="p">,</span> <span class="n">h_curr</span> <span class="o">=</span> <span class="n">new_w</span><span class="p">,</span> <span class="n">new_h</span>
+
+    <span class="n">inv_boxes</span> <span class="o">=</span> <span class="n">boxes</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">scale_w</span><span class="p">,</span> <span class="n">scale_h</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">top</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">spatial_ops</span><span class="p">):</span>
+        <span class="n">inv_boxes</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">left</span>
+        <span class="n">inv_boxes</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span> <span class="o">+=</span> <span class="n">top</span>
+        <span class="n">inv_boxes</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span> <span class="o">*=</span> <span class="n">scale_w</span>
+        <span class="n">inv_boxes</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span> <span class="o">*=</span> <span class="n">scale_h</span>
+
+    <span class="k">return</span> <span class="n">inv_boxes</span></div>
 
 </pre></div>
         </article>
