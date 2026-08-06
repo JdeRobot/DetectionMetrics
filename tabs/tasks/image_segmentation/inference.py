@@ -52,10 +52,11 @@ def render_image_segmentation_inference():
 
 def _overlay_mask(image, mask_rgb, opacity):
     """Overlay a segmentation mask on an image with a given opacity.
-    Param image: PIL.Image, the original image
-    Param mask_rgb: PIL.Image, the segmentation mask in RGB format
-    Param opacity: float, the opacity of the mask overlay (0.0 to 1.0)
-    Return: PIL.Image, the image with the mask overlay
+    :param image: PIL.Image, the original image
+    :param mask_rgb: PIL.Image, the segmentation mask in RGB format
+    :param opacity: float, the opacity of the mask overlay (0.0 to 1.0)
+    :return: PIL.Image, the image with the mask overlay
+    :rtype: PIL.Image
     """
     image_np = np.array(image)
     mask_np = np.array(mask_rgb)

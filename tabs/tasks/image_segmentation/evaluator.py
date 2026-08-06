@@ -4,12 +4,14 @@ import tempfile
 
 import streamlit as st
 
-from perceptionmetrics.datasets.cityscapes import CityscapesImageSegmentationDataset
-from perceptionmetrics.datasets.nuimages import NuImagesSegmentationDataset
+from tabs.tasks.image_segmentation.dataset_viewer import (
+    load_image_segmentation_dataset,
+)
 from tabs.tasks.utils import browse_folder
 
 
 def browse_segmentation_predictions_outdir():
+    """Callback for updating the predictions output directory text input."""
     folder = browse_folder()
     if folder:
         st.session_state.segmentation_predictions_outdir = folder
@@ -38,63 +40,7 @@ def render_image_segmentation_evaluator():
         st.warning("NuImages segmentation evaluation supports train and val splits.")
     else:
         try:
-            if dataset_type == "Cityscapes":
-                roots = {"train": None, "val": None, "test": None}
-                roots[split] = dataset_path
-                dataset_key = (
-                    "cityscapes_segmentation_evaluation_dataset",
-                    os.path.abspath(dataset_path),
-                    split,
-                    st.session_state.get(
-                        "segmentation_image_dir",
-                        "leftImg8bit_trainvaltest/leftImg8bit",
-                    ),
-                    st.session_state.get("segmentation_label_dir", "gtFine"),
-                    st.session_state.get(
-                        "segmentation_image_suffix", "_leftImg8bit.png"
-                    ),
-                    st.session_state.get(
-                        "segmentation_label_suffix", "_gtFine_labelIds.png"
-                    ),
-                    st.session_state.get("segmentation_use_train_id", False),
-                )
-
-                if dataset_key not in st.session_state:
-                    st.session_state[dataset_key] = CityscapesImageSegmentationDataset(
-                        train_dataset_root=roots["train"],
-                        val_dataset_root=roots["val"],
-                        test_dataset_root=roots["test"],
-                        image_dir=dataset_key[3],
-                        label_dir=dataset_key[4],
-                        image_suffix=dataset_key[5],
-                        label_suffix=dataset_key[6],
-                        use_train_id=dataset_key[7],
-                    )
-            else:
-                version = st.session_state.get(
-                    "nuimages_segmentation_version", "v1.0-mini"
-                )
-                labels_rel_dir = st.session_state.get(
-                    "nuimages_segmentation_labels_dir",
-                    "generated/nuimages_segmentation_labels",
-                )
-                dataset_key = (
-                    "nuimages_segmentation_evaluation_dataset",
-                    os.path.abspath(dataset_path),
-                    version,
-                    split,
-                    labels_rel_dir,
-                )
-
-                if dataset_key not in st.session_state:
-                    st.session_state[dataset_key] = NuImagesSegmentationDataset(
-                        dataset_dir=dataset_path,
-                        version=version,
-                        split=split,
-                        labels_rel_dir=labels_rel_dir,
-                    )
-
-            dataset = st.session_state[dataset_key]
+            dataset = load_image_segmentation_dataset(dataset_type, dataset_path, split)
             st.success(
                 f"✅ Dataset loaded: {dataset_path} ({split} split) - {len(dataset.dataset)} samples"
             )
@@ -241,8 +187,10 @@ def render_image_segmentation_evaluator():
 
 def display_segmentation_evaluation_results(results, show_download=True):
     """Display the evaluation results in a Streamlit dataframe and provide a download button.
-    Param results: pd.DataFrame, the evaluation results to display
-    Param show_download: bool, whether to show the download button for the results"""
+    :param results: pd.DataFrame, the evaluation results to display
+    :type results: pd.DataFrame
+    :param show_download: bool, whether to show the download button for the results
+    :type show_download: bool"""
     if results is None or results.empty:
         st.warning("No evaluation results to display.")
         return
