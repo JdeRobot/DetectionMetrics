@@ -74,39 +74,58 @@ def render_lidar_segmentation_inference():
         key="semantic_kitti_inference_intensity_clip_range",
     )
 
-    if not st.button(
+    if st.button(
         "Run LiDAR Inference",
         type="primary",
         key="run_lidar_segmentation_inference",
     ):
+        
+
+        with st.spinner("Running LiDAR inference..."):
+            points_path = None
+            try:
+                with tempfile.NamedTemporaryFile(delete=False, suffix=".bin") as tmp_points:
+                    tmp_points.write(points_file.getbuffer())
+                    points_path = tmp_points.name
+
+                points = np.fromfile(points_path, dtype=np.float32).reshape(-1, 4)
+                pred = model.predict(
+                    points_fname=points_path,
+                    has_intensity=True,
+                )
+
+                st.session_state["lidar_inference_result"] = {
+                    "file_name": points_file.name,
+                    "points": points,
+                    "pred": pred,
+                }
+                st.success("Inference completed.")
+                # points, pred = subsample_points(points, pred, max_points)
+                # pred_colors = get_label_colors(pred, model.ontology)
+                # pred_names = get_label_names(pred, model.ontology)
+                # intensity_colors = intensity_to_colors(points[:, 3], intensity_clip_range)
+            except Exception as exc:
+                st.error(f"Failed to run inference for '{points_file.name}': {exc}")
+                return
+            finally:
+                if points_path and os.path.isfile(points_path):
+                    os.unlink(points_path)
+
+        
+    
+    result = st.session_state.get("lidar_inference_result")
+    if result is None:
+        st.info("Click Run LiDAR Inference to visualize predictions.")
         return
+    points = result["points"]
+    pred = result["pred"]
 
-    with st.spinner("Running LiDAR inference..."):
-        points_path = None
-        try:
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".bin") as tmp_points:
-                tmp_points.write(points_file.getbuffer())
-                points_path = tmp_points.name
+    points, pred = subsample_points(points, pred, max_points)
+    pred_colors = get_label_colors(pred, model.ontology)
+    pred_names = get_label_names(pred, model.ontology)
+    intensity_colors = intensity_to_colors(points[:, 3], intensity_clip_range)
 
-            points = np.fromfile(points_path, dtype=np.float32).reshape(-1, 4)
-            pred = model.predict(
-                points_fname=points_path,
-                has_intensity=True,
-            )
-
-            points, pred = subsample_points(points, pred, max_points)
-            pred_colors = get_label_colors(pred, model.ontology)
-            pred_names = get_label_names(pred, model.ontology)
-            intensity_colors = intensity_to_colors(points[:, 3], intensity_clip_range)
-        except Exception as exc:
-            st.error(f"Failed to run inference for '{points_file.name}': {exc}")
-            return
-        finally:
-            if points_path and os.path.isfile(points_path):
-                os.unlink(points_path)
-
-    st.success("Inference completed.")
-    st.caption(f"{points_file.name} ({len(points)} points shown)")
+    st.caption(f"{result['file_name']} ({len(points)} points shown)")
 
     pred_col, intensity_col = st.columns(2)
     with pred_col:
