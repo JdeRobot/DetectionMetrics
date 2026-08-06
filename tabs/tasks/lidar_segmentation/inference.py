@@ -59,7 +59,15 @@ def render_lidar_segmentation_inference():
 
     if points_file is None:
         st.info("Upload a `.bin` point cloud to run inference.")
+        st.session_state.pop("lidar_inference_result", None)
+        st.session_state.pop("lidar_inference_file_name", None)
         return
+    current_file_name = points_file.name
+    previous_file_name = st.session_state.get("lidar_inference_file_name")
+
+    if previous_file_name != current_file_name:
+        st.session_state.pop("lidar_inference_result", None)
+        st.session_state["lidar_inference_file_name"] = current_file_name
 
     try:
         uploaded_points = np.frombuffer(points_file.getbuffer(), dtype=np.float32).reshape(
@@ -79,8 +87,6 @@ def render_lidar_segmentation_inference():
         type="primary",
         key="run_lidar_segmentation_inference",
     ):
-        
-
         with st.spinner("Running LiDAR inference..."):
             points_path = None
             try:
@@ -100,10 +106,6 @@ def render_lidar_segmentation_inference():
                     "pred": pred,
                 }
                 st.success("Inference completed.")
-                # points, pred = subsample_points(points, pred, max_points)
-                # pred_colors = get_label_colors(pred, model.ontology)
-                # pred_names = get_label_names(pred, model.ontology)
-                # intensity_colors = intensity_to_colors(points[:, 3], intensity_clip_range)
             except Exception as exc:
                 st.error(f"Failed to run inference for '{points_file.name}': {exc}")
                 return
