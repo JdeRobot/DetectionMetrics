@@ -43,7 +43,9 @@ def get_data_shape(data: Union[tuple, list]) -> Union[tuple, list]:
     elif torch.is_tensor(data):
         return tuple(data.shape)
     else:
-        return tuple(data.shape)
+        # Non-tensor metadata (filenames, labels, dicts, ...) is passed
+        # through unchanged, matching data_to_device() and unsqueeze_data().
+        return data
 
 
 def unsqueeze_data(data: Union[tuple, list], dim: int = 0) -> Union[tuple, list]:
