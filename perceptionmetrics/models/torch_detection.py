@@ -222,23 +222,20 @@ class LiDARDetectionTorchDataset(Dataset):
     """Dataset wrapper for LiDAR detection PyTorch models.
 
     This wrapper keeps the expected 3D box representation explicit:
-    boxes are stored as ``[x, y, z, dx, dy, dz, yaw]`` where ``x, y, z`` is the
-    box center in the LiDAR frame, ``dx, dy, dz`` are dimensions, and ``yaw`` is
+    boxes are stored as [x, y, z, dx, dy, dz, yaw] where x, y, z is the
+    box center in the LiDAR frame, dx, dy, dz are dimensions, and yaw is
     the heading angle.
 
     :param dataset: LiDAR detection dataset
     :type dataset: LiDARDetectionDataset
     :param splits: Splits to be used from the dataset, defaults to ["test"]
     :type splits: List[str], optional
-    :param has_intensity: Whether point cloud files contain intensity, defaults to True
-    :type has_intensity: bool
     """
 
     def __init__(
         self,
         dataset: detection_dataset.LiDARDetectionDataset,
         splits: List[str] = ["test"],
-        has_intensity: bool = True,
     ):
         self.dataset = copy(dataset)
         self.dataset._validate_splits(splits)
@@ -246,7 +243,6 @@ class LiDARDetectionTorchDataset(Dataset):
             self.dataset.dataset["split"].isin(splits)
         ]
         self.dataset.make_fname_global()
-        self.has_intensity = has_intensity
 
     def __len__(self):
         return len(self.dataset.dataset)
@@ -258,8 +254,10 @@ class LiDARDetectionTorchDataset(Dataset):
         points_path = row["points"]
         annotation_path = row["annotation"]
 
-        points = self.read_points(points_path)
-        boxes_3d, labels = self.read_annotation(annotation_path)
+        points = self.dataset.read_points(points_path)
+        boxes_3d, labels = self.dataset.read_annotation(annotation_path)
+        boxes_3d = np.asarray(boxes_3d, dtype=np.float32).reshape(-1, 7)
+        labels = np.asarray(labels, dtype=np.int64)
 
         target = {
             "boxes_3d": torch.as_tensor(boxes_3d, dtype=torch.float32),
@@ -267,66 +265,6 @@ class LiDARDetectionTorchDataset(Dataset):
         }
 
         return self.dataset.dataset.index[idx], torch.as_tensor(points), target
-
-    def read_points(self, points_path: str) -> np.ndarray:
-        """Read a LiDAR point cloud for detection.
-
-        If the dataset implements ``read_points``, that implementation is used.
-        Otherwise, files are read as SemanticKITTI/KITTI-style float32 ``.bin``.
-        """
-        if hasattr(self.dataset, "read_points"):
-            return self.dataset.read_points(points_path)
-
-        point_dim = 4 if self.has_intensity else 3
-        return np.fromfile(points_path, dtype=np.float32).reshape(-1, point_dim)
-
-    def read_annotation(self, annotation_path: str) -> Tuple[np.ndarray, np.ndarray]:
-        """Read and normalize 3D detection annotations."""
-        annotations = self.dataset.read_annotation(annotation_path)
-        return normalize_lidar_detection_annotations(annotations)
-
-
-def normalize_lidar_detection_annotations(annotations) -> Tuple[np.ndarray, np.ndarray]:
-    """Normalize LiDAR detection annotations to boxes and labels arrays.
-
-    Accepted forms:
-    - ``(boxes_3d, labels)``
-    - list of dicts containing ``bbox_3d``/``box_3d`` and ``category_id``/``label``
-    - list of dicts containing ``translation``, ``size``, ``yaw`` and label fields
-
-    The normalized box format is ``[x, y, z, dx, dy, dz, yaw]``.
-    """
-    if isinstance(annotations, tuple) and len(annotations) == 2:
-        boxes_3d, labels = annotations
-        return (
-            np.asarray(boxes_3d, dtype=np.float32).reshape(-1, 7),
-            np.asarray(labels, dtype=np.int64),
-        )
-
-    boxes_3d = []
-    labels = []
-    for annotation in annotations:
-        if "bbox_3d" in annotation:
-            box_3d = annotation["bbox_3d"]
-        elif "box_3d" in annotation:
-            box_3d = annotation["box_3d"]
-        else:
-            translation = annotation["translation"]
-            size = annotation["size"]
-            yaw = annotation.get("yaw", annotation.get("rotation_y", 0.0))
-            box_3d = [*translation, *size, yaw]
-
-        label = annotation.get("category_id", annotation.get("label"))
-        boxes_3d.append(box_3d)
-        labels.append(label)
-
-    boxes_3d = (
-        np.asarray(boxes_3d, dtype=np.float32).reshape(-1, 7)
-        if boxes_3d
-        else np.zeros((0, 7), dtype=np.float32)
-    )
-    labels = np.asarray(labels, dtype=np.int64)
-    return boxes_3d, labels
 
 
 class TorchImageDetectionModel(detection_model.ImageDetectionModel):
@@ -822,9 +760,9 @@ class TorchLiDARDetectionModel(detection_model.LiDARDetectionModel):
     The intended prediction format is based on common 3D detection toolkits such
     as MMDetection3D and nuScenes-style boxes:
 
-    ``boxes_3d``: ``[N, 7]`` tensor/array with ``[x, y, z, dx, dy, dz, yaw]``
-    ``labels``: ``[N]`` class indices
-    ``scores``: ``[N]`` confidence scores
+    boxes_3d: [N, 7] tensor/array with [x, y, z, dx, dy, dz, yaw]
+    labels: [N] class indices
+    scores: [N] confidence scores
 
     Actual backend-specific inference and metric evaluation are intentionally
     left unwired until the LiDAR detection dataset and metric contract is
@@ -855,7 +793,6 @@ class TorchLiDARDetectionModel(detection_model.LiDARDetectionModel):
                 f"Unsupported LiDAR detection model_format: {self.model_format}"
             )
 
-        self.has_intensity = self.model_cfg.get("has_intensity", True)
         self.idx_to_class_name = {v["idx"]: k for k, v in self.ontology.items()}
 
         if isinstance(self.model, torch.nn.Module):

@@ -3,20 +3,10 @@ from typing import Optional, Tuple
 
 import numpy as np
 import pandas as pd
+from nuscenes.eval.common.utils import quaternion_yaw
 from nuscenes.nuscenes import NuScenes
 
 from perceptionmetrics.datasets.detection import LiDARDetectionDataset
-
-
-def quaternion_yaw(rotation) -> float:
-    """Return yaw angle from a nuScenes quaternion.
-
-    nuScenes stores rotations as quaternions in ``[w, x, y, z]`` order.
-    """
-    w, x, y, z = rotation
-    siny_cosp = 2.0 * (w * z + x * y)
-    cosy_cosp = 1.0 - 2.0 * (y * y + z * z)
-    return float(np.arctan2(siny_cosp, cosy_cosp))
 
 
 def build_nuscenes_lidar_detection_dataset(
@@ -28,7 +18,7 @@ def build_nuscenes_lidar_detection_dataset(
     """Build a nuScenes LiDAR detection dataset index.
 
     Each row stores the LiDAR point cloud path and the corresponding
-    ``sample_data`` token used to retrieve 3D annotations.
+    sample_data token used to retrieve 3D annotations.
 
     :param dataset_dir: Path to the nuScenes dataset root directory
     :type dataset_dir: str
@@ -83,8 +73,8 @@ def build_nuscenes_lidar_detection_dataset(
 class NuScenesLiDARDetectionDataset(LiDARDetectionDataset):
     """Dataset class for nuScenes LiDAR 3D object detection.
 
-    The annotation boxes are returned as ``[x, y, z, dx, dy, dz, yaw]`` in the
-    LiDAR/global annotation convention used by nuScenes metadata.
+    The annotation boxes are returned as [x, y, z, dx, dy, dz, yaw] in the
+    LiDAR sensor frame.
 
     :param dataset_dir: Path to the nuScenes dataset root directory
     :type dataset_dir: str
@@ -137,36 +127,56 @@ class NuScenesLiDARDetectionDataset(LiDARDetectionDataset):
     def read_points(self, fname: str) -> np.ndarray:
         """Read nuScenes LiDAR points.
 
-        nuScenes LiDAR ``.bin`` files store five float32 values per point:
-        ``x, y, z, intensity, ring_index``.
+        nuScenes LiDAR .bin files store x, y, z, intensity, and ring index.
+        The ring index is dropped so the returned points match the usual
+        x, y, z, intensity format.
         """
-        return np.fromfile(fname, dtype=np.float32).reshape(-1, 5)
+        return np.fromfile(fname, dtype=np.float32).reshape(-1, 5)[:, :4]
 
     def read_annotation(self, fname: str):
         """Read 3D annotations for a nuScenes LiDAR sample-data token.
 
-        :param fname: nuScenes ``sample_data`` token
+        :param fname: nuScenes sample_data token
         :type fname: str
-        :return: Boxes in ``[x, y, z, dx, dy, dz, yaw]`` format and class IDs
+        :return: LiDAR-frame boxes in [x, y, z, dx, dy, dz, yaw] format and class IDs
         :rtype: Tuple[list, list]
         """
-        sample_data = self.nusc.get("sample_data", fname)
-        sample = self.nusc.get("sample", sample_data["sample_token"])
+        _, sample_boxes, _ = self.nusc.get_sample_data(fname)
 
         boxes = []
         labels = []
-        for annotation_token in sample["anns"]:
-            annotation = self.nusc.get("sample_annotation", annotation_token)
-            category_name = annotation["category_name"]
+        for sample_box in sample_boxes:
+            category_name = sample_box.name
             if category_name not in self.cat_to_idx:
                 continue
 
             box = [
-                *annotation["translation"],
-                *annotation["size"],
-                quaternion_yaw(annotation["rotation"]),
+                *sample_box.center,
+                *sample_box.wlh,
+                quaternion_yaw(sample_box.orientation),
             ]
             boxes.append(box)
             labels.append(self.cat_to_idx[category_name])
 
         return boxes, labels
+
+
+
+
+if __name__ == "__main__":
+    dataset = NuScenesLiDARDetectionDataset(
+        dataset_dir="examples/local/nuscenes/v1.0-mini",
+        version="v1.0-mini",
+        split="train",
+    )
+
+    print(dataset.dataset.head())
+
+    sample_token = dataset.dataset.index[0]
+    print (f"points path: {dataset.dataset.loc[sample_token, 'points']}")
+    points = dataset.read_points(dataset.dataset.loc[sample_token, "points"])
+    boxes, labels = dataset.read_annotation(dataset.dataset.loc[sample_token, "annotation"])
+    print (f"Sample token: {sample_token}")
+    print(f"Points shape: {points.shape}")
+    print(f"Boxes: {len(boxes)}, Labels: {len(labels)}")
+    print (f"ontology: {dataset.ontology}")

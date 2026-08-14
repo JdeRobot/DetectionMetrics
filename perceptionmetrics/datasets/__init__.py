@@ -2,7 +2,7 @@ from perceptionmetrics.datasets.nuimages import (
     NuImagesDetectionDataset,
     NuImagesSegmentationDataset,
 )
-from perceptionmetrics.datasets.nuscenes import NuScenesLiDARDetectionDataset
+from perceptionmetrics.datasets.nuScenes import NuScenesLiDARDetectionDataset
 from perceptionmetrics.datasets.gaia import (
     GaiaImageSegmentationDataset,
     GaiaLiDARSegmentationDataset,
