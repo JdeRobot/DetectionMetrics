@@ -15,16 +15,17 @@ This page summarizes the dataset adapters available in PerceptionMetrics and the
 | --- | --- | --- | --- | --- |
 | GAIA | Segmentation | Image, LiDAR | `gaia` | CLI and library |
 | Generic | Segmentation | Image, LiDAR | `generic` | CLI and library |
-| GOOSE | Segmentation | Image, LiDAR | `goose` | CLI and library |
-| RELLIS-3D | Segmentation | Image, LiDAR | `rellis3d` | CLI and library |
-| RUGD | Segmentation | Image | `rugd` | CLI and library |
-| WildScenes | Segmentation | Image, LiDAR | `wildscenes` | Library adapter |
-| Cityscapes | Segmentation | Image | `cityscapes` | Library adapter |
-| COCO | Object detection | Image | `coco` | CLI and library |
-| YOLO | Object detection | Image | `yolo` | Library adapter |
-| nuImages | Segmentation, object detection | Image | `nuimages` | Library adapter |
+| [GOOSE](https://goose-dataset.de/) | Segmentation | Image, LiDAR | `goose` | CLI and library |
+| [RELLIS-3D](https://github.com/unmannedlab/RELLIS-3D) | Segmentation | Image, LiDAR | `rellis3d` | CLI and library |
+| [RUGD](http://rugd.vision/) | Segmentation | Image | `rugd` | CLI and library |
+| [WildScenes](https://github.com/csiro-robotics/WildScenes) | Segmentation | Image, LiDAR | `wildscenes` | CLI and library |
+| [Cityscapes](https://www.cityscapes-dataset.com/) | Segmentation | Image | `cityscapes` | CLI and library |
+| [SemanticKITTI](https://semantic-kitti.org/) | Segmentation | LiDAR | `semantickitti_lidar_segmentation` | CLI and library |
+| [COCO](https://cocodataset.org/#home) | Object detection | Image | `coco` | CLI and library |
+| [YOLO](https://docs.ultralytics.com/datasets/detect/) | Object detection | Image | `yolo` | CLI and library |
+| [nuImages](https://www.nuscenes.org/nuimages) | Segmentation, object detection | Image | `nuimages` | CLI and library |
 
-The CLI currently constructs datasets through `perceptionmetrics.cli.get_dataset`. If a dataset appears in the library registry but is not handled by that CLI helper, use it from Python until CLI wiring is added.
+The CLI constructs datasets through `perceptionmetrics.cli.get_dataset`, while the same adapters can also be used directly from Python.
 
 ## Common Concepts
 
@@ -149,9 +150,9 @@ The default train, validation, and test split assignment is built into the adapt
 
 ## WildScenes
 
-WildScenes supports image and LiDAR semantic segmentation through library adapters. The adapters expect official CSV split files and use ontology definitions embedded in the adapter source.
+WildScenes supports image and LiDAR semantic segmentation through the CLI and Python API. The adapters expect official CSV split files and use ontology definitions embedded in the adapter source.
 
-Expected inputs in Python:
+Expected inputs:
 
 - `dataset_dir`: root of the WildScenes data
 - `split_dir`: directory containing `train.csv`, `val.csv`, and `test.csv`
@@ -160,9 +161,9 @@ Use the 2D split files for `WildscenesImageSegmentationDataset` and the 3D split
 
 ## Cityscapes
 
-Cityscapes supports image semantic segmentation through the Python API.
+Cityscapes supports image semantic segmentation through the CLI and Python API.
 
-Expected inputs in Python:
+Expected inputs:
 
 - One or more of `train_dataset_root`, `val_dataset_root`, `test_dataset_root`
 - Images under `leftImg8bit_trainvaltest/leftImg8bit/<split>/<city>/`
@@ -171,6 +172,18 @@ Expected inputs in Python:
 - Default label suffix: `_gtFine_labelIds.png`
 
 The adapter can build either Cityscapes label-id ontologies or train-id ontologies. When using train IDs, provide train-id labels with `label_suffix="_gtFine_labelTrainIds.png"`.
+
+## SemanticKITTI
+
+SemanticKITTI supports LiDAR semantic segmentation through the CLI and Python API.
+
+Expected inputs:
+
+- `dataset_dir`: directory where SemanticKITTI has been extracted
+- `config_fname`: SemanticKITTI YAML config containing labels, colors, learning maps, and splits
+- `split`, optionally restricting the loaded samples to one split
+
+The adapter reads point clouds from `velodyne` folders and labels from `labels` folders. It can build raw label-ID ontologies and train-ID ontology translations from the SemanticKITTI YAML config.
 
 ## COCO
 
@@ -198,7 +211,7 @@ The CLI currently supports one COCO split at a time. The adapter looks for an im
 
 ## YOLO
 
-YOLO supports image object detection through the Python API. The adapter reads an Ultralytics-style dataset YAML file.
+YOLO supports image object detection through the CLI and Python API. The adapter reads an Ultralytics-style dataset YAML file.
 
 Expected YAML fields:
 
@@ -216,13 +229,10 @@ The adapter expects labels in matching `labels/<split>` directories and converts
 
 ## nuImages
 
-nuImages supports image object detection and image semantic segmentation through the Python API.
+nuImages supports image object detection and image semantic segmentation through the CLI and Python API.
 
-Expected inputs in Python:
+Expected inputs:
 
 - `dataset_dir`: nuImages root directory
 - `version`, defaulting to `v1.0-mini`
 - `split`, defaulting to `train`
-
-
-
