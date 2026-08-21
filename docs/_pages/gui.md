@@ -28,6 +28,22 @@ The GUI will open in your default web browser, typically at `http://localhost:85
 
 The GUI consists of three main tabs, each designed for specific tasks:
 
+### 🎥 GUI Tutorial Videos
+
+The following videos show the GUI workflow for the currently supported tasks:
+
+#### Image Detection GUI
+
+<iframe src="https://drive.google.com/file/d/1iNk-V3rwN9tZ2pAd_HONAkVLm3JstF00/preview" width="100%" height="420" allow="autoplay" allowfullscreen></iframe>
+
+#### Image Segmentation GUI
+
+<iframe src="https://drive.google.com/file/d/16ixtrevvqDn6l2iuYXxHBcm4Z5IwSlOl/preview" width="100%" height="420" allow="autoplay" allowfullscreen></iframe>
+
+#### LiDAR Segmentation GUI
+
+<iframe src="https://drive.google.com/file/d/1BDT6fjLFPlG3HuHE9wWhCxwKQJ_X2PjQ/preview" width="100%" height="420" allow="autoplay" allowfullscreen></iframe>
+
 ### 📁 Dataset Viewer Tab
 
 The Dataset Viewer allows you to explore and visualize your datasets before running evaluations.
