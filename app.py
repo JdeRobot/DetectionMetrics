@@ -3,6 +3,7 @@ import streamlit as st
 from perceptionmetrics.utils.torch import get_device_info
 from gui.dataset_viewer import dataset_viewer_tab
 from gui.evaluator import evaluator_tab
+from gui.computational_cost import computational_cost_tab
 from gui.inference import inference_tab
 from gui.tasks.image_detection.sidebar import render_image_detection_sidebar
 from gui.tasks.image_segmentation.sidebar import render_image_segmentation_sidebar
@@ -13,6 +14,7 @@ PAGES = {
     "Dataset Viewer": dataset_viewer_tab,
     "Inference": inference_tab,
     "Evaluator": evaluator_tab,
+    "Computational Cost": computational_cost_tab,
 }
 
 best_device, available_devices = get_device_info()
@@ -62,7 +64,7 @@ with st.sidebar:
     
 
 
-tab1, tab2, tab3 = st.tabs(["Dataset Viewer", "Inference", "Evaluator"])
+tab1, tab2, tab3, tab4 = st.tabs(["Dataset Viewer", "Inference", "Evaluator", "Computational Cost"])
 
 with tab1:
     dataset_viewer_tab()
@@ -70,3 +72,5 @@ with tab2:
     inference_tab()
 with tab3:
     evaluator_tab()
+with tab4:
+    computational_cost_tab()
