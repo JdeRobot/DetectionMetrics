@@ -52,6 +52,8 @@ Some adapters build the ontology from the official dataset metadata. For others,
 
 ## GAIA
 
+API: [`GaiaImageSegmentationDataset`]({{ "/py_docs/build/html/api/perceptionmetrics.datasets.html#perceptionmetrics.datasets.gaia.GaiaImageSegmentationDataset" | relative_url }}), [`GaiaLiDARSegmentationDataset`]({{ "/py_docs/build/html/api/perceptionmetrics.datasets.html#perceptionmetrics.datasets.gaia.GaiaLiDARSegmentationDataset" | relative_url }}).
+
 GAIA is a custom PerceptionMetrics format backed by a Parquet file. The Parquet file is loaded with Pandas, and paths are resolved relative to the directory containing that Parquet file.
 
 Expected inputs:
@@ -68,6 +70,8 @@ Typical columns:
 | LiDAR segmentation | `points`, `label`, `split` |
 
 ## Generic
+
+API: [`GenericImageSegmentationDataset`]({{ "/py_docs/build/html/api/perceptionmetrics.datasets.html#perceptionmetrics.datasets.generic.GenericImageSegmentationDataset" | relative_url }}), [`GenericLiDARSegmentationDataset`]({{ "/py_docs/build/html/api/perceptionmetrics.datasets.html#perceptionmetrics.datasets.generic.GenericLiDARSegmentationDataset" | relative_url }}).
 
 Generic datasets are useful when files can be paired by matching wildcard captures in input and label patterns. They support image and LiDAR segmentation.
 
@@ -98,6 +102,42 @@ or a dictionary:
   "road": {"idx": 1, "rgb": [128, 64, 128]}
 }
 ```
+
+### Image file-pairing example
+
+The following paths are relative to a custom dataset root:
+
+| File | Purpose |
+| --- | --- |
+| `ontology.json` | JSON class list or dictionary, as above |
+| `val/frame001_image.png` | Input image |
+| `val/frame001_label.png` | Single-channel mask containing class IDs |
+
+```python
+from perceptionmetrics.datasets.generic import GenericImageSegmentationDataset
+
+dataset = GenericImageSegmentationDataset(
+    data_suffix="*_image.png",
+    label_suffix="*_label.png",
+    ontology_fname="/path/to/custom/ontology.json",
+    val_dataset_dir="/path/to/custom/val",
+)
+```
+
+The wildcard captures `frame001` and pairs the image with
+`frame001_label.png`. In the CLI, `ontology_fname` corresponds to
+`--dataset_ontology`; the other keyword names correspond to the same-named
+CLI options. A missing matching label raises an error. Use distinct captured
+sample names across splits because samples are indexed by those names.
+
+For `GenericImageSegmentationDataset`, masks should store class indices as
+8-bit grayscale values, not visualization colors. With the dictionary above,
+a pixel value of `1` means `road`; the `rgb` entry is for visualization.
+The Generic adapter reads its ontology as JSON, not YAML.
+
+This image-mask example does not describe LiDAR labels. The Generic LiDAR
+adapter inherits the base SemanticKITTI-style binary label reader; see
+[`LiDARSegmentationDataset.read_label`]({{ "/py_docs/build/html/api/perceptionmetrics.datasets.html#perceptionmetrics.datasets.segmentation.LiDARSegmentationDataset.read_label" | relative_url }}).
 
 ## GOOSE
 
@@ -187,6 +227,8 @@ The adapter reads point clouds from `velodyne` folders and labels from `labels` 
 
 ## COCO
 
+API: [`CocoDataset`]({{ "/py_docs/build/html/api/perceptionmetrics.datasets.html#perceptionmetrics.datasets.coco.CocoDataset" | relative_url }}).
+
 COCO supports image object detection and is available from the CLI and Python API.
 
 Expected layout:
@@ -209,7 +251,48 @@ Expected CLI inputs:
 
 The CLI currently supports one COCO split at a time. The adapter looks for an image directory matching the split name, such as `val2017`, and an annotation file matching `instances_<split>*.json`.
 
+### Minimal annotation example
+
+For an image `images/val2017/frame001.jpg` with width 640 and height 480,
+`annotations/instances_val2017.json` can contain:
+
+```json
+{
+  "images": [{"id": 1, "file_name": "frame001.jpg", "width": 640, "height": 480}],
+  "categories": [{"id": 1, "name": "person"}],
+  "annotations": [
+    {"id": 1, "image_id": 1, "category_id": 1,
+     "bbox": [100, 50, 80, 120], "area": 9600, "iscrowd": 0}
+  ]
+}
+```
+
+`file_name` is relative to the image directory. `image_id` connects an
+annotation to an image, while `category_id` refers to a category entry.
+COCO boxes use absolute pixel `[x, y, width, height]` coordinates.
+`read_annotation("1")` returns `([[100, 50, 180, 170]], [1])`: boxes are
+converted to XYXY, and category IDs are preserved rather than renumbered.
+
+```python
+from perceptionmetrics.datasets.coco import CocoDataset
+
+dataset = CocoDataset(
+    annotation_file="/path/to/dataset_root/annotations/instances_val2017.json",
+    image_dir="/path/to/dataset_root/images/val2017",
+    split="val",
+)
+```
+
+The Python constructor takes explicit paths; the CLI discovers those paths
+from `--dataset_dir` and `--split` using
+[`find_img_dir_and_ann_file`]({{ "/py_docs/build/html/api/perceptionmetrics.datasets.html#perceptionmetrics.datasets.coco.find_img_dir_and_ann_file" | relative_url }}).
+The ontology is built from `categories`, so no separate dataset ontology file
+is required. See the existing [COCO detection tutorial](https://github.com/JdeRobot/PerceptionMetrics/blob/master/examples/tutorial_image_detection.ipynb)
+for model evaluation.
+
 ## YOLO
+
+API: [`YOLODataset`]({{ "/py_docs/build/html/api/perceptionmetrics.datasets.html#perceptionmetrics.datasets.yolo.YOLODataset" | relative_url }}).
 
 YOLO supports image object detection through the CLI and Python API. The adapter reads an Ultralytics-style dataset YAML file.
 
@@ -226,6 +309,49 @@ names:
 ```
 
 The adapter expects labels in matching `labels/<split>` directories and converts YOLO normalized center-width-height boxes into absolute `[x1, y1, x2, y2]` boxes.
+
+### Matching images and annotations
+
+For the YAML above, a validation sample uses these paths:
+
+| File | Purpose |
+| --- | --- |
+| `/path/to/dataset/images/val/frame001.jpg` | Image, for example 640 × 480 pixels |
+| `/path/to/dataset/labels/val/frame001.txt` | One annotation row per object |
+
+Example annotation row:
+
+```text
+0 0.5 0.5 0.25 0.5
+```
+
+The fields are `class_id center_x center_y width height`. Coordinates and
+sizes are normalized by image width/height. For this 640 × 480 image, the row
+represents class `0` (`person`) and converts to `[240, 120, 400, 360]` in
+absolute XYXY coordinates.
+
+```python
+from perceptionmetrics.datasets.yolo import YOLODataset
+
+dataset = YOLODataset(
+    dataset_fname="/path/to/data.yaml",
+    dataset_dir="/path/to/dataset",
+    im_ext="jpg",
+)
+```
+
+`dataset_fname` corresponds to `--dataset_fname` and `dataset_dir` to
+`--dataset_dir`. Pass `dataset_dir=None` explicitly to use the YAML `path`;
+an absolute `path` avoids dependence on the current working directory.
+Relative split paths are resolved against that dataset root. The default
+image extension is `jpg`; set `im_ext="png"` in Python for PNG images.
+
+The adapter includes a sample only when both image and label files exist.
+Use an empty label file for an image with no annotated objects. Keep image
+stems unique across splits because they are used as sample keys.
+The YAML `names` field supplies the ontology. See the existing
+[YOLO detection tutorial](https://github.com/JdeRobot/PerceptionMetrics/blob/master/examples/tutorial_image_detection_yolo.ipynb)
+for model evaluation.
 
 ## nuImages
 
