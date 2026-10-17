@@ -2,7 +2,7 @@ import importlib
 import os
 import time
 import tempfile
-from typing import Any, List, Optional, Tuple, Union
+from typing import Any, Callable, List, Optional, Tuple, Union
 
 import numpy as np
 import pandas as pd
@@ -20,8 +20,6 @@ from tqdm import tqdm
 
 from perceptionmetrics.datasets import segmentation as segmentation_dataset
 from perceptionmetrics.models import segmentation as segmentation_model
-import perceptionmetrics.utils.conversion as uc
-import perceptionmetrics.utils.io as uio
 import perceptionmetrics.utils.segmentation_metrics as um
 import perceptionmetrics.utils.torch as ut
 
@@ -380,6 +378,8 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
         translation_direction: str = "dataset_to_model",
         predictions_outdir: Optional[str] = None,
         results_per_sample: bool = False,
+        progress_callback: Optional[Callable] = None,
+        metrics_callback: Optional[Callable] = None,
     ) -> pd.DataFrame:
         """Perform evaluation for an image segmentation dataset
 
@@ -395,6 +395,10 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
         :type predictions_outdir: Optional[str], optional
         :param results_per_sample: Whether to store results per sample or not, defaults to False. If True, predictions_outdir must be provided.
         :type results_per_sample: bool, optional
+        :param progress_callback: Optional callback called as progress_callback(processed, total), defaults to None
+        :type progress_callback: Optional[Callable], optional
+        :param metrics_callback: Optional callback called as metrics_callback(metrics_df, processed, total), defaults to None
+        :type metrics_callback: Optional[Callable], optional
         :return: DataFrame containing evaluation results
         :rtype: pd.DataFrame
         """
@@ -408,24 +412,12 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
         if predictions_outdir is not None:
             os.makedirs(predictions_outdir, exist_ok=True)
 
-        # Build a LUT for transforming ontology if needed (aligned with TorchLiDARSegmentationModel.eval)
-        eval_ontology = self.ontology
-
-        if ontology_translation is not None:
-            ontology_translation = uio.read_json(ontology_translation)
-            if translation_direction == "dataset_to_model":
-                lut_ontology = uc.get_ontology_conversion_lut(
-                    dataset.ontology, self.ontology, ontology_translation
-                )
-            else:
-                eval_ontology = dataset.ontology
-                lut_ontology = uc.get_ontology_conversion_lut(
-                    self.ontology, dataset.ontology, ontology_translation
-                )
-
+        # Build a LUT for transforming ontology if needed
+        lut_ontology, eval_ontology = self.get_eval_lut_ontology(
+            dataset.ontology, ontology_translation, translation_direction
+        )
+        if lut_ontology is not None:
             lut_ontology = torch.tensor(lut_ontology, dtype=torch.int64).to(self.device)
-        else:
-            lut_ontology = None
 
         n_classes = len(eval_ontology)
 
@@ -450,6 +442,9 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
 
         # Init metrics
         metrics_factory = um.SegmentationMetricsFactory(n_classes)
+        total_samples = len(dataset)
+        processed_samples = 0
+        evaluation_step = self.model_cfg.get("evaluation_step", 1)
 
         # Evaluation loop
         with torch.no_grad():
@@ -509,6 +504,26 @@ class TorchImageSegmentationModel(segmentation_model.ImageSegmentationModel):
                         sample_pred.save(
                             os.path.join(predictions_outdir, f"{sample_idx}.png")
                         )
+
+                processed_samples += len(idx)
+
+                if progress_callback is not None:
+                    progress_callback(processed_samples, total_samples)
+
+                if (
+                    metrics_callback is not None
+                    and evaluation_step is not None
+                    and evaluation_step > 0
+                    and (
+                        processed_samples % evaluation_step == 0
+                        or processed_samples == total_samples
+                    )
+                ):
+                    metrics_callback(
+                        um.get_metrics_dataframe(metrics_factory, eval_ontology),
+                        processed_samples,
+                        total_samples,
+                    )
 
         return um.get_metrics_dataframe(metrics_factory, eval_ontology)
 
@@ -692,6 +707,8 @@ class TorchLiDARSegmentationModel(segmentation_model.LiDARSegmentationModel):
         translation_direction: str = "dataset_to_model",
         predictions_outdir: Optional[str] = None,
         results_per_sample: bool = False,
+        progress_callback: Optional[Callable] = None,
+        metrics_callback: Optional[Callable] = None,
     ) -> pd.DataFrame:
         """Perform evaluation for a LiDAR segmentation dataset
 
@@ -707,6 +724,10 @@ class TorchLiDARSegmentationModel(segmentation_model.LiDARSegmentationModel):
         :type predictions_outdir: Optional[str], optional
         :param results_per_sample: Whether to store results per sample or not, defaults to False. If True, predictions_outdir must be provided.
         :type results_per_sample: bool, optional
+        :param progress_callback: Optional callback called as progress_callback(processed, total), defaults to None
+        :type progress_callback: Optional[Callable], optional
+        :param metrics_callback: Optional callback called as metrics_callback(metrics_df, processed, total), defaults to None
+        :type metrics_callback: Optional[Callable], optional
         :return: DataFrame containing evaluation results
         :rtype: pd.DataFrame
         """
@@ -721,23 +742,11 @@ class TorchLiDARSegmentationModel(segmentation_model.LiDARSegmentationModel):
             os.makedirs(predictions_outdir, exist_ok=True)
 
         # Build a LUT for transforming ontology if needed
-        eval_ontology = self.ontology
-
-        if ontology_translation is not None:
-            ontology_translation = uio.read_json(ontology_translation)
-            if translation_direction == "dataset_to_model":
-                lut_ontology = uc.get_ontology_conversion_lut(
-                    dataset.ontology, self.ontology, ontology_translation
-                )
-            else:
-                eval_ontology = dataset.ontology
-                lut_ontology = uc.get_ontology_conversion_lut(
-                    self.ontology, dataset.ontology, ontology_translation
-                )
-
+        lut_ontology, eval_ontology = self.get_eval_lut_ontology(
+            dataset.ontology, ontology_translation, translation_direction
+        )
+        if lut_ontology is not None:
             lut_ontology = torch.tensor(lut_ontology, dtype=torch.int64).to(self.device)
-        else:
-            lut_ontology = None
 
         n_classes = len(eval_ontology)
 
@@ -756,6 +765,9 @@ class TorchLiDARSegmentationModel(segmentation_model.LiDARSegmentationModel):
 
         # Init metrics
         metrics_factory = um.SegmentationMetricsFactory(n_classes)
+        total_samples = len(dataset)
+        processed_samples = 0
+        evaluation_step = self.model_cfg.get("evaluation_step", 1)
 
         # Evaluation loop
         with torch.no_grad():
@@ -809,6 +821,26 @@ class TorchLiDARSegmentationModel(segmentation_model.LiDARSegmentationModel):
                         sample_pred.tofile(
                             os.path.join(predictions_outdir, f"{sample_name}.bin")
                         )
+
+                processed_samples += 1
+
+                if progress_callback is not None:
+                    progress_callback(processed_samples, total_samples)
+
+                if (
+                    metrics_callback is not None
+                    and evaluation_step is not None
+                    and evaluation_step > 0
+                    and (
+                        processed_samples % evaluation_step == 0
+                        or processed_samples == total_samples
+                    )
+                ):
+                    metrics_callback(
+                        um.get_metrics_dataframe(metrics_factory, eval_ontology),
+                        processed_samples,
+                        total_samples,
+                    )
 
         return um.get_metrics_dataframe(metrics_factory, eval_ontology)
 
