@@ -4,8 +4,8 @@ import numpy as np
 
 try:
     from open3d._ml3d.torch.models.kpconv import batch_grid_subsampling, batch_neighbors
-except ImportError:
-    print("Warning: Open3D-ML3D not available. KPConv functionality will be limited.")
+except Exception:
+    print("Open3D-ML3D not available")
 import torch
 
 import perceptionmetrics.utils.lidar as ul
